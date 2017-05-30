@@ -1,0 +1,27 @@
+<section class="posts">
+  <% page.posts.forEach(function (post) { %>
+    <article class="post">
+      <div class="post-title">
+        <a class="post-title-link" href="<%- url_for(post.path) %>">
+          <%= post.title %>
+        </a>
+      </div>
+      <div class="post-tags">
+        <% post.tags.forEach(function (tag) { %>
+          <span class="post-tag"><a href="<%- url_for(tag.path) %>"><%- tag.slug %></a></span>
+          <% }) %>
+      </div>
+      <div class="post-content">
+      <% if (post.excerpt){ %>
+        <%- post.excerpt %>
+      <% } else { %>
+        <%- post.content %>
+        <% } %>
+      </div>
+      <div class="post-meta">
+        <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
+      </div>
+    </article>
+    <% }) %>
+</section>
+<%- partial('_partial/paginator') %>
