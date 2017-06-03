@@ -6,7 +6,7 @@
         <% } else { %>
         <% isExcerpt = false %>
         <% } %>
-        <%- partial('_partial/base-post', { _page :post, isExcerpt : isExcerpt}) %>
+        <%- partial('_partial/base-post', { _page :post, isExcerpt : isExcerpt, isTitleWithLink : true, hasPostTime: false, hasTimeline: true}) %>
     <% }) %>
 </section>
 <%- partial('_partial/base-paginator') %>

@@ -1,0 +1,39 @@
+.blog-timeline {
+    position: absolute;
+    top : 3em;
+    left: -10%;
+    transform: translateX(-50%);
+    ;
+    
+    .timeline-date {
+        font-size: 0.5em;
+        width: 6em;
+        margin: 0 auto;
+        text-align: center;
+        color: #a1adb6;
+        padding: 3px;
+        background-color: #dee8ef;
+        border-color: #cfdbe4;
+        border-radius: 4px;
+    }
+    .timeline-logo {
+        position: relative;
+        margin: 0 auto;
+        height: 3em;
+        width: 3em;
+        border-radius: 5em;
+        background-color: #c4d9e9;
+        margin-bottom: 0.5em;
+
+        img {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            fill: #FFFFFF;
+            height: 60%;
+            width: 60%;
+        }
+    }
+}

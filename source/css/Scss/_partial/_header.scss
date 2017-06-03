@@ -4,7 +4,7 @@ $title-color: $menu-color;
     overflow: hidden;
     width: 100%;
     background-color: #fff;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #eee;
     height: 70px;
     a {
         text-decoration: none;
@@ -13,7 +13,7 @@ $title-color: $menu-color;
         float: left;
         height: 80%;
         width: 20%;
-        padding-left: 10%;
+        margin-left: 20%;
         position: relative;
         top: 50%;
         transform: translateY(-50%); // title and subtitle
@@ -26,11 +26,11 @@ $title-color: $menu-color;
         }
     }
     .menu {
-        float: right;
+        float: left;
         height: 100%;
-        width: 60%;
+        width: 40%;
         list-style: none;
-        padding-left: 10%;
+        margin-left: 10%;
         li {
             &:last-child {
                 padding-right: 0;

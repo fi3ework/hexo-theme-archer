@@ -1,50 +1,73 @@
-$link-color: #940102;
-$tag-color: #c4d9e9;
-.post {
-    &::before {
-        height: 100%;
-        position: absolute;
-        left: -40px;
-        top: 0;
-        border-left: 2px solid gray;
-        content: "";
-        width: 1px;
+    $link-color: #940102;
+    $tag-color: #c4d9e9;
+    .posts {
+        margin: 0 auto;
+        max-width: 960px;
+        width: 70%;
+        padding-left: 10%;
     }
+
+    .post {
+        position: relative;
+        padding: {
+            top: 25px;
+            bottom: 25px;
+        }
+        &:first-child {
+            padding-top: 40px;
+        }
+        &::before {
+            position: absolute;
+            height: 100%;
+            left: -10%;
+            top: 0;
+            border-left: 2px solid #cfdbe4;
+            content: "";
+            width: 1px;
+        }
+    }
+
     .post-content-box {
+        .timeline-arrow {
+            position: absolute;
+            width: 1em;
+            height: 1em;
+            left: calc(-0.5em - 1px);
+            top: 2em;
+            background-color: #fff;
+            border: {
+                left: 1px solid #dddddd;
+                bottom: 1px solid #dddddd;
+            }
+            transform: rotate(45deg);
+            z-index: -1;
+        }
         position: relative;
         padding: 30px 50px;
         background-color: #fff;
         border: 1px solid #ddd;
-        box-shadow: 0 0 2px #ddd;
-    }
-}
-
-.posts {
-    margin: 0 auto;
-    max-width: 960px;
-    &:first-child {
-        margin-top: 0;
-    }
-    .post-tags {
-        .post-tag a {
-            color: $tag-color;
-            text-decoration: none;
+        box-shadow: 0 0 4px #ddd;
+        z-index: 4;
+        .post-tags {
+            .post-tag a {
+                color: $tag-color;
+                text-decoration: none;
+            }
+        }
+        .post-title {
+            font-size: 1.5em;
+            .post-title-link {
+                color: $link-color;
+                text-decoration: none;
+            }
+        }
+        .post-content {
+            a {
+                color: $link-color;
+                text-decoration: none;
+            }
+        }
+        .post-meta {
+            color: #BABABA;
         }
     }
-    .post-title {
-        font-size: 1.5em;
-        .post-title-link {
-            color: $link-color;
-            text-decoration: none;
-        }
-    }
-    .post-content {
-        a {
-            color: $link-color;
-            text-decoration: none;
-        }
-    }
-    .post-meta {
-        color: #BABABA;
-    }
-}

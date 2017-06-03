@@ -1,7 +1,9 @@
+<% if (currPost.tags) { %>
 <% if (currPost.tags.length) { %>
 <div class="post-tags">
     <% currPost.tags.forEach(function (tag) { %>
         <span class="post-tag"><a href="<%- url_for(tag.path) %>"><%- tag.slug %></a></span>
         <% }) %>
 </div>
+<% } %>
 <% } %>

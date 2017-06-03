@@ -1,15 +1,27 @@
 <article class="post">
-    <div class="timeline-box">
-    </div>
+    <% if (hasTimeline) { %>
+        <%- partial('_partial/base-timeline', {
+            _page: _page
+        }) %>
+    <% } %>
     <div class="post-content-box">
+        <div class="timeline-arrow"></div>
         <div class="post-title">
             <h2 class="title">
+            <% if(isTitleWithLink) { %>
+            <a class="post-title-link" href="<%- url_for(_page.path) %>">
+            <% } %>
                 <%= _page.title %>
+            <% if(isTitleWithLink) { %>
+            </a>
+            <% } %>
             </h2>
         </div>
+        <% if(hasPostTime) { %>
         <div class="post-meta">
             <span class="post-time"><%- date(_page.date, "YYYY-MM-DD") %></span>
         </div>
+        <% } %>
         <%- partial('base-title-tags', {currPost :_page}) %>
             <div class="post-content">
                 <% if (isExcerpt) { %>
