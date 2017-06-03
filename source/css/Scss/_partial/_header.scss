@@ -1,0 +1,50 @@
+$menu-color: #333;
+$title-color: $menu-color;
+.navbar {
+    overflow: hidden;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid gray;
+    height: 70px;
+    a {
+        text-decoration: none;
+    }
+    .blog-titles {
+        float: left;
+        height: 80%;
+        width: 20%;
+        padding-left: 10%;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%); // title and subtitle
+        .blog-title {
+            color: $title-color;
+        }
+        .blog-subtitle {
+            color: $title-color;
+            font-size: 10px;
+        }
+    }
+    .menu {
+        float: right;
+        height: 100%;
+        width: 60%;
+        list-style: none;
+        padding-left: 10%;
+        li {
+            &:last-child {
+                padding-right: 0;
+            }
+            margin: 0 auto;
+            height: 100%;
+            float: left;
+            vertical-align: center;
+            text-align: center;
+            padding-right: 10%;
+            a {
+                color: $title-color;
+                line-height: 70px;
+            }
+        }
+    }
+}

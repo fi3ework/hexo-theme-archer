@@ -1,0 +1,22 @@
+<article class="post">
+    <div class="timeline-box">
+    </div>
+    <div class="post-content-box">
+        <div class="post-title">
+            <h2 class="title">
+                <%= _page.title %>
+            </h2>
+        </div>
+        <div class="post-meta">
+            <span class="post-time"><%- date(_page.date, "YYYY-MM-DD") %></span>
+        </div>
+        <%- partial('base-title-tags', {currPost :_page}) %>
+            <div class="post-content">
+                <% if (isExcerpt) { %>
+                <%- _page.excerpt %>
+                <% } else { %>
+                <%- _page.content %>
+                <% } %>
+            </div>
+    </div>
+</article>
