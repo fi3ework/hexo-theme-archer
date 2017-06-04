@@ -1,0 +1,12 @@
+@import "_partial/post";
+.tags {
+    @extend .index-posts;
+    padding-top: 2em;
+
+    a{
+        text-decoration: none;
+        color: gray;
+    }
+}
+
+

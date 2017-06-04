@@ -1,28 +1,29 @@
-.blog-timeline {
+.timeline {
     position: absolute;
     top : 3em;
     left: -10%;
     transform: translateX(-50%);
-    ;
+    // background-color: #f3f6f7;
     
     .timeline-date {
         font-size: 0.5em;
-        width: 6em;
+        width: 6.5em;
         margin: 0 auto;
         text-align: center;
         color: #a1adb6;
         padding: 3px;
         background-color: #dee8ef;
-        border-color: #cfdbe4;
-        border-radius: 4px;
+        border-color: #bfdbe4;
+        border-radius: 1em;
     }
+
     .timeline-logo {
         position: relative;
         margin: 0 auto;
         height: 3em;
         width: 3em;
         border-radius: 5em;
-        background-color: #c4d9e9;
+        background-color: #90a1ac;
         margin-bottom: 0.5em;
 
         img {

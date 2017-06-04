@@ -1,12 +1,17 @@
-<section class="posts">
-  <% page.posts.forEach(function (post) { %>
-        <% var isExcerpt; %>
-        <% if (post.excerpt){ %>
-        <% isExcerpt = true %>
+<section class="index-posts">
+  <% page.posts.forEach(function (_post) { %>
+        <% var _content; %>
+        <% if (_post.excerpt){ %>
+        <% _content = _post.excerpt %>
         <% } else { %>
-        <% isExcerpt = false %>
+        <% _content = _post.content %>
         <% } %>
-        <%- partial('_partial/base-post', { _page :post, isExcerpt : isExcerpt, isTitleWithLink : true, hasPostTime: false, hasTimeline: true}) %>
+        <%- partial('_partial/base-post', 
+        { _page : _post, 
+        _content : _content, 
+        _isTitleWithLink : true, 
+        _hasPostTime: false, 
+        _hasTimeline: true}) %>
     <% }) %>
 </section>
 <%- partial('_partial/base-paginator') %>

@@ -1,21 +1,20 @@
-    $link-color: #940102;
+    $link-color: #0075c9;
     $tag-color: #c4d9e9;
-    .posts {
+    .index-posts {
         margin: 0 auto;
         max-width: 960px;
         width: 70%;
         padding-left: 10%;
+        // padding-top: 1em;
     }
 
     .post {
         position: relative;
         padding: {
-            top: 25px;
-            bottom: 25px;
+            top: 2em;
+            // bottom: 1em;
         }
-        &:first-child {
-            padding-top: 40px;
-        }
+
         &::before {
             position: absolute;
             height: 100%;
@@ -43,7 +42,7 @@
             z-index: -1;
         }
         position: relative;
-        padding: 30px 50px;
+        padding: 1em 4em 1.2em 4em;
         background-color: #fff;
         border: 1px solid #ddd;
         box-shadow: 0 0 4px #ddd;

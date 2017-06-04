@@ -1,7 +1,11 @@
+<section class="tags">
+<div class="post-content-box">
 <% if (site.tags) { %>
-  <div class="tag-tags">
+  <div class="tags-tags">
     <% site.tags.forEach(function (tag) { %>
-      <span class="post-tag"><a href="<%- url_for(tag.path) %>"><%- tag.slug %></a></span>
+      <span class="post-tag"><a href= "<%- url_for(tag.path) %>"> <%- tag.slug %></a></span>
       <% }) %>
   </div>
   <% } %>
+</div>
+</section>

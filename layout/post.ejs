@@ -1,3 +1,8 @@
 <section class="posts">
-<%- partial('_partial/base-post', { _page :page, isExcerpt : false, isTitleWithLink : false, hasPostTime : false, hasTimeline : true}) %>
+<%- partial('_partial/base-post', 
+{ _page : page, 
+_content : page.content, 
+_isTitleWithLink : false, 
+_hasPostTime : false, 
+_hasTimeline : true}) %>
 </section>

@@ -1,5 +1,5 @@
 <article class="post">
-    <% if (hasTimeline) { %>
+    <% if (_hasTimeline) { %>
         <%- partial('_partial/base-timeline', {
             _page: _page
         }) %>
@@ -8,27 +8,23 @@
         <div class="timeline-arrow"></div>
         <div class="post-title">
             <h2 class="title">
-            <% if(isTitleWithLink) { %>
+            <% if(_isTitleWithLink) { %>
             <a class="post-title-link" href="<%- url_for(_page.path) %>">
             <% } %>
-                <%= _page.title %>
-            <% if(isTitleWithLink) { %>
+            <%= _page.title %>
+            <% if(_isTitleWithLink) { %>
             </a>
             <% } %>
             </h2>
         </div>
-        <% if(hasPostTime) { %>
+        <% if(_hasPostTime) { %>
         <div class="post-meta">
             <span class="post-time"><%- date(_page.date, "YYYY-MM-DD") %></span>
         </div>
         <% } %>
         <%- partial('base-title-tags', {currPost :_page}) %>
             <div class="post-content">
-                <% if (isExcerpt) { %>
-                <%- _page.excerpt %>
-                <% } else { %>
-                <%- _page.content %>
-                <% } %>
+                <%- _content %>
             </div>
     </div>
 </article>
