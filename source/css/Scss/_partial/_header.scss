@@ -1,23 +1,48 @@
 $menu-color: #333;
 $title-color: $menu-color;
+
+@font-face {
+    font-family: 'Ding Rooster';
+    src: url('/font/Ding Rooster.otf');
+}
+
 .navbar {
+    position: relative;
     overflow: hidden;
     width: 100%;
     background-color: #fff;
     border-bottom: 1px solid #eee;
     height: 70px;
+    border-top: 3px solid #90a1ac;
     a {
         text-decoration: none;
+    }
+
+
+    #profile {
+        display: none;
+        width: 1.5em;
+        height: 1.5em;
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        transform: translateY(-50%);
+        padding: 3px;
+        img {
+            width: 1.5em;
+            height: 1.5em;
+        }
     }
     .blog-titles {
         float: left;
         height: 80%;
         width: 20%;
-        margin-left: 20%;
+        margin-left: 23%;
         position: relative;
         top: 50%;
-        transform: translateY(-50%); // title and subtitle
+        transform: translateY(-45%); // title and subtitle
         .blog-title {
+            font-family: "Ding Rooster", serif;
             color: $title-color;
         }
         .blog-subtitle {
@@ -30,11 +55,17 @@ $title-color: $menu-color;
         height: 100%;
         width: 40%;
         list-style: none;
-        margin-left: 10%;
+        margin-left: 5%;
         li {
             &:last-child {
                 padding-right: 0;
             }
+
+            img {
+                width: 1em;
+                height: 1em;
+            }
+
             margin: 0 auto;
             height: 100%;
             float: left;

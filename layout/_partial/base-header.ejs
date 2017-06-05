@@ -1,5 +1,8 @@
 <header class="header">
   <nav class="navbar">
+    <div id="profile">
+      <img src="/profile.svg">
+    </div>
     <div class="blog-titles">
       <a href="<%- url_for() %>" class="blog-title">
         <%= config.title %>
@@ -10,10 +13,18 @@
     </div>
     <ul class="menu">
       <% for (name in theme.menu) { %>
+        <% let imgSrc = "/header/" + name + ".svg"; %>
         <li class="menu-item">
+          <img src= <%- imgSrc %> >
+          <% if (name != "About") { %>
           <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link">
             <%= name %> 
           </a>
+          <% } else { %>
+          <a href="#" class="menu-item-link"> 
+            <%= name %>
+          </a>
+          <% } %> 
         </li>
         <% } %>
     </ul>

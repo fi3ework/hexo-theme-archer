@@ -1,29 +1,37 @@
 <section class="archive">
   <div class="post-content-box">
-    <% let sortDate = site.posts.map(function (item) { %>
+    <% if (is_archive()) { %>
+    <% var resortAllPosts = site.posts.map(function (item) { %>
     <% let title = item.title; %>
     <% let link = url_for(item.path) ; %>
-    <% let postDate = date(item.date, "YYYY-MM-DD HH:MM:SS"); %>
-    <% let returnDate = {title : title, link : link, postDate : postDate };  %>
+    <% let _date = date(item.date, "YYYY-MM-DD HH:MM:SS"); %>
+    <% let returnDate = {
+        title : title, 
+        link : link,
+        date : _date }; %>
     <% return returnDate; %>
     <% }) %>
-    <% function compare(v1, v2){ %>
-    <% let result =( (new Date(v1.postDate)) >  (new Date(v2.postDate)) ); %>
+    <% resortAllPosts.sort(function compare(v1, v2){ %>
+    <% let result = (new Date(v1.date)) > (new Date(v2.date)); %>
     <%  return result == true ? -1 : 1; %>
-    <% } %>
-    <% sortDate.sort(compare) %>
-    <% sortDate.forEach(function(item) { %>
     <% }) %>
-    <div> Total : <%= site.posts.length %> </div>
-    <% let showYear = -1 %>
+    <% } %>
+    <% let showYear = NaN %>
+    <% let currPagePosts %>
+    <% if (is_archive()) { %>
+      <% currPagePosts = resortAllPosts; %>
+    <% } else {%>
+      <% currPagePosts = page.posts; %>
+    <% } %>
+    <div> Total : <%= currPagePosts.length %> </div>
     <ul class="post-archive">
-      <% sortDate.forEach(function (post) { %>
-      <% if (showYear != Number(date(post.postDate, "YYYY"))) { %>
-      <% showYear = date(post.postDate, "YYYY"); %>
+      <% currPagePosts.forEach(function (post) { %>
+      <% if (showYear != Number(date(post.date, "YYYY"))) { %>
+      <% showYear = date(post.date, "YYYY"); %>
       <div> <%= showYear %> </div>
       <% } %>
           <li class="post-item">
-            <span class="post-date"><%-date(post.postDate, "YYYY-MM-DD") %></span>
+            <span class="post-date"><%-date(post.date, "YYYY-MM-DD") %></span>
             <a class="post-title" href= "<%- post.link %>" %>
               <%= post.title %>
             </a>
