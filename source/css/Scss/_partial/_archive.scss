@@ -1,3 +1,7 @@
+@import "_post";
+@import "_partial/_paginator";
+@import "_index";
+
 .archive {
     @extend .index-posts;
     padding-top: 2em;

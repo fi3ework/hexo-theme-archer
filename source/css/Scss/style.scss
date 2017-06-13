@@ -1,26 +1,9 @@
-*{
-    padding: 0;
-    margin: 0;
-}
+@import "_normalize";
+@import "_variables";
+@import "_base";
 
-body {
-    background-color: #f3f6f7;
-    font-size: 1.25rem;
-    line-height: 1.5;
-}
-
-.container {
-    // max-width: 960px;
-    margin: 0 auto;
-}
-
-@import "_partial/header";
+@import "_partial/_partial/_header";
+@import "_partial/index";
 @import "_partial/post";
-@import "_partial/archive";
-@import "_partial/paginator";
-@import "_partial/_timeline";
-@import "_partial/_tag";
-@import "_partial/profile";
-@import "index";
-@import "post";
-@import "tag";
+@import "_partial/tag";
+@import "_partial/_archive"

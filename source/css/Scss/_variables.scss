@@ -1,0 +1,43 @@
+// ======= global variables ======= //
+
+$global-background-color: #f3f6f7;
+$global-font-size: 16px !default;
+$global-font-family: 'Source Sans Pro',
+'Helvetica Neue',
+Arial,
+sans-serif !default;
+$global-serif-font-family : Microsoft Yahei,
+Athelas,
+STHeiti,
+serif !default;
+@font-face {
+    font-family: 'Oswald-Regular';
+    src: url('/font/Oswald-Regular.ttf');
+}
+
+// ======= header ======= //
+
+$header-top-border: #333;
+$header-background-color: #fff;
+$header-title-color: #333;
+$header-title-font: 'Oswald-Regular';
+$header-subtitle-font: 'Oswald-Regular';
+
+// ======= timeline ======= //
+
+$timeline-background-color: #dee8ef;
+$timeline-border-color: #bfdbe4;
+$timeline-color: #a1adb6;
+$timeline-logo-background-color: #90a1ac;
+$timeline-logo-size: 60%;
+$timeline-line-color: #cfdbe4;
+
+// ======= post ======= //
+$post-link-color: #0075c9;
+$post-content-color: #344a5e;
+$post-blockquote-color-border: lightgray;
+
+// ======= index ======= //
+$index-post-link-color: #0075c9;
+$index-post-tag-color: #0075c9;
+

@@ -1,8 +1,4 @@
 <header class="header">
-  <nav class="navbar">
-    <div id="profile">
-      <img src="/profile.svg">
-    </div>
     <div class="blog-titles">
       <a href="<%- url_for() %>" class="blog-title">
         <%= config.title %>
@@ -11,6 +7,7 @@
         <%= config.subtitle %>
       </div>
     </div>
+  <nav class="navbar">
     <ul class="menu">
       <% for (name in theme.menu) { %>
         <% let imgSrc = "/header/" + name + ".svg"; %>

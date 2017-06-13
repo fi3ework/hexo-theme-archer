@@ -1,0 +1,113 @@
+        // $link-color: #0075c9;
+        // $tag-color: #0075c9;
+        .post {
+            position: relative;
+            padding: {
+                top: 2.5rem; // bottom: 1em;
+            }
+            &:last-child {
+                padding-bottom: 2.5rem;
+            }
+            &::before {
+                position: absolute;
+                left: -10%;
+                top: 0;
+                height: 100%;
+                border-left: 2px solid $timeline-line-color;
+                content: "";
+                width: 0px;
+            }
+        }
+
+        .post-content-box {
+            position: relative;
+            padding: 1.5rem 4rem 1.5rem 4rem;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 4px #ddd;
+            z-index: 3;
+            color: $post-content-color;
+            .timeline-arrow {
+                position: absolute;
+                width: 1rem;
+                height: 1rem;
+                left: calc(-0.5rem - 1px);
+                top: 1.75rem;
+                background-color: #fff;
+                border: {
+                    left: 1px solid #dddddd;
+                    bottom: 1px solid #dddddd;
+                }
+                transform: rotate(45deg);
+                z-index: -1;
+            }
+            .post-title {
+                margin: 0.5rem 0;
+                font-size: 1.5em;
+            }
+            .post-content {
+                font-size: 0.85em;
+
+                h1 {
+                    line-height: 4rem;
+                    margin-top: 0.7rem;
+                    margin-bottom: 0.7rem;
+                }
+
+                h2 {
+                    &:before {
+                        content: "# ";
+                    }
+                    line-height: 3rem;
+                    margin-top: 0.5rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                h3 {
+                    &:before {
+                        content: "# ";
+                    }
+                    line-height: 2rem;
+                    margin-top: 0.3rem;
+                    margin-bottom: 0.3rem;
+                }
+
+                h4 {
+                    &:before {
+                        content: "# ";
+                    }
+                    line-height: 1.2rem;
+                    margin-top: 0.2rem;
+                    margin-bottom: 0.2rem;
+                }
+
+                h5 {
+                    &:before {
+                        content: "# ";
+                    }
+                    line-height: 1.1rem;
+                    margin-top: 0.1rem;
+                    margin-bottom: 0.1rem;
+                }
+
+                p {
+                    line-height: 1.3rem;
+                    margin-top: 0.1rem;
+                    margin-bottom: 0.1rem;
+                }
+
+                blockquote {
+                    margin: 0.3rem 0 0.3rem 1rem;
+                    padding: 0.2rem 0 0.2rem 0.5rem;
+                    border-left: 2px solid $post-blockquote-color-border;
+                    background-color: #eee;
+                }
+
+                a {
+                    color: $post-link-color;
+                }
+            }
+            .post-meta {
+                color: #BABABA;
+            }
+        }

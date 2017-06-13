@@ -1,0 +1,23 @@
+html{
+    font-size: global-font-size;
+}
+
+body{
+    background-color: $global-background-color;
+    // font-family: $title-font;
+    font-family: $global-serif-font-family;
+}
+
+*{
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, li, h1, h2, h3, h4, h5, h6, p, blockquote{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}

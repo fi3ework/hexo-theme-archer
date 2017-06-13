@@ -1,69 +1,7 @@
-    $link-color: #0075c9;
-    $tag-color: #0075c9;
+@import "_partial/_paginator";
+@import "_partial/_timeline";
+@import "_index";
 
-    .post {
-        position: relative;
-        padding: {
-            top: 2em;
-            // bottom: 1em;
-        }
-
-        &:last-child {
-            padding-bottom: 2em;
-        }
-
-        &::before {
-            position: absolute;
-            height: 100%;
-            left: -10%;
-            top: 0;
-            border-left: 2px solid #cfdbe4;
-            content: "";
-            width: 1px;
-        }
-    }
-
-    .post-content-box {
-        .timeline-arrow {
-            position: absolute;
-            width: 1em;
-            height: 1em;
-            left: calc(-0.5em - 1px);
-            top: 2em;
-            background-color: #fff;
-            border: {
-                left: 1px solid #dddddd;
-                bottom: 1px solid #dddddd;
-            }
-            transform: rotate(45deg);
-            z-index: -1;
-        }
-        position: relative;
-        padding: 1em 4em 1.2em 4em;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        box-shadow: 0 0 4px #ddd;
-        z-index: 4;
-        .post-tags {
-            .post-tag a {
-                color: $tag-color;
-                text-decoration: none;
-            }
-        }
-        .post-title {
-            font-size: 1.5em;
-            .post-title-link {
-                color: $link-color;
-                text-decoration: none;
-            }
-        }
-        .post-content {
-            a {
-                color: $link-color;
-                text-decoration: none;
-            }
-        }
-        .post-meta {
-            color: #BABABA;
-        }
-    }
+.posts{
+    @extend .index-posts;
+}

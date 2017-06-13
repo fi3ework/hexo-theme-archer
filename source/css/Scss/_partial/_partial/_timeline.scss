@@ -1,0 +1,37 @@
+.timeline {
+    position: absolute;
+    top: 3.5rem;
+    left: -10%;
+    transform: translateX(-50%);
+    z-index: 3;
+    .timeline-date {
+        font-size: 0.5rem;
+        width: 5.5rem;
+        margin: 0 auto;
+        text-align: center;
+        color: $timeline-color;
+        padding: 0.2rem;
+        background-color: $timeline-background-color;
+        border-color: $timeline-border-color;
+        border-radius: 1rem;
+    }
+    .timeline-logo {
+        position: relative;
+        margin: 0 auto;
+        height: 3rem;
+        width: 3rem;
+        border-radius: 5rem;
+        background-color: $timeline-logo-background-color;
+        margin-bottom: 0.5rem;
+        img {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            fill: #FFFFFF;
+            height: $timeline-logo-size;
+            width: $timeline-logo-size;
+        }
+    }
+}
