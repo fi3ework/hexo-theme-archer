@@ -1,12 +1,12 @@
 // ======= global variables ======= //
-
-$global-background-color: #f3f6f7;
+$global-background-color: #fdfdfd;
+$global-theme-color: #19ad93;
 $global-font-size: 16px !default;
 $global-font-family: 'Source Sans Pro',
 'Helvetica Neue',
 Arial,
 sans-serif !default;
-$global-serif-font-family : Microsoft Yahei,
+$global-serif-font-family: Microsoft Yahei,
 Athelas,
 STHeiti,
 serif !default;
@@ -16,28 +16,47 @@ serif !default;
 }
 
 // ======= header ======= //
-
 $header-top-border: #333;
 $header-background-color: #fff;
 $header-title-color: #333;
 $header-title-font: 'Oswald-Regular';
 $header-subtitle-font: 'Oswald-Regular';
-
-// ======= timeline ======= //
-
-$timeline-background-color: #dee8ef;
-$timeline-border-color: #bfdbe4;
-$timeline-color: #a1adb6;
-$timeline-logo-background-color: #90a1ac;
-$timeline-logo-size: 60%;
-$timeline-line-color: #cfdbe4;
-
 // ======= post ======= //
-$post-link-color: #0075c9;
+$post-meta-color: $global-theme-color;
+$post-link-color: $global-theme-color;
 $post-content-color: #344a5e;
 $post-blockquote-color-border: lightgray;
-
 // ======= index ======= //
-$index-post-link-color: #0075c9;
-$index-post-tag-color: #0075c9;
-
+$index-post-link-color: $global-theme-color;
+$index-post-tag-color: $global-theme-color;
+// ======= code ======= //
+// Color of code highlight, solarized.
+$code-highlight-color : ( comment: #93a1a1,
+keyword: #859900,
+number: #2aa198,
+name: #268bd2,
+attribute: #b58900,
+symbol: #cb4b16,
+built_in: #dc322f) !default;
+// Code type list.
+$code-type-list: ( html: "HTML",
+js: "JavaScript",
+bash: "Bash",
+css: "CSS",
+scss: "Scss",
+java: "Java",
+xml: "XML",
+python: "Python",
+json: "JSON",
+swift: "Swift",
+ruby: "Ruby",
+php: "PHP",
+c: "C",
+cpp: "C++",
+scheme: "Scheme",
+objectivec: "Objective-C",
+yml: "YAML",
+stylus: "Stylus",
+sql: "SQL",
+http: "HTTP",
+go: "Go") !default;

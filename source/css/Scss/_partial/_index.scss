@@ -1,6 +1,5 @@
 @import "_partial/_post";
 @import "_partial/_paginator";
-@import "_partial/_timeline";
 
 
 // index posts wrapper
@@ -8,7 +7,6 @@
     margin: 0 auto;
     max-width: 960px;
     width: 70%;
-    padding-left: 10%;
 
     .post-title-link{
         color: $index-post-link-color;

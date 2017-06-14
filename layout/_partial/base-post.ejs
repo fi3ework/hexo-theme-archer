@@ -1,11 +1,5 @@
 <article class="post">
-    <% if (_hasTimeline) { %>
-        <%- partial('_partial/base-timeline', {
-            _page: _page
-        }) %>
-    <% } %>
     <div class="post-content-box">
-        <div class="timeline-arrow"></div>
         <div class="post-title">
             <h2 class="title">
             <% if(_isTitleWithLink) { %>
@@ -17,14 +11,15 @@
             <% } %>
             </h2>
         </div>
-        <% if(_hasPostTime) { %>
-        <div class="post-meta">
-            <span class="post-time"><%- date(_page.date, "YYYY-MM-DD") %></span>
+        <div class="date-and-tags">
+            <span class="post-meta">
+                <span class="post-time"><%- date(_page.date, "YYYY-MM-DD") %></span>
+            </span>
+            <%- partial('base-title-tags', {currPost :_page}) %>
         </div>
-        <% } %>
-        <%- partial('base-title-tags', {currPost :_page}) %>
-            <div class="post-content">
-                <%- _content %>
-            </div>
+        <div class="post-content">
+            <%- _content %>
+        </div>
+        <div class="content-border-bottom"></div>
     </div>
 </article>

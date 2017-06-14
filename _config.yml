@@ -5,3 +5,18 @@ menu:
   About: /about
 
 updateLogo: logo.svg
+
+# ===========================================
+# Social links Settings
+# ===========================================
+social:
+  email: 805843200@qq.com
+  stack-overflow:
+  twitter:
+  facebook:
+  linkedin:
+  google:
+  github: fi3ework@github.io
+  weibo:
+  zhihu:
+  pocket:

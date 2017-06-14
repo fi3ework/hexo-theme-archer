@@ -1,12 +1,17 @@
 <header class="header">
-    <div class="blog-titles">
-      <a href="<%- url_for() %>" class="blog-title">
-        <%= config.title %>
-      </a>
-      <div class="blog-subtitle">
-        <%= config.subtitle %>
-      </div>
+  <div id="profile-button">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="blog-titles">
+    <a href="<%- url_for() %>" class="blog-title">
+      <%= config.title %>
+    </a>
+    <div class="blog-subtitle">
+      <%= config.subtitle %>
     </div>
+  </div>
   <nav class="navbar">
     <ul class="menu">
       <% for (name in theme.menu) { %>
