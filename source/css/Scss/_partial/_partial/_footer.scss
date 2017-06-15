@@ -1,8 +1,8 @@
 @font-face {
     font-family: 'iconfont';
     /* project id 327081 */
-    src: url('//at.alicdn.com/t/font_w1g3vdu0lyrb2o6r.eot');
-    src: url('//at.alicdn.com/t/font_w1g3vdu0lyrb2o6r.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_w1g3vdu0lyrb2o6r.woff') format('woff'), url('//at.alicdn.com/t/font_w1g3vdu0lyrb2o6r.ttf') format('truetype'), url('//at.alicdn.com/t/font_w1g3vdu0lyrb2o6r.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_3jcfgy3t0bgwrk9.eot');
+    src: url('//at.alicdn.com/t/font_3jcfgy3t0bgwrk9.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_3jcfgy3t0bgwrk9.woff') format('woff'), url('//at.alicdn.com/t/font_3jcfgy3t0bgwrk9.ttf') format('truetype'), url('//at.alicdn.com/t/font_3jcfgy3t0bgwrk9.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -13,17 +13,69 @@
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
 }
-.email::before {
-    content: "\e642";
-}
 
-.github::before {
-    content: "\e69f";
-}
+#footer {
+    position: relative;
+    margin-top: 2rem;
+    height: 6rem;
+    padding-top: 1px;
+    background-color: $footer-background-color;
+    box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.125);
+    #social {
+        margin-top: 1.5rem;
+        text-align: center;
+        .iconfont::before {
+            color: $footer-icon-default-color;
+            font-size: 3rem;
+            margin-right: 1rem;
+        }
+        .iconfont:hover::before {
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.125);
+        }
+        text-align: center;
+        .email {
+            &::before{
+                content: "\e642";
+            }
 
-footer{
-    .iconfont::before{
-        color: gray;
-        font-size: 3em;
+            &:hover::before {
+                color: wheat;
+            }
+        }
+        .github::before {
+            content: "\e69f";
+        }
+        .weibo::before {
+            content: "\e619";
+        }
+        .facebook::before {
+            content: "\e67a";
+        }
+        .twitter::before {
+            content: "\e634";
+            font-size: 2.8rem;
+        }
+        .zhihu::before {
+            position: relative;
+            top: 3px;
+            content: "\e61a";
+            font-size: 2.8rem;
+        }
+        .blog::before {
+            content: "\e60c";
+            font-size: 2.1rem;
+        }
+        .stack-overflow::before {
+            content: "\e80b";
+            font-size: 2.3rem;
+        }
+    }
+    #copyright {
+        margin: 1rem auto 1.5rem auto;
+        color: $footer-icon-default-color;
+        text-align: center;
+        a {
+            color: $global-theme-color;
+        }
     }
 }

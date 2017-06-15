@@ -24,11 +24,15 @@ $header-subtitle-font: 'Oswald-Regular';
 // ======= post ======= //
 $post-meta-color: $global-theme-color;
 $post-link-color: $global-theme-color;
+$post-background-color: #ffffff;
 $post-content-color: #344a5e;
 $post-blockquote-color-border: lightgray;
 // ======= index ======= //
 $index-post-link-color: $global-theme-color;
 $index-post-tag-color: $global-theme-color;
+// ======= footer ======= //
+$footer-background-color: #fff;
+$footer-icon-default-color: gray;
 // ======= code ======= //
 // Color of code highlight, solarized.
 $code-highlight-color : ( comment: #93a1a1,
