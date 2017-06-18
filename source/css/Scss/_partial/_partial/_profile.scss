@@ -1,7 +1,44 @@
-#side-profile{
-    position: fixed;
-    height: 20%;
-    width: 100%;
-    background-color: gray;
-    z-index: 99;
+.profile {
+    position: relative;
+    float: left;
+    margin: calc(#{$header-height} + #{$post-padding-top}) 0 0 7%;
+    background-color: #fff;
+    width: $profile-width;
+    min-height: 5rem;
+    min-width: 5rem;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+    img {
+        display: block;
+        border-radius: 7rem;
+        margin: 0 auto;
+        height: 7rem;
+        width: 7rem;
+        box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.35);
+    }
+    .site-name {
+        font: 1.5rem $global-theme-font-family;
+        text-align: center;
+        padding: 0.2rem;
+    }
+    .profile-social {
+        max-height: 95%;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 1.7rem;
+        padding: 0.5rem 0;
+        @include social($scaleSize: 0.5, $spanMargin: 0.4rem);
+    }
+    .friends {
+        font: 1.1rem $global-theme-font-family;
+        text-align: center;
+        div{
+            text-align: center;
+            font-weight: bolder;
+        }
+        a{
+            color: gray;
+            margin-right: 0.2rem;
+        }
+    }
 }

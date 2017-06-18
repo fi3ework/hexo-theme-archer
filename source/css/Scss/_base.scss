@@ -3,19 +3,27 @@ html {
     height: 100%;
 }
 
-main {
-    margin-bottom: 10rem;
+.main {
+    width: 60%;
+    padding-top: $header-height;
+    padding-left: 2rem;
+    margin-left: calc(7% + #{$profile-width} + 4rem);
+    margin-bottom: 12rem;
 }
 
 body {
     background-color: $global-background-color;
-    font-family: $global-serif-font-family;
+    font-family: $global-font-family;
     margin: 0;
     padding: 0;
     position: relative; // top: 0;
     min-height: 100%;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
+}
+
+.container{
+    padding-top: 1px;
 }
 
 * {

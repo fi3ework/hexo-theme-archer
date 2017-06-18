@@ -1,13 +1,14 @@
-@import "_post";
+@import "_index";
 
 .tags {
     @extend .index-posts;
-    padding-top: 2em;
+    padding-top: $post-padding-top !important;
 
     a{
         text-decoration: none;
         color: gray;
     }
+
 }
 
 

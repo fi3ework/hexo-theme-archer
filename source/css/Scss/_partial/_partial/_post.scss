@@ -1,11 +1,9 @@
 @import "../_post/_code.scss";
 .post {
     position: relative;
-    padding: {
-        top: 2.5rem; // bottom: 1em;
-    }
+    padding-top: $post-padding-top;
     &:last-child {
-        padding-bottom: 2.5rem;
+        padding-bottom: $post-padding-top;
     }
 }
 
@@ -29,11 +27,12 @@
             a {
                 margin-left: 1rem;
                 padding: 0.2rem 1rem 0.5rem 1rem;
-                display: inline-block;
-                // TODO: mixin
+                display: inline-block; // TODO: mixin
             }
-            a:hover {
-                box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+            a:hover::before {
+                content: '#';
+                position: absolute;
+                left: 0rem;
             }
         }
         .post-meta {
@@ -41,7 +40,7 @@
             margin: 1rem 0 0 0;
             color: $post-meta-color;
             vertical-align: middle;
-            font-family: 'Oswald-Regular';
+            font-family: $global-theme-font-family;
             line-height: 1rem;
             color: $post-time-color;
             .post-date {

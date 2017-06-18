@@ -5,18 +5,30 @@ menu:
   About: /about
 
 updateLogo: logo.svg
-
 # ===========================================
 # Social links Settings
 # ===========================================
 social:
   email: 805843200@qq.com
-  facebook: fi3ework@github.io
-  twitter: fi3ework@github.io
-  github: fi3ework@github.io
-  linkedin: fi3ework@github.io
+  facebook: www.zhihu.com/people/Firework_wee
+  twitter: www.zhihu.com/people/Firework_wee
+  github: www.zhihu.com/people/Firework_wee
+  instagram: www.zhihu.com/people/Firework_wee
+  linkedin: www.zhihu.com/people/Firework_wee
   zhihu: www.zhihu.com/people/Firework_wee
   weibo: weibo.com/u/2612303102
-  google: fi3ework@github.io
-  stack-overflow: fi3ework@github.io
-  blog: weibo.com/u/2612303102
+  google: www.zhihu.com/people/Firework_wee
+  stack-overflow: www.zhihu.com/people/Firework_wee
+  blog: www.zhihu.com/people/Firework_wee
+# ===========================================
+# friends
+# ===========================================
+friends:
+  winter : www.baidu.com
+  summer : www.baidu.com
+  spring : www.baidu.com
+  autumn : www.baidu.com
+# ===========================================
+# avatar
+# ===========================================
+avatar: /assets/avatar/kumamon.jpg

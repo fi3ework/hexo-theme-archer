@@ -12,7 +12,7 @@
     .next,
     .page-number {
         vertical-align: middle;
-        font-family: 'Oswald-Regular';
+        font-family: $global-theme-font-family ;
         display: inline-block;
         height: 1.5rem;
         width: 1.5rem;
@@ -20,19 +20,18 @@
         margin-right: 0.5rem;
         text-align: center;
         line-height: 1.5rem;
-        // border: 1px solid transparent;
         transition: all 0.2s ease-out;
-        &:hover {
+        &:not(.current):hover {
             background-color: #fff;
-            // border: 1px solid #ddd;
             box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
             transform: scale(1.06);
         }
     }
+
     a {
         color: #777;
         &:hover {
-            color: #368CCB;
+            color: $global-theme-color;
         }
     }
     a:last-of-type {

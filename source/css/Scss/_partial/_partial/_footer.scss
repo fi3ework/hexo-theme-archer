@@ -1,4 +1,128 @@
+@mixin social($scaleSize, $spanMargin) {
+    .iconfont-tinker {
+        display: inline-block;
+    }
+    .iconfont-tinker::before {
+        display: inline-block;
+        color: $footer-icon-default-color;
+        font-size: 3rem * $scaleSize;
+        margin: 0 $spanMargin 0 $spanMargin;
+        transition: all 0.2s ease-out .0s;
+        transform: scale(1);
+    }
+    .iconfont-tinker:hover::before {
+        transform: scale(1.03);
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.125);
+    }
+    .email {
+        &::before {
+            content: "\e642";
+        }
+        &:hover::before {
+            color: #0cb49d;
+        }
+    }
+    .github {
+        &::before {
+            content: "\e69f";
+        }
+        &:hover::before {
+            color: #24292e;
+        }
+    }
+    .linkedin {
+        &::before {
+            content: "\e695";
+            font-size: 2.5rem * $scaleSize;
+        }
+        &:hover::before {
+            color: #0077b5;
+        }
+    }
+    .instagram {
+        position: relative;
+        top: 3px;
+        &::before {
+            content: "\e79d";
+            font-size: 2.9rem * $scaleSize;
+        }
+        &:hover::before {
+            color: #8042b6;
+        }
+    }
+    .weibo {
+        &::before {
+            content: "\e619";
+        }
+        &:hover::before {
+            color: #d52a2a;
+        }
+    }
+    .facebook {
+        &::before {
+            position: relative;
+            content: "\e67a";
+        }
+        &:hover::before {
+            color: #3b5998;
+        }
+    }
+    .twitter {
+        &::before {
+            content: "\e634";
+        }
+        &:hover::before {
+            color: #1da1f2;
+        }
+    }
+    .zhihu {
+        position: relative;
+        top: 3px;
+        &::before {
+            font-size: 2.7rem * $scaleSize;
+            content: "\e61a";
+        }
+        &:hover::before {
+            color: #0f88eb;
+        }
+    }
+    .blog {
+        &::before {
+            font-size: 2.2rem * $scaleSize;
+            content: "\e60c";
+        }
+        &:hover::before {
+            color: #708090;
+        }
+    }
+    .stack-overflow {
+        &::before {
+            font-size: 2.3rem * $scaleSize;
+            content: "\e80b";
+        }
+        &:hover::before {
+            color: #f37f23;
+        }
+    }
+}
 
+.copyright {
+    font-family: $global-theme-font-family;
+    margin: 1rem auto 1.5rem auto;
+    color: $footer-icon-default-color;
+    text-align: center;
+    a {
+        color: $global-theme-color;
+    }
+
+    .heart{
+        vertical-align: 10%;
+        font-size: 0.7rem;
+        padding: 0 0.2rem;
+    }
+}
+
+// }
 #footer {
     position: absolute;
     width: 100%;
@@ -7,104 +131,10 @@
     padding: 1px 0 1px;
     background-color: $footer-background-color;
     box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.125);
-    #social {
+    .social {
         margin-top: 1.5rem;
         text-align: center;
         vertical-align: text-bottom;
-        .iconfont-tinker{
-            display: inline-block;
-        }
-
-        .iconfont-tinker::before {
-            display: inline-block;
-            color: $footer-icon-default-color;
-            font-size: 3rem;
-            margin-right: 1rem;
-            transition: all 0.2s ease-out .0s;
-            transform: scale(1);
-        }
-
-        .iconfont-tinker:hover::before {
-            transform: scale(1.06);
-            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.125);
-        }
-        .email {
-            &::before {
-                content: "\e642";
-            }
-            &:hover::before {
-                color: #0cb49d;
-            }
-        }
-        .github {
-            &::before {
-                content: "\e69f";
-            }
-            &:hover::before {
-                color: #24292e;
-            }
-        }
-        .weibo {
-            &::before {
-                content: "\e619";
-            }
-            &:hover::before {
-                color: #d52a2a;
-            }
-        }
-        .facebook {
-            &::before {
-                position: relative;
-                content: "\e67a";
-            }
-            &:hover::before {
-                color: #3b5998;
-            }
-        }
-        .twitter {
-            &::before {
-                content: "\e634";
-            }
-            &:hover::before {
-                color: #1da1f2;
-            }
-        }
-        .zhihu {
-            position: relative;
-            top: 3px;
-            &::before {
-                font-size: 2.7rem;
-                content: "\e61a";
-            }
-            &:hover::before {
-                color: #0f88eb;
-            }
-        }
-        .blog {
-            &::before {
-                font-size: 2.2rem;
-                content: "\e60c";
-            }
-            &:hover::before {
-                color: #708090;
-            }
-        }
-        .stack-overflow {
-            &::before {
-                font-size: 2.3rem;
-                content: "\e80b";
-            }
-            &:hover::before {
-                color: #f37f23;
-            }
-        }
-    }
-    #copyright {
-        margin: 1rem auto 1.5rem auto;
-        color: $footer-icon-default-color;
-        text-align: center;
-        a {
-            color: $global-theme-color;
-        }
+        @include social($scaleSize: 1, $spanMargin: 0.5rem);
     }
 }

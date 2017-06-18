@@ -4,6 +4,9 @@
   <body>
     <div class="container">
       <%- partial('_partial/base-header') %>
+      <% if (is_home()) { %>
+      <%- partial('_partial/base-profile') %>
+      <% } %>
       <main class="main">
         <%- body %>
       </main>

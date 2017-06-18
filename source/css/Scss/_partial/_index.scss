@@ -1,19 +1,10 @@
 @import "_partial/_post";
 @import "_partial/_paginator";
 
-
-// index posts wrapper
-    
-.header{
-    position: fixed;
-    z-index: 5;
-    top: 0;
-}
-
  .index-posts {
-    margin: $header-height auto 0;
+    margin : 0 0 0 0;
+    padding-top: 1px;
     max-width: 960px;
-    width: 60%;
 
     .post-title-link{
         color: $index-post-link-color;

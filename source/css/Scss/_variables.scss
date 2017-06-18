@@ -3,27 +3,30 @@ $global-background-color: #fdfdfd;
 // $global-theme-color: #19ad93;
 $global-theme-color: #f75357;
 $global-font-size: 16px !default;
-$global-font-family: 'Source Sans Pro',
-'Helvetica Neue',
-Arial,
-sans-serif !default;
-$global-serif-font-family: Microsoft Yahei,
+$global-theme-font-family: 'Oswald-Regular';
+$global-theme-font-family-light: 'Oswald-Regular-Light';
+$global-font-family: Microsoft Yahei,
 Athelas,
 STHeiti,
 serif !default;
+
 @font-face {
     font-family: 'Oswald-Regular';
     src: url('/font/Oswald-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Oswald-Regular-Light';
+    src: url('/font/Oswald-Light.ttf');
 }
 
 // ======= iconfont ======= //
 @font-face {
     font-family: 'iconfont-tinker';
     /* project id 327081 */
-    src: url('//at.alicdn.com/t/font_4w68apqznt3s1yvi.eot');
-    src: url('//at.alicdn.com/t/font_4w68apqznt3s1yvi.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_4w68apqznt3s1yvi.woff') format('woff'), url('//at.alicdn.com/t/font_4w68apqznt3s1yvi.ttf') format('truetype'), url('//at.alicdn.com/t/font_4w68apqznt3s1yvi.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_cz6zxpgncow29.eot');
+    src: url('//at.alicdn.com/t/font_cz6zxpgncow29.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_cz6zxpgncow29.woff') format('woff'), url('//at.alicdn.com/t/font_cz6zxpgncow29.ttf') format('truetype'), url('//at.alicdn.com/t/font_cz6zxpgncow29.svg#iconfont') format('svg');
 }
-
 
 .iconfont-tinker {
     font-family: "iconfont-tinker" !important;
@@ -39,12 +42,15 @@ $header-height: 4.5rem;
 $header-top-border: #fcfcfc;
 $header-background-color: #24292e;
 $header-title-color: #dedede;
-$header-title-font: 'Oswald-Regular';
-$header-subtitle-font: 'Oswald-Regular';
-$header-nav-font: 'Oswald-Regular';
+$header-title-font: $global-theme-font-family ;
+$header-subtitle-font: $global-theme-font-family ;
+$header-nav-font: $global-theme-font-family ;
 $header-nav-color: #dedede;
 $header-profile-width: 3rem;
+// ======== profile ======= //
+$profile-width: 10rem;
 // ======= post ======= //
+$post-padding-top: 2.5rem;
 $post-meta-color: $global-theme-color;
 $post-link-color: $global-theme-color;
 $post-background-color: #ffffff;

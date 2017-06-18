@@ -1,3 +1,17 @@
-<!--<div id="side-profile">
-    asdfasdf
-</div>-->
+<div class="profile">
+    <img src= <%- theme.avatar %> >
+    <div class="site-name"><%- config.author %></div>
+    <div class="profile-social">
+        <%- partial('base-social') %>
+    </div>
+    <% if(theme.friends.length !== 0) { %>
+        <div class="friends">
+            <div>FRIENDS</div>
+            <% for (name in theme.friends) { %>
+                <span>
+                    <a href= <%- theme.friends[name] %>><%- name %></a>
+                </span>
+            <% } %>
+        </div>
+    <% } %>
+</div>

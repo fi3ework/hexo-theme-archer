@@ -23,12 +23,19 @@
     <% } else {%>
       <% currPagePosts = page.posts; %>
     <% } %>
-    <div> Total : <%= currPagePosts.length %> </div>
-    <ul class="post-archive">
+    <div class="total-archive"> Total : <%= currPagePosts.length %> </div>
+    <% let toCloseUl = 0 %>
+    <div class="post-archive">
       <% currPagePosts.forEach(function (post) { %>
       <% if (showYear != Number(date(post.date, "YYYY"))) { %>
       <% showYear = date(post.date, "YYYY"); %>
-      <div> <%= showYear %> </div>
+      <% if (toCloseUl === 1) { %>
+      <% toCloseUl = 0; %>
+        </ul>
+      <% } %>
+      <div class="archive-year"> <%= showYear %> </div>
+      <ul class="year-list">
+      <% toCloseUl = 1; %>
       <% } %>
           <li class="post-item">
             <span class="post-date"><%-date(post.date, "YYYY-MM-DD") %></span>
@@ -37,6 +44,6 @@
             </a>
           </li>
       <% }) %>
-    </ul>
+    </div>
   </div>
 </section>

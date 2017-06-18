@@ -1,11 +1,15 @@
 .header {
-    position: relative; // overflow: hidden;
+
+
+    position: fixed;
+    top: 0;
     width: 100%;
     height: $header-height;
     background-color: $header-background-color;
     border-top: 3px solid $header-top-border;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
     overflow: hidden;
+    z-index: 5;
     .profile-button {
         position: relative;
         float: left;
@@ -31,7 +35,7 @@
     }
     .site-banner {
         float: left;
-        width: calc(100% - #{$header-profile-width} - 4px);
+        width: calc(100% - #{$header-profile-width} - 20px);
         position: relative;
         top: 0;
         height: 100%; // transition: all 0.2s ease-out;
