@@ -10,12 +10,12 @@
             </a>
             <% } %>
             </h2>
-        </div>
-        <div class="date-and-tags">
-            <span class="post-meta">
-                <span class="post-time"><%- date(_page.date, "YYYY-MM-DD") %></span>
-            </span>
-            <%- partial('base-title-tags', {currPost :_page}) %>
+            <div class="post-meta">
+                <div class="post-date">
+                <span class="post-calander iconfont-tinker"></span><span class="post-time"><%- date(_page.date, "YYYY-MM-DD") %></span>
+                </div>
+                <%- partial('base-title-tags', {currPost :_page}) %>
+            </div>
         </div>
         <div class="post-content">
             <%- _content %>

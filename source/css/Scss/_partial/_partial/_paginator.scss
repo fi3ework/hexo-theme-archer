@@ -1,26 +1,41 @@
+@font-face {
+    font-family: 'iconfont-paginator';
+    /* project id 329257 */
+    src: url('//at.alicdn.com/t/font_tk5um7kk205rvn29.eot');
+    src: url('//at.alicdn.com/t/font_tk5um7kk205rvn29.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_tk5um7kk205rvn29.woff') format('woff'), url('//at.alicdn.com/t/font_tk5um7kk205rvn29.ttf') format('truetype'), url('//at.alicdn.com/t/font_tk5um7kk205rvn29.svg#iconfont') format('svg');
+}
+
 .page-nav {
-    padding: .3em 0;
     text-align: center;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 2px #ddd;
-    
+    .current,
     .prev,
     .next,
     .page-number {
-        padding: .1em .5em;
-    }
-    .prev {
-        float: left;
-    }
-    .next {
-        float: right;
+        vertical-align: middle;
+        font-family: 'Oswald-Regular';
+        display: inline-block;
+        height: 1.5rem;
+        width: 1.5rem;
+        padding: .2rem .2rem;
+        margin-right: 0.5rem;
+        text-align: center;
+        line-height: 1.5rem;
+        // border: 1px solid transparent;
+        transition: all 0.2s ease-out;
+        &:hover {
+            background-color: #fff;
+            // border: 1px solid #ddd;
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+            transform: scale(1.06);
+        }
     }
     a {
         color: #777;
-        text-decoration: none;
         &:hover {
             color: #368CCB;
         }
+    }
+    a:last-of-type {
+        font-family: "iconfont-paginator";
     }
 }

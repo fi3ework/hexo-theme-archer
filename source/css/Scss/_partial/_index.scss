@@ -3,8 +3,15 @@
 
 
 // index posts wrapper
+    
+.header{
+    position: fixed;
+    z-index: 5;
+    top: 0;
+}
+
  .index-posts {
-    margin: 0 auto;
+    margin: $header-height auto 0;
     max-width: 960px;
     width: 60%;
 

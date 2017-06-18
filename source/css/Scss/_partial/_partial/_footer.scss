@@ -1,73 +1,102 @@
-@font-face {
-    font-family: 'iconfont';
-    /* project id 327081 */
-    src: url('//at.alicdn.com/t/font_3jcfgy3t0bgwrk9.eot');
-    src: url('//at.alicdn.com/t/font_3jcfgy3t0bgwrk9.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_3jcfgy3t0bgwrk9.woff') format('woff'), url('//at.alicdn.com/t/font_3jcfgy3t0bgwrk9.ttf') format('truetype'), url('//at.alicdn.com/t/font_3jcfgy3t0bgwrk9.svg#iconfont') format('svg');
-}
-
-.iconfont {
-    font-family: "iconfont" !important;
-    font-size: 16px;
-    font-style: normal;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: 0.2px;
-    -moz-osx-font-smoothing: grayscale;
-}
 
 #footer {
-    position: relative;
-    margin-top: 2rem;
-    height: 6rem;
-    padding-top: 1px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    padding: 1px 0 1px;
     background-color: $footer-background-color;
     box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.125);
     #social {
         margin-top: 1.5rem;
         text-align: center;
-        .iconfont::before {
+        vertical-align: text-bottom;
+        .iconfont-tinker{
+            display: inline-block;
+        }
+
+        .iconfont-tinker::before {
+            display: inline-block;
             color: $footer-icon-default-color;
             font-size: 3rem;
             margin-right: 1rem;
+            transition: all 0.2s ease-out .0s;
+            transform: scale(1);
         }
-        .iconfont:hover::before {
+
+        .iconfont-tinker:hover::before {
+            transform: scale(1.06);
             text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.125);
         }
-        text-align: center;
         .email {
-            &::before{
+            &::before {
                 content: "\e642";
             }
-
             &:hover::before {
-                color: wheat;
+                color: #0cb49d;
             }
         }
-        .github::before {
-            content: "\e69f";
+        .github {
+            &::before {
+                content: "\e69f";
+            }
+            &:hover::before {
+                color: #24292e;
+            }
         }
-        .weibo::before {
-            content: "\e619";
+        .weibo {
+            &::before {
+                content: "\e619";
+            }
+            &:hover::before {
+                color: #d52a2a;
+            }
         }
-        .facebook::before {
-            content: "\e67a";
+        .facebook {
+            &::before {
+                position: relative;
+                content: "\e67a";
+            }
+            &:hover::before {
+                color: #3b5998;
+            }
         }
-        .twitter::before {
-            content: "\e634";
-            font-size: 2.8rem;
+        .twitter {
+            &::before {
+                content: "\e634";
+            }
+            &:hover::before {
+                color: #1da1f2;
+            }
         }
-        .zhihu::before {
+        .zhihu {
             position: relative;
             top: 3px;
-            content: "\e61a";
-            font-size: 2.8rem;
+            &::before {
+                font-size: 2.7rem;
+                content: "\e61a";
+            }
+            &:hover::before {
+                color: #0f88eb;
+            }
         }
-        .blog::before {
-            content: "\e60c";
-            font-size: 2.1rem;
+        .blog {
+            &::before {
+                font-size: 2.2rem;
+                content: "\e60c";
+            }
+            &:hover::before {
+                color: #708090;
+            }
         }
-        .stack-overflow::before {
-            content: "\e80b";
-            font-size: 2.3rem;
+        .stack-overflow {
+            &::before {
+                font-size: 2.3rem;
+                content: "\e80b";
+            }
+            &:hover::before {
+                color: #f37f23;
+            }
         }
     }
     #copyright {

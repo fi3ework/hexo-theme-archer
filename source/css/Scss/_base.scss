@@ -1,14 +1,24 @@
-html{
+html {
     font-size: global-font-size;
+    height: 100%;
 }
 
-body{
+main {
+    margin-bottom: 10rem;
+}
+
+body {
     background-color: $global-background-color;
-    // font-family: $title-font;
     font-family: $global-serif-font-family;
+    margin: 0;
+    padding: 0;
+    position: relative; // top: 0;
+    min-height: 100%;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
 }
 
-*{
+* {
     font-family: inherit;
 }
 
@@ -16,8 +26,26 @@ a {
     text-decoration: none;
 }
 
-ul, li, h1, h2, h3, h4, h5, h6, p, blockquote{
-    padding: 0;
-    margin: 0;
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    // padding: 0;
+    // margin: 0;
+    // list-style-type: none;
+}
+
+h2 {
+    // padding: 0;
+    // height: 
+}
+
+ul {
     list-style-type: none;
 }

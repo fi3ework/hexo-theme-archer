@@ -3,4 +3,7 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <title><%= config.title %></title>
   <%- css('css/Scss/style.css') %>
+  <% if (is_post()) { %>
+  <script src="/script/header.js" defer></script>
+  <% } %>
 </head>

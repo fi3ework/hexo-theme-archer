@@ -4,9 +4,9 @@
     <% for (name in theme.social) { %>
         <% if (theme.social[name] != null) { %>
             <% if (name === "email") { %>
-                <a href = "emailto:<%- theme.social[name] %>" class = "iconfont <%- name %>" title = <%- name %> ></a>
+                <a href = "emailto:<%- theme.social[name] %>" class = "iconfont-tinker <%- name %>" title = <%- name %> ></a>
             <% } else { %>
-                <a href= "<%- url_for(theme.social[name]) %>" class = "iconfont <%- name %>" target= "_black" title = "<%- name %>" ></a>
+                <a href= "<%- url_for(theme.social[name]) %>" class = "iconfont-tinker <%- name %>" target= "_black" title = "<%- name %>" ></a>
             <% } %>
         <% } %>
     <% } %>
