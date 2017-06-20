@@ -46,6 +46,8 @@
             height: $header-avatar-size;
             border-radius: 0.2rem;
         }
+
+
         .site-post-banner {
             float: right;
             position: relative;
@@ -144,5 +146,11 @@
     }
     .site-post-banner.post-banner-show {
         top: -100%;
+    }
+}
+
+.header.index-header{
+    .header-avatar{
+        display: none;
     }
 }
