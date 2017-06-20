@@ -1,4 +1,3 @@
-@import "../_post/_code.scss";
 .post {
     position: relative;
     padding-top: $post-padding-top;
@@ -54,9 +53,6 @@
                     padding-top: 5px;
                     font-size: 0.8rem;
                     transform: translateY(0.1rem);
-                }
-                &:hover {
-                    color: gray;
                 }
             }
             .post-tags {

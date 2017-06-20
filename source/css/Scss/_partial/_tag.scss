@@ -1,14 +1,13 @@
-@import "_index";
-
-.tags {
+.main.tag-page {
+    margin-left: auto;
+    margin-right: auto;
+    .tags {
     @extend .index-posts;
-    padding-top: $post-padding-top !important;
-
-    a{
-        text-decoration: none;
-        color: gray;
+        padding-top: $post-padding-top;
+        a {
+            text-decoration: none;
+            font-family: $global-theme-font-family;
+            color: $global-theme-color;
+        }
     }
-
 }
-
-

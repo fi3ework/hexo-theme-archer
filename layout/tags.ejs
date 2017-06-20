@@ -1,12 +1,14 @@
-<section class="tags">
-<div class="post-content-box">
-<% if (site.tags) { %>
-  <div class="tags-tags">
-    <% site.tags.forEach(function (tag) { %>
-      <span class="post-tag"><a href= "<%- url_for(tag.path) %>"> <%- tag.slug %></a></span>
-      <% }) %>
+<main class="main tag-page">
+  <section class="tags">
+  <div class="post-content-box">
+  <% if (site.tags) { %>
+    <div class="tags-tags-box">
+      <% site.tags.forEach(function (tag) { %>
+        <span class="post-tag"><a href= "<%- url_for(tag.path) %>"> <%- tag.slug %></a></span>
+        <% }) %>
+      <!--<%- tagcloud(site.tags) %>-->
+    </div>
+    <% } %>
   </div>
-  <% } %>
-  <%- tagcloud(site.tags) %>
-</div>
-</section>
+  </section>
+</main>

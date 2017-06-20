@@ -1,6 +1,5 @@
-@import "_partial/_paginator";
-@import "_index";
-
-.posts{
-    @extend .index-posts;
+.post-page {
+    .posts {
+        @extend .index-posts;
+    }
 }

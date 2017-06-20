@@ -39,6 +39,7 @@ serif !default;
 
 // ======= header ======= //
 $header-height: 4.5rem;
+$header-avatar-size :2.7rem;
 $header-top-border: #fcfcfc;
 $header-background-color: #24292e;
 $header-title-color: #dedede;
@@ -56,7 +57,7 @@ $post-link-color: $global-theme-color;
 $post-background-color: #ffffff;
 $post-content-color: #344a5e;
 $post-blockquote-color-border: lightgray;
-$post-time-color: lightgray;
+$post-time-color: #bbb;
 // ======= index ======= //
 $index-post-link-color: $global-theme-color;
 $index-post-tag-color: $global-theme-color;

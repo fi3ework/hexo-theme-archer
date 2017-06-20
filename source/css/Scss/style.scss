@@ -1,11 +1,17 @@
+// Helpers
 @import "_normalize";
 @import "_variables";
 @import "_base";
-
-@import "_partial/_partial/_header";
+@import "_mixin";
+// partial
 @import "_partial/_partial/_footer";
+@import "_partial/_partial/_header";
 @import "_partial/_partial/_profile";
+@import "_partial/_partial/_paginator";
+@import "_partial/_post/_code";
+@import "_partial/_partial/_post";
+// pages
 @import "_partial/_index";
 @import "_partial/_post";
-@import "_partial/_tag";
 @import "_partial/_archive";
+@import "_partial/_tag";

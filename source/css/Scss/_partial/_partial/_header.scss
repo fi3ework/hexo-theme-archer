@@ -1,6 +1,4 @@
 .header {
-
-
     position: fixed;
     top: 0;
     width: 100%;
@@ -33,39 +31,53 @@
             box-shadow: 2px 0px 2px 0px rgba(0, 0, 0, 0.125);
         }
     }
-    .site-banner {
+    .banner {
         float: left;
         width: calc(100% - #{$header-profile-width} - 20px);
         position: relative;
         top: 0;
-        height: 100%; // transition: all 0.2s ease-out;
-        .blog-titles {
+        height: 100%;
+        .header-avatar {
+            float: right;
             position: relative;
-            float: left;
-            width: 20rem;
-            margin-left: 17%; // margin-top: 10%;
-            top: 50%;
-            transform: translateY(-50%);
+            margin-right: 1rem;
+            margin-top: calc((#{$header-height} - #{$header-avatar-size }) / 2);
+            width: $header-avatar-size;
+            height: $header-avatar-size;
+            border-radius: 0.2rem;
+        }
+        .site-post-banner {
+            float: right;
+            position: relative;
+            width: 20%;
+            top: 0%;
+            margin-right: 5%; 
             transition: all 0.2s ease-out;
-            .blog-title {
-                display: block; // margin-top: 5%;
-                color: $header-title-color;
-                font: 1.4rem $header-title-font;
-            }
-            .blog-subtitle {
-                display: block;
-                font: 1rem $header-subtitle-font;
-                color: $header-title-color;
+            height: 100%;
+            .blog-titles {
+                float: left;
+                height: 100%;
+                vertical-align: center;
+                .blog-title {
+                    display: inline-block;
+                    margin-top: .3rem;
+                    color: $header-title-color;
+                    font: 1.4rem $header-title-font;
+                }
+                .blog-subtitle {
+                    display: block;
+                    font: 1rem $header-subtitle-font;
+                    color: $header-title-color;
+                }
             }
         }
         .post-banner {
-            position: absolute;
+            float: left;
+            clear: both;
+            height: 100%;
             top: 100%;
-            left: 17%;
-            width: calc(100% - #{$header-profile-width} - 1px);
-            transition: all 0.2s ease-out;
             .post-name {
-                font: 1.4rem $header-title-font;
+                font: 1.4rem/#{$header-height} $header-title-font;
                 color: $header-title-color;
             }
         }
@@ -74,7 +86,7 @@
             float: right;
             margin-right: 13%;
             height: 100%;
-            width: 25rem;
+            width: 30%;
             font: 1.3rem $header-nav-font;
             ul.menu {
                 position: absolute;
@@ -127,11 +139,10 @@
             }
         }
     }
-    .blog-titles.blog-titles-hidden {
-        top: -50%;
+    .site-post-banner.blog-titles-show {
+        top: 0%;
     }
-    .post-banner.post-banner-show {
-        top: 50%;
-        transform: translateY(-55%);
+    .site-post-banner.post-banner-show {
+        top: -100%;
     }
 }

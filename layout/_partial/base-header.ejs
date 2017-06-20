@@ -6,20 +6,7 @@
       <div></div>
     </div>
   </div>
-  <div class="site-banner">
-    <div class="blog-titles">
-      <a href="<%- url_for() %>" class="blog-title">
-        <%= config.title %>
-      </a>
-      <div class="blog-subtitle">
-        <%= config.subtitle %>
-      </div>
-    </div>
-    <% if (is_post()) { %>
-      <div class="post-banner">
-        <div class="post-name"><%- page.title %></div>
-      </div>
-    <% } %>
+  <div class="banner">
     <nav class="navbar">
       <ul class="menu">
         <% for (name in theme.menu) { %>
@@ -37,7 +24,25 @@
           </li>
           <% } %>
       </ul>
+    </nav>
+    <div class="site-post-banner">
+      <div class="blog-titles">
+        <a href="<%- url_for() %>" class="blog-title">
+          <%= config.title %>
+        </a>
+        <div class="blog-subtitle">
+          <%= config.subtitle %>
+        </div>
+      </div>
+      <% if (is_post()) { %>
+      <div class="post-banner">
+        <div class="post-name">
+          <%- page.title %>
+        </div>
+      </div>
+      <% } %>
     </div>
-  </nav>
+    <img class="header-avatar" src= <%- theme.avatar %> >
+  </div>
 
 </header>
