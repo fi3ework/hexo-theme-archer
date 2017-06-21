@@ -46,14 +46,12 @@
             height: $header-avatar-size;
             border-radius: 0.2rem;
         }
-
-
         .site-post-banner {
             float: right;
             position: relative;
             width: 20%;
             top: 0%;
-            margin-right: 5%; 
+            margin-right: 5%;
             transition: all 0.2s ease-out;
             height: 100%;
             .blog-titles {
@@ -149,8 +147,12 @@
     }
 }
 
-.header.index-header{
-    .header-avatar{
-        display: none;
+.header.index-header {
+    .header-avatar {
+        opacity: 0;
+        transition: all 0.2s ease-out;
+    }
+    .header-avatar-animate {
+        opacity: 1 ;
     }
 }
