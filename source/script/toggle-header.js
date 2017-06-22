@@ -1,16 +1,20 @@
 (function () {
     // 顶部标题栏切换
-    let postTitleEle = document.getElementsByClassName("post-title")[0];
-    let postTitleHeight = getAbsPosition(postTitleEle).y;
-    let toggleBanner = document.getElementsByClassName("site-post-banner")[0];
-    let isPostTitleShow = 0;
-    function toggleHeder() {
+    let postTitleEle = document.getElementsByClassName("post-title")[0],
+        postTitleHeight = tinkerUtil.getAbsPosition(postTitleEle).y,
+        toggleBanner = document.getElementsByClassName("site-post-banner")[0],
+        isPostTitleShow = 0,
+        postTitle = document.getElementsByClassName("post-name")[0];
+
+    function toggleHeader() {
+        // 超过标题
         if (document.body.scrollTop > postTitleHeight) {
             if (!isPostTitleShow) {
                 toggleBanner.classList.add("post-banner-show");
                 toggleBanner.classList.remove("blog-banner-show");
                 isPostTitleShow = 1;
             }
+            // 没有超过标题
         } else {
             if (isPostTitleShow) {
                 toggleBanner.classList.add("blog-banner-show");
@@ -20,21 +24,12 @@
         }
 
     }
-    document.addEventListener("scroll", toggleHeder);
+
+    // 滚动时切换标题    
+    document.addEventListener("scroll", toggleHeader);
+    // 点击文章标题回页首
+    postTitle.addEventListener("click", tinkerUtil.backTop);
 
 
-    // 获取元素在页面上相对左上角的位置
-    function getAbsPosition(e) {
-        var x = e.offsetLeft;
-        var y = e.offsetTop;
-        while (e = e.offsetParent) {
-            x += e.offsetLeft;
-            y += e.offsetTop;
-        }
-        return {
-            "x": x,
-            "y": y
-        };
-    }
 
 }());

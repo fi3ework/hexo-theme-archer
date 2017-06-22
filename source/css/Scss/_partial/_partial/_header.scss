@@ -75,7 +75,9 @@
             float: left;
             clear: both;
             height: 100%;
+            min-width: 7rem;
             top: 100%;
+            cursor: pointer;  
             .post-name {
                 font: 1.4rem/#{$header-height} $header-title-font;
                 color: $header-title-color;
@@ -87,6 +89,7 @@
             margin-right: 13%;
             height: 100%;
             width: 30%;
+            min-width: 20rem;
             font: 1.3rem $header-nav-font;
             ul.menu {
                 position: absolute;
@@ -149,10 +152,13 @@
 
 .header.index-header {
     .header-avatar {
+        // display: none;
         opacity: 0;
-        transition: all 0.2s ease-out;
+        transition: opacity 0.2s ease-out;
     }
     .header-avatar-animate {
+        // display: block;
         opacity: 1 ;
+        cursor: pointer;
     }
 }

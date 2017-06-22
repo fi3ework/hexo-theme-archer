@@ -1,151 +1,192 @@
-code,
-pre {
-    padding: 7px;
-    // font-size: $code-font-size;
-    // font-family: $code-font-family;
-    // background: $code-background;
+pre,
+.highlight {
+    background: #272822;
+    margin: 10px 0;
+    padding: 10px 10px;
+    overflow: auto;
+    color: #fff;
+    font-size: 0.9em;
+    line-height: 22.400000000000002px;
+}
+
+.highlight .gutter pre,
+.highlight .gutter pre .line,
+.gist .gist-file .gist-data .line-numbers {
+    color: #666;
+}
+
+pre,
+code {
+    font-family: Menlo, "Source Code Pro", Consolas, Monaco, Consolas, monospace;
 }
 
 code {
-    padding: 3px 5px;
-    border-radius: 4px;
-    // color: $code-color;
+    background: #eee;
+    padding: 0 0.3em;
+    border: none;
+}
+
+pre code {
+    background: none;
+    text-shadow: none;
+    padding: 0;
+    color: #fff;
 }
 
 .highlight {
-    margin: 1em 0;
-    border-radius: 5px;
-    overflow-x: auto;
-    border: 1px solid rgba(0,0,0,0.125);
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.125);
-    position: relative;
-    table {
-        position: relative;
-        &::after {
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            padding: 2px 7px;
-            // font-size: $code-font-size;
-            font-weight: bold;
-            // color: darken($gray, 10%);
-            // background: darken($code-background, 3%);
-            content: 'Code';
-        }
-    }
-    @each $sign,
-    $text in $code-type-list {
-        &.#{$sign}>table::after {
-            content: $text;
-        }
-        &.#{$sign}>figcaption>span::after {
-            content: ' · ' + $text;
-        }
-        &.#{$sign} figcaption+table {
-            &::after {
-                display: none;
-            }
-        }
-    }
-    
-    figcaption {
-        position: absolute;
-        top: 0;
-        width: 100%;
-        padding: 2px 7px;
-        // font-size: $code-font-size;
-        font-weight: bold;
-        // color: darken($gray, 10%);
-        // background: darken($code-background, 3%);
-        z-index: 20;
-        overflow-x: hidden;
-        box-sizing: border-box;
-        &>a {
-            position: absolute;
-            right: 0;
-            display: inline-box;
-            margin-right: 7px;
-            font-weight: 400;
-            &:hover {
-                text-decoration: none;
-                border: 0;
-            }
-        }
-    }
-    .code {
-        pre {
-            margin: 0;
-            padding: 30px 10px 10px;
-        }
-    }
-    .gutter {
-        width: 5px;
-        color: gray;
-        pre {
-            margin: 0;
-            padding: 30px 7px 10px;
-        }
-    }
-    .line {
-        // Fix code block null line height and
-        // Synchronous gutter and code line highly.
-        // height: round($code-font-size * 1.5);
-    }
-    table,
-    tr,
-    td {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        border-collapse: collapse;
-    }
-    .code {
-        .comment,
-        .quote {
-            color: map-get($code-highlight-color, comment);
-        }
-        .keyword,
-        .selector-tag,
-        .addition {
-            color: map-get($code-highlight-color, keyword);
-        }
-        .number,
-        .string,
-        .meta .meta-string,
-        .literal,
-        .doctag,
-        .regexp {
-            color: map-get($code-highlight-color, number);
-        }
-        .title,
-        .section,
-        .name,
-        .selector-id,
-        .selector-class {
-            color: map-get($code-highlight-color, title);
-        }
-        .attribute,
-        .attr,
-        .variable,
-        .template-variable,
-        .class .title,
-        .type {
-            color: map-get($code-highlight-color, attribute);
-        }
-        .symbol,
-        .bullet,
-        .subst,
-        .meta,
-        .meta .keyword,
-        .selector-attr,
-        .selector-pseudo,
-        .link {
-            color: map-get($code-highlight-color, symbol);
-        }
-        .built_in,
-        .deletion {
-            color: map-get($code-highlight-color, built_in);
-        }
-    }
+    border-radius: 4px;
+}
+
+.highlight pre {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.highlight table {
+    margin: 0;
+    width: auto;
+}
+
+.highlight td {
+    border: none;
+    padding: 0;
+}
+
+.highlight figcaption {
+    color: highlight-comment;
+    line-height: 1em;
+    margin-bottom: 1em;
+}
+
+.highlight figcaption:before,
+.highlight figcaption:after {
+    content: "";
+    display: table;
+}
+
+.highlight figcaption:after {
+    clear: both;
+}
+
+.highlight figcaption a {
+    float: right;
+}
+
+.highlight .gutter pre {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.highlight .gutter pre .line {
+    text-shadow: none;
+}
+
+.highlight .line {
+    color: #fff;
+    min-height: 19px;
+}
+
+.gist {
+    margin: 0 -20px;
+    border-style: solid;
+    border-color: #ddd;
+    border-width: 1px 0;
+    background: #272822;
+    padding: 15px 20px 15px 0;
+}
+
+.gist .gist-file {
+    border: none;
+    font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+    margin: 0;
+}
+
+.gist .gist-file .gist-data {
+    background: none;
+    border: none;
+}
+
+.gist .gist-file .gist-data .line-numbers {
+    background: none;
+    border: none;
+    padding: 0 20px 0 0;
+}
+
+.gist .gist-file .gist-data .line-data {
+    padding: 0 !important;
+}
+
+.gist .gist-file .highlight {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.gist .gist-file .gist-meta {
+    background: #272822;
+    color: highlight-comment;
+    font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-shadow: 0 0;
+    padding: 0;
+    margin-top: 1em;
+    margin-left: 20px;
+}
+
+.gist .gist-file .gist-meta a {
+    color: #258fb8;
+    font-weight: normal;
+}
+
+.gist .gist-file .gist-meta a:hover {
+    text-decoration: underline;
+}
+
+pre .comment {
+    color: #75715e;
+}
+
+pre .keyword,
+pre .function .keyword,
+pre .class .params {
+    color: #66d9ef;
+}
+
+pre .tag,
+pre .doctype,
+pre .params,
+pre .function,
+pre .css .value {
+    color: #fff;
+}
+
+pre .css~* .tag,
+pre .title,
+pre .at_rule,
+pre .at_rule .keyword,
+pre .preprocessor,
+pre .preprocessor .keyword {
+    color: #f92672;
+}
+
+pre .attribute,
+pre .built_in,
+pre .class,
+pre .css~* .class,
+pre .function .title {
+    color: #a6e22e;
+}
+
+pre .value,
+pre .string {
+    color: #e6db74;
+}
+
+pre .number {
+    color: #7163d7;
+}
+
+pre .id,
+pre .css~* .id {
+    color: #fd971f;
 }

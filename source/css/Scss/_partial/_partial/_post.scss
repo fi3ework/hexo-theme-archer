@@ -14,24 +14,24 @@
     background-color: $post-background-color;
     z-index: 3;
     .post-title {
-        margin: 0.5rem 0;
         font-size: 1.5em;
         text-align: center;
         overflow: hidden;
         h2 {
             float: left;
             position: relative;
-            font-family: 'PingFang SC', STZhongsong, Helvetica, Arial, '宋体', sans-serif;
-            margin: 0.6rem 0 0.6rem;
+            font-family: $global-font-family;
+            padding: 0.3rem 0 1.2rem 0;
+            margin: 0;
             a {
-                margin-left: 1rem;
-                padding: 0.2rem 1rem 0.5rem 1rem;
+                // margin-left: 1rem;
+                // padding: 0.2rem 1rem 0.5rem 0rem;
                 display: inline-block; // TODO: mixin
             }
             a:hover::before {
-                content: '#';
-                position: absolute;
-                left: 0rem;
+                // content: '#';
+                // position: absolute;
+                // left: 0rem;
             }
         }
         .post-meta {
@@ -82,7 +82,7 @@
 }
 
 .post-content {
-    padding-top: 1rem;
+    // padding-top: 0.3rem;
     font-size: 0.85em;
     h1 {
         // line-height: 4rem;
@@ -121,6 +121,11 @@
         // line-height: 1.3rem;
         margin-top: 0.2rem;
         margin-bottom: 0.2rem;
+    }
+    img{
+        display: block;
+        max-width: 100%;
+        margin: 1rem auto 1rem;
     }
     blockquote {
         margin: 0.3rem 0 0.3rem 1rem;

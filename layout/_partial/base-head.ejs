@@ -4,9 +4,11 @@
   <title><%= config.title %></title>
   <%- css('css/Scss/style.css') %>
   <% if (is_post()) { %>
+  <script src="/script/util.js" defer></script>
   <script src="/script/toggle-header.js" defer></script>
   <% } %>
   <% if (is_home()) { %>
+  <script src="/script/util.js" defer></script>
   <script src="/script/toggle-avatar.js" defer></script>
   <% } %>
 </head>

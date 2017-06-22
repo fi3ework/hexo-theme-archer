@@ -1,18 +1,16 @@
 (function () {
     // 主页头像切换
-    let avatarClassEles = document.getElementsByClassName("profile-avatar");
-    console.log(avatarClassEles)
-    if (avatarClassEles !== undefined) {
-        let profileAvatar = avatarClassEles[0];
-        let headerAvatar = document.getElementsByClassName("header-avatar")[0];
-        let profileAvatarHeight = getAbsPosition(profileAvatar).y;
-        let isHeaderAvatarShow = 0;
+    let profileAvatar = document.getElementsByClassName("profile-avatar")[0],
+        headerAvatar = document.getElementsByClassName("header-avatar")[0];
+    if (typeof profileAvatar !== 'undefined') {
+        let profileAvatarHeight = tinkerUtil.getAbsPosition(profileAvatar).y,
+            isHeaderAvatarShow = 0;
 
         function toggleAvatar() {
             if (document.body.scrollTop > profileAvatarHeight) {
                 if (!isHeaderAvatarShow) {
                     isHeaderAvatarShow = 1;
-                    headerAvatar.classList.add ("header-avatar-animate");
+                    headerAvatar.classList.add("header-avatar-animate");
                 }
             } else {
                 if (isHeaderAvatarShow) {
@@ -21,20 +19,11 @@
                 }
             }
         }
+        // header头像切换
         document.addEventListener("scroll", toggleAvatar);
+        // header头像点击回顶部
+        headerAvatar.addEventListener("click", tinkerUtil.backTop);
     }
 
-    // 获取元素在页面上相对左上角的位置
-    function getAbsPosition(e) {
-        var x = e.offsetLeft;
-        var y = e.offsetTop;
-        while (e = e.offsetParent) {
-            x += e.offsetLeft;
-            y += e.offsetTop;
-        }
-        return {
-            "x": x,
-            "y": y
-        };
-    }
+
 }());

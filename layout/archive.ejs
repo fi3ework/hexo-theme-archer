@@ -40,9 +40,11 @@
         <% } %>
             <li class="post-item">
               <span class="post-date"><%-date(post.date, "YYYY-MM-DD") %></span>
-              <a class="post-title" href= "<%- post.link %>" %>
-                <%= post.title %>
-              </a>
+              <% if (is_archive()) { %>
+              <a class="post-title" href= "<%= post.link %>" ><%= post.title %></a>
+              <% } else { %>
+              <a class="post-title" href= "<%- url_for(post.path) %>" ><%= post.title %></a>
+              <% } %>
             </li>
         <% }) %>
       </div>
