@@ -1,0 +1,195 @@
+.post {
+    position: relative;
+    padding-top: $post-padding-top;
+    &:last-child {
+        padding-bottom: $post-padding-top;
+    }
+}
+
+.post-content-box {
+    position: relative;
+    padding: 1.5rem 4rem 3rem 4rem;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+    color: $post-content-color;
+    background-color: $post-background-color;
+    z-index: 3;
+    .post-title {
+        font-size: 1.5em;
+        text-align: center;
+        display: table;
+        width: 100%;
+        h2 {
+            float: left;
+            position: relative;
+            font-size: 2.3rem;
+            font-family: $global-font-family;
+            padding: 0.3rem 0 1.2rem 0;
+            margin: 0;
+            a {
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 110%;
+                    left: 50%;
+                    width: 0;
+                    height: 3px;
+                    background-color: $global-theme-color;
+                    transition: all 0.2s ease-out;
+                }
+                &:hover::before {
+                    width: 100%;
+                    left: 0%;
+                }
+            }
+        }
+        .post-meta {
+            float: right;
+            margin: 0.4rem 0 0 0;
+            color: $post-meta-color;
+            font-family: $global-theme-font-family;
+            line-height: 1rem;
+            color: $post-time-color;
+            .post-date-share {
+                text-align: right;
+                .post-share {
+                    position: relative;
+                    list-style-type: none;
+                    z-index: 88;
+                    .share-box {
+                        position: absolute;
+                        visibility: hidden;
+                        opacity: 0;
+                        overflow: hidden;
+                        top: 1.5rem;
+                        margin: 0;
+                        padding: 0.4rem 0.8rem;
+                        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.125);
+                        background-color: #fff;
+                        cursor: pointer;
+                        font-family: $global-theme-font-family;
+                        transition: all 0.2s ease-out;
+                        li {
+                            float: left;
+                            padding: 0.2rem 0.2rem;
+                            line-height: 2rem;
+                            white-space: nowrap;
+                            margin: 0;
+                            text-align: left;
+                            width: 100%;
+                        }
+                    }
+                    .share-box-show {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+                .post-date {
+                    transition: all 0.2s ease-out;
+                    margin-right: 0.2rem;
+                    display: inline-block;
+                    vertical-align: bottom;
+                    .post-calander::before {
+                        position: relative;
+                        top: -0.05rem;
+                        margin-right: 0.3rem;
+                        font-size: 1.1rem;
+                        content: "\e676";
+                    }
+                    .post-time {
+                        display: inline-block;
+                        vertical-align: bottom;
+                        font-size: 1rem;
+                    }
+                }
+                .post-share {
+                    display: inline-block;
+                    &::before {
+                        position: relative;
+                        cursor: pointer;
+                        content: "\e607";
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+            .post-tags {
+                text-align: right;
+                margin-top: 0.3rem;
+                font-size: 1.0rem;
+                .post-tag {
+                    position: relative;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 100%;
+                        left: 50%;
+                        width: 0;
+                        height: 2px;
+                        background-color: $global-theme-color;
+                        transition: all 0.2s ease-out;
+                    }
+                    &:hover::before {
+                        width: 100%;
+                        left: 0%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.post-content {
+    // padding-top: 0.3rem;
+    font-size: 0.85em;
+    h1 {
+        // line-height: 4rem;
+        // margin-top: 0.7rem;
+        // margin-bottom: 0.7rem;
+    }
+    h2 {
+        &:before {
+            content: "# ";
+        } // line-height: 3rem;
+        // margin-top: 0.5rem;
+        // margin-bottom: 0.5rem;
+    }
+    h3 {
+        &:before {
+            content: "# ";
+        } // line-height: 2rem;
+        // margin-top: 0.3rem;
+        // margin-bottom: 0.3rem;
+    }
+    h4 {
+        &:before {
+            content: "# ";
+        } // line-height: 1.2rem;
+        // margin-top: 0.2rem;
+        // margin-bottom: 0.2rem;
+    }
+    h5 {
+        &:before {
+            content: "# ";
+        } // line-height: 1.1rem;
+        // margin-top: 0.1rem;
+        // margin-bottom: 0.1rem;
+    }
+    p {
+        // line-height: 1.3rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+    }
+    img {
+        display: block;
+        max-width: 100%;
+        margin: 1rem auto 1rem;
+    }
+    blockquote {
+        margin: 0.3rem 0 0.3rem 1rem;
+        padding: 0.2rem 0 0.2rem 0.7rem;
+        border-left: 3px solid $post-blockquote-color-border; // background-color: #eee;
+    }
+    a {
+        color: $post-link-color;
+    }
+}

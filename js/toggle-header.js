@@ -1,3 +1,5 @@
+import tinkerUtil from './util'
+
 (function () {
     // 顶部标题栏切换
     let postTitleEle = document.getElementsByClassName("post-title")[0],

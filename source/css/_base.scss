@@ -11,6 +11,23 @@ html {
     padding-bottom: 12rem;
 }
 
+.clearfix{
+    margin: 0;
+    height: 0;
+    clear: right;
+    height: 1px;
+    width: 1px;
+}
+
+// .clearfix::after {
+//     content: "";
+//     display: block;
+//     height: 0;
+//     font-size: 0;
+//     clear: both;
+//     visibility: hidden;
+// }
+
 body {
     background-color: $global-background-color;
     font-family: $global-font-family;

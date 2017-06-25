@@ -23,3 +23,5 @@ var tinkerUtil = {
         };
     }
 }
+
+module.exports = tinkerUtil;

@@ -1,3 +1,5 @@
+import tinkerUtil from './util'
+
 (function () {
     // 主页头像切换
     let profileAvatar = document.getElementsByClassName("profile-avatar")[0],

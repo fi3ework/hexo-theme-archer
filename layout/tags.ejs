@@ -3,7 +3,7 @@
   <div class="post-content-box">
   <% if (site.tags) { %>
     <div class="tags-tags-box">
-      <% site.tags.forEach(function (tag) { %>
+      <% site.tags.each(function (tag) { %>
         <span class="post-tag"><a href= "<%- url_for(tag.path) %>"> <%- tag.slug %></a></span>
         <% }) %>
       <!--<%- tagcloud(site.tags) %>-->

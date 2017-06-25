@@ -17,8 +17,9 @@
       <%  return result == true ? -1 : 1; %>
       <% }) %>
       <% } %>
-      <% let showYear = NaN %>
-      <% let currPagePosts %>
+      <% let showYear = NaN; %>
+      <% let currPagePosts; %>
+      <% let showDate = NaN; %>
       <% if (is_archive()) { %>
         <% currPagePosts = resortAllPosts; %>
       <% } else {%>
@@ -38,12 +39,15 @@
         <ul class="year-list">
         <% toCloseUl = 1; %>
         <% } %>
-            <li class="post-item">
-              <span class="post-date"><%-date(post.date, "YYYY-MM-DD") %></span>
+            <li class="archive-post-item">
+              <% if (showDate !== date(post.date, "YYYY-MM-DD")){ %>
+                <span class="archive-post-date"><%- date(post.date, "YYYY-MM-DD") %></span>
+                <% showDate = date(post.date, "YYYY-MM-DD") %>
+              <% } %>
               <% if (is_archive()) { %>
-              <a class="post-title" href= "<%= post.link %>" ><%= post.title %></a>
+              <a class="archive-post-title" href= "<%- post.link %>" ><%= post.title %></a>
               <% } else { %>
-              <a class="post-title" href= "<%- url_for(post.path) %>" ><%= post.title %></a>
+              <a class="archive-post-title" href= "<%- url_for(post.path) %>" ><%= post.title %></a>
               <% } %>
             </li>
         <% }) %>

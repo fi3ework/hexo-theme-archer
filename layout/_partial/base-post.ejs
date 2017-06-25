@@ -3,7 +3,8 @@
         <div class="post-title">
             <h2 class="title">
             <% if(_isTitleWithLink) { %>
-            <a class="post-title-link" href="<%- url_for(_page.path) %>">
+            <% var titleURL = url_for(_page.path); %>
+            <a class="post-title-link" href="<%- titleURL %>">
             <% } %>
             <%= _page.title %>
             <% if(_isTitleWithLink) { %>
@@ -11,8 +12,23 @@
             <% } %>
             </h2>
             <div class="post-meta">
-                <div class="post-date">
-                <span class="post-calander iconfont-tinker"></span><span class="post-time"><%- date(_page.date, "YYYY-MM-DD") %></span>
+                <div class="post-date-share">
+                    <div class="post-date">
+                        <span class="post-calander iconfont-tinker"></span><span class="post-time"><%- date(_page.date, "YYYY-MM-DD") %></span>
+                    </div>
+                    <% let postURL; %>
+                    <% if(is_home()) { %>
+                    <% postURL = titleURL;%>
+                    <% } else { %>
+                    <% postURL = url_for(page.path) }%>
+                    <div class="post-share iconfont-tinker">
+                        <ul class="share-box" data-href = "<%- postURL %>">
+                            <li>分享到微博</li>
+                            <li>分享到微信</li>
+                            <li>分享到QQ</li>
+                            <li>分享到twitter</li>
+                        </ul>
+                    </div>
                 </div>
                 <%- partial('base-title-tags', {currPost :_page}) %>
             </div>
@@ -20,6 +36,5 @@
         <div class="post-content">
             <%- _content %>
         </div>
-        <!--<div class="content-border-bottom"></div>-->
     </div>
 </article>

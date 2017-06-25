@@ -49,9 +49,8 @@
         .site-post-banner {
             float: right;
             position: relative;
-            width: 20%;
+            min-width: 25%;
             top: 0%;
-            margin-right: 5%;
             transition: all 0.2s ease-out;
             height: 100%;
             .blog-titles {
