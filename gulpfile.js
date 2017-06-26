@@ -17,9 +17,7 @@ gulp.task('webpack', ['convertJS'], function () {
     return gulp.src('')
         .pipe(webpack({
             entry: {
-                'toggle-avatar': './source/scripts/toggle-avatar.js',
-                'toggle-header': './source/scripts/toggle-header.js',
-                'share': './source/scripts/share.js',
+                'main': './source/scripts/main.js',
             },
             output: {
                 filename: '[name].js',

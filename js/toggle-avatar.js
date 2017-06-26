@@ -1,7 +1,10 @@
 import tinkerUtil from './util'
 
-(function () {
+let toggleAvatar = function () {
     // 主页头像切换
+    if (typeof document.getElementsByClassName('home-body')[0] === 'undefined') {
+        return;
+    }
     let profileAvatar = document.getElementsByClassName("profile-avatar")[0],
         headerAvatar = document.getElementsByClassName("header-avatar")[0];
     if (typeof profileAvatar !== 'undefined') {
@@ -28,4 +31,6 @@ import tinkerUtil from './util'
     }
 
 
-}());
+}
+ 
+module.exports = toggleAvatar;

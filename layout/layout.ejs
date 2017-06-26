@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
   <%- partial('_partial/base-head') %>
-  <body>
+  <% if (is_home()) { %>
+  <body class="home-body">
+  <% } else if(is_post()){ %>
+  <body class="post-body">
+  <% } else { %>
+  <body class="body">
+  <% } %>
+    
     <div class="container">
       <%- partial('_partial/base-header') %>
       <% if (is_home()) { %>

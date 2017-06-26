@@ -1,7 +1,10 @@
 import tinkerUtil from './util'
 
-(function () {
+let toggleHeader = function () {
     // 顶部标题栏切换
+    if (typeof document.getElementsByClassName('post-body')[0] === 'undefined') {
+        return;
+    }
     let postTitleEle = document.getElementsByClassName("post-title")[0],
         postTitleHeight = tinkerUtil.getAbsPosition(postTitleEle).y,
         toggleBanner = document.getElementsByClassName("site-post-banner")[0],
@@ -32,6 +35,6 @@ import tinkerUtil from './util'
     // 点击文章标题回页首
     postTitle.addEventListener("click", tinkerUtil.backTop);
 
+};
 
-
-}());
+module.exports = toggleHeader;

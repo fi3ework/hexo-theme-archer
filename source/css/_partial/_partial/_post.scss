@@ -56,32 +56,46 @@
                     position: relative;
                     list-style-type: none;
                     z-index: 88;
+                    display: inline-block;
+                    &::before {
+                        position: relative;
+                        cursor: pointer;
+                        content: "\e607";
+                        font-size: 1.2rem;
+                    }
                     .share-box {
                         position: absolute;
                         visibility: hidden;
                         opacity: 0;
                         overflow: hidden;
                         top: 1.5rem;
+                        left: 0rem;
                         margin: 0;
-                        padding: 0.4rem 0.8rem;
+                        padding: 0.4rem 0.4rem;
                         box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.125);
                         background-color: #fff;
+                        transform: scale(0.9);
                         cursor: pointer;
                         font-family: $global-theme-font-family;
-                        transition: all 0.2s ease-out;
+                        transition: all 0.15s ease-out;
                         li {
                             float: left;
-                            padding: 0.2rem 0.2rem;
+                            padding: 0.4rem 0.6rem;
                             line-height: 2rem;
                             white-space: nowrap;
                             margin: 0;
                             text-align: left;
                             width: 100%;
+                            box-sizing: border-box;
+                        }
+                        li:hover{
+                            background-color: #ededed;
                         }
                     }
                     .share-box-show {
                         opacity: 1;
                         visibility: visible;
+                        transform: scale(1);
                     }
                 }
                 .post-date {
@@ -100,15 +114,6 @@
                         display: inline-block;
                         vertical-align: bottom;
                         font-size: 1rem;
-                    }
-                }
-                .post-share {
-                    display: inline-block;
-                    &::before {
-                        position: relative;
-                        cursor: pointer;
-                        content: "\e607";
-                        font-size: 1.2rem;
                     }
                 }
             }
