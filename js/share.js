@@ -1,3 +1,40 @@
+import makeQR from './QR-maker';
+
+let mask = document.getElementsByClassName('qr-mask')[0];
+let qrCode = document.getElementsByClassName('QRcode-box')[0];
+    
+function initQREvent()
+{
+    let closeQR = document.getElementsByClassName('QRcode-close')[0];
+    function hideQR(eve){
+        eve.stopPropagation();
+        mask.classList.remove('QRcode-mask-opacity-show');
+        qrCode.classList.remove('QRcode-mask-opacity-show');
+        qrCode.addEventListener('transitionend',function(){
+            if (mask.className.indexOf('QRcode-mask-opacity-show') === -1) {
+                mask.classList.remove('QRcode-mask-show');
+                qrCode.classList.remove('QRcode-mask-show');
+            }
+        });
+    }
+
+    closeQR.addEventListener('click', hideQR);
+    mask.addEventListener('click', hideQR);
+
+}
+
+// show wechat QR code
+function showQR(opt)
+{
+    makeQR(opt);
+    mask.classList.add('QRcode-mask-show');
+    qrCode.classList.add('QRcode-mask-show');
+    requestAnimationFrame(function(){
+        mask.classList.add('QRcode-mask-opacity-show');
+        qrCode.classList.add('QRcode-mask-opacity-show');
+    });
+}
+
 // generate the share link
 function generateURL(url, opt) {
     return url.replace(/<%-sURL%>/g, opt.sURL).
@@ -10,30 +47,35 @@ function generateURL(url, opt) {
 function switchToShare(className, opt) {
     let combindedURL;
     switch (className) {
-        case 'to-weibo':
-            combindedURL = generateURL('http://service.weibo.com/share/share.php?url=<%-sURL%>&title=<%-sTitle%>&pic=<%-sPic%>', opt);
-            break;
-        case 'to-wechat':
-            combindedURL = generateURL('', opt);
-            break;
-        case 'to-qq':
-            combindedURL = generateURL('', opt);
-            break;
-        case 'to-twitter':
-            combindedURL = generateURL('', opt);
-            break;
-        default:
-            break;
+    case 'to-weibo':
+        combindedURL = generateURL('http://service.weibo.com/share/share.php?url=<%-sURL%>&title=<%-sTitle%>&pic=<%-sPic%>', opt);
+        break;
+    case 'to-qq':
+        combindedURL = generateURL('http://connect.qq.com/widget/shareqq/index.html?url=<%-sUrl%>&title=<%-sTitle%>&source=<%-sDesc%>', opt);
+        break;
+    case 'to-twitter':
+        combindedURL = generateURL('https://twitter.com/intent/tweet?text=<%-sTitle%>&url=<%-sURL%>', opt);
+        break;
+    default:
+        break;
+    case 'to-wechat':
+        showQR(opt);
+        break;
     }
-    window.open(combindedURL);
+    if (className !== 'to-wechat') {
+        window.open(combindedURL);
+    }
 }
 
-let initShareBox = function () {
+let initShareBox = function() {
+    initQREvent();
     // show share
-    function showShare(eve) {
+    function showShare() {
         let shareBox = this.getElementsByClassName('share-box')[0];
         shareBox.classList.add('share-box-show');
-        initShare(shareBox);
+        if (!shareBox.isInited) {
+            initCurrentShare(shareBox);
+        }
     }
 
     // hide share
@@ -42,31 +84,28 @@ let initShareBox = function () {
         shareBox.classList.remove('share-box-show');
     }
 
-    // click event    
+    // share button hover event    
     let shareButtons = document.getElementsByClassName('post-share');
     let i = shareButtons.length;
     while (i--) {
-        // document.body.addEventListener('mouse', hideShare);
         shareButtons[i].addEventListener('mouseover', showShare);
         shareButtons[i].addEventListener('mouseout', hideShare);
     }
-}
+};
 
-function initShare(shareBox) {
-    let shareBtns = shareBox.querySelectorAll('li');
+function initCurrentShare(shareBox) {
+    shareBox.isInited = true;
+    let shareItems = shareBox.querySelectorAll('li');
     console.log(shareBox);
     let opt = {
         sURL: shareBox.dataset.href,
         sTitle: shareBox.dataset.title,
         sDesc: shareBox.dataset.title,
         sPic: ''
-    }
-    shareBtns.forEach(function (ele) {
-        ele.addEventListener('click', function (eve) {
-            console.log(opt.sURL);
-            console.log(opt.sTitle);
-            console.log(opt.sDesc);
-            switchToShare(this.className, opt)
+    };
+    shareItems.forEach(function(ele) {
+        ele.addEventListener('click', function() {
+            switchToShare(this.className, opt);
         });
     }, this);
 }

@@ -10,8 +10,8 @@ gulp.task('convertJS', function () {
         .pipe(babel({
             presets: ['es2015']
         }))
-        .pipe(gulp.dest('./source/scripts/'))
-})
+        .pipe(gulp.dest('./source/scripts/'));
+});
 
 gulp.task('webpack', ['convertJS'], function () {
     return gulp.src('')
@@ -24,7 +24,7 @@ gulp.task('webpack', ['convertJS'], function () {
             }
         }))
         .pipe(gulp.dest('./source/scripts/'));
-})
+});
 
 gulp.task('build', ['convertJS', 'webpack']);
 

@@ -11,19 +11,19 @@ var toggleAvatar = function toggleAvatar() {
     if (typeof document.getElementsByClassName('home-body')[0] === 'undefined') {
         return;
     }
-    var profileAvatar = document.getElementsByClassName("profile-avatar")[0],
-        headerAvatar = document.getElementsByClassName("header-avatar")[0];
+    var profileAvatar = document.getElementsByClassName('profile-avatar')[0],
+        headerAvatar = document.getElementsByClassName('header-avatar')[0];
     if (typeof profileAvatar !== 'undefined') {
         var _toggleAvatar = function _toggleAvatar() {
             if (document.body.scrollTop > profileAvatarHeight) {
                 if (!isHeaderAvatarShow) {
                     isHeaderAvatarShow = 1;
-                    headerAvatar.classList.add("header-avatar-animate");
+                    headerAvatar.classList.add('header-avatar-animate');
                 }
             } else {
                 if (isHeaderAvatarShow) {
                     isHeaderAvatarShow = 0;
-                    headerAvatar.classList.remove("header-avatar-animate");
+                    headerAvatar.classList.remove('header-avatar-animate');
                 }
             }
         };
@@ -33,9 +33,9 @@ var toggleAvatar = function toggleAvatar() {
         var profileAvatarHeight = _util2.default.getAbsPosition(profileAvatar).y,
             isHeaderAvatarShow = 0;
 
-        document.addEventListener("scroll", _toggleAvatar);
+        document.addEventListener('scroll', _toggleAvatar);
         // header头像点击回顶部
-        headerAvatar.addEventListener("click", _util2.default.backTop);
+        headerAvatar.addEventListener('click', _util2.default.backTop);
     }
 };
 

@@ -7,7 +7,6 @@ var _qrcode2 = _interopRequireDefault(_qrcode);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function makeQR(opt) {
-    var qrURL = opt.sURL;
     var QRele = document.getElementsByClassName('QRcode-box')[0];
     // remove old canvas and img
     var oldCanvas = QRele.getElementsByTagName('canvas');
@@ -19,9 +18,8 @@ function makeQR(opt) {
         QRele.removeChild(oldQR[0]);
     }
 
-    QRele.classList.add('QRcode-box-show');
     new _qrcode2.default(QRele, {
-        text: qrURL,
+        text: opt.sURL,
         width: 128,
         height: 128,
         colorDark: '#222',
