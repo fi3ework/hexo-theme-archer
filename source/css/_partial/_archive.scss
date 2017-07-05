@@ -13,21 +13,28 @@
             padding-left: 0;
             margin-top: 0;
         }
-        li {
+        li.archive-post-date {
+            display: block;
+            font: 0.9rem/2rem $global-theme-font-family-light;
+        }
+        li.archive-post-item {
             vertical-align: middle;
-            .archive-post-date {
-                display: block;
-                font: 0.9rem/2rem $global-theme-font-family-light;
-                margin-right: 0.3rem;
-            }
+            border-left: 2px solid #344a5e;
+            margin-left: 1rem;
+            transition: all 0.1s ease-out 0s;
             .archive-post-title {
-                border-left: 2px solid lightgray;
-                margin-left: 1rem;
+                display: block;
                 padding-left: 0.6rem;
                 text-align: left;
-                vertical-align: top;
+                transition: all 0.1s ease-out 0s;
                 font: 1.0rem/2rem $global-font-family;
                 color: #030303;
+                &:hover {
+                    color: $global-theme-color;
+                }
+            }
+            &:hover {
+                border-left-color: $global-theme-color;
             }
         }
     }

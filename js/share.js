@@ -2,15 +2,14 @@ import makeQR from './QR-maker';
 
 let mask = document.getElementsByClassName('qr-mask')[0];
 let qrCode = document.getElementsByClassName('QRcode-box')[0];
-    
-function initQREvent()
-{
+
+function initQREvent() {
     let closeQR = document.getElementsByClassName('QRcode-close')[0];
-    function hideQR(eve){
+    function hideQR(eve) {
         eve.stopPropagation();
         mask.classList.remove('QRcode-mask-opacity-show');
         qrCode.classList.remove('QRcode-mask-opacity-show');
-        qrCode.addEventListener('transitionend',function(){
+        qrCode.addEventListener('transitionend', function () {
             if (mask.className.indexOf('QRcode-mask-opacity-show') === -1) {
                 mask.classList.remove('QRcode-mask-show');
                 qrCode.classList.remove('QRcode-mask-show');
@@ -24,12 +23,11 @@ function initQREvent()
 }
 
 // show wechat QR code
-function showQR(opt)
-{
+function showQR(opt) {
     makeQR(opt);
     mask.classList.add('QRcode-mask-show');
     qrCode.classList.add('QRcode-mask-show');
-    requestAnimationFrame(function(){
+    requestAnimationFrame(function () {
         mask.classList.add('QRcode-mask-opacity-show');
         qrCode.classList.add('QRcode-mask-opacity-show');
     });
@@ -38,9 +36,9 @@ function showQR(opt)
 // generate the share link
 function generateURL(url, opt) {
     return url.replace(/<%-sURL%>/g, opt.sURL).
-    replace(/<%-sTitle%>/g, opt.sTitle).
-    replace(/<%-sDesc%>/g, opt.sDesc).
-    replace(/<%-sPic%>/g, opt.sPic);
+        replace(/<%-sTitle%>/g, opt.sTitle).
+        replace(/<%-sDesc%>/g, opt.sDesc).
+        replace(/<%-sPic%>/g, opt.sPic);
 }
 
 // switch which site to share
@@ -67,7 +65,7 @@ function switchToShare(className, opt) {
     }
 }
 
-let initShareBox = function() {
+let initShareBox = function () {
     initQREvent();
     // show share
     function showShare() {
@@ -103,8 +101,8 @@ function initCurrentShare(shareBox) {
         sDesc: shareBox.dataset.title,
         sPic: ''
     };
-    shareItems.forEach(function(ele) {
-        ele.addEventListener('click', function() {
+    shareItems.forEach(function (ele) {
+        ele.addEventListener('click', function () {
             switchToShare(this.className, opt);
         });
     }, this);

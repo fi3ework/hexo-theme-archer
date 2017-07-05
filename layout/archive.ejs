@@ -39,16 +39,18 @@
         <ul class="year-list">
         <% toCloseUl = 1; %>
         <% } %>
-            <li class="archive-post-item">
               <% if (showDate !== date(post.date, "YYYY-MM-DD")){ %>
-                <span class="archive-post-date"><%- date(post.date, "YYYY-MM-DD") %></span>
-                <% showDate = date(post.date, "YYYY-MM-DD") %>
+              <li class="archive-post-date">
+                  <span class="archive-post-date"><%- date(post.date, "YYYY-MM-DD") %></span>
+                  <% showDate = date(post.date, "YYYY-MM-DD") %>
+              </li>
               <% } %>
-              <% if (is_archive()) { %>
-              <a class="archive-post-title" href= "<%- post.link %>" ><%= post.title %></a>
-              <% } else { %>
-              <a class="archive-post-title" href= "<%- url_for(post.path) %>" ><%= post.title %></a>
-              <% } %>
+              <li class="archive-post-item">
+                <% if (is_archive()) { %>
+                <a class="archive-post-title" href= "<%- post.link %>" ><%= post.title %></a>
+                <% } else { %>
+                <a class="archive-post-title" href= "<%- url_for(post.path) %>" ><%= post.title %></a>
+                <% } %>
             </li>
         <% }) %>
       </div>
