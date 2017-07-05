@@ -1,0 +1,37 @@
+.profile {
+    display: none;
+}
+
+.main {
+    width: 95%;
+    padding-top: $header-height;
+    padding-left: 0;
+    padding-bottom: 12rem;
+    margin: 0 auto;
+}
+
+.post {
+    padding-top: 0.8rem;
+    &:last-child {
+        padding-bottom: 0.8rem;
+    }
+}
+
+.header {
+    .menu-button {
+        display: block;
+    }
+    .banner {
+        width: calc(100% - #{$header-profile-width});
+        .site-post-banner {
+            width: calc(75% - #{$header-avatar-size} - 1rem);
+            margin-right: 20%;
+            .blog-titles {
+                width: 50%;
+            }
+        }
+        .navbar {
+            display: none;
+        }
+    }
+}

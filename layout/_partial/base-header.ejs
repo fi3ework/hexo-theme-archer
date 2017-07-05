@@ -3,7 +3,7 @@
 <% } else { %>
 <header class="header">
 <% } %>
-  <div class="profile-button">
+  <div class="menu-button">
     <div class="menu-box">
       <div></div>
       <div></div>
@@ -34,9 +34,6 @@
         <a href="<%- url_for() %>" class="blog-title">
           <%= config.title %>
         </a>
-        <div class="blog-subtitle">
-          <%= config.subtitle %>
-        </div>
       </div>
       <% if (is_post()) { %>
       <div class="post-banner">

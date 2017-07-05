@@ -10,16 +10,20 @@
     padding: 2rem;
     img {
         display: block;
-        border-radius: 7rem;
+        border-radius: 3.5rem;
         margin: 0 auto;
         height: 7rem;
         width: 7rem;
-        box-shadow: 0 0 1px 2px rgba(0, 0, 0, 0.35);
+        box-shadow: 0 0 2px 3px rgba(0, 0, 0, 0.20);
     }
     .site-name {
         font: 1.5rem $global-theme-font-family;
         text-align: center;
         padding: 0.2rem;
+    }
+    .blog-subtitle {
+        font: 1rem $header-subtitle-font;
+        text-align: center;
     }
     .profile-social {
         max-height: 95%;
@@ -32,11 +36,11 @@
     .friends {
         font: 1.1rem $global-theme-font-family;
         text-align: center;
-        div{
+        div {
             text-align: center;
             font-weight: bolder;
         }
-        a{
+        a {
             color: gray;
             margin-right: 0.2rem;
         }

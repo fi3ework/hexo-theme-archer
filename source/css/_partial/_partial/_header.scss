@@ -3,12 +3,13 @@
     top: 0;
     width: 100%;
     height: $header-height;
-        background-color: $header-background-color;
+    background-color: $header-background-color;
     border-top: 3px solid $header-top-border;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.35);
     overflow: hidden;
     z-index: 5;
-    .profile-button {
+    .menu-button {
+        display: none;
         position: relative;
         float: left;
         width: $header-profile-width;
@@ -56,17 +57,10 @@
             .blog-titles {
                 float: left;
                 height: 100%;
-                vertical-align: center;
                 .blog-title {
-                    display: inline-block;
-                    margin-top: .3rem;
+                    white-space: nowrap;
                     color: $header-title-color;
-                    font: 1.4rem $header-title-font;
-                }
-                .blog-subtitle {
-                    display: block;
-                    font: 1rem $header-subtitle-font;
-                    color: $header-title-color;
+                    font: 1.7rem/#{$header-height} $header-title-font;
                 }
             }
         }
