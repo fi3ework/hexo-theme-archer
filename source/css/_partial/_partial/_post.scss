@@ -20,29 +20,28 @@
         width: 100%;
         padding-bottom: 0.6rem;
         h2 {
-            // float: left;
             position: relative;
             font-size: 2.3rem;
             font-family: $global-font-family;
             padding: 0.3rem 0 0.6rem 0;
             margin: 0;
-            a {
-                position: relative;
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 110%;
-                    left: 50%;
-                    width: 0;
-                    height: 3px;
-                    background-color: $global-theme-color;
-                    transition: all 0.2s ease-out;
-                }
-                &:hover::before {
-                    width: 100%;
-                    left: 0%;
-                }
-            }
+            // a {
+            //     &::before {
+            //         content: '';
+            //         position: absolute;
+            //         top: 110%;
+            //         left: 50%;
+            //         width: 0;
+            //         height: 3px;
+            //         background-color: $global-theme-color;
+            //         transition: all 0.2s ease-out;
+            //     }
+            //     &:hover::before {
+            //         width: 100%;
+            //         left: 0%;
+            //     }
+            //     position: relative;
+            // }
         }
         .post-meta {
             // clear: left;
