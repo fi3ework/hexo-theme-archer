@@ -10,9 +10,8 @@ html {
 
 .main {
     display: inline-block;
-    width: 60%;
     padding-top: $header-height;
-    padding-left: 2rem; // margin-left: calc(7% + #{$profile-width} + 4rem);
+    margin-left: 2rem; // margin-left: calc(7% + #{$profile-width} + 4rem);
     padding-bottom: 12rem;
     text-align: initial;
 }
