@@ -30,11 +30,8 @@
         width: calc(100% - #{$header-profile-width});
         .site-post-banner {
             width: 100%;
-            float: none;
             padding-right: 0;
             .blog-titles, .post-banner {
-                float: none;
-                margin: 0 auto;
                 transform: initial;
             }
 
@@ -42,10 +39,11 @@
 
         .navbar {
             position: absolute;
+            display: flex;
+            justify-content: center;
             z-index: 100;
             top: 0;
-            padding-left: 5%;
-            width: 95%;
+            width:100%;
             background-color: $header-background-color;
             transition: all 0.2s ease-out 0s;
             opacity: 0;

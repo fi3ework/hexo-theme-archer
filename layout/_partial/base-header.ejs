@@ -11,24 +11,6 @@
     </div>
   </div>
   <div class="banner">
-    <nav class="navbar">
-      <ul class="menu">
-        <% for (name in theme.menu) { %>
-          <% let imgSrc = "/header/" + name + ".svg"; %>
-          <li class="menu-item">
-            <% if (name != "About") { %>
-            <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link <%- name %>">
-              <%= name %> 
-            </a>
-            <% } else { %>
-            <a href="#" class="menu-item-link <%- name %>"> 
-              <%= name %>
-            </a>
-            <% } %> 
-          </li>
-          <% } %>
-      </ul>
-    </nav>
     <div class="site-post-banner">
       <div class="blog-titles">
         <% if (is_home()) { %>
@@ -46,6 +28,24 @@
       </div>
       <% } %>
     </div>
+    <nav class="navbar">
+      <ul class="menu">
+        <% for (name in theme.menu) { %>
+          <% let imgSrc = "/header/" + name + ".svg"; %>
+            <li class="menu-item">
+              <% if (name != "About") { %>
+                <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link <%- name %>">
+                  <%= name %>
+                </a>
+                <% } else { %>
+                  <a href="#" class="menu-item-link <%- name %>">
+                    <%= name %>
+                  </a>
+                  <% } %>
+            </li>
+            <% } %>
+      </ul>
+    </nav>
   </div>
 
 </header>

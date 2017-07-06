@@ -33,63 +33,20 @@
         }
     }
     .banner {
+        display: flex; 
         position: relative;
-        float: left;
+        justify-content:center;
         width: 100%;
         top: 0;
         height: 100%;
-        .site-post-banner {
-            float: right;
-            position: relative;
-            width: 44%;
-            padding-right: 15%;
-            transition: all 0.2s ease-out;
-            top: 0;
-            height: 100%;
-            text-align: center;
-            .blog-titles {
-                float: right;
-                height: 100%;
-                text-align: center;
-                transform: translateX(50%);
-                .header-avatar {
-                    position: absolute;
-                    transform: translate3d(-120%, 0, 0);
-                    margin-top: calc((#{$header-height} - #{$header-avatar-size }) / 2);
-                    width: $header-avatar-size;
-                    height: $header-avatar-size;
-                    border-radius: 0.2rem;
-                }
-                .blog-title {
-                    vertical-align: top;
-                    white-space: nowrap;
-                    color: $header-title-color;
-                    font: 1.7rem/#{$header-height} $header-title-font;
-                }
-            }
-        }
-        .post-banner {
-            float: right;
-            clear: both;
-            transform: translateX(50%);
-            height: 100%;
-            min-width: 7rem;
-            top: 100%;
-            cursor: pointer;
-            .post-name {
-                text-align: center;
-                font: 1.4rem/#{$header-height} $header-title-font;
-                color: $header-title-color;
-            }
-        }
         .navbar {
             position: relative;
-            float: right;
             height: 100%;
-            width: 40%;
-            min-width: 20rem;
+            // flex-basis: 20rem;
             font: 1.3rem $header-nav-font;
             ul.menu {
+                display: flex;
+                align-items: center;
                 position: absolute;
                 top: 50%;
                 padding: 0;
@@ -97,10 +54,7 @@
                 transform: translateY(-50%);
                 overflow: hidden;
                 li {
-                    float: left;
-                    margin: 0 auto;
                     text-align: center;
-                    padding-right: 1rem;
                     position: relative;
                     a::before {
                         content: '';
@@ -137,6 +91,49 @@
                         transition: all 0.2s linear .0s;
                     }
                 }
+            }
+        }
+        .site-post-banner {
+            display: flex;
+            flex-direction: column;
+            // align-items: flex-end;
+            position: relative;
+            width: 30%;
+            padding-right: 15%;
+            transition: all 0.2s ease-out;
+            top: 0;
+            height: 100%;
+            text-align: center;
+            .blog-titles {
+                height: 100%;
+                text-align: center;
+                transform: translateX(50%);
+                .header-avatar {
+                    position: absolute;
+                    transform: translate3d(-120%, 0, 0);
+                    margin-top: calc((#{$header-height} - #{$header-avatar-size }) / 2);
+                    width: $header-avatar-size;
+                    height: $header-avatar-size;
+                    border-radius: 0.2rem;
+                }
+                .blog-title {
+                    vertical-align: top;
+                    white-space: nowrap;
+                    color: $header-title-color;
+                    font: 1.7rem/#{$header-height} $header-title-font;
+                }
+            }
+        }
+        .post-banner {
+            transform: translateX(50%);
+            height: 100%;
+            min-width: 7rem;
+            top: 100%;
+            cursor: pointer;
+            .post-name {
+                text-align: center;
+                font: 1.4rem/#{$header-height} $header-title-font;
+                color: $header-title-color;
             }
         }
     }
