@@ -1,6 +1,7 @@
 .main.archive-page {
     margin-left: auto;
     margin-right: auto;
+    width: 60%;
     .archive {
         @extend .index-posts;
         padding-top: $post-padding-top;

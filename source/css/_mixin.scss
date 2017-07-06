@@ -8,10 +8,10 @@
         font-size: 3rem * $scaleSize;
         margin: 0 $spanMargin 0 $spanMargin;
         transition: all 0.2s ease-out .0s;
-        transform: scale(1);
+        // transform: scale(1);
     }
     .iconfont-tinker:hover::before {
-        transform: scale(1.03);
+        // transform: scale(1.03);
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.125);
     }
     .email {

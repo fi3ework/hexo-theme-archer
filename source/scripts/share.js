@@ -70,7 +70,11 @@ function switchToShare(className, opt) {
 var initShareBox = function initShareBox() {
     initQREvent();
     // show share
+    var hideTimer = void 0;
     function showShare() {
+        if (hideTimer) {
+            clearTimeout(hideTimer);
+        }
         var shareBox = this.getElementsByClassName('share-box')[0];
         shareBox.classList.add('share-box-show');
         if (!shareBox.isInited) {
@@ -81,7 +85,9 @@ var initShareBox = function initShareBox() {
     // hide share
     function hideShare() {
         var shareBox = this.getElementsByClassName('share-box')[0];
-        shareBox.classList.remove('share-box-show');
+        hideTimer = setTimeout(function () {
+            shareBox.classList.remove('share-box-show');
+        }, 100);
     }
 
     // share button hover event    
@@ -96,7 +102,6 @@ var initShareBox = function initShareBox() {
 function initCurrentShare(shareBox) {
     shareBox.isInited = true;
     var shareItems = shareBox.querySelectorAll('li');
-    console.log(shareBox);
     var opt = {
         sURL: shareBox.dataset.href,
         sTitle: shareBox.dataset.title,

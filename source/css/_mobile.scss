@@ -4,10 +4,14 @@
 
 .main {
     width: 95%;
-    padding-top: $header-height;
-    padding-left: 0;
-    padding-bottom: 12rem;
+    padding-bottom: 5.5rem;
     margin: 0 auto;
+    max-width: initial;
+    section {
+        .post-content-box {
+            padding: 1rem 1rem 1rem 1rem;
+        }
+    }
 }
 
 .post {
@@ -18,20 +22,75 @@
 }
 
 .header {
+    z-index: 100;
     .menu-button {
         display: block;
     }
     .banner {
         width: calc(100% - #{$header-profile-width});
         .site-post-banner {
-            width: calc(75% - #{$header-avatar-size} - 1rem);
-            margin-right: 20%;
-            .blog-titles {
-                width: 50%;
+            width: 100%;
+            float: none;
+            padding-right: 0;
+            .blog-titles, .post-banner {
+                float: none;
+                margin: 0 auto;
+                transform: initial;
             }
+
         }
+
         .navbar {
-            display: none;
+            position: absolute;
+            z-index: 100;
+            top: 0;
+            padding-left: 5%;
+            width: 95%;
+            background-color: $header-background-color;
+            transition: all 0.2s ease-out 0s;
+            opacity: 0;
+            pointer-events: none;
+        } 
+
+        .navbar-hidden{
+            opacity: 0;
+            pointer-events: none;
         }
+
+        .navbar-show{
+            opacity: 1;
+            pointer-events: initial;
+        }
+    }
+}
+
+.archive-page{
+    width: 95% !important;
+    .archive{
+        padding-top: 0.8rem !important;
+    }
+}
+
+.tag-page {
+    width: 95% !important;
+    .tags {
+        padding-top: 0.8rem !important;
+    }
+}
+
+#footer {
+    .social {
+        margin-top: 0.5rem;
+        @include social($scaleSize: 0.5, $spanMargin: 0.2rem);
+    }
+    .copyright {
+        margin: 0.5rem auto 0.5rem auto;
+    }
+}
+
+.post-content-box {
+    .share-box {
+        left: initial !important;
+        right: 0 !important;
     }
 }

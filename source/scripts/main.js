@@ -58,11 +58,16 @@
 
 	var _share2 = _interopRequireDefault(_share);
 
+	var _mobile = __webpack_require__(7);
+
+	var _mobile2 = _interopRequireDefault(_mobile);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	(0, _toggleAvatar2.default)();
 	(0, _toggleHeader2.default)();
 	(0, _share2.default)();
+	(0, _mobile2.default)();
 
 /***/ }),
 /* 1 */
@@ -270,7 +275,11 @@
 	var initShareBox = function initShareBox() {
 	    initQREvent();
 	    // show share
+	    var hideTimer = void 0;
 	    function showShare() {
+	        if (hideTimer) {
+	            clearTimeout(hideTimer);
+	        }
 	        var shareBox = this.getElementsByClassName('share-box')[0];
 	        shareBox.classList.add('share-box-show');
 	        if (!shareBox.isInited) {
@@ -281,7 +290,9 @@
 	    // hide share
 	    function hideShare() {
 	        var shareBox = this.getElementsByClassName('share-box')[0];
-	        shareBox.classList.remove('share-box-show');
+	        hideTimer = setTimeout(function () {
+	            shareBox.classList.remove('share-box-show');
+	        }, 100);
 	    }
 
 	    // share button hover event    
@@ -296,7 +307,6 @@
 	function initCurrentShare(shareBox) {
 	    shareBox.isInited = true;
 	    var shareItems = shareBox.querySelectorAll('li');
-	    console.log(shareBox);
 	    var opt = {
 	        sURL: shareBox.dataset.href,
 	        sTitle: shareBox.dataset.title,
@@ -1284,6 +1294,24 @@
 	})();
 
 	module.exports = QRCode;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	var initMobile = function initMobile() {
+	    var navBar = document.getElementsByClassName('navbar')[0];
+	    var menuButton = document.getElementsByClassName('menu-button')[0];
+
+	    menuButton.addEventListener('click', function () {
+	        navBar.classList.toggle('navbar-show');
+	        navBar.classList.toggle('navbar-hidden');
+	    });
+	};
+
+	module.exports = initMobile();
 
 /***/ })
 /******/ ]);

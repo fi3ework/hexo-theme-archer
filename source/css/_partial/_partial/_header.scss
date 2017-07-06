@@ -33,31 +33,35 @@
         }
     }
     .banner {
-        float: left;
-        width: calc(100% - #{$header-profile-width} - 20px);
         position: relative;
+        float: left;
+        width: 100%;
         top: 0;
         height: 100%;
-        .header-avatar {
-            float: right;
-            position: relative;
-            margin-right: 1rem;
-            margin-top: calc((#{$header-height} - #{$header-avatar-size }) / 2);
-            width: $header-avatar-size;
-            height: $header-avatar-size;
-            border-radius: 0.2rem;
-        }
         .site-post-banner {
             float: right;
             position: relative;
-            min-width: 25%;
-            top: 0%;
+            width: 40%;
+            padding-right: 20%;
             transition: all 0.2s ease-out;
+            top: 0;
             height: 100%;
+            text-align: center;
             .blog-titles {
-                float: left;
+                float: right;
                 height: 100%;
+                text-align: center;
+                transform: translateX(50%);
+                .header-avatar {
+                    position: absolute;
+                    transform: translate3d(-120%, 0, 0);
+                    margin-top: calc((#{$header-height} - #{$header-avatar-size }) / 2);
+                    width: $header-avatar-size;
+                    height: $header-avatar-size;
+                    border-radius: 0.2rem;
+                }
                 .blog-title {
+                    vertical-align: top;
                     white-space: nowrap;
                     color: $header-title-color;
                     font: 1.7rem/#{$header-height} $header-title-font;
@@ -65,13 +69,15 @@
             }
         }
         .post-banner {
-            float: left;
+            float: right;
             clear: both;
+            transform: translateX(50%);
             height: 100%;
             min-width: 7rem;
             top: 100%;
-            cursor: pointer;  
+            cursor: pointer;
             .post-name {
+                text-align: center;
                 font: 1.4rem/#{$header-height} $header-title-font;
                 color: $header-title-color;
             }
@@ -79,10 +85,9 @@
         .navbar {
             position: relative;
             float: right;
-            margin-right: 13%;
             height: 100%;
-            width: 30%;
-            min-width: 20rem;
+            width: 40%;
+            min-width: 25rem;
             font: 1.3rem $header-nav-font;
             ul.menu {
                 position: absolute;
@@ -145,13 +150,11 @@
 
 .header.index-header {
     .header-avatar {
-        // display: none;
         opacity: 0;
         transition: opacity 0.2s ease-out;
     }
     .header-avatar-animate {
-        // display: block;
-        opacity: 1 ;
+        opacity: 1;
         cursor: pointer;
     }
 }

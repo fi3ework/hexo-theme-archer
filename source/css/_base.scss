@@ -4,6 +4,7 @@ html {
 }
 
 .container {
+    width: 100%;
     overflow: hidden;
     text-align: center;
 }
@@ -11,7 +12,8 @@ html {
 .main {
     display: inline-block;
     padding-top: $header-height;
-    margin-left: 2rem; // margin-left: calc(7% + #{$profile-width} + 4rem);
+    margin-left: 2rem;
+    max-width: calc(100% - #{$profile-width} - 2rem - 8rem);
     padding-bottom: 12rem;
     text-align: initial;
 }

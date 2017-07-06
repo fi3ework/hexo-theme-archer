@@ -31,6 +31,9 @@
     </nav>
     <div class="site-post-banner">
       <div class="blog-titles">
+        <% if (is_home()) { %>
+        <img class="header-avatar" src= <%- theme.avatar %> >
+        <% } %>
         <a href="<%- url_for() %>" class="blog-title">
           <%= config.title %>
         </a>
@@ -43,9 +46,6 @@
       </div>
       <% } %>
     </div>
-    <% if (is_home()) { %>
-    <img class="header-avatar" src= <%- theme.avatar %> >
-    <% } %>
   </div>
 
 </header>
