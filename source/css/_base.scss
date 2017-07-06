@@ -3,15 +3,21 @@ html {
     height: 100%;
 }
 
-.main {
-    width: 60%;
-    padding-top: $header-height;
-    padding-left: 2rem;
-    margin-left: calc(7% + #{$profile-width} + 4rem);
-    padding-bottom: 12rem;
+.container {
+    overflow: hidden;
+    text-align: center;
 }
 
-.clearfix{
+.main {
+    display: inline-block;
+    width: 60%;
+    padding-top: $header-height;
+    padding-left: 2rem; // margin-left: calc(7% + #{$profile-width} + 4rem);
+    padding-bottom: 12rem;
+    text-align: initial;
+}
+
+.clearfix {
     margin: 0;
     height: 0;
     clear: right;
@@ -27,7 +33,6 @@ html {
 //     clear: both;
 //     visibility: hidden;
 // }
-
 body {
     background-color: $global-background-color;
     font-family: $global-font-family;
@@ -35,10 +40,6 @@ body {
     padding: 0;
     position: relative; // top: 0;
     min-height: 100%;
-}
-
-.container{
-    padding-top: 1px;
 }
 
 * {

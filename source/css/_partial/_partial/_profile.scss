@@ -1,6 +1,7 @@
 .profile {
+    display: inline-block;
+    vertical-align: top;
     position: relative;
-    float: left;
     margin: calc(#{$header-height} + #{$post-padding-top}) 0 0 7%;
     background-color: #fff;
     width: $profile-width;

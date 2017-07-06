@@ -18,12 +18,13 @@
         text-align: center;
         display: table;
         width: 100%;
+        padding-bottom: 0.6rem;
         h2 {
-            float: left;
+            // float: left;
             position: relative;
             font-size: 2.3rem;
             font-family: $global-font-family;
-            padding: 0.3rem 0 1.2rem 0;
+            padding: 0.3rem 0 0.6rem 0;
             margin: 0;
             a {
                 position: relative;
@@ -44,8 +45,8 @@
             }
         }
         .post-meta {
+            // clear: left;
             float: right;
-            margin: 0.4rem 0 0 0;
             color: $post-meta-color;
             font-family: $global-theme-font-family;
             line-height: 1rem;
