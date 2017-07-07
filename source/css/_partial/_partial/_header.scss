@@ -40,18 +40,16 @@
         top: 0;
         height: 100%;
         .navbar {
+            display: flex;
             position: relative;
             height: 100%;
-            // flex-basis: 20rem;
             font: 1.3rem $header-nav-font;
+            align-items: center;
             ul.menu {
                 display: flex;
                 align-items: center;
-                position: absolute;
-                top: 50%;
                 padding: 0;
                 margin: 0;
-                transform: translateY(-50%);
                 overflow: hidden;
                 li {
                     text-align: center;

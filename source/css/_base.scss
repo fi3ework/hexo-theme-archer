@@ -4,13 +4,15 @@ html {
 }
 
 .container {
+    display: flex;
+    align-items: flex-start;
     width: 100%;
     overflow: hidden;
     text-align: center;
+    justify-content: center;
 }
 
 .main {
-    display: inline-block;
     padding-top: $header-height;
     margin-left: 2rem;
     max-width: calc(100% - #{$profile-width} - 2rem - 8rem);
