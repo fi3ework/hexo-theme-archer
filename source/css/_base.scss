@@ -6,13 +6,13 @@ html {
 .container {
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     width: 100%;
     overflow: hidden;
-    text-align: center;
-    justify-content: center;
 }
 
 .main {
+    flex-basis: 60%;
     padding-top: $header-height;
     margin-left: 2rem;
     max-width: calc(100% - #{$profile-width} - 2rem - 8rem);
@@ -43,6 +43,7 @@ body {
     padding: 0;
     position: relative; // top: 0;
     min-height: 100%;
+    width: 100%;
 }
 
 * {
