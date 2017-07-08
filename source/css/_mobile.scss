@@ -5,7 +5,7 @@
 .container {
     display: block;
     .main {
-        width: 98%;
+        width: 96%;
         padding-bottom: 5.5rem;
         margin: 0 auto;
         max-width: initial;
@@ -30,22 +30,17 @@
         display: block;
     }
     .banner {
+        margin-left: $header-profile-width;
         width: calc(100% - #{$header-profile-width});
         .site-post-banner {
             width: 100%;
-            padding-right: 0;
-            .blog-titles,
-            .post-banner {
-                transform: initial;
-            }
         }
         .navbar {
-            position: absolute;
+            width: 100%;
             display: flex;
             justify-content: center;
             z-index: 100;
-            top: 0;
-            width: 100%;
+            right: 0;
             background-color: $header-background-color;
             transition: all 0.2s ease-out 0s;
             opacity: 0;

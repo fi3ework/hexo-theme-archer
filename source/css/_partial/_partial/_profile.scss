@@ -3,18 +3,15 @@
     flex-shrink: 0;
     position: relative;
     margin: calc(#{$header-height} + #{$post-padding-top}) 0 0 0;
-    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     width: $profile-width;
-    min-height: 5rem;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
-    padding: 2rem;
+    padding-bottom: 1rem;
     img {
         display: block;
-        border-radius: 3.5rem;
+        border-radius: 0.5rem;
         margin: 0 auto;
-        height: 7rem;
-        width: 7rem;
-        box-shadow: 0 0 2px 3px rgba(0, 0, 0, 0.20);
+        width: 100%;
+        box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.20);
     }
     .site-name {
         font: 1.5rem $global-theme-font-family;
