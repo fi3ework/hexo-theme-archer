@@ -25,33 +25,15 @@
             font-family: $global-font-family;
             padding: 0.3rem 0 0.6rem 0;
             margin: 0;
-            // a {
-            //     &::before {
-            //         content: '';
-            //         position: absolute;
-            //         top: 110%;
-            //         left: 50%;
-            //         width: 0;
-            //         height: 3px;
-            //         background-color: $global-theme-color;
-            //         transition: all 0.2s ease-out;
-            //     }
-            //     &:hover::before {
-            //         width: 100%;
-            //         left: 0%;
-            //     }
-            //     position: relative;
-            // }
         }
         .post-meta {
-            // clear: left;
-            float: right;
+            position: relative;
             color: $post-meta-color;
             font-family: $global-theme-font-family;
             line-height: 1rem;
             color: $post-time-color;
             .post-date-share {
-                text-align: right;
+                text-align: center;
                 .post-share {
                     position: relative;
                     list-style-type: none;
@@ -72,7 +54,7 @@
                         right: -0.5rem;
                         margin: 0;
                         padding: 0.4rem 0.4rem;
-                        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.125);
+                        box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.125);
                         background-color: #fff;
                         transform: scale(0.9);
                         cursor: pointer;
@@ -88,7 +70,7 @@
                             width: 100%;
                             box-sizing: border-box;
                         }
-                        li:hover{
+                        li:hover {
                             background-color: #ededed;
                         }
                     }
@@ -118,8 +100,10 @@
                 }
             }
             .post-tags {
+                position: absolute;
+                right: 0;
                 text-align: right;
-                margin-top: 0.3rem;
+                margin: 0.3rem 0.5rem 0 0;
                 font-size: 1.0rem;
                 .post-tag {
                     position: relative;

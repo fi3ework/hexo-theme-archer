@@ -12,6 +12,7 @@
             <% } %>
             </h2>
             <div class="post-meta">
+                <%- partial('base-title-tags', {currPost :_page}) %>
                 <div class="post-date-share">
                     <div class="post-date">
                         <span class="post-calander iconfont-tinker"></span><span class="post-time"><%- date(_page.date, "YYYY-MM-DD") %></span>
@@ -30,7 +31,6 @@
                         </ul>
                     </div>
                 </div>
-                <%- partial('base-title-tags', {currPost :_page}) %>
             </div>
         </div>
         <div class="post-content">

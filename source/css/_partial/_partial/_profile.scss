@@ -14,27 +14,29 @@
         box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.20);
     }
     .site-name {
-        font: 1.5rem $global-theme-font-family;
+        font: bold 1.5rem $global-theme-font-family;
         text-align: center;
         padding: 0.2rem;
     }
     .blog-subtitle {
+        color: gray;
         font: 1rem $header-subtitle-font;
-        text-align: center;
+        text-align: left;
     }
     .profile-social {
         max-height: 95%;
         margin: 0 auto;
-        text-align: center;
+        text-align: left;
         line-height: 1.7rem;
         padding: 0.5rem 0;
         @include social($scaleSize: 0.5, $spanMargin: 0.4rem);
     }
     .friends {
         font: 1.1rem $global-theme-font-family;
-        text-align: center;
+        text-align: left;
         div {
-            text-align: center;
+            text-align: left;
+            color: gray;
             font-weight: bolder;
         }
         a {

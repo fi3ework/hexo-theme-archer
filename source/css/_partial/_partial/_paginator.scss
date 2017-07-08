@@ -1,10 +1,3 @@
-@font-face {
-    font-family: 'iconfont-paginator';
-    /* project id 329257 */
-    src: url('//at.alicdn.com/t/font_tk5um7kk205rvn29.eot');
-    src: url('//at.alicdn.com/t/font_tk5um7kk205rvn29.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_tk5um7kk205rvn29.woff') format('woff'), url('//at.alicdn.com/t/font_tk5um7kk205rvn29.ttf') format('truetype'), url('//at.alicdn.com/t/font_tk5um7kk205rvn29.svg#iconfont') format('svg');
-}
-
 .page-nav {
     text-align: center;
     .current,
@@ -12,7 +5,7 @@
     .next,
     .page-number {
         vertical-align: middle;
-        font-family: $global-theme-font-family ;
+        font-family: $global-theme-font-family;
         display: inline-block;
         height: 1.5rem;
         width: 1.5rem;
@@ -26,14 +19,14 @@
             box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
         }
     }
-
     a {
         color: #777;
         &:hover {
             color: $global-theme-color;
         }
     }
-    a:last-of-type {
-        font-family: "iconfont-paginator";
+    .next, .prev {
+        line-height: 1.8rem;
+        font-family: "iconfont-tinker";
     }
 }

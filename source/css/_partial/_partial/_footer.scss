@@ -4,17 +4,17 @@
     left: 0;
     bottom: 0;
     background-color: $footer-background-color;
-    box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.125);
+    box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.1);
     .social {
-        margin-top: 1.5rem;
+        margin-top: 0.6rem;
         text-align: center;
         vertical-align: text-bottom;
-        @include social($scaleSize: 1, $spanMargin: 0.5rem);
+        @include social($scaleSize: 0.8, $spanMargin: 0.5rem);
     }
 
     .copyright {
         font-family: $global-theme-font-family;
-        margin: 1rem auto 1.5rem auto;
+        margin: 0 auto 0.8rem auto;
         color: $footer-icon-default-color;
         text-align: center;
         a {
