@@ -8,34 +8,36 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var toggleAvatar = function toggleAvatar() {
     // 主页头像切换
+    var profileAvatarHeight = void 0,
+        isHeaderAvatarShow = void 0;
     if (typeof document.getElementsByClassName('home-body')[0] === 'undefined') {
         return;
     }
     var profileAvatar = document.getElementsByClassName('profile-avatar')[0],
         headerAvatar = document.getElementsByClassName('header-avatar')[0];
     if (typeof profileAvatar !== 'undefined') {
-        var _toggleAvatar = function _toggleAvatar() {
-            if (document.body.scrollTop > profileAvatarHeight) {
-                if (!isHeaderAvatarShow) {
-                    isHeaderAvatarShow = 1;
-                    headerAvatar.classList.add('header-avatar-animate');
-                }
-            } else {
-                if (isHeaderAvatarShow) {
-                    isHeaderAvatarShow = 0;
-                    headerAvatar.classList.remove('header-avatar-animate');
-                }
-            }
-        };
+        profileAvatarHeight = _util2.default.getAbsPosition(profileAvatar).y;
+
+        isHeaderAvatarShow = 0;
         // header头像切换
-
-
-        var profileAvatarHeight = _util2.default.getAbsPosition(profileAvatar).y,
-            isHeaderAvatarShow = 0;
-
-        document.addEventListener('scroll', _toggleAvatar);
+        document.addEventListener('scroll', toggleAvatar);
         // header头像点击回顶部
         headerAvatar.addEventListener('click', _util2.default.backTop);
+    }
+
+    function toggleAvatar() {
+        var scrollTop = _util2.default.getScrollTop();
+        if (scrollTop > profileAvatarHeight) {
+            if (!isHeaderAvatarShow) {
+                isHeaderAvatarShow = 1;
+                headerAvatar.classList.add('header-avatar-animate');
+            }
+        } else {
+            if (isHeaderAvatarShow) {
+                isHeaderAvatarShow = 0;
+                headerAvatar.classList.remove('header-avatar-animate');
+            }
+        }
     }
 };
 

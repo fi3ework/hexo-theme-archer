@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var tinkerUtil = {
     backTop: function backTop() {
@@ -11,17 +11,21 @@ var tinkerUtil = {
         }, 20);
     },
 
+    getScrollTop: function getScrollTop() {
+        return document.documentElement.scrollTop || document.body.scrollTop;
+    },
+
     // 获取元素在页面上相对左上角的位置
     getAbsPosition: function getAbsPosition(e) {
-        var x = e.offsetLeft;
-        var y = e.offsetTop;
+        var x = e.offsetLeft,
+            y = e.offsetTop;
         while (e = e.offsetParent) {
             x += e.offsetLeft;
             y += e.offsetTop;
         }
         return {
-            "x": x,
-            "y": y
+            'x': x,
+            'y': y
         };
     }
 };

@@ -1,4 +1,4 @@
-import tinkerUtil from './util'
+import tinkerUtil from './util';
 
 let toggleHeader = function () {
     // 顶部标题栏切换
@@ -13,7 +13,8 @@ let toggleHeader = function () {
 
     function toggleHeader() {
         // 超过标题
-        if (document.body.scrollTop > postTitleHeight) {
+        let scrollTop = tinkerUtil.getScrollTop();
+        if (scrollTop > postTitleHeight) {
             if (!isPostTitleShow) {
                 toggleBanner.classList.add('post-banner-show');
                 toggleBanner.classList.remove('blog-banner-show');

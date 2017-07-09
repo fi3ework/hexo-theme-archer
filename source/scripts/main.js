@@ -83,34 +83,36 @@
 
 	var toggleAvatar = function toggleAvatar() {
 	    // 主页头像切换
+	    var profileAvatarHeight = void 0,
+	        isHeaderAvatarShow = void 0;
 	    if (typeof document.getElementsByClassName('home-body')[0] === 'undefined') {
 	        return;
 	    }
 	    var profileAvatar = document.getElementsByClassName('profile-avatar')[0],
 	        headerAvatar = document.getElementsByClassName('header-avatar')[0];
 	    if (typeof profileAvatar !== 'undefined') {
-	        var _toggleAvatar = function _toggleAvatar() {
-	            if (document.body.scrollTop > profileAvatarHeight) {
-	                if (!isHeaderAvatarShow) {
-	                    isHeaderAvatarShow = 1;
-	                    headerAvatar.classList.add('header-avatar-animate');
-	                }
-	            } else {
-	                if (isHeaderAvatarShow) {
-	                    isHeaderAvatarShow = 0;
-	                    headerAvatar.classList.remove('header-avatar-animate');
-	                }
-	            }
-	        };
+	        profileAvatarHeight = _util2.default.getAbsPosition(profileAvatar).y;
+
+	        isHeaderAvatarShow = 0;
 	        // header头像切换
-
-
-	        var profileAvatarHeight = _util2.default.getAbsPosition(profileAvatar).y,
-	            isHeaderAvatarShow = 0;
-
-	        document.addEventListener('scroll', _toggleAvatar);
+	        document.addEventListener('scroll', toggleAvatar);
 	        // header头像点击回顶部
 	        headerAvatar.addEventListener('click', _util2.default.backTop);
+	    }
+
+	    function toggleAvatar() {
+	        var scrollTop = _util2.default.getScrollTop();
+	        if (scrollTop > profileAvatarHeight) {
+	            if (!isHeaderAvatarShow) {
+	                isHeaderAvatarShow = 1;
+	                headerAvatar.classList.add('header-avatar-animate');
+	            }
+	        } else {
+	            if (isHeaderAvatarShow) {
+	                isHeaderAvatarShow = 0;
+	                headerAvatar.classList.remove('header-avatar-animate');
+	            }
+	        }
 	    }
 	};
 
@@ -120,7 +122,7 @@
 /* 2 */
 /***/ (function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	var tinkerUtil = {
 	    backTop: function backTop() {
@@ -133,17 +135,21 @@
 	        }, 20);
 	    },
 
+	    getScrollTop: function getScrollTop() {
+	        return document.documentElement.scrollTop || document.body.scrollTop;
+	    },
+
 	    // 获取元素在页面上相对左上角的位置
 	    getAbsPosition: function getAbsPosition(e) {
-	        var x = e.offsetLeft;
-	        var y = e.offsetTop;
+	        var x = e.offsetLeft,
+	            y = e.offsetTop;
 	        while (e = e.offsetParent) {
 	            x += e.offsetLeft;
 	            y += e.offsetTop;
 	        }
 	        return {
-	            "x": x,
-	            "y": y
+	            'x': x,
+	            'y': y
 	        };
 	    }
 	};
@@ -175,7 +181,8 @@
 
 	    function toggleHeader() {
 	        // 超过标题
-	        if (document.body.scrollTop > postTitleHeight) {
+	        var scrollTop = _util2.default.getScrollTop();
+	        if (scrollTop > postTitleHeight) {
 	            if (!isPostTitleShow) {
 	                toggleBanner.classList.add('post-banner-show');
 	                toggleBanner.classList.remove('blog-banner-show');

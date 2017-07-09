@@ -19,7 +19,8 @@ var toggleHeader = function toggleHeader() {
 
     function toggleHeader() {
         // 超过标题
-        if (document.body.scrollTop > postTitleHeight) {
+        var scrollTop = _util2.default.getScrollTop();
+        if (scrollTop > postTitleHeight) {
             if (!isPostTitleShow) {
                 toggleBanner.classList.add('post-banner-show');
                 toggleBanner.classList.remove('blog-banner-show');
