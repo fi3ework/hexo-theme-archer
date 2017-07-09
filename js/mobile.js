@@ -1,5 +1,3 @@
-
-
 let initMobile = function () {
     let navBar = document.getElementsByClassName('navbar')[0];
     let menuButton = document.getElementsByClassName('menu-button')[0];
@@ -10,4 +8,4 @@ let initMobile = function () {
     });
 };
 
-module.exports = initMobile();
+export { initMobile };

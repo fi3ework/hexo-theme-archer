@@ -22,4 +22,4 @@ function makeQR(opt) {
     });
 }
 
-module.exports = makeQR;
+export { makeQR };

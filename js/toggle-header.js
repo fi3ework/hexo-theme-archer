@@ -38,4 +38,4 @@ let toggleHeader = function () {
 
 };
 
-module.exports = toggleHeader;
+export { toggleHeader } ;

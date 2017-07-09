@@ -114,5 +114,4 @@ function initCurrentShare(shareBox) {
 }
 
 
-
-module.exports = initShareBox;
+export { initShareBox };

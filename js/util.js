@@ -28,4 +28,4 @@ var tinkerUtil = {
     }
 };
 
-module.exports = tinkerUtil;
+export { tinkerUtil };

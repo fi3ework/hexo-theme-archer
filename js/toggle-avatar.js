@@ -35,4 +35,4 @@ let toggleAvatar = function () {
     }
 };
 
-module.exports = toggleAvatar;
+export { toggleAvatar };
