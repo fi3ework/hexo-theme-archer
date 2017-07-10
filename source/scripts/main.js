@@ -48,26 +48,22 @@
 
 	var _toggleAvatar = __webpack_require__(1);
 
-	var _toggleAvatar2 = _interopRequireDefault(_toggleAvatar);
-
 	var _toggleHeader = __webpack_require__(3);
-
-	var _toggleHeader2 = _interopRequireDefault(_toggleHeader);
 
 	var _share = __webpack_require__(4);
 
-	var _share2 = _interopRequireDefault(_share);
-
 	var _mobile = __webpack_require__(7);
 
-	var _mobile2 = _interopRequireDefault(_mobile);
+	var _sidebar = __webpack_require__(8);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _tag = __webpack_require__(9);
 
-	(0, _toggleAvatar2.default)();
-	(0, _toggleHeader2.default)();
-	(0, _share2.default)();
-	(0, _mobile2.default)();
+	(0, _toggleAvatar.toggleAvatar)();
+	(0, _toggleHeader.toggleHeader)();
+	(0, _sidebar.sidebarInit)();
+	(0, _share.initShareBox)();
+	(0, _tag.initTag)();
+	(0, _mobile.initMobile)();
 
 /***/ }),
 /* 1 */
@@ -75,11 +71,12 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.toggleAvatar = undefined;
+
 	var _util = __webpack_require__(2);
-
-	var _util2 = _interopRequireDefault(_util);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var toggleAvatar = function toggleAvatar() {
 	    // 主页头像切换
@@ -91,17 +88,17 @@
 	    var profileAvatar = document.getElementsByClassName('profile-avatar')[0],
 	        headerAvatar = document.getElementsByClassName('header-avatar')[0];
 	    if (typeof profileAvatar !== 'undefined') {
-	        profileAvatarHeight = _util2.default.getAbsPosition(profileAvatar).y;
+	        profileAvatarHeight = _util.tinkerUtil.getAbsPosition(profileAvatar).y;
 
 	        isHeaderAvatarShow = 0;
 	        // header头像切换
 	        document.addEventListener('scroll', toggleAvatar);
 	        // header头像点击回顶部
-	        headerAvatar.addEventListener('click', _util2.default.backTop);
+	        headerAvatar.addEventListener('click', _util.tinkerUtil.backTop);
 	    }
 
 	    function toggleAvatar() {
-	        var scrollTop = _util2.default.getScrollTop();
+	        var scrollTop = _util.tinkerUtil.getScrollTop();
 	        if (scrollTop > profileAvatarHeight) {
 	            if (!isHeaderAvatarShow) {
 	                isHeaderAvatarShow = 1;
@@ -116,7 +113,7 @@
 	    }
 	};
 
-	module.exports = toggleAvatar;
+	exports.toggleAvatar = toggleAvatar;
 
 /***/ }),
 /* 2 */
@@ -124,6 +121,9 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 	var tinkerUtil = {
 	    backTop: function backTop() {
 	        var topTimer = setInterval(function () {
@@ -151,10 +151,55 @@
 	            'x': x,
 	            'y': y
 	        };
+	    },
+	    dateFormater: function dateFormater(date, fmt) {
+	        var o = {
+	            'M+': date.getMonth() + 1, //月份 
+	            'd+': date.getDate(), //日 
+	            'h+': date.getHours(), //小时 
+	            'm+': date.getMinutes(), //分 
+	            's+': date.getSeconds(), //秒 
+	            'q+': Math.floor((date.getMonth() + 3) / 3), //季度 
+	            'S': date.getMilliseconds() //毫秒 
+	        };
+	        if (/(y+)/.test(fmt)) {
+	            fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
+	        }
+	        for (var k in o) {
+	            if (new RegExp('(' + k + ')').test(fmt)) {
+	                fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length));
+	            }
+	        }
+	        return fmt;
+	    },
+	    toggler: function toggler(target, eventName, btn, addClassName, removeClassName, optEvent) {
+	        if (!(target && typeof window !== 'undefined' && (target === window || target.nodeType))) {
+	            return;
+	        }
+	        btn.addEventListener(eventName, function (eve) {
+	            if (addClassName) {
+	                var classNameArr = addClassName.split(/[, ]/);
+	                var length = classNameArr.length;
+	                while (length--) {
+	                    target.classList.add(classNameArr[length]);
+	                }
+	            }
+	            if (removeClassName) {
+	                var _classNameArr = removeClassName.split(/[, ]/);
+	                var _length = _classNameArr.length;
+	                while (_length--) {
+	                    target.classList.remove(_classNameArr[_length]);
+	                }
+	            }
+	            if (optEvent) {
+	                optEvent(eve);
+	            }
+	        });
 	    }
+
 	};
 
-	module.exports = tinkerUtil;
+	exports.tinkerUtil = tinkerUtil;
 
 /***/ }),
 /* 3 */
@@ -162,11 +207,12 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.toggleHeader = undefined;
+
 	var _util = __webpack_require__(2);
-
-	var _util2 = _interopRequireDefault(_util);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var toggleHeader = function toggleHeader() {
 	    // 顶部标题栏切换
@@ -174,14 +220,14 @@
 	        return;
 	    }
 	    var postTitleEle = document.getElementsByClassName('post-title')[0],
-	        postTitleHeight = _util2.default.getAbsPosition(postTitleEle).y,
+	        postTitleHeight = _util.tinkerUtil.getAbsPosition(postTitleEle).y,
 	        toggleBanner = document.getElementsByClassName('site-post-banner')[0],
 	        isPostTitleShow = 0,
 	        postTitle = document.getElementsByClassName('post-name')[0];
 
 	    function toggleHeader() {
 	        // 超过标题
-	        var scrollTop = _util2.default.getScrollTop();
+	        var scrollTop = _util.tinkerUtil.getScrollTop();
 	        if (scrollTop > postTitleHeight) {
 	            if (!isPostTitleShow) {
 	                toggleBanner.classList.add('post-banner-show');
@@ -201,10 +247,10 @@
 	    // 滚动时切换标题    
 	    document.addEventListener('scroll', toggleHeader);
 	    // 点击文章标题回页首
-	    postTitle.addEventListener('click', _util2.default.backTop);
+	    postTitle.addEventListener('click', _util.tinkerUtil.backTop);
 	};
 
-	module.exports = toggleHeader;
+	exports.toggleHeader = toggleHeader;
 
 /***/ }),
 /* 4 */
@@ -212,17 +258,22 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.initShareBox = undefined;
+
 	var _QRMaker = __webpack_require__(5);
-
-	var _QRMaker2 = _interopRequireDefault(_QRMaker);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var mask = document.getElementsByClassName('qr-mask')[0];
 	var qrCode = document.getElementsByClassName('QRcode-box')[0];
 
 	function initQREvent() {
 	    var closeQR = document.getElementsByClassName('QRcode-close')[0];
+	    if (!closeQR) {
+	        return;
+	    }
+
 	    function hideQR(eve) {
 	        eve.stopPropagation();
 	        mask.classList.remove('QRcode-mask-opacity-show');
@@ -241,7 +292,7 @@
 
 	// show wechat QR code
 	function showQR(opt) {
-	    (0, _QRMaker2.default)(opt);
+	    (0, _QRMaker.makeQR)(opt);
 	    mask.classList.add('QRcode-mask-show');
 	    qrCode.classList.add('QRcode-mask-show');
 	    requestAnimationFrame(function () {
@@ -327,7 +378,7 @@
 	    }, this);
 	}
 
-	module.exports = initShareBox;
+	exports.initShareBox = initShareBox;
 
 /***/ }),
 /* 5 */
@@ -335,11 +386,12 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.makeQR = undefined;
+
 	var _qrcode = __webpack_require__(6);
-
-	var _qrcode2 = _interopRequireDefault(_qrcode);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function makeQR(opt) {
 	    var QRele = document.getElementsByClassName('QRcode-box')[0];
@@ -353,17 +405,17 @@
 	        QRele.removeChild(oldQR[0]);
 	    }
 
-	    new _qrcode2.default(QRele, {
+	    new _qrcode.QRCode(QRele, {
 	        text: opt.sURL,
 	        width: 128,
 	        height: 128,
 	        colorDark: '#222',
 	        colorLight: '#fff',
-	        correctLevel: _qrcode2.default.CorrectLevel.H
+	        correctLevel: _qrcode.QRCode.CorrectLevel.H
 	    });
 	}
 
-	module.exports = makeQR;
+	exports.makeQR = makeQR;
 
 /***/ }),
 /* 6 */
@@ -1308,9 +1360,12 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
 	var initMobile = function initMobile() {
 	    var navBar = document.getElementsByClassName('navbar')[0];
-	    var menuButton = document.getElementsByClassName('menu-button')[0];
+	    var menuButton = document.getElementsByClassName('header-sidebar-menu')[0];
 
 	    menuButton.addEventListener('click', function () {
 	        navBar.classList.toggle('navbar-show');
@@ -1318,7 +1373,147 @@
 	    });
 	};
 
-	module.exports = initMobile();
+	exports.initMobile = initMobile;
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.sidebarInit = undefined;
+
+	var _util = __webpack_require__(2);
+
+	function stopClickPropagation(target) {
+	    target.addEventListener('click', function (eve) {
+	        eve.stopPropagation();
+	    });
+	}
+
+	var sidebarInit = function sidebarInit() {
+	    var sidebar = document.getElementsByClassName('sidebar')[0],
+	        headerMenu = document.getElementsByClassName('header-sidebar-menu')[0],
+	        sidebarClose = sidebar.getElementsByClassName('sidebar-close')[0];
+	    // add sidebar hide show toggle
+	    _util.tinkerUtil.toggler(sidebar, 'click', sidebarClose, 'sidebar-hide', null);
+	    _util.tinkerUtil.toggler(sidebar, 'click', headerMenu, null, 'sidebar-hide', function (eve) {
+	        eve.stopPropagation();
+	    });
+	    // stop sidebar propagation to hide itself
+	    stopClickPropagation(sidebar);
+	    document.body.addEventListener('click', function () {
+	        sidebar.classList.add('sidebar-hide');
+	    });
+	    // add sidebar content change
+	    var sidebarContent = sidebar.getElementsByClassName('sidebar-content')[0],
+	        archiveLink = sidebar.getElementsByClassName('sidebar-archive-link')[0],
+	        tagsLink = sidebar.getElementsByClassName('sidebar-tags-link')[0];
+	    _util.tinkerUtil.toggler(sidebarContent, 'click', archiveLink, 'sidebar-content-show-archive', 'sidebar-content-show-tags');
+	    _util.tinkerUtil.toggler(sidebarContent, 'click', tagsLink, 'sidebar-content-show-tags', 'sidebar-content-show-archive');
+	};
+
+	exports.sidebarInit = sidebarInit;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.initTag = undefined;
+
+	var _util = __webpack_require__(2);
+
+	var initTag = function initTag() {
+	    if (!document.getElementsByClassName('tags-tags-box')[0]) {
+	        return;
+	    }
+
+	    var contentJSON = void 0,
+	        tagMap = new Map();
+	    getTagInfo();
+
+	    // get tag info
+	    function getTagInfo() {
+	        // jsInfo is from js-info.ejs
+	        var tagURL = jsInfo.root + 'content.json'; //?t=' + new Date();
+	        var xhr = new XMLHttpRequest();
+	        xhr.responseType = '';
+	        xhr.open('get', tagURL, true);
+	        xhr.onload = function () {
+	            if (this.status == 200 || this.status == 304) {
+	                contentJSON = JSON.parse(this.responseText);
+	                initTagMap(contentJSON);
+	                console.log(contentJSON);
+	            }
+	        };
+	        xhr.send();
+	    }
+
+	    // init tagMap
+	    function initTagMap(contentJSON) {
+	        var _this = this;
+
+	        var _loop = function _loop(postIndex) {
+	            var currPostTags = contentJSON[postIndex].tags;
+	            if (currPostTags.length) {
+	                currPostTags.forEach(function (tag) {
+	                    if (tagMap.has(tag.name)) {
+	                        var addedIndex = tagMap.get(tag.name) + ',' + postIndex.toString();
+	                        tagMap.set(tag.name, addedIndex);
+	                    } else {
+	                        tagMap.set(tag.name, postIndex.toString());
+	                    }
+	                }, _this);
+	            }
+	        };
+
+	        for (var postIndex = 0; postIndex < contentJSON.length; postIndex++) {
+	            _loop(postIndex);
+	        }
+	    }
+
+	    // change model to dom
+	    function createTagDom(post) {
+	        var item = document.createElement('li');
+	        item.className = 'tag-post-item';
+	        var itemDate = document.createElement('span');
+	        itemDate.className = 'archive-post-date';
+	        itemDate.innerHTML = _util.tinkerUtil.dateFormater(new Date(Date.parse(post.date)), 'yyyy-MM-dd');
+	        var itemTitle = document.createElement('a');
+	        itemTitle.className = 'archive-post-title';
+	        itemTitle.href = jsInfo.root + post.path;
+	        itemTitle.innerHTML = post.title;
+	        item.appendChild(itemDate);
+	        item.appendChild(itemTitle);
+	        return item;
+	    }
+
+	    document.getElementsByClassName('tags-tags-box')[0].addEventListener('click', function (event) {
+	        event.preventDefault();
+	        var realTagName = event.target.innerHTML;
+	        var indexs = tagMap.get(realTagName);
+	        var indexsArr = indexs.split(',');
+
+	        // append lists
+	        var frag = document.createDocumentFragment(),
+	            postList = document.getElementsByClassName('tag-list')[0];
+	        postList.innerHTML = '';
+	        indexsArr.forEach(function (item) {
+	            frag.appendChild(createTagDom(contentJSON[item]));
+	        });
+	        postList.appendChild(frag);
+	    });
+	};
+
+	exports.initTag = initTag;
 
 /***/ })
 /******/ ]);

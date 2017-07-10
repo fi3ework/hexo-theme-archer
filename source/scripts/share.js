@@ -1,16 +1,21 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.initShareBox = undefined;
+
 var _QRMaker = require('./QR-maker');
-
-var _QRMaker2 = _interopRequireDefault(_QRMaker);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mask = document.getElementsByClassName('qr-mask')[0];
 var qrCode = document.getElementsByClassName('QRcode-box')[0];
 
 function initQREvent() {
     var closeQR = document.getElementsByClassName('QRcode-close')[0];
+    if (!closeQR) {
+        return;
+    }
+
     function hideQR(eve) {
         eve.stopPropagation();
         mask.classList.remove('QRcode-mask-opacity-show');
@@ -29,7 +34,7 @@ function initQREvent() {
 
 // show wechat QR code
 function showQR(opt) {
-    (0, _QRMaker2.default)(opt);
+    (0, _QRMaker.makeQR)(opt);
     mask.classList.add('QRcode-mask-show');
     qrCode.classList.add('QRcode-mask-show');
     requestAnimationFrame(function () {
@@ -115,4 +120,4 @@ function initCurrentShare(shareBox) {
     }, this);
 }
 
-module.exports = initShareBox;
+exports.initShareBox = initShareBox;

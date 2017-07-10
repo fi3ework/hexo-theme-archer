@@ -1,0 +1,85 @@
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 300px;
+    border-right: 1px solid #000;
+    background: #fff;
+    transition: all 0.2s ease-in-out .0s;
+    overflow: visible;
+    background-color: yellow;
+    .sidebar-header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1001;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: $header-height;
+        border-top: $header-top-border-height solid #000;
+        border-bottom: 1px solid #000;
+        background-color: #fff;
+        .sidebar-category {
+            display: flex;
+            font-family: $global-theme-font-family;
+            flex-grow: 1;
+            justify-content: space-around;
+            span {
+                cursor: pointer;
+            }
+        }
+        .sidebar-close {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 1rem;
+            line-height: 1.6rem;
+            text-indent: -2px;
+            text-align: center;
+            border: 1px solid black;
+            border-radius: 3px;
+            font-family: 'iconfont-tinker';
+            cursor: pointer;
+        }
+    }
+    .sidebar-content {
+        position: relative;
+        margin-top: $header-height;
+        display: flex;
+        width: 100%; // height: calc(100% - #{$header-height} - 4px);
+        top: 0;
+        left: 0;
+        transition: all 0.1s ease-in-out .0s;
+        overflow-y: auto;
+        .archive-content,
+        .tags-content {
+            flex-shrink: 0;
+            width: calc(100% - 2rem);
+            padding: 1rem;
+            height: 100%;
+        }
+        .archive-content {
+            overflow-y: auto;
+            background-color: lightgreen;
+        }
+        .tags-content {
+            background-color: lightcoral;
+        }
+    }
+    .sidebar-content-show-archive {
+        left: 0%;
+    }
+    .sidebar-content-show-tags {
+        left: -100%;
+    }
+    &::-webkit-scrollbar {
+        width: 2px;
+    }
+}
+
+.sidebar-hide {
+    left: -301px;
+}

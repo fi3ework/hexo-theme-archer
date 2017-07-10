@@ -1,4 +1,4 @@
-import tinkerUtil from './util';
+import { tinkerUtil } from './util';
 
 let toggleAvatar = function () {
     // 主页头像切换

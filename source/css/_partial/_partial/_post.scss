@@ -6,10 +6,116 @@
     }
 }
 
+.post-meta {
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    background-color: rgba(0, 0, 0, 0.03);
+    border-radius: 0.3rem 0.3rem 0 0;
+    position: relative;
+    padding: 0.6rem 0.5rem;
+    font-family: $global-theme-font-family;
+    line-height: 1rem;
+    color: #666;
+    overflow: hidden;
+    .post-date-share {
+        float: left;
+        text-align: center;
+        .post-share {
+            position: relative;
+            list-style-type: none;
+            z-index: 88;
+            display: inline-block;
+            &::before {
+                position: relative;
+                cursor: pointer;
+                content: "\e607";
+                font-size: 1.2rem;
+            }
+            .share-box {
+                position: absolute;
+                visibility: hidden;
+                opacity: 0;
+                overflow: hidden;
+                top: 1.5rem;
+                right: -0.5rem;
+                margin: 0;
+                padding: 0.4rem 0.4rem;
+                box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.125);
+                background-color: #fff;
+                transform: scale(0.9);
+                cursor: pointer;
+                font-family: $global-theme-font-family;
+                transition: all 0.15s ease-out;
+                li {
+                    float: left;
+                    padding: 0.4rem 0.6rem;
+                    line-height: 2rem;
+                    white-space: nowrap;
+                    margin: 0;
+                    text-align: left;
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+                li:hover {
+                    background-color: #ededed;
+                }
+            }
+            .share-box-show {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1);
+            }
+        }
+        .post-date {
+            transition: all 0.2s ease-out;
+            margin-right: 0.2rem;
+            display: inline-block;
+            vertical-align: bottom;
+            .post-calander::before {
+                position: relative;
+                top: -0.05rem;
+                margin-right: 0.3rem;
+                font-size: 1.1rem;
+                content: "\e676";
+            }
+            .post-time {
+                display: inline-block;
+                vertical-align: bottom;
+                font-size: 1rem;
+            }
+        }
+    }
+    .post-tags {
+        position: absolute;
+        right: 0.5rem;
+        text-align: right;
+        font-size: 1.0rem;
+        .post-tag {
+            position: relative;
+            margin-right: 0.4rem;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                width: 0;
+                height: 2px;
+                background-color: $global-theme-color;
+                transition: all 0.2s ease-out;
+            }
+            &:hover::before {
+                width: 100%;
+                left: 0%;
+            }
+        }
+    }
+}
+
 .post-content-box {
     position: relative;
-    padding: 2rem 3rem 3rem 3rem;
-    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.25);
+    padding: 2rem 1.5rem 3rem 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.35);
+    border-top: none;
+    border-radius: 0 0 0.3rem 0.3rem;
     color: $post-content-color;
     background-color: $post-background-color;
     z-index: 3;
@@ -25,104 +131,6 @@
             font-family: $global-font-family;
             padding: 0.3rem 0 0.6rem 0;
             margin: 0;
-        }
-        .post-meta {
-            position: relative;
-            color: $post-meta-color;
-            font-family: $global-theme-font-family;
-            line-height: 1rem;
-            color: $post-time-color;
-            .post-date-share {
-                text-align: center;
-                .post-share {
-                    position: relative;
-                    list-style-type: none;
-                    z-index: 88;
-                    display: inline-block;
-                    &::before {
-                        position: relative;
-                        cursor: pointer;
-                        content: "\e607";
-                        font-size: 1.2rem;
-                    }
-                    .share-box {
-                        position: absolute;
-                        visibility: hidden;
-                        opacity: 0;
-                        overflow: hidden;
-                        top: 1.5rem;
-                        right: -0.5rem;
-                        margin: 0;
-                        padding: 0.4rem 0.4rem;
-                        box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.125);
-                        background-color: #fff;
-                        transform: scale(0.9);
-                        cursor: pointer;
-                        font-family: $global-theme-font-family;
-                        transition: all 0.15s ease-out;
-                        li {
-                            float: left;
-                            padding: 0.4rem 0.6rem;
-                            line-height: 2rem;
-                            white-space: nowrap;
-                            margin: 0;
-                            text-align: left;
-                            width: 100%;
-                            box-sizing: border-box;
-                        }
-                        li:hover {
-                            background-color: #ededed;
-                        }
-                    }
-                    .share-box-show {
-                        opacity: 1;
-                        visibility: visible;
-                        transform: scale(1);
-                    }
-                }
-                .post-date {
-                    transition: all 0.2s ease-out;
-                    margin-right: 0.2rem;
-                    display: inline-block;
-                    vertical-align: bottom;
-                    .post-calander::before {
-                        position: relative;
-                        top: -0.05rem;
-                        margin-right: 0.3rem;
-                        font-size: 1.1rem;
-                        content: "\e676";
-                    }
-                    .post-time {
-                        display: inline-block;
-                        vertical-align: bottom;
-                        font-size: 1rem;
-                    }
-                }
-            }
-            .post-tags {
-                position: absolute;
-                right: 0;
-                text-align: right;
-                margin: 0.3rem 0.5rem 0 0;
-                font-size: 1.0rem;
-                .post-tag {
-                    position: relative;
-                    &::before {
-                        content: '';
-                        position: absolute;
-                        top: 100%;
-                        left: 50%;
-                        width: 0;
-                        height: 2px;
-                        background-color: $global-theme-color;
-                        transition: all 0.2s ease-out;
-                    }
-                    &:hover::before {
-                        width: 100%;
-                        left: 0%;
-                    }
-                }
-            }
         }
     }
 }

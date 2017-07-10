@@ -1,4 +1,4 @@
-import QRCode from './lib/qrcode';
+import { QRCode } from './lib/qrcode';
 
 function makeQR(opt) {
     let QRele = document.getElementsByClassName('QRcode-box')[0];

@@ -1,8 +1,11 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 var initMobile = function initMobile() {
     var navBar = document.getElementsByClassName('navbar')[0];
-    var menuButton = document.getElementsByClassName('menu-button')[0];
+    var menuButton = document.getElementsByClassName('header-sidebar-menu')[0];
 
     menuButton.addEventListener('click', function () {
         navBar.classList.toggle('navbar-show');
@@ -10,4 +13,4 @@ var initMobile = function initMobile() {
     });
 };
 
-module.exports = initMobile();
+exports.initMobile = initMobile;

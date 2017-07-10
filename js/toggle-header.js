@@ -1,4 +1,4 @@
-import tinkerUtil from './util';
+import { tinkerUtil } from './util';
 
 let toggleHeader = function () {
     // 顶部标题栏切换

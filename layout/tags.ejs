@@ -4,10 +4,10 @@
   <% if (site.tags) { %>
     <div class="tags-tags-box">
       <% site.tags.each(function (tag) { %>
-        <span class="post-tag"><a href= "<%- url_for(tag.path) %>"> <%- tag.slug %></a></span>
+        <span class="post-tag"><a href= "<%- url_for(tag.path) %>"><%- tag.name %></a></span>
         <% }) %>
-      <!--<%- tagcloud(site.tags) %>-->
     </div>
+    <div class="tag-list"></div>
     <% } %>
   </div>
   </section>

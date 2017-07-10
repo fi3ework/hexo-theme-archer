@@ -1,10 +1,14 @@
-import makeQR from './QR-maker';
+import { makeQR } from './QR-maker';
 
 let mask = document.getElementsByClassName('qr-mask')[0];
 let qrCode = document.getElementsByClassName('QRcode-box')[0];
 
 function initQREvent() {
     let closeQR = document.getElementsByClassName('QRcode-close')[0];
+    if (!closeQR) { 
+        return;
+    }
+        
     function hideQR(eve) {
         eve.stopPropagation();
         mask.classList.remove('QRcode-mask-opacity-show');

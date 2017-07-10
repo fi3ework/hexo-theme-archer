@@ -1,10 +1,11 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.toggleAvatar = undefined;
+
 var _util = require('./util');
-
-var _util2 = _interopRequireDefault(_util);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var toggleAvatar = function toggleAvatar() {
     // 主页头像切换
@@ -16,17 +17,17 @@ var toggleAvatar = function toggleAvatar() {
     var profileAvatar = document.getElementsByClassName('profile-avatar')[0],
         headerAvatar = document.getElementsByClassName('header-avatar')[0];
     if (typeof profileAvatar !== 'undefined') {
-        profileAvatarHeight = _util2.default.getAbsPosition(profileAvatar).y;
+        profileAvatarHeight = _util.tinkerUtil.getAbsPosition(profileAvatar).y;
 
         isHeaderAvatarShow = 0;
         // header头像切换
         document.addEventListener('scroll', toggleAvatar);
         // header头像点击回顶部
-        headerAvatar.addEventListener('click', _util2.default.backTop);
+        headerAvatar.addEventListener('click', _util.tinkerUtil.backTop);
     }
 
     function toggleAvatar() {
-        var scrollTop = _util2.default.getScrollTop();
+        var scrollTop = _util.tinkerUtil.getScrollTop();
         if (scrollTop > profileAvatarHeight) {
             if (!isHeaderAvatarShow) {
                 isHeaderAvatarShow = 1;
@@ -41,4 +42,4 @@ var toggleAvatar = function toggleAvatar() {
     }
 };
 
-module.exports = toggleAvatar;
+exports.toggleAvatar = toggleAvatar;

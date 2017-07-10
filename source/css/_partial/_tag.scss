@@ -3,12 +3,24 @@
     margin-left: auto;
     margin-right: auto;
     .tags {
-    @extend .index-posts;
-        padding-top: $post-padding-top;
+        @extend .index-posts;
+        padding-top: $post-padding-top; // tag names
         a {
             text-decoration: none;
             font-family: $global-theme-font-family;
             color: $global-theme-color;
+        }
+        .tags-tags-box {
+            text-align: center;
+        }
+        .tag-list {
+            width: 100%;
+            .tag-post-item {
+                @extend .archive-post-item;
+                &:first-of-type {
+                    margin-top: 1rem;
+                }
+            }
         }
     }
 }

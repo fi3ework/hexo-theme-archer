@@ -24,8 +24,8 @@ serif !default;
 @font-face {
     font-family: 'iconfont-tinker';
     /* project id 327081 */
-    src: url('//at.alicdn.com/t/font_onlouuz558hyqfr.eot');
-    src: url('//at.alicdn.com/t/font_onlouuz558hyqfr.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_onlouuz558hyqfr.woff') format('woff'), url('//at.alicdn.com/t/font_onlouuz558hyqfr.ttf') format('truetype'), url('//at.alicdn.com/t/font_onlouuz558hyqfr.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_dicvocq418h3erk9.eot');
+    src: url('//at.alicdn.com/t/font_dicvocq418h3erk9.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_dicvocq418h3erk9.woff') format('woff'), url('//at.alicdn.com/t/font_dicvocq418h3erk9.ttf') format('truetype'), url('//at.alicdn.com/t/font_dicvocq418h3erk9.svg#iconfont') format('svg');
 }
 
 .iconfont-tinker {
@@ -40,16 +40,17 @@ serif !default;
 // ======= header ======= //
 $header-height: 4.5rem;
 $header-avatar-size :2.7rem;
-$header-top-border: #fcfcfc;
+$header-top-border-color: #fcfcfc;
+$header-top-border-height: 3px;
 $header-background-color: #24292e;
 $header-title-color: #dedede;
 $header-title-font: $global-theme-font-family ;
 $header-subtitle-font: $global-theme-font-family ;
 $header-nav-font: $global-theme-font-family ;
 $header-nav-color: #dedede;
-$header-profile-width: 3rem;
+$header-menu-width: 1.5rem;
 // ======== profile ======= //
-$profile-width: 11rem;
+$profile-width: 200px;
 // ======= post ======= //
 $post-padding-top: 2.5rem;
 $post-meta-color: $global-theme-color;

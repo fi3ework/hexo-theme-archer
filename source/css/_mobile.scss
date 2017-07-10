@@ -26,12 +26,12 @@
 
 .header {
     z-index: 100;
-    .menu-button {
+    .header-sidebar-menu {
         display: block;
     }
     .banner {
-        margin-left: $header-profile-width;
-        width: calc(100% - #{$header-profile-width});
+        margin-left: $header-menu-width;
+        width: calc(100% - #{$header-menu-width});
         .site-post-banner {
             width: 100%;
         }

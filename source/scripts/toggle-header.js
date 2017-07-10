@@ -1,10 +1,11 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.toggleHeader = undefined;
+
 var _util = require('./util');
-
-var _util2 = _interopRequireDefault(_util);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var toggleHeader = function toggleHeader() {
     // 顶部标题栏切换
@@ -12,14 +13,14 @@ var toggleHeader = function toggleHeader() {
         return;
     }
     var postTitleEle = document.getElementsByClassName('post-title')[0],
-        postTitleHeight = _util2.default.getAbsPosition(postTitleEle).y,
+        postTitleHeight = _util.tinkerUtil.getAbsPosition(postTitleEle).y,
         toggleBanner = document.getElementsByClassName('site-post-banner')[0],
         isPostTitleShow = 0,
         postTitle = document.getElementsByClassName('post-name')[0];
 
     function toggleHeader() {
         // 超过标题
-        var scrollTop = _util2.default.getScrollTop();
+        var scrollTop = _util.tinkerUtil.getScrollTop();
         if (scrollTop > postTitleHeight) {
             if (!isPostTitleShow) {
                 toggleBanner.classList.add('post-banner-show');
@@ -39,7 +40,7 @@ var toggleHeader = function toggleHeader() {
     // 滚动时切换标题    
     document.addEventListener('scroll', toggleHeader);
     // 点击文章标题回页首
-    postTitle.addEventListener('click', _util2.default.backTop);
+    postTitle.addEventListener('click', _util.tinkerUtil.backTop);
 };
 
-module.exports = toggleHeader;
+exports.toggleHeader = toggleHeader;
