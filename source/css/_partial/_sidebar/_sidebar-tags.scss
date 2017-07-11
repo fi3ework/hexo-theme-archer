@@ -1,0 +1,36 @@
+.sidebar-tags {
+    .sidebar-tags-name {
+        width: 100%;
+        padding: 0 0 1rem 0;
+        .sidebar-tag-name {
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 3px;
+            padding: 0 0.2rem;
+            font-size: 0.1rem;
+            padding: 0 0.2rem;
+            margin: 0.1rem 0;
+            white-space: nowrap;
+            transition: all 0.1s ease-out .0s;
+            &:hover {
+                border-color: $global-theme-color;
+                a {
+                    color: $global-theme-color;
+                }
+            }
+            a {
+                color: #000;
+                transition: all 0.1s ease-out .0s;
+                line-height: 1.2rem;
+                &::before {
+                    content: '#';
+                }
+            }
+        }
+    }
+    .sidebar-tag-list {
+        .tag-post-item {
+            @extend .archive-post-item;
+        }
+    }
+}

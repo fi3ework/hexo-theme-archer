@@ -1,15 +1,13 @@
 <div class="sidebar sidebar-hide~">
     <div class="sidebar-header">
         <div class="sidebar-category">
-            <span class="sidebar-archive-link">Archives</span>
-            <span class="sidebar-tags-link">Tags</span>
+            <span class="sidebar-archive-link"><span class="iconfont-tinker">&#xe67d;</span>Archives</span>
+            <span class="sidebar-tags-link"><span class="iconfont-tinker">&#xe610;</span>Tags</span>
         </div>
-        <div class="sidebar-close">&#xe646;</div>
+        <div class="sidebar-close">&#xe779;</div>
     </div>
-    <div class="sidebar-content sidebar-content-show-archive">
-        <div class="archive-content">
-            <%- partial('./sidebar/sidebar-archive') %>
-        </div>
-        <div class="tags-content"></div>
+    <div class="sidebar-content sidebar-content-show-tags">
+        <%- partial('./sidebar/sidebar-archive') %>
+        <%- partial('./sidebar/sidebar-tags') %>
     </div>
 </div> 

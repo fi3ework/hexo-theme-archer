@@ -8,7 +8,6 @@
         font-size: 3rem * $scaleSize;
         margin: 0 $spanMargin 0 0;
         transition: all 0.2s ease-out .0s;
-        // transform: scale(1);
     }
     .email {
         &::before {

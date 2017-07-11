@@ -3,11 +3,6 @@ import {
 } from './util';
 
 let initTag = function () {
-    if (!document.getElementsByClassName('tags-tags-box')[0]) {
-        return;
-    }
-
-
     let contentJSON,
         tagMap = new Map();
     getTagInfo();
@@ -15,7 +10,7 @@ let initTag = function () {
     // get tag info
     function getTagInfo() {
         // jsInfo is from js-info.ejs
-        let tagURL = jsInfo.root + 'content.json'; //?t=' + new Date();
+        let tagURL = jsInfo.root + 'content.json?t=' + (+ new Date());
         let xhr = new XMLHttpRequest();
         xhr.responseType = '';
         xhr.open('get', tagURL, true);
@@ -23,7 +18,6 @@ let initTag = function () {
             if (this.status == 200 || this.status == 304) {
                 contentJSON = JSON.parse(this.responseText);
                 initTagMap(contentJSON);
-                console.log(contentJSON);
             }
         };
         xhr.send();
@@ -62,15 +56,18 @@ let initTag = function () {
         return item;
     }
 
-    document.getElementsByClassName('tags-tags-box')[0].addEventListener('click', function (event) {
+    document.getElementsByClassName('sidebar-tags-name')[0].addEventListener('click', function (event) {
         event.preventDefault();
+        console.log(tagMap);
+        
         let realTagName = event.target.innerHTML;
+        console.log(realTagName);
         let indexs = tagMap.get(realTagName);
         let indexsArr = indexs.split(',');
 
         // append lists
         let frag = document.createDocumentFragment(),
-            postList = document.getElementsByClassName('tag-list')[0];
+            postList = document.getElementsByClassName('sidebar-tag-list')[0];
         postList.innerHTML = '';
         indexsArr.forEach(function (item) {
             frag.appendChild(createTagDom(contentJSON[item]));

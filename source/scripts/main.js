@@ -1432,10 +1432,6 @@
 	var _util = __webpack_require__(2);
 
 	var initTag = function initTag() {
-	    if (!document.getElementsByClassName('tags-tags-box')[0]) {
-	        return;
-	    }
-
 	    var contentJSON = void 0,
 	        tagMap = new Map();
 	    getTagInfo();
@@ -1443,7 +1439,7 @@
 	    // get tag info
 	    function getTagInfo() {
 	        // jsInfo is from js-info.ejs
-	        var tagURL = jsInfo.root + 'content.json'; //?t=' + new Date();
+	        var tagURL = jsInfo.root + 'content.json?t=' + +new Date();
 	        var xhr = new XMLHttpRequest();
 	        xhr.responseType = '';
 	        xhr.open('get', tagURL, true);
@@ -1451,7 +1447,6 @@
 	            if (this.status == 200 || this.status == 304) {
 	                contentJSON = JSON.parse(this.responseText);
 	                initTagMap(contentJSON);
-	                console.log(contentJSON);
 	            }
 	        };
 	        xhr.send();
@@ -1496,15 +1491,18 @@
 	        return item;
 	    }
 
-	    document.getElementsByClassName('tags-tags-box')[0].addEventListener('click', function (event) {
+	    document.getElementsByClassName('sidebar-tags-name')[0].addEventListener('click', function (event) {
 	        event.preventDefault();
+	        console.log(tagMap);
+
 	        var realTagName = event.target.innerHTML;
+	        console.log(realTagName);
 	        var indexs = tagMap.get(realTagName);
 	        var indexsArr = indexs.split(',');
 
 	        // append lists
 	        var frag = document.createDocumentFragment(),
-	            postList = document.getElementsByClassName('tag-list')[0];
+	            postList = document.getElementsByClassName('sidebar-tag-list')[0];
 	        postList.innerHTML = '';
 	        indexsArr.forEach(function (item) {
 	            frag.appendChild(createTagDom(contentJSON[item]));

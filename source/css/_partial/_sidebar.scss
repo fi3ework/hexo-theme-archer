@@ -6,10 +6,8 @@
     height: 100%;
     width: 300px;
     border-right: 1px solid #000;
-    background: #fff;
     transition: all 0.2s ease-in-out .0s;
-    overflow: visible;
-    background-color: yellow;
+    overflow-x: hidden;
     .sidebar-header {
         position: absolute;
         top: 0;
@@ -20,16 +18,20 @@
         justify-content: space-between;
         align-items: center;
         height: $header-height;
-        border-top: $header-top-border-height solid #000;
-        border-bottom: 1px solid #000;
-        background-color: #fff;
+        border-top: $header-top-border-height solid #fff;
+        border-bottom: 1px solid #888;
+        background-color: #222;
         .sidebar-category {
             display: flex;
             font-family: $global-theme-font-family;
             flex-grow: 1;
             justify-content: space-around;
+            color: #fff;
             span {
                 cursor: pointer;
+                span{
+                    margin-right: 0.3rem;
+                }
             }
         }
         .sidebar-close {
@@ -39,34 +41,38 @@
             line-height: 1.6rem;
             text-indent: -2px;
             text-align: center;
-            border: 1px solid black;
+            border: 2px solid #fff;
+            color: #fff;
             border-radius: 3px;
+            font-size: 1.2rem;
             font-family: 'iconfont-tinker';
             cursor: pointer;
+            transition: all 0.1s ease-out;
+            &:hover {
+                background-color: #fff;
+                color: #000;
+            }
         }
     }
     .sidebar-content {
         position: relative;
         margin-top: $header-height;
         display: flex;
-        width: 100%; // height: calc(100% - #{$header-height} - 4px);
+        width: 200%;
+        height: calc(100% - #{$header-height});
         top: 0;
         left: 0;
         transition: all 0.1s ease-in-out .0s;
-        overflow-y: auto;
-        .archive-content,
-        .tags-content {
-            flex-shrink: 0;
-            width: calc(100% - 2rem);
-            padding: 1rem;
-            height: 100%;
-        }
-        .archive-content {
+        background-color: #fff;
+        overflow-x: hidden;
+        .sidebar-archive,
+        .sidebar-tags {
             overflow-y: auto;
-            background-color: lightgreen;
-        }
-        .tags-content {
-            background-color: lightcoral;
+            overflow-x: hidden;
+            flex-shrink: 0;
+            width: calc(50% - 2rem);
+            padding: 1rem;
+            background-color: #fff;
         }
     }
     .sidebar-content-show-archive {

@@ -1,5 +1,6 @@
 html {
-    font-size: global-font-size;
+    font-size: $global-font-size;
+    font-family: $global-font-family;
     height: 100%;
 }
 
@@ -48,7 +49,7 @@ body {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 ul,

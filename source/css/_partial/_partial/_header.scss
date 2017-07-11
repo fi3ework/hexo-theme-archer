@@ -14,31 +14,33 @@
     .header-sidebar-menu {
         position: relative;
         border: 2px solid white;
-        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 3px;
         margin-left: 1rem;
         width: $header-menu-width;
-        height: $header-menu-width; 
+        height: $header-menu-width;
         transition: all 0.2s ease-out;
+        cursor: pointer;
         .menu-box {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            div {
-                width: 1rem;
-                height: 2px;
-                background-color: white;
-                margin-top: 2px;
-            }
+            flex-grow: 0;
+            font-size: 1.2rem;
+            font-family: 'iconfont-tinker';
+            color: #fff;
+            text-align: center;
+            transition: all 0.1s ease-out;
         }
         &:hover {
-            transform: scale(1.05);
-            box-shadow: 2px 0px 2px 0px rgba(0, 0, 0, 0.125);
+            background-color: #fff;
+            .menu-box {
+                color: #000;
+            }
         }
     }
     .banner {
         position: relative;
-        justify-content:flex-end;
+        justify-content: flex-end;
         width: 100%;
         top: 0;
         height: 100%;

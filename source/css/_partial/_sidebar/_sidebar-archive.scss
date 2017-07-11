@@ -10,27 +10,30 @@
     }
     .archive-year {
         font-size: 1rem;
+        margin-bottom: 0.3rem;
     }
-    .archive-post-item {
-        vertical-align: middle;
-        border-left: 1px solid #000;
-        margin-left: 0.1rem;
-        padding-left: 0.5rem;
-        box-sizing: border-box;
-        .archive-post-date {
-            font: 0.7rem/1rem $global-theme-font-family-light;
-        }
+}
+
+.archive-post-item {
+    vertical-align: middle;
+    border-left: 1px solid #000;
+    margin-left: 0.3rem;
+    padding-left: 0.5rem;
+    box-sizing: border-box;
+    .archive-post-date {
+        font: 0.7rem/1rem $global-theme-font-family-light;
+    }
+    .archive-post-title {
+        margin-left: 0.7rem;
+        text-align: left;
+        font: 0.6rem $global-font-family;
+        color: #030303;
+    }
+    &:hover {
+        border-left-color: $global-theme-color;
+        .archive-post-date,
         .archive-post-title {
-            margin-left: 0.7rem;
-            text-align: left;
-            font: 0.6rem $global-font-family;
-            color: #030303;
-        }
-        &:hover {
-            border-left-color: $global-theme-color;
-            .archive-post-date, .archive-post-title{
-                color: $global-theme-color;
-            }
+            color: $global-theme-color;
         }
     }
 }
