@@ -99,7 +99,7 @@
 
 	    function toggleAvatar() {
 	        var scrollTop = _util.tinkerUtil.getScrollTop();
-	        if (scrollTop > profileAvatarHeight) {
+	        if (scrollTop > profileAvatarHeight + profileAvatar.clientHeight) {
 	            if (!isHeaderAvatarShow) {
 	                isHeaderAvatarShow = 1;
 	                headerAvatar.classList.add('header-avatar-animate');
@@ -1408,12 +1408,18 @@
 	    document.body.addEventListener('click', function () {
 	        sidebar.classList.add('sidebar-hide');
 	    });
+
 	    // add sidebar content change
 	    var sidebarContent = sidebar.getElementsByClassName('sidebar-content')[0],
 	        archiveLink = sidebar.getElementsByClassName('sidebar-archive-link')[0],
 	        tagsLink = sidebar.getElementsByClassName('sidebar-tags-link')[0];
 	    _util.tinkerUtil.toggler(sidebarContent, 'click', archiveLink, 'sidebar-content-show-archive', 'sidebar-content-show-tags');
 	    _util.tinkerUtil.toggler(sidebarContent, 'click', tagsLink, 'sidebar-content-show-tags', 'sidebar-content-show-archive');
+
+	    // add sidebar bottom slider change
+	    var sidebarHeader = sidebar.getElementsByClassName('sidebar-header')[0];
+	    _util.tinkerUtil.toggler(sidebarHeader, 'click', archiveLink, 'sidebar-header-show-archive', 'sidebar-header-show-tags');
+	    _util.tinkerUtil.toggler(sidebarHeader, 'click', tagsLink, 'sidebar-header-show-tags', 'sidebar-header-show-archive');
 	};
 
 	exports.sidebarInit = sidebarInit;
@@ -1493,13 +1499,20 @@
 
 	    document.getElementsByClassName('sidebar-tags-name')[0].addEventListener('click', function (event) {
 	        event.preventDefault();
-	        console.log(tagMap);
-
-	        var realTagName = event.target.innerHTML;
-	        console.log(realTagName);
+	        var realTarget = event.target;
+	        var realTagName = void 0;
+	        if (this.compareDocumentPosition(realTarget) & 16) {
+	            if (realTarget.tagName === 'SPAN') {
+	                realTagName = realTarget.firstChild.innerHTML;
+	            } else {
+	                realTagName = realTarget.innerHTML;
+	            }
+	        }
 	        var indexs = tagMap.get(realTagName);
+	        if (!indexs) {
+	            return;
+	        }
 	        var indexsArr = indexs.split(',');
-
 	        // append lists
 	        var frag = document.createDocumentFragment(),
 	            postList = document.getElementsByClassName('sidebar-tag-list')[0];

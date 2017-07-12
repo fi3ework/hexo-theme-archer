@@ -29,7 +29,7 @@
             color: #fff;
             span {
                 cursor: pointer;
-                span{
+                span {
                     margin-right: 0.3rem;
                 }
             }
@@ -53,6 +53,26 @@
                 color: #000;
             }
         }
+        &::after {
+            content: '';
+            position: absolute;
+            height: 2px;
+            width: 50%;
+            top: 100%;
+            left: 0;
+            background-color: $global-theme-color;
+            transition: all 0.2s ease-in-out .0s;
+        }
+    }
+    .sidebar-header-show-archive {
+        &::after {
+            left: 0;
+        }
+    }
+    .sidebar-header-show-tags {
+        &::after {
+            left: 50%;
+        }
     }
     .sidebar-content {
         position: relative;
@@ -62,7 +82,7 @@
         height: calc(100% - #{$header-height});
         top: 0;
         left: 0;
-        transition: all 0.1s ease-in-out .0s;
+        transition: all 0.2s ease-out .0s;
         background-color: #fff;
         overflow-x: hidden;
         .sidebar-archive,

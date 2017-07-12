@@ -12,6 +12,7 @@
             margin: 0.1rem 0;
             white-space: nowrap;
             transition: all 0.1s ease-out .0s;
+            cursor: pointer;
             &:hover {
                 border-color: $global-theme-color;
                 a {

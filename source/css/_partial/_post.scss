@@ -1,5 +1,10 @@
-.post-page {
-    .posts {
-        @extend .index-posts;
+.post-body {
+    .blog-titles {
+        left: 0 !important;
+    }
+    .post-page {
+        .posts {
+            @extend .index-posts;
+        }
     }
 }

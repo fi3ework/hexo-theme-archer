@@ -58,13 +58,20 @@ let initTag = function () {
 
     document.getElementsByClassName('sidebar-tags-name')[0].addEventListener('click', function (event) {
         event.preventDefault();
-        console.log(tagMap);
-        
-        let realTagName = event.target.innerHTML;
-        console.log(realTagName);
+        let realTarget = event.target;
+        let realTagName;
+        if (this.compareDocumentPosition(realTarget) & 16) {
+            if (realTarget.tagName === 'SPAN') {
+                realTagName = realTarget.firstChild.innerHTML;
+            } else {
+                realTagName = realTarget.innerHTML;
+            }
+        }
         let indexs = tagMap.get(realTagName);
+        if (!indexs) {
+            return;
+        }
         let indexsArr = indexs.split(',');
-
         // append lists
         let frag = document.createDocumentFragment(),
             postList = document.getElementsByClassName('sidebar-tag-list')[0];

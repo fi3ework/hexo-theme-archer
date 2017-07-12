@@ -24,50 +24,57 @@
     }
 }
 
+.sidebar {
+    .sidebar-header {
+        .sidebar-category {
+            font-size: 1.5rem;
+        }
+    }
+    .sidebar-archive {
+        .archive-year,
+        .total-archive {
+            font-size: 1.4rem;
+        }
+        .archive-post-item {
+            padding: 0.2rem 0 0.2rem 0.5rem;
+            .archive-post-date {
+                font-size: 1.0rem;
+            }
+            .archive-post-title {
+                font-size: 1.2rem;
+            }
+        }
+    }
+    .sidebar-tags {
+        .sidebar-tags-name {
+            .sidebar-tag-name {
+                font-size: 1rem;
+            }
+        }
+        .sidebar-tag-list {
+            padding: 0.2rem 0 0.2rem 0.5rem;
+            .archive-post-date {
+                font-size: 1.0rem;
+            }
+            .archive-post-title {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
 .header {
     z-index: 100;
-    .header-sidebar-menu {
-        display: block;
-    }
     .banner {
-        margin-left: $header-menu-width;
-        width: calc(100% - #{$header-menu-width});
         .site-post-banner {
             width: 100%;
+            .blog-titles {
+                .header-avatar {
+                    width: 2rem;
+                    height: 2rem;
+                }
+            }
         }
-        .navbar {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            z-index: 100;
-            right: 0;
-            background-color: $header-background-color;
-            transition: all 0.2s ease-out 0s;
-            opacity: 0;
-            pointer-events: none;
-        }
-        .navbar-hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        .navbar-show {
-            opacity: 1;
-            pointer-events: initial;
-        }
-    }
-}
-
-.archive-page {
-    width: 95% !important;
-    .archive {
-        padding-top: 0.8rem !important;
-    }
-}
-
-.tag-page {
-    width: 95% !important;
-    .tags {
-        padding-top: 0.8rem !important;
     }
 }
 

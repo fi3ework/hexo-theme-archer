@@ -23,12 +23,18 @@ let sidebarInit = function () {
     document.body.addEventListener('click', function () {
         sidebar.classList.add('sidebar-hide');
     });
+
     // add sidebar content change
     let sidebarContent = sidebar.getElementsByClassName('sidebar-content')[0],
         archiveLink = sidebar.getElementsByClassName('sidebar-archive-link')[0],
         tagsLink = sidebar.getElementsByClassName('sidebar-tags-link')[0];
     tinkerUtil.toggler(sidebarContent, 'click', archiveLink, 'sidebar-content-show-archive', 'sidebar-content-show-tags');
     tinkerUtil.toggler(sidebarContent, 'click', tagsLink, 'sidebar-content-show-tags', 'sidebar-content-show-archive');
+    
+    // add sidebar bottom slider change
+    let sidebarHeader = sidebar.getElementsByClassName('sidebar-header')[0];
+    tinkerUtil.toggler(sidebarHeader, 'click', archiveLink, 'sidebar-header-show-archive', 'sidebar-header-show-tags');
+    tinkerUtil.toggler(sidebarHeader, 'click', tagsLink, 'sidebar-header-show-tags', 'sidebar-header-show-archive');
 };
 
 

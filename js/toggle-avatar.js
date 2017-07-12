@@ -21,7 +21,7 @@ let toggleAvatar = function () {
 
     function toggleAvatar() {
         let scrollTop = tinkerUtil.getScrollTop();
-        if (scrollTop > profileAvatarHeight) {
+        if (scrollTop > profileAvatarHeight + profileAvatar.clientHeight) {
             if (!isHeaderAvatarShow) {
                 isHeaderAvatarShow = 1;
                 headerAvatar.classList.add('header-avatar-animate');

@@ -18,30 +18,12 @@
       </div>
       <% if (is_post()) { %>
       <div class="post-banner">
-        <div class="post-name">
+        <span class="post-name">
           <%- page.title %>
-        </div>
+        </span>
       </div>
       <% } %>
     </div>
-    <!--<nav class="navbar">
-      <ul class="menu">
-        <% for (name in theme.menu) { %>
-          <% let imgSrc = "/header/" + name + ".svg"; %>
-            <li class="menu-item">
-              <% if (name != "About") { %>
-                <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link <%- name %>">
-                  <%= name %>
-                </a>
-                <% } else { %>
-                  <a href="#" class="menu-item-link <%- name %>">
-                    <%= name %>
-                  </a>
-                  <% } %>
-            </li>
-            <% } %>
-      </ul>
-    </nav>-->
   </div>
 
 </header>

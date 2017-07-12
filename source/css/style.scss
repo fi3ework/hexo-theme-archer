@@ -19,8 +19,7 @@
 @import "_partial/_sidebar.scss";
 @import "_partial/_index";
 @import "_partial/_post";
-// @import "_partial/_archive";
-// @import "_partial/_tag";
+
 // mobile
 @media screen and (max-width: 900px) {
     @import "./mobile";
