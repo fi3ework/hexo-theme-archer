@@ -1,10 +1,48 @@
 .post-body {
-    .blog-titles {
-        left: 0 !important;
+    .bg-title {
+        font: 4rem $global-theme-font-family;
+        color: #fff;
+        margin: 0;
+        white-space: nowrap;
     }
+    .bg-post-date {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        align-items: center;
+    }
+
+    .bg-post-tags {
+        .post-tag {
+            margin-right: 0.2rem;
+            color: #fff;
+            &::before {
+                content: '#';
+            }
+        }
+    }
+
+    .site-background-meta {
+        width: 50%;
+        margin: 0 auto;
+        align-items: flex-start;
+        color: #fff;
+    }
+
+    .post-content-box {
+        border: none;
+    }
+
     .post-page {
         .posts {
             @extend .index-posts;
+        }
+    }
+
+    .site-post-banner {
+        margin: 0;
+        .blog-titles {
+            justify-content: center;
         }
     }
 }

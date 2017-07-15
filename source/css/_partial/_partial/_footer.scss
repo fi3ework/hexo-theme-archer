@@ -1,29 +1,27 @@
-#footer {
-    position: absolute;
+.footer {
     width: 100%;
-    left: 0;
-    bottom: 0;
-    background-color: $footer-background-color;
-    box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.1);
+    margin-top: 3rem;
     .social {
         margin-top: 0.6rem;
         text-align: center;
         vertical-align: text-bottom;
         @include social($scaleSize: 0.8, $spanMargin: 0.5rem);
     }
+}
 
-    .copyright {
-        font-family: $global-theme-font-family;
-        margin: 0.2rem auto 0.8rem auto;
-        color: $footer-icon-default-color;
-        text-align: center;
-        a {
-            color: $global-theme-color;
-        }
-        .heart {
-            vertical-align: 10%;
-            font-size: 0.7rem;
-            padding: 0 0.2rem;
-        }
+// copyright
+.copyright {
+    font-family: $global-theme-font-family;
+    margin: 1rem auto 2rem auto;
+    color: $footer-icon-default-color;
+    text-align: center;
+    a {
+        color: $global-theme-color;
     }
+}
+
+.heart {
+    vertical-align: 10%;
+    font-size: 0.7rem;
+    padding: 0 0.2rem;
 }

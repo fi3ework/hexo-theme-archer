@@ -1,0 +1,35 @@
+<div class="site-background">
+    <div class="site-background-img"></div>
+    <div class="site-background-meta">
+        <h1 class="bg-title">
+            <% if (is_home()) { %>
+            <%- config.title %>
+            <% } else { %>
+            <%- page.title || '[未命名文章]' %>
+            <% } %>
+        </h1>
+        <% if (is_home()) { %>
+            <% if(typeof config.subtitle === 'string') { %>
+            <p class="bg-subtitle">
+                <%- config.subtitle %>
+            </p>
+            <% } %>
+        <% } else { %>
+            <% if(typeof page.subtitle === 'string') { %>
+            <p class="bg-subtitle">
+            <%- page.subtitle %>
+            </p>
+            <% } %>
+        <% } %>
+        <% if(is_post()) { %>
+            <% if(page.tags.length) { %>
+                <%- partial('base-title-tags', {
+                    currPost: page,
+                    className: 'bg-post-tags'}) %>
+            <% } %>
+            <div class="bg-post-date">
+                <span class="bg-post-calander iconfont-arch">&#xe676;</span><span class="bg-post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
+            </div>
+        <% } %>
+    </div>
+</div>

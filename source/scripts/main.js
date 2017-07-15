@@ -46,7 +46,7 @@
 
 	'use strict';
 
-	var _toggleAvatar = __webpack_require__(1);
+	var _backTop = __webpack_require__(1);
 
 	var _toggleHeader = __webpack_require__(3);
 
@@ -58,7 +58,7 @@
 
 	var _tag = __webpack_require__(9);
 
-	(0, _toggleAvatar.toggleAvatar)();
+	(0, _backTop.initBackTop)();
 	(0, _toggleHeader.toggleHeader)();
 	(0, _sidebar.sidebarInit)();
 	(0, _share.initShareBox)();
@@ -74,46 +74,42 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.toggleAvatar = undefined;
+	exports.initBackTop = undefined;
 
 	var _util = __webpack_require__(2);
 
-	var toggleAvatar = function toggleAvatar() {
-	    // 主页头像切换
-	    var profileAvatarHeight = void 0,
-	        isHeaderAvatarShow = void 0;
-	    if (typeof document.getElementsByClassName('home-body')[0] === 'undefined') {
-	        return;
-	    }
-	    var profileAvatar = document.getElementsByClassName('profile-avatar')[0],
-	        headerAvatar = document.getElementsByClassName('header-avatar')[0];
-	    if (typeof profileAvatar !== 'undefined') {
-	        profileAvatarHeight = _util.tinkerUtil.getAbsPosition(profileAvatar).y;
+	var initBackTop = function initBackTop() {
+	    // 回顶部
+	    var backTopEle = document.getElementsByClassName('back-top')[0],
+	        isBackTopShow = false;
+	    // header头像切换
+	    document.addEventListener('scroll', showBackTop);
+	    // header头像点击回顶部
+	    backTopEle.addEventListener('click', _util.archUtil.backTop);
+	    // 获得background-image的scorllHeight
+	    var bgImg = document.getElementsByClassName('site-background')[0],
+	        bgBottomHeight = _util.archUtil.getAbsPosition(bgImg).y + bgImg.scrollHeight,
+	        sidebarMenu = document.getElementsByClassName('header-sidebar-menu')[0];
 
-	        isHeaderAvatarShow = 0;
-	        // header头像切换
-	        document.addEventListener('scroll', toggleAvatar);
-	        // header头像点击回顶部
-	        headerAvatar.addEventListener('click', _util.tinkerUtil.backTop);
-	    }
-
-	    function toggleAvatar() {
-	        var scrollTop = _util.tinkerUtil.getScrollTop();
-	        if (scrollTop > profileAvatarHeight + profileAvatar.clientHeight) {
-	            if (!isHeaderAvatarShow) {
-	                isHeaderAvatarShow = 1;
-	                headerAvatar.classList.add('header-avatar-animate');
+	    function showBackTop() {
+	        var scrollTop = _util.archUtil.getScrollTop();
+	        if (scrollTop > bgBottomHeight) {
+	            if (!isBackTopShow) {
+	                isBackTopShow = true;
+	                backTopEle.classList.add('back-top-show');
+	                sidebarMenu.classList.add('header-sidebar-menu-black');
 	            }
 	        } else {
-	            if (isHeaderAvatarShow) {
-	                isHeaderAvatarShow = 0;
-	                headerAvatar.classList.remove('header-avatar-animate');
+	            if (isBackTopShow) {
+	                isBackTopShow = false;
+	                backTopEle.classList.remove('back-top-show');
+	                sidebarMenu.classList.remove('header-sidebar-menu-black');
 	            }
 	        }
 	    }
 	};
 
-	exports.toggleAvatar = toggleAvatar;
+	exports.initBackTop = initBackTop;
 
 /***/ }),
 /* 2 */
@@ -124,7 +120,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	var tinkerUtil = {
+	var archUtil = {
 	    backTop: function backTop() {
 	        var topTimer = setInterval(function () {
 	            var currTop = document.body.scrollTop;
@@ -199,7 +195,7 @@
 
 	};
 
-	exports.tinkerUtil = tinkerUtil;
+	exports.archUtil = archUtil;
 
 /***/ }),
 /* 3 */
@@ -219,35 +215,48 @@
 	    if (typeof document.getElementsByClassName('post-body')[0] === 'undefined') {
 	        return;
 	    }
-	    var postTitleEle = document.getElementsByClassName('post-title')[0],
-	        postTitleHeight = _util.tinkerUtil.getAbsPosition(postTitleEle).y,
+	    var bannerEle = document.getElementsByClassName('banner')[0],
+	        bgEle = document.getElementsByClassName('site-background')[0],
+	        bgTitleHeight = _util.archUtil.getAbsPosition(bgEle).y + bgEle.scrollHeight,
 	        toggleBanner = document.getElementsByClassName('site-post-banner')[0],
 	        isPostTitleShow = 0,
 	        postTitle = document.getElementsByClassName('post-name')[0];
 
 	    function toggleHeader() {
 	        // 超过标题
-	        var scrollTop = _util.tinkerUtil.getScrollTop();
-	        if (scrollTop > postTitleHeight) {
+	        var scrollTop = _util.archUtil.getScrollTop();
+	        if (scrollTop > bgTitleHeight) {
 	            if (!isPostTitleShow) {
-	                toggleBanner.classList.add('post-banner-show');
-	                toggleBanner.classList.remove('blog-banner-show');
+
+	                bannerEle.classList.add('banner-show');
 	                isPostTitleShow = 1;
 	            }
 	            // 没有超过标题
 	        } else {
 	            if (isPostTitleShow) {
-	                toggleBanner.classList.add('blog-banner-show');
-	                toggleBanner.classList.remove('post-banner-show');
+	                bannerEle.classList.remove('banner-show');
+
 	                isPostTitleShow = 0;
 	            }
+	        }
+	    }
+
+	    function upDown(event) {
+	        var moveDelta = 0;
+	        // moveDelta += event.
+	        if (moveDelta > 20) {
+	            toggleBanner.classList.add('post-banner-show');
+	            toggleBanner.classList.remove('blog-banner-show');
+	        } else {
+	            toggleBanner.classList.remove('post-banner-show');
+	            toggleBanner.classList.add('blog-banner-show');
 	        }
 	    }
 
 	    // 滚动时切换标题    
 	    document.addEventListener('scroll', toggleHeader);
 	    // 点击文章标题回页首
-	    postTitle.addEventListener('click', _util.tinkerUtil.backTop);
+	    postTitle.addEventListener('click', _util.archUtil.backTop);
 	};
 
 	exports.toggleHeader = toggleHeader;
@@ -1358,20 +1367,12 @@
 /* 7 */
 /***/ (function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	  value: true
 	});
-	var initMobile = function initMobile() {
-	    var navBar = document.getElementsByClassName('navbar')[0];
-	    var menuButton = document.getElementsByClassName('header-sidebar-menu')[0];
-
-	    menuButton.addEventListener('click', function () {
-	        navBar.classList.toggle('navbar-show');
-	        navBar.classList.toggle('navbar-hidden');
-	    });
-	};
+	var initMobile = function initMobile() {};
 
 	exports.initMobile = initMobile;
 
@@ -1396,30 +1397,68 @@
 
 	var sidebarInit = function sidebarInit() {
 	    var sidebar = document.getElementsByClassName('sidebar')[0],
-	        headerMenu = document.getElementsByClassName('header-sidebar-menu')[0],
-	        sidebarClose = sidebar.getElementsByClassName('sidebar-close')[0];
+	        wrapper = document.getElementsByClassName('wrapper')[0],
+	        headerMenu = document.getElementsByClassName('header-sidebar-menu')[0];
+	    // sidebarClose = sidebar.getElementsByClassName('sidebar-close')[0];
+
 	    // add sidebar hide show toggle
-	    _util.tinkerUtil.toggler(sidebar, 'click', sidebarClose, 'sidebar-hide', null);
-	    _util.tinkerUtil.toggler(sidebar, 'click', headerMenu, null, 'sidebar-hide', function (eve) {
+	    // archUtil.toggler(sidebar, 'click', sidebarClose, 'sidebar-hide', null);
+	    _util.archUtil.toggler(sidebar, 'click', headerMenu, null, 'sidebar-hide', function (eve) {
 	        eve.stopPropagation();
 	    });
+	    _util.archUtil.toggler(wrapper, 'click', headerMenu, 'wrapper-show-sidebar', null);
+
 	    // stop sidebar propagation to hide itself
 	    stopClickPropagation(sidebar);
-	    document.body.addEventListener('click', function () {
-	        sidebar.classList.add('sidebar-hide');
-	    });
+
+	    _util.archUtil.toggler(sidebar, 'click', document.body, 'sidebar-hide', null);
+	    _util.archUtil.toggler(wrapper, 'click', document.body, null, 'wrapper-show-sidebar');
 
 	    // add sidebar content change
 	    var sidebarContent = sidebar.getElementsByClassName('sidebar-content')[0],
 	        archiveLink = sidebar.getElementsByClassName('sidebar-archive-link')[0],
 	        tagsLink = sidebar.getElementsByClassName('sidebar-tags-link')[0];
-	    _util.tinkerUtil.toggler(sidebarContent, 'click', archiveLink, 'sidebar-content-show-archive', 'sidebar-content-show-tags');
-	    _util.tinkerUtil.toggler(sidebarContent, 'click', tagsLink, 'sidebar-content-show-tags', 'sidebar-content-show-archive');
+	    _util.archUtil.toggler(sidebarContent, 'click', archiveLink, 'sidebar-content-show-archive', 'sidebar-content-show-tags');
+	    _util.archUtil.toggler(sidebarContent, 'click', tagsLink, 'sidebar-content-show-tags', 'sidebar-content-show-archive');
+
+	    // stop reach top and bottom sidebar scroll
+	    function stopSidebarEdgeScroll(eve) {
+	        if (this.scrollHeight == this.clientHeight) {
+	            window.event.preventDefault();
+	        } else if (this.scrollTop <= 0) {
+	            if (eve.wheelDelta > 0) {
+	                window.event.preventDefault();
+	            }
+	        } else if (this.scrollTop >= this.scrollHeight - this.clientHeight) {
+	            if (eve.wheelDelta < 0) {
+	                window.event.preventDefault();
+	            }
+	        }
+	    }
+
+	    // stop sidebar scroll
+	    function stopScroll(eve) {
+	        var target = eve.target;
+	        var sidebarTagList = document.getElementsByClassName('sidebar-tag-list')[0];
+	        var sidebarArchive = document.getElementsByClassName('sidebar-archive')[0];
+	        // console.log(sidebarTagList.compareDocumentPosition(target));
+	        // console.log(sidebarArchive.compareDocumentPosition(target));
+	        // console.info('');
+	        if (sidebarTagList.compareDocumentPosition(target) >= 16 || target == sidebarTagList) {
+	            stopSidebarEdgeScroll.call(sidebarTagList, eve);
+	        } else if (sidebarArchive.compareDocumentPosition(target) >= 16 || target == sidebarArchive) {
+	            stopSidebarEdgeScroll.call(sidebarArchive, eve);
+	        } else {
+	            window.event.preventDefault();
+	        }
+	    }
+
+	    sidebar.addEventListener('mousewheel', stopScroll);
 
 	    // add sidebar bottom slider change
 	    var sidebarHeader = sidebar.getElementsByClassName('sidebar-header')[0];
-	    _util.tinkerUtil.toggler(sidebarHeader, 'click', archiveLink, 'sidebar-header-show-archive', 'sidebar-header-show-tags');
-	    _util.tinkerUtil.toggler(sidebarHeader, 'click', tagsLink, 'sidebar-header-show-tags', 'sidebar-header-show-archive');
+	    _util.archUtil.toggler(sidebarHeader, 'click', archiveLink, 'sidebar-header-show-archive', 'sidebar-header-show-tags');
+	    _util.archUtil.toggler(sidebarHeader, 'click', tagsLink, 'sidebar-header-show-tags', 'sidebar-header-show-archive');
 	};
 
 	exports.sidebarInit = sidebarInit;
@@ -1487,7 +1526,7 @@
 	        item.className = 'tag-post-item';
 	        var itemDate = document.createElement('span');
 	        itemDate.className = 'archive-post-date';
-	        itemDate.innerHTML = _util.tinkerUtil.dateFormater(new Date(Date.parse(post.date)), 'yyyy-MM-dd');
+	        itemDate.innerHTML = _util.archUtil.dateFormater(new Date(Date.parse(post.date)), 'yyyy-MM-dd');
 	        var itemTitle = document.createElement('a');
 	        itemTitle.className = 'archive-post-title';
 	        itemTitle.href = jsInfo.root + post.path;

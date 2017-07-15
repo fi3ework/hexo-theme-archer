@@ -1,6 +1,6 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
     value: true
 });
 exports.toggleAvatar = undefined;
@@ -17,17 +17,17 @@ var toggleAvatar = function toggleAvatar() {
     var profileAvatar = document.getElementsByClassName('profile-avatar')[0],
         headerAvatar = document.getElementsByClassName('header-avatar')[0];
     if (typeof profileAvatar !== 'undefined') {
-        profileAvatarHeight = _util.tinkerUtil.getAbsPosition(profileAvatar).y;
+        profileAvatarHeight = _util.archUtil.getAbsPosition(profileAvatar).y;
 
         isHeaderAvatarShow = 0;
         // header头像切换
         document.addEventListener('scroll', toggleAvatar);
         // header头像点击回顶部
-        headerAvatar.addEventListener('click', _util.tinkerUtil.backTop);
+        headerAvatar.addEventListener('click', _util.archUtil.backTop);
     }
 
     function toggleAvatar() {
-        var scrollTop = _util.tinkerUtil.getScrollTop();
+        var scrollTop = _util.archUtil.getScrollTop();
         if (scrollTop > profileAvatarHeight + profileAvatar.clientHeight) {
             if (!isHeaderAvatarShow) {
                 isHeaderAvatarShow = 1;

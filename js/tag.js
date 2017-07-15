@@ -1,5 +1,5 @@
 import {
-    tinkerUtil
+    archUtil
 } from './util';
 
 let initTag = function () {
@@ -46,7 +46,7 @@ let initTag = function () {
         item.className = 'tag-post-item';
         let itemDate = document.createElement('span');
         itemDate.className = 'archive-post-date';
-        itemDate.innerHTML = tinkerUtil.dateFormater(new Date(Date.parse(post.date)), 'yyyy-MM-dd');
+        itemDate.innerHTML = archUtil.dateFormater(new Date(Date.parse(post.date)), 'yyyy-MM-dd');
         let itemTitle = document.createElement('a');
         itemTitle.className = 'archive-post-title';
         itemTitle.href = jsInfo.root + post.path;

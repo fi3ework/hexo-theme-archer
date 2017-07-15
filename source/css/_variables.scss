@@ -22,14 +22,14 @@ serif !default;
 
 // ======= iconfont ======= //
 @font-face {
-    font-family: 'iconfont-tinker';
+    font-family: 'iconfont-arch';
     /* project id 327081 */
-    src: url('//at.alicdn.com/t/font_rzf960fd220ozuxr.eot');
-    src: url('//at.alicdn.com/t/font_rzf960fd220ozuxr.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_rzf960fd220ozuxr.woff') format('woff'), url('//at.alicdn.com/t/font_rzf960fd220ozuxr.ttf') format('truetype'), url('//at.alicdn.com/t/font_rzf960fd220ozuxr.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_b8yg22npmpdjkyb9.eot');
+    src: url('//at.alicdn.com/t/font_b8yg22npmpdjkyb9.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_b8yg22npmpdjkyb9.woff') format('woff'), url('//at.alicdn.com/t/font_b8yg22npmpdjkyb9.ttf') format('truetype'), url('//at.alicdn.com/t/font_b8yg22npmpdjkyb9.svg#iconfont') format('svg');
 }
 
-.iconfont-tinker {
-    font-family: "iconfont-tinker" !important;
+.iconfont-arch {
+    font-family: "iconfont-arch" !important;
     font-size: 1rem;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
@@ -39,7 +39,6 @@ serif !default;
 
 // ======= header ======= //
 $header-height: 4.5rem;
-$header-avatar-size :2.7rem;
 $header-top-border-color: #fcfcfc;
 $header-top-border-height: 3px;
 $header-background-color: #24292e;

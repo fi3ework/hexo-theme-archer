@@ -1,4 +1,6 @@
 .sidebar-archive {
+    padding: 1rem;
+    width: calc(50% - 2rem);
     ul {
         padding: 0;
         margin: 0;
@@ -12,6 +14,10 @@
         font-size: 1rem;
         margin-bottom: 0.3rem;
     }
+}
+
+.post-archive {
+    overflow-y: auto;
 }
 
 .archive-post-item {

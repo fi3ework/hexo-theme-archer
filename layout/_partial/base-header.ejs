@@ -3,15 +3,10 @@
 <% } else { %>
 <header class="header">
 <% } %>
-  <div class="header-sidebar-menu">
-    <div class="menu-box">&#xe775;</div>
-  </div>
+  <div class="header-sidebar-menu">&#xe775;</div>
   <div class="banner">
     <div class="site-post-banner">
       <div class="blog-titles">
-        <% if (is_home()) { %>
-        <img class="header-avatar" src= <%- theme.avatar %> >
-        <% } %>
         <a href="<%- url_for() %>" class="blog-title">
           <%= config.title %>
         </a>
@@ -25,5 +20,5 @@
       <% } %>
     </div>
   </div>
-
+  <a class="home-link" href=<%- config.root %>><%- config.title %></a>
 </header>

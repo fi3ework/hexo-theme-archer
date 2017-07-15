@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <%- partial('_partial/base-head') %>
-  <% if (is_home()) { %>
-  <body class="home-body">
-  <% } else if(is_post()){ %>
-  <body class="post-body">
-  <% } else { %>
-  <body class="body">
-  <% } %>
+    <%- partial('_partial/base-head') %>
+    <% if (is_home()) { %>
+        <body class="home-body">
+    <% } else if(is_post()){ %>
+        <body class="post-body">
+    <% } else { %>
+        <body class="else-body">
+    <% } %>
     <%- partial('_partial/base-header') %>
-    <%- partial('_partial/base-sidebar.ejs') %>
-    <div class="container">
-      <% if (is_home()) { %>
-      <%- partial('_partial/base-profile') %>
-      <% } %>
-      <%- body %>
-      <%- partial('_partial/base-footer') %>
+    <%- partial('_partial/base-sidebar') %>
+    <div class="wrapper">
+        <%- partial('_partial/base-background-image') %>
+        <div class="container">
+            <% if (is_home()) { %>
+            <%- partial('_partial/base-profile') %>
+            <% } %>
+            <%- body %>
+        </div>
+        <%- partial('_partial/base-footer') %>
     </div>
+    <div class="back-top">&#xe639;</div>
     <%- partial('./js-info.ejs') %>
 <script id="__bs_script__">
   //<![CDATA[

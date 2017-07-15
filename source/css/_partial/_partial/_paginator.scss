@@ -1,32 +1,38 @@
 .page-nav {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     .current,
     .prev,
     .next,
     .page-number {
+        border: 1px solid #ccc;
         vertical-align: middle;
         font-family: $global-theme-font-family;
-        display: inline-block;
         height: 1.5rem;
         width: 1.5rem;
-        padding: .2rem .2rem;
         margin-right: 0.5rem;
         text-align: center;
         line-height: 1.5rem;
-        transition: all 0.2s ease-out;
-        &:not(.current):hover {
-            background-color: #fff;
-            box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
-        }
     }
+
+    .current {
+        border-color: transparent;
+    }
+
     a {
-        color: #777;
+        color: #ccc;
         &:hover {
-            color: $global-theme-color;
+            background-color: #000;
+            border-color: black;
+            color: #fff;
         }
     }
-    .next, .prev {
+
+
+
+    .extend{
         line-height: 1.8rem;
-        font-family: "iconfont-tinker";
+        font-family: "iconfont-arch";
+        color: #999;
     }
 }

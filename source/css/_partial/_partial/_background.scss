@@ -1,0 +1,46 @@
+.site-background {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.site-background-img {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #fff url('/bg.jpg') center center no-repeat;
+    background-size: cover;
+    filter: brightness(.5);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.site-background-meta {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-title {
+    font: 4rem $global-theme-font-family;
+    color: #fff;
+    margin: 0;
+}
+
+.bg-subtitle {
+    font: 2rem $global-theme-font-family;
+    color: #fff;
+    margin: 0;
+}
+
+.bg-post-date{
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+}

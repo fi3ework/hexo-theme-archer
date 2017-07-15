@@ -1,7 +1,5 @@
-<% if (currPost.tags && currPost.tags.length) { %>
-<div class="post-tags">
+<div class= <%- className %>>
     <% currPost.tags.forEach(function (tag, i) { %>
-        <span class="post-tag"><a href="<%- url_for(tag.path) %>">#<%- tag.name %></a></span>
+        <a class="post-tag" href="<%- url_for(tag.path) %>"><%- tag.name %></a>
         <% }) %>
 </div>
-<% } %>

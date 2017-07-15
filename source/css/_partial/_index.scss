@@ -1,12 +1,28 @@
- .index-posts {
-    margin : 0;
-    width: 100%;
-
-    .post-title-link{
+.index-posts {
+    .post-title-link {
+        font-size: 2rem;
         color: $index-post-link-color;
     }
-
-    .post-tag a{
+    .post-tag a {
         color: $index-post-tag-color;
+    }
+}
+
+.home-body {
+    .banner {
+        display: none;
+        margin: 0 0 0 4rem;
+    }
+    .site-post-banner {
+        margin: 0;
+    }
+    .blog-titles {
+        justify-content: flex-start;
+    }
+    .header-sidebar-menu {
+        &:hover {
+            background-color: #fff;
+            color: #000;
+        }
     }
 }

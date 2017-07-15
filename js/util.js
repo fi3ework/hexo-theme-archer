@@ -1,4 +1,4 @@
-var tinkerUtil = {
+var archUtil = {
     backTop: function () {
         let topTimer = setInterval(function () {
             let currTop = document.body.scrollTop;
@@ -75,5 +75,5 @@ var tinkerUtil = {
 };
 
 export {
-    tinkerUtil
+    archUtil
 };
