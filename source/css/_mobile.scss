@@ -4,62 +4,70 @@
 
 .container {
     display: block;
-    .main {
-        width: 96%;
-        padding-bottom: 5.5rem;
-        margin: 0 auto;
-        max-width: initial;
-        section {
-            .post-content-box {
-                padding: 1rem 1rem 1rem 1rem;
-            }
-        }
-    }
+}
+
+.bg-title{
+    font-size: 3rem;
+    max-width: 90%;
+}
+
+.bg-subtitle{
+    font-size: 1.5rem;
+    white-space: normal;
+    max-width: 70%;
+}
+
+.main {
+    width: 100%;
+    padding-bottom: 2.5rem;
+    margin: 0 auto;
 }
 
 .post {
     padding-top: 0.8rem;
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
     &:last-child {
         padding-bottom: 0.8rem;
     }
 }
 
-.sidebar {
-    .sidebar-header {
-        .sidebar-category {
-            font-size: 1.5rem;
+.sidebar-category {
+    font-size: 1.5rem;
+}
+
+.sidebar-archive {
+    .archive-year,
+    .total-archive {
+        font-size: 1.4rem;
+    }
+}
+
+.archive-post-item {
+    padding: 0.2rem 0 0.2rem 0.5rem;
+    .archive-post-date {
+        font-size: 1.0rem;
+    }
+    .archive-post-title {
+        font-size: 1.2rem;
+    }
+}
+
+.sidebar-tags {
+    .sidebar-tags-name {
+        .sidebar-tag-name {
+            font-size: 1rem;
         }
     }
-    .sidebar-archive {
-        .archive-year,
-        .total-archive {
-            font-size: 1.4rem;
-        }
-        .archive-post-item {
-            padding: 0.2rem 0 0.2rem 0.5rem;
-            .archive-post-date {
-                font-size: 1.0rem;
-            }
-            .archive-post-title {
-                font-size: 1.2rem;
-            }
-        }
+}
+
+.sidebar-tag-list {
+    padding: 0.2rem 0 0.2rem 0.5rem;
+    .archive-post-date {
+        font-size: 1.0rem;
     }
-    .sidebar-tags {
-        .sidebar-tags-name {
-            .sidebar-tag-name {
-                font-size: 1rem;
-            }
-        }
-        .sidebar-tag-list {
-            padding: 0.2rem 0 0.2rem 0.5rem;
-            .archive-post-date {
-                font-size: 1.0rem;
-            }
-            .archive-post-title {
-                font-size: 1.2rem;
-            }
-        }
+    .archive-post-title {
+        font-size: 1.2rem;
     }
 }
 
@@ -72,7 +80,8 @@
     }
 }
 
-#footer {
+.footer {
+    margin-top: 0;
     .social {
         margin-top: 0.5rem;
         @include social($scaleSize: 0.5, $spanMargin: 0.2rem);
