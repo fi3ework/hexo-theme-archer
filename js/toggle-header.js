@@ -3,54 +3,63 @@ import {
 } from './util';
 
 let toggleHeader = function () {
-    // 顶部标题栏切换
     if (typeof document.getElementsByClassName('post-body')[0] === 'undefined') {
         return;
     }
-    let bannerEle = document.getElementsByClassName('banner')[0],
-        bgEle = document.getElementsByClassName('site-background')[0],
-        bgTitleHeight = archUtil.getAbsPosition(bgEle).y + bgEle.scrollHeight,
-        toggleBanner = document.getElementsByClassName('site-post-banner')[0],
-        isPostTitleShow = 0,
-        postTitle = document.getElementsByClassName('post-name')[0];
 
-    function toggleHeader() {
-        // 超过标题
-        let scrollTop = archUtil.getScrollTop();
+    let $banner = $('.banner:first'),
+        $bgEle = $('.site-background:first'),
+        $toggleBanner = $('.toggle-banner:first'),
+        $homeLink = $banner.parent().find('.home-link:first'),
+        bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight(),
+        isPostTitleShow = 0;
+
+    // 滚动时显示标题栏    
+    $(document).on('scroll', function () {
+        let scrollTop = $(document).scrollTop();
         if (scrollTop > bgTitleHeight) {
             if (!isPostTitleShow) {
-
-                bannerEle.classList.add('banner-show');
+                $banner.addClass('banner-show');
+                $homeLink.addClass('home-link-hide');
                 isPostTitleShow = 1;
             }
-            // 没有超过标题
         } else {
             if (isPostTitleShow) {
-                bannerEle.classList.remove('banner-show');
-
+                $banner.removeClass('banner-show');
+                $homeLink.removeClass('home-link-hide');
                 isPostTitleShow = 0;
             }
         }
-    }
+    });
 
-    function upDown(event) {
-        let moveDelta = 0;
-        // moveDelta += event.
-        if (moveDelta > 20) {
-            toggleBanner.classList.add('post-banner-show');
-            toggleBanner.classList.remove('blog-banner-show');
-        } else {
-            toggleBanner.classList.remove('post-banner-show');
-            toggleBanner.classList.add('blog-banner-show');
+    // 在向上滚动到banner消失的动画完成后切换到post-banner
+    $banner[0].addEventListener('transitionend', function (eve) {
+        if (eve.target == $banner[0]) {
+            if (!isPostTitleShow) {
+                $toggleBanner.removeClass('toggle-banner-show-site');
+            }
         }
-    }
+    });
 
-    // 滚动时切换标题    
-    document.addEventListener('scroll', toggleHeader);
-    // 点击文章标题回页首
-    postTitle.addEventListener('click', archUtil.backTop);
+    // 滚动式切换文章标题和站点标题    
+    let previousHeight = 0;
+    $(document).on('scroll', function () {
+        if (!$banner.hasClass('banner-show')) {
+            return;
+        }
+        if ($(this).scrollTop() > previousHeight) {
+            $toggleBanner.removeClass('toggle-banner-show-site');
+        } else {
+            $toggleBanner.addClass('toggle-banner-show-site');
+        }
+        previousHeight = $(this).scrollTop();
+    });
 
 };
+
+// 点击文章标题回页首
+// postTitle.addEventListener('click', archUtil.backTop);
+
 
 export {
     toggleHeader

@@ -13,7 +13,19 @@ var archUtil = {
         return document.documentElement.scrollTop || document.body.scrollTop;
     },
 
-
+    // 获取元素在页面上相对左上角的位置
+    getAbsPosition: function (e) {
+        let x = e.offsetLeft,
+            y = e.offsetTop;
+        while (e = e.offsetParent) {
+            x += e.offsetLeft;
+            y += e.offsetTop;
+        }
+        return {
+            'x': x,
+            'y': y
+        };
+    },
     dateFormater: function (date, fmt) {
         var o = {
             'M+': date.getMonth() + 1, //月份 

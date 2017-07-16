@@ -127,53 +127,62 @@
 	var _util = __webpack_require__(3);
 
 	var toggleHeader = function toggleHeader() {
-	    // 顶部标题栏切换
 	    if (typeof document.getElementsByClassName('post-body')[0] === 'undefined') {
 	        return;
 	    }
-	    var bannerEle = document.getElementsByClassName('banner')[0],
-	        bgEle = document.getElementsByClassName('site-background')[0],
-	        bgTitleHeight = _util.archUtil.getAbsPosition(bgEle).y + bgEle.scrollHeight,
-	        toggleBanner = document.getElementsByClassName('site-post-banner')[0],
-	        isPostTitleShow = 0,
-	        postTitle = document.getElementsByClassName('post-name')[0];
 
-	    function toggleHeader() {
-	        // 超过标题
-	        var scrollTop = _util.archUtil.getScrollTop();
+	    var $banner = $('.banner:first'),
+	        $bgEle = $('.site-background:first'),
+	        $toggleBanner = $('.toggle-banner:first'),
+	        $homeLink = $banner.parent().find('.home-link:first'),
+	        bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight(),
+	        isPostTitleShow = 0;
+
+	    // 滚动时显示标题栏    
+	    $(document).on('scroll', function () {
+	        var scrollTop = $(document).scrollTop();
 	        if (scrollTop > bgTitleHeight) {
 	            if (!isPostTitleShow) {
-
-	                bannerEle.classList.add('banner-show');
+	                $banner.addClass('banner-show');
+	                $homeLink.addClass('home-link-hide');
 	                isPostTitleShow = 1;
 	            }
-	            // 没有超过标题
 	        } else {
 	            if (isPostTitleShow) {
-	                bannerEle.classList.remove('banner-show');
-
+	                $banner.removeClass('banner-show');
+	                $homeLink.removeClass('home-link-hide');
 	                isPostTitleShow = 0;
 	            }
 	        }
-	    }
+	    });
 
-	    function upDown(event) {
-	        var moveDelta = 0;
-	        // moveDelta += event.
-	        if (moveDelta > 20) {
-	            toggleBanner.classList.add('post-banner-show');
-	            toggleBanner.classList.remove('blog-banner-show');
-	        } else {
-	            toggleBanner.classList.remove('post-banner-show');
-	            toggleBanner.classList.add('blog-banner-show');
+	    // 在向上滚动到banner消失的动画完成后切换到post-banner
+	    $banner[0].addEventListener('transitionend', function (eve) {
+	        if (eve.target == $banner[0]) {
+	            if (!isPostTitleShow) {
+	                $toggleBanner.removeClass('toggle-banner-show-site');
+	            }
 	        }
-	    }
+	    });
 
-	    // 滚动时切换标题    
-	    document.addEventListener('scroll', toggleHeader);
-	    // 点击文章标题回页首
-	    postTitle.addEventListener('click', _util.archUtil.backTop);
+	    // 滚动式切换文章标题和站点标题    
+	    var previousHeight = 0;
+	    $(document).on('scroll', function () {
+	        if (!$banner.hasClass('banner-show')) {
+	            return;
+	        }
+	        if ($(this).scrollTop() > previousHeight) {
+	            $toggleBanner.removeClass('toggle-banner-show-site');
+	        } else {
+	            $toggleBanner.addClass('toggle-banner-show-site');
+	        }
+	        previousHeight = $(this).scrollTop();
+	    });
 	};
+
+	// 点击文章标题回页首
+	// postTitle.addEventListener('click', archUtil.backTop);
+
 
 	exports.toggleHeader = toggleHeader;
 
@@ -201,6 +210,19 @@
 	        return document.documentElement.scrollTop || document.body.scrollTop;
 	    },
 
+	    // 获取元素在页面上相对左上角的位置
+	    getAbsPosition: function getAbsPosition(e) {
+	        var x = e.offsetLeft,
+	            y = e.offsetTop;
+	        while (e = e.offsetParent) {
+	            x += e.offsetLeft;
+	            y += e.offsetTop;
+	        }
+	        return {
+	            'x': x,
+	            'y': y
+	        };
+	    },
 	    dateFormater: function dateFormater(date, fmt) {
 	        var o = {
 	            'M+': date.getMonth() + 1, //月份 
@@ -1381,12 +1403,14 @@
 	        $sidebarContent = $sidebar.find('.sidebar-content:first'),
 	        $archiveLink = $sidebar.find('.sidebar-archive-link:first'),
 	        $tagsLink = $sidebar.find('.sidebar-tags-link:first'),
+	        $header = $('.header:first'),
 	        $sidebarHeader = $sidebar.find('.sidebar-header:first');
 
 	    // 点击headerMenu出现sidebar
 	    $headerMenu.on('click', function (eve) {
 	        $sidebar.removeClass('sidebar-hide');
 	        $wrapper.addClass('wrapper-show-sidebar');
+	        $header.addClass('header-slide');
 	        eve.stopPropagation();
 	    });
 
@@ -1398,6 +1422,7 @@
 	    // 单击body收回sidebar
 	    $(document).on('click', function () {
 	        $sidebar.addClass('sidebar-hide');
+	        $header.removeClass('header-slide');
 	        $wrapper.removeClass('wrapper-show-sidebar');
 	    });
 

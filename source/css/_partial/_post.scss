@@ -11,7 +11,6 @@
         display: flex;
         align-items: center;
     }
-
     .bg-post-tags {
         .post-tag {
             margin-right: 0.2rem;
@@ -21,6 +20,24 @@
             }
         }
     }
+    .banner {
+        background-color: rgba(255, 255, 255, 0.8);
+        transition: transform 0.3s ease-out .0s;
+        overflow: hidden;
+    }
+
+    .home-link-hide{
+        display: none;
+    }
+
+    .banner-show {
+        transform: translate3d(0, 0, 0);
+        pointer-events: initial;
+    }
+
+    .toggle-banner-show-site {
+        transform: translate3d(0, 0, 0);
+    }
 
     .site-background-meta {
         width: 50%;
@@ -28,18 +45,15 @@
         align-items: flex-start;
         color: #fff;
     }
-
     .post-content-box {
         border: none;
     }
-
     .post-page {
         .posts {
             @extend .index-posts;
         }
     }
-
-    .site-post-banner {
+    .toggle-banner {
         margin: 0;
         .blog-titles {
             justify-content: center;

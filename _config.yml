@@ -1,20 +1,19 @@
 menu:
   Home: /
 
-updateLogo: logo.svg
 # ===========================================
 # Social links Settings
 # ===========================================
 social:
-  email: 805843200@qq.com
-  facebook: http://www.zhihu.com/people/Firework_wee
-  twitter: http://www.zhihu.com/people/Firework_wee
-  github: http://www.zhihu.com/people/Firework_wee
-  instagram: http://www.zhihu.com/people/Firework_wee
-  linkedin: http://www.zhihu.com/people/Firework_wee
-  zhihu: http://www.zhihu.com/people/Firework_wee
-  weibo: http://weibo.com/u/2612303102
-  stack-overflow: http://www.zhihu.com/people/Firework_wee
+  email: 123456@qq.com
+  facebook: //github.com/fi3ework
+  twitter: //github.com/fi3ework
+  github: //github.com/fi3ework
+  instagram: //github.com/fi3ework
+  linkedin: //github.com/fi3ework
+  zhihu: //github.com/fi3ework
+  weibo: //github.com/fi3ework
+  stack-overflow: //github.com/fi3ework
 # ===========================================
 # friends
 # ===========================================

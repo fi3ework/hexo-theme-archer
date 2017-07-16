@@ -10,12 +10,14 @@ var sidebarInit = function sidebarInit() {
         $sidebarContent = $sidebar.find('.sidebar-content:first'),
         $archiveLink = $sidebar.find('.sidebar-archive-link:first'),
         $tagsLink = $sidebar.find('.sidebar-tags-link:first'),
+        $header = $('.header:first'),
         $sidebarHeader = $sidebar.find('.sidebar-header:first');
 
     // 点击headerMenu出现sidebar
     $headerMenu.on('click', function (eve) {
         $sidebar.removeClass('sidebar-hide');
         $wrapper.addClass('wrapper-show-sidebar');
+        $header.addClass('header-slide');
         eve.stopPropagation();
     });
 
@@ -27,6 +29,7 @@ var sidebarInit = function sidebarInit() {
     // 单击body收回sidebar
     $(document).on('click', function () {
         $sidebar.addClass('sidebar-hide');
+        $header.removeClass('header-slide');
         $wrapper.removeClass('wrapper-show-sidebar');
     });
 
