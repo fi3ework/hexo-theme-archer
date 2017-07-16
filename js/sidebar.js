@@ -1,82 +1,69 @@
-import {
-    archUtil
-} from './util';
-
-
-function stopClickPropagation(target) {
-    target.addEventListener('click', function (eve) {
-        eve.stopPropagation();
-    });
-}
-
 let sidebarInit = function () {
-    let sidebar = document.getElementsByClassName('sidebar')[0],
-        wrapper = document.getElementsByClassName('wrapper')[0],
-        headerMenu = document.getElementsByClassName('header-sidebar-menu')[0];
-        // sidebarClose = sidebar.getElementsByClassName('sidebar-close')[0];
+    let $sidebar = $('.sidebar:first'),
+        $wrapper = $('.wrapper:first'),
+        $headerMenu = $('.header-sidebar-menu:first'),
+        $sidebarContent = $sidebar.find('.sidebar-content:first'),
+        $archiveLink = $sidebar.find('.sidebar-archive-link:first'),
+        $tagsLink = $sidebar.find('.sidebar-tags-link:first'),
+        $sidebarHeader = $sidebar.find('.sidebar-header:first');
 
-    // add sidebar hide show toggle
-    // archUtil.toggler(sidebar, 'click', sidebarClose, 'sidebar-hide', null);
-    archUtil.toggler(sidebar, 'click', headerMenu, null, 'sidebar-hide', function (eve) {
+    // 点击headerMenu出现sidebar
+    $headerMenu.on('click', function (eve) {
+        $sidebar.removeClass('sidebar-hide');
+        $wrapper.addClass('wrapper-show-sidebar');
         eve.stopPropagation();
     });
-    archUtil.toggler(wrapper, 'click', headerMenu, 'wrapper-show-sidebar', null);
 
-    // stop sidebar propagation to hide itself
-    stopClickPropagation(sidebar);
-    
-    archUtil.toggler(sidebar, 'click', document.body, 'sidebar-hide', null);
-    archUtil.toggler(wrapper, 'click', document.body, null, 'wrapper-show-sidebar');
+    // 阻止在sidebar中单击收回sidebar
+    $sidebar.on('click', function (eve) {
+        eve.stopPropagation();
+    });
 
-    // add sidebar content change
-    let sidebarContent = sidebar.getElementsByClassName('sidebar-content')[0],
-        archiveLink = sidebar.getElementsByClassName('sidebar-archive-link')[0],
-        tagsLink = sidebar.getElementsByClassName('sidebar-tags-link')[0];
-    archUtil.toggler(sidebarContent, 'click', archiveLink, 'sidebar-content-show-archive', 'sidebar-content-show-tags');
-    archUtil.toggler(sidebarContent, 'click', tagsLink, 'sidebar-content-show-tags', 'sidebar-content-show-archive');
+    // 单击body收回sidebar
+    $(document).on('click', function () {
+        $sidebar.addClass('sidebar-hide');
+        $wrapper.removeClass('wrapper-show-sidebar');
+    });
 
-    
-    // stop reach top and bottom sidebar scroll
+    // 切换tags和archives
+    $archiveLink.on('click', function () {
+        $sidebarContent.addClass('sidebar-content-show-archive').removeClass('sidebar-content-show-tags');
+        $sidebarHeader.addClass('sidebar-header-show-archive').removeClass('sidebar-header-show-tags');
+    });
+    $tagsLink.on('click', function () {
+        $sidebarContent.addClass('sidebar-content-show-tags').removeClass('sidebar-content-show-archive');
+        $sidebarHeader.addClass('sidebar-header-show-tags').removeClass('sidebar-header-show-archive');
+    });
+
+    // 阻止sidebarContent在滚动到顶部或底部时继续滚动
+    $sidebar.on('mousewheel', function (eve) {
+        let target = eve.target,
+            $sidebarTagList = $sidebar.find('.sidebar-tag-list:first'),
+            $sidebarArchive = $sidebar.find('.sidebar-archive:first');
+
+        if ($.contains($sidebarTagList[0], target) || $sidebarTagList === target) {
+            stopSidebarEdgeScroll.call($sidebarTagList[0], eve);
+        } else if ($.contains($sidebarArchive[0], target) || $sidebarArchive === target) {
+            stopSidebarEdgeScroll.call($sidebarArchive[0], eve);
+        } else {
+            eve.preventDefault();
+        }
+    });
+
     function stopSidebarEdgeScroll(eve) {
         if (this.scrollHeight == this.clientHeight) {
             window.event.preventDefault();
         } else if (this.scrollTop <= 0) {
-            if (eve.wheelDelta > 0) {
+            if (eve.originalEvent.wheelDelta > 0) {
                 window.event.preventDefault();
             }
         } else if (this.scrollTop >= this.scrollHeight - this.clientHeight) {
-            if (eve.wheelDelta < 0) {
+            if (eve.originalEvent.wheelDelta < 0) {
                 window.event.preventDefault();
             }
         }
     }
-
-    // stop sidebar scroll
-    function stopScroll(eve) {
-        let target = eve.target;
-        let sidebarTagList = document.getElementsByClassName('sidebar-tag-list')[0];
-        let sidebarArchive = document.getElementsByClassName('sidebar-archive')[0];
-        // console.log(sidebarTagList.compareDocumentPosition(target));
-        // console.log(sidebarArchive.compareDocumentPosition(target));
-        // console.info('');
-        if (sidebarTagList.compareDocumentPosition(target) >= 16 || target == sidebarTagList) {
-            stopSidebarEdgeScroll.call(sidebarTagList, eve);
-        } else if (sidebarArchive.compareDocumentPosition(target) >= 16 || target == sidebarArchive) {
-            stopSidebarEdgeScroll.call(sidebarArchive, eve);
-        } else {
-            window.event.preventDefault();
-        }
-    }
-
-    
-    sidebar.addEventListener('mousewheel', stopScroll);
-
-    // add sidebar bottom slider change
-    let sidebarHeader = sidebar.getElementsByClassName('sidebar-header')[0];
-    archUtil.toggler(sidebarHeader, 'click', archiveLink, 'sidebar-header-show-archive', 'sidebar-header-show-tags');
-    archUtil.toggler(sidebarHeader, 'click', tagsLink, 'sidebar-header-show-tags', 'sidebar-header-show-archive');
 };
-
 
 export {
     sidebarInit

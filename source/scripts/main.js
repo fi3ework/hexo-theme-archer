@@ -48,7 +48,7 @@
 
 	var _backTop = __webpack_require__(1);
 
-	var _toggleHeader = __webpack_require__(3);
+	var _toggleHeader = __webpack_require__(2);
 
 	var _share = __webpack_require__(4);
 
@@ -67,52 +67,6 @@
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	exports.initBackTop = undefined;
-
-	var _util = __webpack_require__(2);
-
-	var initBackTop = function initBackTop() {
-	    // 回顶部
-	    var backTopEle = document.getElementsByClassName('back-top')[0],
-	        isBackTopShow = false;
-	    // header头像切换
-	    document.addEventListener('scroll', showBackTop);
-	    // header头像点击回顶部
-	    backTopEle.addEventListener('click', _util.archUtil.backTop);
-	    // 获得background-image的scorllHeight
-	    var bgImg = document.getElementsByClassName('site-background')[0],
-	        bgBottomHeight = _util.archUtil.getAbsPosition(bgImg).y + bgImg.scrollHeight,
-	        sidebarMenu = document.getElementsByClassName('header-sidebar-menu')[0];
-
-	    function showBackTop() {
-	        var scrollTop = _util.archUtil.getScrollTop();
-	        if (scrollTop > bgBottomHeight) {
-	            if (!isBackTopShow) {
-	                isBackTopShow = true;
-	                backTopEle.classList.add('back-top-show');
-	                sidebarMenu.classList.add('header-sidebar-menu-black');
-	            }
-	        } else {
-	            if (isBackTopShow) {
-	                isBackTopShow = false;
-	                backTopEle.classList.remove('back-top-show');
-	                sidebarMenu.classList.remove('header-sidebar-menu-black');
-	            }
-	        }
-	    }
-	};
-
-	exports.initBackTop = initBackTop;
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -120,85 +74,47 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	var archUtil = {
-	    backTop: function backTop() {
+	var initBackTop = function initBackTop() {
+	    // 回顶部
+	    var $backTop = $('.back-top:first'),
+	        $sidebarMenu = $('.header-sidebar-menu:first'),
+	        $bgImg = $('.site-background:first'),
+	        isBackTopShow = false,
+	        bgBottomHeight = $bgImg.offset().top + $bgImg.outerHeight() - $sidebarMenu.offset().top;
+
+	    // 绑定滚动出现backTop事件
+	    $(document).on('scroll', function () {
+	        if ($(document).scrollTop() > bgBottomHeight) {
+	            if (!isBackTopShow) {
+	                isBackTopShow = true;
+	                $backTop.addClass('back-top-show');
+	                $sidebarMenu.addClass('header-sidebar-menu-black');
+	            }
+	        } else {
+	            if (isBackTopShow) {
+	                isBackTopShow = false;
+	                $backTop.removeClass('back-top-show');
+	                $sidebarMenu.removeClass('header-sidebar-menu-black');
+	            }
+	        }
+	    });
+
+	    // 返回顶部函数
+	    $backTop.on('click', function () {
 	        var topTimer = setInterval(function () {
-	            var currTop = document.body.scrollTop;
-	            document.body.scrollTop -= Math.max(Math.ceil(currTop / 9) + 2);
+	            var currTop = $(document).scrollTop();
+	            window.scrollTo(0, Math.max(Math.floor(currTop * 0.8)));
 	            if (currTop === 0) {
 	                clearInterval(topTimer);
 	            }
 	        }, 20);
-	    },
-
-	    getScrollTop: function getScrollTop() {
-	        return document.documentElement.scrollTop || document.body.scrollTop;
-	    },
-
-	    // 获取元素在页面上相对左上角的位置
-	    getAbsPosition: function getAbsPosition(e) {
-	        var x = e.offsetLeft,
-	            y = e.offsetTop;
-	        while (e = e.offsetParent) {
-	            x += e.offsetLeft;
-	            y += e.offsetTop;
-	        }
-	        return {
-	            'x': x,
-	            'y': y
-	        };
-	    },
-	    dateFormater: function dateFormater(date, fmt) {
-	        var o = {
-	            'M+': date.getMonth() + 1, //月份 
-	            'd+': date.getDate(), //日 
-	            'h+': date.getHours(), //小时 
-	            'm+': date.getMinutes(), //分 
-	            's+': date.getSeconds(), //秒 
-	            'q+': Math.floor((date.getMonth() + 3) / 3), //季度 
-	            'S': date.getMilliseconds() //毫秒 
-	        };
-	        if (/(y+)/.test(fmt)) {
-	            fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
-	        }
-	        for (var k in o) {
-	            if (new RegExp('(' + k + ')').test(fmt)) {
-	                fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length));
-	            }
-	        }
-	        return fmt;
-	    },
-	    toggler: function toggler(target, eventName, btn, addClassName, removeClassName, optEvent) {
-	        if (!(target && typeof window !== 'undefined' && (target === window || target.nodeType))) {
-	            return;
-	        }
-	        btn.addEventListener(eventName, function (eve) {
-	            if (addClassName) {
-	                var classNameArr = addClassName.split(/[, ]/);
-	                var length = classNameArr.length;
-	                while (length--) {
-	                    target.classList.add(classNameArr[length]);
-	                }
-	            }
-	            if (removeClassName) {
-	                var _classNameArr = removeClassName.split(/[, ]/);
-	                var _length = _classNameArr.length;
-	                while (_length--) {
-	                    target.classList.remove(_classNameArr[_length]);
-	                }
-	            }
-	            if (optEvent) {
-	                optEvent(eve);
-	            }
-	        });
-	    }
-
+	    });
 	};
 
-	exports.archUtil = archUtil;
+	exports.initBackTop = initBackTop;
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -208,7 +124,7 @@
 	});
 	exports.toggleHeader = undefined;
 
-	var _util = __webpack_require__(2);
+	var _util = __webpack_require__(3);
 
 	var toggleHeader = function toggleHeader() {
 	    // 顶部标题栏切换
@@ -260,6 +176,79 @@
 	};
 
 	exports.toggleHeader = toggleHeader;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var archUtil = {
+	    backTop: function backTop() {
+	        var topTimer = setInterval(function () {
+	            var currTop = document.body.scrollTop;
+	            document.body.scrollTop -= Math.max(Math.ceil(currTop / 9) + 2);
+	            if (currTop === 0) {
+	                clearInterval(topTimer);
+	            }
+	        }, 20);
+	    },
+
+	    getScrollTop: function getScrollTop() {
+	        return document.documentElement.scrollTop || document.body.scrollTop;
+	    },
+
+	    dateFormater: function dateFormater(date, fmt) {
+	        var o = {
+	            'M+': date.getMonth() + 1, //月份 
+	            'd+': date.getDate(), //日 
+	            'h+': date.getHours(), //小时 
+	            'm+': date.getMinutes(), //分 
+	            's+': date.getSeconds(), //秒 
+	            'q+': Math.floor((date.getMonth() + 3) / 3), //季度 
+	            'S': date.getMilliseconds() //毫秒 
+	        };
+	        if (/(y+)/.test(fmt)) {
+	            fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
+	        }
+	        for (var k in o) {
+	            if (new RegExp('(' + k + ')').test(fmt)) {
+	                fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length));
+	            }
+	        }
+	        return fmt;
+	    },
+	    toggler: function toggler(target, eventName, btn, addClassName, removeClassName, optEvent) {
+	        if (!(target && typeof window !== 'undefined' && (target === window || target.nodeType))) {
+	            return;
+	        }
+	        btn.addEventListener(eventName, function (eve) {
+	            if (addClassName) {
+	                var classNameArr = addClassName.split(/[, ]/);
+	                var length = classNameArr.length;
+	                while (length--) {
+	                    target.classList.add(classNameArr[length]);
+	                }
+	            }
+	            if (removeClassName) {
+	                var _classNameArr = removeClassName.split(/[, ]/);
+	                var _length = _classNameArr.length;
+	                while (_length--) {
+	                    target.classList.remove(_classNameArr[_length]);
+	                }
+	            }
+	            if (optEvent) {
+	                optEvent(eve);
+	            }
+	        });
+	    }
+
+	};
+
+	exports.archUtil = archUtil;
 
 /***/ }),
 /* 4 */
@@ -317,16 +306,16 @@
 
 	// switch which site to share
 	function switchToShare(className, opt) {
-	    var combindedURL = void 0;
+	    var comonedURL = void 0;
 	    switch (className) {
 	        case 'to-weibo':
-	            combindedURL = generateURL('http://service.weibo.com/share/share.php?url=<%-sURL%>&title=<%-sTitle%>&pic=<%-sPic%>', opt);
+	            comonedURL = generateURL('http://service.weibo.com/share/share.php?url=<%-sURL%>&title=<%-sTitle%>&pic=<%-sPic%>', opt);
 	            break;
 	        case 'to-qq':
-	            combindedURL = generateURL('http://connect.qq.com/widget/shareqq/index.html?url=<%-sUrl%>&title=<%-sTitle%>&source=<%-sDesc%>', opt);
+	            comonedURL = generateURL('http://connect.qq.com/widget/shareqq/index.html?url=<%-sUrl%>&title=<%-sTitle%>&source=<%-sDesc%>', opt);
 	            break;
 	        case 'to-twitter':
-	            combindedURL = generateURL('https://twitter.com/intent/tweet?text=<%-sTitle%>&url=<%-sURL%>', opt);
+	            comonedURL = generateURL('https://twitter.com/intent/tweet?text=<%-sTitle%>&url=<%-sURL%>', opt);
 	            break;
 	        default:
 	            break;
@@ -335,7 +324,7 @@
 	            break;
 	    }
 	    if (className !== 'to-wechat') {
-	        window.open(combindedURL);
+	        window.open(comonedURL);
 	    }
 	}
 
@@ -1378,87 +1367,78 @@
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.sidebarInit = undefined;
-
-	var _util = __webpack_require__(2);
-
-	function stopClickPropagation(target) {
-	    target.addEventListener('click', function (eve) {
-	        eve.stopPropagation();
-	    });
-	}
-
 	var sidebarInit = function sidebarInit() {
-	    var sidebar = document.getElementsByClassName('sidebar')[0],
-	        wrapper = document.getElementsByClassName('wrapper')[0],
-	        headerMenu = document.getElementsByClassName('header-sidebar-menu')[0];
-	    // sidebarClose = sidebar.getElementsByClassName('sidebar-close')[0];
+	    var $sidebar = $('.sidebar:first'),
+	        $wrapper = $('.wrapper:first'),
+	        $headerMenu = $('.header-sidebar-menu:first'),
+	        $sidebarContent = $sidebar.find('.sidebar-content:first'),
+	        $archiveLink = $sidebar.find('.sidebar-archive-link:first'),
+	        $tagsLink = $sidebar.find('.sidebar-tags-link:first'),
+	        $sidebarHeader = $sidebar.find('.sidebar-header:first');
 
-	    // add sidebar hide show toggle
-	    // archUtil.toggler(sidebar, 'click', sidebarClose, 'sidebar-hide', null);
-	    _util.archUtil.toggler(sidebar, 'click', headerMenu, null, 'sidebar-hide', function (eve) {
+	    // 点击headerMenu出现sidebar
+	    $headerMenu.on('click', function (eve) {
+	        $sidebar.removeClass('sidebar-hide');
+	        $wrapper.addClass('wrapper-show-sidebar');
 	        eve.stopPropagation();
 	    });
-	    _util.archUtil.toggler(wrapper, 'click', headerMenu, 'wrapper-show-sidebar', null);
 
-	    // stop sidebar propagation to hide itself
-	    stopClickPropagation(sidebar);
+	    // 阻止在sidebar中单击收回sidebar
+	    $sidebar.on('click', function (eve) {
+	        eve.stopPropagation();
+	    });
 
-	    _util.archUtil.toggler(sidebar, 'click', document.body, 'sidebar-hide', null);
-	    _util.archUtil.toggler(wrapper, 'click', document.body, null, 'wrapper-show-sidebar');
+	    // 单击body收回sidebar
+	    $(document).on('click', function () {
+	        $sidebar.addClass('sidebar-hide');
+	        $wrapper.removeClass('wrapper-show-sidebar');
+	    });
 
-	    // add sidebar content change
-	    var sidebarContent = sidebar.getElementsByClassName('sidebar-content')[0],
-	        archiveLink = sidebar.getElementsByClassName('sidebar-archive-link')[0],
-	        tagsLink = sidebar.getElementsByClassName('sidebar-tags-link')[0];
-	    _util.archUtil.toggler(sidebarContent, 'click', archiveLink, 'sidebar-content-show-archive', 'sidebar-content-show-tags');
-	    _util.archUtil.toggler(sidebarContent, 'click', tagsLink, 'sidebar-content-show-tags', 'sidebar-content-show-archive');
+	    // 切换tags和archives
+	    $archiveLink.on('click', function () {
+	        $sidebarContent.addClass('sidebar-content-show-archive').removeClass('sidebar-content-show-tags');
+	        $sidebarHeader.addClass('sidebar-header-show-archive').removeClass('sidebar-header-show-tags');
+	    });
+	    $tagsLink.on('click', function () {
+	        $sidebarContent.addClass('sidebar-content-show-tags').removeClass('sidebar-content-show-archive');
+	        $sidebarHeader.addClass('sidebar-header-show-tags').removeClass('sidebar-header-show-archive');
+	    });
 
-	    // stop reach top and bottom sidebar scroll
+	    // 阻止sidebarContent在滚动到顶部或底部时继续滚动
+	    $sidebar.on('mousewheel', function (eve) {
+	        var target = eve.target,
+	            $sidebarTagList = $sidebar.find('.sidebar-tag-list:first'),
+	            $sidebarArchive = $sidebar.find('.sidebar-archive:first');
+
+	        if ($.contains($sidebarTagList[0], target) || $sidebarTagList === target) {
+	            stopSidebarEdgeScroll.call($sidebarTagList[0], eve);
+	        } else if ($.contains($sidebarArchive[0], target) || $sidebarArchive === target) {
+	            stopSidebarEdgeScroll.call($sidebarArchive[0], eve);
+	        } else {
+	            eve.preventDefault();
+	        }
+	    });
+
 	    function stopSidebarEdgeScroll(eve) {
 	        if (this.scrollHeight == this.clientHeight) {
 	            window.event.preventDefault();
 	        } else if (this.scrollTop <= 0) {
-	            if (eve.wheelDelta > 0) {
+	            if (eve.originalEvent.wheelDelta > 0) {
 	                window.event.preventDefault();
 	            }
 	        } else if (this.scrollTop >= this.scrollHeight - this.clientHeight) {
-	            if (eve.wheelDelta < 0) {
+	            if (eve.originalEvent.wheelDelta < 0) {
 	                window.event.preventDefault();
 	            }
 	        }
 	    }
-
-	    // stop sidebar scroll
-	    function stopScroll(eve) {
-	        var target = eve.target;
-	        var sidebarTagList = document.getElementsByClassName('sidebar-tag-list')[0];
-	        var sidebarArchive = document.getElementsByClassName('sidebar-archive')[0];
-	        // console.log(sidebarTagList.compareDocumentPosition(target));
-	        // console.log(sidebarArchive.compareDocumentPosition(target));
-	        // console.info('');
-	        if (sidebarTagList.compareDocumentPosition(target) >= 16 || target == sidebarTagList) {
-	            stopSidebarEdgeScroll.call(sidebarTagList, eve);
-	        } else if (sidebarArchive.compareDocumentPosition(target) >= 16 || target == sidebarArchive) {
-	            stopSidebarEdgeScroll.call(sidebarArchive, eve);
-	        } else {
-	            window.event.preventDefault();
-	        }
-	    }
-
-	    sidebar.addEventListener('mousewheel', stopScroll);
-
-	    // add sidebar bottom slider change
-	    var sidebarHeader = sidebar.getElementsByClassName('sidebar-header')[0];
-	    _util.archUtil.toggler(sidebarHeader, 'click', archiveLink, 'sidebar-header-show-archive', 'sidebar-header-show-tags');
-	    _util.archUtil.toggler(sidebarHeader, 'click', tagsLink, 'sidebar-header-show-tags', 'sidebar-header-show-archive');
 	};
 
 	exports.sidebarInit = sidebarInit;
@@ -1474,15 +1454,15 @@
 	});
 	exports.initTag = undefined;
 
-	var _util = __webpack_require__(2);
+	var _util = __webpack_require__(3);
 
 	var initTag = function initTag() {
 	    var contentJSON = void 0,
 	        tagMap = new Map();
-	    getTagInfo();
+	    initTagInfo();
 
-	    // get tag info
-	    function getTagInfo() {
+	    // 获取所有文章信息的json
+	    function initTagInfo() {
 	        // jsInfo is from js-info.ejs
 	        var tagURL = jsInfo.root + 'content.json?t=' + +new Date();
 	        var xhr = new XMLHttpRequest();
@@ -1497,7 +1477,7 @@
 	        xhr.send();
 	    }
 
-	    // init tagMap
+	    // 建立map
 	    function initTagMap(contentJSON) {
 	        var _this = this;
 
@@ -1520,26 +1500,21 @@
 	        }
 	    }
 
-	    // change model to dom
-	    function createTagDom(post) {
-	        var item = document.createElement('li');
-	        item.className = 'tag-post-item';
-	        var itemDate = document.createElement('span');
-	        itemDate.className = 'archive-post-date';
-	        itemDate.innerHTML = _util.archUtil.dateFormater(new Date(Date.parse(post.date)), 'yyyy-MM-dd');
-	        var itemTitle = document.createElement('a');
-	        itemTitle.className = 'archive-post-title';
-	        itemTitle.href = jsInfo.root + post.path;
-	        itemTitle.innerHTML = post.title;
-	        item.appendChild(itemDate);
-	        item.appendChild(itemTitle);
-	        return item;
+	    // 将对应的postInfo生成dom
+	    function createTagDom(postInfo) {
+	        var $tagItem = $('<li class="tag-post-item"><span class="archive-post-date">' + _util.archUtil.dateFormater(new Date(Date.parse(postInfo.date)), 'yyyy-MM-dd') + '</span></li>');
+	        var $aItem = $('<a class="archive-post-title" href="' + jsInfo.root + postInfo.path + '">' + postInfo.title + '</a>');
+	        $tagItem.append($aItem);
+	        return $tagItem;
 	    }
 
-	    document.getElementsByClassName('sidebar-tags-name')[0].addEventListener('click', function (event) {
+	    //     
+	    $('.sidebar-tags-name:first').on('click', function (event) {
 	        event.preventDefault();
 	        var realTarget = event.target;
 	        var realTagName = void 0;
+
+	        // 点击大框可显示对应tag的文章
 	        if (this.compareDocumentPosition(realTarget) & 16) {
 	            if (realTarget.tagName === 'SPAN') {
 	                realTagName = realTarget.firstChild.innerHTML;
@@ -1557,7 +1532,7 @@
 	            postList = document.getElementsByClassName('sidebar-tag-list')[0];
 	        postList.innerHTML = '';
 	        indexsArr.forEach(function (item) {
-	            frag.appendChild(createTagDom(contentJSON[item]));
+	            frag.appendChild(createTagDom(contentJSON[item])[0]);
 	        });
 	        postList.appendChild(frag);
 	    });

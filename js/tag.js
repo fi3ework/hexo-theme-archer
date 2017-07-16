@@ -5,12 +5,12 @@ import {
 let initTag = function () {
     let contentJSON,
         tagMap = new Map();
-    getTagInfo();
+    initTagInfo();
 
-    // get tag info
-    function getTagInfo() {
+    // 获取所有文章信息的json
+    function initTagInfo() {
         // jsInfo is from js-info.ejs
-        let tagURL = jsInfo.root + 'content.json?t=' + (+ new Date());
+        let tagURL = jsInfo.root + 'content.json?t=' + (+new Date());
         let xhr = new XMLHttpRequest();
         xhr.responseType = '';
         xhr.open('get', tagURL, true);
@@ -23,7 +23,7 @@ let initTag = function () {
         xhr.send();
     }
 
-    // init tagMap
+    // 建立map
     function initTagMap(contentJSON) {
         for (let postIndex = 0; postIndex < contentJSON.length; postIndex++) {
             let currPostTags = contentJSON[postIndex].tags;
@@ -40,26 +40,21 @@ let initTag = function () {
         }
     }
 
-    // change model to dom
-    function createTagDom(post) {
-        let item = document.createElement('li');
-        item.className = 'tag-post-item';
-        let itemDate = document.createElement('span');
-        itemDate.className = 'archive-post-date';
-        itemDate.innerHTML = archUtil.dateFormater(new Date(Date.parse(post.date)), 'yyyy-MM-dd');
-        let itemTitle = document.createElement('a');
-        itemTitle.className = 'archive-post-title';
-        itemTitle.href = jsInfo.root + post.path;
-        itemTitle.innerHTML = post.title;
-        item.appendChild(itemDate);
-        item.appendChild(itemTitle);
-        return item;
+    // 将对应的postInfo生成dom
+    function createTagDom(postInfo) {
+        let $tagItem = $('<li class="tag-post-item"><span class="archive-post-date">' + archUtil.dateFormater(new Date(Date.parse(postInfo.date)), 'yyyy-MM-dd') + '</span></li>');
+        let $aItem = $('<a class="archive-post-title" href="' + jsInfo.root + postInfo.path + '">' + postInfo.title + '</a>');
+        $tagItem.append($aItem);
+        return $tagItem;
     }
 
-    document.getElementsByClassName('sidebar-tags-name')[0].addEventListener('click', function (event) {
+    //     
+    $('.sidebar-tags-name:first').on('click', function (event) {
         event.preventDefault();
         let realTarget = event.target;
         let realTagName;
+
+        // 点击大框可显示对应tag的文章
         if (this.compareDocumentPosition(realTarget) & 16) {
             if (realTarget.tagName === 'SPAN') {
                 realTagName = realTarget.firstChild.innerHTML;
@@ -77,14 +72,11 @@ let initTag = function () {
             postList = document.getElementsByClassName('sidebar-tag-list')[0];
         postList.innerHTML = '';
         indexsArr.forEach(function (item) {
-            frag.appendChild(createTagDom(contentJSON[item]));
+            frag.appendChild(createTagDom(contentJSON[item])[0]);
         });
         postList.appendChild(frag);
     });
 };
-
-
-
 
 export {
     initTag

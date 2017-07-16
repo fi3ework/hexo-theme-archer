@@ -42,9 +42,7 @@ let toggleHeader = function () {
         } else {
             toggleBanner.classList.remove('post-banner-show');
             toggleBanner.classList.add('blog-banner-show');
-
         }
-
     }
 
     // 滚动时切换标题    

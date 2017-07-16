@@ -47,16 +47,16 @@ function generateURL(url, opt) {
 
 // switch which site to share
 function switchToShare(className, opt) {
-    let combindedURL;
+    let comonedURL;
     switch (className) {
     case 'to-weibo':
-        combindedURL = generateURL('http://service.weibo.com/share/share.php?url=<%-sURL%>&title=<%-sTitle%>&pic=<%-sPic%>', opt);
+        comonedURL = generateURL('http://service.weibo.com/share/share.php?url=<%-sURL%>&title=<%-sTitle%>&pic=<%-sPic%>', opt);
         break;
     case 'to-qq':
-        combindedURL = generateURL('http://connect.qq.com/widget/shareqq/index.html?url=<%-sUrl%>&title=<%-sTitle%>&source=<%-sDesc%>', opt);
+        comonedURL = generateURL('http://connect.qq.com/widget/shareqq/index.html?url=<%-sUrl%>&title=<%-sTitle%>&source=<%-sDesc%>', opt);
         break;
     case 'to-twitter':
-        combindedURL = generateURL('https://twitter.com/intent/tweet?text=<%-sTitle%>&url=<%-sURL%>', opt);
+        comonedURL = generateURL('https://twitter.com/intent/tweet?text=<%-sTitle%>&url=<%-sURL%>', opt);
         break;
     default:
         break;
@@ -65,7 +65,7 @@ function switchToShare(className, opt) {
         break;
     }
     if (className !== 'to-wechat') {
-        window.open(combindedURL);
+        window.open(comonedURL);
     }
 }
 

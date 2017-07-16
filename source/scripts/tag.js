@@ -10,10 +10,10 @@ var _util = require('./util');
 var initTag = function initTag() {
     var contentJSON = void 0,
         tagMap = new Map();
-    getTagInfo();
+    initTagInfo();
 
-    // get tag info
-    function getTagInfo() {
+    // 获取所有文章信息的json
+    function initTagInfo() {
         // jsInfo is from js-info.ejs
         var tagURL = jsInfo.root + 'content.json?t=' + +new Date();
         var xhr = new XMLHttpRequest();
@@ -28,7 +28,7 @@ var initTag = function initTag() {
         xhr.send();
     }
 
-    // init tagMap
+    // 建立map
     function initTagMap(contentJSON) {
         var _this = this;
 
@@ -51,26 +51,21 @@ var initTag = function initTag() {
         }
     }
 
-    // change model to dom
-    function createTagDom(post) {
-        var item = document.createElement('li');
-        item.className = 'tag-post-item';
-        var itemDate = document.createElement('span');
-        itemDate.className = 'archive-post-date';
-        itemDate.innerHTML = _util.archUtil.dateFormater(new Date(Date.parse(post.date)), 'yyyy-MM-dd');
-        var itemTitle = document.createElement('a');
-        itemTitle.className = 'archive-post-title';
-        itemTitle.href = jsInfo.root + post.path;
-        itemTitle.innerHTML = post.title;
-        item.appendChild(itemDate);
-        item.appendChild(itemTitle);
-        return item;
+    // 将对应的postInfo生成dom
+    function createTagDom(postInfo) {
+        var $tagItem = $('<li class="tag-post-item"><span class="archive-post-date">' + _util.archUtil.dateFormater(new Date(Date.parse(postInfo.date)), 'yyyy-MM-dd') + '</span></li>');
+        var $aItem = $('<a class="archive-post-title" href="' + jsInfo.root + postInfo.path + '">' + postInfo.title + '</a>');
+        $tagItem.append($aItem);
+        return $tagItem;
     }
 
-    document.getElementsByClassName('sidebar-tags-name')[0].addEventListener('click', function (event) {
+    //     
+    $('.sidebar-tags-name:first').on('click', function (event) {
         event.preventDefault();
         var realTarget = event.target;
         var realTagName = void 0;
+
+        // 点击大框可显示对应tag的文章
         if (this.compareDocumentPosition(realTarget) & 16) {
             if (realTarget.tagName === 'SPAN') {
                 realTagName = realTarget.firstChild.innerHTML;
@@ -88,7 +83,7 @@ var initTag = function initTag() {
             postList = document.getElementsByClassName('sidebar-tag-list')[0];
         postList.innerHTML = '';
         indexsArr.forEach(function (item) {
-            frag.appendChild(createTagDom(contentJSON[item]));
+            frag.appendChild(createTagDom(contentJSON[item])[0]);
         });
         postList.appendChild(frag);
     });

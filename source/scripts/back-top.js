@@ -3,39 +3,41 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.initBackTop = undefined;
-
-var _util = require('./util');
-
 var initBackTop = function initBackTop() {
     // 回顶部
-    var backTopEle = document.getElementsByClassName('back-top')[0],
-        isBackTopShow = false;
-    // header头像切换
-    document.addEventListener('scroll', showBackTop);
-    // header头像点击回顶部
-    backTopEle.addEventListener('click', _util.archUtil.backTop);
-    // 获得background-image的scorllHeight
-    var bgImg = document.getElementsByClassName('site-background')[0],
-        bgBottomHeight = _util.archUtil.getAbsPosition(bgImg).y + bgImg.scrollHeight,
-        sidebarMenu = document.getElementsByClassName('header-sidebar-menu')[0];
+    var $backTop = $('.back-top:first'),
+        $sidebarMenu = $('.header-sidebar-menu:first'),
+        $bgImg = $('.site-background:first'),
+        isBackTopShow = false,
+        bgBottomHeight = $bgImg.offset().top + $bgImg.outerHeight() - $sidebarMenu.offset().top;
 
-    function showBackTop() {
-        var scrollTop = _util.archUtil.getScrollTop();
-        if (scrollTop > bgBottomHeight) {
+    // 绑定滚动出现backTop事件
+    $(document).on('scroll', function () {
+        if ($(document).scrollTop() > bgBottomHeight) {
             if (!isBackTopShow) {
                 isBackTopShow = true;
-                backTopEle.classList.add('back-top-show');
-                sidebarMenu.classList.add('header-sidebar-menu-black');
+                $backTop.addClass('back-top-show');
+                $sidebarMenu.addClass('header-sidebar-menu-black');
             }
         } else {
             if (isBackTopShow) {
                 isBackTopShow = false;
-                backTopEle.classList.remove('back-top-show');
-                sidebarMenu.classList.remove('header-sidebar-menu-black');
+                $backTop.removeClass('back-top-show');
+                $sidebarMenu.removeClass('header-sidebar-menu-black');
             }
         }
-    }
+    });
+
+    // 返回顶部函数
+    $backTop.on('click', function () {
+        var topTimer = setInterval(function () {
+            var currTop = $(document).scrollTop();
+            window.scrollTo(0, Math.max(Math.floor(currTop * 0.8)));
+            if (currTop === 0) {
+                clearInterval(topTimer);
+            }
+        }, 20);
+    });
 };
 
 exports.initBackTop = initBackTop;
