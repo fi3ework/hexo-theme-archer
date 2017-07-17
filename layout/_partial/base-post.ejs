@@ -17,9 +17,6 @@
         <div class="post-content">
             <%- _content %>
         </div>
-        <% if(is_post() && _hasToc) { %>
-        <%- toc(_content) %>
-        <% } %>
         <% if(_hasMeta) { %>
         <div class="post-meta">
             <% if(_page.tags.length) { %>
@@ -49,3 +46,4 @@
         <% } %>
     </div>
 </article>
+

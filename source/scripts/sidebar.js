@@ -10,6 +10,7 @@ var sidebarInit = function sidebarInit() {
         $sidebarContent = $sidebar.find('.sidebar-content:first'),
         $archiveLink = $sidebar.find('.sidebar-archive-link:first'),
         $tagsLink = $sidebar.find('.sidebar-tags-link:first'),
+        $toc = $('.toc:first'),
         $header = $('.header:first'),
         $sidebarHeader = $sidebar.find('.sidebar-header:first');
 
@@ -18,6 +19,7 @@ var sidebarInit = function sidebarInit() {
         $sidebar.removeClass('sidebar-hide');
         $wrapper.addClass('wrapper-show-sidebar');
         $header.addClass('header-slide');
+        $toc.addClass('toc-slide');
         eve.stopPropagation();
     });
 
@@ -31,6 +33,7 @@ var sidebarInit = function sidebarInit() {
         $sidebar.addClass('sidebar-hide');
         $header.removeClass('header-slide');
         $wrapper.removeClass('wrapper-show-sidebar');
+        $toc.removeClass('toc-slide');
     });
 
     // 切换tags和archives

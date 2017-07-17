@@ -50,13 +50,13 @@
 
 	var _toggleHeader = __webpack_require__(2);
 
-	var _share = __webpack_require__(4);
+	var _share = __webpack_require__(3);
 
-	var _mobile = __webpack_require__(7);
+	var _mobile = __webpack_require__(6);
 
-	var _sidebar = __webpack_require__(8);
+	var _sidebar = __webpack_require__(7);
 
-	var _tag = __webpack_require__(9);
+	var _tag = __webpack_require__(8);
 
 	(0, _backTop.initBackTop)();
 	(0, _toggleHeader.toggleHeader)();
@@ -80,7 +80,7 @@
 	        $sidebarMenu = $('.header-sidebar-menu:first'),
 	        $bgImg = $('.site-background:first'),
 	        isBackTopShow = false,
-	        bgBottomHeight = $bgImg.offset().top + $bgImg.outerHeight() - $sidebarMenu.offset().top;
+	        bgBottomHeight = $bgImg.offset().top + $bgImg.outerHeight() - $sidebarMenu[0].offsetTop;
 
 	    // 绑定滚动出现backTop事件
 	    $(document).on('scroll', function () {
@@ -115,24 +115,22 @@
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.toggleHeader = undefined;
-
-	var _util = __webpack_require__(3);
-
 	var toggleHeader = function toggleHeader() {
 	    if (typeof document.getElementsByClassName('post-body')[0] === 'undefined') {
 	        return;
 	    }
 
 	    var $banner = $('.banner:first'),
+	        $postBanner = $banner.find('.post-banner:first'),
 	        $bgEle = $('.site-background:first'),
+	        $toc = $('.toc:first'),
 	        $toggleBanner = $('.toggle-banner:first'),
 	        $homeLink = $banner.parent().find('.home-link:first'),
 	        bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight(),
@@ -145,12 +143,14 @@
 	            if (!isPostTitleShow) {
 	                $banner.addClass('banner-show');
 	                $homeLink.addClass('home-link-hide');
+	                $toc.addClass('toc-fixed');
 	                isPostTitleShow = 1;
 	            }
 	        } else {
 	            if (isPostTitleShow) {
 	                $banner.removeClass('banner-show');
 	                $homeLink.removeClass('home-link-hide');
+	                $toc.removeClass('toc-fixed');
 	                isPostTitleShow = 0;
 	            }
 	        }
@@ -178,102 +178,23 @@
 	        }
 	        previousHeight = $(this).scrollTop();
 	    });
+
+	    // 点击文章标题回页首
+	    $postBanner.on('click', function () {
+	        var topTimer = setInterval(function () {
+	            var currTop = $(document).scrollTop();
+	            window.scrollTo(0, Math.max(Math.floor(currTop * 0.8)));
+	            if (currTop === 0) {
+	                clearInterval(topTimer);
+	            }
+	        }, 20);
+	    });
 	};
-
-	// 点击文章标题回页首
-	// postTitle.addEventListener('click', archUtil.backTop);
-
 
 	exports.toggleHeader = toggleHeader;
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	var archUtil = {
-	    backTop: function backTop() {
-	        var topTimer = setInterval(function () {
-	            var currTop = document.body.scrollTop;
-	            document.body.scrollTop -= Math.max(Math.ceil(currTop / 9) + 2);
-	            if (currTop === 0) {
-	                clearInterval(topTimer);
-	            }
-	        }, 20);
-	    },
-
-	    getScrollTop: function getScrollTop() {
-	        return document.documentElement.scrollTop || document.body.scrollTop;
-	    },
-
-	    // 获取元素在页面上相对左上角的位置
-	    getAbsPosition: function getAbsPosition(e) {
-	        var x = e.offsetLeft,
-	            y = e.offsetTop;
-	        while (e = e.offsetParent) {
-	            x += e.offsetLeft;
-	            y += e.offsetTop;
-	        }
-	        return {
-	            'x': x,
-	            'y': y
-	        };
-	    },
-	    dateFormater: function dateFormater(date, fmt) {
-	        var o = {
-	            'M+': date.getMonth() + 1, //月份 
-	            'd+': date.getDate(), //日 
-	            'h+': date.getHours(), //小时 
-	            'm+': date.getMinutes(), //分 
-	            's+': date.getSeconds(), //秒 
-	            'q+': Math.floor((date.getMonth() + 3) / 3), //季度 
-	            'S': date.getMilliseconds() //毫秒 
-	        };
-	        if (/(y+)/.test(fmt)) {
-	            fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
-	        }
-	        for (var k in o) {
-	            if (new RegExp('(' + k + ')').test(fmt)) {
-	                fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length));
-	            }
-	        }
-	        return fmt;
-	    },
-	    toggler: function toggler(target, eventName, btn, addClassName, removeClassName, optEvent) {
-	        if (!(target && typeof window !== 'undefined' && (target === window || target.nodeType))) {
-	            return;
-	        }
-	        btn.addEventListener(eventName, function (eve) {
-	            if (addClassName) {
-	                var classNameArr = addClassName.split(/[, ]/);
-	                var length = classNameArr.length;
-	                while (length--) {
-	                    target.classList.add(classNameArr[length]);
-	                }
-	            }
-	            if (removeClassName) {
-	                var _classNameArr = removeClassName.split(/[, ]/);
-	                var _length = _classNameArr.length;
-	                while (_length--) {
-	                    target.classList.remove(_classNameArr[_length]);
-	                }
-	            }
-	            if (optEvent) {
-	                optEvent(eve);
-	            }
-	        });
-	    }
-
-	};
-
-	exports.archUtil = archUtil;
-
-/***/ }),
-/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -283,7 +204,7 @@
 	});
 	exports.initShareBox = undefined;
 
-	var _QRMaker = __webpack_require__(5);
+	var _QRMaker = __webpack_require__(4);
 
 	var mask = document.getElementsByClassName('qr-mask')[0];
 	var qrCode = document.getElementsByClassName('QRcode-box')[0];
@@ -401,7 +322,7 @@
 	exports.initShareBox = initShareBox;
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -411,7 +332,7 @@
 	});
 	exports.makeQR = undefined;
 
-	var _qrcode = __webpack_require__(6);
+	var _qrcode = __webpack_require__(5);
 
 	function makeQR(opt) {
 	    var QRele = document.getElementsByClassName('QRcode-box')[0];
@@ -438,7 +359,7 @@
 	exports.makeQR = makeQR;
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -1375,7 +1296,7 @@
 	module.exports = QRCode;
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -1388,7 +1309,7 @@
 	exports.initMobile = initMobile;
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -1403,6 +1324,7 @@
 	        $sidebarContent = $sidebar.find('.sidebar-content:first'),
 	        $archiveLink = $sidebar.find('.sidebar-archive-link:first'),
 	        $tagsLink = $sidebar.find('.sidebar-tags-link:first'),
+	        $toc = $('.toc:first'),
 	        $header = $('.header:first'),
 	        $sidebarHeader = $sidebar.find('.sidebar-header:first');
 
@@ -1411,6 +1333,7 @@
 	        $sidebar.removeClass('sidebar-hide');
 	        $wrapper.addClass('wrapper-show-sidebar');
 	        $header.addClass('header-slide');
+	        $toc.addClass('toc-slide');
 	        eve.stopPropagation();
 	    });
 
@@ -1424,6 +1347,7 @@
 	        $sidebar.addClass('sidebar-hide');
 	        $header.removeClass('header-slide');
 	        $wrapper.removeClass('wrapper-show-sidebar');
+	        $toc.removeClass('toc-slide');
 	    });
 
 	    // 切换tags和archives
@@ -1469,7 +1393,7 @@
 	exports.sidebarInit = sidebarInit;
 
 /***/ }),
-/* 9 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1479,7 +1403,7 @@
 	});
 	exports.initTag = undefined;
 
-	var _util = __webpack_require__(3);
+	var _util = __webpack_require__(9);
 
 	var initTag = function initTag() {
 	    var contentJSON = void 0,
@@ -1564,6 +1488,92 @@
 	};
 
 	exports.initTag = initTag;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	var archUtil = {
+	    backTop: function backTop() {
+	        var topTimer = setInterval(function () {
+	            var currTop = document.body.scrollTop;
+	            document.body.scrollTop -= Math.max(Math.ceil(currTop / 9) + 2);
+	            if (currTop === 0) {
+	                clearInterval(topTimer);
+	            }
+	        }, 20);
+	    },
+
+	    getScrollTop: function getScrollTop() {
+	        return document.documentElement.scrollTop || document.body.scrollTop;
+	    },
+
+	    // 获取元素在页面上相对左上角的位置
+	    getAbsPosition: function getAbsPosition(e) {
+	        var x = e.offsetLeft,
+	            y = e.offsetTop;
+	        while (e = e.offsetParent) {
+	            x += e.offsetLeft;
+	            y += e.offsetTop;
+	        }
+	        return {
+	            'x': x,
+	            'y': y
+	        };
+	    },
+	    dateFormater: function dateFormater(date, fmt) {
+	        var o = {
+	            'M+': date.getMonth() + 1, //月份 
+	            'd+': date.getDate(), //日 
+	            'h+': date.getHours(), //小时 
+	            'm+': date.getMinutes(), //分 
+	            's+': date.getSeconds(), //秒 
+	            'q+': Math.floor((date.getMonth() + 3) / 3), //季度 
+	            'S': date.getMilliseconds() //毫秒 
+	        };
+	        if (/(y+)/.test(fmt)) {
+	            fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
+	        }
+	        for (var k in o) {
+	            if (new RegExp('(' + k + ')').test(fmt)) {
+	                fmt = fmt.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ('00' + o[k]).substr(('' + o[k]).length));
+	            }
+	        }
+	        return fmt;
+	    },
+	    toggler: function toggler(target, eventName, btn, addClassName, removeClassName, optEvent) {
+	        if (!(target && typeof window !== 'undefined' && (target === window || target.nodeType))) {
+	            return;
+	        }
+	        btn.addEventListener(eventName, function (eve) {
+	            if (addClassName) {
+	                var classNameArr = addClassName.split(/[, ]/);
+	                var length = classNameArr.length;
+	                while (length--) {
+	                    target.classList.add(classNameArr[length]);
+	                }
+	            }
+	            if (removeClassName) {
+	                var _classNameArr = removeClassName.split(/[, ]/);
+	                var _length = _classNameArr.length;
+	                while (_length--) {
+	                    target.classList.remove(_classNameArr[_length]);
+	                }
+	            }
+	            if (optEvent) {
+	                optEvent(eve);
+	            }
+	        });
+	    }
+
+	};
+
+	exports.archUtil = archUtil;
 
 /***/ })
 /******/ ]);

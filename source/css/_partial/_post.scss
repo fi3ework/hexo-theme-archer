@@ -25,20 +25,16 @@
         transition: transform 0.3s ease-out .0s;
         overflow: hidden;
     }
-
-    .home-link-hide{
+    .home-link-hide {
         display: none;
     }
-
     .banner-show {
         transform: translate3d(0, 0, 0);
         pointer-events: initial;
     }
-
     .toggle-banner-show-site {
         transform: translate3d(0, 0, 0);
     }
-
     .site-background-meta {
         width: 50%;
         margin: 0 auto;
@@ -58,5 +54,30 @@
         .blog-titles {
             justify-content: center;
         }
+    } // toc
+    .toc {
+        position: absolute;
+        top: 600px;
+        right: 50px;
+        z-index: 9999;
+        ol {
+            padding-left: 1rem;
+        }
+        a {
+            color: gray;
+        }
+        a:hover {
+            color: darkcyan;
+        }
+        transform: translate3d(0, 0, 0);
+        transition: all 0.2s ease-in-out .0s;
+    }
+    .toc-fixed {
+        top: initial;
+        position: fixed;
+        bottom: 380px;
+    }
+    .toc-slide {
+        transform: translate3d(150px, 0, 0);
     }
 }

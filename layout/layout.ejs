@@ -10,6 +10,9 @@
     <% } %>
     <%- partial('_partial/base-sidebar') %>
     <%- partial('_partial/base-header') %>
+    <% if(is_post()) { %>
+    <%- toc(page.content) %>
+    <% } %>
     <div class="wrapper">
         <%- partial('_partial/base-background-image') %>
         <div class="container">

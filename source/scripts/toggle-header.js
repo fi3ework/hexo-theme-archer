@@ -3,17 +3,15 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.toggleHeader = undefined;
-
-var _util = require('./util');
-
 var toggleHeader = function toggleHeader() {
     if (typeof document.getElementsByClassName('post-body')[0] === 'undefined') {
         return;
     }
 
     var $banner = $('.banner:first'),
+        $postBanner = $banner.find('.post-banner:first'),
         $bgEle = $('.site-background:first'),
+        $toc = $('.toc:first'),
         $toggleBanner = $('.toggle-banner:first'),
         $homeLink = $banner.parent().find('.home-link:first'),
         bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight(),
@@ -26,12 +24,14 @@ var toggleHeader = function toggleHeader() {
             if (!isPostTitleShow) {
                 $banner.addClass('banner-show');
                 $homeLink.addClass('home-link-hide');
+                $toc.addClass('toc-fixed');
                 isPostTitleShow = 1;
             }
         } else {
             if (isPostTitleShow) {
                 $banner.removeClass('banner-show');
                 $homeLink.removeClass('home-link-hide');
+                $toc.removeClass('toc-fixed');
                 isPostTitleShow = 0;
             }
         }
@@ -59,10 +59,17 @@ var toggleHeader = function toggleHeader() {
         }
         previousHeight = $(this).scrollTop();
     });
+
+    // 点击文章标题回页首
+    $postBanner.on('click', function () {
+        var topTimer = setInterval(function () {
+            var currTop = $(document).scrollTop();
+            window.scrollTo(0, Math.max(Math.floor(currTop * 0.8)));
+            if (currTop === 0) {
+                clearInterval(topTimer);
+            }
+        }, 20);
+    });
 };
-
-// 点击文章标题回页首
-// postTitle.addEventListener('click', archUtil.backTop);
-
 
 exports.toggleHeader = toggleHeader;

@@ -4,7 +4,7 @@ let initBackTop = function () {
         $sidebarMenu = $('.header-sidebar-menu:first'),
         $bgImg = $('.site-background:first'),
         isBackTopShow = false,
-        bgBottomHeight = $bgImg.offset().top + $bgImg.outerHeight() - $sidebarMenu.offset().top;
+        bgBottomHeight = $bgImg.offset().top + $bgImg.outerHeight() - $sidebarMenu[0].offsetTop;
 
     // 绑定滚动出现backTop事件
     $(document).on('scroll', function () {
@@ -33,7 +33,6 @@ let initBackTop = function () {
             }
         }, 20);
     });
-
 };
 
 
