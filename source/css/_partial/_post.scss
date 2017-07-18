@@ -41,13 +41,13 @@
         align-items: flex-start;
         color: #fff;
     }
-    .post-content-box {
-        border: none;
-    }
+
     .post-page {
-        .posts {
-            @extend .index-posts;
-        }
+            @extend .index-page;
+    }
+
+    .post {
+        border-bottom: none;
     }
     .toggle-banner {
         margin: 0;

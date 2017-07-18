@@ -6,12 +6,16 @@
     display: block;
 }
 
-.bg-title{
+.site-background {
+    height: 30vh;
+}
+
+.bg-title {
     font-size: 3rem;
     max-width: 90%;
 }
 
-.bg-subtitle{
+.bg-subtitle {
     font-size: 1.5rem;
     white-space: normal;
     max-width: 70%;
@@ -88,12 +92,5 @@
     }
     .copyright {
         margin: 0.5rem auto 0.5rem auto;
-    }
-}
-
-.post-content-box {
-    .share-box {
-        left: initial !important;
-        right: 0 !important;
     }
 }

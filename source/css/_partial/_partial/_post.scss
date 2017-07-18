@@ -1,23 +1,17 @@
 .post {
     position: relative;
     padding-top: 1.5rem;
+    padding: 1.5rem 0rem 0.2rem 0rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: $post-content-color;
+    background-color: $post-background-color;
+    z-index: 3;
     &:last-of-type {
         padding-bottom: 1rem;
     }
     &:first-of-type {
         padding-top: 0;
     }
-}
-
-// content box
-.post-content-box {
-    position: relative;
-    padding: 0rem 0rem 0.5rem 0rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    border-top: none;
-    color: $post-content-color;
-    background-color: $post-background-color;
-    z-index: 3;
     .post-title {
         text-align: left;
         width: 100%;

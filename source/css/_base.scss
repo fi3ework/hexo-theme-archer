@@ -8,7 +8,7 @@ html {
 .wrapper{
     width: 100%;
     height: 100%;
-    transition: all 0.2s ease-in-out .0s;
+    transition: all 0.2s ease-in-out .04s;
     transform: translate3d(0, 0, 0);
     position: relative;
     top: 0;
@@ -63,7 +63,7 @@ html {
 
 
 .main {
-    width: 45rem;
+    width: 42.8125rem;
     height: 100%;
     flex-grow: 0;
     padding: 0 0 0 0;
