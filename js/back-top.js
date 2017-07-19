@@ -7,20 +7,30 @@ let initBackTop = function () {
         bgBottomHeight = $bgImg.offset().top + $bgImg.outerHeight() - $sidebarMenu[0].offsetTop;
 
     // 绑定滚动出现backTop事件
-    $(document).on('scroll', function () {
-        if ($(document).scrollTop() > bgBottomHeight) {
-            if (!isBackTopShow) {
-                isBackTopShow = true;
-                $backTop.addClass('back-top-show');
-                $sidebarMenu.addClass('header-sidebar-menu-black');
-            }
-        } else {
-            if (isBackTopShow) {
-                isBackTopShow = false;
-                $backTop.removeClass('back-top-show');
-                $sidebarMenu.removeClass('header-sidebar-menu-black');
-            }
+    function showBackTop() {
+        let inited = false;
+        if (!inited) {
+            requestAnimationFrame(function update() {
+                if ($(document).scrollTop() > bgBottomHeight) {
+                    if (!isBackTopShow) {
+                        isBackTopShow = true;
+                        $backTop.addClass('back-top-show');
+                        $sidebarMenu.addClass('header-sidebar-menu-black');
+                    }
+                } else {
+                    if (isBackTopShow) {
+                        isBackTopShow = false;
+                        $backTop.removeClass('back-top-show');
+                        $sidebarMenu.removeClass('header-sidebar-menu-black');
+                    }
+                }
+            });
+            inited = true;
         }
+    }
+
+    $(document).on('scroll', function () {
+        showBackTop();
     });
 
     // 返回顶部函数

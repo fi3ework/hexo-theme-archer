@@ -17,24 +17,37 @@ var toggleHeader = function toggleHeader() {
         bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight(),
         isPostTitleShow = 0;
 
-    // 滚动时显示标题栏    
-    $(document).on('scroll', function () {
-        var scrollTop = $(document).scrollTop();
-        if (scrollTop > bgTitleHeight) {
-            if (!isPostTitleShow) {
-                $banner.addClass('banner-show');
-                $homeLink.addClass('home-link-hide');
-                $toc.addClass('toc-fixed');
-                isPostTitleShow = 1;
-            }
-        } else {
-            if (isPostTitleShow) {
-                $banner.removeClass('banner-show');
-                $homeLink.removeClass('home-link-hide');
-                $toc.removeClass('toc-fixed');
-                isPostTitleShow = 0;
-            }
+    // 滚动时显示标题栏
+    function showBanner() {
+        var inited = false;
+        if (!inited) {
+            requestAnimationFrame(function update() {
+                //let stopRAF = false;
+                //TODO: add raf stop?
+                var scrollTop = $(document).scrollTop();
+                if (scrollTop > bgTitleHeight) {
+                    if (!isPostTitleShow) {
+                        $banner.addClass('banner-show');
+                        $homeLink.addClass('home-link-hide');
+                        $toc.addClass('toc-fixed');
+                        isPostTitleShow = 1;
+                    }
+                } else {
+                    if (isPostTitleShow) {
+                        $banner.removeClass('banner-show');
+                        $homeLink.removeClass('home-link-hide');
+                        $toc.removeClass('toc-fixed');
+                        isPostTitleShow = 0;
+                    }
+                }
+                requestAnimationFrame(update);
+            });
+            inited = true;
         }
+    }
+
+    $(document).on('scroll', function () {
+        showBanner();
     });
 
     // 在向上滚动到banner消失的动画完成后切换到post-banner
@@ -48,16 +61,35 @@ var toggleHeader = function toggleHeader() {
 
     // 滚动式切换文章标题和站点标题    
     var previousHeight = 0;
+    function togglePostAndSiteBanner(that) {
+        var inited = false;
+        if (!inited) {
+            requestAnimationFrame(function update() {
+                var stopRAF = false;
+                if (!$banner.hasClass('banner-show')) {
+                    inited = false;
+                    return;
+                }
+                if ($(that).scrollTop() > previousHeight) {
+                    $toggleBanner.removeClass('toggle-banner-show-site');
+                } else if ($(that).scrollTop() < previousHeight) {
+                    $toggleBanner.addClass('toggle-banner-show-site');
+                } else {
+                    stopRAF = true;
+                }
+                previousHeight = $(that).scrollTop();
+                // 在滚动停止的时候取消rAF
+                if (!stopRAF) {
+                    requestAnimationFrame(update);
+                } else {
+                    inited = false;
+                }
+            });
+            inited = true;
+        }
+    }
     $(document).on('scroll', function () {
-        if (!$banner.hasClass('banner-show')) {
-            return;
-        }
-        if ($(this).scrollTop() > previousHeight) {
-            $toggleBanner.removeClass('toggle-banner-show-site');
-        } else {
-            $toggleBanner.addClass('toggle-banner-show-site');
-        }
-        previousHeight = $(this).scrollTop();
+        togglePostAndSiteBanner(this);
     });
 
     // 点击文章标题回页首

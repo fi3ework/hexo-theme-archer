@@ -6,8 +6,9 @@
     display: block;
 }
 
-.site-background {
+.site-background-img {
     height: 30vh;
+    background: #fff url('/bg-small.jpg') center center / cover no-repeat;
 }
 
 .bg-title {

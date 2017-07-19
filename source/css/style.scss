@@ -5,23 +5,27 @@
 @import "_mixin";
 // partial
 @import "_partial/_partial/_background";
-@import "_partial/_partial/_qr.scss";
+@import "_partial/_partial/_qr";
 @import "_partial/_partial/_footer";
 @import "_partial/_partial/_header";
 @import "_partial/_partial/_profile";
 @import "_partial/_partial/_paginator";
 @import "_partial/_post/_code";
 @import "_partial/_partial/_post";
-@import "_partial/_sidebar/_sidebar-archive.scss";
-@import "_partial/_sidebar/_sidebar-tags.scss";
-@import "_partial/_partial/_scrollbar.scss";
+@import "_partial/_sidebar/_sidebar-archive";
+@import "_partial/_sidebar/_sidebar-tags";
+@import "_partial/_partial/_scrollbar";
 
 // pages
-@import "_partial/_sidebar.scss";
-@import "_partial/_index";
-@import "_partial/_post";
+@import "_partial/_sidebar";
+@import "_partial/_index-page";
+@import "_partial/_post-page";
 
 // mobile
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 981px){
+    @import "./desktop";
+}
+
+@media screen and (max-width: 980px) {
     @import "./mobile";
 }

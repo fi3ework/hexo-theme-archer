@@ -83,20 +83,30 @@
 	        bgBottomHeight = $bgImg.offset().top + $bgImg.outerHeight() - $sidebarMenu[0].offsetTop;
 
 	    // 绑定滚动出现backTop事件
-	    $(document).on('scroll', function () {
-	        if ($(document).scrollTop() > bgBottomHeight) {
-	            if (!isBackTopShow) {
-	                isBackTopShow = true;
-	                $backTop.addClass('back-top-show');
-	                $sidebarMenu.addClass('header-sidebar-menu-black');
-	            }
-	        } else {
-	            if (isBackTopShow) {
-	                isBackTopShow = false;
-	                $backTop.removeClass('back-top-show');
-	                $sidebarMenu.removeClass('header-sidebar-menu-black');
-	            }
+	    function showBackTop() {
+	        var inited = false;
+	        if (!inited) {
+	            requestAnimationFrame(function update() {
+	                if ($(document).scrollTop() > bgBottomHeight) {
+	                    if (!isBackTopShow) {
+	                        isBackTopShow = true;
+	                        $backTop.addClass('back-top-show');
+	                        $sidebarMenu.addClass('header-sidebar-menu-black');
+	                    }
+	                } else {
+	                    if (isBackTopShow) {
+	                        isBackTopShow = false;
+	                        $backTop.removeClass('back-top-show');
+	                        $sidebarMenu.removeClass('header-sidebar-menu-black');
+	                    }
+	                }
+	            });
+	            inited = true;
 	        }
+	    }
+
+	    $(document).on('scroll', function () {
+	        showBackTop();
 	    });
 
 	    // 返回顶部函数
@@ -136,24 +146,37 @@
 	        bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight(),
 	        isPostTitleShow = 0;
 
-	    // 滚动时显示标题栏    
-	    $(document).on('scroll', function () {
-	        var scrollTop = $(document).scrollTop();
-	        if (scrollTop > bgTitleHeight) {
-	            if (!isPostTitleShow) {
-	                $banner.addClass('banner-show');
-	                $homeLink.addClass('home-link-hide');
-	                $toc.addClass('toc-fixed');
-	                isPostTitleShow = 1;
-	            }
-	        } else {
-	            if (isPostTitleShow) {
-	                $banner.removeClass('banner-show');
-	                $homeLink.removeClass('home-link-hide');
-	                $toc.removeClass('toc-fixed');
-	                isPostTitleShow = 0;
-	            }
+	    // 滚动时显示标题栏
+	    function showBanner() {
+	        var inited = false;
+	        if (!inited) {
+	            requestAnimationFrame(function update() {
+	                //let stopRAF = false;
+	                //TODO: add raf stop?
+	                var scrollTop = $(document).scrollTop();
+	                if (scrollTop > bgTitleHeight) {
+	                    if (!isPostTitleShow) {
+	                        $banner.addClass('banner-show');
+	                        $homeLink.addClass('home-link-hide');
+	                        $toc.addClass('toc-fixed');
+	                        isPostTitleShow = 1;
+	                    }
+	                } else {
+	                    if (isPostTitleShow) {
+	                        $banner.removeClass('banner-show');
+	                        $homeLink.removeClass('home-link-hide');
+	                        $toc.removeClass('toc-fixed');
+	                        isPostTitleShow = 0;
+	                    }
+	                }
+	                requestAnimationFrame(update);
+	            });
+	            inited = true;
 	        }
+	    }
+
+	    $(document).on('scroll', function () {
+	        showBanner();
 	    });
 
 	    // 在向上滚动到banner消失的动画完成后切换到post-banner
@@ -167,16 +190,35 @@
 
 	    // 滚动式切换文章标题和站点标题    
 	    var previousHeight = 0;
+	    function togglePostAndSiteBanner(that) {
+	        var inited = false;
+	        if (!inited) {
+	            requestAnimationFrame(function update() {
+	                var stopRAF = false;
+	                if (!$banner.hasClass('banner-show')) {
+	                    inited = false;
+	                    return;
+	                }
+	                if ($(that).scrollTop() > previousHeight) {
+	                    $toggleBanner.removeClass('toggle-banner-show-site');
+	                } else if ($(that).scrollTop() < previousHeight) {
+	                    $toggleBanner.addClass('toggle-banner-show-site');
+	                } else {
+	                    stopRAF = true;
+	                }
+	                previousHeight = $(that).scrollTop();
+	                // 在滚动停止的时候取消rAF
+	                if (!stopRAF) {
+	                    requestAnimationFrame(update);
+	                } else {
+	                    inited = false;
+	                }
+	            });
+	            inited = true;
+	        }
+	    }
 	    $(document).on('scroll', function () {
-	        if (!$banner.hasClass('banner-show')) {
-	            return;
-	        }
-	        if ($(this).scrollTop() > previousHeight) {
-	            $toggleBanner.removeClass('toggle-banner-show-site');
-	        } else {
-	            $toggleBanner.addClass('toggle-banner-show-site');
-	        }
-	        previousHeight = $(this).scrollTop();
+	        togglePostAndSiteBanner(this);
 	    });
 
 	    // 点击文章标题回页首
