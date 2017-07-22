@@ -18,12 +18,10 @@ var toggleHeader = function toggleHeader() {
         isPostTitleShow = 0;
 
     // 滚动时显示标题栏
+    var tickingBanner = false;
     function showBanner() {
-        var inited = false;
-        if (!inited) {
+        if (!tickingBanner) {
             requestAnimationFrame(function update() {
-                //let stopRAF = false;
-                //TODO: add raf stop?
                 var scrollTop = $(document).scrollTop();
                 if (scrollTop > bgTitleHeight) {
                     if (!isPostTitleShow) {
@@ -40,9 +38,9 @@ var toggleHeader = function toggleHeader() {
                         isPostTitleShow = 0;
                     }
                 }
-                requestAnimationFrame(update);
+                tickingBanner = false;
             });
-            inited = true;
+            tickingBanner = true;
         }
     }
 
@@ -61,32 +59,24 @@ var toggleHeader = function toggleHeader() {
 
     // 滚动式切换文章标题和站点标题    
     var previousHeight = 0;
+    var tickingToggler = false;
     function togglePostAndSiteBanner(that) {
-        var inited = false;
-        if (!inited) {
+        if (!tickingToggler) {
             requestAnimationFrame(function update() {
-                var stopRAF = false;
                 if (!$banner.hasClass('banner-show')) {
-                    inited = false;
+                    tickingToggler = false;
                     return;
                 }
                 if ($(that).scrollTop() > previousHeight) {
                     $toggleBanner.removeClass('toggle-banner-show-site');
                 } else if ($(that).scrollTop() < previousHeight) {
                     $toggleBanner.addClass('toggle-banner-show-site');
-                } else {
-                    stopRAF = true;
                 }
                 previousHeight = $(that).scrollTop();
-                // 在滚动停止的时候取消rAF
-                if (!stopRAF) {
-                    requestAnimationFrame(update);
-                } else {
-                    inited = false;
-                }
+                tickingToggler = false;
             });
-            inited = true;
         }
+        tickingToggler = true;
     }
     $(document).on('scroll', function () {
         togglePostAndSiteBanner(this);

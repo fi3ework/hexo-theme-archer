@@ -1,10 +1,9 @@
 const gulp = require('gulp'),
-    browserify = require('gulp-browserify'),
     babel = require('gulp-babel'),
     webpack = require('gulp-webpack'),
-    named = require('vinyl-named');
+    uglify = require('gulp-uglify');
 
-
+// babel
 gulp.task('convertJS', function () {
     return gulp.src('./js/**/*.js')
         .pipe(babel({
@@ -13,6 +12,7 @@ gulp.task('convertJS', function () {
         .pipe(gulp.dest('./source/scripts/'));
 });
 
+// webpack
 gulp.task('webpack', ['convertJS'], function () {
     return gulp.src('')
         .pipe(webpack({
@@ -26,10 +26,16 @@ gulp.task('webpack', ['convertJS'], function () {
         .pipe(gulp.dest('./source/scripts/'));
 });
 
-gulp.task('build', ['convertJS', 'webpack']);
+// uglify
+gulp.task('uglify', ['webpack'], function () {
+    return gulp.src('./source/scripts/main.js').pipe(uglify())
+       .pipe(gulp.dest('./source/scripts/'));
+});
 
+// watch
 gulp.task('watch', function () {
-    gulp.watch(['./js/**/*.js'], ['build']);
+    gulp.watch(['./js/**/*.js'], ['uglify']);
 
 });
-gulp.task('default', ['build', 'watch']);
+
+gulp.task('default', ['uglify', 'watch']);

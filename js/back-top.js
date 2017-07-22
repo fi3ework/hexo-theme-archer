@@ -7,9 +7,10 @@ let initBackTop = function () {
         bgBottomHeight = $bgImg.offset().top + $bgImg.outerHeight() - $sidebarMenu[0].offsetTop;
 
     // 绑定滚动出现backTop事件
+    let tricking = false;
     function showBackTop() {
-        let inited = false;
-        if (!inited) {
+        if (!tricking) {
+            tricking = true;
             requestAnimationFrame(function update() {
                 if ($(document).scrollTop() > bgBottomHeight) {
                     if (!isBackTopShow) {
@@ -24,8 +25,8 @@ let initBackTop = function () {
                         $sidebarMenu.removeClass('header-sidebar-menu-black');
                     }
                 }
+                tricking = false;
             });
-            inited = true;
         }
     }
 
