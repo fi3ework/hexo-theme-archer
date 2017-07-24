@@ -23,23 +23,13 @@
             currPost :_page,
             className : 'post-tags'}) %>
         <% } %>
-        <div class="post-date-share">
-            <div class="post-date">
-                <span class="post-calander iconfont-arch"></span><span class="post-time"><%- date(_page.date, "YYYY-MM-DD") %></span>
-            </div>
-            <% let postURL; %>
-            <% if(is_home()) { %>
-            <% postURL = titleURL;%>
-            <% } else { %>
-            <% postURL = url_for(page.path) }%>
-            <div class="post-share iconfont-arch">
-                <ul class="share-box" data-href = "<%- postURL %>" data-title = "<%= _page.title %>" >
-                    <li class="to-weibo">分享到微博</li>
-                    <li class="to-wechat">分享到微信</li>
-                    <li class="to-qq">分享到QQ</li>
-                    <li class="to-twitter">分享到twitter</li>
-                </ul>
-            </div>
+            <div class="post-date-share">
+                <div class="post-date">
+                    <span class="post-calander iconfont-arch"></span><span class="post-time"><%- date(_page.date, "YYYY-MM-DD") %></span>
+                </div>
+            <% if(_hasShare) { %>
+                <%- partial('base-share') %>
+            <% } %>
         </div>
     </div>
     <% } %>

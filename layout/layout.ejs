@@ -11,15 +11,15 @@
     <%- partial('_partial/base-sidebar') %>
     <%- partial('_partial/base-header') %>
     <% if(is_post()) { %>
-    <%- toc(page.content) %>
+    <!-- <%- toc(page.content) %> -->
     <% } %>
     <div class="wrapper">
         <%- partial('_partial/base-background-image') %>
         <div class="container">
+            <%- body %>
             <% if (is_home()) { %>
             <%- partial('_partial/base-profile') %>
             <% } %>
-            <%- body %>
         </div>
         <%- partial('_partial/base-footer') %>
     </div>
