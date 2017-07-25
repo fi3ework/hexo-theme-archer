@@ -1,6 +1,8 @@
 let toggleHeader = function () {
-    if (typeof document.getElementsByClassName('post-body')[0] === 'undefined') {
-        return;
+    // 判断是否为post-page
+    let isPostPage = 0;
+    if (typeof document.getElementsByClassName('post-body')[0] !== 'undefined') {
+        isPostPage = 1;
     }
 
     let $banner = $('.banner:first'),
@@ -14,6 +16,7 @@ let toggleHeader = function () {
 
     // 滚动时显示标题栏
     let tickingBanner = false;
+
     function showBanner() {
         if (!tickingBanner) {
             requestAnimationFrame(
@@ -21,16 +24,20 @@ let toggleHeader = function () {
                     let scrollTop = $(document).scrollTop();
                     if (scrollTop > bgTitleHeight) {
                         if (!isPostTitleShow) {
-                            $banner.addClass('banner-show');
+                            if (isPostPage) {
+                                $banner.addClass('banner-show');
+                                $toc.addClass('toc-fixed');
+                            }
                             $homeLink.addClass('home-link-hide');
-                            $toc.addClass('toc-fixed');
                             isPostTitleShow = 1;
                         }
                     } else {
                         if (isPostTitleShow) {
-                            $banner.removeClass('banner-show');
+                            if (isPostPage) {
+                                $banner.removeClass('banner-show');
+                                $toc.removeClass('toc-fixed');
+                            }
                             $homeLink.removeClass('home-link-hide');
-                            $toc.removeClass('toc-fixed');
                             isPostTitleShow = 0;
                         }
                     }
@@ -41,9 +48,15 @@ let toggleHeader = function () {
         }
     }
 
+
     $(document).on('scroll', function () {
         showBanner();
     });
+
+    // 如果不是post-page 以下忽略
+    if (!isPostPage) {
+        return;
+    }
 
     // 在向上滚动到banner消失的动画完成后切换到post-banner
     $banner[0].addEventListener('transitionend', function (eve) {
@@ -57,6 +70,7 @@ let toggleHeader = function () {
     // 滚动式切换文章标题和站点标题    
     let previousHeight = 0;
     let tickingToggler = false;
+
     function togglePostAndSiteBanner(that) {
         if (!tickingToggler) {
             requestAnimationFrame(function update() {

@@ -11,12 +11,16 @@ let sidebarInit = function () {
 
     // 点击headerMenu出现sidebar
     $headerMenu.on('click', function (eve) {
+        showSidebar(eve);
+    });
+
+    function showSidebar(eve) {
         $sidebar.removeClass('sidebar-hide');
         $wrapper.addClass('wrapper-show-sidebar');
         $header.addClass('header-slide');
         $toc.addClass('toc-slide');
         eve.stopPropagation();
-    });
+    }
 
     // 阻止在sidebar中单击收回sidebar
     $sidebar.on('click', function (eve) {
@@ -69,7 +73,37 @@ let sidebarInit = function () {
             }
         }
     }
+
+    // 点击tag弹出slider
+    function popSidebar() {
+        // 弹出sidebar
+        let event = document.createEvent('MouseEvents');
+        event.initMouseEvent('click', false, true);
+        $headerMenu[0].dispatchEvent(event);
+        // 直接滑动到tags
+        $tagsLink[0].dispatchEvent(event);
+    }
+
+    // 显示tag对应的列表
+    let sidebarTagsName = $('.sidebar-tags-name:first')[0];
+    function clickTag(tagName) {
+        let event = document.createEvent('MouseEvents');
+        event.initMouseEvent('click', false, true);
+        $headerMenu[0].dispatchEvent(event);
+        sidebarTagsName.currTagName = tagName;
+        sidebarTagsName.dispatchEvent(event);
+    }
+
+    let $postTags = $('.post-tag');
+    $postTags.on('click', function (eve) {
+        popSidebar();
+        let tagName = eve.target.dataset.href;
+        clickTag(tagName);
+        eve.stopPropagation();
+    });
 };
+
+
 
 export {
     sidebarInit

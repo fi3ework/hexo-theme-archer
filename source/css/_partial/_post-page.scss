@@ -39,9 +39,7 @@
         transition: transform 0.3s ease-out .0s;
         overflow: hidden;
     }
-    .home-link-hide {
-        display: none;
-    }
+
     .banner-show {
         transform: translate3d(0, 0, 0);
         pointer-events: initial;

@@ -3,17 +3,26 @@
 }
 
 .container {
-    display: block;
+    margin: 1rem 0 0 0;
 }
 
 .site-background-img {
-    height: 30vh;
     background: #fff url('/bg-small.jpg') center center / cover no-repeat;
 }
 
 .bg-title {
     font-size: 3rem;
     max-width: 90%;
+}
+
+.post-body {
+    .site-background-meta {
+        width: 80%;
+    }
+    .bg-title {
+        font-size: 2.5rem;
+        line-height: 2.8rem;
+    }
 }
 
 .bg-subtitle {
@@ -35,6 +44,10 @@
     &:last-child {
         padding-bottom: 0.8rem;
     }
+}
+
+.post-title-link {
+    white-space: normal;
 }
 
 .sidebar-category {

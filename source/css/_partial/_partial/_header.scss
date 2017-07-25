@@ -90,6 +90,7 @@
 
 .header-sidebar-menu-black {
     border-color: #000;
+    background-color: white;
     color: #000;
     &:hover {
         background-color: #000;
@@ -106,6 +107,10 @@
     font-family: $global-theme-font-family;
     color: #fff;
     cursor: pointer;
+}
+
+.home-link-hide{
+    display: none;
 }
 
 .toggle-banner.blog-titles-show {

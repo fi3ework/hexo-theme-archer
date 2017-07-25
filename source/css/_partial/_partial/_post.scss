@@ -12,20 +12,23 @@
     &:first-of-type {
         padding-top: 0;
     }
-    .post-title {
-        text-align: left;
-        width: 100%;
-        padding: 0 0 0.8rem 0;
-        h2 {
-            position: relative;
-            font-size: 1.5rem;
-            font-family: $global-font-family;
-            margin: 0;
-            a {
-                white-space: nowrap;
-            }
-        }
-    }
+}
+
+.post-title {
+    text-align: left;
+    width: 100%;
+    padding: 0 0 0.8rem 0;
+}
+
+.title {
+    position: relative;
+    font-size: 1.5rem;
+    font-family: $global-font-family;
+    margin: 0;
+}
+
+.post-title-link {
+    white-space: nowrap;
 }
 
 // post meta

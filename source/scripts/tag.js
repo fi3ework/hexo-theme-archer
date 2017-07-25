@@ -59,20 +59,20 @@ var initTag = function initTag() {
         return $tagItem;
     }
 
-    //     
     $('.sidebar-tags-name:first').on('click', function (event) {
         event.preventDefault();
         var realTarget = event.target;
         var realTagName = void 0;
-
         // 点击大框可显示对应tag的文章
         if (this.compareDocumentPosition(realTarget) & 16) {
             if (realTarget.tagName === 'SPAN') {
-                realTagName = realTarget.firstChild.innerHTML;
+                this.currTagName = realTarget.firstChild.innerHTML;
             } else {
-                realTagName = realTarget.innerHTML;
+                this.currTagName = realTarget.innerHTML;
             }
         }
+        realTagName = this.currTagName;
+
         var indexs = tagMap.get(realTagName);
         if (!indexs) {
             return;
