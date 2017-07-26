@@ -1,14 +1,11 @@
-.index-page {
-    .post-title-link {
-        font-size: 2rem;
+.home-body {
+    .post-title {
+        font-size: 1.6rem;
         color: $index-post-link-color;
     }
     .post-tag a {
         color: $index-post-tag-color;
     }
-}
-
-.home-body {
     .banner {
         display: none;
         margin: 0 0 0 4rem;
@@ -18,6 +15,13 @@
     }
     .blog-titles {
         justify-content: flex-start;
+    }
+    .post-content {
+        font-style: italic;
+        color: #aaa;
+        &:hover {
+            text-decoration: underline;
+        }
     }
     .header-sidebar-menu {
         &:hover {

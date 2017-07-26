@@ -47,12 +47,11 @@
     .toggle-banner-show-site {
         transform: translate3d(0, 0, 0);
     }
-    .post-page {
-        @extend .index-page;
-    }
+
     .post {
         border-bottom: none;
     }
+    
     .toggle-banner {
         margin: 0;
         .blog-titles {

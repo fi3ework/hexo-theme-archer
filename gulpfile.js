@@ -2,8 +2,8 @@ const gulp = require('gulp'),
     babel = require('gulp-babel'),
     webpack = require('gulp-webpack'),
     uglify = require('gulp-uglify'),
-    cleanCSS = require('gulp-clean-css'),
-    sass = require('gulp-sass');
+    cleanCSS = require('gulp-clean-css');
+    // sass = require('gulp-sass');
 
 // babel
 gulp.task('convertJS', function () {

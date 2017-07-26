@@ -20,7 +20,7 @@ var sidebarInit = function sidebarInit() {
     });
 
     function showSidebar(eve) {
-        $sidebar.removeClass('sidebar-hide');
+        $sidebar.addClass('sidebar-show');
         $wrapper.addClass('wrapper-show-sidebar');
         $header.addClass('header-slide');
         $toc.addClass('toc-slide');
@@ -34,7 +34,7 @@ var sidebarInit = function sidebarInit() {
 
     // 单击body收回sidebar
     $(document).on('click', function () {
-        $sidebar.addClass('sidebar-hide');
+        $sidebar.removeClass('sidebar-show');
         $header.removeClass('header-slide');
         $wrapper.removeClass('wrapper-show-sidebar');
         $toc.removeClass('toc-slide');

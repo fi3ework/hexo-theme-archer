@@ -107,6 +107,9 @@
     font-family: $global-theme-font-family;
     color: #fff;
     cursor: pointer;
+    &:hover{
+        color: $global-theme-color;
+    }
 }
 
 .home-link-hide{

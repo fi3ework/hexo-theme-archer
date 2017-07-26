@@ -1,14 +1,11 @@
 .post {
+    display: block;
     position: relative;
     padding-top: 1.5rem;
     padding: 1.5rem 0rem 0.2rem 0rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    color: $post-content-color;
     background-color: $post-background-color;
     z-index: 3;
-    &:last-of-type {
-        padding-bottom: 1rem;
-    }
     &:first-of-type {
         padding-top: 0;
     }
@@ -124,22 +121,18 @@
         font-size: 1.0rem;
         color: $global-theme-color;
         position: relative;
-        margin-left: 0.3rem;
+        margin-left: 0.6rem;
         overflow: visible;
         &::before {
-            content: '#';
+            content: '# ';
         }
-        &::after {
+
+        &:hover::after {
             content: '';
             position: absolute;
-            top: 100%;
-            left: 50%;
-            width: 0;
             height: 2px;
             background-color: $global-theme-color;
-            transition: all 0.2s ease-out;
-        }
-        &:hover::after {
+            top: 100%;
             width: 100%;
             left: 0%;
         }
@@ -148,9 +141,9 @@
 
 // content
 .post-content {
-    // padding-top: 0.3rem;
     font-size: 1rem;
     line-height: 1.625rem;
+    color: $post-content-color;    
     h1 {
         // line-height: 4rem;
         // margin-top: 0.7rem;

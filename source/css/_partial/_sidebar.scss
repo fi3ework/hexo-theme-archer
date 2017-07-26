@@ -4,11 +4,11 @@
     top: 0;
     z-index: 1000;
     height: 100%;
-    width: 300px;
+    width: 400px;
     border-right: 1px solid #000;
     transition: all 0.3s ease-out .0s;
     overflow-x: hidden;
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(-401px, 0, 0);
     background-color: #fff;
     &::-webkit-scrollbar {
         width: 2px;
@@ -65,7 +65,13 @@
     border-bottom: 1px solid #000;
     span {
         font-size: 2rem;
-        margin: 0 0.3rem 0 1rem;
+        margin: 0 0.8rem 0 1.2rem;
+    }
+}
+
+.sidebar-tags-link {
+    span{
+        transform: translateY(10%);
     }
 }
 
@@ -132,6 +138,6 @@
     transform: translate3d(-50%, 0, 0);
 }
 
-.sidebar-hide {
-    transform: translate3d(-301px, 0, 0);
+.sidebar-show {
+    transform: translate3d(0, 0, 0);
 }

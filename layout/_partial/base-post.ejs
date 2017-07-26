@@ -1,21 +1,23 @@
+<% var titleURL = url_for(_page.path); %>
 <article class="post">
-    <% if(_hasTitle) { %>
-    <div class="post-title">
-        <h2 class="title">
-        <% if(_isTitleWithLink) { %>
-            <% var titleURL = url_for(_page.path); %>
-            <a class="post-title-link" href="<%- titleURL %>">
-        <% } %>
-        <%= _page.title %>
-        <% if(_isTitleWithLink) { %>
-            </a>
-        <% } %>
-        </h2>
-    </div>
+    <%if (is_home()) { %>
+        <a class="content-show-full" href = "<%- titleURL %>" >
     <% } %>
-    <div class="post-content">
-        <%- _content %>
-    </div>
+        <% if(_hasTitle) { %>
+        <div class="post-title">
+            <h2 class="title">
+            <% if(_isTitleWithLink) { %>
+                <%= _page.title %>
+            <% } else { %>
+                <%= _page.title %>
+            <% } %>
+            </h2>
+        </div>
+        <% } %>
+        <div class="post-content">
+            <%- _content %>
+        </div>
+    <%if (is_home()) { %></a><% } %>
     <% if(_hasMeta) { %>
     <div class="post-meta">
         <% if(_page.tags.length) { %>
