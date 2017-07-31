@@ -75,27 +75,6 @@
     }
 }
 
-.sidebar-close {
-    display: none;
-    width: 1.5rem;
-    height: 1.5rem;
-    margin-right: 1rem;
-    line-height: 1.6rem;
-    text-indent: -2px;
-    text-align: center;
-    border: 2px solid #fff;
-    color: #fff;
-    border-radius: 3px;
-    font-size: 1.2rem;
-    font-family: 'iconfont-arch';
-    cursor: pointer;
-    transition: all 0.1s ease-out;
-    &:hover {
-        background-color: #fff;
-        color: #000;
-    }
-}
-
 .sidebar-header-show-archive {
     &::after {
         transform: translate3d(0, 0, 0);
@@ -126,9 +105,13 @@
 .sidebar-archive,
 .sidebar-tags {
     overflow-x: hidden;
+    overflow-y: auto;
     flex-shrink: 0;
     background-color: #fff;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
 }
+
 
 .sidebar-content-show-archive {
     transform: translate3d(0, 0, 0);
@@ -138,6 +121,6 @@
     transform: translate3d(-50%, 0, 0);
 }
 
-.sidebar-show {
+.sidebar.sidebar-show {
     transform: translate3d(0, 0, 0);
 }

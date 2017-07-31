@@ -2,6 +2,9 @@ let initMobile = function () {
 
 };
 
+
+
+
 if (window.matchMedia) {
     let mql = window.matchMedia('(max-width: 900px)');
     mql.addListener(mediaChangeHandler);
@@ -23,11 +26,11 @@ if (window.matchMedia) {
 function mediaChangeHandler(mql) {
     if (mql.matches) {
         console.log('mobile');
+        // TODO: why
+        document.body.addEventListener('touchstart', function () { });
     } else {
         console.log('desktop');
     }
 }
 
-export {
-    initMobile
-};
+export { initMobile };

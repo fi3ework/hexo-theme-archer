@@ -1,9 +1,11 @@
 <div class="profile">
     <img class="profile-avatar" src= <%- theme.avatar %> >
     <div class="site-name"><%- config.author %></div>
-    <div class="blog-subtitle">
-        <%= config.subtitle %>
+    <% if(theme.signature && theme.signature.length !== 0) {%>
+    <div class="profile-signature">
+        <%= theme.signature %>
     </div>
+    <% } %>
     <div class="profile-social">
         <%- partial('base-social') %>
     </div>

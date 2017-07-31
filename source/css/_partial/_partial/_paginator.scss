@@ -1,22 +1,17 @@
 .page-nav {
+    padding-top: 1rem;
     display: flex;
     justify-content: center;
     .current,
     .prev,
     .next,
     .page-number {
-        border: 1px solid #ccc;
+        font: 1.4rem/2rem $global-theme-font-family;
         vertical-align: middle;
-        font-family: $global-theme-font-family;
-        height: 1.5rem;
-        width: 1.5rem;
+        height: 2rem;
         margin-right: 0.5rem;
+        padding: 0 0.5rem;
         text-align: center;
-        line-height: 1.5rem;
-    }
-
-    .current {
-        border-color: transparent;
     }
 
     a {
@@ -28,11 +23,14 @@
         }
     }
 
-
-
-    .extend{
-        line-height: 1.8rem;
-        font-family: "iconfont-arch";
-        color: #999;
+    .current {
+        border-color: transparent;
     }
+
+
+    // .extend{
+    //     line-height: 1.8rem;
+    //     font-family: "iconfont-arch";
+    //     color: #999;
+    // }
 }

@@ -23,6 +23,8 @@ if (window.matchMedia) {
 function mediaChangeHandler(mql) {
     if (mql.matches) {
         console.log('mobile');
+        // TODO: why
+        document.body.addEventListener('touchstart', function () {});
     } else {
         console.log('desktop');
     }

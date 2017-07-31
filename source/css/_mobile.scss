@@ -7,7 +7,7 @@
 }
 
 .site-background-img {
-    background: #fff url('/bg-small.jpg') center center / cover no-repeat;
+    background: #fff url('/assets/background/bg-mobile.jpg') center center / cover no-repeat;
 }
 
 .bg-title {
@@ -35,6 +35,7 @@
     width: 100%;
     padding-bottom: 2.5rem;
     margin: 0 auto;
+    min-width: 0;
 }
 
 .post {
@@ -55,10 +56,12 @@
 }
 
 .sidebar-archive {
-    .archive-year,
-    .total-archive {
-        font-size: 1.4rem;
-    }
+    -webkit-overflow-scrolling: touch;
+}
+
+.archive-year,
+.total-archive {
+    font-size: 1.4rem;
 }
 
 .archive-post-item {
@@ -72,10 +75,12 @@
 }
 
 .sidebar-tags {
-    .sidebar-tags-name {
-        .sidebar-tag-name {
-            font-size: 1rem;
-        }
+    -webkit-overflow-scrolling: touch;
+}
+
+.sidebar-tags-name {
+    .sidebar-tag-name {
+        font-size: 1rem;
     }
 }
 
@@ -107,4 +112,9 @@
     .copyright {
         margin: 0.5rem auto 0.5rem auto;
     }
+}
+
+.sidebar {
+    width: 300px;
+    transform: translate3d(-301px, 0, 0);
 }

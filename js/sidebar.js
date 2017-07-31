@@ -28,7 +28,10 @@ let sidebarInit = function () {
     });
 
     // 单击body收回sidebar
-    $(document).on('click', function () {
+    $wrapper.on('click', function (eve) {
+        if ($sidebar.hasClass('sidebar-show')) {
+            eve.preventDefault();
+        }
         $sidebar.removeClass('sidebar-show');
         $header.removeClass('header-slide');
         $wrapper.removeClass('wrapper-show-sidebar');
@@ -86,6 +89,7 @@ let sidebarInit = function () {
 
     // 显示tag对应的列表
     let sidebarTagsName = $('.sidebar-tags-name:first')[0];
+
     function clickTag(tagName) {
         let event = document.createEvent('MouseEvents');
         event.initMouseEvent('click', false, true);
@@ -102,7 +106,6 @@ let sidebarInit = function () {
         eve.stopPropagation();
     });
 };
-
 
 
 export {

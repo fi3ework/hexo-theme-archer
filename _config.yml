@@ -1,28 +1,43 @@
-menu:
-  Home: /
+# ===== 资料栏设定 ====== #
+# 头像设定
+avatar: /assets/avatar/kumamon.jpg
+# 名字设定
+  # hexo目录_config里的author
+# 个性签名
+signature: witness me.
+# 社交账号设定
+social:
+  email: 805843200@qq.com
+  github: //github.com/fi3ework
+  weibo: //weibo.com/p/1005052612303102
+  # zhihu:
+  # facebook:
+  # twitter:
+  # instagram:
+  # stack-overflow:
+  # linkedin:
+# 友链
+friends:
+  Mason Zhou: https://github.com/Mason1993
+  # friendB :
+  # friendC :
+
+# ====== 背景图像设定 ====== #
+# 主标题设定
+  # 修改hexo目录_config里的title
+# 副标题设定
+  # 修改hexo目录_config里的subtitle
+# 背景图像设定
+  # 替换archer/source/assets/background中的两张图片即可
+  # bg-desktop为PC端背景图, bg-mobile为移动端适配背景图，稍小以提高加载速度
 
 # ===========================================
-# Social links Settings
+# 评论
 # ===========================================
-social:
-  email: 123456@qq.com
-  facebook: //github.com/fi3ework
-  twitter: //github.com/fi3ework
-  github: //github.com/fi3ework
-  instagram: //github.com/fi3ework
-  linkedin: //github.com/fi3ework
-  zhihu: //github.com/fi3ework
-  weibo: //github.com/fi3ework
-  stack-overflow: //github.com/fi3ework
-# ===========================================
-# friends
-# ===========================================
-friends:
-  winter : www.baidu.com
-  summer : www.baidu.com
-  spring : www.baidu.com
-  autumn : www.baidu.com
-# ===========================================
-# avatar
-# ===========================================
-avatar: /assets/avatar/kumamon.jpg
+# 目前只支持livere评论（因为懒），其他评论插件可自行添加
+comment:
+  # 修改为livere对应的data-uid即可
+  livere: MTAyMC8yODQyOS81MDAw
+
+# ====== 其他 ====== #
+favicon: /favicon.png

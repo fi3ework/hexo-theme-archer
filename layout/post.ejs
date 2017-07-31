@@ -8,4 +8,23 @@
     _hasMeta : false,
     _hasShare: true
     }) %>
+    <ul class="post-pager">
+        <% if (page.prev){ %>
+            <li class="previous">
+                <a href= "<%- url_for(page.prev.path) %>" title= <%- page.prev.title %> >
+                    <span>Previous Post</span>
+                    <span><%- page.prev.title %></span>
+                </a>
+            </li>
+        <% } %>
+        <% if (page.next){ %>
+            <li class="next">
+                <a href= "<%- url_for(page.next.path) %>" title= <%- page.next.title %> >
+                    <span>Next Post</span>
+                    <span><%- page.next.title %></span>
+                </a>
+            </li>
+        <% } %>
+    </ul>
+    <%- partial('_partial/comment/livere') %>
 </main>

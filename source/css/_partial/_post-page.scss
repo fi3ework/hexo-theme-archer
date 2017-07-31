@@ -1,5 +1,8 @@
 .post-body {
-    .site-background-meta{
+    main {
+        margin: 0;
+    }
+    .site-background-meta {
         width: 50%;
         margin: 0 auto;
         align-items: flex-start;
@@ -11,9 +14,7 @@
         color: #fff;
         margin: 0;
         line-height: 4.5rem; // white-space: nowrap;
-        
     }
-
     .bg-post-date {
         margin-top: 0.2rem;
         font-size: 0.8rem;
@@ -39,7 +40,6 @@
         transition: transform 0.3s ease-out .0s;
         overflow: hidden;
     }
-
     .banner-show {
         transform: translate3d(0, 0, 0);
         pointer-events: initial;
@@ -47,40 +47,82 @@
     .toggle-banner-show-site {
         transform: translate3d(0, 0, 0);
     }
-
     .post {
         border-bottom: none;
     }
-    
     .toggle-banner {
         margin: 0;
         .blog-titles {
             justify-content: center;
         }
     } // toc
-    .toc {
-        position: absolute;
-        top: 600px;
-        right: 50px;
-        z-index: 9999;
-        ol {
-            padding-left: 1rem;
-        }
-        a {
-            color: gray;
-        }
-        a:hover {
-            color: darkcyan;
-        }
-        transform: translate3d(0, 0, 0);
-        transition: all 0.2s ease-in-out .0s;
+}
+
+.post-pager{
+    overflow: hidden;
+    li{
+        padding: 0.2rem 0.5rem 0.5rem 0.5rem;
+        border-color: gray;
+        width: 13rem;
+        border: 1px solid #ccc;
     }
-    .toc-fixed {
-        top: initial;
-        position: fixed;
-        bottom: 380px;
+
+    li:hover{
+        background-color: $global-theme-color;
+        border: 1px solid $global-theme-color;
+        span{
+            color: #fff;
+        }
+
+        span:first-of-type{
+            color: #000;
+        }
     }
-    .toc-slide {
-        transform: translate3d(150px, 0, 0);
+
+    span{
+        display: block;
+        color: #ccc;
+        text-align: center;
     }
+
+    span:first-of-type{
+        font: bold 1.4rem $global-theme-font-family;
+        color: #000;
+    }
+    .previous{
+        float: left;
+    }
+    .next{
+        float: right;
+    }
+}
+
+
+
+.toc {
+    position: absolute;
+    top: 600px;
+    right: 50px;
+    z-index: 9999;
+    ol {
+        padding-left: 1rem;
+    }
+    a {
+        color: gray;
+    }
+    a:hover {
+        color: darkcyan;
+    }
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease-in-out .0s;
+}
+
+.toc-fixed {
+    top: initial;
+    position: fixed;
+    bottom: 380px;
+}
+
+.toc-slide {
+    transform: translate3d(150px, 0, 0);
 }

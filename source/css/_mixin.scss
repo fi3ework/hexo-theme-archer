@@ -7,9 +7,10 @@
         color: $footer-icon-default-color;
         font-size: 3rem * $scaleSize;
         margin: 0 $spanMargin 0 0;
-        transition: all 0.2s ease-out .0s;
     }
     .email {
+        position: relative;
+        top: 3px;
         &::before {
             content: "\e642";
         }
