@@ -1,19 +1,27 @@
 <div class="site-background">
-    <div class="site-background-img"></div>
+    <% let bgURL = page.headerImage || theme.headerImage; %>
+    <div class="site-background-img" style="background-image: url(<%- bgURL %>)"></div>
+    <div class="site-background-placeholder"></div>
     <div class="site-background-meta">
+    <!-- 标题  -->
         <h1 class="bg-title">
+        <!-- 主页  -->
             <% if (is_home()) { %>
             <%- config.title %>
+            <!-- 文章页  -->
             <% } else { %>
             <%- page.title || '[BAZINGA]' %>
             <% } %>
         </h1>
+    <!-- 副标题 -->
+        <!-- 主页副标题  -->
         <% if (is_home()) { %>
             <% if(typeof config.subtitle === 'string') { %>
             <p class="bg-subtitle">
                 <%- config.subtitle %>
             </p>
             <% } %>
+        <!-- 文章页  -->
         <% } else { %>
             <% if(typeof page.subtitle === 'string') { %>
             <p class="bg-subtitle">
@@ -21,6 +29,8 @@
             </p>
             <% } %>
         <% } %>
+    <!-- 文章页meta -->
+        <!-- 文章页标签  -->
         <% if(is_post()) { %>
             <% if(page.tags.length) { %>
                 <%- partial('base-title-tags', {
@@ -28,7 +38,7 @@
                     className: 'bg-post-tags'}) %>
             <% } %>
             <div class="bg-post-date">
-                <span class="bg-post-calander iconfont-arch">&#xe676;</span><span class="bg-post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
+                <span class="bg-post-calander iconfont-archer">&#xe676;</span><span class="bg-post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
             </div>
             <!-- <%- partial('base-share') %> -->
         <% } %>

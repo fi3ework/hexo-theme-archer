@@ -1,4 +1,4 @@
-var archUtil = {
+var archerUtil = {
     backTop: function () {
         let topTimer = setInterval(function () {
             let currTop = document.body.scrollTop;
@@ -75,5 +75,5 @@ var archUtil = {
 };
 
 export {
-    archUtil
+    archerUtil
 };

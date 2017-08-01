@@ -28,16 +28,13 @@ friends:
 # 副标题设定
   # 修改hexo目录_config里的subtitle
 # 背景图像设定
-  # 替换archer/source/assets/background中的两张图片即可
-  # bg-desktop为PC端背景图, bg-mobile为移动端适配背景图，稍小以提高加载速度
+headerImage: /assets/background/bg-desktop.jpg
 
-# ===========================================
-# 评论
-# ===========================================
+# ====== 评论 ===== #
 # 目前只支持livere评论（因为懒），其他评论插件可自行添加
 comment:
   # 修改为livere对应的data-uid即可
   livere: MTAyMC8yODQyOS81MDAw
 
 # ====== 其他 ====== #
-favicon: /favicon.png
+favicon: /assets/favicon.ico

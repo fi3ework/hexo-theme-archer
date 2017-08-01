@@ -117,25 +117,25 @@
     position: absolute;
     right: 0;
     text-align: right;
-    .post-tag {
-        font-size: 1.0rem;
-        color: $global-theme-color;
-        position: relative;
-        margin-left: 0.6rem;
-        overflow: visible;
-        &::before {
-            content: '# ';
-        }
+}
 
-        &:hover::after {
-            content: '';
-            position: absolute;
-            height: 2px;
-            background-color: $global-theme-color;
-            top: 100%;
-            width: 100%;
-            left: 0%;
-        }
+.post-tag {
+    font-size: 1rem;
+    color: $global-theme-color;
+    position: relative;
+    overflow: visible;
+    &::before {
+        content: '# ';
+    }
+
+    &:hover::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        background-color: $global-theme-color;
+        top: 100%;
+        width: 100%;
+        left: 0%;
     }
 }
 
@@ -143,7 +143,7 @@
 .post-content {
     font-size: 1rem;
     line-height: 1.625rem;
-    color: $post-content-color;    
+    color: $post-content-color;
     h1 {
         // line-height: 4rem;
         // margin-top: 0.7rem;

@@ -1,8 +1,8 @@
 @mixin social($scaleSize, $spanMargin) {
-    .iconfont-arch {
+    .iconfont-archer {
         display: inline-block;
     }
-    .iconfont-arch::before {
+    .iconfont-archer::before {
         display: inline-block;
         color: $footer-icon-default-color;
         font-size: 3rem * $scaleSize;

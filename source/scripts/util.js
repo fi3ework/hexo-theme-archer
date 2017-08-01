@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var archUtil = {
+var archerUtil = {
     backTop: function backTop() {
         var topTimer = setInterval(function () {
             var currTop = document.body.scrollTop;
@@ -78,4 +78,4 @@ var archUtil = {
 
 };
 
-exports.archUtil = archUtil;
+exports.archerUtil = archerUtil;

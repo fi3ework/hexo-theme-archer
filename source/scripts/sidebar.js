@@ -57,12 +57,12 @@ var sidebarInit = function sidebarInit() {
     $sidebar.on('mousewheel', function (eve) {
         var target = eve.target,
             $sidebarTagList = $sidebar.find('.sidebar-tag-list:first'),
-            $sidebarArchive = $sidebar.find('.sidebar-archive:first');
+            $sidebararchive = $sidebar.find('.sidebar-archive:first');
 
         if ($.contains($sidebarTagList[0], target) || $sidebarTagList === target) {
             stopSidebarEdgeScroll.call($sidebarTagList[0], eve);
-        } else if ($.contains($sidebarArchive[0], target) || $sidebarArchive === target) {
-            stopSidebarEdgeScroll.call($sidebarArchive[0], eve);
+        } else if ($.contains($sidebararchive[0], target) || $sidebararchive === target) {
+            stopSidebarEdgeScroll.call($sidebararchive[0], eve);
         } else {
             eve.preventDefault();
         }

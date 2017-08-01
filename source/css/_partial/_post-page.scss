@@ -13,11 +13,11 @@
         font: 4rem $global-theme-font-family;
         color: #fff;
         margin: 0;
-        line-height: 4.5rem; // white-space: nowrap;
+        line-height: 4.5rem;
     }
     .bg-post-date {
         margin-top: 0.2rem;
-        font-size: 0.8rem;
+        font-size: 1.2rem;
         color: rgba(255, 255, 255, 0.5);
         display: flex;
         align-items: center;
@@ -26,13 +26,14 @@
         margin-right: 0.1rem;
         transform: translate(0, -5%);
     }
-    .bg-post-tags {
-        .post-tag {
-            margin-right: 0.2rem;
-            color: #fff;
-            &::before {
-                content: '#';
-            }
+    .post-tag {
+        margin-left: 0;
+        margin-right: 0.2rem;
+        font-size: 1.2rem;
+        color: #fff;
+        &:hover::after {
+        background-color: #fff;
+
         }
     }
     .banner {
@@ -58,46 +59,40 @@
     } // toc
 }
 
-.post-pager{
+.post-pager {
     overflow: hidden;
-    li{
+    li {
         padding: 0.2rem 0.5rem 0.5rem 0.5rem;
         border-color: gray;
         width: 13rem;
-        border: 1px solid #ccc;
+        border: 1px solid #ddd;
     }
-
-    li:hover{
-        background-color: $global-theme-color;
-        border: 1px solid $global-theme-color;
-        span{
+    li:hover {
+        background-color: #000;
+        // border: 1px solid $global-theme-color;
+        span {
             color: #fff;
         }
-
-        span:first-of-type{
-            color: #000;
+        span:first-of-type {
+            color: #fff;
         }
     }
-
-    span{
+    span {
         display: block;
-        color: #ccc;
+        color: #ddd;
         text-align: center;
     }
-
-    span:first-of-type{
+    span:first-of-type {
         font: bold 1.4rem $global-theme-font-family;
         color: #000;
     }
-    .previous{
+    .previous {
         float: left;
     }
-    .next{
+    .next {
         float: right;
     }
 }
-
-
 
 .toc {
     position: absolute;

@@ -6,11 +6,13 @@
         <% if(_hasTitle) { %>
         <div class="post-title">
             <h2 class="title">
-            <% if(_isTitleWithLink) { %>
-                <%= _page.title %>
-            <% } else { %>
-                <%= _page.title %>
-            <% } %>
+                <span>
+                <% if(_isTitleWithLink) { %>
+                    <%= _page.title %>
+                <% } else { %>
+                    <%= _page.title %>
+                <% } %>
+                </span>
             </h2>
         </div>
         <% } %>
@@ -27,7 +29,7 @@
         <% } %>
             <div class="post-date-share">
                 <div class="post-date">
-                    <span class="post-calander iconfont-arch"></span><span class="post-time"><%- date(_page.date, "YYYY-MM-DD") %></span>
+                    <span class="post-calander iconfont-archer"></span><span class="post-time"><%- date(_page.date, "YYYY-MM-DD") %></span>
                 </div>
             <% if(_hasShare) { %>
                 <%- partial('base-share') %>

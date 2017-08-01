@@ -22,9 +22,9 @@
 @import "_partial/_post-page";
 
 // mobile
-@media screen and (min-width: 981px){
-    @import "./desktop";
-}
+// @media screen and (min-width: 981px){
+//     @import "./desktop";
+// }
 
 @media screen and (max-width: 980px) {
     @import "./mobile";
