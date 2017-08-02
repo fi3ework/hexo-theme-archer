@@ -10,7 +10,7 @@
             <%- config.title %>
             <!-- 文章页  -->
             <% } else { %>
-            <%- page.title || '[BAZINGA]' %>
+            <%- page.title || '[404]' %>
             <% } %>
         </h1>
     <!-- 副标题 -->
@@ -22,12 +22,15 @@
             </p>
             <% } %>
         <!-- 文章页  -->
-        <% } else { %>
+        <% } else if (is_post()) { %>
             <% if(typeof page.subtitle === 'string') { %>
             <p class="bg-subtitle">
-            <%- page.subtitle %>
+                <%- page.subtitle %>
             </p>
             <% } %>
+        <!-- 404 -->
+        <% } else { %>
+            <p class="bg-subtitle">May the Force be with you :)</p>
         <% } %>
     <!-- 文章页meta -->
         <!-- 文章页标签  -->

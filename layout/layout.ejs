@@ -6,7 +6,7 @@
     <% } else if(is_post()){ %>
         <body class="post-body">
     <% } else { %>
-        <body class="else-body">
+        <body class="unknown-body">
     <% } %>
     <%- partial('_partial/base-header') %>
     <% if(is_post()) { %>
@@ -16,6 +16,7 @@
         <%- partial('_partial/base-background-image') %>
         <div class="container">
             <%- body %>
+            <!-- profile -->
             <% if (is_home()) { %>
             <%- partial('_partial/base-profile') %>
             <% } %>

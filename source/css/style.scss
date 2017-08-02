@@ -3,6 +3,7 @@
 @import "_variables";
 @import "_base";
 @import "_mixin";
+
 // partial
 @import "_partial/_partial/_background";
 @import "_partial/_partial/_qr";
@@ -20,6 +21,7 @@
 @import "_partial/_sidebar";
 @import "_partial/_index-page";
 @import "_partial/_post-page";
+@import "_partial/_404";
 
 // mobile
 // @media screen and (min-width: 981px){

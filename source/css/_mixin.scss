@@ -1,12 +1,17 @@
 @mixin social($scaleSize, $spanMargin) {
     .iconfont-archer {
         display: inline-block;
+        text-align: center;
     }
     .iconfont-archer::before {
         display: inline-block;
         color: $footer-icon-default-color;
         font-size: 3rem * $scaleSize;
         margin: 0 $spanMargin 0 0;
+    }
+
+    .iconfont-archer:last-of-type::before{
+        margin: 0;
     }
     .email {
         position: relative;

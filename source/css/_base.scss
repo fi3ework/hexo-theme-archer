@@ -7,9 +7,9 @@ html {
 
 .wrapper{
     width: 100%;
-    height: 100%;
     transition: all 0.3s ease-out .0s;
     transform: translate3d(0, 0, 0);
+    padding-bottom: 9rem;
     position: relative;
     top: 0;
     left: 0;
@@ -34,7 +34,7 @@ html {
     line-height: 1.6rem;
     border: 2px solid black;
     border-radius: 2px;
-    transition: all 0.2s ease-out .0s;
+    transition: all 0.1s ease-out .0s;
     cursor: pointer;
     &:hover {
         background-color: #000;

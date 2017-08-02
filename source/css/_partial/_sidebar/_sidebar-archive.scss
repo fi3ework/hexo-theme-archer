@@ -22,18 +22,19 @@
 
 .archive-post-item {
     vertical-align: middle;
-    border-left: 1px solid #000;
+    border-left: 1px solid #fff;
     margin-left: 0.3rem;
     padding: 0.1rem 0 0.1rem 0.5rem;
     box-sizing: border-box;
     .archive-post-date {
         font: 0.9rem/1rem $global-theme-font-family-light;
+        color: #fff;
     }
     .archive-post-title {
         font: 1rem $global-font-family;
         margin-left: 0.8rem;
         text-align: left;
-        color: #030303;
+        color: #fff;
     }
     &:hover {
         border-left-color: $global-theme-color;
