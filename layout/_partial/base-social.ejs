@@ -1,3 +1,4 @@
+<% if(theme.social) { %>
 <% for (name in theme.social) { %>
     <% if (theme.social[name] != null) { %>
         <% if (name === "email") { %>
@@ -6,4 +7,5 @@
             <a href="<%- url_for(theme.social[name]) %>" class="iconfont-archer <%- name %>" target="_black" title="<%- name %>"></a>
         <% } %>
     <% } %>
+<% } %>
 <% } %>

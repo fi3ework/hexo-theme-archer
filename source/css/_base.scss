@@ -5,18 +5,32 @@ html {
     height: 100%;
 }
 
-.wrapper{
+::selection {
+    background: $global-theme-color;
+    color: #eee;
+}
+
+::-moz-selection {
+    background: $global-theme-color;
+    color: #eee;
+}
+
+::-webkit-selection {
+    background: $global-theme-color;
+    color: #eee;
+}
+
+.wrapper {
     width: 100%;
     transition: all 0.3s ease-out .0s;
-    transform: translate3d(0, 0, 0);
-    padding-bottom: 9rem;
+    transform: translate3d(0, 0, 0); // padding-bottom: 9rem;
     position: relative;
     top: 0;
     left: 0;
 }
 
 .wrapper-show-sidebar {
-    transform: translate3d(150px,0,0);
+    transform: translate3d(150px, 0, 0);
 }
 
 .back-top {

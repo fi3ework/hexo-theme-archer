@@ -8,7 +8,7 @@
     <div class="toggle-banner">
       <div class="blog-titles">
         <a href="<%- url_for() %>" class="blog-title">
-          <%= config.title %>
+          <%= theme.main_title || config.title%>
         </a>
       </div>
       <% if (is_post()) { %>
@@ -20,5 +20,5 @@
       <% } %>
     </div>
   </div>
-  <a class="home-link" href=<%- config.root %>><%- config.title %></a>
+  <a class="home-link" href=<%- config.root %>><%- theme.main_title || config.title %></a>
 </header>

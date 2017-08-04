@@ -114,3 +114,19 @@
     width: 300px;
     transform: translate3d(-301px, 0, 0);
 }
+
+#busuanzi_container_site_pv {
+    font: 1rem $global-theme-font-family;
+}
+
+.post-pager {
+    .previous,
+    .next {
+        float: none;
+        margin: 0 auto;
+    }
+
+    li:nth-child(2){
+        margin-top: 1rem;
+    }
+}

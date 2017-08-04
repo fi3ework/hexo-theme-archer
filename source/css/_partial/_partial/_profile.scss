@@ -6,7 +6,7 @@
     margin: 0 0 0 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     width: $profile-width;
-    padding-bottom: 1rem;
+    padding-bottom: 0.6rem;
     img {
         display: block;
         border-radius: 0.5rem;
@@ -38,6 +38,9 @@
 }
 
 .friends {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 0.2rem;
+    padding-top: 0.5rem;
     font: 1.1rem $global-theme-font-family;
     text-align: left;
     div {
@@ -47,6 +50,6 @@
     }
     a {
         color: gray;
-        margin-right: 0.2rem;
+        margin-right: 0.6rem;
     }
 }

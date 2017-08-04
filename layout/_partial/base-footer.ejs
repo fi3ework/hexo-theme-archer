@@ -1,6 +1,15 @@
 <footer class="footer">
+    <% if(theme.social) { %>
     <div class="social">
         <%- partial('base-social') %>
     </div>
+    <% } %>
     <%- partial('base-copyright') %>
+    <!-- 不蒜子  -->
+    <% if (theme.busuanzi) { %>
+    <div class="busuanzi-container">
+        <span id="busuanzi_container_site_pv">Total <span id="busuanzi_value_site_pv"></span> views
+        </span>
+    </div>
+    <% } %>
 </footer>

@@ -1,5 +1,5 @@
 <div class="site-background">
-    <% let bgURL = page.headerImage || theme.headerImage; %>
+    <% let bgURL = page.header_image || theme.header_image; %>
     <div class="site-background-img" style="background-image: url(<%- bgURL %>)"></div>
     <div class="site-background-placeholder"></div>
     <div class="site-background-meta">
@@ -7,7 +7,7 @@
         <h1 class="bg-title">
         <!-- 主页  -->
             <% if (is_home()) { %>
-            <%- config.title %>
+            <%- theme.main_title || config.title%>
             <!-- 文章页  -->
             <% } else { %>
             <%- page.title || '[404]' %>
@@ -16,9 +16,9 @@
     <!-- 副标题 -->
         <!-- 主页副标题  -->
         <% if (is_home()) { %>
-            <% if(typeof config.subtitle === 'string') { %>
+            <% if(typeof theme.subtitle === 'string') { %>
             <p class="bg-subtitle">
-                <%- config.subtitle %>
+                <%- theme.subtitle %>
             </p>
             <% } %>
         <!-- 文章页  -->

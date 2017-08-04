@@ -1,20 +1,23 @@
 <div class="profile">
     <img class="profile-avatar" src= <%- theme.avatar %> >
-    <div class="site-name"><%- config.author %></div>
+    <div class="site-name"><%- theme.author || config.author %></div>
     <% if(theme.signature && theme.signature.length !== 0) {%>
     <div class="profile-signature">
         <%= theme.signature %>
     </div>
     <% } %>
+    <% if(theme.social) { %>
     <div class="profile-social">
         <%- partial('base-social') %>
     </div>
-    <% if(theme.friends.length !== 0) { %>
+    <% } %>
+    <% console.log(theme.friends) %>
+    <% if(theme.friends) { %>
         <div class="friends">
             <div>FRIENDS</div>
             <% for (name in theme.friends) { %>
                 <span>
-                    <a href= <%- theme.friends[name] %>><%- name %></a>
+                    <a href= <%- theme.friends[name] %> target="_black"><%- name %></a>
                 </span>
             <% } %>
         </div>

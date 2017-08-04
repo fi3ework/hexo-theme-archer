@@ -26,10 +26,21 @@
     <div class="back-top">&#xe639;</div>
     <%- partial('_partial/base-sidebar') %>
     <%- partial('./js-info.ejs') %>
-       <script id="__bs_script__">
-        //<![CDATA[
-        document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.12'><\/script>".replace("HOST", location.hostname));
-//]]>
+    <!-- 不蒜子  -->
+    <% if (theme.busuanzi) { %>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <% } %>
+    <!-- CNZZ统计  -->
+    <% if (theme.CNZZ_analytics) { %>
+    <div style="display: none">
+        <script src="https://s13.cnzz.com/z_stat.php?id=<%- theme.CNZZ_analytics %>&web_id=<%- theme.CNZZ_analytics %>" language="JavaScript"></script>
+        <% } %>
+    </div>
+    <!--  browser-sync -->
+    <script id="__bs_script__">
+    //<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.12'><\/script>".replace("HOST", location.hostname));
+    //]]>
     </script>   
 </html>
 

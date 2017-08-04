@@ -1,11 +1,11 @@
-# ===== 资料栏设定 ====== #
-# 头像设定
+# ========== Profile ========== #
+# avatar
 avatar: /assets/avatar/kumamon.jpg
-# 名字设定
-  # hexo目录_config里的author
-# 个性签名
+# author name
+author: WEE
+# signature
 signature: witness me
-# 社交账号设定
+# SNS
 social:
   email: 805843200@qq.com
   github: //github.com/fi3ework
@@ -16,25 +16,40 @@ social:
   # instagram:
   # stack-overflow:
   # linkedin:
-# 友链
+# friends
 friends:
   Mason Zhou: https://github.com/Mason1993
-  # friendB :
+  Wang Tao: https://github.com/wwtdsg
   # friendC :
 
-# ====== 背景图像设定 ====== #
-# 主标题设定
-  # 修改hexo目录_config里的title
-# 副标题设定
-  # 修改hexo目录_config里的subtitle
-# 背景图像设定
-headerImage: /assets/background/bg-desktop.jpg
+# ========== Site ========== #
+# title of the site
+SEO_title: FIREWORK STUDIO
+# main title
+main_title: firework's Studio.
+# subtitle
+subtitle: it's better to burn out than fade away
+# background image
+header_image: /assets/background/bg-desktop.jpg
 
-# ====== 评论 ===== #
-# 目前只支持livere评论（因为懒），其他评论插件可自行添加
+# ========== Comment ========== #
+# 目前只支持一键添加livere评论（因为懒），其他评论插件可自行添加
 comment:
-  # 修改为livere对应的data-uid即可
+  # change the value of livere to your livere data-uid
   livere: MTAyMC8yODQyOS81MDAw
 
-# ====== 其他 ====== #
+# ========== Analytics ========== #
+# Busuanzi pv Analytics
+busuanzi: true
+# Baidu analytics
+baidu_analytics: 'https://hm.baidu.com/hm.js?c2e692c5407f95609121a9d80bd24510'
+# Google analytics
+google_analytics: 'UA-103985966-1'
+# CNZZ analytics
+CNZZ_analytics: '1263255655'
+
+# ========== Others ========== #
+# favicon
 favicon: /assets/favicon.ico
+# truncate length (the default is 300)
+truncate_length:
