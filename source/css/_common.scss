@@ -1,0 +1,102 @@
+// ========== general style ========== //
+html {
+    font-size: $base-font-size;
+    font-family: $base-font-family;
+    overflow-x: hidden;
+}
+
+* {
+    font-family: inherit;
+}
+
+body {
+    position: relative;
+    background-color: $body-background-color;
+    background-color: hexo-theme-config('color');
+}
+
+.wrapper {
+    width: 100%;
+    transition: all 0.3s ease-out .0s;
+    transform: translate3d(0, 0, 0); // padding-bottom: 9rem;
+    position: relative;
+}
+
+.wrapper-show-sidebar {
+    transform: translate3d(150px, 0, 0);
+}
+
+.main {
+    order: 1;
+    width: 50%;
+    min-width: 42.8125rem;
+    flex-grow: 0;
+    padding: 0 0 0 0;
+    margin-left: 3rem;
+}
+
+.container {
+    margin: $container-margin-top 0 0 0;
+    position: relative;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+// ========== back top ========== //
+.back-top {
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    z-index: 999;
+    opacity: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: white;
+    transition: all 0.2s ease-out .0s;
+    font-family: iconfont-archer;
+    text-align: center;
+    line-height: 1.6rem;
+    border: 2px solid black;
+    border-radius: 2px;
+    transition: all 0.1s ease-out .0s;
+    cursor: pointer;
+    &:hover {
+        background-color: #000;
+        color: #fff;
+    }
+}
+
+.back-top-show {
+    opacity: 1;
+    pointer-events: initial;
+    background-color: #fff;
+}
+
+// selection
+::selection {
+    background: $selection-color;
+    color: #eee;
+}
+
+::-moz-selection {
+    background: $selection-color;
+    color: #eee;
+}
+
+::-webkit-selection {
+    background: $selection-color;
+    color: #eee;
+}

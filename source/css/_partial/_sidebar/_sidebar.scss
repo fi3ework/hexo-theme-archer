@@ -1,3 +1,4 @@
+// ========== sidebar ========== //
 .sidebar {
     position: fixed;
     left: 0;
@@ -15,7 +16,7 @@
     }
 }
 
-// sidebar header
+// ========== sidebar header ========== //
 .sidebar-header {
     position: absolute;
     top: 0;
@@ -26,7 +27,7 @@
     height: 8rem;
     justify-content: space-between;
     align-items: center;
-    border-top: $header-top-border-height solid #fff;
+    border-top: $header-border-top-width solid #fff;
     background-color: #222;
     &::after {
         content: '';
@@ -35,17 +36,18 @@
         width: 2px;
         top: 0;
         left: calc(100% - 2px);
-        background-color: $global-theme-color;
+        background-color: $feature-color;
         transform: translate3d(0, 0, 0);
         transition: all 0.2s ease-in-out .0s;
     }
 }
 
+// sidebar category
 .sidebar-category {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    font-family: $global-theme-font-family;
+    font-family: $feature-font-family;
     flex-grow: 1;
     height: 100%;
     justify-content: space-around;
@@ -89,7 +91,7 @@
     }
 }
 
-// sidebar content
+// ========== sidebar content ========== //
 .sidebar-content {
     position: relative;
     margin-top: 8rem;
@@ -109,7 +111,6 @@
     overflow-x: hidden;
     overflow-y: auto;
     flex-shrink: 0;
-    // background-color: #444;
     background-color: #222;
     -webkit-overflow-scrolling: touch;
     overflow-scrolling: touch;

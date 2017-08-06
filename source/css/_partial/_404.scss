@@ -1,6 +1,9 @@
-.unknown-body {
+.four-zero-four-body {
+    .site-intro{
+        height: 100%;
+    }
+
     .wrapper {
-        position: relative;
         height: 100vh;
         padding-bottom: 0;
     }
@@ -9,5 +12,13 @@
         position: absolute;
         bottom: 0;
         left: 0;
+    }
+
+    .iconfont-archer::before{
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .copyright{
+        color: #fff;
     }
 }

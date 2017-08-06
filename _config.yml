@@ -2,7 +2,7 @@
 # avatar
 avatar: /assets/avatar/kumamon.jpg
 # author name
-author: WEE
+author: fi3ework
 # signature
 signature: witness me
 # SNS
@@ -26,11 +26,11 @@ friends:
 # title of the site
 SEO_title: FIREWORK STUDIO
 # main title
-main_title: firework's Studio.
+main_title: firework's Studio.哈哈测试
 # subtitle
 subtitle: it's better to burn out than fade away
 # background image
-header_image: /assets/background/bg-desktop.jpg
+header_image: /assets/intro/intro-desktop.jpg
 
 # ========== Comment ========== #
 # 目前只支持一键添加livere评论（因为懒），其他评论插件可自行添加
@@ -53,3 +53,6 @@ CNZZ_analytics: '1263255655'
 favicon: /assets/favicon.ico
 # truncate length (the default is 300)
 truncate_length:
+
+
+color: #000

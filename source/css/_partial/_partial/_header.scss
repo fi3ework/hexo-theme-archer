@@ -1,3 +1,4 @@
+// ========== header ========== //
 .header {
     position: fixed;
     align-items: center;
@@ -5,17 +6,18 @@
     top: 0;
     width: 100%;
     height: $header-height;
-    border-top: $header-top-border-height solid #000;
+    border-top: $header-border-top-width solid $header-border-top-color;
     overflow: hidden;
     z-index: 999;
-    transform: translate3d(0,0,0);
+    transform: translate3d(0, 0, 0);
     transition: transform 0.2s ease-in-out .0s;
 }
 
-.header-slide{
+.header-slide {
     transform: translate3d(150px, 0, 0);
 }
 
+// ========== header toggle (only take effect in post page) ========== //
 // banner
 .banner {
     position: relative;
@@ -25,11 +27,18 @@
     transform: translate3d(0, -100%, 0);
     pointer-events: none;
     border-bottom: 1px solid black;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: transform 0.3s ease-out .0s;
+    overflow: hidden;
 }
 
+.banner-show {
+    transform: translate3d(0, 0, 0);
+    pointer-events: initial;
+}
 
+// toggle banner
 .toggle-banner {
-    margin: 0 auto;
     position: relative;
     transform: translate3d(0, -100%, 0);
     width: 100%;
@@ -38,20 +47,22 @@
     transition: all 0.2s ease-out .0s;
 }
 
+.toggle-banner-show-site {
+    transform: translate3d(0, 0, 0);
+}
 
-
-.blog-titles {
+.blog-title {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
-    .blog-title {
+    a {
         vertical-align: top;
         white-space: nowrap;
         color: #000;
-        font: 2rem/2rem $header-title-font;
+        font: 2rem/2rem $header-title-font-family;
     }
 }
 
@@ -64,12 +75,12 @@
         height: 100%;
         cursor: pointer;
         text-align: center;
-        font: 1.4rem/#{$header-height} $header-title-font;
+        font: 1.4rem/#{$header-height} $header-title-font-family;
         color: #000;
     }
 }
 
-// header-sidebar-menu
+// ========== header sidebar menu ========== //
 .header-sidebar-menu {
     position: absolute;
     left: 1rem;
@@ -86,6 +97,11 @@
     transition: all 0.1s ease-out;
     z-index: 999;
     cursor: pointer;
+    &:hover {
+        background-color: #fff;
+        color: #000;
+        transform: translate(0, -50%);
+    }
 }
 
 .header-sidebar-menu-black {
@@ -98,24 +114,20 @@
     }
 }
 
-// home page link
+// ========== home page link ========== //
 .home-link {
     position: absolute;
     right: 2.5rem;
     top: 50%;
     transform: translate(0, -50%);
-    font-family: $global-theme-font-family;
+    font-family: $header-title-font-family;
     color: #fff;
     cursor: pointer;
-    &:hover{
-        color: $global-theme-color;
+    &:hover {
+        color: $feature-color;
     }
 }
 
-.home-link-hide{
+.home-link-hide {
     display: none;
-}
-
-.toggle-banner.blog-titles-show {
-    top: 0%;
 }

@@ -1,67 +1,110 @@
+// ========== main ========== //
 .post-body {
     main {
         margin: 0;
     }
-    .site-background-meta {
+}
+
+// ========== intro ========== //
+.post-body {
+    .site-intro-meta {
         width: 50%;
         margin: 0 auto;
         align-items: flex-start;
-        color: #fff;
-        font-family: $global-theme-font-family;
     }
-    .bg-title {
-        font: 4rem $global-theme-font-family;
+    .intro-title {
+        font: 4rem $feature-font-family;
         color: #fff;
         margin: 0;
         line-height: 4.5rem;
     }
-    .bg-post-date {
-        margin-top: 0.2rem;
-        font-size: 1.2rem;
-        color: rgba(255, 255, 255, 0.5);
-        display: flex;
-        align-items: center;
-    }
-    .bg-post-calander {
-        margin-right: 0.1rem;
-        transform: translate(0, -5%);
-    }
+}
+
+.post-intro-tags {
+    font: 1.2rem $feature-font-family;
     .post-tag {
         margin-left: 0;
         margin-right: 0.2rem;
         font-size: 1.2rem;
         color: #fff;
-        &:hover::after {
-        background-color: #fff;
-
+        &:hover {
+            border-bottom: 2px solid white;
+        }
+        &::before {
+            content: '#';
         }
     }
-    .banner {
-        background-color: rgba(255, 255, 255, 0.8);
-        transition: transform 0.3s ease-out .0s;
-        overflow: hidden;
-    }
-    .banner-show {
-        transform: translate3d(0, 0, 0);
-        pointer-events: initial;
-    }
-    .toggle-banner-show-site {
-        transform: translate3d(0, 0, 0);
-    }
-    .post {
-        border-bottom: none;
-    }
-    .toggle-banner {
-        margin: 0;
-        .blog-titles {
-            justify-content: center;
-        }
-    } // toc
 }
 
+.post-intro-meta {
+    margin-top: 0.2rem;
+    font: 1.2rem $feature-font-family;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.post-intro-calander {
+    margin-right: 0.1rem;
+    transform: translate(0, -5%);
+}
+
+// share
+.post-share {
+    position: relative;
+    list-style-type: none;
+    z-index: 88;
+    display: inline-block;
+    &::before {
+        position: relative;
+        cursor: pointer;
+        content: "\e608";
+        font-size: 1.2rem;
+    }
+}
+
+.share-box {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+    top: 1.5rem;
+    right: -0.5rem;
+    margin: 0;
+    padding: 0.4rem 0.4rem;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.125);
+    background-color: #fff;
+    transform: scale(0.9);
+    cursor: pointer;
+    font-family: $feature-font-family;
+    transition: all 0.15s ease-out;
+    li {
+        float: left;
+        padding: 0.4rem 0.6rem;
+        line-height: 2rem;
+        white-space: nowrap;
+        margin: 0;
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    li:hover {
+        background-color: #ededed;
+    }
+}
+
+.share-box-show {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+// ========== pager ========== //
 .post-pager {
     overflow: hidden;
     padding: 0;
+    list-style: none;
+    margin: 2.5rem 0 1rem 0;
     li {
         padding: 0.2rem 0.5rem 0.5rem 0.5rem;
         border-color: gray;
@@ -69,10 +112,10 @@
         border: 1px solid #ddd;
     }
     li:hover {
-        border-color: #aaa;
+        border-color: #000;
         background-color: #000;
-        span {
-            color: #fff;
+        span:last-of-type {
+            color: $feature-color;
         }
         span:first-of-type {
             color: #fff;
@@ -84,7 +127,7 @@
         text-align: center;
     }
     span:first-of-type {
-        font: bold 1.4rem $global-theme-font-family;
+        font: bold 1.4rem $feature-font-family;
         color: #000;
     }
     .previous {
@@ -95,6 +138,110 @@
     }
 }
 
+// ========== content ========== //
+.article-entry {
+    position: relative;
+    font-size: 1rem;
+    line-height: 1.625rem;
+    padding: 1px 0;
+    font: 1rem/1.625rem $base-font-family;
+    color: $post-content-color;
+    li {
+        list-style-type: initial;
+    }
+    @for $i from 1 through 6 {
+        h#{$i} {
+            font-weight: 900;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+    @for $i from 1 through 4 {
+        h#{$i} {
+            position: relative;
+            &::before {
+                content: "#";
+                color: $feature-color;
+                position: absolute;
+                left: -0.7em;
+                top: 0.02em;
+                font-size: 1.1em;
+                font-weight: bold;
+            }
+        }
+    }
+    h1 {}
+    h2 {}
+    h3 {}
+    h4 {}
+    h5 {
+        font-size: 1rem;
+        margin: 1rem 0;
+    }
+    h6 {
+        font-size: 0.8rem;
+        margin: 1rem 0;
+    }
+    p {}
+    em {
+        font-style: italic;
+    }
+    img {
+        display: block;
+        max-width: 100%;
+        margin: 1rem auto 1rem;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.125);
+    }
+    blockquote {
+        margin: 2em 0 2rem 1rem;
+        padding: 10px 20px;
+        position: relative;
+        background-color: #fafafa;
+        border-left: 3px solid $feature-color;
+        p {
+            margin: 0;
+        }
+    }
+    > table {
+        width: 100%;
+        border: 1px solid #ddd;
+        margin: 1rem 0;
+        border-collapse: collapse;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.125);
+        tr,
+        td {
+            height: 2rem;
+        }
+        thead {
+            tr {
+                background: #f8f8f8;
+            }
+        }
+        tbody {
+            tr:hover {
+                background: #efefef;
+            }
+        }
+        td,
+        th {
+            border: 1px solid #dedede;
+            padding: 0.2rem 1rem 0 1rem;
+        }
+    }
+    a {
+        color: $feature-color;
+        word-break: break-all;
+        &:hover {
+            border-bottom: 1px solid $feature-color;
+        }
+        &.fancybox {
+            border: 0;
+        }
+    }
+}
+
+// toc
 .toc {
     position: absolute;
     top: 600px;

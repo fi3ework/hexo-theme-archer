@@ -1,19 +1,15 @@
 <main class="main post-page">
-    <%- partial('_partial/base-qr-box') %>    
-    <%- partial('_partial/base-post', 
-    { _page : page, 
-    _hasTitle: false,
-    _content : page.content,
-    _isTitleWithLink : false, 
-    _hasMeta : false,
-    _hasShare: true
-    }) %>
+    <%- partial('_partial/base-qr-box') %>
+    <article class="article-entry">
+        <%- page.content %>
+    </article>
+    <!-- 前后页  -->
     <ul class="post-pager">
         <% if (page.prev){ %>
             <li class="previous">
                 <a href= "<%- url_for(page.prev.path) %>" title= <%- page.prev.title %> >
                     <span>Previous Post</span>
-                    <span><%- page.prev.title %></span>
+                    <span><%- page.prev.title || '[Untitled Post]' %></span>
                 </a>
             </li>
         <% } %>
@@ -21,7 +17,7 @@
             <li class="next">
                 <a href= "<%- url_for(page.next.path) %>" title= <%- page.next.title %> >
                     <span>Next Post</span>
-                    <span><%- page.next.title %></span>
+                    <span><%- page.next.title || '[Untitled Post]' %></span>
                 </a>
             </li>
         <% } %>

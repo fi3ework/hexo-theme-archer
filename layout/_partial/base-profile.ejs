@@ -1,6 +1,6 @@
 <div class="profile">
     <img class="profile-avatar" src= <%- theme.avatar %> >
-    <div class="site-name"><%- theme.author || config.author %></div>
+    <div class="profile-name"><%- theme.author || config.author %></div>
     <% if(theme.signature && theme.signature.length !== 0) {%>
     <div class="profile-signature">
         <%= theme.signature %>
@@ -11,7 +11,6 @@
         <%- partial('base-social') %>
     </div>
     <% } %>
-    <% console.log(theme.friends) %>
     <% if(theme.friends) { %>
         <div class="friends">
             <div>FRIENDS</div>

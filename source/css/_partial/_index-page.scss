@@ -1,41 +1,110 @@
-.home-body {
-    .post-title {
-        font-size: 1.6rem;
-        color: $index-post-link-color;
+// ========== main ========== //
+.index-post {
+    display: block;
+    position: relative;
+    padding: 1.5rem 0rem 0.5rem 0rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    &:first-of-type {
+        padding-top: 0;
     }
-    .title {
-        span {
-            padding-bottom: 2px;
-            &:hover {
-                // color: black;
-                border-bottom: 2px solid $index-post-link-color;
-            }
+}
+
+// ========== abstract content ========== //
+.abstract-content {
+    color: #aaa;
+    white-space: normal;
+    word-break: break-all;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// ========== abstract title ========== //
+.abstract-post-title {
+    font-size: 1.5rem;
+    color: $index-post-link-color;
+    text-align: left;
+    width: 100%;
+    padding: 0 0 0.3rem 0;
+}
+
+.abstract-title {
+    position: relative;
+    font-family: $base-font-family;
+    margin: 0;
+    line-height: 1.6rem;
+    padding-bottom: 0.2rem;
+    span {
+        font-size: 1.5rem;
+        &:hover {
+            border-bottom: 2px solid $index-post-link-color;
         }
     }
-    .post-tag a {
+}
+
+// ========== abstract meta ========== //
+.abstract-post-meta {
+    position: relative;
+    padding: 0.5rem 0 0 0;
+    font-family: $feature-font-family;
+    line-height: 1rem;
+    color: #aaa;
+    overflow: hidden;
+    height: 1.5rem;
+}
+
+// tags
+.abstract-tags {
+    position: absolute;
+    right: 0;
+    text-align: right;
+    .post-tag {
+        font-size: 1rem;
+        position: relative;
+        overflow: visible;
         color: $index-post-tag-color;
-    }
-    .banner {
-        display: none;
-        margin: 0 0 0 4rem;
-    }
-    .toggle-banner {
-        margin: 0;
-    }
-    .blog-titles {
-        justify-content: flex-start;
-    }
-    .post-content {
-        font-style: italic;
-        color: #aaa;
-        &:hover {
-            text-decoration: underline;
+        margin-left: 0.4rem;
+        &::before {
+            position: relative;
+            left: -2px;
+            content: '#';
+        }
+        // &:hover::after {
+        //     content: '';
+        //     position: absolute;
+        //     height: 2px;
+        //     background-color: $feature-color;
+        //     top: 100%;
+        //     width: 104%;
+        //     left: -2%;
+        // }
+        &:hover{
+            border-bottom: 2px solid $index-post-tag-color;
         }
     }
-    .header-sidebar-menu {
-        &:hover {
-            background-color: #fff;
-            color: #000;
-        }
-    }
+}
+
+// date
+.abstract-date {
+    float: left;
+    text-align: center;
+    transition: all 0.2s ease-out;
+    margin-right: 0.2rem;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.abstract-calander::before {
+    position: relative;
+    top: -0.05rem;
+    margin-right: 0.3rem;
+    font-size: 1.1rem;
+    content: "\e676";
+}
+
+.abstract-time {
+    display: inline-block;
+    vertical-align: bottom;
+    font-size: 1rem;
 }

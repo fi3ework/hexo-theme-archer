@@ -1,6 +1,7 @@
+// ========== sidebar tags ========== //
 .sidebar-tags {
-    padding: 1rem 0 0 1rem;
-    width: calc(50% - 1rem);
+    padding: 1rem;
+    width: calc(50% - 2rem);
     position: relative;
     display: flex;
     flex-direction: column;
@@ -20,18 +21,16 @@
     font-size: 0.8rem;
     line-height: 1rem;
     margin: 0.2rem 0;
-    white-space: nowrap;
-    // transition: all 0.1s ease-out .0s;
+    white-space: nowrap; // transition: all 0.1s ease-out .0s;
     cursor: pointer;
     &:hover {
-        border-color: $global-theme-color;
+        border-color: $feature-color;
         a {
-            color: $global-theme-color;
+            color: $feature-color;
         }
     }
     a {
-        color: #fff;
-        // transition: all 0.1s ease-out .0s;
+        color: #fff; // transition: all 0.1s ease-out .0s;
         line-height: 1.2rem;
         &::before {
             content: '#';
@@ -43,7 +42,16 @@
     flex-grow: 1;
     padding-right: 1rem;
     overflow-y: auto;
-    .tag-post-item {
-        @extend .archive-post-item;
-    }
+}
+
+.tag-post-item {
+    @extend .archive-post-item;
+}
+
+.tag-post-title{
+    @extend .archive-post-title;
+}
+
+.tag-post-date{
+    @extend .archive-post-date;
 }

@@ -7,7 +7,7 @@ var initBackTop = function initBackTop() {
     // 回顶部
     var $backTop = $('.back-top:first'),
         $sidebarMenu = $('.header-sidebar-menu:first'),
-        $bgImg = $('.site-background:first'),
+        $bgImg = $('.site-intro:first'),
         isBackTopShow = false,
         bgBottomHeight = $bgImg.offset().top + $bgImg.outerHeight() - $sidebarMenu[0].offsetTop;
 

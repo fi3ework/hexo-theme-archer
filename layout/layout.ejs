@@ -6,7 +6,7 @@
     <% } else if(is_post()){ %>
         <body class="post-body">
     <% } else { %>
-        <body class="unknown-body">
+        <body class="four-zero-four-body">
     <% } %>
     <%- partial('_partial/base-header') %>
     <% if(is_post()) { %>
@@ -24,7 +24,7 @@
         <%- partial('_partial/base-footer') %>
     </div>
     <div class="back-top">&#xe639;</div>
-    <%- partial('_partial/base-sidebar') %>
+    <%- partial('_partial/sidebar/base-sidebar') %>
     <%- partial('./js-info.ejs') %>
     <!-- 不蒜子  -->
     <% if (theme.busuanzi) { %>

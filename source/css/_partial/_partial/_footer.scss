@@ -1,7 +1,5 @@
+// ========== footer ========== //
 .footer {
-    // position: absolute;
-    // bottom: 0;
-    // left: 0;
     width: 100%;
     padding: 2.5rem 0 1.5rem 0;
 }
@@ -12,24 +10,24 @@
     @include social($scaleSize: 0.8, $spanMargin: 0.5rem);
 }
 
-// copyright
+// ========== copyright ========== //≈
 .copyright {
-    font-family: $global-theme-font-family;
+    font-family: $feature-font-family;
     margin: 0.5rem auto 0 auto;
-    color: $footer-icon-default-color;
     text-align: center;
+    color: $social-iconfont-color;
     a {
-        color: $global-theme-color;
+        color: $feature-color;
     }
 }
 
-.heart {
+.power {
     vertical-align: 10%;
     font-size: 0.9rem;
     padding: 0 0.2rem;
 }
 
-// busuanzi
+// ========== busuanzi ========== //≈
 .busuanzi-container {
     text-align: center;
 }
@@ -37,8 +35,6 @@
 #busuanzi_container_site_pv {
     display: block;
     text-align: center;
-    font: 0.6rem $global-theme-font-family;
+    font: 0.6rem $feature-font-family;
     color: #ddd;
 }
-
-#busuanzi_value_site_pv {}

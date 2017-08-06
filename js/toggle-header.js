@@ -7,16 +7,15 @@ let toggleHeader = function () {
 
     let $banner = $('.banner:first'),
         $postBanner = $banner.find('.post-banner:first'),
-        $bgEle = $('.site-background:first'),
+        $bgEle = $('.site-intro:first'),
         $toc = $('.toc:first'),
         $toggleBanner = $('.toggle-banner:first'),
-        $homeLink = $banner.parent().find('.home-link:first'),
+        $homeLink = $('.home-link:first'),
         bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight(),
         isPostTitleShow = 0;
 
     // 滚动时显示标题栏
     let tickingBanner = false;
-
     function showBanner() {
         if (!tickingBanner) {
             requestAnimationFrame(

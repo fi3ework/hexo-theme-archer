@@ -1,15 +1,42 @@
 <main class="main index-page">
     <%- partial('_partial/base-qr-box') %>
     <% page.posts.each(function (_post) { %>
-            <% let truncateLength = theme.truncate_length || 300; %>
-            <% let _content = truncate(strip_html(_post.content), {length: truncateLength, omission: '...'}) %>
-            <%- partial('_partial/base-post', 
-            { _page : _post,
-            _hasTitle: true,
-            _content : _content, 
-            _isTitleWithLink : true, 
-            _hasMeta: true,
-            _hasShare: false}) %>
-        <% }) %>
-    <%- partial('_partial/base-paginator') %>
+    <% let truncateLength = theme.truncate_length || 300; %>
+    <% let _content = truncate(strip_html(_post.content), {length: truncateLength, omission: '...'}) %>
+        <article class="index-post">
+            <a class="content-show-full" href = "<%- _post.path %>" >
+                <div class="abstract-post-title">
+                    <h2 class="abstract-title">
+                        <span>
+                            <%= _post.title || '[Untitled Post]' %>
+                        </span>
+                    </h2>
+                </div>
+                <div class="abstract-content">
+                    <%- _content %>
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                <% if(_post.tags.length) { %>
+                <%- partial('./_partial/base-title-tags', {
+                    currPost :_post,
+                    className : 'abstract-tags'}) %>
+                <% } %>
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time"><%- date(_post.date, "YYYY/MM/DD") %></span>
+                </div>
+            </div>
+        </article>
+    <% }) %>
+    <!-- paginator  -->
+    <% if (page.total > 1){ %>
+    <nav class="page-nav">
+        <%- paginator({
+        prev_text: '#PREV',
+        next_text: '#NEXT'
+        }) %>
+    </nav>
+    <% } %>
 </main>

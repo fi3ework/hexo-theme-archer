@@ -1,3 +1,4 @@
+// ========== social style ========== // 
 @mixin social($scaleSize, $spanMargin) {
     .iconfont-archer {
         display: inline-block;
@@ -5,7 +6,7 @@
     }
     .iconfont-archer::before {
         display: inline-block;
-        color: $footer-icon-default-color;
+        color: $social-iconfont-color;
         font-size: 3rem * $scaleSize;
         margin: 0 $spanMargin 0 0;
     }

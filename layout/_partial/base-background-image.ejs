@@ -1,47 +1,48 @@
-<div class="site-background">
+<div class="site-intro">
     <% let bgURL = page.header_image || theme.header_image; %>
-    <div class="site-background-img" style="background-image: url(<%- bgURL %>)"></div>
-    <div class="site-background-placeholder"></div>
-    <div class="site-background-meta">
-    <!-- 标题  -->
-        <h1 class="bg-title">
-        <!-- 主页  -->
+    <div class="site-intro-img" style="background-image: url(<%- bgURL %>)"></div>
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
             <% if (is_home()) { %>
             <%- theme.main_title || config.title%>
             <!-- 文章页  -->
-            <% } else { %>
-            <%- page.title || '[404]' %>
+            <% } else if(is_post()) { %>
+            <%- truncate(strip_html(page.title), {length: 60, omission: '...'}) || '[Untitled Post]' %>
+            <% } else {%>
+            [404]
             <% } %>
         </h1>
-    <!-- 副标题 -->
-        <!-- 主页副标题  -->
-        <% if (is_home()) { %>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            <% if (is_home()) { %>
             <% if(typeof theme.subtitle === 'string') { %>
-            <p class="bg-subtitle">
                 <%- theme.subtitle %>
-            </p>
             <% } %>
-        <!-- 文章页  -->
-        <% } else if (is_post()) { %>
+            <!-- 文章页  -->
+            <% } else if (is_post()) { %>
             <% if(typeof page.subtitle === 'string') { %>
-            <p class="bg-subtitle">
                 <%- page.subtitle %>
-            </p>
             <% } %>
+        </p>
         <!-- 404 -->
         <% } else { %>
-            <p class="bg-subtitle">May the Force be with you :)</p>
+            <p class="intro-subtitle">May the Force be with you :&#41;</p>
         <% } %>
-    <!-- 文章页meta -->
-        <!-- 文章页标签  -->
+        <!-- 文章页meta -->
         <% if(is_post()) { %>
+            <!-- 文章页标签  -->
             <% if(page.tags.length) { %>
                 <%- partial('base-title-tags', {
                     currPost: page,
-                    className: 'bg-post-tags'}) %>
+                    className: 'post-intro-tags'}) %>
             <% } %>
-            <div class="bg-post-date">
-                <span class="bg-post-calander iconfont-archer">&#xe676;</span><span class="bg-post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time"><%- date(page.date, "YYYY/MM/DD") %></span>
             </div>
             <!-- <%- partial('base-share') %> -->
         <% } %>

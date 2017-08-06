@@ -1,96 +1,72 @@
-// ======= global variables ======= //
-$global-background-color: #fdfdfd;
-// $global-theme-color: #19ad93;
-$global-theme-color: #f75357;
-$global-font-size: 16px !default;
-$global-theme-font-family: 'Oswald-Regular';
-$global-theme-font-family-light: 'Oswald-Regular-Light';
-$global-font-family: Microsoft Yahei,
-Athelas,
-STHeiti,
-serif !default;
+// ========== global variables ========== //
+$body-background-color: #fdfdfd;
+$feature-color: #f75357;
+$feature-font-family: 'Oswald-Regular',
+'Source Sans Pro',
+"Microsoft Yahei",
+Arial,
+sans-serif !default;
+$base-font-family: 'Source Sans Pro',
+"Microsoft Yahei",
+Arial,
+sans-serif !default;
+$base-font-size: 16px !default;
+@font-face {
+    font-family: 'Source Sans Pro';
+    src: url('../font/Source Sans Pro.woff2.woff2'), url('../font/Source Sans Pro.woff.woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 @font-face {
     font-family: 'Oswald-Regular';
     src: url('/font/Oswald-Regular.ttf');
 }
 
-@font-face {
-    font-family: 'Oswald-Regular-Light';
-    src: url('/font/Oswald-Light.ttf');
-}
-
-// ======= iconfont ======= //
+// ========== common ========== //
+$container-margin-top: 2.5rem;
+$selection-color: $feature-color;
+// ========== iconfont ========== //
 @font-face {
     font-family: 'iconfont-archer';
     /* project id 327081 */
     src: url('//at.alicdn.com/t/font_rzfttc3oc1fqd7vi.eot');
     src: url('//at.alicdn.com/t/font_rzfttc3oc1fqd7vi.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_rzfttc3oc1fqd7vi.woff') format('woff'), url('//at.alicdn.com/t/font_rzfttc3oc1fqd7vi.ttf') format('truetype'), url('//at.alicdn.com/t/font_rzfttc3oc1fqd7vi.svg#iconfont') format('svg');
 }
+
 .iconfont-archer {
     font-family: "iconfont-archer" !important;
     font-size: 1rem;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
 }
 
-// ======= header ======= //
+// ========== header ========== //
 $header-height: 4.5rem;
-$header-top-border-color: #fcfcfc;
-$header-top-border-height: 3px;
-$header-background-color: #24292e;
-$header-title-color: #dedede;
-$header-title-font: $global-theme-font-family ;
-$header-subtitle-font: $global-theme-font-family ;
-$header-nav-font: $global-theme-font-family ;
-$header-nav-color: #dedede;
+$header-border-top-width: 3px;
+$header-border-top-color: #24292e;
+$header-title-font-family: $feature-font-family;
 $header-menu-width: 1.5rem;
-// ======== profile ======= //
+// ========== profile ========== //
+$profile-name-font-family: $feature-font-family;
+$profile-signature-font-family: $feature-font-family;
+$profile-friend-font-family: $feature-font-family;
 $profile-width: 200px;
-// ======= post ======= //
-$post-padding-top: 2.5rem;
-$post-meta-color: $global-theme-color;
-$post-link-color: $global-theme-color;
-$post-background-color: #ffffff;
-$post-content-color: #344a5e;
-$post-blockquote-color-border: lightgray;
-$post-time-color: #bbb;
-// ======= index ======= //
-$index-post-link-color: $global-theme-color;
-$index-post-tag-color: $global-theme-color;
-// ======= footer ======= //
-$footer-background-color: #fff;
-$footer-icon-default-color: gray;
-// ======= code ======= //
-// Color of code highlight, solarized.
-$code-highlight-color: ( comment: #93a1a1,
-keyword: #859900,
-number: #2aa198,
-name: #268bd2,
-attribute: #b58900,
-symbol: #cb4b16,
-built_in: #dc322f) !default;
-// Code type list.
-$code-type-list: ( html: "HTML",
-js: "JavaScript",
-bash: "Bash",
-css: "CSS",
-scss: "Scss",
-java: "Java",
-xml: "XML",
-python: "Python",
-json: "JSON",
-swift: "Swift",
-ruby: "Ruby",
-php: "PHP",
-c: "C",
-cpp: "C++",
-scheme: "Scheme",
-objectivec: "Objective-C",
-yml: "YAML",
-stylus: "Stylus",
-sql: "SQL",
-http: "HTTP",
-go: "Go") !default;
+// ========== index ========== //
+$index-post-link-color: $feature-color;
+$index-post-tag-color: $feature-color;
+// ========== post ========== //
+$post-content-color: #23394d;
+// ========== social ========== //
+$social-iconfont-color: #777;
+// ========== code ========== //
+// $code-highlight-color: ( background-color: #282c34,
+// normal: #abb2bf,
+// comment: #5c6370,
+// doctag: #859900,
+// section: #2aa198,
+// literal: #268bd2,
+// string: #b58900,
+// built_in: #cb4b16,
+// attr: #dc322f) !default;

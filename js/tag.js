@@ -42,8 +42,8 @@ let initTag = function () {
 
     // 将对应的postInfo生成dom
     function createTagDom(postInfo) {
-        let $tagItem = $('<li class="tag-post-item"><span class="archive-post-date">' + archerUtil.dateFormater(new Date(Date.parse(postInfo.date)), 'yyyy-MM-dd') + '</span></li>');
-        let $aItem = $('<a class="archive-post-title" href="' + jsInfo.root + postInfo.path + '">' + postInfo.title + '</a>');
+        let $tagItem = $('<li class="tag-post-item"><span class="tag-post-date">' + archerUtil.dateFormater(new Date(Date.parse(postInfo.date)), 'yyyy-MM-dd') + '</span></li>');
+        let $aItem = $('<a class="tag-post-title" href="' + jsInfo.root + postInfo.path + '">' + postInfo.title + '</a>');
         $tagItem.append($aItem);
         return $tagItem;
     }

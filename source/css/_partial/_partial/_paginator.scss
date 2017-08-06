@@ -1,12 +1,10 @@
+// ========== paginator ========== //
 .page-nav {
     padding-top: 1rem;
     display: flex;
     justify-content: center;
-    .current,
-    .prev,
-    .next,
-    .page-number {
-        font: 1.4rem/2rem $global-theme-font-family;
+    &>* {
+        font: 1.4rem/2rem $feature-font-family;
         vertical-align: middle;
         height: 2rem;
         margin-right: 0.5rem;
@@ -26,6 +24,4 @@
     .current {
         border-color: transparent;
     }
-
-
 }

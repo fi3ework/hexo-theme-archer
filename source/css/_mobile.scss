@@ -6,22 +6,22 @@
     margin: 1rem 0 0 0;
 }
 
-.bg-title {
+.intro-title {
     font-size: 3rem;
     max-width: 90%;
 }
 
 .post-body {
-    .site-background-meta {
+    .site-intro-meta {
         width: 80%;
     }
-    .bg-title {
+    .intro-title {
         font-size: 2.5rem;
         line-height: 2.8rem;
     }
 }
 
-.bg-subtitle {
+.intro-subtitle {
     font-size: 1.5rem;
     white-space: normal;
     max-width: 70%;
@@ -116,7 +116,7 @@
 }
 
 #busuanzi_container_site_pv {
-    font: 1rem $global-theme-font-family;
+    font: 1rem $feature-font-family;
 }
 
 .post-pager {

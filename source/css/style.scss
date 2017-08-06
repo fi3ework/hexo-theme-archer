@@ -1,33 +1,30 @@
 // Helpers
-@import "_normalize";
 @import "_variables";
-@import "_base";
+@import "_normalize";
+@import "_common";
 @import "_mixin";
 
 // partial
-@import "_partial/_partial/_background";
-@import "_partial/_partial/_qr";
-@import "_partial/_partial/_footer";
+@import "_partial/_partial/_intro";
 @import "_partial/_partial/_header";
 @import "_partial/_partial/_profile";
+@import "_partial/_partial/_footer";
 @import "_partial/_partial/_paginator";
+@import "_partial/_partial/_scrollbar";
+@import "_partial/_partial/_qr";
 @import "_partial/_post/_code";
-@import "_partial/_partial/_post";
+
+// sidebar
 @import "_partial/_sidebar/_sidebar-archive";
 @import "_partial/_sidebar/_sidebar-tags";
-@import "_partial/_partial/_scrollbar";
+@import "_partial/_sidebar/_sidebar";
 
 // pages
-@import "_partial/_sidebar";
 @import "_partial/_index-page";
 @import "_partial/_post-page";
 @import "_partial/_404";
 
 // mobile
-// @media screen and (min-width: 981px){
-//     @import "./desktop";
-// }
-
 @media screen and (max-width: 980px) {
     @import "./mobile";
 }

@@ -1,0 +1,48 @@
+// ========== main intro ========== //
+.site-intro {
+    width: 100%;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 -0.6rem 1rem 0.6rem rgba(0, 0, 0, 0.8);
+}
+
+// ========== intro image ========== //
+.site-intro-img {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    filter: brightness(.5);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-color: transparent;
+}
+
+// ========== intro placeholder ========== //
+// 在layout中 //
+
+// ========== main intro meta ========== //
+.site-intro-meta {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-title {
+    font: 4rem $feature-font-family;
+    color: #fff;
+    margin: 0;
+}
+
+.intro-subtitle {
+    font: 2rem $feature-font-family;
+    color: #fff;
+    margin: 0;
+}
