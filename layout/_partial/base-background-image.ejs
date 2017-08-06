@@ -1,5 +1,9 @@
 <div class="site-intro">
-    <% let bgURL = page.header_image || theme.header_image; %>
+    <% if(is_post() || is_home()) { %>
+    <% var bgURL = page.header_image || theme.header_image; %>
+    <% } else { %>
+    <% var bgURL = theme._404_image || theme.header_image; %>
+    <% } %>
     <div class="site-intro-img" style="background-image: url(<%- bgURL %>)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">

@@ -19,13 +19,25 @@ var initTag = function initTag() {
         var xhr = new XMLHttpRequest();
         xhr.responseType = '';
         xhr.open('get', tagURL, true);
+        var $tagLoadFail = $('.tag-load-fail:first');
         xhr.onload = function () {
+            console.log(this.status);
             if (this.status == 200 || this.status == 304) {
+                $tagLoadFail.remove();
                 contentJSON = JSON.parse(this.responseText);
                 initTagMap(contentJSON);
+            } else {
+                showTagLoadFail($tagLoadFail);
             }
         };
         xhr.send();
+    }
+
+    // 显示加载失败
+    function showTagLoadFail($tagLoadFail) {
+        console.log($tagLoadFail[0]);
+
+        $tagLoadFail[0].style.display = 'block';
     }
 
     // 建立map

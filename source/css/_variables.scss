@@ -13,18 +13,19 @@ sans-serif !default;
 $base-font-size: 16px !default;
 @font-face {
     font-family: 'Source Sans Pro';
-    src: url('../font/Source Sans Pro.woff2.woff2'), url('../font/Source Sans Pro.woff.woff');
+    src: url('/assets/font/Source Sans Pro.woff'),
+    url('/assets/font/Source Sans Pro.woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Oswald-Regular';
-    src: url('/font/Oswald-Regular.ttf');
+    src: url('/assets/font/Oswald-Regular.ttf');
 }
 
 // ========== common ========== //
-$container-margin-top: 2.5rem;
+$container-margin-top: 3rem;
 $selection-color: $feature-color;
 // ========== iconfont ========== //
 @font-face {

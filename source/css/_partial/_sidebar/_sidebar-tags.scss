@@ -18,10 +18,8 @@
     border: 1px solid #fff;
     border-radius: 5rem;
     padding: 0 0.4rem 0 0.4rem;
-    font-size: 0.8rem;
-    line-height: 1rem;
     margin: 0.2rem 0;
-    white-space: nowrap; // transition: all 0.1s ease-out .0s;
+    white-space: nowrap;
     cursor: pointer;
     &:hover {
         border-color: $feature-color;
@@ -30,8 +28,8 @@
         }
     }
     a {
-        color: #fff; // transition: all 0.1s ease-out .0s;
-        line-height: 1.2rem;
+        color: #fff;
+        font-size: 0.8rem;
         &::before {
             content: '#';
         }
