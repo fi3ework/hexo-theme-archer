@@ -7,7 +7,7 @@ const gulp = require('gulp'),
 
 // babel
 gulp.task('babel-js', function () {
-    return gulp.src('./js/**/*.js')
+    return gulp.src('./source-src/**/*.js')
         .pipe(babel({
             presets: ['es2015']
         }))
