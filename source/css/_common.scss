@@ -18,7 +18,7 @@ body {
 .wrapper {
     width: 100%;
     transition: all 0.3s ease-out .0s;
-    transform: translate3d(0, 0, 0); // padding-bottom: 9rem;
+    transform: translate3d(0, 0, 0);
     position: relative;
 }
 
@@ -51,7 +51,7 @@ a {
     text-decoration: none;
 }
 
-li {
+ul, li {
     list-style-type: none;
 }
 

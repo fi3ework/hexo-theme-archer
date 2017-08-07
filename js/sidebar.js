@@ -38,7 +38,7 @@ let sidebarInit = function () {
         $toc.removeClass('toc-slide');
     });
 
-    // 切换tags和archives
+    // 切换tags和archive
     $archiveLink.on('click', function () {
         $sidebarContent.addClass('sidebar-content-show-archive').removeClass('sidebar-content-show-tags');
         $sidebarHeader.addClass('sidebar-header-show-archive').removeClass('sidebar-header-show-tags');

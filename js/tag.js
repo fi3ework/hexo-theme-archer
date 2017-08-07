@@ -16,7 +16,6 @@ let initTag = function () {
         xhr.open('get', tagURL, true);
         let $tagLoadFail = $('.tag-load-fail:first');
         xhr.onload = function () {
-            console.log(this.status);
             if (this.status == 200 || this.status == 304) {
                 $tagLoadFail.remove();
                 contentJSON = JSON.parse(this.responseText);
@@ -30,8 +29,6 @@ let initTag = function () {
 
     // 显示加载失败
     function showTagLoadFail($tagLoadFail) {
-        console.log($tagLoadFail[0]);
-        
         $tagLoadFail[0].style.display = 'block';        
     }
 
@@ -54,7 +51,7 @@ let initTag = function () {
 
     // 将对应的postInfo生成dom
     function createTagDom(postInfo) {
-        let $tagItem = $('<li class="tag-post-item"><span class="tag-post-date">' + archerUtil.dateFormater(new Date(Date.parse(postInfo.date)), 'yyyy-MM-dd') + '</span></li>');
+        let $tagItem = $('<li class="tag-post-item"><span class="tag-post-date">' + archerUtil.dateFormater(new Date(Date.parse(postInfo.date)), 'yyyy/MM/dd') + '</span></li>');
         let $aItem = $('<a class="tag-post-title" href="' + jsInfo.root + postInfo.path + '">' + postInfo.title + '</a>');
         $tagItem.append($aItem);
         return $tagItem;

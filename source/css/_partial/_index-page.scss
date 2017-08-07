@@ -33,12 +33,24 @@
     position: relative;
     font-family: $base-font-family;
     margin: 0;
-    line-height: 1.6rem;
+    line-height: 1.5rem;
     padding-bottom: 0.2rem;
     span {
         font-size: 1.5rem;
-        &:hover {
-            border-bottom: 2px solid $index-post-link-color;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            transition: all 0.2s ease-out;
+            height: 2px;
+            width: 0;
+            left: 50%;
+            top: 95%;
+            background-color: $feature-color;
+        }
+        &:hover::after {
+            left: 0;
+            width: 100%;
         }
     }
 }
@@ -69,8 +81,7 @@
             position: relative;
             left: -2px;
             content: '#';
-        }
-        // &:hover::after {
+        } // &:hover::after {
         //     content: '';
         //     position: absolute;
         //     height: 2px;
@@ -79,7 +90,7 @@
         //     width: 104%;
         //     left: -2%;
         // }
-        &:hover{
+        &:hover {
             border-bottom: 2px solid $index-post-tag-color;
         }
     }

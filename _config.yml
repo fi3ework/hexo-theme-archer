@@ -46,9 +46,9 @@ busuanzi: true
 # Baidu analytics
 baidu_analytics: 'https://hm.baidu.com/hm.js?c2e692c5407f95609121a9d80bd24510'
 # Google analytics
-google_analytics: 'UA-103985966-1'
+# google_analytics: 'UA-103985966-1'
 # CNZZ analytics
-CNZZ_analytics: '1263255655'
+# CNZZ_analytics: '1263255655'
 
 # ========== Others ========== #
 # favicon
