@@ -1,8 +1,14 @@
 <div class="site-intro">
-    <% if(is_post() || is_home()) { %>
-    <% var bgURL = page.header_image || theme.header_image; %>
+    <% var bgURL; %>
+    <!-- 主页  -->
+    <% if (is_home()) { %>
+    <% bgURL = theme.site_header_image; %>
+    <!-- 文章页  -->
+    <% } else if (is_post()) { %>
+    <% bgURL = page.header_image || theme.post_header_image || theme.site_header_image; %>
+    <!-- 404页  -->
     <% } else { %>
-    <% var bgURL = theme._404_image || theme.header_image; %>
+    <% bgURL = theme._404_image || theme.site_header_image; %>
     <% } %>
     <div class="site-intro-img" style="background-image: url(<%- bgURL %>)"></div>
     <div class="site-intro-placeholder"></div>
@@ -15,8 +21,9 @@
             <!-- 文章页  -->
             <% } else if(is_post()) { %>
             <%- truncate(strip_html(page.title), {length: 60, omission: '...'}) || '[Untitled Post]' %>
+            <!-- 404 -->
             <% } else {%>
-            [404]
+            <%- page.title || '[404]'%>
             <% } %>
         </h1>
         <!-- 副标题 -->
@@ -34,7 +41,7 @@
         </p>
         <!-- 404 -->
         <% } else { %>
-            <p class="intro-subtitle">May the Force be with you :&#41;</p>
+            <p class="intro-subtitle"> <%- page.description %></p>
         <% } %>
         <!-- 文章页meta -->
         <% if(is_post()) { %>
