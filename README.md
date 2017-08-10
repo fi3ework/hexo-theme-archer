@@ -1,4 +1,4 @@
-hexo-theme-Archer
+hexo-theme-archer
 ================
 
 ![preview](./docs/snap.png)
@@ -7,7 +7,9 @@ hexo-theme-Archer
 
 ## 说明
 
-本主题受[yilia](https://github.com/litten/hexo-theme-yilia)主题和[huxpro](https://github.com/Huxpro/huxpro.github.io)主题的启发，结合了前者的sidebar设计及后者的UI设计完成，能够在不切换到archive页及tag的页的情况下通过侧边栏进行导航。
+- 点击[我的博客](http://firework.studio)在线预览。
+- 本主题受[yilia](https://github.com/litten/hexo-theme-yilia)主题和[huxpro](https://github.com/Huxpro/huxpro.github.io)主题的启发，结合了前者的sidebar设计及后者的UI设计完成，能够在不切换到archive页及tag的页的情况下通过侧边栏进行导航。
+- 兼容性：现代浏览器及IE10+。
 
 ##  安装
 
