@@ -13,10 +13,9 @@ hexo-theme-archer
 
 ##  安装
 
+在Hexo根目录下执行
+
 ``` shell
-hexo init Blog 
-cd Blog 
-npm install
 npm install hexo-generator-json-content --save
 git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer
 ```
@@ -41,7 +40,7 @@ description: "May the Force be with you :&#41;"
 
 ### sidebar启用
 
-在Hexo根目录下执行以下命令（同安装说明中的插件，若已安装可忽略）
+在Hexo根目录下执行以下命令（同安装说明中的插件，若已安装可跳过此步骤）
 
 ```shell
 npm install hexo-generator-json-content --save
