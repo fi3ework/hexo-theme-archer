@@ -11,6 +11,17 @@
     <link rel="icon" href= <%- theme.favicon %>>
     <!-- 提前加载place holder  -->
     <style>
+        @font-face {
+            font-family: 'Oswald-Regular';
+            src: url('<%- url_for('/font/Oswald-Regular.ttf') %>');
+        }
+        @font-face {
+            font-family: 'Source Sans Pro';
+            src: url('<%- url_for('/font/Source Sans Pro.woff') %>'),
+            url('<%- url_for('/font/Source Sans Pro.woff2') %>');
+            font-weight: normal;
+            font-style: normal;
+        }
         .site-intro-placeholder {
         position: absolute;
         z-index: -2;
