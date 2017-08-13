@@ -4,7 +4,7 @@
     <% let truncateLength = theme.truncate_length || 300; %>
     <% let _content = truncate(strip_html(_post.content), {length: truncateLength, omission: '...'}) %>
         <article class="index-post">
-            <a class="content-show-full" href = "<%- _post.path %>" >
+            <a class="content-show-full" href = "<%- url_for(_post.path) %>" >
                 <div class="abstract-post-title">
                     <h2 class="abstract-title">
                         <span>
