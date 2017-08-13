@@ -22,6 +22,7 @@ let initTag = function () {
                 initTagMap(contentJSON);
             } else {
                 showTagLoadFail($tagLoadFail);
+                $('.sidebar-tags-name:first').remove();
             }
         };
         xhr.send();

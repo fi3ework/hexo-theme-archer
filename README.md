@@ -56,7 +56,7 @@ jsonContent:
     title: true
     date: true
     path: true
-    text: true
+    text: false
     raw: false
     content: false
     slug: false
