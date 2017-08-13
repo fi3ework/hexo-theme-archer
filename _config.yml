@@ -30,11 +30,11 @@ main_title: fi3ework's Studio.
 # subtitle
 subtitle: it's better to burn out than to fade away
 # site haeder image
-site_header_image: '/intro/intro-desktop.jpg'
+site_header_image: 'http://oumn0o088.bkt.clouddn.com/intro-desktop.jpg'
 # post haeder image
-post_header_image: '/intro/post-bg.jpg'
+post_header_image: 'http://oumn0o088.bkt.clouddn.com/post-bg.jpg'
 # 404 image
-_404_image: '/intro/404.jpg'
+_404_image: 'http://oumn0o088.bkt.clouddn.com/404.jpg'
 
 # ========== Comment ========== #
 # 目前只支持一键添加livere评论（因为懒），其他评论插件可自行添加

@@ -33,7 +33,7 @@
     <% toCloseUl = 1; %>
     <% } %>
         <li class="archive-post-item">
-            <span class="archive-post-date"><%- date(post.date, "MM/DD") %></span><a class="archive-post-title" href= "<%- url_for(post.link) %>" ><%- post.title || '[Untitled Post]' %></a>
+            <span class="archive-post-date"><%- date(post.date, "MM/DD") %></span><a class="archive-post-title" href= "<%- post.link %>" ><%- post.title || '[Untitled Post]' %></a>
         </li>
     <% }) %>
     </div>
