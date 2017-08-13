@@ -45,7 +45,7 @@
             height: 2px;
             width: 0;
             left: 50%;
-            top: 95%;
+            top: 104%;
             background-color: $feature-color;
         }
         &:hover::after {
@@ -81,17 +81,21 @@
             position: relative;
             left: -2px;
             content: '#';
-        } // &:hover::after {
-        //     content: '';
-        //     position: absolute;
-        //     height: 2px;
-        //     background-color: $feature-color;
-        //     top: 100%;
-        //     width: 104%;
-        //     left: -2%;
-        // }
-        &:hover {
-            border-bottom: 2px solid $index-post-tag-color;
+        } 
+        &::after {
+            content: '';
+            position: absolute;
+            transition: all 0.2s ease-out;
+            height: 2px;
+            width: 0;
+            left: 50%;
+            top: 104%;
+            background-color: $feature-color;
+        }
+
+        &:hover::after {
+            left: 0;
+            width: 100%;
         }
     }
 }
