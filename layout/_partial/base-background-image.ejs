@@ -10,7 +10,7 @@
     <% } else { %>
     <% bgURL = theme._404_image || theme.site_header_image; %>
     <% } %>
-    <div class="site-intro-img" style="background-image: url(<%- bgURL %>)"></div>
+    <div class="site-intro-img" style="background-image: url(<%- url_for(bgURL) %>)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->

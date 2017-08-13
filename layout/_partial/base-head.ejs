@@ -40,7 +40,7 @@
     </style>
     <%- css('css/style.css') %>
     <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script> 
-    <script src="/scripts/main.js" defer></script>
+    <script src="<%- url_for(/scripts/main.js) %>" defer></script>
     <!-- 百度统计  -->
     <% if(theme.baidu_analytics) { %>
     <script>
