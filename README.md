@@ -3,8 +3,6 @@ hexo-theme-archer
 
 ![preview](./docs/snap.png)
 
-
-
 ## 说明
 
 - 点击[我的博客](http://firework.studio)在线预览。
