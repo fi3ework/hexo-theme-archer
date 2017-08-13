@@ -23,13 +23,12 @@
 .post-intro-tags {
     font: 1.2rem $feature-font-family;
     .post-tag {
+        position: relative;
         margin-left: 0;
         margin-right: 0.2rem;
         font-size: 1.2rem;
         color: #fff;
-        &:hover {
-            border-bottom: 2px solid white;
-        }
+        @include hover-line($color: #fff, $top:100%);
         &::before {
             content: '#';
         }

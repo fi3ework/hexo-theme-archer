@@ -38,20 +38,7 @@
     span {
         font-size: 1.5rem;
         position: relative;
-        &::after {
-            content: '';
-            position: absolute;
-            transition: all 0.2s ease-out;
-            height: 2px;
-            width: 0;
-            left: 50%;
-            top: 104%;
-            background-color: $feature-color;
-        }
-        &:hover::after {
-            left: 0;
-            width: 100%;
-        }
+        @include hover-line($height: 3px);
     }
 }
 
@@ -82,20 +69,7 @@
             left: -2px;
             content: '#';
         } 
-        &::after {
-            content: '';
-            position: absolute;
-            transition: all 0.2s ease-out;
-            height: 2px;
-            width: 0;
-            left: 50%;
-            top: 104%;
-            background-color: $feature-color;
-        }
-        &:hover::after {
-            left: 0;
-            width: 100%;
-        }
+        @include hover-line();
     }
 }
 

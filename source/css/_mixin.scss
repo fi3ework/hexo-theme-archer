@@ -1,3 +1,21 @@
+// ========== hover ========== //
+@mixin hover-line($height: 2px, $top: 104%, $color: $feature-color) {
+    &::after {
+        content: '';
+        position: absolute;
+        transition: all 0.2s ease-out;
+        height: $height;
+        width: 0;
+        left: 50%;
+        top: $top;
+        background-color: $color;
+    }
+    &:hover::after {
+        left: 0;
+        width: 100%;
+    }
+}
+
 // ========== social style ========== // 
 @mixin social($scaleSize, $spanMargin) {
     .iconfont-archer {
@@ -10,8 +28,7 @@
         font-size: 3rem * $scaleSize;
         margin: 0 $spanMargin 0 0;
     }
-
-    .iconfont-archer:last-of-type::before{
+    .iconfont-archer:last-of-type::before {
         margin: 0;
     }
     .email {
