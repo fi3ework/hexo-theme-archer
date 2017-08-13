@@ -3,8 +3,10 @@ const gulp = require('gulp'),
     webpack = require('gulp-webpack'),
     uglify = require('gulp-uglify'),
     cleanCSS = require('gulp-clean-css'),
+    sass = require('gulp-sass'),
     del = require('del');
 
+/* ========== develop ========== */    
 // babel
 gulp.task('babel-js', function () {
     return gulp.src('./source-src/**/*.js')
@@ -42,18 +44,31 @@ gulp.task('uglify-js', ['del-js'], function () {
         .pipe(gulp.dest('./source/scripts/'));
 });
 
-// clean css
-gulp.task('minify-css', function () {
-    return gulp.src('../../public/css/style.css')
-        .pipe(cleanCSS({
-            compatibility: '*'
-        }))
-        .pipe(gulp.dest('../../public/css/'));
-});
-
 // watch
 gulp.task('watch', function () {
     gulp.watch(['./js/**/*.js'], ['uglify']);
 });
 
-gulp.task('default', ['uglify-js', 'minify-css', 'watch']);
+gulp.task('default', ['uglify-js', 'watch']);
+
+
+/* ========== bulid ========== */
+// sass
+gulp.task('sass', function () {
+    return gulp.src('./source/css/style.scss')
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(gulp.dest('./source/css/'));
+});
+
+// // clean css
+// gulp.task('minify-css',['sass'], function () {
+//     return gulp.src('../../public/css/style.css')
+//         .pipe(cleanCSS({
+//             compatibility: '*'
+//         }))
+//         .pipe(gulp.dest('../../public/css/'));
+// });
+
+gulp.task('build', ['sass', 'uglify-js']);

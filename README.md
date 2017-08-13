@@ -155,7 +155,7 @@ truncate_length:
 通过配置每篇文章的头部的`header_image`字段来修改，如果不填写将采用主题配置中的`post_header_image`字段，如果该字段未填写则采用`site_header_image`字段。
 
 ``` yaml
-header_image: /assets/intro/post-bg.jpg
+header_image: /intro/post-bg.jpg
 ```
 
 ## License

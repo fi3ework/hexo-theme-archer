@@ -1,6 +1,6 @@
 # ========== Profile ========== #
 # avatar
-avatar: /assets/avatar/kumamon.jpg
+avatar: /avatar/kumamon.jpg
 # author name
 author: fi3ework
 # signature
@@ -28,14 +28,13 @@ SEO_title: fi3ework's Studio
 # main title
 main_title: fi3ework's Studio.
 # subtitle
-subtitle: it's better to burn out than fade away
+subtitle: it's better to burn out than to fade away
 # site haeder image
-site_header_image: /assets/intro/intro-desktop.jpg
+site_header_image: '/intro/intro-desktop.jpg'
 # post haeder image
-post_header_image: /assets/intro/post-bg.jpg
+post_header_image: '/intro/post-bg.jpg'
 # 404 image
-_404_image: /assets/intro/404.jpg
-# post
+_404_image: '/intro/404.jpg'
 
 # ========== Comment ========== #
 # 目前只支持一键添加livere评论（因为懒），其他评论插件可自行添加
@@ -55,9 +54,6 @@ baidu_analytics: 'https://hm.baidu.com/hm.js?c2e692c5407f95609121a9d80bd24510'
 
 # ========== Others ========== #
 # favicon
-favicon: /assets/favicon.ico
+favicon: /favicon.ico
 # truncate length (the default is 300)
 truncate_length:
-
-
-color: #000
