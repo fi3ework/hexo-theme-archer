@@ -7,9 +7,9 @@ author: fi3ework
 signature: witness me
 # SNS
 social:
-  email: 805843200@qq.com
+  email: 12345@qq.com
   github: //github.com/fi3ework
-  weibo: //weibo.com/p/1005052612303102
+  weibo:
   # zhihu:
   # facebook:
   # twitter:
@@ -18,8 +18,8 @@ social:
   # linkedin:
 # friends
 friends:
-  Mason Zhou: https://github.com/Mason1993
-  Wang Tao: https://github.com/wwtdsg
+  friendA: //www.baidu.com
+  friendB: //www.google.com
   # friendC :
 
 # ========== Site ========== #
@@ -40,17 +40,17 @@ _404_image: 'http://oumn0o088.bkt.clouddn.com/404.jpg'
 # 目前只支持一键添加livere评论（因为懒），其他评论插件可自行添加
 comment:
   # change the value of livere to your livere data-uid
-  livere: MTAyMC8yODQyOS81MDAw
+  livere:
 
 # ========== Analytics ========== #
 # Busuanzi pv Analytics
-busuanzi: true
+busuanzi: false
 # Baidu analytics
-baidu_analytics: 'https://hm.baidu.com/hm.js?c2e692c5407f95609121a9d80bd24510'
+baidu_analytics:
 # Google analytics
-# google_analytics: 'UA-103985966-1'
+google_analytics:
 # CNZZ analytics
-# CNZZ_analytics: '1263255655'
+CNZZ_analytics:
 
 # ========== Others ========== #
 # favicon
