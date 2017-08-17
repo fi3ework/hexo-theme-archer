@@ -5,7 +5,7 @@
         margin: 0.8rem 0;
         padding: 0.7rem 0.7rem;
         overflow: auto;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         line-height: 1.3rem;
     }
     .highlight .gutter pre,
@@ -15,7 +15,12 @@
     }
     pre,
     code {
-        font-family: Menlo, Monaco, Consolas, monospace;
+        font-family: "Source Code Pro",
+        Consolas,
+        Menlo,
+        Monaco,
+        "Courier New",
+        monospace;
     }
     code {
         background: #eee;

@@ -54,6 +54,6 @@ CNZZ_analytics:
 
 # ========== Others ========== #
 # favicon
-favicon: /favicon.ico
+favicon: /assests/favicon.ico
 # truncate length (the default is 300)
 truncate_length:

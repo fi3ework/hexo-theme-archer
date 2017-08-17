@@ -7,6 +7,7 @@ hexo-theme-archer
 
 - Click [my blog](http://firework.studio) to preview theme online.
 - This theme is inspired by theme [yilia](https://github.com/litten/hexo-theme-yilia) and theme [huxpro](https://github.com/Huxpro/huxpro.github.io), it combines the sidebar of the former and the UI design of latter. You can switch to archive and tag via the navigation sidebar without jumpping to a new page.
+- You can create a new issue, or comment on article 「hexo-theme-archer」 in [my blog](http://firework.studio). 
 - Compatibility：modern browsers and IE 10 +.
 
 ##  Install
