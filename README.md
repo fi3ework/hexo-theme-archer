@@ -7,6 +7,10 @@ hexo-theme-archer
 
 - [Document](./docs/README-en.md)
 
+##  更新
+
+- 2017.08.17 - 『增加了置顶显示，开启置顶的方法[参照此文章](http://xxxsss.me/2017/04/22/hexo-pagination/)』
+
 ## 说明
 
 - 可通过[我的博客](http://firework.studio)在线预览主题。
