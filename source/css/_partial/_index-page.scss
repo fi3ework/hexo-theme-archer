@@ -35,7 +35,11 @@
     margin: 0;
     line-height: 1.5rem;
     padding-bottom: 0.2rem;
-    span {
+    span:first-of-type {
+        font-size: 1.3rem;
+        margin-right: -0.2rem;
+    }
+    span:last-of-type {
         font-size: 1.5rem;
         position: relative;
         @include hover-line($height: 3px);
@@ -68,7 +72,7 @@
             position: relative;
             left: -2px;
             content: '#';
-        } 
+        }
         @include hover-line();
     }
 }
