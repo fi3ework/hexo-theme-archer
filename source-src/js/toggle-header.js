@@ -26,22 +26,22 @@ let toggleHeader = function () {
                         if (!isBannerShow) {
                             $homeLink.addClass('home-link-hide');
                             if (isPostPage) {
-                                $banner.addClass('banner-show');
-                                isBannerShow = 1;
                                 isBannerMustHide = 0;                                
+                                $banner.addClass('banner-show');
                                 // $toc.addClass('toc-fixed');
                             }
+                            isBannerShow = 1;
                         }
                     } else {
                         // 滚动没超过intro
                         if (isBannerShow) {
                             $homeLink.removeClass('home-link-hide');
                             if (isPostPage) {
-                                $banner.removeClass('banner-show');
-                                isBannerShow = 0;
                                 isBannerMustHide = 1;
+                                $banner.removeClass('banner-show');
                                 // $toc.removeClass('toc-fixed');
                             }
+                            isBannerShow = 0;
                         }
                     }
                     tickingBanner = false;

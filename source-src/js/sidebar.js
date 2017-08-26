@@ -5,7 +5,7 @@ let sidebarInit = function () {
         $sidebarContent = $sidebar.find('.sidebar-content:first'),
         $archiveLink = $sidebar.find('.sidebar-archive-link:first'),
         $tagsLink = $sidebar.find('.sidebar-tags-link:first'),
-        $toc = $('.toc:first'),
+        // $toc = $('.toc:first'),
         $header = $('.header:first'),
         $sidebarHeader = $sidebar.find('.sidebar-header:first');
 
@@ -18,8 +18,8 @@ let sidebarInit = function () {
         $sidebar.addClass('sidebar-show');
         $wrapper.addClass('wrapper-show-sidebar');
         $header.addClass('header-slide');
-        $toc.addClass('toc-slide');
         eve.stopPropagation();
+        // $toc.addClass('toc-slide');
     }
 
     // 阻止在sidebar中单击收回sidebar
@@ -31,11 +31,11 @@ let sidebarInit = function () {
     $wrapper.on('click', function (eve) {
         if ($sidebar.hasClass('sidebar-show')) {
             eve.preventDefault();
+            $sidebar.removeClass('sidebar-show');
+            $header.removeClass('header-slide');
+            $wrapper.removeClass('wrapper-show-sidebar');
         }
-        $sidebar.removeClass('sidebar-show');
-        $header.removeClass('header-slide');
-        $wrapper.removeClass('wrapper-show-sidebar');
-        $toc.removeClass('toc-slide');
+        // $toc.removeClass('toc-slide');
     });
 
     // 切换tags和archive
@@ -62,6 +62,7 @@ let sidebarInit = function () {
             eve.preventDefault();
         }
     });
+    
 
     function stopSidebarEdgeScroll(eve) {
         if (this.scrollHeight == this.clientHeight) {

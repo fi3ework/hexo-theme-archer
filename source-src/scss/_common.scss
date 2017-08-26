@@ -3,6 +3,7 @@ html {
     font-size: $base-font-size;
     font-family: $base-font-family;
     overflow-x: hidden;
+    height: 100%;
 }
 
 * {
@@ -13,6 +14,7 @@ body {
     position: relative;
     background-color: $body-background-color;
     background-color: hexo-theme-config('color');
+    height: 100%;
 }
 
 .wrapper {

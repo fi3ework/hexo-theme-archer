@@ -1,5 +1,4 @@
 <main class="main index-page">
-    <%- partial('_partial/base-qr-box') %>
     <% page.posts.each(function (_post) { %>
     <% let truncateLength = theme.truncate_length || 300; %>
     <% let _content = truncate(strip_html(_post.content), {length: truncateLength, omission: '...'}) %>

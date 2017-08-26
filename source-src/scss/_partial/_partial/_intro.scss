@@ -1,19 +1,19 @@
 // ========== main intro ========== //
 .site-intro {
+    position: relative;
     width: 100%;
     height: 50vh;
-    position: relative;
     overflow: hidden;
-    box-shadow: -0.2rem 0rem 0.7rem 0rem rgba(0, 0, 0, 0.8);
+    box-shadow: -0.2rem 0 0.7rem 0 rgba(0, 0, 0, 0.8);
 }
 
 // ========== intro image ========== //
 .site-intro-img {
-    z-index: -1;
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
-    height: 100%;
+    height: calc(100% + 1px);
     width: 100%;
     filter: brightness(.5);
     background-repeat: no-repeat;
