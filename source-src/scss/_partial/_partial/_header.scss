@@ -37,46 +37,43 @@
     pointer-events: initial;
 }
 
-// toggle banner
-.toggle-banner {
-    position: relative;
-    transform: translate3d(0, -100%, 0);
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: all 0.2s ease-out .0s;
-}
-
-.toggle-banner-show-site {
-    transform: translate3d(0, 0, 0);
-}
-
-.blog-title {
-    position: relative;
+.post-title {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    height: 100%;
+    width: 70%;
+    margin-left: 15%;
+    a {
+        white-space: nowrap;
+        color: rgba(0, 0, 0, 0.8);
+        line-height: 100%;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding-bottom: 0.2rem;
+        text-align: center;
+        font: 1.5rem $header-title-font-family;
+    }
+}
+
+.blog-title {
+    position: absolute;
+    right: 2.5rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     a {
         vertical-align: top;
         white-space: nowrap;
         color: #000;
-        font: 2rem/2rem $header-title-font-family;
-    }
-}
-
-.post-banner {
-    height: 100%;
-    top: 100%;
-    width: 100%;
-    .post-name {
-        display: inline-block;
-        height: 100%;
-        cursor: pointer;
-        text-align: center;
-        font: 1.4rem/#{$header-height} $header-title-font-family;
-        color: #000;
+        font: 1rem/1rem $header-title-font-family;
+        &:hover {
+            color: $feature-color;
+        }
     }
 }
 

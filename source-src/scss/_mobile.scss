@@ -60,17 +60,15 @@
 
 // ========== header ========== //
 .header {
-  .post-name{
-      max-width: 70%;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      white-space: nowrap;
-  }
+    .blog-title {
+        display: none;
+    }
 }
 
-.home-link{
+.home-link {
     right: 1rem;
 }
+
 // ========== content ========== //
 .post-pager {
     .previous,

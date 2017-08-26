@@ -1,20 +1,19 @@
 {
   "name": "archer",
-  "version": "1.0.0",
-  "description": "",
-  "main": "gulpfile.js",
+  "version": "1.1.0",
+  "description": "archer develop package",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "fi3ework",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.0",
     "babel-preset-es2015": "^6.24.1",
+    "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
-    "gulp-browserify": "^0.5.1",
     "gulp-clean-css": "^3.7.0",
     "gulp-gzip": "^1.4.0",
     "gulp-htmlmin": "^3.0.0",
@@ -22,7 +21,5 @@
     "gulp-uglify": "^3.0.0",
     "gulp-webpack": "^1.5.0"
   },
-  "dependencies": {
-    "hexo-browsersync": "^0.2.0"
-  }
+  "dependencies": {}
 }

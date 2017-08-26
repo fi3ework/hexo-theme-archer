@@ -20,7 +20,7 @@
             <%- theme.main_title || config.title%>
             <!-- 文章页  -->
             <% } else if(is_post()) { %>
-            <%- truncate(strip_html(page.title), {length: 60, omission: '...'}) || '[Untitled Post]' %>
+            <%- truncate(strip_html(page.title), {length: 40, omission: '...'}) || '[Untitled Post]' %>
             <!-- 404 -->
             <% } else {%>
             <%- page.title || '[404]'%>

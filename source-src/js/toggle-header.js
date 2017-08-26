@@ -6,38 +6,42 @@ let toggleHeader = function () {
     }
 
     let $banner = $('.banner:first'),
-        $postBanner = $banner.find('.post-banner:first'),
+        $postBanner = $banner.find('.post-title a'),
         $bgEle = $('.site-intro:first'),
-        $toc = $('.toc:first'),
-        $toggleBanner = $('.toggle-banner:first'),
+        // $toc = $('.toc:first'),
         $homeLink = $('.home-link:first'),
         bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight(),
-        isPostTitleShow = 0;
+        isBannerShow = 0,
+        isBannerMustHide = 0;
 
-    // 滚动时显示标题栏
+    // 滚动超过header时显示标题栏
     let tickingBanner = false;
     function showBanner() {
         if (!tickingBanner) {
             requestAnimationFrame(
                 function update() {
                     let scrollTop = $(document).scrollTop();
+                    // 滚动超过intro
                     if (scrollTop > bgTitleHeight) {
-                        if (!isPostTitleShow) {
+                        if (!isBannerShow) {
+                            $homeLink.addClass('home-link-hide');
                             if (isPostPage) {
                                 $banner.addClass('banner-show');
-                                $toc.addClass('toc-fixed');
+                                isBannerShow = 1;
+                                isBannerMustHide = 0;                                
+                                // $toc.addClass('toc-fixed');
                             }
-                            $homeLink.addClass('home-link-hide');
-                            isPostTitleShow = 1;
                         }
                     } else {
-                        if (isPostTitleShow) {
+                        // 滚动没超过intro
+                        if (isBannerShow) {
+                            $homeLink.removeClass('home-link-hide');
                             if (isPostPage) {
                                 $banner.removeClass('banner-show');
-                                $toc.removeClass('toc-fixed');
+                                isBannerShow = 0;
+                                isBannerMustHide = 1;
+                                // $toc.removeClass('toc-fixed');
                             }
-                            $homeLink.removeClass('home-link-hide');
-                            isPostTitleShow = 0;
                         }
                     }
                     tickingBanner = false;
@@ -57,30 +61,30 @@ let toggleHeader = function () {
         return;
     }
 
-    // 在向上滚动到banner消失的动画完成后切换到post-banner
-    $banner[0].addEventListener('transitionend', function (eve) {
-        if (eve.target == $banner[0]) {
-            if (!isPostTitleShow) {
-                $toggleBanner.removeClass('toggle-banner-show-site');
-            }
-        }
-    });
-
     // 滚动式切换文章标题和站点标题    
     let previousHeight = 0;
+    let scrollDownLength = 0;
+    
     let tickingToggler = false;
-
     function togglePostAndSiteBanner(that) {
         if (!tickingToggler) {
             requestAnimationFrame(function update() {
-                if (!$banner.hasClass('banner-show')) {
-                    tickingToggler = false;
-                    return;
-                }
+                // 向下滚动
                 if ($(that).scrollTop() > previousHeight) {
-                    $toggleBanner.removeClass('toggle-banner-show-site');
-                } else if ($(that).scrollTop() < previousHeight) {
-                    $toggleBanner.addClass('toggle-banner-show-site');
+                    // 滚动超过一定距离隐藏
+                    scrollDownLength += $(that).scrollTop() - previousHeight;
+                    if (scrollDownLength > 50) {
+                        $banner.removeClass('banner-show');
+                        isBannerShow = false;
+                    }
+                }
+                // 向上滚动
+                else if ($(that).scrollTop() < previousHeight) {
+                    if (!isBannerMustHide) {
+                        $banner.addClass('banner-show');
+                        isBannerShow = true;                    
+                    }
+                    scrollDownLength = 0;
                 }
                 previousHeight = $(that).scrollTop();
                 tickingToggler = false;
@@ -93,7 +97,8 @@ let toggleHeader = function () {
     });
 
     // 点击文章标题回页首
-    $postBanner.on('click', function () {
+    $postBanner.on('click', function (event) {
+        event.preventDefault();
         let topTimer = setInterval(function () {
             let currTop = $(document).scrollTop();
             window.scrollTo(0, Math.max(Math.floor(currTop * 0.8)));

@@ -5,14 +5,12 @@
     <% let _content = truncate(strip_html(_post.content), {length: truncateLength, omission: '...'}) %>
         <article class="index-post">
             <a class="content-show-full" href = "<%- url_for(_post.path) %>" >
-                <div class="abstract-post-title">
                     <h2 class="abstract-title">
                         <% if(_post.top) { %>
                         <span class="stick-top iconfont-archer">&#xe63d;</span>
                         <% } %>
                         <span><%= _post.title || '[Untitled Post]' %></span>
                     </h2>
-                </div>
                 <div class="abstract-content">
                     <%- _content %>
                 </div>

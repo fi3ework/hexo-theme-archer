@@ -159,13 +159,13 @@
             }
         }
     }
-    @for $i from 1 through 4 {
+    @for $i from 2 through 4 {
         h#{$i} {
             &::before {
                 content: "#";
                 margin-right: 2px;
                 color: $feature-color;
-                font-size: 1.1em;
+                font: 1em $base-font-family;
                 font-weight: bold;
             }
         }
@@ -241,30 +241,30 @@
 }
 
 // toc
-.toc {
-    position: absolute;
-    top: 600px;
-    right: 50px;
-    z-index: 9999;
-    ol {
-        padding-left: 1rem;
-    }
-    a {
-        color: gray;
-    }
-    a:hover {
-        color: darkcyan;
-    }
-    transform: translate3d(0, 0, 0);
-    transition: all 0.2s ease-in-out .0s;
-}
+// .toc {
+//     position: absolute;
+//     top: 600px;
+//     right: 50px;
+//     z-index: 9999;
+//     ol {
+//         padding-left: 1rem;
+//     }
+//     a {
+//         color: gray;
+//     }
+//     a:hover {
+//         color: darkcyan;
+//     }
+//     transform: translate3d(0, 0, 0);
+//     transition: all 0.2s ease-in-out .0s;
+// }
 
-.toc-fixed {
-    top: initial;
-    position: fixed;
-    bottom: 380px;
-}
+// .toc-fixed {
+//     top: initial;
+//     position: fixed;
+//     bottom: 380px;
+// }
 
-.toc-slide {
-    transform: translate3d(150px, 0, 0);
-}
+// .toc-slide {
+//     transform: translate3d(150px, 0, 0);
+// }

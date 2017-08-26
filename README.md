@@ -5,11 +5,16 @@ hexo-theme-archer
 
 ## 文档
 
-- [Document](./docs/README-en.md)
+- [Document in English](./docs/README-en.md)
+
+## 开发
+
+- [二次开发文档](./docs/develop-guide.md)
 
 ##  更新
 
 - 2017.08.17 - 『增加了置顶显示，开启置顶的方法[参照此文章](http://xxxsss.me/2017/04/22/hexo-pagination/)』
+- 2017.08.26 - 『添加了二次开发文档，文章页header在下滑时隐藏』
 
 ## 说明
 
@@ -47,13 +52,13 @@ description: "May the Force be with you :&#41;"
 
 ### sidebar启用
 
-1. 在***Hexo目录***下执行以下命令（同安装说明中的插件，若已安装可跳过此步骤）
+1. 在_**Hexo目录**_下执行以下命令（同安装说明中的插件，若已安装可跳过此步骤）
 
 ```shell
 npm install hexo-generator-json-content --save
 ```
 
-2. 然后需在***Hexo配置文件***中添加以下字段**（不是archer的主题配置文件）**
+2. 然后需在_**Hexo配置文件**_中添加以下字段**（不是archer的主题配置文件）**
 
 ```yaml
 jsonContent:

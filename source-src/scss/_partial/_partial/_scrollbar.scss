@@ -4,6 +4,7 @@ html,
 .sidebar-tag-list,
 .highlight {
     &::-webkit-scrollbar {
+        background-color: rgba(0, 0, 0, .5);
         width: 5px;
     }
     &::-webkit-scrollbar-corner {

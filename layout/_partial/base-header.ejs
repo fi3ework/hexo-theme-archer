@@ -7,14 +7,12 @@
     <!-- post页的toggle banner  -->
     <% if (is_post()) { %>
     <div class="banner">
-        <div class="toggle-banner">
             <div class="blog-title">
                 <a href="<%- url_for() %>" ><%= theme.main_title || config.title%></a>
             </div>
-            <div class="post-banner">
-                <span class="post-name"><%- page.title %></span>
+            <div class="post-title">
+                <a href="#" class="post-name"><%- page.title %></a>
             </div>
-        </div>
     </div>
     <% } %>
     <a class="home-link" href=<%- config.root %>><%- theme.main_title || config.title %></a>

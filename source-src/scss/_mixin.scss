@@ -1,5 +1,5 @@
 // ========== hover ========== //
-@mixin hover-line($height: 2px, $top: 104%, $color: $feature-color) {
+@mixin hover-line($height: 2px, $top: 103%, $color: $feature-color) {
     &::after {
         content: '';
         position: absolute;

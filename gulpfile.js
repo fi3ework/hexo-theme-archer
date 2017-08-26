@@ -2,14 +2,14 @@ const gulp = require('gulp'),
     babel = require('gulp-babel'),
     webpack = require('gulp-webpack'),
     uglify = require('gulp-uglify'),
-    cleanCSS = require('gulp-clean-css'),
     sass = require('gulp-sass'),
-    del = require('del');
+    del = require('del'),
+    browserSync = require('browser-sync').create();
 
-/* ========== develop ========== */    
+/* ========== develop ========== */
 // babel
 gulp.task('babel-js', function () {
-    return gulp.src('./source-src/**/*.js')
+    return gulp.src('./source-src/js/**/*.js')
         .pipe(babel({
             presets: ['es2015']
         }))
@@ -30,7 +30,37 @@ gulp.task('webpack', ['babel-js'], function () {
         .pipe(gulp.dest('./source/scripts/'));
 });
 
-// del
+// sass
+gulp.task('sass', function () {
+    return gulp.src('./source-src/scss/style.scss')
+        .pipe(sass({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        .pipe(gulp.dest('./source/css/'));
+});
+
+// browser-sync
+gulp.task('reload-js', ['webpack'], function (done) {
+    browserSync.reload();
+    done();
+});
+gulp.task('reload-css', ['sass'], function (done) {
+    browserSync.reload();
+    done();
+});
+
+gulp.task('dev', ['webpack', 'sass'], function () {
+    browserSync.init({
+        proxy: 'localhost:4000'
+    });
+    gulp.watch(['./source-src/js/**/*.js'], ['reload-js']);
+    gulp.watch(['./source-src/scss/**/*.scss'], ['reload-css']);
+});
+
+
+/* ========== bulid ========== */
+
+// delete redundant js files 
 gulp.task('del-js', ['webpack'], function (cb) {
     return del([
         './source/scripts/**/*',
@@ -39,36 +69,9 @@ gulp.task('del-js', ['webpack'], function (cb) {
 });
 
 // uglify
-gulp.task('uglify-js', ['del-js'], function () {
+gulp.task('uglify-js', ['webpack'], function () {
     return gulp.src('./source/scripts/main.js').pipe(uglify())
         .pipe(gulp.dest('./source/scripts/'));
 });
 
-// watch
-gulp.task('watch', function () {
-    gulp.watch(['./js/**/*.js'], ['uglify']);
-});
-
-gulp.task('default', ['uglify-js', 'watch']);
-
-
-/* ========== bulid ========== */
-// sass
-gulp.task('sass', function () {
-    return gulp.src('./source/css/style.scss')
-        .pipe(sass({
-            outputStyle: 'compressed'
-        }).on('error', sass.logError))
-        .pipe(gulp.dest('./source/css/'));
-});
-
-// // clean css
-// gulp.task('minify-css',['sass'], function () {
-//     return gulp.src('../../public/css/style.css')
-//         .pipe(cleanCSS({
-//             compatibility: '*'
-//         }))
-//         .pipe(gulp.dest('../../public/css/'));
-// });
-
-gulp.task('build', ['sass', 'uglify-js']);
+gulp.task('build', ['sass', 'del-js', 'uglify-js']);
