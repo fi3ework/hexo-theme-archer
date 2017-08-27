@@ -13,6 +13,14 @@
 
 如果需要修改页面结构，请修改`layout`中的ejs模板文件；如果需要修改样式，请修改`source-src\scss`中的scss文件；如果需要修改脚本，请修改`source-src\js`中的js文件。对scss和js的修改需要编译才能生成到`source`中，请参照下面的开发步骤。
 
+**提示：**如果`hexo s`或`hexo g`很慢，在**Hexo配置文件**中加入
+
+```yml
+ignore: ['**/themes/**/node_modules/**', '**/themes/**/node_modules', '**/themes/**/.git', '**/themes/**/.git/**']
+```
+
+字段手动忽略modules和.git文件。
+
 ## 开发步骤
 
 1. 安装依赖：在archer目录下执行`npm install`安装所需依赖（速度过慢的话请使用淘宝镜像）。

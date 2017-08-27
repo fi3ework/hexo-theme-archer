@@ -8,96 +8,96 @@ let toggleHeader = function () {
     let $banner = $('.banner:first'),
         $postBanner = $banner.find('.post-title a'),
         $bgEle = $('.site-intro:first'),
-        // $toc = $('.toc:first'),
         $homeLink = $('.home-link:first'),
-        bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight(),
-        isBannerShow = 0,
-        isBannerMustHide = 0;
-
-    // 滚动超过header时显示标题栏
-    let tickingBanner = false;
-    function showBanner() {
-        if (!tickingBanner) {
-            requestAnimationFrame(
-                function update() {
-                    let scrollTop = $(document).scrollTop();
-                    // 滚动超过intro
-                    if (scrollTop > bgTitleHeight) {
-                        if (!isBannerShow) {
-                            $homeLink.addClass('home-link-hide');
-                            if (isPostPage) {
-                                isBannerMustHide = 0;                                
-                                $banner.addClass('banner-show');
-                                // $toc.addClass('toc-fixed');
-                            }
-                            isBannerShow = 1;
-                        }
-                    } else {
-                        // 滚动没超过intro
-                        if (isBannerShow) {
-                            $homeLink.removeClass('home-link-hide');
-                            if (isPostPage) {
-                                isBannerMustHide = 1;
-                                $banner.removeClass('banner-show');
-                                // $toc.removeClass('toc-fixed');
-                            }
-                            isBannerShow = 0;
-                        }
-                    }
-                    tickingBanner = false;
-                }
-            );
-            tickingBanner = true;
-        }
-    }
-
-
-    $(document).on('scroll', function () {
-        showBanner();
-    });
-
-    // 如果不是post-page 以下忽略
-    if (!isPostPage) {
-        return;
-    }
+        $backTop = $('.back-top:first'),
+        $sidebarMenu = $('.header-sidebar-menu:first'),
+        bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight();
+    // $toc = $('.toc:first'),
 
     // 滚动式切换文章标题和站点标题    
-    let previousHeight = 0;
-    let scrollDownLength = 0;
-    
-    let tickingToggler = false;
-    function togglePostAndSiteBanner(that) {
-        if (!tickingToggler) {
+    let previousHeight = 0,
+        continueScroll = 0;
+
+    function isScrollingUpOrDown(currTop) {
+        continueScroll += currTop - previousHeight;
+        if (continueScroll > 50) {
+            // 向下滑动
+            continueScroll = 0;
+            return 1;
+        } else if (continueScroll < -50) {
+            //向上滑动
+            continueScroll = 0;
+            return -1;
+        } else {
+            return 0;
+        }
+    }
+
+    let crossingState = -1;
+    let isHigherThanIntro = false;
+
+    function isCrossingIntro(currTop) {
+        // 向下滑动超过intro
+        if (currTop > bgTitleHeight) {
+            if (crossingState !== 1) {
+                crossingState = 1;
+                isHigherThanIntro = false;
+                return 1;
+            }
+        }
+        // 向上滑动超过intro
+        else {
+            if (crossingState !== -1) {
+                crossingState = -1;
+                isHigherThanIntro = true;
+                return -1;
+            }
+        }
+        return 0;
+    }
+
+    let ticking = false;
+    function scrollHandler(that) {
+        if (!ticking) {
             requestAnimationFrame(function update() {
-                // 向下滚动
-                if ($(that).scrollTop() > previousHeight) {
-                    // 滚动超过一定距离隐藏
-                    scrollDownLength += $(that).scrollTop() - previousHeight;
-                    if (scrollDownLength > 50) {
-                        $banner.removeClass('banner-show');
-                        isBannerShow = false;
-                    }
+                let scrollTop = $(document).scrollTop();
+                let crossingState = isCrossingIntro(scrollTop);
+                // intro边界切换
+                if (crossingState == 1) {
+                    $homeLink.addClass('home-link-hide');
+                    $backTop.addClass('back-top-show');
+                    $sidebarMenu.addClass('header-sidebar-menu-black');
+                } else if (crossingState == -1) {
+                    $homeLink.removeClass('home-link-hide');
+                    $banner.removeClass('banner-show');
+                    $backTop.removeClass('back-top-show');
+                    $sidebarMenu.removeClass('header-sidebar-menu-black');
                 }
-                // 向上滚动
-                else if ($(that).scrollTop() < previousHeight) {
-                    if (!isBannerMustHide) {
+                // 上下滑动切换
+                // 如果不是post-page 以下忽略
+                if (isPostPage) {
+                    let upDownState = isScrollingUpOrDown(scrollTop);
+                    if (upDownState == 1) {
+                        $banner.removeClass('banner-show');
+                    } else if (upDownState == -1 && !isHigherThanIntro) {
                         $banner.addClass('banner-show');
-                        isBannerShow = true;                    
                     }
-                    scrollDownLength = 0;
                 }
                 previousHeight = $(that).scrollTop();
-                tickingToggler = false;
+                ticking = false;
             });
+            ticking = true;
         }
-        tickingToggler = true;
     }
+
+
     $(document).on('scroll', function () {
-        togglePostAndSiteBanner(this);
+        scrollHandler(this);
     });
 
-    // 点击文章标题回页首
-    $postBanner.on('click', function (event) {
+
+    // 返回顶部
+    function backTop(event) {
         event.preventDefault();
         let topTimer = setInterval(function () {
             let currTop = $(document).scrollTop();
@@ -106,6 +106,9 @@ let toggleHeader = function () {
                 clearInterval(topTimer);
             }
         }, 20);
+    }
+    [$postBanner, $backTop].forEach(function (ele) {
+        ele.on('click', backTop);
     });
 };
 
