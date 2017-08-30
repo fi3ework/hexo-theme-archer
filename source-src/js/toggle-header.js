@@ -34,7 +34,7 @@ let toggleHeader = function () {
     }
 
     let crossingState = -1;
-    let isHigherThanIntro = false;
+    let isHigherThanIntro = true;
 
     function isCrossingIntro(currTop) {
         // 向下滑动超过intro
@@ -73,7 +73,7 @@ let toggleHeader = function () {
                     $backTop.removeClass('back-top-show');
                     $sidebarMenu.removeClass('header-sidebar-menu-black');
                 }
-                // 上下滑动切换
+                // 上下滑动一定距离显示/隐藏header
                 // 如果不是post-page 以下忽略
                 if (isPostPage) {
                     let upDownState = isScrollingUpOrDown(scrollTop);

@@ -9,6 +9,7 @@
 .post-body {
     .site-intro-meta {
         width: 50%;
+        min-width: 42.8125rem;
         margin: 0 auto;
         align-items: flex-start;
     }
@@ -44,8 +45,8 @@
 }
 
 .post-intro-calander {
-    margin-right: 0.1rem;
-    transform: translate(0, -5%);
+    font-size: 1rem;
+    margin-right: 0.3rem;
 }
 
 // // share
@@ -61,7 +62,6 @@
 //         font-size: 1.2rem;
 //     }
 // }
-
 // .share-box {
 //     position: absolute;
 //     visibility: hidden;
@@ -91,13 +91,11 @@
 //         background-color: #ededed;
 //     }
 // }
-
 // .share-box-show {
 //     opacity: 1;
 //     visibility: visible;
 //     transform: scale(1);
 // }
-
 // ========== pager ========== //
 .post-pager {
     overflow: hidden;
@@ -145,10 +143,12 @@
     padding: 1px 0;
     font: 1rem/1.625rem $base-font-family;
     color: $post-content-color;
-    ul, ul li {
+    ul,
+    ul li {
         list-style-type: initial;
     }
-    ol, ol li{
+    ol,
+    ol li {
         list-style-type: decimal-leading-zero;
     }
     @for $i from 1 through 6 {
@@ -202,7 +202,7 @@
             margin: 0;
         }
     }
-    > table {
+    >table {
         width: 100%;
         border: 1px solid #ddd;
         margin: 1rem 0;
@@ -230,6 +230,7 @@
     }
     a {
         color: $feature-color;
+        padding: 0 0 0 2px;
         word-break: break-all;
         &:hover {
             border-bottom: 1px solid $feature-color;
@@ -258,13 +259,11 @@
 //     transform: translate3d(0, 0, 0);
 //     transition: all 0.2s ease-in-out .0s;
 // }
-
 // .toc-fixed {
 //     top: initial;
 //     position: fixed;
 //     bottom: 380px;
 // }
-
 // .toc-slide {
 //     transform: translate3d(150px, 0, 0);
 // }
