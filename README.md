@@ -19,6 +19,7 @@ hexo-theme-archer
 
 - 2017.08.17 - 『增加了置顶显示，开启置顶的方法[参照此文章](http://xxxsss.me/2017/04/22/hexo-pagination/)』
 - 2017.08.26 - 『添加了二次开发文档，文章页header在下滑时隐藏』
+- 2017.09.10 - 『增加了about页面』
 
 ## 说明
 
@@ -52,6 +53,26 @@ layout: 404
 title: "[404]"
 description: "May the Force be with you :&#41;"
 ```
+
+### about页启用
+
+在**hexo**目录下执行
+
+```shell
+hexo new page "about"
+```
+
+在`source/about/index.md`中添加字段`layout: about`，`title`字段修改为about页的标题，正文为about页的内容。
+
+在_**Hexo配置文件**_中添加以下字段，`enable`字段控制是否开启about，`image`字段内容为about页的banner图像地址，不填写则默认使用首页banner图像。
+
+```yaml
+about:
+  enable: true
+  image: '/intro/about-page.jpg'
+```
+
+about页的入口在首页的侧边栏中。
 
 ### sidebar启用
 
@@ -111,6 +132,10 @@ friends:
   friendA:
   friendB:
   friendC:
+# about页面
+about:
+  enable: true
+  image:
 
 # ========== 站点 ========== #
 # 网站的title，每篇文章后面也会加上此字段利于SEO

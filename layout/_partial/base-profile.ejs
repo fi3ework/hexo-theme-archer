@@ -21,4 +21,11 @@
             <% } %>
         </div>
     <% } %>
+    <% if(theme.about.enable) { %>
+        <div class="about-me">
+            <div>
+                <a href = "<%- url_for("/about") %>" >ABOUT ME</a>
+            </div>
+        </div>
+    <% } %>
 </div>

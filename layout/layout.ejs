@@ -5,8 +5,10 @@
         <body class="home-body">
     <% } else if(is_post()){ %>
         <body class="post-body">
-    <% } else { %>
+    <% } else if(page.layout === "404") { %>
         <body class="four-zero-four-body">
+    <% } else if(page.layout === "about") { %>
+        <body class="about-body">
     <% } %>
     <%- partial('_partial/base-header') %>
     <div class="wrapper">

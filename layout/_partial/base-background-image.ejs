@@ -7,9 +7,11 @@
     <% } else if (is_post()) { %>
     <% bgURL = page.header_image || theme.post_header_image || theme.site_header_image; %>
     <!-- 404页  -->
-    <% } else { %>
+    <% } else if (page.layout === "404") { %>
     <% bgURL = theme._404_image || theme.site_header_image; %>
-    <% } %>
+    <% } else if (page.layout === "about") { %>
+    <% bgURL = theme.about.image || theme.site_header_image; %>
+    <% } %>        
     <div class="site-intro-img" style="background-image: url(<%- url_for(bgURL) %>)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
@@ -22,8 +24,10 @@
             <% } else if(is_post()) { %>
             <%- truncate(strip_html(page.title), {length: 40, omission: '...'}) || '[Untitled Post]' %>
             <!-- 404 -->
-            <% } else {%>
+            <% } else if(page.layout === "404") { %>
             <%- page.title || '[404]'%>
+            <% } else if(page.layout === "about" ) { %>
+            <%- page.title || 'About' %>
             <% } %>
         </h1>
         <!-- 副标题 -->
@@ -40,7 +44,7 @@
             <% } %>
         </p>
         <!-- 404 -->
-        <% } else { %>
+        <% } else if (page.layout === "404") { %>
             <p class="intro-subtitle"> <%- page.description %></p>
         <% } %>
         <!-- 文章页meta -->
@@ -55,7 +59,6 @@
                 <span class="post-intro-calander iconfont-archer">&#xe676;</span>
                 <span class="post-intro-time"><%- date(page.date, "YYYY/MM/DD") %></span>
             </div>
-            <!-- <%- partial('base-share') %> -->
         <% } %>
     </div>
 </div>

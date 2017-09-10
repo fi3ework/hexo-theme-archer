@@ -60,3 +60,16 @@
         margin-right: 0.6rem;
     }
 }
+
+.about-me{
+    padding: 0.5rem 0;
+    font: 1rem $profile-friend-font-family;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: left;
+    div a{
+        font-size: 1.2rem;
+        text-align: left;
+        color: gray;
+        font-weight: bolder;
+    }
+}

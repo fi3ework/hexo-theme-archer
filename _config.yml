@@ -21,6 +21,9 @@ friends:
   friendA: //www.baidu.com
   friendB: //www.google.com
   # friendC :
+about:
+  enable: true
+  image: '/intro/about-page.jpg'
 
 # ========== Site ========== #
 # title of the site
