@@ -128,20 +128,18 @@
         color: #000;
     }
     .previous {
-        float: left;
+        float: right;
     }
     .next {
-        float: right;
+        float: left;
     }
 }
 
 // ========== content ========== //
 .article-entry {
     position: relative;
-    font-size: 1rem;
-    line-height: 1.625rem;
     padding: 1px 0;
-    font: 1rem/1.625rem $base-font-family;
+    font: 1rem/1.625 $base-font-family;
     color: $post-content-color;
     ul,
     ul li {

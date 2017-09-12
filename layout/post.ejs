@@ -5,17 +5,17 @@
     <!-- 前后页  -->
     <ul class="post-pager">
         <% if (page.prev){ %>
-            <li class="previous">
+            <li class="next">
                 <a href= "<%- url_for(page.prev.path) %>" title= <%- page.prev.title %> >
-                    <span>Previous Post</span>
+                    <span>Next Post</span>
                     <span><%- page.prev.title || '[Untitled Post]' %></span>
                 </a>
             </li>
         <% } %>
         <% if (page.next){ %>
-            <li class="next">
+            <li class="previous">
                 <a href= "<%- url_for(page.next.path) %>" title= <%- page.next.title %> >
-                    <span>Next Post</span>
+                    <span>Previous Post</span>
                     <span><%- page.next.title || '[Untitled Post]' %></span>
                 </a>
             </li>
