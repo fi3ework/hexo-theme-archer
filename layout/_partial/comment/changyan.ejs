@@ -1,0 +1,11 @@
+<!--PC版-->
+<% if(theme.comment && theme.comment.changyan_appid && theme.comment.changyan_conf) { %>
+    <div id="SOHUCS" sid= <%- url_for(page.path) %>></div>
+    <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+    <script type="text/javascript">
+        window.changyan.api.config({
+            appid: "<%- theme.comment.changyan_appid %>",
+            conf: "<%- theme.comment.changyan_conf %>"
+        });
+    </script>
+<% } %>

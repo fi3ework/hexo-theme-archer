@@ -13,6 +13,7 @@
 // ========== abstract content ========== //
 .abstract-content {
     color: #aaa;
+    font: 1rem/1.5rem $base-font-family;
     white-space: normal;
     word-break: break-all;
     &:hover {

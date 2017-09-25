@@ -4,7 +4,7 @@ import { initMobile } from './mobile';
 import { sidebarInit } from './sidebar';
 import { initTag } from './tag';
 
-console.info('hexo-theme-archer: v20170912');
+console.info('hexo-theme-archer: v20170925');
 init();
 toggleHeader();
 sidebarInit();

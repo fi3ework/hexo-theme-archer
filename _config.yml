@@ -40,10 +40,21 @@ post_header_image: 'http://oumn0o088.bkt.clouddn.com/post-bg.jpg'
 _404_image: 'http://oumn0o088.bkt.clouddn.com/404.jpg'
 
 # ========== Comment ========== #
-# 目前只支持一键添加livere评论（因为懒），其他评论插件可自行添加
+# Fill in the field to enable the corresponding comment plugin
+# If you want to add other comment plugin, edit in "custom.ejs"
 comment:
-  # change the value of livere to your livere data-uid
-  livere:
+  # livere  site: https://livere.com/
+  livere_uid:
+  # disqus  site: https://disqus.com/
+  disqus_shortname:
+  # changyan  site: http://changyan.kuaizhan.com/
+  changyan_appid:
+  changyan_conf:
+  # gitment  site: https://github.com/imsun/gitment
+  gitment_owner:
+  gitment_repo:
+  gitment_client_id:
+  gitment_client_secret:
 
 # ========== Analytics ========== #
 # Busuanzi pv Analytics

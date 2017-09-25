@@ -3,7 +3,7 @@ hexo-theme-archer
 
 ![preview](./docs/snap.png)
 
-## 在线预览( Online preview)
+## 在线预览( Online Demo)
 
 在线预览主题：[Demo](http://firework.studio)。
 
@@ -19,7 +19,8 @@ hexo-theme-archer
 
 - 2017.08.17 - 『增加了置顶显示，开启置顶的方法[参照此文章](http://xxxsss.me/2017/04/22/hexo-pagination/)』
 - 2017.08.26 - 『添加了二次开发文档，文章页header在下滑时隐藏』
-- 2017.09.10 - 『增加了about页面』
+- 2017.09.10 - 『增加了About页面』
+- 2017.09.25 - 『增加了直接添加disqus，gitment，畅言的功能』
 
 ## 说明
 
@@ -64,7 +65,7 @@ hexo new page "about"
 
 在`source/about/index.md`中添加字段`layout: about`，`title`字段修改为about页的标题，正文为about页的内容。
 
-在_**Hexo配置文件**_中添加以下字段，`enable`字段控制是否开启about，`image`字段内容为about页的banner图像地址，不填写则默认使用首页banner图像。
+在**Hexo配置文件**中添加以下字段，`enable`字段控制是否开启about，`image`字段内容为about页的banner图像地址，不填写则默认使用首页banner图像。
 
 ```yaml
 about:
@@ -76,13 +77,13 @@ about页的入口在首页的侧边栏中。
 
 ### sidebar启用
 
-1. 在_**Hexo目录**_下执行以下命令（同安装说明中的插件，若已安装可跳过此步骤）
+1. 在**Hexo目录**下执行以下命令（同安装说明中的插件，若已安装可跳过此步骤）
 
 ```shell
 npm install hexo-generator-json-content --save
 ```
 
-2. 然后需在_**Hexo配置文件**_中添加以下字段**（不是archer的主题配置文件）**
+2. 然后需在**Hexo配置文件**中添加以下字段**（不是archer的主题配置文件）**
 
 ```yaml
 jsonContent:
@@ -153,10 +154,21 @@ _404_image:
 
 
 # ========== 评论插件 ========== #
-# 目前只支持一键添加livere评论（因为懒），其他评论插件可自行添加在post.ejs模板中的</main>标签前。
+# 目前支持直接添加LiveRe，Disqus，Gitment和畅言，填写插件对应的字段即可启用。
+# 如果想添加其他评论插件，在custom.ejs中添加即可。
 comment:
-  # 将你的livere的uid填入以下字段
-  livere:
+  # livere 官网：https://livere.com/
+  livere_uid:
+  # disqus 官网：https://disqus.com/
+  disqus_shortname:
+  # 畅言 官网：http://changyan.kuaizhan.com/
+  changyan_appid:
+  changyan_conf:
+  # gitment 官网：https://github.com/imsun/gitment
+  gitment_owner:
+  gitment_repo:
+  gitment_client_id:
+  gitment_client_secret:
 
 # ========== 统计 ========== #
 # 是否开启不蒜子统计
