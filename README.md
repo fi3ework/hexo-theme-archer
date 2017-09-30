@@ -139,6 +139,7 @@ social:
   stack-overflow:
   linkedin:
   blog:
+  others:
   rss: /atom.xml
 # 友链
 friends:
