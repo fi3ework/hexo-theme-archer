@@ -1,6 +1,13 @@
 // ========== global variables ========== //
-$body-background-color: #fdfdfd;
+$body-background-color: #fff;
 $feature-color: #f75357;
+$feature-color: hexo-theme-config('feature-color');
+// 后续版本更新
+// @if $feature-color=='hexo-theme-config("feature-color")' {
+//     // default feature color
+//     // 如果没有安装hexo-renderer-scss，则无法修改$feature-color，使用默认色
+$feature-color: #f75357;
+// }
 $feature-font-family: 'Oswald-Regular',
 'Microsoft Yahei',
 'Source Sans Pro',
@@ -11,7 +18,6 @@ $base-font-family: 'Microsoft Yahei',
 Arial,
 sans-serif !default;
 $base-font-size: 16px !default;
-
 // ========== common ========== //
 $container-margin-top: 3rem;
 $selection-color: $feature-color;
@@ -19,8 +25,8 @@ $selection-color: $feature-color;
 @font-face {
     font-family: 'iconfont-archer';
     /* project id 327081 */
-    src: url('//at.alicdn.com/t/font_327081_fsxrcj5pvdq85mi.eot');
-    src: url('//at.alicdn.com/t/font_327081_fsxrcj5pvdq85mi.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_327081_fsxrcj5pvdq85mi.woff') format('woff'), url('//at.alicdn.com/t/font_327081_fsxrcj5pvdq85mi.ttf') format('truetype'), url('//at.alicdn.com/t/font_327081_fsxrcj5pvdq85mi.svg#iconfont') format('svg');
+    src: url('//at.alicdn.com/t/font_327081_xwzg0gxf1lq2rzfr.eot');
+    src: url('//at.alicdn.com/t/font_327081_xwzg0gxf1lq2rzfr.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_327081_xwzg0gxf1lq2rzfr.woff') format('woff'), url('//at.alicdn.com/t/font_327081_xwzg0gxf1lq2rzfr.ttf') format('truetype'), url('//at.alicdn.com/t/font_327081_xwzg0gxf1lq2rzfr.svg#iconfont') format('svg');
 }
 
 .iconfont-archer {

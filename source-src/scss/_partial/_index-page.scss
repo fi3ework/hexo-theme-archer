@@ -16,8 +16,9 @@
     font: 1rem/1.5rem $base-font-family;
     white-space: normal;
     word-break: break-all;
+    transition: color 0.1s ease-out;
     &:hover {
-        text-decoration: underline;
+        color: #888;
     }
 }
 
@@ -74,11 +75,10 @@
 // date
 .abstract-date {
     float: left;
-    text-align: center;
-    transition: all 0.2s ease-out;
-    margin-right: 0.2rem;
-    display: inline-block;
     vertical-align: bottom;
+    text-align: center;
+    margin-right: 0.2rem;
+    transition: all 0.2s ease-out;
 }
 
 .abstract-calander::before {

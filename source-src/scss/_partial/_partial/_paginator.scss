@@ -5,6 +5,7 @@
     justify-content: center;
     &>* {
         font: 1.4rem/2rem $feature-font-family;
+        color: #252525;
         vertical-align: middle;
         height: 2rem;
         margin-right: 0.5rem;
@@ -15,8 +16,8 @@
     a {
         color: #ccc;
         &:hover {
-            background-color: #000;
-            border-color: black;
+            background-color: #252525;
+            border-color: #252525;
             color: #fff;
         }
     }

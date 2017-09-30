@@ -4,12 +4,13 @@
     vertical-align: top;
     flex-shrink: 0;
     position: relative;
+    top: 2px;
     margin: 0 0 0 0;
     width: $profile-width;
 
     img {
         display: block;
-        border-radius: 0.5rem;
+        border-radius: 0.4rem;
         margin: 0 auto;
         width: 100%;
         box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.20);
@@ -25,14 +26,16 @@
 }
 
 .profile-name {
-    font: 1.5rem $profile-name-font-family;
+    font: 2rem/3.5rem $profile-name-font-family;
+    color: #333;
     text-align: center;
 }
 
 .profile-signature {
     color: gray;
-    font: 1rem/1rem $profile-signature-font-family;
+    font: 1rem $profile-signature-font-family;
     text-align: center;
+    margin: -0.5rem 0 0 0;
 }
 
 .profile-social {

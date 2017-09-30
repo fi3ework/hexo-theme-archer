@@ -16,6 +16,7 @@ social:
   # instagram:
   # stack-overflow:
   # linkedin:
+  rss: /atom.xml
 # friends
 friends:
   friendA: //www.baidu.com

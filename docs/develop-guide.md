@@ -34,7 +34,7 @@ ignore: ['**/themes/**/node_modules/**', '**/themes/**/node_modules', '**/themes
 1. 在Hexo目录下运行`hexo s`启动本地服务器。
 2. 在archer目录下执行`gulp dev`进入本地开发模式。
 
-该模式会监视`source-src`中的文件修改，实时进行编译，然后通过`browser-sync`在`localhost:3000`（默认）下自动刷新页面（非`source-src`中的文件修改并不会自动刷新页面，需手动刷新）。
+该模式会监视`source-src`中和`layout`下的文件修改，实时进行编译，然后通过`browser-sync`在`localhost:3000`（默认）下自动刷新页面（其他位置的文件修改并不会自动刷新页面，需手动刷新）。
 
 ### 编译发布
 

@@ -49,12 +49,18 @@ gulp.task('reload-css', ['sass'], function (done) {
     done();
 });
 
+gulp.task('reload-layout', function (done) {
+    browserSync.reload();
+    done();
+});
+
 gulp.task('dev', ['webpack', 'sass'], function () {
     browserSync.init({
         proxy: 'localhost:4000'
     });
     gulp.watch(['./source-src/js/**/*.js'], ['reload-js']);
     gulp.watch(['./source-src/scss/**/*.scss'], ['reload-css']);
+    gulp.watch(['./layout/**/*.ejs'], ['reload-layout']);
 });
 
 

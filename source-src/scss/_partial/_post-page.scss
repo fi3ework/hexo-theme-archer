@@ -14,7 +14,7 @@
         align-items: flex-start;
     }
     .intro-title {
-        font: 4rem/6rem $feature-font-family;
+        font: 4rem/5.3rem $feature-font-family;
         color: #fff;
         margin: 0;
     }
@@ -37,7 +37,7 @@
 
 .post-intro-meta {
     margin-top: 0.2rem;
-    font: 1.2rem $feature-font-family;
+    font: 1.1rem $feature-font-family;
     color: rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
@@ -61,8 +61,8 @@
         border: 1px solid #ddd;
     }
     li:hover {
-        border-color: #000;
-        background-color: #000;
+        border-color: #252525;
+        background-color: #252525;
         span:last-of-type {
             color: $feature-color;
         }
@@ -77,7 +77,7 @@
     }
     span:first-of-type {
         font: bold 1.4rem $feature-font-family;
-        color: #000;
+        color: #252525;
     }
     .previous {
         float: right;

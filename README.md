@@ -19,8 +19,9 @@ hexo-theme-archer
 
 - 2017.08.17 - 『增加了置顶显示，开启置顶的方法[参照此文章](http://xxxsss.me/2017/04/22/hexo-pagination/)』
 - 2017.08.26 - 『添加了二次开发文档，文章页header在下滑时隐藏』
-- 2017.09.10 - 『增加了About页面』
-- 2017.09.25 - 『增加了直接添加disqus，gitment，畅言的功能』
+- 2017.09.10 - 『增加了about页面』
+- 2017.09.25 - 『可以直接添加disqus，gitment，畅言了』
+- 2017.09.30 - 『增加了rss，修复了placeholder的bug，更流畅』
 
 ## 说明
 
@@ -37,7 +38,7 @@ npm install hexo-generator-json-content --save
 git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer
 ```
 
-## 启用
+## 启用配置
 
 修改**Hexo目录**下的 `_config.yml` 的 `theme` 字段为 `archer`：
 
@@ -45,37 +46,7 @@ git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer
 theme: archer
 ```
 
-### 404页启用
-
-在**Hexo资源目录**下加入`/source/404.md`文件，`layout`字段须为`404`，`title`字段为自定义标题，`description`字段为自定义描述。
-
-``` yaml
-layout: 404
-title: "[404]"
-description: "May the Force be with you :&#41;"
-```
-
-### about页启用
-
-在**hexo**目录下执行
-
-```shell
-hexo new page "about"
-```
-
-在`source/about/index.md`中添加字段`layout: about`，`title`字段修改为about页的标题，正文为about页的内容。
-
-在**Hexo配置文件**中添加以下字段，`enable`字段控制是否开启about，`image`字段内容为about页的banner图像地址，不填写则默认使用首页banner图像。
-
-```yaml
-about:
-  enable: true
-  image: '/intro/about-page.jpg'
-```
-
-about页的入口在首页的侧边栏中。
-
-### sidebar启用
+### 启用sidebar
 
 1. 在**Hexo目录**下执行以下命令（同安装说明中的插件，若已安装可跳过此步骤）
 
@@ -83,7 +54,7 @@ about页的入口在首页的侧边栏中。
 npm install hexo-generator-json-content --save
 ```
 
-2. 然后需在**Hexo配置文件**中添加以下字段**（不是archer的主题配置文件）**
+2. 然后需在**Hexo配置文件**中添加以下字段（不是archer的主题配置文件）
 
 ```yaml
 jsonContent:
@@ -105,6 +76,46 @@ jsonContent:
     categories: false
     tags: true
 ```
+
+### 启用404页
+
+在**Hexo资源目录**下加入`/source/404.md`文件，`layout`字段须为`404`，`title`字段为自定义标题，`description`字段为自定义描述。
+
+``` yaml
+layout: 404
+title: "[404]"
+description: "May the Force be with you :&#41;"
+```
+
+### 启用about页
+
+在**hexo**目录下执行
+
+```shell
+hexo new page "about"
+```
+
+在`source/about/index.md`中添加字段`layout: about`，`title`字段修改为about页的标题，正文为about页的内容。
+
+在**Hexo配置文件**中添加以下字段，`enable`字段控制是否开启about，`image`字段内容为about页的banner图像地址，不填写则默认使用首页banner图像。
+
+```yaml
+about:
+  enable: true
+  image: '/intro/about-page.jpg'
+```
+
+about页的入口在首页的侧边栏中。
+
+### 启用rss
+
+在**hexo**目录下执行
+
+```shell
+npm install hexo-generator-feed --save
+```
+
+在`social`字段中添加`rss: /atom.xml`，侧边栏会出现rss。
 
 ## 配置
 
@@ -128,6 +139,7 @@ social:
   stack-overflow:
   linkedin:
   blog:
+  rss: /atom.xml
 # 友链
 friends:
   friendA:

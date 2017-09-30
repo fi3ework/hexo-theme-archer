@@ -23,10 +23,11 @@
             <%- theme.main_title || config.title%>
             <!-- 文章页  -->
             <% } else if(is_post()) { %>
-            <%- truncate(strip_html(page.title), {length: 40, omission: '...'}) || '[Untitled Post]' %>
+            <%- truncate(strip_html(page.title), {length: 80, omission: '...'}) || '[Untitled Post]' %>
             <!-- 404 -->
             <% } else if(page.layout === "404") { %>
             <%- page.title || '[404]'%>
+            <!-- about -->
             <% } else if(page.layout === "about" ) { %>
             <%- page.title || 'About' %>
             <% } %>

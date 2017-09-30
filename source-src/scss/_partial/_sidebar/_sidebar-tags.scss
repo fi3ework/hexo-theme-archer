@@ -36,6 +36,13 @@
     }
 }
 
+.sidebar-tag-name-focus {
+    border-color: $feature-color;
+    a {
+        color: $feature-color;
+    }
+}
+
 .sidebar-tag-list {
     flex-grow: 1;
     padding-right: 1rem;
@@ -46,10 +53,10 @@
     @extend .archive-post-item;
 }
 
-.tag-post-title{
+.tag-post-title {
     @extend .archive-post-title;
 }
 
-.tag-post-date{
+.tag-post-date {
     @extend .archive-post-date;
 }
