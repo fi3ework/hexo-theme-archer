@@ -11,14 +11,20 @@ let toggleHeader = function () {
         $homeLink = $('.home-link:first'),
         $backTop = $('.back-top:first'),
         $sidebarMenu = $('.header-sidebar-menu:first'),
-        bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight();
-    // $toc = $('.toc:first'),
+        bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight(),
+        $tocWrapper = $('.toc-wrapper:first'),
+        $tocCatalog = $tocWrapper.find('.toc-catalog');
+
+    // toc的收缩
+    $tocCatalog.on('click', function () {
+        $tocWrapper.find('.toc').toggleClass('toc-hide');
+    });
 
     // 滚动式切换文章标题和站点标题    
     let previousHeight = 0,
         continueScroll = 0;
 
-    function isScrollingUpOrDown(currTop) {
+    function isScrollingUpOrDown (currTop) {
         continueScroll += currTop - previousHeight;
         if (continueScroll > 50) {
             // 向下滑动
@@ -33,10 +39,10 @@ let toggleHeader = function () {
         }
     }
 
+    // 是否在向上或向下滚动
     let crossingState = -1;
     let isHigherThanIntro = true;
-
-    function isCrossingIntro(currTop) {
+    function isCrossingIntro (currTop) {
         // 向下滑动超过intro
         if (currTop > bgTitleHeight) {
             if (crossingState !== 1) {
@@ -44,9 +50,8 @@ let toggleHeader = function () {
                 isHigherThanIntro = false;
                 return 1;
             }
-        }
-        // 向上滑动超过intro
-        else {
+        } else {
+            // 向上滑动超过intro
             if (crossingState !== -1) {
                 crossingState = -1;
                 isHigherThanIntro = true;
@@ -56,18 +61,21 @@ let toggleHeader = function () {
         return 0;
     }
 
+    // 滚动回调
     let ticking = false;
-    function scrollHandler(that) {
+    function scrollHandler (that) {
         if (!ticking) {
-            requestAnimationFrame(function update() {
+            requestAnimationFrame(function update () {
                 let scrollTop = $(document).scrollTop();
                 let crossingState = isCrossingIntro(scrollTop);
                 // intro边界切换
                 if (crossingState == 1) {
+                    $tocWrapper.addClass('toc-fixed');
                     $homeLink.addClass('home-link-hide');
                     $backTop.addClass('back-top-show');
                     $sidebarMenu.addClass('header-sidebar-menu-black');
                 } else if (crossingState == -1) {
+                    $tocWrapper.removeClass('toc-fixed');
                     $homeLink.removeClass('home-link-hide');
                     $banner.removeClass('banner-show');
                     $backTop.removeClass('back-top-show');
@@ -95,9 +103,8 @@ let toggleHeader = function () {
         scrollHandler(this);
     });
 
-
     // 返回顶部
-    function backTop(event) {
+    function backTop (event) {
         event.preventDefault();
         let topTimer = setInterval(function () {
             let currTop = $(document).scrollTop();
@@ -111,8 +118,6 @@ let toggleHeader = function () {
         ele.on('click', backTop);
     });
 };
-
-
 
 export {
     toggleHeader

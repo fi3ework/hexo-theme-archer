@@ -5,7 +5,7 @@ let sidebarInit = function () {
         $sidebarContent = $sidebar.find('.sidebar-content:first'),
         $archiveLink = $sidebar.find('.sidebar-archive-link:first'),
         $tagsLink = $sidebar.find('.sidebar-tags-link:first'),
-        // $toc = $('.toc:first'),
+        $tocWrapper = $('.toc-wrapper:first'),
         $header = $('.header:first'),
         $sidebarHeader = $sidebar.find('.sidebar-header:first');
 
@@ -14,12 +14,12 @@ let sidebarInit = function () {
         showSidebar(eve);
     });
 
-    function showSidebar(eve) {
+    function showSidebar (eve) {
         $sidebar.addClass('sidebar-show');
         $wrapper.addClass('wrapper-show-sidebar');
         $header.addClass('header-slide');
+        $tocWrapper.addClass('toc-slide');
         eve.stopPropagation();
-        // $toc.addClass('toc-slide');
     }
 
     // 阻止在sidebar中单击收回sidebar
@@ -34,8 +34,8 @@ let sidebarInit = function () {
             $sidebar.removeClass('sidebar-show');
             $header.removeClass('header-slide');
             $wrapper.removeClass('wrapper-show-sidebar');
+            $tocWrapper.removeClass('toc-slide');
         }
-        // $toc.removeClass('toc-slide');
     });
 
     // 切换tags和archive
@@ -64,7 +64,7 @@ let sidebarInit = function () {
     });
     
 
-    function stopSidebarEdgeScroll(eve) {
+    function stopSidebarEdgeScroll (eve) {
         if (this.scrollHeight == this.clientHeight) {
             window.event.preventDefault();
         } else if (this.scrollTop <= 0) {
@@ -79,7 +79,7 @@ let sidebarInit = function () {
     }
 
     // 点击tag弹出slider
-    function popSidebar() {
+    function popSidebar () {
         // 弹出sidebar
         let event = document.createEvent('MouseEvents');
         event.initMouseEvent('click', false, true);
@@ -91,7 +91,7 @@ let sidebarInit = function () {
     // 显示tag对应的列表
     let sidebarTagsName = $('.sidebar-tags-name:first')[0];
 
-    function clickTag(tagName) {
+    function clickTag (tagName) {
         let event = document.createEvent('MouseEvents');
         event.initMouseEvent('click', false, true);
         $headerMenu[0].dispatchEvent(event);

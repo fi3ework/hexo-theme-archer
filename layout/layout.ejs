@@ -22,6 +22,15 @@
         </div>
         <%- partial('_partial/base-footer', {}, {cache: true}) %>
     </div>
+    <!-- toc -->
+    <% if(is_post() && theme.toc) { %>
+    <div class="toc-wrapper">
+        <div class="toc-catalog">
+            CATALOG
+        </div>
+        <%- toc(page.content, {class: 'toc', list_number: true}) %>
+    </div>
+    <% } %>
     <div class="back-top">&#xe639;</div>
     <%- partial('_partial/sidebar/base-sidebar', {}, {cache: true}) %>
     <%- partial('./js-info.ejs') %>

@@ -17,11 +17,12 @@ hexo-theme-archer
 
 ##  更新
 
-- 2017.08.17 - 『增加了置顶显示，开启置顶的方法[参照此文章](http://xxxsss.me/2017/04/22/hexo-pagination/)』
+- 2017.08.17 - 『添加了置顶显示，开启置顶的方法[参照此文章](http://xxxsss.me/2017/04/22/hexo-pagination/)』
 - 2017.08.26 - 『添加了二次开发文档，文章页header在下滑时隐藏』
-- 2017.09.10 - 『增加了about页面』
-- 2017.09.25 - 『可以直接添加disqus，gitment，畅言了』
-- 2017.09.30 - 『增加了rss，修复了placeholder的bug，更流畅』
+- 2017.09.10 - 『添加了about页面』
+- 2017.09.25 - 『可以直接添加disqus，gitment及畅言了』
+- 2017.09.30 - 『添加了rss，修复了placeholder的bug，更流畅』
+- 2017.10.05 - 『添加toc，默认开启，可在配置中关闭』
 
 ## 说明
 
@@ -198,6 +199,8 @@ CNZZ_analytics:
 favicon:
 # 首页的文章摘要字数(默认300)
 truncate_length:
+# enable toc
+toc: true
 ```
 ### 文章页banner图片配置
 
