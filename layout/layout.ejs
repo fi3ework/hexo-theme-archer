@@ -14,6 +14,40 @@
     <div class="wrapper">
         <%- partial('_partial/base-background-image') %>
         <img class="loading" src="<%- url_for('assets/loading.svg') %>" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <script>
+            function fontLoaded(){
+                console.log('font loaded');
+                if (document.getElementsByClassName('site-intro-meta')) {
+                    document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+                    document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+                    let postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
+                        postIntroMeat = document.getElementsByClassName('post-intro-meta')[0];
+                    if (postIntroTags) {
+                        postIntroTags.classList.add('post-fade-in');
+                    }
+                    if (postIntroMeat) {
+                        postIntroMeat.classList.add('post-fade-in');
+                    }
+                }
+            }
+
+            WebFont.load({
+                custom: {
+                    families: ['Oswald-Regular']
+                },
+                loading: function () {  //所有字体开始加载
+                    // console.log('loading');
+                },
+                active: function () {  //所有字体已渲染
+                    fontLoaded();
+                },
+                inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+                    console.log('inactive: timeout');
+                    fontLoaded();
+                },
+                timeout: 15000 // Set the timeout to two seconds
+            });
+        </script>
         <div class="container container-unloaded">
             <%- body %>
             <!-- profile -->

@@ -22,6 +22,9 @@
 
 .post-intro-tags {
     font: 1.2rem $feature-font-family;
+    opacity: 0;
+    transition: all 0.5s ease-out 0.5s;
+    transform: translate3d(0, -1rem, 0);
     .post-tag {
         position: relative;
         margin-left: 0;
@@ -41,6 +44,15 @@
     color: rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
+    opacity: 0;
+    transition: all 0.5s ease-out 0.5s;
+    transform: translate3d(0, -1rem, 0);
+
+}
+
+.post-fade-in {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
 }
 
 .post-intro-calander {

@@ -10,25 +10,7 @@
     </title>
     <link rel="icon" href= <%- theme.favicon %>>
     <!-- TODO: 在font-face加载完毕后改变字体  -->
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script>
-        // console.log('webfont-loader')
-        WebFont.load({
-            custom: {
-                families: ['Oswald-Regular']
-            },
-            loading: function() {  //所有字体开始加载
-                // console.log('loading');
-            },
-            active: function () {  //所有字体已渲染
-                // console.log('active');
-            }, 
-            inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
-                // console.log('inactive');
-            },
-            timeout: 20000 // Set the timeout to two seconds
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
     <!-- 提前加载place holder  -->
     <style type="text/css">
         @font-face {
@@ -37,7 +19,6 @@
         }
     </style>
     <style type="text/css">
-        
         .site-intro-placeholder {
             position: absolute;
             z-index: -2;
