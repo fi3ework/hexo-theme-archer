@@ -17,7 +17,7 @@ let initMobile = function () {
 
 
 
-    function mediaChangeHandler(mql) {
+    function mediaChangeHandler (mql) {
         if (mql.matches) {
             console.log('mobile');
             // TODO: why

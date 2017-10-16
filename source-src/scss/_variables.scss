@@ -2,7 +2,7 @@
 $body-background-color: #fff;
 $feature-color: #f75357;
 $feature-color: hexo-theme-config('feature-color');
-// 后续版本更新
+// TODO: 后续版本更新
 // @if $feature-color=='hexo-theme-config("feature-color")' {
 //     // default feature color
 //     // 如果没有安装hexo-renderer-scss，则无法修改$feature-color，使用默认色
@@ -12,11 +12,12 @@ $feature-font-family: 'Oswald-Regular',
 'Microsoft Yahei',
 'Source Sans Pro',
 Arial,
-sans-serif !default;
-$base-font-family: 'Microsoft Yahei',
-'Source Sans Pro',
+sans-serif;
+$base-font-family: 'Source Sans Pro',
+'Microsoft Yahei',
+'Helvetica Neue',
 Arial,
-sans-serif !default;
+sans-serif;
 $base-font-size: 16px !default;
 // ========== common ========== //
 $container-margin-top: 3rem;
@@ -40,7 +41,10 @@ $selection-color: $feature-color;
 // ========== header ========== //
 $header-height: 3.5rem;
 $header-border-top-width: 3px;
-$header-border-top-color: rgba(0,0,0,0.75);
+$header-border-top-color: rgba(0,
+0,
+0,
+0.75);
 $header-title-font-family: $feature-font-family;
 $header-menu-width: 1.5rem;
 // ========== profile ========== //

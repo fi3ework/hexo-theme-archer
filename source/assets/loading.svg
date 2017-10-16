@@ -1,0 +1,17 @@
+<svg class="lds-blocks" width="200px"  height="200px"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" style="background: none;"><rect x="19" y="19" width="20" height="20" fill="#868686">
+  <animate attributeName="fill" values="#0a0a0a;#868686;#868686" keyTimes="0;0.125;1" dur="0.6s" repeatCount="indefinite" begin="0s" calcMode="discrete"></animate>
+</rect><rect x="40" y="19" width="20" height="20" fill="#868686">
+  <animate attributeName="fill" values="#0a0a0a;#868686;#868686" keyTimes="0;0.125;1" dur="0.6s" repeatCount="indefinite" begin="0.075s" calcMode="discrete"></animate>
+</rect><rect x="61" y="19" width="20" height="20" fill="#868686">
+  <animate attributeName="fill" values="#0a0a0a;#868686;#868686" keyTimes="0;0.125;1" dur="0.6s" repeatCount="indefinite" begin="0.15s" calcMode="discrete"></animate>
+</rect><rect x="19" y="40" width="20" height="20" fill="#868686">
+  <animate attributeName="fill" values="#0a0a0a;#868686;#868686" keyTimes="0;0.125;1" dur="0.6s" repeatCount="indefinite" begin="0.525s" calcMode="discrete"></animate>
+</rect><rect x="61" y="40" width="20" height="20" fill="#868686">
+  <animate attributeName="fill" values="#0a0a0a;#868686;#868686" keyTimes="0;0.125;1" dur="0.6s" repeatCount="indefinite" begin="0.22499999999999998s" calcMode="discrete"></animate>
+</rect><rect x="19" y="61" width="20" height="20" fill="#868686">
+  <animate attributeName="fill" values="#0a0a0a;#868686;#868686" keyTimes="0;0.125;1" dur="0.6s" repeatCount="indefinite" begin="0.44999999999999996s" calcMode="discrete"></animate>
+</rect><rect x="40" y="61" width="20" height="20" fill="#868686">
+  <animate attributeName="fill" values="#0a0a0a;#868686;#868686" keyTimes="0;0.125;1" dur="0.6s" repeatCount="indefinite" begin="0.375s" calcMode="discrete"></animate>
+</rect><rect x="61" y="61" width="20" height="20" fill="#868686">
+  <animate attributeName="fill" values="#0a0a0a;#868686;#868686" keyTimes="0;0.125;1" dur="0.6s" repeatCount="indefinite" begin="0.3s" calcMode="discrete"></animate>
+</rect></svg>

@@ -13,7 +13,8 @@
     <%- partial('_partial/base-header') %>
     <div class="wrapper">
         <%- partial('_partial/base-background-image') %>
-        <div class="container">
+        <img class="loading" src="<%- url_for('assets/loading.svg') %>" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
             <%- body %>
             <!-- profile -->
             <% if (is_home()) { %>

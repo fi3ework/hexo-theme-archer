@@ -39,20 +39,32 @@ body {
 .container {
     margin: $container-margin-top 0 0 0;
     position: relative;
-    left: 0;
     top: 0;
+    left: 0;
     display: flex;
     align-items: flex-start;
     justify-content: center;
     width: 100%;
     overflow: hidden;
+    transition: all 0.5s ease-out .0s;    
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+.container-unloaded {
+    opacity: 0;
+    transform: translate3d(0, 1rem, 0);
+}
+
+.container-footer-fade-in {
 }
 
 a {
     text-decoration: none;
 }
 
-ul, li {
+ul,
+li {
     list-style-type: none;
 }
 

@@ -14,7 +14,7 @@ let sidebarInit = function () {
         showSidebar(eve);
     });
 
-    function showSidebar (eve) {
+    function showSidebar(eve) {
         $sidebar.addClass('sidebar-show');
         $wrapper.addClass('wrapper-show-sidebar');
         $header.addClass('header-slide');
@@ -62,9 +62,9 @@ let sidebarInit = function () {
             eve.preventDefault();
         }
     });
-    
 
-    function stopSidebarEdgeScroll (eve) {
+
+    function stopSidebarEdgeScroll(eve) {
         if (this.scrollHeight == this.clientHeight) {
             window.event.preventDefault();
         } else if (this.scrollTop <= 0) {
@@ -79,7 +79,7 @@ let sidebarInit = function () {
     }
 
     // 点击tag弹出slider
-    function popSidebar () {
+    function popSidebar() {
         // 弹出sidebar
         let event = document.createEvent('MouseEvents');
         event.initMouseEvent('click', false, true);
@@ -91,7 +91,7 @@ let sidebarInit = function () {
     // 显示tag对应的列表
     let sidebarTagsName = $('.sidebar-tags-name:first')[0];
 
-    function clickTag (tagName) {
+    function clickTag(tagName) {
         let event = document.createEvent('MouseEvents');
         event.initMouseEvent('click', false, true);
         $headerMenu[0].dispatchEvent(event);
@@ -109,6 +109,4 @@ let sidebarInit = function () {
 };
 
 
-export {
-    sidebarInit
-};
+export { sidebarInit };
