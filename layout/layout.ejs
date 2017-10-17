@@ -45,7 +45,7 @@
                     console.log('inactive: timeout');
                     fontLoaded();
                 },
-                timeout: 15000 // Set the timeout to two seconds
+                timeout: 10000 // Set the timeout to two seconds
             });
         </script>
         <div class="container container-unloaded">
@@ -61,7 +61,7 @@
     <% if(is_post() && theme.toc) { %>
     <div class="toc-wrapper">
         <div class="toc-catalog">
-            CATALOG
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
         <%- toc(page.content, {class: 'toc', list_number: true}) %>
     </div>

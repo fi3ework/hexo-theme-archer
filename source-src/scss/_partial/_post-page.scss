@@ -209,7 +209,7 @@
     top: 50vh;
     width: 22%;
     right: 1%;
-    max-width: calc(100% - 42.8125rem - 2rem);
+    max-width: calc((100% - 42.8125rem - 4rem) / 2);
     z-index: 9999;
     margin: calc(#{$header-height} + 1rem) 0 0 0;
     transform: translate3d(0, 0, 0);
@@ -219,10 +219,17 @@
 .toc-catalog {
     color: #bbb;
     cursor: pointer;
+    user-select: none;
     font: bolder 1.2rem $feature-font-family;
     &:hover {
         color: $feature-color;
     }
+}
+
+.catalog-icon{
+    position: relative;
+    top: -0.1rem;
+    margin-right: 0.3rem;
 }
 
 .toc {
