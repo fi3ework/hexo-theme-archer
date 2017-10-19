@@ -16,6 +16,8 @@
     height: calc(100% + 1px);
     width: 100%;
     filter: brightness(.5);
+    -webkit-filter: brightness(.5);
+    -moz-filter: brightness(.5);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
