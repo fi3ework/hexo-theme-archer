@@ -79,9 +79,9 @@ jsonContent:
     tags: true
 ```
 
-### 启用404页
+### 启用404页[可选]
 
-在**Hexo资源目录**下加入`/source/404.md`文件，`layout`字段须为`404`，`title`字段为自定义标题，`description`字段为自定义描述。
+在**Hexo的source目录**下加入`404.md`文件，`layout`字段须为`404`，`title`字段为自定义标题，`description`字段为自定义描述。
 
 ``` yaml
 layout: 404
@@ -89,15 +89,23 @@ title: "[404]"
 description: "May the Force be with you :&#41;"
 ```
 
-### 启用about页
+### 启用about页[可选]
 
-在**hexo**目录下执行
+在**hexo目录**下执行
 
 ```shell
 hexo new page "about"
 ```
 
-在`source/about/index.md`中添加字段`layout: about`，`title`字段修改为about页的标题，正文为about页的内容。
+在`source/about/index.md`中添加字段`layout: about`，`title`字段修改为about页的标题，正文为about页的内容，例如：
+
+```markdown
+---
+title: 这是自我介绍的题目
+layout: about
+---
+这是一段自我介绍
+```
 
 在**Hexo配置文件**中添加以下字段，`enable`字段控制是否开启about，`image`字段内容为about页的banner图像地址，不填写则默认使用首页banner图像。
 
@@ -109,7 +117,7 @@ about:
 
 about页的入口在首页的侧边栏中。
 
-### 启用rss
+### 启用rss[可选]
 
 在**hexo**目录下执行
 
@@ -118,6 +126,10 @@ npm install hexo-generator-feed --save
 ```
 
 在`social`字段中添加`rss: /atom.xml`，侧边栏会出现rss。
+
+### 自定义主题颜色
+
+[参见wiki](https://github.com/fi3ework/hexo-theme-archer/wiki/%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98%E9%A2%9C%E8%89%B2)
 
 ## 配置
 
