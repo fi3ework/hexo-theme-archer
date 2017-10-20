@@ -11,7 +11,6 @@ hexo-theme-archer
 
 - [Document in English](./docs/README-en.md)
 
-## 开发
 
 - [二次开发文档](./docs/develop-guide.md)
 
@@ -27,36 +26,29 @@ hexo-theme-archer
 
 ## 说明
 
-- 本主题受[yilia](https://github.com/litten/hexo-theme-yilia)主题和[huxpro](https://github.com/Huxpro/huxpro.github.io)主题的启发，结合前者的sidebar设计及后者的UI设计完成，能够在不跳转到archive页及tag页的前提下通过sidebar进行导航。
-- 如果有任何问题可以[**发起issue**](https://github.com/fi3ework/hexo-theme-archer/issues)，或在[我的博客](http://firework.studio)的文章「hexo-theme-archer」中留言:) 。
+- 本主题受[yilia](https://github.com/litten/hexo-theme-yilia)主题和[huxpro](https://github.com/Huxpro/huxpro.github.io)主题的启发，结合前者的sidebar设计及后者的UI设计完成。通过sidebar能够不跳转到archive页及tag页进行导航。
+- 如果有任何问题可以[**发起issue**](https://github.com/fi3ework/hexo-theme-archer/issues)，或在[我的博客](http://firework.studio)的文章「hexo-theme-archer」中留言。
 - 兼容性：现代浏览器及IE10+。
+- 喜欢本主题欢迎star😆。
 
 ##  安装
 
-在**Hexo目录**下执行
+1. 在**Hexo目录**下执行
 
 ``` shell
 npm install hexo-generator-json-content --save
 git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer
 ```
 
-## 启用配置
-
-修改**Hexo目录**下的 `_config.yml` 的 `theme` 字段为 `archer`：
+2. 修改**Hexo目录**下的 `_config.yml` 的 `theme` 字段为 `archer`：
 
 ``` yaml
 theme: archer
 ```
 
-### 启用sidebar
+3. 配置sidebar
 
-1. 在**Hexo目录**下执行以下命令（同安装说明中的插件，若已安装可跳过此步骤）
-
-```shell
-npm install hexo-generator-json-content --save
-```
-
-2. 然后需在**Hexo配置文件**中添加以下字段（不是archer的主题配置文件）
+在**Hexo目录**下的 `_config.yml` 中添加以下字段（不是archer的主题配置文件）
 
 ```yaml
 jsonContent:
@@ -78,15 +70,14 @@ jsonContent:
     categories: false
     tags: true
 ```
-
-### 可选配置
+## 可选配置
 
 - [启用about页](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8about%E9%A1%B5)
 - [启用404页](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8404%E9%A1%B5)
-- [启用rss](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8rss)
+- [启用rss订阅](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8rss)
 - [自定义主题颜色](https://github.com/fi3ework/hexo-theme-archer/wiki/%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98%E9%A2%9C%E8%89%B2)
 
-## 主题配置
+## 主题参数配置
 
 ```yaml
 # ========== 资料栏 ========== #

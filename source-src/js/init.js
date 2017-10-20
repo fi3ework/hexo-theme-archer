@@ -19,7 +19,6 @@ let init = function () {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('DOMContentLoaded');
     document.getElementsByClassName('container')[0].classList.remove('container-unloaded');
     document.getElementsByClassName('container')[0].classList.add('container-footer-fade-in');
     document.getElementsByClassName('footer')[0].classList.remove('footer-unloaded');

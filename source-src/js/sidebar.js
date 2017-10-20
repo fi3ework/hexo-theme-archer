@@ -14,7 +14,7 @@ let sidebarInit = function () {
         showSidebar(eve);
     });
 
-    function showSidebar(eve) {
+    function showSidebar (eve) {
         $sidebar.addClass('sidebar-show');
         $wrapper.addClass('wrapper-show-sidebar');
         $header.addClass('header-slide');
@@ -40,12 +40,12 @@ let sidebarInit = function () {
 
     // 切换tags和archive
     $archiveLink.on('click', function () {
-        $sidebarContent.addClass('sidebar-content-show-archive').removeClass('sidebar-content-show-tags');
-        $sidebarHeader.addClass('sidebar-header-show-archive').removeClass('sidebar-header-show-tags');
+        $sidebarContent.addClass('sidebar-content-show-archive').removeClass('sidebar-content-show-tags sidebar-show-immediately');
+        $sidebarHeader.addClass('sidebar-header-show-archive').removeClass('sidebar-header-show-tags sidebar-show-immediately');
     });
     $tagsLink.on('click', function () {
-        $sidebarContent.addClass('sidebar-content-show-tags').removeClass('sidebar-content-show-archive');
-        $sidebarHeader.addClass('sidebar-header-show-tags').removeClass('sidebar-header-show-archive');
+        $sidebarContent.addClass('sidebar-content-show-tags').removeClass('sidebar-content-show-archive sidebar-show-immediately');
+        $sidebarHeader.addClass('sidebar-header-show-tags').removeClass('sidebar-header-show-archive sidebar-show-immediately');
     });
 
     // 阻止sidebarContent在滚动到顶部或底部时继续滚动
@@ -63,8 +63,8 @@ let sidebarInit = function () {
         }
     });
 
-
-    function stopSidebarEdgeScroll(eve) {
+    // 阻止滚轮在sidebar滚动越界
+    function stopSidebarEdgeScroll (eve) {
         if (this.scrollHeight == this.clientHeight) {
             window.event.preventDefault();
         } else if (this.scrollTop <= 0) {
@@ -78,20 +78,30 @@ let sidebarInit = function () {
         }
     }
 
-    // 点击tag弹出slider
-    function popSidebar() {
+    // 点击meta的tag弹出slider
+    function popSidebar () {
+        let popFromArchive = false;
         // 弹出sidebar
         let event = document.createEvent('MouseEvents');
         event.initMouseEvent('click', false, true);
-        $headerMenu[0].dispatchEvent(event);
+        if ($sidebarHeader.hasClass('sidebar-header-show-archive') && !$sidebar.hasClass('sidebar-show')) {
+            popFromArchive = true;
+        } else {
+            popFromArchive = false;
+        }
         // 直接滑动到tags
+        $headerMenu[0].dispatchEvent(event);
         $tagsLink[0].dispatchEvent(event);
+        if (popFromArchive) {
+            $sidebarHeader.addClass('sidebar-show-immediately');
+            $sidebarContent.addClass('sidebar-show-immediately');
+        }
     }
 
     // 显示tag对应的列表
     let sidebarTagsName = $('.sidebar-tags-name:first')[0];
 
-    function clickTag(tagName) {
+    function clickTag (tagName) {
         let event = document.createEvent('MouseEvents');
         event.initMouseEvent('click', false, true);
         $headerMenu[0].dispatchEvent(event);
