@@ -82,8 +82,12 @@ let sidebarInit = function () {
     function popSidebar () {
         let popFromArchive = false;
         // 弹出sidebar
-        let event = document.createEvent('MouseEvents');
-        event.initMouseEvent('click', false, true);
+        // let event = document.createEvent('MouseEvents');
+        // event.initMouseEvent('click', false, true);
+        let event = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true
+        });
         if ($sidebarHeader.hasClass('sidebar-header-show-archive') && !$sidebar.hasClass('sidebar-show')) {
             popFromArchive = true;
         } else {
@@ -102,8 +106,12 @@ let sidebarInit = function () {
     let sidebarTagsName = $('.sidebar-tags-name:first')[0];
 
     function clickTag (tagName) {
-        let event = document.createEvent('MouseEvents');
-        event.initMouseEvent('click', false, true);
+        // let event = document.createEvent('MouseEvents');
+        // event.initMouseEvent('click', false, true);
+        let event = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true
+        });
         $headerMenu[0].dispatchEvent(event);
         sidebarTagsName.currTagName = tagName;
         sidebarTagsName.dispatchEvent(event);
