@@ -57,6 +57,8 @@ comment:
   gitment_repo:
   gitment_client_id:
   gitment_client_secret:
+  # youyan  site: http://www.uyan.cc/
+  youyan_uid:
 
 # ========== Analytics ========== #
 # Busuanzi pv Analytics

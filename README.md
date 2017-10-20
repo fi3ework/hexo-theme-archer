@@ -142,6 +142,8 @@ comment:
   gitment_repo:
   gitment_client_id:
   gitment_client_secret:
+  # youyan 官网: http://www.uyan.cc/
+  youyan_uid:
 
 # ========== 统计 ========== #
 # 是否开启不蒜子统计
