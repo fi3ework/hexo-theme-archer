@@ -44,11 +44,11 @@
             <% if(typeof page.subtitle === 'string') { %>
                 <%- page.subtitle %>
             <% } %>
+            <!-- 404 -->
+            <% } else if (page.layout === "404") { %>
+                <%- page.description %>
+            <% } %>
         </p>
-        <!-- 404 -->
-        <% } else if (page.layout === "404") { %>
-            <p class="intro-subtitle"> <%- page.description %></p>
-        <% } %>
         <!-- 文章页meta -->
         <% if(is_post()) { %>
             <!-- 文章页标签  -->
