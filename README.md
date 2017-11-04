@@ -5,7 +5,7 @@ hexo-theme-archer
 
 ## 在线预览( Online Demo)
 
-在线预览主题：[Demo](http://firework.studio)。
+在线预览主题：[Demo](http://firework.studio/archer-demo/)。
 
 ## 文档
 
@@ -27,7 +27,7 @@ hexo-theme-archer
 ## 说明
 
 - 本主题受[yilia](https://github.com/litten/hexo-theme-yilia)主题和[huxpro](https://github.com/Huxpro/huxpro.github.io)主题的启发，结合前者的sidebar设计及后者的UI设计完成。通过sidebar能够不跳转到archive页及tag页进行导航。
-- 如果有任何问题可以[**发起issue**](https://github.com/fi3ework/hexo-theme-archer/issues)，或在[我的博客](http://firework.studio)的文章「hexo-theme-archer」中留言。
+- 如果有任何问题可以[**发起issue**](https://github.com/fi3ework/hexo-theme-archer/issues)，或在[我的博客](http://firework.studio/archer-demo/)的文章「hexo-theme-archer」中留言。
 - 兼容性：现代浏览器及IE10+。
 - 喜欢本主题欢迎star😆。
 

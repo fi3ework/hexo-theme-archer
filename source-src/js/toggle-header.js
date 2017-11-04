@@ -26,11 +26,11 @@ let toggleHeader = function () {
 
     function isScrollingUpOrDown (currTop) {
         continueScroll += currTop - previousHeight;
-        if (continueScroll > 50) {
+        if (continueScroll > 30) {
             // 向下滑动
             continueScroll = 0;
             return 1;
-        } else if (continueScroll < -50) {
+        } else if (continueScroll < -800) {
             //向上滑动
             continueScroll = 0;
             return -1;
