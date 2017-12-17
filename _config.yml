@@ -1,29 +1,28 @@
 # ========== Profile ========== #
 # avatar
-avatar: /avatar/Misaka.jpg
+avatar: /avatar/kumamon.jpg
 # author name
 author: fi3ework
 # signature
 signature: witness me
 # SNS
 social:
-  email: 805843200@qq.com
+  email: 12345@qq.com
   github: //github.com/fi3ework
-  # weibo: //github.com/fi3ework
-  # zhihu: //github.com/fi3ework
-  # facebook: //github.com/fi3ework
-  # twitter: //github.com/fi3ework
-  # instagram: //github.com/fi3ework
-  # stack-overflow: //github.com/fi3ework
-  # linkedin: //github.com/fi3ework
-  # others: //github.com/fi3ework
-  rss: atom.xml
+  weibo:
+  # zhihu:
+  # facebook:
+  # twitter:
+  # instagram:
+  # stack-overflow:
+  # linkedin:
+  # others:
+  rss: /atom.xml
 # friends
 friends:
-  Mason Zhou: https://github.com/Mason1993
-  Wang Tao: https://github.com/wwtdsg
+  friendA: //www.baidu.com
+  friendB: //www.google.com
   # friendC :
-# about
 about:
   enable: true
   image: '/intro/about-page.jpg'
@@ -43,37 +42,37 @@ post_header_image: 'http://oumn0o088.bkt.clouddn.com/post-bg.jpg'
 _404_image: 'http://oumn0o088.bkt.clouddn.com/404.jpg'
 
 # ========== Comment ========== #
-# 目前只支持一键添加livere评论（因为懒），其他评论插件可自行添加
+# Fill in the field to enable the corresponding comment plugin
+# If you want to add other comment plugin, edit in "custom.ejs"
 comment:
-  # change the value of livere to your livere data-uid
-  livere_uid: MTAyMC8yODQyOS81MDAw
-  # disqus
-  # disqus_shortname: firework-studio
-  # changyan
-  #changyan_appid: cysYkbwD3
-  #changyan_conf: prod_1272d58a007a19d9e03ad7cbec1f0ada
-  # gitment
-  # gitment_owner: fi3ework
-  # gitment_repo: fi3ework.github.io
-  # gitment_client_id: 173b36b0a164e0d952c9
-  # gitment_client_secret: 615a76cab99505a9bc66269569475cf9447a3272
-  # youyan 
-  # youyan_uid: '2146978'
-
+  # livere  site: https://livere.com/
+  livere_uid:
+  # disqus  site: https://disqus.com/
+  disqus_shortname:
+  # changyan  site: http://changyan.kuaizhan.com/
+  changyan_appid:
+  changyan_conf:
+  # gitment  site: https://github.com/imsun/gitment
+  gitment_owner:
+  gitment_repo:
+  gitment_client_id:
+  gitment_client_secret:
+  # youyan  site: http://www.uyan.cc/
+  youyan_uid:
 
 # ========== Analytics ========== #
 # Busuanzi pv Analytics
-busuanzi: true
+busuanzi: false
 # Baidu analytics
-baidu_analytics: 'https://hm.baidu.com/hm.js?c2e692c5407f95609121a9d80bd24510'
+baidu_analytics:
 # Google analytics
-# google_analytics: 'UA-103985966-1'
+google_analytics:
 # CNZZ analytics
-# CNZZ_analytics: '1263255655'
+CNZZ_analytics:
 
 # ========== Others ========== #
 # favicon
-favicon: /assets/favicon.ico
+favicon: /assests/favicon.ico
 # truncate length (the default is 300)
 truncate_length:
 # enable toc
