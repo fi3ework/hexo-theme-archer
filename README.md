@@ -3,7 +3,7 @@ hexo-theme-archer
 
 ![preview](./docs/snap.png)
 
-## 在线预览( Online Demo)
+## 在线预览( Online demo)
 
 在线预览主题：[Demo](http://firework.studio/archer-demo/)。
 
@@ -23,6 +23,7 @@ hexo-theme-archer
 - 2017.09.30 - 『添加了rss，修复了placeholder的bug，更流畅』
 - 2017.10.05 - 『添加toc，默认开启，可在配置中关闭』
 - 2017.10.16 - 『修复移动端bug，增加渐入效果』
+- 2017.12.17 - 『增加阅读进度条，在post页的顶部』
 
 ## 说明
 

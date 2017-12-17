@@ -1,6 +1,4 @@
-import {
-    archerUtil
-} from './util';
+import archerUtil from './util';
 
 let initTag = function () {
     let contentJSON,
@@ -89,7 +87,7 @@ let initTag = function () {
         // 显示tag对应的文章列表
         let indexsArr = indexs.split(',');
         let frag = document.createDocumentFragment(),
-            postList = document.getElementsByClassName('sidebar-tag-list')[0];
+            postList = $('.sidebar-tag-list')[0];
         postList.innerHTML = '';
         indexsArr.forEach(function (item) {
             frag.appendChild(createTagDom(contentJSON[item])[0]);

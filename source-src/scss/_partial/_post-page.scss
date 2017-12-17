@@ -31,7 +31,7 @@
         margin-right: 0.5rem;
         font-size: 1.2rem;
         color: #fff;
-        @include hover-line($color: #fff, $top:100%);
+        @include hover-line($color: #fff);
         &::before {
             content: '#';
         }
@@ -47,7 +47,6 @@
     opacity: 0;
     transition: all 0.5s ease-out 0.5s;
     transform: translate3d(0, -1rem, 0);
-
 }
 
 .post-fade-in {
@@ -226,15 +225,25 @@
     }
 }
 
-.catalog-icon{
+.catalog-icon {
     position: relative;
     top: -0.1rem;
     margin-right: 0.3rem;
 }
 
-.toc {
+.toc,
+.toc-child {
     padding-left: 0;
     margin: 0 0 0 0;
+}
+
+.toc-wrapper {
+    overflow: hidden;
+    &>* {
+        transform: translate(0, 0);
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        opacity: 1;
+    }
     ol {
         padding-left: 1rem;
     }
@@ -246,6 +255,18 @@
     }
     a:hover {
         color: $feature-color !important;
+    }
+}
+
+.toc-hide-children {
+    &>* {
+        transform: translate(-100%, 0);
+        opacity: 0;
+    }
+    .toc-catalog {
+        display: block;
+        transform: none;
+        opacity: 1;
     }
 }
 

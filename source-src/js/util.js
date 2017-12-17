@@ -1,16 +1,14 @@
 var archerUtil = {
-    backTop: function () {
+    // 回到顶部
+    backTop: function (event) {
+        event.preventDefault();
         let topTimer = setInterval(function () {
-            let currTop = document.body.scrollTop;
-            document.body.scrollTop -= Math.max(Math.ceil(currTop / 9) + 2);
+            let currTop = $(document).scrollTop();
+            window.scrollTo(0, Math.max(Math.floor(currTop * 0.8)));
             if (currTop === 0) {
                 clearInterval(topTimer);
             }
         }, 20);
-    },
-
-    getScrollTop: function () {
-        return document.documentElement.scrollTop || document.body.scrollTop;
     },
 
     // 获取元素在页面上相对左上角的位置
@@ -26,6 +24,8 @@ var archerUtil = {
             'y': y
         };
     },
+
+    // 格式化日期
     dateFormater: function (date, fmt) {
         var o = {
             'M+': date.getMonth() + 1, //月份 
@@ -46,34 +46,14 @@ var archerUtil = {
         }
         return fmt;
     },
-    toggler: function (target, eventName, btn, addClassName, removeClassName, optEvent) {
-        if (!(target && typeof window !== 'undefined' && (target === window || target.nodeType))) {
-            return;
+
+    // rAF的ticking
+    rafTick: function (ticking, updateFunc) {
+        if (!ticking) {
+            requestAnimationFrame(updateFunc);
         }
-        btn.addEventListener(eventName, function (eve) {
-            if (addClassName) {
-                let classNameArr = addClassName.split(/[, ]/);
-                let length = classNameArr.length;
-                while (length--) {
-                    target.classList.add(classNameArr[length]);
-                }
-            }
-            if (removeClassName) {
-                let classNameArr = removeClassName.split(/[, ]/);
-                let length = classNameArr.length;
-                while (length--) {
-                    target.classList.remove(classNameArr[length]);
-                }
-            }
-            if (optEvent) {
-                optEvent(eve);
-            }
-        });
+        ticking = true;
     }
-
-
 };
 
-export {
-    archerUtil
-};
+export default archerUtil;

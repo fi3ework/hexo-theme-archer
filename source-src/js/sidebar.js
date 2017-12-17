@@ -16,7 +16,7 @@ let sidebarInit = function () {
 
     function showSidebar (eve) {
         $sidebar.addClass('sidebar-show');
-        $wrapper.addClass('wrapper-show-sidebar');
+        $wrapper.addClass('wrapper-slide');
         $header.addClass('header-slide');
         $tocWrapper.addClass('toc-slide');
         eve.stopPropagation();
@@ -33,7 +33,7 @@ let sidebarInit = function () {
             eve.preventDefault();
             $sidebar.removeClass('sidebar-show');
             $header.removeClass('header-slide');
-            $wrapper.removeClass('wrapper-show-sidebar');
+            $wrapper.removeClass('wrapper-slide');
             $tocWrapper.removeClass('toc-slide');
         }
     });
@@ -102,12 +102,9 @@ let sidebarInit = function () {
         }
     }
 
-    // 显示tag对应的列表
-    let sidebarTagsName = $('.sidebar-tags-name:first')[0];
-
+    // 点击tag时弹出sidebar
     function clickTag (tagName) {
-        // let event = document.createEvent('MouseEvents');
-        // event.initMouseEvent('click', false, true);
+        let sidebarTagsName = $('.sidebar-tags-name:first')[0];
         let event = new MouseEvent('click', {
             bubbles: true,
             cancelable: true

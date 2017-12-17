@@ -1,18 +1,21 @@
 // ========== hover ========== //
-@mixin hover-line($height: 2px, $top: 103%, $color: $feature-color) {
+@mixin hover-line($height: 2px, $width: 98%, $color: $feature-color) {
     &::after {
         content: '';
         position: absolute;
-        transition: all 0.2s ease-out;
+        left: calc((100% - #{$width}) / 2);
+        right: 0;
+        bottom: -20%;
+        transition: all 0.15s ease-in;
+        width: $width;
         height: $height;
-        width: 0;
-        left: 50%;
-        top: $top;
+        transform: translate(0, 0px);
         background-color: $color;
+        opacity: 0;
     }
     &:hover::after {
-        left: 0;
-        width: 100%;
+        transform: translate(0, -2px);
+        opacity: 1;
     }
 }
 
