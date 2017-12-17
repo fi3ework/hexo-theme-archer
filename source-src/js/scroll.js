@@ -69,15 +69,17 @@ let scroll = function () {
         // $('.container')[0].addEventListener('transitionend', getTop);
     }
 
-    function updateProgress (scrollTop, beginY, allHeight) {
+    function updateProgress (scrollTop, beginY, contentHeight) {
         let windowHeight = $(window).height();
         let readPercent;
         if (scrollTop < bgTitleHeight) {
             readPercent = 0;
         } else {
-            readPercent = (scrollTop - beginY) / (allHeight - windowHeight) * 100;
+            readPercent = (scrollTop - beginY) / (contentHeight - windowHeight) * 100;
         }
-        readPercent = Number.isNaN(readPercent) ? 0 : readPercent;
+
+        readPercent = readPercent >= 0 ? readPercent : 100;
+        // readPercent = Number.isNaN(readPercent) ? 0 : readPercent;
         $progressBar.css('width', `${readPercent}%`);
     }
 
