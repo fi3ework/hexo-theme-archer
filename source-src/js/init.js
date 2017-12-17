@@ -19,11 +19,9 @@ let init = function () {
 };
 
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementsByClassName('container')[0].classList.remove('container-unloaded');
-    document.getElementsByClassName('container')[0].classList.add('container-footer-fade-in');
-    document.getElementsByClassName('footer')[0].classList.remove('footer-unloaded');
-    document.getElementsByClassName('footer')[0].classList.add('container-footer-fade-in');
-    document.getElementsByClassName('loading')[0].style.display = 'none';
+    $('.container').removeClass('container-unloaded');
+    $('.footer').removeClass('footer-unloaded');
+    $('.loading').remove();
 }, false);
 
 export {

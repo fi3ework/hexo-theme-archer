@@ -3,6 +3,10 @@ hexo-theme-archer
 
 ![preview](./snap.png)
 
+## Online demo
+
+[Demo](http://firework.studio/archer-demo/)
+
 ## Instruction
 
 - Click [my blog](http://firework.studio) to preview theme online.
@@ -90,12 +94,18 @@ social:
   stack-overflow:
   linkedin:
   blog:
+  others:
+  rss: /atom.xml
 # friends link
 friends:
   friendA:
   friendB:
   friendC:
-
+# about
+about:
+  enable: true
+  image:
+  
 # ========== Site ========== #
 # title of the site (each article will be followed by this filed to help SEO)
 SEO_title:
@@ -113,8 +123,20 @@ _404_image:
 # ========== Comment Plugin ========== #
 # Currently only supports one click to add livere comments, you can add other comment plugin before </main> in post.ejs
 comment:
-  # fill in your livere data-uid
-  livere:
+  # livere：https://livere.com/
+  livere_uid:
+  # disqus：https://disqus.com/
+  disqus_shortname:
+  # 畅言：http://changyan.kuaizhan.com/
+  changyan_appid:
+  changyan_conf:
+  # gitment：https://github.com/imsun/gitment
+  gitment_owner:
+  gitment_repo:
+  gitment_client_id:
+  gitment_client_secret:
+  # youyan: http://www.uyan.cc/
+  youyan_uid:
 
 # ========== Analytics ========== #
 # enable Busuanzi pv Analytics
@@ -123,7 +145,7 @@ busuanzi: false
 baidu_analytics:
 # Google analytics (fill in siteID)
 google_analytics:
-# CNZZ统计
+# CNZZ analytics
 CNZZ_analytics:
 
 # ========== Others ========== #
@@ -131,6 +153,8 @@ CNZZ_analytics:
 favicon:
 # truncate length of abstracts in index page(the default is 300)
 truncate_length:
+# enable toc
+toc: true
 ```
 ### Post page banner image configuration
 

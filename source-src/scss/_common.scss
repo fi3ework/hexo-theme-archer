@@ -23,7 +23,7 @@ body {
     position: relative;
 }
 
-.wrapper-show-sidebar {
+.wrapper-slide {
     transform: translate3d(150px, 0, 0);
 }
 
@@ -54,9 +54,6 @@ body {
 .container-unloaded {
     opacity: 0;
     transform: translate3d(0, 1rem, 0);
-}
-
-.container-footer-fade-in {
 }
 
 a {

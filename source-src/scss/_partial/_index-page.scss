@@ -32,7 +32,7 @@
     span:last-of-type {
         font-size: 1.5rem;
         position: relative;
-        @include hover-line($height: 2px);
+        @include hover-line($height: 3px);
     }
 }
 

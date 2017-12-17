@@ -1,0 +1,29 @@
+{
+    "beautify.language": {
+        "js": {
+            "type": ["javascript", "json"],
+            "filename": [".jshintrc", ".jsbeautifyrc"]
+            // "ext": ["js", "json"]
+            // ^^ to set extensions to be beautified using the javascript beautifier
+        },
+        "css": ["css", "scss"],
+        "html": ["htm", "html", "ejs"]
+        // ^^ providing just an array sets the VS Code file type
+    },
+
+    "indent_char": " ",
+    "end_with_newline": true,
+    "brace_style": "collapse,preserve-inline",
+    "javascript": {
+        "indent_size": 4,
+        "jslint_happy": true,
+        "space_before_conditional": true,
+        "space_in_empty_paren": true,
+        "space_in_paren": false
+        // "space_after_anon_function": true,
+    },
+    "css": {
+        "indent_size": 4
+    }
+
+}
