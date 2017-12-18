@@ -23,6 +23,7 @@
     width: 0%;
     height: $header-border-top-width;
     background-color: rgba(0, 0, 0, 0.7);
+    transition: width 0.3s ease-out .0s;    
     z-index: 99999;
 }
 
