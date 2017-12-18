@@ -32,7 +32,7 @@
 }
 
 .profile-signature {
-    color: gray;
+    color: #787878;
     font: 1rem $profile-signature-font-family;
     text-align: center;
     margin: -0.5rem 0 0 0;
@@ -55,11 +55,12 @@
     div {
         font-size: 1.2rem;
         text-align: left;
-        color: gray;
-        font-weight: bolder;
+        color: #787878;
+
+        font-weight: bold;
     }
     a {
-        color: gray;
+        color: #787878;
         margin-right: 0.6rem;
     }
 }
@@ -72,7 +73,7 @@
     div a{
         font-size: 1.2rem;
         text-align: left;
-        color: gray;
-        font-weight: bolder;
+        color: #787878;
+        font-weight: bold;
     }
 }

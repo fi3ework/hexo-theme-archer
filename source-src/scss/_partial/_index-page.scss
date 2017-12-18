@@ -12,27 +12,27 @@
 
 // ========== abstract content ========== //
 .abstract-content {
-    color: #aaa;
+    color: #9c9c9c;
     font: 1rem/1.5rem $base-font-family;
     white-space: normal;
     word-break: break-all;
     transition: color 0.1s ease-out;
-    &:hover {
-        // color: #888;
-    }
 }
 
 // ========== abstract title ========== //
 .abstract-title {
     position: relative;
-    font: bolder 1rem/1.5rem $base-font-family;
+    font: bold 1rem/1.5rem $base-font-family;
     color: $index-post-link-color;
     padding-bottom: 0.5rem;
     margin: 0.2rem 0;
+    transition: all 0.15s ease-in;
+    &:hover {
+        color: $feature-color;
+        opacity: 0.8;
+    }
     span:last-of-type {
         font-size: 1.5rem;
-        position: relative;
-        @include hover-line($height: 3px);
     }
 }
 
@@ -61,7 +61,7 @@
         font-size: 1rem;
         position: relative;
         overflow: visible;
-        color: #9b9b9b;
+        color: $index-post-tag-color;
         margin-left: 0.4rem;
         &::before {
             position: relative;

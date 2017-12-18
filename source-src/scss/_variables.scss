@@ -13,11 +13,26 @@ $feature-font-family: 'Oswald-Regular',
 'Source Sans Pro',
 Arial,
 sans-serif;
-$base-font-family: 'Source Sans Pro',
-'Microsoft Yahei',
-'Helvetica Neue',
+$base-font-family: 
+-apple-system,
+BlinkMacSystemFont,
+"Helvetica Neue",
 Arial,
+"PingFang SC",
+"Hiragino Sans GB",
+STHeiti,
+"Microsoft YaHei",
+"Microsoft JhengHei",
+"Source Han Sans SC",
+"Noto Sans CJK SC",
+"Source Han Sans CN",
+"Noto Sans SC",
+"Source Han Sans TC",
+"Noto Sans CJK TC",
+"WenQuanYi Micro Hei",
+SimSun,
 sans-serif;
+
 $base-font-size: 16px !default;
 // ========== common ========== //
 $container-margin-top: 3rem;
@@ -54,8 +69,8 @@ $profile-signature-font-family: $feature-font-family;
 $profile-friend-font-family: $feature-font-family;
 $profile-width: 200px;
 // ========== index ========== //
-$index-post-link-color: $feature-color;
-$index-post-tag-color: $feature-color;
+$index-post-link-color: #787878;
+$index-post-tag-color: #787878;
 // ========== post ========== //
 $post-content-color: #23394d;
 // ========== social ========== //

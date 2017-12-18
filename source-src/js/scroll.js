@@ -77,9 +77,8 @@ let scroll = function () {
         } else {
             readPercent = (scrollTop - beginY) / (contentHeight - windowHeight) * 100;
         }
-
+        // 防止文章过短，产生负百分比
         readPercent = readPercent >= 0 ? readPercent : 100;
-        // readPercent = Number.isNaN(readPercent) ? 0 : readPercent;
         $progressBar.css('width', `${readPercent}%`);
     }
 
