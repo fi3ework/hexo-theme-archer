@@ -58,18 +58,25 @@ let scroll = function () {
         return 0;
     }
 
+    
     // 判断是否为post-page
     let isPostPage = false;
     let articleHeight, articleTop;
     if ($('.post-body').length) {
         isPostPage = true;
         articleTop = bgTitleHeight;
+        // 如果执行时动画已执行完毕
         articleHeight = $('.article-entry').outerHeight();
-        // 进度条君的初始化
-        // $('.container')[0].addEventListener('transitionend', getTop);
+        // 如果执行时动画未执行完毕
+        articleHeight = $('.container')[0].addEventListener('transitionend', () => {
+            articleHeight = $('.article-entry').outerHeight();
+        });
     }
 
     function updateProgress (scrollTop, beginY, contentHeight) {
+        // console.log(scrollTop);
+        // console.log(beginY);
+        // console.log(contentHeight);
         let windowHeight = $(window).height();
         let readPercent;
         if (scrollTop < bgTitleHeight) {
