@@ -8,13 +8,8 @@ $body-background-color: #fff;
 //     // 如果没有安装hexo-renderer-scss，则无法修改$feature-color，使用默认色
 $feature-color: #c19b8d;
 // }
-$feature-font-family: 'Oswald-Regular',
-'Microsoft Yahei',
-'Source Sans Pro',
-Arial,
-sans-serif;
-$base-font-family: 
--apple-system,
+
+$base-font-family : -apple-system,
 BlinkMacSystemFont,
 "Helvetica Neue",
 Arial,
@@ -33,6 +28,7 @@ STHeiti,
 SimSun,
 sans-serif;
 
+$feature-font-family: 'Oswald-Regular', $base-font-family;
 $base-font-size: 16px !default;
 // ========== common ========== //
 $container-margin-top: 3rem;

@@ -2,8 +2,8 @@
 .index-post {
     display: block;
     position: relative;
-    padding: 1.5rem 0rem 0.5rem 0rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 0rem 1rem 0rem;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
     z-index: 3;
     &:first-of-type {
         padding-top: 0;
@@ -26,7 +26,7 @@
     color: $index-post-link-color;
     padding-bottom: 0.5rem;
     margin: 0.2rem 0;
-    transition: all 0.15s ease-in;
+    // transition: all 0.15s ease-in;
     &:hover {
         color: $feature-color;
         opacity: 0.8;
@@ -68,7 +68,7 @@
             left: -2px;
             content: '#';
         }
-        @include hover-line($color : #aaa);
+        @include hover-line($color: $index-post-tag-color);
     }
 }
 
