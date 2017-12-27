@@ -22,17 +22,17 @@
 // ========== abstract title ========== //
 .abstract-title {
     position: relative;
-    font: bold 1rem/1.5rem $base-font-family;
+    font: bold 1rem/2.5rem $base-font-family;
     color: $index-post-link-color;
     padding-bottom: 0.5rem;
-    margin: 0.2rem 0;
-    // transition: all 0.15s ease-in;
-    &:hover {
+    span:last-of-type {
+        transition: all 0.08s ease-in;
+        font-size: 1.5rem;
+    }
+    span:last-of-type:hover {
         color: $feature-color;
         opacity: 0.8;
-    }
-    span:last-of-type {
-        font-size: 1.5rem;
+        cursor: pointer;
     }
 }
 
