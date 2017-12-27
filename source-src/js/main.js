@@ -4,7 +4,7 @@ import { initMobile } from './mobile'
 import { sidebarInit } from './sidebar'
 import { initTag } from './tag'
 
-console.info('hexo-theme-archer: v20171217')
+console.info('hexo-theme-archer: v20171227')
 init()
 scroll()
 sidebarInit()

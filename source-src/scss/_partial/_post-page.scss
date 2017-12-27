@@ -55,8 +55,46 @@
 }
 
 .post-intro-calander {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-right: 0.3rem;
+}
+
+.post-intro-time {
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.busuanzi-pv {
+    font-size: 0.9rem;
+    margin-right: 0.4rem;
+}
+
+.shareWrapper {
+    font-size: 0.9rem;
+}
+
+.shareIcon {
+    font-size: 0.9rem;
+}
+
+.shareText {
+    font-family: $feature-font-family;
+}
+
+.bdsharebuttonbox {
+    font-size: 0.9rem !important;
+}
+
+.bds_more {
+    float: none !important;
+    font-size: 0.9rem !important;
+    background-image: none !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    padding: 0 0 0 0 !important;
+    margin: 0 0 0 0 !important;
+    &:hover {
+        opacity: 1 !important;
+    }
 }
 
 // ========== pager ========== //
