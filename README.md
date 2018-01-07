@@ -3,7 +3,7 @@ hexo-theme-archer
 
 ![preview](./docs/snap.png)
 
-## 在线预览( Online demo)
+## 在线预览(Online demo)
 
 在线预览主题：[Demo](http://firework.studio/archer-demo/)。
 
@@ -147,8 +147,8 @@ comment:
   youyan_uid:
 
 # ========== 统计 ========== #
-# 是否开启不蒜子统计
-busuanzi: false
+# 是否开启不蒜子统计(为保证统计页面浏览量，需开启)
+busuanzi: true
 # 百度统计(填写siteID)
 baidu_analytics:
 # Google统计(填写siteID)
