@@ -95,6 +95,7 @@ social:
   github:
   weibo:
   zhihu:
+  douban:
   facebook:
   twitter:
   instagram:
