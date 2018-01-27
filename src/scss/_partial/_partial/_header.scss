@@ -7,13 +7,13 @@
     width: 100%;
     height: $header-height;
     overflow: hidden;
-    z-index: 999;
+    z-index: 10;
     transform: translate3d(0, 0, 0);
     transition: transform 0.3s ease-in-out .0s;
 }
 
-.header-slide {
-    transform: translate3d(150px, 0, 0);
+.header-sidebar-active {
+    transform: translate3d(400px, 0, 0);
 }
 
 .read-progress {
@@ -103,7 +103,7 @@
     color: #fff;
     text-align: center;
     transition: all 0.1s ease-out;
-    z-index: 999;
+    z-index: 21;
     cursor: pointer;
     &:hover {
         background-color: #fff;

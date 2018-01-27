@@ -92,8 +92,12 @@
 // ========== sidebar ========== //
 .sidebar {
     width: 300px;
-    transform: translate3d(-301px, 0, 0);
 }
+
+.wrapper-sidebar-active {
+    transform: translate3d(300px, 0, 0);
+}
+
 
 .sidebar-category {
     font-size: 1.5rem;
@@ -128,7 +132,7 @@
     }
 }
 
-.sidebar-tag-list {
+.sidebar-tags-list {
     padding: 0.2rem 0 0.2rem 0.5rem;
     .archive-post-date {
         font-size: 1.0rem;
@@ -137,6 +141,17 @@
         font-size: 1.2rem;
     }
 }
+
+.sidebar-tag-name,
+.sidebar-category-name {
+    .iconfont-archer {
+        pointer-events: none;
+        transform: translateY(-1rem);
+        font-size: 0.8rem;
+        margin: 0 0.3rem 0 0.1rem;
+    }
+}
+
 
 // ========== footer ========== //
 .footer {

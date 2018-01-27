@@ -7,11 +7,11 @@
 - `docs` : 文档目录
 - `layout` : 模板目录
 - `source` : 编译生成的主题资源，供主题加载
-- `source-src` : 源代码目录，需编译到source目录
+- `src` : 源代码目录，需编译到source目录
   - `js` : javascript源代码
   - `scss` : scss源代码
 
-如果需要修改页面结构，请修改`layout`中的ejs模板文件；如果需要修改样式，请修改`source-src\scss`中的scss文件；如果需要修改脚本，请修改`source-src\js`中的js文件。对scss和js的修改需要编译才能生成到`source`中，请参照下面的开发步骤。
+如果需要修改页面结构，请修改`layout`中的ejs模板文件；如果需要修改样式，请修改`src\scss`中的scss文件；如果需要修改脚本，请修改`src\js`中的js文件。对scss和js的修改需要编译才能生成到`source`中，请参照下面的开发步骤。
 
 **提示：**如果`hexo s`或`hexo g`很慢，在**Hexo配置文件**中加入
 
@@ -34,7 +34,7 @@ ignore: ['**/themes/**/node_modules/**', '**/themes/**/node_modules', '**/themes
 1. 在Hexo目录下运行`hexo s`启动本地服务器。
 2. 在archer目录下执行`gulp dev`进入本地开发模式。
 
-该模式会监视`source-src`中和`layout`下的文件修改，实时进行编译，然后通过`browser-sync`在`localhost:3000`（默认）下自动刷新页面（其他位置的文件修改并不会自动刷新页面，需手动刷新）。
+该模式会监视`src`中和`layout`下的文件修改，实时进行编译，然后通过`browser-sync`在`localhost:3000`（默认）下自动刷新页面（其他位置的文件修改并不会自动刷新页面，需手动刷新）。
 
 ### 编译发布
 

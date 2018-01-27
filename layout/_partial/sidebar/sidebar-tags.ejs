@@ -1,9 +1,10 @@
-<div class="sidebar-tags">
+<div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     <% site.tags.each(function (tag) { %>
-        <span class="sidebar-tag-name"><a href= "#"><%- tag.name %></a></span>
+        <span class="sidebar-tag-name" data-tags="<%- tag.name %>"><span class="iconfont-archer">&#xe606;</span><%- tag.name %></span>
     <% }) %>
     </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
     缺失模块。<br/>
     1、请确保node版本大于6.2<br/>
@@ -27,8 +28,8 @@ jsonContent:
     link: false
     permalink: false
     excerpt: false
-    categories: false
+    categories: true
     tags: true</pre>
     </div> 
-    <div class="sidebar-tag-list"></div>
+    <div class="sidebar-tags-list"></div>
 </div>

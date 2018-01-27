@@ -1,7 +1,8 @@
 // ========== 设置滚动条的样式 (Webkit only) ========== //
 html,
-.sidebar-archive,
-.sidebar-tag-list,
+.sidebar-panel-archives,
+.sidebar-tags-list,
+.sidebar-categories-list,
 .highlight {
     &::-webkit-scrollbar {
         background-color: rgba(0, 0, 0, .5);
@@ -26,17 +27,19 @@ html,
         border: none;
     }
     &::-webkit-scrollbar-thumb {
-        background-color: rgba(0, 0, 0, .8);
+        background-color: rgba(255, 255, 255, .2);
         border-radius: 0px;
     }
     &::-webkit-scrollbar-track:hover {
-        background-color: rgba(0, 0, 0, .15);
+        background-color: rgba(0, 0, 0, .1);
     }
 }
 
 // sidebar srcollbar
 .sidebar-archive,
-.sidebar-tag-list {
+.sidebar-tags-list,
+.sidebar-categories-list
+{
     &::-webkit-scrollbar-thumb {
         border-radius: 8px;
         background-color: rgba(255, 255, 255, .7);
