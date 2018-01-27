@@ -9,9 +9,9 @@ signature: witness me
 social:
   email: 12345@qq.com
   github: //github.com/fi3ework
-  weibo:
+  # weibo:
   # zhihu:
-  # douban:
+  douban: //github.com/fi3ework
   # facebook:
   # twitter:
   # instagram:

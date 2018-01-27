@@ -1,0 +1,9 @@
+<div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    <% site.categories.each(function (category) { %>
+        <span class="sidebar-category-name" data-categories="<%- category.slug %>"><span class="iconfont-archer">&#xe60a;</span><%- category.slug %></span>
+    <% }) %>
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>

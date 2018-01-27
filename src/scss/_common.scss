@@ -11,20 +11,24 @@ html {
 }
 
 body {
+    z-index: 100;
     position: relative;
     background-color: $body-background-color;
     height: 100%;
 }
 
 .wrapper {
+    z-index: 1;
     width: 100%;
     transition: all 0.3s ease-out .0s;
     transform: translate3d(0, 0, 0);
     position: relative;
+    background-color: #fff;
+    box-shadow: -0.7rem 0 0.8rem -0.5rem rgba(0, 0, 0, 0.7);
 }
 
-.wrapper-slide {
-    transform: translate3d(150px, 0, 0);
+.wrapper-sidebar-active {
+    transform: translate3d(400px, 0, 0);
 }
 
 .main {
@@ -37,7 +41,7 @@ body {
 }
 
 .container {
-    margin: $container-margin-top 0 0 0;
+    padding: $container-margin-top 0 0 0;
     position: relative;
     top: 0;
     left: 0;
@@ -70,7 +74,7 @@ li {
     position: fixed;
     left: 1rem;
     bottom: 1rem;
-    z-index: 999;
+    z-index: 10;
     opacity: 0;
     width: 1.5rem;
     height: 1.5rem;
