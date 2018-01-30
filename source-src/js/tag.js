@@ -1,7 +1,7 @@
 import archerUtil from './util'
 
 let initTag = function () {
-  let contentJSON,
+  let posts,
     tagMap = new Map()
   initTagInfo()
 
@@ -16,8 +16,13 @@ let initTag = function () {
     xhr.onload = function () {
       if (this.status === 200 || this.status === 304) {
         $tagLoadFail.remove()
-        contentJSON = JSON.parse(this.responseText)
-        initTagMap(contentJSON)
+        let contentJSON = JSON.parse(this.responseText)
+        if (contentJSON) {
+          posts = contentJSON.posts
+        }
+        if (posts && posts.length) {
+          initTagMap(posts)
+        }
       } else {
         showTagLoadFail($tagLoadFail)
         $('.sidebar-tags-name:first').remove()
@@ -32,9 +37,9 @@ let initTag = function () {
   }
 
   // 建立map
-  function initTagMap(contentJSON) {
-    for (let postIndex = 0; postIndex < contentJSON.length; postIndex++) {
-      let currPostTags = contentJSON[postIndex].tags
+  function initTagMap(posts) {
+    for (let postIndex = 0; postIndex < posts.length; postIndex++) {
+      let currPostTags = posts[postIndex].tags
       if (currPostTags.length) {
         currPostTags.forEach(function (tag) {
           if (tagMap.has(tag.name)) {
@@ -90,7 +95,7 @@ let initTag = function () {
       postList = $('.sidebar-tag-list')[0]
     postList.innerHTML = ''
     indexsArr.forEach(function (item) {
-      frag.appendChild(createTagDom(contentJSON[item])[0])
+      frag.appendChild(createTagDom(posts[item])[0])
     })
     postList.appendChild(frag)
   })
