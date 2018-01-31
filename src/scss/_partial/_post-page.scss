@@ -159,13 +159,13 @@
     }
     @for $i from 2 through 4 {
         h#{$i} {
-            &::before {
-                content: "#";
-                margin-right: 2px;
-                color: $feature-color;
-                font: 1em $base-font-family;
-                font-weight: bold;
-            }
+            // &::before {
+            //     content: "#";
+            //     margin-right: 2px;
+            //     color: $feature-color;
+            //     font: 1em $base-font-family;
+            //     font-weight: bold;
+            // }
         }
     }
     h1 {}

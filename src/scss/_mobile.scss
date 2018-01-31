@@ -24,6 +24,11 @@
     padding: 0.5rem 0 0 0;
 }
 
+// prevent blink when touch link
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
 // ========== intro ========== //
 .post-body {
     .site-intro-meta {

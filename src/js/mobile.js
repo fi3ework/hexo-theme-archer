@@ -6,7 +6,7 @@ let initMobile = function () {
   } else {
     window.addListener('resize', function () {
       let innerWidth = window.innerWidth || document.documentElement.clientWidth ||
-                document.body.clientWidth
+        document.body.clientWidth
       mediaChangeHandler(innerWidth > 900 ? {
         matches: false
       } : {
@@ -21,12 +21,17 @@ let initMobile = function () {
     if (mql.matches) {
       console.log('mobile')
       // TODO: why
-      document.body.addEventListener('touchstart', function () {})
+      mobilePreventScrollBreakdown()
+      // document.body.addEventListener('touchstart', function () {})
     } else {
       console.log('desktop')
     }
   }
+
+  function mobilePreventScrollBreakdown() {
+  }
 }
+
 
 export {
   initMobile

@@ -9,8 +9,31 @@
         <% } %>
     </title>
     <link rel="icon" href= <%- theme.favicon %>>
-    <!-- TODO: 在font-face加载完毕后改变字体  -->
+    <!-- TODO: 用NPM搞  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
+     <!-- https://stackoverflow.com/questions/12820953/asynchronous-script-loading-callback/12821561#12821561 -->
+    <script>
+        function async(u, c) {
+            var d = document, t = 'script',
+                o = d.createElement(t),
+                s = d.getElementsByTagName(t)[0];
+            o.src = u;
+            if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+            s.parentNode.insertBefore(o, s);
+        }
+    </script>
+    <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+    <script>
+        async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js", function () {
+            console.log(13, anchors);
+            anchors.options = {
+                visible: 'always',
+                placement: 'left',
+                icon: '#'
+            };
+            anchors.add().remove('.site-intro-meta h1').remove('h5')
+        })
+    </script>
     <!-- 提前加载place holder  -->
     <style type="text/css">
         @font-face {
