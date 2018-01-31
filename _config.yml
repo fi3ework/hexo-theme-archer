@@ -11,7 +11,7 @@ social:
   github: //github.com/fi3ework
   # weibo:
   # zhihu:
-  douban: //github.com/fi3ework
+  # douban:
   # facebook:
   # twitter:
   # instagram:
@@ -74,7 +74,7 @@ CNZZ_analytics:
 # ========== Others ========== #
 # favicon
 favicon: /assets/favicon.ico
-# truncate length (the default is 300)
-truncate_length:
+# truncate length (the default is 300. If it's set to 0, there will not be abstruct)
+truncate_length: 
 # enable toc
 toc: true
