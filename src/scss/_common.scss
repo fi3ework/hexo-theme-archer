@@ -24,7 +24,7 @@ body {
     transform: translate3d(0, 0, 0);
     position: relative;
     background-color: #fff;
-    box-shadow: -0.7rem 0 0.8rem -0.5rem rgba(0, 0, 0, 0.7);
+    box-shadow: -1rem 0 0.6rem -0.5rem rgba(0, 0, 0, 0.7);
 }
 
 .wrapper-sidebar-active {
@@ -78,7 +78,6 @@ li {
     opacity: 0;
     width: 1.5rem;
     height: 1.5rem;
-    background-color: white;
     transition: all 0.2s ease-out .0s;
     font-family: iconfont-archer;
     text-align: center;
@@ -96,7 +95,7 @@ li {
 .back-top-show {
     opacity: 1;
     pointer-events: initial;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 // selection

@@ -14,6 +14,7 @@ class Sidebar {
       this._bindTabsClick()
       this._bindButtonClick()
       this._bindWrapperClick()
+      this._bindWrapperTransitionEnd()
       this.preventOver()
     }
 
@@ -36,7 +37,8 @@ class Sidebar {
       $('.wrapper').addClass('wrapper-sidebar-active')
       $('.header').addClass('header-sidebar-active')
       $('.toc-wrapper').addClass('toc-slide')
-      this.$sidebar.addClass(`sidebar-active`)
+      this.$sidebar.removeClass('sidebar-hide')
+      this.$sidebar.addClass('sidebar-active')
     }
 
     _inactivateSidebar() {
@@ -59,6 +61,14 @@ class Sidebar {
           this.$nav.addClass(`sidebar-tabs-active-${i}`)
         }
       }
+    }
+
+    _bindWrapperTransitionEnd() {
+      $('.wrapper').on('transitionend', (e) => {
+        if (!this.$sidebar.hasClass('sidebar-active')) {
+          this.$sidebar.addClass('sidebar-hide')
+        }
+      })
     }
 
     _switchPanel(toIndex) {
@@ -100,11 +110,11 @@ class Sidebar {
     preventOver() {
       let $sidebar = this.$sidebar
       let that = this
-      this.$sidebar.on('mousewheel', function(eve) {
-        let target = eve.target,
-          $sidebarArchive = $sidebar.find('.sidebar-panel-archives'),
-          $sidebarTagsList = $sidebar.find('.sidebar-tags-list'),
-          $sidebarCategoriesList = $sidebar.find('.sidebar-categories-list')
+      let $sidebarArchive = $sidebar.find('.sidebar-panel-archives')
+      let $sidebarTagsList = $sidebar.find('.sidebar-tags-list')
+      let $sidebarCategoriesList = $sidebar.find('.sidebar-categories-list')
+      this.$sidebar.on('mousewheel', function (eve) {
+        let target = eve.target
         if ($.contains($sidebarTagsList[0], target) || $sidebarTagsList === target) {
           that.stopSidebarEdgeScroll.call($sidebarTagsList[0], eve)
         } else if ($.contains($sidebarArchive[0], target) || $sidebarArchive === target) {
@@ -119,6 +129,7 @@ class Sidebar {
 
   // 阻止滚轮在sidebar滚动越界, 1. 没有滚动条直接禁止滚动 2. 触顶禁止上滚 3. 触底禁止下滚
     stopSidebarEdgeScroll(eve) {
+      window.addEventListener('scroll', (e) => { e.preventDefault() })
       if (this.scrollHeight === this.clientHeight) {
         window.event.preventDefault()
       } else if (this.scrollTop <= 0) {

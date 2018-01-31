@@ -26,14 +26,14 @@
 }
 
 .profile-name {
-    font: 2rem/3.5rem $profile-name-font-family;
+    font: 2rem/3.5rem $feature-font-family;
     color: #333;
     text-align: center;
 }
 
 .profile-signature {
     color: #787878;
-    font: 1rem $profile-signature-font-family;
+    font: 1rem $feature-font-family;
     text-align: center;
     margin: -0.5rem 0 0 0;
 }
@@ -49,7 +49,7 @@
 
 .friends {
     padding: 0.5rem 0;
-    font: 1rem $profile-friend-font-family;
+    font: 1rem $feature-font-family;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     text-align: left;
     div {
@@ -67,7 +67,7 @@
 
 .about-me{
     padding: 0.5rem 0;
-    font: 1rem $profile-friend-font-family;
+    font: 1rem $feature-font-family;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     text-align: left;
     div a{

@@ -1,7 +1,7 @@
 <main class="main index-page">
     <% page.posts.each(function (_post) { %>
-    <% let truncateLength = theme.truncate_length || 300; %>
-    <% let _content = truncate(strip_html(_post.content), {length: truncateLength, omission: '...'}) %>
+    <% let truncateLength = typeof theme.truncate_length === 'number' ? theme.truncate_length : 300 %>
+    <% let _content = truncateLength === 0 ? null : truncate(strip_html(_post.content), {length: truncateLength, omission: '...'}) %>
         <article class="index-post">
             <a class="abstract-title" href = "<%- url_for(_post.path) %>" >
                 <% if(_post.top) { %>
@@ -9,11 +9,9 @@
                     <% } %>
                     <span><%= _post.title || '[Untitled Post]' %></span>
             </a>
-            <a class="content-show-full" href = "<%- url_for(_post.path) %>" >
-                <div class="abstract-content">
-                    <%- _content %>
-                </div>
-            </a>
+            <div class="abstract-content">
+                <%- _content %>
+            </div>
             <div class="abstract-post-meta">
                 <!-- tags  -->
                 <% if(_post.tags.length) { %>
