@@ -542,7 +542,8 @@ var scroll = function scroll() {
 
 
     readPercent = readPercent >= 0 ? readPercent : 100;
-    $progressBar.css('width', "".concat(readPercent, "%"));
+    var restPercent = readPercent - 100;
+    $progressBar[0].style.transform = "translate3d(".concat(restPercent, "%, 0, 0)");
   } // rAF操作
 
 

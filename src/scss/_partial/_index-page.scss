@@ -1,6 +1,5 @@
 // ========== main ========== //
 .index-post {
-    display: block;
     position: relative;
     padding: 1rem 0rem 1rem 0rem;
     border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
@@ -13,26 +12,21 @@
 // ========== abstract content ========== //
 .abstract-content {
     color: #9c9c9c;
-    font: 1rem/1.5rem $base-font-family;
-    white-space: normal;
-    word-break: break-all;
-    transition: color 0.1s ease-out;
+    font: 1rem/1.6rem $base-font-family;
+    word-break: break-word;
 }
 
 // ========== abstract title ========== //
 .abstract-title {
-    position: relative;
-    font: bold 1rem/2.5rem $base-font-family;
+    line-height: 2.5rem;
     color: $index-post-link-color;
     padding-bottom: 0.5rem;
     span:last-of-type {
-        transition: all 0.08s ease-in;
-        font-size: 1.5rem;
-    }
-    span:last-of-type:hover {
-        color: $feature-color;
-        opacity: 0.8;
-        cursor: pointer;
+        transition: color 0.1s ease-in;
+        font-size: 1.7rem;
+        &:hover{
+            color: $feature-color;
+        }
     }
 }
 
@@ -43,54 +37,31 @@
 
 // ========== abstract meta ========== //
 .abstract-post-meta {
-    position: relative;
+    display: flex;
+    justify-content: space-between;
     padding: 0.5rem 0 0 0;
     font-family: $feature-font-family;
-    line-height: 1rem;
     color: #aaa;
-    overflow: hidden;
     height: 1.5rem;
 }
 
 // tags
-.abstract-tags {
-    position: absolute;
-    right: 0;
-    text-align: right;
-    .post-tag {
-        font-size: 1rem;
-        position: relative;
-        overflow: visible;
-        color: $index-post-tag-color;
-        margin-left: 0.4rem;
-        &::before {
-            position: relative;
-            left: -2px;
-            content: '#';
-        }
-        @include hover-line($color: $index-post-tag-color);
-    }
-}
-
-// date
-.abstract-date {
-    float: left;
-    vertical-align: bottom;
-    text-align: center;
-    margin-right: 0.2rem;
-    transition: all 0.2s ease-out;
-}
-
-.abstract-calander::before {
+.post-tag {
+    font-size: 1rem;
     position: relative;
-    top: -0.05rem;
-    margin-right: 0.3rem;
-    font-size: 1.1rem;
-    content: "\e676";
+    color: $index-post-tag-color;
+    margin-left: 0.4rem;
+    &::before {
+        position: relative;
+        left: -2px;
+        content: '#';
+    }
+    @include hover-line($color: $index-post-tag-color);
 }
 
-.abstract-time {
-    display: inline-block;
-    vertical-align: bottom;
+.abstract-calander {
+    position: relative;
+    top: -0.1rem;
+    margin-right: 0.3rem;
     font-size: 1rem;
 }

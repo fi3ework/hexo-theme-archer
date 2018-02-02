@@ -4,22 +4,22 @@
     </article>
     <!-- 前后页  -->
     <ul class="post-pager">
-        <% if (page.prev){ %>
-            <li class="next">
+        <li class="next">
+            <% if (page.prev){ %>
+                <div class="nextSlogan">Next Post</div>
                 <a href= "<%- url_for(page.prev.path) %>" title= <%- page.prev.title %> >
-                    <span>Next Post</span>
-                    <span><%- page.prev.title || '[Untitled Post]' %></span>
+                    <div class="nextTitle"><%- page.prev.title || '[Untitled Post]' %></div>
                 </a>
-            </li>
-        <% } %>
-        <% if (page.next){ %>
-            <li class="previous">
+            <% } %>
+        </li>
+        <li class="previous">
+            <% if (page.next){ %>
+                <div class="prevSlogan">Previous Post</div>
                 <a href= "<%- url_for(page.next.path) %>" title= <%- page.next.title %> >
-                    <span>Previous Post</span>
-                    <span><%- page.next.title || '[Untitled Post]' %></span>
+                    <div class="prevTitle"><%- page.next.title || '[Untitled Post]' %></div>
                 </a>
-            </li>
-        <% } %>
+            <% } %>
+        </li>
     </ul>
     <!-- 评论插件 -->
     <%- partial('_partial/comment/livere') %>

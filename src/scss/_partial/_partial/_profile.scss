@@ -3,19 +3,18 @@
     order: 0;
     vertical-align: top;
     flex-shrink: 0;
-    position: relative;
-    top: 2px;
-    margin: 0 0 2px 0;
+    margin: 4px 0 0 0;
     width: $profile-width;
-
+    font: 1rem $feature-font-family;
+    * {
+        color: $social-iconfont-color;
+    }
     img {
         display: block;
-        border-radius: 0.4rem;
-        margin: 0 auto;
+        border-radius: 1rem;
         width: 100%;
-        box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.20);
+        box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.4);
     }
-
     // 为了在没有social和friends时也显示一个分割线
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 0.5rem;
@@ -26,54 +25,50 @@
 }
 
 .profile-name {
-    font: 2rem/3.5rem $feature-font-family;
+    font-size: 2rem;
+    line-height: 3rem;
+    padding: 0.5rem 0 0 0;
     color: #333;
     text-align: center;
 }
 
 .profile-signature {
-    color: #787878;
-    font: 1rem $feature-font-family;
+    font-size: 1rem;
     text-align: center;
-    margin: -0.5rem 0 0 0;
 }
 
 .profile-social {
-    margin: 0 auto;
+    position: relative;
+    width: 100%;
     text-align: left;
     line-height: 1.7rem;
     padding: 0.5rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    .iconfont-archer{
+        position: relative;
+    }
     @include social($scaleSize: 0.5, $spanMargin: 0.4rem);
 }
 
 .friends {
     padding: 0.5rem 0;
-    font: 1rem $feature-font-family;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     text-align: left;
     div {
         font-size: 1.2rem;
         text-align: left;
-        color: #787878;
-
         font-weight: bold;
     }
     a {
-        color: #787878;
         margin-right: 0.6rem;
     }
 }
 
 .about-me{
     padding: 0.5rem 0;
-    font: 1rem $feature-font-family;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    text-align: left;
-    div a{
+    a {
         font-size: 1.2rem;
-        text-align: left;
-        color: #787878;
         font-weight: bold;
     }
 }

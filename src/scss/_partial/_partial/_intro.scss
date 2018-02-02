@@ -27,30 +27,23 @@
     align-items: center;
 }
 
-.intro-title {
-    font: 4rem $feature-font-family;
+.intro-title, .intro-subtitle {
+    font-family: $feature-font-family;
     color: #fff;
     margin: 0;
     opacity: 0;
-    transition: all 0.5s ease-out 0s;
-    transform: translate(0, -1rem);
-    user-select: none;
-
-
-}
-
-.intro-subtitle {
-    font: 2rem $feature-font-family;
-    color: #fff;
-    margin: 0;
-    opacity: 0;
-    transition: all 0.5s ease-out 0.5s;
+    transition: translate 0.5s ease-out 0s;
     transform: translate(0, -1rem);
     user-select: none;
 }
 
+.intro-title{
+    font-size: 4rem;
+}
 
-
+.intro-subtitle{
+    font-size: 2rem;
+}
 
 .intro-fade-in {
     opacity: 1;

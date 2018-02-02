@@ -7,13 +7,16 @@
 .social {
     text-align: center;
     vertical-align: text-bottom;
+    .iconfont-archer {
+        position: relative;
+    }
     @include social($scaleSize: 0.8, $spanMargin: 0.5rem);
 }
 
 // ========== copyright ========== //≈
 .copyright {
     font-family: $feature-font-family;
-    margin: 0.5rem auto 0 auto;
+    margin: 0.5rem auto;
     text-align: center;
     color: $social-iconfont-color;
     a {
@@ -23,9 +26,8 @@
 
 .power {
     position: relative;
-    top: 1px;
-    vertical-align: 10%;
-    font-size: 0.9rem;
+    vertical-align: baseline;
+    font-size: 1rem;
     padding: 0 0.2rem;
 }
 
