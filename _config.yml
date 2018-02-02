@@ -9,15 +9,15 @@ signature: witness me
 social:
   email: 12345@qq.com
   github: //github.com/fi3ework
-  # weibo:
-  # zhihu:
-  # douban:
-  # facebook:
-  # twitter:
-  # instagram:
-  # stack-overflow:
-  # linkedin:
-  # others:
+  weibo: //github.com/fi3ework
+  zhihu: //github.com/fi3ework
+  douban: //github.com/fi3ework
+  facebook: //github.com/fi3ework
+  twitter: //github.com/fi3ework
+  instagram: //github.com/fi3ework
+  stack-overflow: //github.com/fi3ework
+  linkedin: //github.com/fi3ework
+  others: //github.com/fi3ework
   rss: /atom.xml
 # friends
 friends:

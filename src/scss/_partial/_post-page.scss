@@ -1,12 +1,12 @@
 // ========== main ========== //
-.post-body {
+.post-body, .about-body {
     main {
         margin: 0;
     }
 }
 
 // ========== intro ========== //
-.post-body {
+.post-body, .about-body {
     .site-intro-meta {
         width: 50%;
         min-width: 42.8125rem;
@@ -103,36 +103,39 @@
     padding: 0;
     list-style: none;
     margin: 2.5rem 0 1rem 0;
+    display: flex;
+    justify-content: space-between;
     li {
-        padding: 0.2rem 0.5rem 0.5rem 0.5rem;
-        border-color: #787878;
-        width: 13rem;
-        border: 1px solid #ddd;
+        position: relative;
+        max-width: 13rem;
     }
-    li:hover {
-        border-color: #252525;
-        background-color: #252525;
-        span:last-of-type {
+
+    .nextTitle,
+    .prevTitle{
+        font-size: 1.2rem;
+        color: #ccc;
+        &:hover{
             color: $feature-color;
         }
-        span:first-of-type {
-            color: #fff;
-        }
     }
-    span {
-        display: block;
-        color: #ddd;
-        text-align: center;
-    }
-    span:first-of-type {
+
+    .nextSlogan,
+    .prevSlogan {
         font: bold 1.4rem $feature-font-family;
         color: #252525;
     }
-    .previous {
-        float: right;
+
+    .nextSlogan {
+        &::before{
+            content: '< ';
+            font-size: 1.7rem;
+        }
     }
-    .next {
-        float: left;
+    .prevSlogan {
+        &::after {
+            content: ' >';
+            font-size: 1.7rem;
+        }
     }
 }
 

@@ -78,13 +78,12 @@ li {
     opacity: 0;
     width: 1.5rem;
     height: 1.5rem;
-    transition: all 0.2s ease-out .0s;
-    font-family: iconfont-archer;
     text-align: center;
-    line-height: 1.6rem;
+    line-height: 1.5rem;
     border: 2px solid black;
     border-radius: 2px;
-    transition: all 0.1s ease-out .0s;
+    transition: opacity 0.1s ease-out .0s;
+    background-color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
     &:hover {
         background-color: #000;
@@ -95,7 +94,6 @@ li {
 .back-top-show {
     opacity: 1;
     pointer-events: initial;
-    background-color: rgba(255, 255, 255, 0.5);
 }
 
 // selection
