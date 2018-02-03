@@ -12,7 +12,9 @@
 // ========== abstract content ========== //
 .abstract-content {
     color: #9c9c9c;
-    font: 1rem/1.6rem $base-font-family;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    font-weight: lighter;
     word-break: break-word;
 }
 
@@ -51,9 +53,9 @@
     position: relative;
     color: $index-post-tag-color;
     margin-left: 0.4rem;
+    font-weight: lighter;
     &::before {
-        position: relative;
-        left: -2px;
+        margin-right: 2px;
         content: '#';
     }
     @include hover-line($color: $index-post-tag-color);
