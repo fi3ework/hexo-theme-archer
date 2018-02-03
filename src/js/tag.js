@@ -16,7 +16,7 @@ class InitSidebarLink {
     this.bindOtherClick()
   }
 
-  static contentJSON
+  static postArr
   static emitter = new Emitter()
   initInfo() {
     // jsInfo is from js-info.ejs
@@ -28,12 +28,18 @@ class InitSidebarLink {
     xhr.onload = function () {
       if (this.status === 200 || this.status === 304) {
         $loadFailed.remove()
-        InitSidebarLink.contentJSON = JSON.parse(this.responseText)
-        InitSidebarLink.emitter.emit('json ininted')
-        // that.initIndexMap()
-        // initTagMap(InitSidebaLink.contentJSON)
+        // defensive programming if content.json formart is not correct
+        // pr: https://github.com/fi3ework/hexo-theme-archer/pull/37
+        let contentJSON
+        let posts
+        if (contentJSON) {
+          posts = contentJSON.posts
+        }
+        if (posts && posts.length) {
+          InitSidebarLink.postArr = JSON.parse(this.responseText)
+          InitSidebarLink.emitter.emit('json ininted')
+        }
       } else {
-        // showTagLoadFail($tagLoadFail)
         this.postList.remove()
       }
     }
@@ -93,7 +99,7 @@ class InitSidebarLink {
     this._switchFocus(label)
     let indexArr = this.indexMap.get(label)
     let corrArr = indexArr.map((index) => {
-      return InitSidebarLink.contentJSON[index]
+      return InitSidebarLink.postArr[index]
     })
     this.updateList(corrArr)
   }
@@ -106,9 +112,9 @@ class InitSidebarLink {
   }
 
   _initIndexMap() {
-    let contentJSON = InitSidebarLink.contentJSON
-    for (let postIndex = 0; postIndex < contentJSON.length; postIndex++) {
-      let currPostTags = contentJSON[postIndex][this.metaName]
+    let postArr = InitSidebarLink.postArr
+    for (let postIndex = 0; postIndex < postArr.length; postIndex++) {
+      let currPostTags = postArr[postIndex][this.metaName]
       // if there is any post has a tag
       if (currPostTags.length) {
         currPostTags.forEach((tag) => {

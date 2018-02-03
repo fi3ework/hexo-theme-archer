@@ -32,7 +32,7 @@
     color: #fff;
     margin: 0;
     opacity: 0;
-    transition: translate 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
     transform: translate(0, -1rem);
     user-select: none;
 }
@@ -43,6 +43,7 @@
 
 .intro-subtitle{
     font-size: 2rem;
+    transition-delay: 0.5s;
 }
 
 .intro-fade-in {

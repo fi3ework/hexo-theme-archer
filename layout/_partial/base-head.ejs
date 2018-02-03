@@ -1,181 +1,117 @@
+<!-- title -->
+<% var title = "" %>
+<% if (page.title) { %>
+<% title = page.title + ' · ' + theme.SEO_title || config.title %>
+<% } else {%>
+<% title = theme.SEO_title %>
+<% } %>
+
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-    <title>
-        <% if (page.title) { %>
-        <%= page.title + ' · ' + theme.SEO_title || config.title %>
-        <% } else {%>
-        <%= theme.SEO_title %>
-        <% } %>
-    </title>
+    <title><%= title %></title>
+    <%- partial('critical-css/critical-style') %>
+    <link rel="preload" href= <%- url_for( "") + "css/style.css?v=20180120" %> as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" type="text/css" href= <%- url_for("") + "css/mobile.css" %> media="(max-width: 980px)"/>
     <link rel="icon" href= <%- theme.favicon %>>
-    <!-- TODO: 用NPM搞  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
-     <!-- https://stackoverflow.com/questions/12820953/asynchronous-script-loading-callback/12821561#12821561 -->
+    <%- partial('script/font-loader') %>
     <script>
-        function async(u, c) {
-            var d = document, t = 'script',
-                o = d.createElement(t),
-                s = d.getElementsByTagName(t)[0];
-            o.src = u;
-            if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-            s.parentNode.insertBefore(o, s);
-        }
-    </script>
-    <!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-    <script>
-        async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js", function () {
-            console.log(13, anchors);
-            anchors.options = {
-                visible: 'always',
-                placement: 'left',
-                icon: '#'
+        (function (w) {
+            "use strict";
+            // rel=preload support test
+            if (!w.loadCSS) {
+                w.loadCSS = function () { };
+            }
+            // define on the loadCSS obj
+            var rp = loadCSS.relpreload = {};
+            // rel=preload feature support test
+            // runs once and returns a function for compat purposes
+            rp.support = (function () {
+                var ret;
+                try {
+                    ret = w.document.createElement("link").relList.supports("preload");
+                } catch (e) {
+                    ret = false;
+                }
+                return function () {
+                    return ret;
+                };
+            })();
+
+            // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+            // then change that media back to its intended value on load
+            rp.bindMediaToggle = function (link) {
+                // remember existing media attr for ultimate state, or default to 'all'
+                var finalMedia = link.media || "all";
+
+                function enableStylesheet() {
+                    link.media = finalMedia;
+                }
+
+                // bind load handlers to enable media
+                if (link.addEventListener) {
+                    link.addEventListener("load", enableStylesheet);
+                } else if (link.attachEvent) {
+                    link.attachEvent("onload", enableStylesheet);
+                }
+
+                // Set rel and non-applicable media type to start an async request
+                // note: timeout allows this to happen async to let rendering continue in IE
+                setTimeout(function () {
+                    link.rel = "stylesheet";
+                    link.media = "only x";
+                });
+                // also enable media after 3 seconds,
+                // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+                setTimeout(enableStylesheet, 3000);
             };
-            anchors.add().remove('.site-intro-meta h1').remove('h5')
-        })
-    </script>
-    <!-- 提前加载place holder  -->
-    <style type="text/css">
-        @font-face {
-            font-family: 'Oswald-Regular';
-            src: url(<%- url_for('/font/Oswald-Regular.ttf') %>);
-        }
-    </style>
-    <style type="text/css">
-        .site-intro {
-            position: relative;
-            width: 100%;
-            height: 50vh;
-            overflow: hidden;
-            box-shadow: -0.1rem 0 0.5rem 0 rgba(0, 0, 0, 0.5);
-        }
-        .site-intro-placeholder {
-            position: absolute;
-            z-index: -2;
-            top: 0;
-            left: 0px;
-            width: calc(100% + 300px);
-            height: 100%;
-            background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
-            background-position: center center;
-            transform: translate3d(-226px, 0, 0);
-            animation: gradient-move 2.5s ease-out 0s 1;
-        }
-        @keyframes gradient-move {
-        0% {
-            transform: translate3d(-226px, 0, 0);
-        }
-        100% {
-            transform: translate3d(0, 0, 0);
-        }
-    }
-</style>
-    <link rel="preload" href= <%- url_for("") + "css/style.css?v=20180120" %> as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <script>
-    /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-    /* This file is meant as a standalone workflow for
-    - testing support for link[rel=preload]
-    - enabling async CSS loading in browsers that do not support rel=preload
-    - applying rel preload css once loaded, whether supported or not.
-    */
-    (function (w) {
-        "use strict";
-        // rel=preload support test
-        if (!w.loadCSS) {
-            w.loadCSS = function () { };
-        }
-        // define on the loadCSS obj
-        var rp = loadCSS.relpreload = {};
-        // rel=preload feature support test
-        // runs once and returns a function for compat purposes
-        rp.support = (function () {
-            var ret;
-            try {
-                ret = w.document.createElement("link").relList.supports("preload");
-            } catch (e) {
-                ret = false;
-            }
-            return function () {
-                return ret;
+
+            // loop through link elements in DOM
+            rp.poly = function () {
+                // double check this to prevent external calls from running
+                if (rp.support()) {
+                    return;
+                }
+                var links = w.document.getElementsByTagName("link");
+                for (var i = 0; i < links.length; i++) {
+                    var link = links[i];
+                    // qualify links to those with rel=preload and as=style attrs
+                    if (link.rel === "preload" && link.getAttribute("as") === "style" && !link.getAttribute("data-loadcss")) {
+                        // prevent rerunning on link
+                        link.setAttribute("data-loadcss", true);
+                        // bind listeners to toggle media back
+                        rp.bindMediaToggle(link);
+                    }
+                }
             };
-        })();
 
-        // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-        // then change that media back to its intended value on load
-        rp.bindMediaToggle = function (link) {
-            // remember existing media attr for ultimate state, or default to 'all'
-            var finalMedia = link.media || "all";
+            // if unsupported, run the polyfill
+            if (!rp.support()) {
+                // run once at least
+                rp.poly();
 
-            function enableStylesheet() {
-                link.media = finalMedia;
-            }
-
-            // bind load handlers to enable media
-            if (link.addEventListener) {
-                link.addEventListener("load", enableStylesheet);
-            } else if (link.attachEvent) {
-                link.attachEvent("onload", enableStylesheet);
-            }
-
-            // Set rel and non-applicable media type to start an async request
-            // note: timeout allows this to happen async to let rendering continue in IE
-            setTimeout(function () {
-                link.rel = "stylesheet";
-                link.media = "only x";
-            });
-            // also enable media after 3 seconds,
-            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-            setTimeout(enableStylesheet, 3000);
-        };
-
-        // loop through link elements in DOM
-        rp.poly = function () {
-            // double check this to prevent external calls from running
-            if (rp.support()) {
-                return;
-            }
-            var links = w.document.getElementsByTagName("link");
-            for (var i = 0; i < links.length; i++) {
-                var link = links[i];
-                // qualify links to those with rel=preload and as=style attrs
-                if (link.rel === "preload" && link.getAttribute("as") === "style" && !link.getAttribute("data-loadcss")) {
-                    // prevent rerunning on link
-                    link.setAttribute("data-loadcss", true);
-                    // bind listeners to toggle media back
-                    rp.bindMediaToggle(link);
+                // rerun poly on an interval until onload
+                var run = w.setInterval(rp.poly, 500);
+                if (w.addEventListener) {
+                    w.addEventListener("load", function () {
+                        rp.poly();
+                        w.clearInterval(run);
+                    });
+                } else if (w.attachEvent) {
+                    w.attachEvent("onload", function () {
+                        rp.poly();
+                        w.clearInterval(run);
+                    });
                 }
             }
-        };
-
-        // if unsupported, run the polyfill
-        if (!rp.support()) {
-            // run once at least
-            rp.poly();
-
-            // rerun poly on an interval until onload
-            var run = w.setInterval(rp.poly, 500);
-            if (w.addEventListener) {
-                w.addEventListener("load", function () {
-                    rp.poly();
-                    w.clearInterval(run);
-                });
-            } else if (w.attachEvent) {
-                w.attachEvent("onload", function () {
-                    rp.poly();
-                    w.clearInterval(run);
-                });
+            // commonjs
+            if (typeof exports !== "undefined") {
+                exports.loadCSS = loadCSS;
             }
-        }
-
-
-        // commonjs
-        if (typeof exports !== "undefined") {
-            exports.loadCSS = loadCSS;
-        }
-        else {
-            w.loadCSS = loadCSS;
-        }
-    }(typeof global !== "undefined" ? global : this));
+            else {
+                w.loadCSS = loadCSS;
+            }
+        }(typeof global !== "undefined" ? global : this));
     </script>
     <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
     <% let jsURL = url_for('/scripts/main.js'); %>

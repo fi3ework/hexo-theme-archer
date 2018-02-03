@@ -3,7 +3,6 @@ html {
     font-size: $base-font-size;
     font-family: $base-font-family;
     overflow-x: hidden;
-    height: 100%;
 }
 
 * {
@@ -14,7 +13,6 @@ body {
     z-index: 100;
     position: relative;
     background-color: $body-background-color;
-    height: 100%;
 }
 
 .wrapper {

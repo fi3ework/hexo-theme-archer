@@ -97,8 +97,8 @@
     }
 }
 
-// ========== pager ========== //
-.post-pager {
+// ========== paginator ========== //
+.post-paginator {
     overflow: hidden;
     padding: 0;
     list-style: none;
@@ -140,6 +140,7 @@
 }
 
 // ========== content ========== //
+
 .article-entry {
     position: relative;
     padding: 1px 0;
@@ -244,10 +245,12 @@
 
 // ========== toc ========== //
 .toc-wrapper {
+    display: block;
     position: absolute;
     top: 50vh;
     width: 22%;
     right: 1%;
+    overflow: hidden;
     max-width: calc((100% - 42.8125rem - 4rem) / 2);
     z-index: 9999;
     margin: calc(#{$header-height} + 1rem) 0 0 0;
@@ -278,7 +281,6 @@
 }
 
 .toc-wrapper {
-    overflow: hidden;
     &>* {
         transform: translate(0, 0);
         transition: transform 0.3s ease-out, opacity 0.3s ease-out;
