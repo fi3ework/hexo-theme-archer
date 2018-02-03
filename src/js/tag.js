@@ -1,6 +1,7 @@
 import archerUtil from './util'
 import sidebar from './sidebar'
 import Emitter from 'eventemitter3'
+import { isArray } from 'util'
 
 class InitSidebarLink {
   constructor(metaName, postList, labelsContainer) {
@@ -32,11 +33,10 @@ class InitSidebarLink {
         // pr: https://github.com/fi3ework/hexo-theme-archer/pull/37
         let contentJSON
         let posts
-        if (contentJSON) {
-          posts = contentJSON.posts
-        }
+        contentJSON = JSON.parse(this.responseText)
+        posts = isArray(contentJSON) ? contentJSON : contentJSON.posts
         if (posts && posts.length) {
-          InitSidebarLink.postArr = JSON.parse(this.responseText)
+          InitSidebarLink.postArr = posts
           InitSidebarLink.emitter.emit('json ininted')
         }
       } else {

@@ -87,7 +87,7 @@ let scroll = function () {
     }
     // 防止文章过短，产生负百分比
     readPercent = readPercent >= 0 ? readPercent : 100
-    let restPercent = readPercent - 100
+    let restPercent = readPercent - 100 <= 0 ? readPercent - 100 : 0
     $progressBar[0].style.transform = `translate3d(${restPercent}%, 0, 0)`
   }
 
