@@ -13,6 +13,7 @@ body {
     z-index: 100;
     position: relative;
     background-color: $body-background-color;
+    overflow-x: hidden;
 }
 
 .wrapper {

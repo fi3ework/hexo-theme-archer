@@ -32,10 +32,17 @@
     .iconfont-archer{
         pointer-events: none;
         transform: translateY(-1rem);
-        font-size: 11px;
+        font-size: 0.6rem;
         margin: 0 0.3rem 0 0.1rem;
     }
 }
+
+.sidebar-category-name {
+    .iconfont-archer {
+        font-size: 16px;
+    }
+}
+
 
 .sidebar-tags-empty,
 .sidebar-categories-empty{
