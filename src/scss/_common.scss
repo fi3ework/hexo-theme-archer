@@ -21,7 +21,6 @@ body {
     transition: all 0.3s ease-out .0s;
     transform: translate3d(0, 0, 0);
     position: relative;
-    background-color: #fff;
     box-shadow: -1rem 0 0.6rem -0.5rem rgba(0, 0, 0, 0.7);
 }
 
@@ -41,6 +40,7 @@ body {
 .container {
     padding: $container-margin-top 0 0 0;
     position: relative;
+    background-color: #fff;
     top: 0;
     left: 0;
     display: flex;
@@ -70,6 +70,7 @@ li {
 // ========== back top ========== //
 .back-top {
     position: fixed;
+    display: block;
     left: 1rem;
     bottom: 1rem;
     z-index: 10;
@@ -78,7 +79,7 @@ li {
     height: 1.5rem;
     text-align: center;
     line-height: 1.5rem;
-    border: 2px solid black;
+    border: 2px solid #000;
     border-radius: 2px;
     transition: opacity 0.1s ease-out .0s;
     background-color: rgba(255, 255, 255, 0.8);
