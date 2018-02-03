@@ -111,7 +111,7 @@ class Sidebar {
   // 阻止sidebarContent在滚动到顶部或底部时继续滚动
     perfectScrollbar() {
       const ps = new PerfectScrollbar('.sidebar', {
-        suppressScrollX: false
+        suppressScrollX: true
       })
     }
 

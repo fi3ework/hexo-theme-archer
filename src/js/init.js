@@ -33,7 +33,7 @@ let init = function () {
     icon: '¶',
     class: 'anchorjs-archer'
   }
-  anchors.add().remove('.site-intro-meta h1').remove('h5')
+  anchors.add().remove('.site-intro-meta h1').remove('h5').remove('h6')
 }
 
 export { init }
