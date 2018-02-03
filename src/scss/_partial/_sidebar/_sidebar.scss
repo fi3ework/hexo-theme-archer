@@ -60,16 +60,12 @@
         margin: 0 0.5rem 0 0rem;
         font-size: 1.5rem;
     }
-    .tab-name {
-        pointer-events: none;
-        font-size: 1.5rem;
-    }
 }
 
-.sidebar-tab-tags {
-    .iconfont-archer {
-        margin: 0 0.5rem 0 -0.5rem;
-    }
+.tab-name {
+    pointer-events: none;
+    font-size: 1.5rem;
+    margin-left: 0.2rem;
 }
 
 .sidebar-tabs-active-0 {

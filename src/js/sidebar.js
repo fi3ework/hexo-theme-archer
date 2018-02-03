@@ -1,3 +1,5 @@
+import PerfectScrollbar from 'perfect-scrollbar'
+
 const Selector = (classPrefix) => ({
   ACTIVE: `${classPrefix}-active`
 })
@@ -15,7 +17,7 @@ class Sidebar {
       this._bindButtonClick()
       this._bindWrapperClick()
       this._bindWrapperTransitionEnd()
-      this.preventOver()
+      this.perfectScrollbar()
     }
 
     _initElements() {
@@ -107,41 +109,12 @@ class Sidebar {
     }
 
   // 阻止sidebarContent在滚动到顶部或底部时继续滚动
-    preventOver() {
-      let $sidebar = this.$sidebar
-      let that = this
-      let $sidebarArchive = $sidebar.find('.sidebar-panel-archives')
-      let $sidebarTagsList = $sidebar.find('.sidebar-tags-list')
-      let $sidebarCategoriesList = $sidebar.find('.sidebar-categories-list')
-      this.$sidebar.on('mousewheel', function (eve) {
-        let target = eve.target
-        if ($.contains($sidebarTagsList[0], target) || $sidebarTagsList === target) {
-          that.stopSidebarEdgeScroll.call($sidebarTagsList[0], eve)
-        } else if ($.contains($sidebarArchive[0], target) || $sidebarArchive === target) {
-          that.stopSidebarEdgeScroll.call($sidebarArchive[0], eve)
-        } else if ($.contains($sidebarCategoriesList[0], target) || $sidebarCategoriesList === target) {
-          that.stopSidebarEdgeScroll.call($sidebarCategoriesList[0], eve)
-        } else {
-          eve.preventDefault()
-        }
+    perfectScrollbar() {
+      const ps = new PerfectScrollbar('.sidebar', {
+        suppressScrollX: false
       })
     }
 
-  // 阻止滚轮在sidebar滚动越界, 1. 没有滚动条直接禁止滚动 2. 触顶禁止上滚 3. 触底禁止下滚
-    stopSidebarEdgeScroll(eve) {
-      window.addEventListener('scroll', (e) => { e.preventDefault() })
-      if (this.scrollHeight === this.clientHeight) {
-        window.event.preventDefault()
-      } else if (this.scrollTop <= 0) {
-        if (eve.originalEvent.wheelDelta > 0) {
-          window.event.preventDefault()
-        }
-      } else if (this.scrollTop >= this.scrollHeight - this.clientHeight) {
-        if (eve.originalEvent.wheelDelta < 0) {
-          window.event.preventDefault()
-        }
-      }
-    }
 }
 
 let mySidebar = new Sidebar({

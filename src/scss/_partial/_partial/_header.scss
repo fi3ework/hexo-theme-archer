@@ -7,7 +7,7 @@
     overflow: hidden;
     z-index: 10;
     transform: translate3d(0, 0, 0);
-    transition: transform 0.3s ease-in-out .0s;
+    transition: transform 0.3s ease-out .0s;
 }
 
 .header-sidebar-active {

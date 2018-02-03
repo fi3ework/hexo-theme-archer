@@ -7,6 +7,11 @@
     }
 }
 
+.ps__rail-x,
+.ps__rail-y {
+    display: none !important;
+}
+
 .post-archive {
     overflow-y: auto;
 }

@@ -1,3 +1,5 @@
+import AnchorJS from 'anchor-js'
+
 let init = function () {
   let $introImg = $('.site-intro-img:first'),
     introPlaceholder = $('.site-intro-placeholder:first'),
@@ -16,12 +18,22 @@ let init = function () {
     console.info('PLACEHOLDER REMOVED')
   }
   img.src = bgURL
-}
 
-document.addEventListener('DOMContentLoaded', function () {
-  $('.container').removeClass('container-unloaded')
-  $('.footer').removeClass('footer-unloaded')
-  $('.loading').remove()
-}, false)
+  document.addEventListener('DOMContentLoaded', function () {
+    $('.container').removeClass('container-unloaded')
+    $('.footer').removeClass('footer-unloaded')
+    $('.loading').remove()
+  }, false)
+
+  // https://www.bryanbraun.com/anchorjs/
+  let anchors = new AnchorJS()
+  anchors.options = {
+    visible: 'always',
+    placement: 'left',
+    icon: '¶',
+    class: 'anchorjs-archer'
+  }
+  anchors.add().remove('.site-intro-meta h1').remove('h5')
+}
 
 export { init }

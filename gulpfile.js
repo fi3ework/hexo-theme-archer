@@ -16,7 +16,7 @@ gulp.task('webpack', function (cb) {
 
 // sass
 gulp.task('sass', function () {
-  return gulp.src('./src/scss/style.scss')
+  return gulp.src(['./src/scss/style.scss', './src/scss/mobile.scss'])
     .pipe(sass({
       outputStyle: 'compressed'
     }).on('error', sass.logError))
