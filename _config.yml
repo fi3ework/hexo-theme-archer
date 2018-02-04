@@ -46,23 +46,23 @@ _404_image: '/intro/404-bg.jpg'
 # Fill in the field to enable the corresponding comment plugin
 # If you want to add other comment plugin, edit in "custom.ejs"
 comment:
-  # livere  site: https://livere.com/
+  # Livere  site: https://livere.com/
   livere_uid: 
-  # disqus  site: https://disqus.com/
+  # Disqus  site: https://disqus.com/
   disqus_shortname: 
-  # changyan  site: http://changyan.kuaizhan.com/
+  # Changyan  site: http://changyan.kuaizhan.com/
   changyan_appid: 
   changyan_conf: 
-  # gitment  site: https://github.com/imsun/gitment
+  # Gitment  site: https://github.com/imsun/gitment
   gitment_owner: 
   gitment_repo: 
   gitment_client_id: 
   gitment_client_secret: 
-  # youyan  site: http://www.uyan.cc/
+  # Youyan  site: http://www.uyan.cc/
   youyan_uid: 
 
 # ========== Analytics ========== #
-# Busuanzi pv Analytics
+# Busuanzi pv analytics
 busuanzi: true
 # Baidu analytics
 baidu_analytics: 
