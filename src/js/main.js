@@ -4,7 +4,11 @@ import mySidebar from './initSidebar'
 import { initMobile } from './mobile'
 import InitSidebarLink from './tag'
 
-console.info('hexo-theme-archer: v20180109')
+let logStyle = 'color: #fff; background: #f75357; padding: 1px; border-radius: 5px;'
+console.info('%c 🎯 hexo-theme-archer ⬇️ ', logStyle)
+console.info('%c 🏷 Version: 1.0.0 ', logStyle)
+console.info('%c 📅 Version date: 20182004 ', logStyle)
+console.info('%c 📦 https://github.com/fi3ework/hexo-theme-archer ', logStyle)
 init()
 scroll()
 
