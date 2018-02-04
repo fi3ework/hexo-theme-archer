@@ -1,2 +1,5 @@
 node_modules
 .vscode
+_config_.yml
+_config__.yml
+.jsbeautifyrc

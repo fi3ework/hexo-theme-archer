@@ -1,6 +1,6 @@
 # ========== Profile ========== #
 # avatar
-avatar: /avatar/kumamon.jpg
+avatar: /avatar/Misaka.jpg
 # author name
 author: fi3ework
 # signature
@@ -9,24 +9,24 @@ signature: witness me
 social:
   email: 12345@qq.com
   github: //github.com/fi3ework
-  weibo: //github.com/fi3ework
-  zhihu: //github.com/fi3ework
-  douban: //github.com/fi3ework
-  facebook: //github.com/fi3ework
-  twitter: //github.com/fi3ework
-  instagram: //github.com/fi3ework
-  stack-overflow: //github.com/fi3ework
-  linkedin: //github.com/fi3ework
-  others: //github.com/fi3ework
-  rss: /atom.xml
+  weibo: 
+  zhihu: 
+  douban: 
+  facebook: 
+  twitter: 
+  instagram: 
+  stack-overflow: 
+  linkedin: 
+  others: 
+  rss: 
 # friends
 friends:
   friendA: //www.baidu.com
   friendB: //www.google.com
-  # friendC :
+  # friendC:
 about:
   enable: true
-  image: '/intro/about-page.jpg'
+  image: '/intro/about-bg.jpg'
 
 # ========== Site ========== #
 # title of the site
@@ -36,40 +36,40 @@ main_title: fi3ework's Studio.
 # subtitle
 subtitle: it's better to burn out than to fade away
 # site haeder image
-site_header_image: 'http://oumn0o088.bkt.clouddn.com/intro-desktop.jpg'
+site_header_image: '/intro/index-bg.jpg'
 # post haeder image
-post_header_image: 'http://oumn0o088.bkt.clouddn.com/post-bg.jpg'
+post_header_image: '/intro/post-bg.jpg'
 # 404 image
-_404_image: 'http://oumn0o088.bkt.clouddn.com/404.jpg'
+_404_image: '/intro/404-bg.jpg'
 
 # ========== Comment ========== #
 # Fill in the field to enable the corresponding comment plugin
 # If you want to add other comment plugin, edit in "custom.ejs"
 comment:
   # livere  site: https://livere.com/
-  livere_uid:
+  livere_uid: 
   # disqus  site: https://disqus.com/
-  disqus_shortname:
+  disqus_shortname: 
   # changyan  site: http://changyan.kuaizhan.com/
-  changyan_appid:
-  changyan_conf:
+  changyan_appid: 
+  changyan_conf: 
   # gitment  site: https://github.com/imsun/gitment
-  gitment_owner:
-  gitment_repo:
-  gitment_client_id:
-  gitment_client_secret:
+  gitment_owner: 
+  gitment_repo: 
+  gitment_client_id: 
+  gitment_client_secret: 
   # youyan  site: http://www.uyan.cc/
-  youyan_uid:
+  youyan_uid: 
 
 # ========== Analytics ========== #
 # Busuanzi pv Analytics
 busuanzi: true
 # Baidu analytics
-baidu_analytics:
+baidu_analytics: 
 # Google analytics
-google_analytics:
+google_analytics: 
 # CNZZ analytics
-CNZZ_analytics:
+CNZZ_analytics: 
 
 # ========== Others ========== #
 # favicon
