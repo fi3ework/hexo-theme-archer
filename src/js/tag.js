@@ -64,7 +64,7 @@ class MetaInfo {
 
   _createPostDom(postInfo) {
     let $tagItem = $('<li class="meta-post-item"><span class="meta-post-date">' + archerUtil.dateFormater(new Date(Date.parse(postInfo.date)), 'yyyy/MM/dd') + '</span></li>')
-    let $aItem = $('<a class="meta-post-title" href="' + jsInfo.root + postInfo.path + '">' + postInfo.title + '</a>')
+    let $aItem = $('<a class="meta-post-title" href="' + siteMeta.root + postInfo.path + '">' + postInfo.title + '</a>')
     $tagItem.append($aItem)
     return $tagItem[0]
   }
@@ -140,8 +140,8 @@ class SidebarMeta {
 
   // fetch content.json
   _fetchInfo() {
-    // jsInfo is from js-info.ejs
-    let contentURL = jsInfo.root + 'content.json?t=' + (Number(new Date()))
+    // siteMeta is from js-info.ejs
+    let contentURL = siteMeta.root + 'content.json?t=' + (Number(new Date()))
     let xhr = new XMLHttpRequest()
     xhr.responseType = ''
     xhr.open('get', contentURL, true)
