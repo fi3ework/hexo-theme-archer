@@ -5,55 +5,41 @@ hexo-theme-archer
 
 ## Online demo
 
-[Demo](http://firework.studio/archer-demo/)
+🎯  Preview theme：[Demo](http://firework.studio/archer-demo/)
+
+## 234
+
+- [Chinese document](../README.md)
+- [Secondary develop guide](./develop-guide-en.md)
 
 ## Instruction
 
-- Click [my blog](http://firework.studio) to preview theme online.
-- This theme is inspired by theme [yilia](https://github.com/litten/hexo-theme-yilia) and theme [huxpro](https://github.com/Huxpro/huxpro.github.io), it combines the sidebar of the former and the UI design of latter. You can switch to archive and tag via the navigation sidebar without jumpping to a new page.
-- You can create a new issue, or comment on article 「hexo-theme-archer」 in [my blog](http://firework.studio). 
+- This theme is inspired by theme [yilia](https://github.com/litten/hexo-theme-yilia) and theme [huxpro](https://github.com/Huxpro/huxpro.github.io), it combines the sidebar of the former and the UI design of latter. You can switch to archive, tag and categories via the navigation sidebar without jumpping to a new page.
 - Compatibility：modern browsers and IE 10 +.
+- You are welcomed to create a new [issue]((https://github.com/fi3ework/hexo-theme-archer/issues)。) if there is any problem when installling and using this theme.
+- This theme will continue to be maintained and optimized, star it if you like it 😆.
 
 ##  Install
 
-Execute the following commands in **Hexo directory**.
+1. Execute the following commands in **Hexo directory**.
 
 ``` shell
-npm install hexo-generator-json-content --save
-git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer
+npm install hexo-generator-json-content --save && git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer
 ```
 
-## Enable
-
-Change the `theme` property to `archer` of `_config.yml` in **Hexo directory**.
+2. Change the `theme` property to `archer` of `_config.yml` in **Hexo directory**.
 
 ``` yaml
 theme: archer
 ```
 
-### Enable 404 page
+3. Add sidebar enable support:
 
-Add a new file `/source/404.md` to **Hexo source directory**. The `layout` property should be `404`, the `title` property is custom title，`description` property is custom description.
-
-``` yaml
-layout: 404
-title: "[404]"
-description: "May the Force be with you :&#41;"
-```
-
-### Enable sidebar
-
-1. Execute the following commands in the ***Hexo directory*** (if you have done this in install step, you can skip this substep)
-
-```shell
-npm install hexo-generator-json-content --save
-```
-
-2. Then add the following config to  ***Hexo configuration file (not the configuration file of archer)***.
+Add following properties to the `_config.yml` in **Hexo directory** (not archer).
 
 ```yaml
 jsonContent:
-  meta: false
+  meta: true
   pages: false
   posts:
     title: true
@@ -66,19 +52,28 @@ jsonContent:
     updated: false
     comments: false
     link: false
-    permalink: false
+    permalink: true
     excerpt: false
-    categories: false
+    categories: true
     tags: true
 ```
 
-## Configuration
+## Optional config
+
+- [enable about page](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8about%E9%A1%B5)
+- [enable 404 page](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8404%E9%A1%B5)
+- [enable rss](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8rss)
+- [custom artical head image](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E7%AB%A0%E9%A1%B5%E5%A4%B4%E5%9B%BE)
+- [custom feature color](https://github.com/fi3ework/hexo-theme-archer/wiki/%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98%E9%A2%9C%E8%89%B2)
+- [stick artical to the top](http://xxxsss.me/2017/04/22/hexo-pagination/)
+
+## Theme configuration
 
 ```yaml
 # ========== Profile Column ========== #
 # avatar path
 avatar:
-# author name (if this property is not filled, by default using the author property in Hexo configuration)
+# author name (if this property is blank, by default using the author property in Hexo configuration)
 author:
 # signature of blog
 signature:
@@ -88,6 +83,7 @@ social:
   github:
   weibo:
   zhihu:
+  douban:
   facebook:
   twitter:
   instagram:
@@ -103,11 +99,13 @@ friends:
   friendC:
 # about
 about:
+  # enable about page
   enable: true
+  # about heade image
   image:
   
 # ========== Site ========== #
-# title of the site (each article will be followed by this filed to help SEO)
+# title of the site (each article will be followed by this value to help SEO)
 SEO_title:
 # main title (title in site banner)
 main_title:
@@ -121,25 +119,25 @@ post_header_image:
 _404_image:
 
 # ========== Comment Plugin ========== #
-# Currently only supports one click to add livere comments, you can add other comment plugin before </main> in post.ejs
+# Currently support directly adding Livere, Gitment, Changyan and Youyan, fill the field to enable corresponding plugin
 comment:
-  # livere：https://livere.com/
+  # Livere：https://livere.com/
   livere_uid:
-  # disqus：https://disqus.com/
+  # Disqus：https://disqus.com/
   disqus_shortname:
-  # 畅言：http://changyan.kuaizhan.com/
+  # Changeyan：http://changyan.kuaizhan.com/
   changyan_appid:
   changyan_conf:
-  # gitment：https://github.com/imsun/gitment
+  # Gitment：https://github.com/imsun/gitment
   gitment_owner:
   gitment_repo:
   gitment_client_id:
   gitment_client_secret:
-  # youyan: http://www.uyan.cc/
+  # Youyan: http://www.uyan.cc/
   youyan_uid:
 
 # ========== Analytics ========== #
-# enable Busuanzi pv Analytics
+# enable Busuanzi pv analytics
 busuanzi: false
 # Baidu analytics (fill in siteID)
 baidu_analytics:
@@ -151,19 +149,11 @@ CNZZ_analytics:
 # ========== Others ========== #
 # favicon
 favicon:
-# truncate length of abstracts in index page(the default is 300)
+# truncate length of abstracts in index page(the default is 300, there will be no abstruct if you set it to 0)
 truncate_length:
 # enable toc
 toc: true
 ```
-### Post page banner image configuration
-
-By modifying the `header_image` property of the header of each article, if you do not fill in the post configuration, the `post_header_image` property in theme configuration will be used , if `post_header_image` is not filled, the `site_header_image` field will be used.
-
-``` yaml
-header_image: /intro/post-bg.jpg
-```
-
 ## License
 
 MIT
