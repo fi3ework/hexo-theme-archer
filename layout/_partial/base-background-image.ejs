@@ -61,10 +61,12 @@
             <div class="post-intro-meta">
                 <span class="post-intro-calander iconfont-archer">&#xe676;</span>
                 <span class="post-intro-time"><%- date(page.date, "YYYY/MM/DD") %></span>
+                <% if (theme.busuanzi) { %>
                 <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                     <span class="iconfont-archer">&#xe604;</span>
                     <span id="busuanzi_value_page_pv"></span>
                 </span>
+                <% } %>
                 <span class="shareWrapper">
                     <span class="iconfont-archer shareIcon">
                         &#xe601;
