@@ -58,10 +58,8 @@ gulp.task('dev', ['webpack', 'sass'], function () {
 /* ========== bulid ========== */
 
 // webpack-prod
-gulp.task('webpack-prod', function (cb) {
-  webpack(require('./webpack.prod.js'), function (err) {
-    if (err) return cb(err)
-    cb()
-  })
+gulp.task('webpack-prod', function () {
+  webpack(require('./webpack.prod.js'))
 })
+
 gulp.task('build', ['sass', 'webpack-prod'])

@@ -1,12 +1,12 @@
 {
   "name": "archer",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "archer develop package",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "fi3ework",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.39",
     "@babel/plugin-proposal-class-properties": "^7.0.0-beta.39",
