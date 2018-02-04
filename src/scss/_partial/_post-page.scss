@@ -144,7 +144,6 @@
 .article-entry {
     position: relative;
     padding: 1px 0;
-    font: 1rem/1.625;
     font-weight: lighter;
     color: $post-content-color;
     ul,
@@ -185,7 +184,9 @@
         font-size: 0.8rem;
         margin: 1rem 0;
     }
-    p {}
+    p {
+        line-height: 1.625;
+    }
     em {
         font-style: italic;
     }
