@@ -1,6 +1,5 @@
 const gulp = require('gulp'),
   webpack = require('webpack'),
-  uglify = require('gulp-uglify'),
   sass = require('gulp-sass'),
   browserSync = require('browser-sync').create()
 
@@ -58,10 +57,11 @@ gulp.task('dev', ['webpack', 'sass'], function () {
 
 /* ========== bulid ========== */
 
-// uglify
-gulp.task('uglify-js', ['webpack'], function () {
-  return gulp.src('./source/scripts/main.js').pipe(uglify())
-    .pipe(gulp.dest('./source/scripts/'))
+// webpack-prod
+gulp.task('webpack-prod', function (cb) {
+  webpack(require('./webpack.prod.js'), function (err) {
+    if (err) return cb(err)
+    cb()
+  })
 })
-
-gulp.task('build', ['sass', 'uglify-js'])
+gulp.task('build', ['sass', 'webpack-prod'])

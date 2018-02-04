@@ -1,6 +1,4 @@
-const webpack = require('webpack')
 const path = require('path')
-
 
 module.exports = {
   entry: './src/js/main.js', // 已多次提及的唯一入口文件
@@ -24,3 +22,4 @@ module.exports = {
     }]
   }
 }
+

@@ -21,8 +21,9 @@
     "eslint-config-alloy": "^1.4.0",
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0",
-    "webpack": "^3.10.0"
+    "uglifyjs-webpack-plugin": "^1.1.8",
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.1"
   },
   "dependencies": {
     "anchor-js": "^4.1.0",
