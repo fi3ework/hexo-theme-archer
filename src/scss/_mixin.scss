@@ -30,7 +30,7 @@
         font-size: 3rem * $scaleSize;
         margin: 0 $spanMargin 0 0;
     }
-    .iconfont-archer:last-of-type::before {
+    .iconfont-archer:last-of-child::before {
         margin: 0;
     }
     .email {
@@ -49,6 +49,26 @@
         }
         &:hover::before {
             color: #24292e;
+        }
+    }
+    .wechat {
+        top: 4px * $scaleSize;        
+        &::before {
+            font-size: 2.8rem * $scaleSize;
+            content: "\ec7d";
+        }
+        &:hover::before {
+            color: #42ae3c;
+        }
+    }
+    .qq {
+        top: 4px * $scaleSize;
+        &::before {
+            font-size: 2.8rem * $scaleSize;
+            content: "\e61d";
+        }
+        &:hover::before {
+            color: #4f4e71;
         }
     }
     .weibo {

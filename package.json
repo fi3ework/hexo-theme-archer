@@ -28,6 +28,7 @@
   "dependencies": {
     "anchor-js": "^4.1.0",
     "eventemitter3": "^3.0.0",
+    "node-sass": "^4.7.2",
     "perfect-scrollbar": "^1.3.0"
   }
 }
