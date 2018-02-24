@@ -8,20 +8,20 @@
     font: 1rem $feature-font-family;
     * {
         color: $social-iconfont-color;
-    }
-    img {
-        display: block;
-        border-radius: 1rem;
-        width: 100%;
-        box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.6);
-    }
-    // 为了在没有social和friends时也显示一个分割线
+    } // 为了在没有social和friends时也显示一个分割线
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 0.5rem;
-    *:last-child{
+    &>*:last-child {
         border-bottom: none;
         padding-bottom: 0;
     }
+}
+
+.profile-avatar {
+    display: block;
+    border-radius: 1rem;
+    width: 100%;
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.6);
 }
 
 .profile-name {
@@ -44,10 +44,27 @@
     line-height: 1.7rem;
     padding: 0.5rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    .iconfont-archer{
+    .iconfont-archer {
         position: relative;
     }
     @include social($scaleSize: 0.5, $spanMargin: 0.4rem);
+}
+
+.wechat, .qq{
+    cursor: pointer;
+    &:hover{
+        .profile-qr{
+            display: block; 
+        }
+    }
+}
+
+.profile-qr {
+    display: none;
+    position: absolute;
+    z-index: 99;
+    background-color: #fff;
+    width: 200px;
 }
 
 .friends {
@@ -64,7 +81,7 @@
     }
 }
 
-.about-me{
+.about-me {
     padding: 0.5rem 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     a {
