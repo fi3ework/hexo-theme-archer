@@ -50,21 +50,29 @@
     @include social($scaleSize: 0.5, $spanMargin: 0.4rem);
 }
 
-.wechat, .qq{
+.wechat,
+.qq {
     cursor: pointer;
-    &:hover{
-        .profile-qr{
-            display: block; 
+    &:hover {
+        .profile-qr {
+            opacity: 1;
+            visibility: visible;
         }
     }
 }
 
 .profile-qr {
-    display: none;
+    visibility: hidden;
     position: absolute;
+    left: 0;
+    bottom: 2.5rem;
+    border: 3px solid #fff;
+    border-radius: 3px;
     z-index: 99;
     background-color: #fff;
-    width: 200px;
+    width: 7rem;
+    opacity: 0;
+    transition: all 0.2s ease-in 0s;
 }
 
 .friends {
