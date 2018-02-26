@@ -81,6 +81,9 @@ signature:
 social:
   email:
   github:
+  # wechat and qq should be a path of an qr-code image
+  wechat:
+  qq:
   weibo:
   zhihu:
   douban:
@@ -88,6 +91,7 @@ social:
   twitter:
   instagram:
   stack-overflow:
+  v2ex:
   linkedin:
   blog:
   others:

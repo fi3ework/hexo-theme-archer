@@ -139,6 +139,15 @@
             color: #f37f23;
         }
     }
+    .v2ex {
+        &::before {
+            font-size: 2.2rem * $scaleSize;
+            content: "\e663";
+        }
+        &:hover::before {
+            color: #171718;
+        }
+    }
     .linkedin {
         top: -1px * $scaleSize;
         &::before {

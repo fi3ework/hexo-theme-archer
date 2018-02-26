@@ -96,6 +96,9 @@ signature:
 social:
   email:
   github:
+  # wechat 和 qq 需要填写二维码图片的路径
+  wechat:
+  qq:
   weibo:
   zhihu:
   douban:
@@ -103,6 +106,7 @@ social:
   twitter:
   instagram:
   stack-overflow:
+  v2ex:
   linkedin:
   blog:
   others:
