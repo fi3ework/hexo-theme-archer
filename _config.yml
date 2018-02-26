@@ -9,6 +9,7 @@ signature: witness me
 social:
   email: 12345@qq.com
   github: //github.com/fi3ework
+  # wechat and qq should be a path of an qr-code image
   wechat: /assets/example_qr.png
   qq: 
   weibo: 
@@ -18,6 +19,7 @@ social:
   twitter: 
   instagram: 
   stack-overflow: 
+  v2ex: 
   linkedin: 
   others: 
   rss: 
