@@ -11,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <title><%= title %></title>
     <%- partial('critical-css/critical-style') %>
-    <link rel="preload" href= <%- url_for("css/style.css?v=20180226") %> as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" type="text/css" href= <%- url_for("css/mobile.css?v=20180226") %> media="(max-width: 980px)"/>
+    <link rel="preload" href= <%- url_for("css/style.css?v=20180228") %> as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" type="text/css" href= <%- url_for("css/mobile.css?v=20180228") %> media="(max-width: 980px)"/>
     <link rel="icon" href= <%- url_for(theme.favicon) %>>
     <%- partial('script/font-loader') %>
     <script>
@@ -114,8 +114,7 @@
         }(typeof global !== "undefined" ? global : this));
     </script>
     <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
-    <% let jsURL = url_for('/scripts/main.js'); %>
-    <script src="<%- jsURL %>" defer></script>
+    <script src="<%- url_for('/scripts/main.js') %>" defer></script>
     <!-- 百度统计  -->
     <% if(theme.baidu_analytics) { %>
     <script>

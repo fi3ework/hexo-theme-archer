@@ -22,7 +22,7 @@ body {
     transition: all 0.3s ease-out .0s;
     transform: translate3d(0, 0, 0);
     position: relative;
-    box-shadow: -1rem 0 0.6rem -0.5rem rgba(0, 0, 0, 0.7);
+    box-shadow: -3px 0 2px 0 rgba(0, 0, 0, 0.6);
 }
 
 .wrapper-sidebar-active {
@@ -81,8 +81,6 @@ li {
     text-align: center;
     line-height: 1.5rem;
     border: 2px solid #000;
-    border-radius: 2px;
-    transition: opacity 0.1s ease-out .0s;
     background-color: rgba(255, 255, 255, 0.8);
     cursor: pointer;
     &:hover {

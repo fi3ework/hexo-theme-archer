@@ -89,16 +89,12 @@
     left: 1rem;
     top: 50%;
     border: 2px solid #fff;
-    border-radius: 2px;
     width: 1.5rem;
     height: 1.5rem;
     transform: translate(0, -50%);
     font-family: 'iconfont-archer';
     color: #fff;
     text-align: center;
-    transition-property: background-color,color,transform;
-    transition-duration: .3s,.1s,.1s;
-    transition-timing-function: ease-out,ease-out,ease-out;
     line-height: 1.5rem;
     z-index: 21;
     cursor: pointer;
@@ -127,7 +123,6 @@
     transform: translate(0, -50%);
     font-family: $feature-font-family;
     color: #fff;
-    transition: color 0.1s ease-out;
     cursor: pointer;
     &:hover {
         color: $feature-color;

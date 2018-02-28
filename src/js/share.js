@@ -1,121 +1,69 @@
-import { makeQR } from './QR-maker'
+/**
+ * special thanks to hexo-theme-yilia
+ * https://github.com/litten/hexo-theme-yilia/blob/master/source-src/js/share.js
+ */
 
-let mask = document.getElementsByClassName('qr-mask')[0]
-let qrCode = document.getElementsByClassName('QRcode-box')[0]
+import qrcode from 'qrcode-generator'
 
-function initQREvent() {
-  let closeQR = document.getElementsByClassName('QRcode-close')[0]
-  if (!closeQR) {
-    return
-  }
-
-  function hideQR(eve) {
-    eve.stopPropagation()
-    mask.classList.remove('QRcode-mask-opacity-show')
-    qrCode.classList.remove('QRcode-mask-opacity-show')
-    qrCode.addEventListener('transitionend', function () {
-      if (mask.className.indexOf('QRcode-mask-opacity-show') === -1) {
-        mask.classList.remove('QRcode-mask-show')
-        qrCode.classList.remove('QRcode-mask-show')
-      }
-    })
-  }
-
-  closeQR.addEventListener('click', hideQR)
-  mask.addEventListener('click', hideQR)
-
+function initQR(sURL) {
+  let typeNumber = 0
+  let errorCorrectionLevel = 'L'
+  let qr = qrcode(typeNumber, errorCorrectionLevel)
+  qr.addData(sURL)
+  qr.make()
+  document.getElementsByClassName('share-qrcode')[0].innerHTML = qr.createImgTag()
 }
 
-// show wechat QR code
-function showQR(opt) {
-  makeQR(opt)
-  mask.classList.add('QRcode-mask-show')
-  qrCode.classList.add('QRcode-mask-show')
-  requestAnimationFrame(function () {
-    mask.classList.add('QRcode-mask-opacity-show')
-    qrCode.classList.add('QRcode-mask-opacity-show')
+function generate(templateURL, param) {
+  let shareURL = templateURL.replace(/<%-sURL%>/g, encodeURIComponent(param.sURL))
+    .replace(/<%-sTitle%>/g, param.sTitle)
+    .replace(/<%-sDesc%>/g, param.sDesc)
+    .replace(/<%-sAuthor%>/g, param.sAuthor)
+    .replace(/<%-sImg%>/g, encodeURIComponent(param.sImg))
+  window.open(shareURL)
+}
+
+function handleShareClick(type, param) {
+  if (type === 'weibo') {
+    generate('http://service.weibo.com/share/share.php?url=<%-sURL%>&title=<%-sTitle%>&pic=<%-sImg%>', param)
+  } else if (type === 'qzone') {
+    generate('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<%-sURL%>&title=<%-sTitle%>&pics=<%-sImg%>&summary=<%-sDesc%>', param)
+  } else if (type === 'facebook') {
+    generate('https://www.facebook.com/sharer/sharer.php?u=<%-sURL%>', param)
+  } else if (type === 'twitter') {
+    generate('https://twitter.com/intent/tweet?text=<%-sTitle%>&url=<%-sURL%>&via=<%-sAuthor%>', param)
+  } else if (type === 'qr') {
+    // pre init qr
+  }
+}
+
+function init() {
+  let sURL = window.location.href
+  let sTitle = document.querySelector('title').innerHTML
+  let sImg = document.querySelector('.article-entry img') && document.querySelector('.article-entry img').getAttribute('src')
+  sImg = window.location.protocol + '//' +
+  window.location.hostname +
+    (window.location.port ? ':' + window.location.port : '') +
+    sImg
+  console.log(document.querySelector('.article-entry img'))
+  console.log(window.location.hostname)
+  let sDesc = document.querySelector('.article-entry') && document.querySelector('.article-entry').innerText.substring(0, 30) + '...'
+  let sAuthor = window.siteMeta.author
+  let param = {
+    sURL, sTitle, sImg, sDesc, sAuthor
+  }
+
+  let shareWrapper = document.querySelector('.shareList')
+  if (!shareWrapper) {
+    return
+  }
+  initQR(sURL)
+  shareWrapper.addEventListener('click', function (e) {
+    if (!e.target.getAttribute('data-type')) {
+      return
+    }
+    handleShareClick(e.target.getAttribute('data-type'), param)
   })
 }
 
-// generate the share link
-function generateURL(url, opt) {
-  return url.replace(/<%-sURL%>/g, opt.sURL)
-    .replace(/<%-sTitle%>/g, opt.sTitle)
-    .replace(/<%-sDesc%>/g, opt.sDesc)
-    .replace(/<%-sPic%>/g, opt.sPic)
-}
-
-// switch which site to share
-function switchToShare(className, opt) {
-  let comonedURL
-  switch (className) {
-    case 'to-weibo':
-      comonedURL = generateURL('http://service.weibo.com/share/share.php?url=<%-sURL%>&title=<%-sTitle%>&pic=<%-sPic%>', opt)
-      break
-    case 'to-qq':
-      comonedURL = generateURL('http://connect.qq.com/widget/shareqq/index.html?url=<%-sUrl%>&title=<%-sTitle%>&source=<%-sDesc%>', opt)
-      break
-    case 'to-twitter':
-      comonedURL = generateURL('https://twitter.com/intent/tweet?text=<%-sTitle%>&url=<%-sURL%>', opt)
-      break
-    default:
-      break
-    case 'to-wechat':
-      showQR(opt)
-      break
-  }
-  if (className !== 'to-wechat') {
-    window.open(comonedURL)
-  }
-}
-
-let initShareBox = function () {
-  initQREvent()
-  // show share
-  let hideTimer
-  function showShare() {
-    if (hideTimer) {
-      clearTimeout(hideTimer)
-    }
-    let shareBox = this.getElementsByClassName('share-box')[0]
-    shareBox.classList.add('share-box-show')
-    if (!shareBox.isInited) {
-      initCurrentShare(shareBox)
-    }
-  }
-
-  // hide share
-  function hideShare() {
-    let shareBox = this.getElementsByClassName('share-box')[0]
-    hideTimer = setTimeout(function () {
-      shareBox.classList.remove('share-box-show')
-    }, 100)
-  }
-
-  // share button hover event
-  let shareButtons = document.getElementsByClassName('post-share')
-  let i = shareButtons.length
-  while (i--) {
-    shareButtons[i].addEventListener('mouseover', showShare)
-    shareButtons[i].addEventListener('mouseout', hideShare)
-  }
-}
-
-function initCurrentShare(shareBox) {
-  shareBox.isInited = true
-  let shareItems = shareBox.querySelectorAll('li')
-  let opt = {
-    sURL: shareBox.dataset.href,
-    sTitle: shareBox.dataset.title,
-    sDesc: shareBox.dataset.title,
-    sPic: ''
-  }
-  shareItems.forEach(function (ele) {
-    ele.addEventListener('click', function () {
-      switchToShare(this.className, opt)
-    })
-  }, this)
-}
-
-
-export { initShareBox }
+init()

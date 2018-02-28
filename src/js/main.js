@@ -6,8 +6,8 @@ import InitSidebarLink from './tag'
 
 let logStyle = 'color: #fff; background: #f75357; padding: 1px; border-radius: 5px;'
 console.info('%c 🎯 hexo-theme-archer ⬇️ ', logStyle)
-console.info('%c 🏷 Version: 1.0.0 ', logStyle)
-console.info('%c 📅 Version date: 20182004 ', logStyle)
+console.info('%c 🏷 Version: 1.1.0 ', logStyle)
+console.info('%c 📅 Version date: 20180228 ', logStyle)
 console.info('%c 📦 https://github.com/fi3ework/hexo-theme-archer ', logStyle)
 init()
 scroll()
