@@ -45,8 +45,6 @@ function init() {
   window.location.hostname +
     (window.location.port ? ':' + window.location.port : '') +
     sImg
-  console.log(document.querySelector('.article-entry img'))
-  console.log(window.location.hostname)
   let sDesc = document.querySelector('.article-entry') && document.querySelector('.article-entry').innerText.substring(0, 30) + '...'
   let sAuthor = window.siteMeta.author
   let param = {
