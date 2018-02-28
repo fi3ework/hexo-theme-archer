@@ -41,7 +41,7 @@
 .post-intro-meta {
     margin-top: 0.2rem;
     font: 1.1rem $feature-font-family;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 1);
     display: flex;
     align-items: center;
     opacity: 0;
@@ -70,32 +70,79 @@
 }
 
 .shareWrapper {
+    position: relative;
     font-size: 0.9rem;
+    padding: 0 0.5rem 0 0;    
+}
+
+.shareWrapper:hover{
+    .shareList {
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
 .shareIcon {
     font-size: 0.9rem;
+    cursor: pointer;
 }
 
 .shareText {
     font-family: $feature-font-family;
+    cursor: pointer;
 }
 
-.bdsharebuttonbox {
-    font-size: 0.9rem !important;
+.shareList{
+    position: absolute;
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    left: 100%;
+    bottom: 0;
+    display: flex;
+    opacity: 0;
+    transition: all 0.1s ease-in 0s;
 }
 
-.bds_more {
-    float: none !important;
-    font-size: 0.9rem !important;
-    background-image: none !important;
-    color: rgba(255, 255, 255, 0.5) !important;
-    padding: 0 0 0 0 !important;
-    margin: 0 0 0 0 !important;
+.shareList .iconfont-archer {
+    display: inline-block;
+    margin-right: 3px;
+    cursor: pointer;
     &:hover {
-        opacity: 1 !important;
+        color: #aaa;
     }
 }
+
+.shareList [data-type=weibo] {
+    position: relative;
+    top: -2px;
+}
+
+.shareList [data-type=facebook] {
+    position: relative;
+    top: 1px;
+}
+
+.share-qr {
+    position: relative;
+}
+
+.share-qrcode {
+    position: absolute;
+    left: 0;
+    bottom: 1.5rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.1s ease-in 0s;
+}
+
+.share-qr:hover{
+    .share-qrcode{
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
 
 // ========== paginator ========== //
 .post-paginator {
