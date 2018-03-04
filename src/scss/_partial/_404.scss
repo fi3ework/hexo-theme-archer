@@ -1,6 +1,6 @@
 .four-zero-four-body {
     .header{
-        display: none;
+        // display: none;
     }
 
     .site-intro{
@@ -21,6 +21,8 @@
     }
 
     .footer{
+        z-index: 30;
+        background-color: transparent;
         position: absolute;
         bottom: 0;
         left: 0;
