@@ -1,0 +1,12 @@
+<% var indexHeight = typeof theme.index_intro_height === 'number' ? theme.index_intro_height : 50 %>
+<% var postHeight = typeof theme.post_intro_height === 'number' ? theme.post_intro_height : 50 %>
+<% var indexStrStyle = attr + ':' + String(indexHeight) + 'vh;' %>
+<% var postStrStyle = attr + ':' + String(postHeight) + 'vh;' %>
+<% var introHeightStyle %>
+<% if (is_home()) { %>
+<%- indexStrStyle %>
+<% } else if (is_post()) { %>
+<%- postStrStyle %>
+<% } else { %>
+
+<% } %>

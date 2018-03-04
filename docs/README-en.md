@@ -153,10 +153,13 @@ CNZZ_analytics:
 # ========== Others ========== #
 # favicon
 favicon:
-# truncate length of abstracts in index page(the default is 300, there will be no abstruct if you set it to 0)
+# truncate length of abstracts in index page (the default is 300, there will be no abstruct if you set it to 0)
 truncate_length:
 # enable toc
 toc: true
+# intro height (the default is 50 percents of the screen, you can input other number)
+index_intro_height: 50
+post_intro_height: 50
 ```
 ## License
 
