@@ -9,7 +9,7 @@ signature: witness me
 social:
   email: 12345@qq.com
   github: //github.com/fi3ework
-  # wechat and qq should be a path of an qr-code image
+  # wechat and qq should be a path of qr-code image
   wechat: /assets/example_qr.png
   qq: 
   weibo: 
@@ -27,7 +27,7 @@ social:
 friends:
   friendA: //www.baidu.com
   friendB: //www.google.com
-  # friendC:
+  friendC: 
 about:
   enable: true
   image: '/intro/about-bg.jpg'
@@ -78,7 +78,10 @@ CNZZ_analytics:
 # ========== Others ========== #
 # favicon
 favicon: /assets/favicon.ico
-# truncate length (the default is 300. If it's set to 0, there will not be abstruct)
+# truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
 truncate_length: 
 # enable toc
 toc: true
+# intro height (the default is 50 percents of the screen, you can input other number)
+index_intro_height: 50
+post_intro_height: 50

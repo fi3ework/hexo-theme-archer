@@ -28,6 +28,7 @@ hexo-theme-archer
 - 2018.02.04 - 『代码重构，性能优化，样式更新，V1.0.0』
 - 2018.02.24 - 『支持显示微信和QQ二维码』
 - 2018.02.28 - 『重写分享功能，分享按钮在头图上』
+- 2018.03.04 - 『头图的高度可以自定义了，配置 _config 即可』
 
 ## 说明
 
@@ -174,6 +175,9 @@ favicon:
 truncate_length:
 # enable toc
 toc: true
+# intro height (默认是屏幕高度的50%, 可以直接输入其他数字)
+index_intro_height: 50
+post_intro_height: 50
 ```
 
 ## License

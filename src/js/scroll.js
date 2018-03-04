@@ -12,7 +12,7 @@ let scroll = function () {
     $tocCatalog = $tocWrapper.find('.toc-catalog'),
     $progressBar = $('.read-progress')
 
-    // toc的收缩
+  // toc的收缩
   $tocCatalog.on('click', function () {
     $tocWrapper.toggleClass('toc-hide-children')
   })

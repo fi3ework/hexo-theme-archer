@@ -15,9 +15,11 @@
         <div class="friends">
             <div>FRIENDS</div>
             <% for (name in theme.friends) { %>
-                <span>
-                    <a href= <%- theme.friends[name] %> target="_black"><%- name %></a>
-                </span>
+                <% if(theme.friends[name]) { %>
+                    <span>
+                        <a href= <%- theme.friends[name] %> target="_black"><%- name %></a>
+                    </span>
+                <% } %>
             <% } %>
         </div>
     <% } %>
