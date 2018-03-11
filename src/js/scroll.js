@@ -58,7 +58,6 @@ let scroll = function () {
     return 0
   }
 
-
   // 判断是否为post-page
   let isPostPage = false
   let articleHeight,
@@ -75,9 +74,6 @@ let scroll = function () {
   }
 
   function updateProgress(scrollTop, beginY, contentHeight) {
-    // console.log(scrollTop);
-    // console.log(beginY);
-    // console.log(contentHeight);
     let windowHeight = $(window).height()
     let readPercent
     if (scrollTop < bgTitleHeight) {
