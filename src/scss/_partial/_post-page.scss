@@ -192,6 +192,7 @@
     position: relative;
     padding: 1px 0;
     font-weight: lighter;
+    font-weight: 400;
     color: $post-content-color;
     ul,
     ul li {
@@ -305,7 +306,11 @@
     margin: calc(#{$header-height} + 1rem) 0 0 0;
     transform: translate3d(0, 0, 0);
     transition: transform 0.3s ease-out .0s;
+    .toc-active{
+        color: $feature-color;
+    }
 }
+
 
 .toc-catalog {
     color: #bbb;
