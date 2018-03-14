@@ -7,8 +7,8 @@ import toc from './toc'
 
 let logStyle = 'color: #fff; background: #f75357; padding: 1px; border-radius: 5px;'
 console.info('%c 🎯 hexo-theme-archer ⬇️ ', logStyle)
-console.info('%c 🏷 Version: 1.2.0 ', logStyle)
-console.info('%c 📅 Version date: 20180311 ', logStyle)
+console.info('%c 🏷 Version: 1.2.1 ', logStyle)
+console.info('%c 📅 Version date: 20180314 ', logStyle)
 console.info('%c 📦 https://github.com/fi3ework/hexo-theme-archer ', logStyle)
 init()
 scroll()

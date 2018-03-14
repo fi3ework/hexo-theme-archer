@@ -28,12 +28,10 @@ let init = function () {
   // https://www.bryanbraun.com/anchorjs/
   let anchors = new AnchorJS()
   anchors.options = {
-    visible: 'always',
-    placement: 'left',
-    icon: '¶',
+    placement: 'right',
     class: 'anchorjs-archer'
   }
-  anchors.add().remove('.site-intro-meta h1').remove('h5').remove('h6')
+  anchors.add()
 }
 
 export { init }
