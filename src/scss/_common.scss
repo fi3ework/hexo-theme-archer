@@ -22,7 +22,7 @@ body {
     flex-direction: column;
     width: 100%;
     min-height: 100vh;    
-    transition: all 0.3s ease-out .0s;
+    transition: all 0.3s ease-in .0s;
     transform: translate3d(0, 0, 0);
     position: relative;
     box-shadow: -3px 0 2px 0 rgba(0, 0, 0, 0.6);

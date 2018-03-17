@@ -34,4 +34,4 @@ let init = function () {
   anchors.add()
 }
 
-export { init }
+export default init
