@@ -127,7 +127,6 @@
 .footer {
     margin-top: 0;
     .social {
-        margin-top: 0.5rem;
         @include social($scaleSize: 0.5, $spanMargin: 0.2rem);
     }
     .copyright {

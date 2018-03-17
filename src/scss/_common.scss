@@ -18,7 +18,10 @@ body {
 
 .wrapper {
     z-index: 1;
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    min-height: 100vh;    
     transition: all 0.3s ease-out .0s;
     transform: translate3d(0, 0, 0);
     position: relative;
@@ -39,12 +42,12 @@ body {
 }
 
 .container {
+    display: flex;
     padding: $container-margin-top 0 0 0;
     position: relative;
     background-color: #fff;
     top: 0;
     left: 0;
-    display: flex;
     align-items: flex-start;
     justify-content: center;
     width: 100%;
