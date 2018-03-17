@@ -1,4 +1,4 @@
-import { init } from './init'
+import init from './init'
 import { scroll } from './scroll'
 import mySidebar from './initSidebar'
 import { initMobile } from './mobile'
@@ -7,13 +7,17 @@ import toc from './toc'
 
 let logStyle = 'color: #fff; background: #f75357; padding: 1px; border-radius: 5px;'
 console.info('%c 🎯 hexo-theme-archer ⬇️ ', logStyle)
-console.info('%c 🏷 Version: 1.2.1 ', logStyle)
-console.info('%c 📅 Version date: 20180314 ', logStyle)
+console.info('%c 🏷 Version: 1.2.2 ', logStyle)
+console.info('%c 📅 Version date: 20180317 ', logStyle)
 console.info('%c 📦 https://github.com/fi3ework/hexo-theme-archer ', logStyle)
+
+// remove background placeholder
 init()
+
+// scroll event
 scroll()
 
-
+// init sidebar link
 let metas = new InitSidebarLink()
 metas.addTab({
   metaName: 'tags',
@@ -27,6 +31,7 @@ metas.addTab({
   postsContainer: '.sidebar-categories-list'
 })
 
+// init toc
 window.addEventListener('load', function (event) {
   console.log('All resources finished loading!')
   toc()
