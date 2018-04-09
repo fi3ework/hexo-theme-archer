@@ -79,10 +79,10 @@ class MetaInfo {
       // if there is any post has a tag
       if (currPostLabels && currPostLabels.length) {
         currPostLabels.forEach((tag) => {
-          if (this.indexMap.has(tag.slug)) {
-            this.indexMap.get(tag.slug).push(postIndex)
+          if (this.indexMap.has(tag.name)) {
+            this.indexMap.get(tag.name).push(postIndex)
           } else {
-            this.indexMap.set(tag.slug, [postIndex])
+            this.indexMap.set(tag.name, [postIndex])
           }
         })
       }
