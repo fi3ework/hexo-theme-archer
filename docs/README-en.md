@@ -65,7 +65,7 @@ jsonContent:
 - [enable rss](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8rss)
 - [custom artical head image](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E7%AB%A0%E9%A1%B5%E5%A4%B4%E5%9B%BE)
 - [custom feature color](https://github.com/fi3ework/hexo-theme-archer/wiki/%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98%E9%A2%9C%E8%89%B2)
-- [stick artical to the top](http://xxxsss.me/2017/04/22/hexo-pagination/)
+- [stick artical to the top](https://www.jianshu.com/p/42a4efcdf8d7)
 
 ## Theme configuration
 
