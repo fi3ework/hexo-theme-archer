@@ -38,6 +38,8 @@
     <div class="back-top iconfont-archer">&#xe639;</div>
     <%- partial('_partial/sidebar/base-sidebar', {}, {cache: true}) %>
     <%- partial('./site-meta.ejs') %>
+    <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="<%- url_for('/scripts/main.js') %>"></script>
     <!-- busuanzi  -->
     <% if (theme.busuanzi) { %>
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
