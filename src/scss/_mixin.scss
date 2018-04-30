@@ -148,6 +148,16 @@
             color: #171718;
         }
     }
+    .bilibili {
+        top: 4px * $scaleSize;
+        &::before {
+            font-size: 3.5rem * $scaleSize;
+            content: "\e64e";
+        }
+        &:hover::before {
+            color: #2cb2f9;
+        }
+    }
     .linkedin {
         top: -1px * $scaleSize;
         &::before {
