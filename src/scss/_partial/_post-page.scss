@@ -297,6 +297,19 @@
     }
 }
 
+// ========== license ========== //
+
+.license-wrapper {
+    font-weight: 300;
+    line-height: 0.7rem;
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+    color: $post-content-color;
+    a {
+        color: $feature-color;
+    }
+}
+
 // ========== toc ========== //
 .toc-wrapper {
     display: block;
