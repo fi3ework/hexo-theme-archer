@@ -1,5 +1,10 @@
+
+
+
 // ========== code style ========== //
 .article-entry {
+    // ========== toggle ========== //
+
     pre,
     .highlight {
         margin: 0.8rem 0;
@@ -78,7 +83,9 @@
     .highlight .line {
         color: #657b83;
         min-height: 19px;
-    } // ========== color ========== //
+    }
+    
+    // ========== light color ========== //
     .highlight,
     pre {
         background: #fdf6e3;
@@ -210,3 +217,4 @@
         text-decoration: underline;
     }
 }
+
