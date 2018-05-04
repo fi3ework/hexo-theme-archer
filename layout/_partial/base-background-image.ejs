@@ -15,8 +15,8 @@
     <% } else if (page.layout === "about") { %>
     <% bgURL = theme.about.image || theme.site_header_image; %>
     <% } %>        
-    <div class="site-intro-img" style="background-image: url(<%- url_for(bgURL) %>)"></div>
     <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(<%- url_for(bgURL) %>)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">

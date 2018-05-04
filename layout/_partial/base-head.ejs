@@ -25,10 +25,10 @@
     <%- partial('base-preload-polyfill') %>
     <link rel="icon" href= "<%- url_for(theme.favicon) %>" />
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />    
-    <link rel="preload" href="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" as="script" />
-    <link rel="preload" href="<%- url_for('/scripts/main.js') %>" as="script" />
-    <link rel="preload" as="font" href="<%- url_for('/font/Oswald-Regular.ttf') %>" crossorigin>
-    <link rel="preload" as="font" href="//at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="<%- url_for('scripts/main.js') %>" as="script" />
+    <link rel="preload" as="font" href="<%- url_for('font/Oswald-Regular.ttf') %>" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
     <!-- 百度统计  -->
     <% if(theme.baidu_analytics) { %>
     <script>
