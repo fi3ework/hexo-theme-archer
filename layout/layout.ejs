@@ -38,7 +38,15 @@
     <div class="back-top iconfont-archer">&#xe639;</div>
     <%- partial('_partial/sidebar/base-sidebar', {}, {cache: true}) %>
     <%- partial('./site-meta.ejs') %>
+    <!-- CDN failover -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="<%- url_for('lib/jquery.min.js') %>">\x3C/script>')
+        }
+    </script>
     <script src="<%- url_for('/scripts/main.js') %>"></script>
     <!-- busuanzi  -->
     <% if (theme.busuanzi) { %>
