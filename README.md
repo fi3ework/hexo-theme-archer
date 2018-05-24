@@ -166,6 +166,10 @@ comment:
 # ========== 统计 ========== #
 # 是否开启不蒜子阅读量统计
 busuanzi: true
+# 统计方式，填写 pv 或 uv
+busuanzi_pv_or_uv: 'pv'
+# 自定义统计标语，'${count}' 会自动替换成统计值
+busuanzi_slogan: 'PV: ${count} :)'
 # 百度统计(填写siteID)
 baidu_analytics:
 # Google统计(填写siteID)
