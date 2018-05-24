@@ -7,7 +7,7 @@ hexo-theme-archer
 
 🎯  Preview theme：[Demo](http://firework.studio/archer-demo/)
 
-## 234
+## Document
 
 - [Chinese document](../README.md)
 - [Secondary develop guide](./develop-guide-en.md)
@@ -24,7 +24,7 @@ hexo-theme-archer
 1. Execute the following commands in **Hexo directory**.
 
 ``` shell
-npm install hexo-generator-json-content --save && git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer
+npm i hexo-generator-json-content --save && npm i --save hexo-wordcount && git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer
 ```
 
 2. Change the `theme` property to `archer` of `_config.yml` in **Hexo directory**.
@@ -146,7 +146,7 @@ busuanzi: true
 # fill in pv or uv
 busuanzi_pv_or_uv: 'pv'
 # custom analytic slogan, '${count}' is the analytic number, DO NOT modify it.
-busuanzi_slogan: 'PV: ${count} :)'
+busuanzi_slug: 'PV: ${count} :)'
 # Baidu analytics (fill in siteID)
 baidu_analytics:
 # Google analytics (fill in siteID)
@@ -161,6 +161,8 @@ favicon:
 truncate_length:
 # enable toc
 toc: true
+# word count & reading time
+reading_info: true
 # intro height (the default is 50 percents of the screen, you can input other number)
 index_intro_height: 50
 post_intro_height: 50
