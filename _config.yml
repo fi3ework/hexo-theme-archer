@@ -67,8 +67,12 @@ comment:
   youyan_uid: 
 
 # ========== Analytics ========== #
-# Busuanzi pv analytics
+# enable Busuanzi analytics
 busuanzi: true
+# fill in pv or uv
+busuanzi_pv_or_uv: 'pv'
+# custom analytic slogan, '${count}' is the analytic number, DO NOT modify it.
+busuanzi_slogan: 'PV: ${count} :)'
 # Baidu analytics
 baidu_analytics: 
 # Google analytics
