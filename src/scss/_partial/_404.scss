@@ -1,6 +1,6 @@
 .four-zero-four-body {
-    .header{
-        // display: none;
+    .loading{
+        display: none !important;
     }
 
     .site-intro{
@@ -21,11 +21,12 @@
     }
 
     .footer{
+        width: 100%;
         z-index: 30;
         background-color: transparent;
         position: absolute;
         bottom: 0;
-        left: 0;
+        // left: 0;
     }
 
     .iconfont-archer::before{
