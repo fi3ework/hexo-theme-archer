@@ -10,7 +10,7 @@ import fancybox from './fancybox'
 let logStyle = 'color: #fff; background: #f75357; padding: 1px; border-radius: 5px;'
 console.info('%c 🎯 hexo-theme-archer ⬇️ ', logStyle)
 console.info('%c 🏷 Version: 1.3.5 ', logStyle)
-console.info('%c 📅 Version date: 20180506', logStyle)
+console.info('%c 📅 Version date: 20180524', logStyle)
 console.info('%c 📦 https://github.com/fi3ework/hexo-theme-archer ', logStyle)
 
 // remove background placeholder

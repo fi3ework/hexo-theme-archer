@@ -12,7 +12,7 @@
     <!-- 不蒜子  -->
     <% if (theme.busuanzi) { %>
     <div class="busuanzi-container">
-    <% var sloganPieces = theme.busuanzi_slogan.split('${count}') %>
+    <% var sloganPieces = theme.busuanzi_slug.split('${count}') %>
     <% if(theme.busuanzi_pv_or_uv === 'pv') { %> 
     <span id="busuanzi_container_site_pv"><%- sloganPieces[0] %><span id="busuanzi_value_site_pv"></span><%- sloganPieces[1] %></span>
     <% } else if (theme.busuanzi_pv_or_uv === 'uv') { %>

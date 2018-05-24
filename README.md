@@ -32,6 +32,7 @@ hexo-theme-archer
 - 2018.03.11 - 『toc 可以根据阅读位置自动展开和收缩了』
 - 2018.03.18 - 『添加 fancybox』
 - 2018.05.01 - 『添加 license』
+- 2018.05.24 - 『可自定义访问量统计/增加字数统计及阅读时间』
 
 ## 说明
 
@@ -45,7 +46,7 @@ hexo-theme-archer
 1. 在**Hexo目录**下执行
 
 ``` shell
-npm install hexo-generator-json-content --save && git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer
+npm i hexo-generator-json-content --save && npm i --save hexo-wordcount && git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer
 ```
 
 2. 修改**Hexo目录**下的 `_config.yml` 的 `theme` 字段为 `archer`
@@ -169,7 +170,7 @@ busuanzi: true
 # 统计方式，填写 pv 或 uv
 busuanzi_pv_or_uv: 'pv'
 # 自定义统计标语，'${count}' 会自动替换成统计值
-busuanzi_slogan: 'PV: ${count} :)'
+busuanzi_slug: 'PV: ${count} :)'
 # 百度统计(填写siteID)
 baidu_analytics:
 # Google统计(填写siteID)
@@ -178,13 +179,15 @@ google_analytics:
 CNZZ_analytics:
 
 # ========== 其他 ========== #
-# favicon
+# 网站的标签页缩略图
 favicon:
 # 首页的文章摘要字数(默认300，填0则不显示摘要)
 truncate_length:
-# enable toc
+# 开启文章右侧的大纲
 toc: true
-# intro height (默认是屏幕高度的50%, 可以直接输入其他数字)
+# 字数统计 & 阅读时间
+reading_info: true
+# 头图高度 (默认是屏幕高度的50%, 可以直接输入其他数字)
 index_intro_height: 50
 post_intro_height: 50
 about_intro_height: 50

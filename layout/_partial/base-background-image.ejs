@@ -53,34 +53,41 @@
         </p>
         <!-- 文章页meta -->
         <% if(is_post()) { %>
-            <!-- 文章页标签  -->
-            <% if(page.tags.length) { %>
-                <%- partial('base-title-tags', {
-                    currPost: page,
-                    className: 'post-intro-tags'}) %>
-            <% } %>
-            <div class="post-intro-meta">
-                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                <span class="post-intro-time"><%- date(page.date, "YYYY/MM/DD") %></span>
-                <% if (theme.busuanzi) { %>
-                <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                    <span class="iconfont-archer">&#xe602;</span>
-                    <span id="busuanzi_value_page_pv"></span>
-                </span>
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                <% if(page.tags.length) { %>
+                    <%- partial('base-title-tags', {
+                        currPost: page,
+                        className: 'post-intro-tags'}) %>
                 <% } %>
-                <span class="shareWrapper">
-                    <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                    <span class="shareText">Share</span>
-                    <ul class="shareList">
-                        <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                            <div class="share-qrcode"></div>
-                        </li>
-                        <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                        <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                        <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                        <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                    </ul>
-                </span>
+                <% if(theme.reading_info) { %>
+                    <div class="post-intro-read">
+                        <span>Word count: <span class="post-count"><%= wordcount(page.content) %></span> / Reading time: <span class="post-count"><%= min2read(page.content) %> min</span></span>
+                    </div>
+                <% } %>
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time"><%- date(page.date, "YYYY/MM/DD") %></span>
+                    <% if (theme.busuanzi) { %>
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    <% } %>
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
             </div>
         <% } %>
     </div>
