@@ -1,4 +1,15 @@
 <main class="main index-page">
+	<!-- search  -->
+	<% if (theme.local_search.enable) { %>
+		<script src="<%- url_for('/scripts/search.js') %>"></script>
+		<div id="site_search" style="text-align:center">
+			<div class="form-group">
+				<input type="text" id="local-search-input" name="q" results="0" placeholder="<%= __('search') %>"  oninput="searchFunc('/search.xml', 'local-search-input', 'local-search-result');" class="st-search-input st-default-search-input form-control"/>
+			</div>  
+			<div id="local-search-result"></div>
+		</div>
+	<% } %>
+	
     <% page.posts.each(function (_post) { %>
     <% let truncateLength = typeof theme.truncate_length === 'number' ? theme.truncate_length : 300 %>
     <% let _content = !!_post.abstract ? _post.abstract : 
