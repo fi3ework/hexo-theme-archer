@@ -33,6 +33,7 @@ hexo-theme-archer
 - 2018.03.18 - 『添加 fancybox』
 - 2018.05.01 - 『添加 license』
 - 2018.05.24 - 『可自定义访问量统计/增加字数统计及阅读时间』
+- 2018.05.31 - 『添加站内搜索』
 
 ## 说明
 
@@ -89,6 +90,7 @@ jsonContent:
 - [自定义主题颜色](https://github.com/fi3ework/hexo-theme-archer/wiki/%E6%9B%B4%E6%94%B9%E4%B8%BB%E9%A2%98%E9%A2%9C%E8%89%B2)
 - [置顶文章](https://www.jianshu.com/p/42a4efcdf8d7)
 - [设置文章版权信息](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%AE%BE%E7%BD%AE%E6%96%87%E7%AB%A0%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF)
+- [启用站内搜索](https://github.com/kiss4u/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8%E7%AB%99%E5%86%85%E6%90%9C%E7%B4%A2)
 
 ## 主题配置
 
