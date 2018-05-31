@@ -46,7 +46,10 @@ site_header_image: '/intro/index-bg.jpg'
 post_header_image: '/intro/post-bg.jpg'
 # 404 image
 _404_image: '/intro/404-bg.jpg'
-
+# ========== Search ========== #
+local_search: 
+  enable: true
+  target: '/search.xml'
 # ========== Comment ========== #
 # Fill in the field to enable the corresponding comment plugin
 # If you want to add other comment plugin, edit in "custom.ejs"
