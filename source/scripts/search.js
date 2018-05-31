@@ -119,7 +119,7 @@ var searchFunc = function(path, search_id, content_id) {
                             }
 
                             res_num++;
-                            res_more = "<li>¹²²é³ö" + res_num + "Ìõ</li>"
+                            res_more = "<li>å…±" + res_num + "æ¡ï¼Œè¯·è¾“å…¥æ›´å¤šå…³é”®å­—æ£€ç´¢</li>"
                         }
                     });
                     str += "</ul>";
