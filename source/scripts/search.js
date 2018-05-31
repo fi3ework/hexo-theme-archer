@@ -1,3 +1,23 @@
+// A local search script with the help of [hexo-generator-search](https://github.com/PaicHyperionDev/hexo-generator-search)
+// Copyright (C) 2015 
+// Joseph Pan <http://github.com/wzpan>
+// Shuhao Mao <http://github.com/maoshuhao>
+// This library is free software; you can redistribute it and/or modify
+// it under the terms of the GNU Lesser General Public License as
+// published by the Free Software Foundation; either version 2.1 of the
+// License, or (at your option) any later version.
+// 
+// This library is distributed in the hope that it will be useful, but
+// WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+// 02110-1301 USA
+// 
+
 var searchFunc = function(path, search_id, content_id) {
     'use strict';
     $.ajax({
@@ -24,6 +44,9 @@ var searchFunc = function(path, search_id, content_id) {
                     if (this.value.trim().length <= 0) {
                         return;
                     }
+                    var res_num_max = 10;
+                    var res_num = 1;
+                    var res_more = "";
                     // perform local searching
                     datas.forEach(function (data) {
                         var isMatch = true;
@@ -60,7 +83,8 @@ var searchFunc = function(path, search_id, content_id) {
                         }
                         // show search results
                         if (isMatch) {
-                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            if(res_num <= res_num_max) {
+                            str += "<li>"+ res_num +" - <a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
                             var content = data.content.trim().replace(/<[^>]+>/g, "");
                             if (first_occur >= 0) {
                                 // cut out 100 characters
@@ -90,6 +114,12 @@ var searchFunc = function(path, search_id, content_id) {
                                 str += "<p class=\"search-result\">" + match_content + "...</p>"
                             }
                             str += "</li>";
+                            } else if(res_num == res_num_max + 1) {
+                                str += res_more;
+                            }
+
+                            res_num++;
+                            res_more = "<li>共查出" + res_num + "条</li>"
                         }
                     });
                     str += "</ul>";

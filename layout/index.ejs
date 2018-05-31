@@ -4,7 +4,8 @@
 		<script src="<%- url_for('/scripts/search.js') %>"></script>
 		<div id="site_search" style="text-align:center">
 			<div class="form-group">
-				<input type="text" id="local-search-input" name="q" results="0" placeholder="<%= __('search') %>"  oninput="searchFunc('/search.xml', 'local-search-input', 'local-search-result');" class="st-search-input st-default-search-input form-control"/>
+				<input type="text" id="local-search-input" name="q" results="0" placeholder="<%= __('search') %>"  onfocus="searchFunc('/search.xml', 'local-search-input', 'local-search-result');" class="st-search-input st-default-search-input form-control"/>
+                <li><font size="0.5" color="blue">空格分割关键字详细检索</font></li>
 			</div>  
 			<div id="local-search-result"></div>
 		</div>
