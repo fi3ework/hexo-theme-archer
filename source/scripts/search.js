@@ -118,10 +118,10 @@ var searchFunc = function(path, search_id, content_id) {
                         }
                     });
 					if(res_num > 0) {
-						if(res_num > 10) {
-							str += "<li>共" + res_num + "条相关文章</li></ul>"
+						if(res_num > res_num_max) {
+							str += "<li>共" + res_num + "条相关文章</li>"
 						}
-						//str += "</ul>";
+						str += "</ul>";
 						$resultContent.innerHTML = str;
 					}
                 });

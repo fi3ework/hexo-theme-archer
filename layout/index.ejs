@@ -2,11 +2,8 @@
 	<!-- search  -->
 	<% if (theme.local_search.enable) { %>
 		<script src="<%- url_for('/scripts/search.js') %>"></script>
-		<div id="site_search" style="text-align:center">
-			<div class="form-group">
-				<input type="text" id="local-search-input" name="q" results="0" placeholder="<%= __('search') %>"  onfocus="searchFunc('/search.xml', 'local-search-input', 'local-search-result');" class="st-search-input st-default-search-input form-control"/>
-                <li><font size="0.5" color="blue">空格分割关键字详细检索</font></li>
-			</div>  
+		<div id="site-search" style="text-align:center">
+			<input type="text" id="local-search-input" class="site-search-input-text" placeholder="<%= __('空格分割关键字可详细检索') %>"  onfocus="searchFunc('/search.xml', 'local-search-input', 'local-search-result');"/>
 			<div id="local-search-result"></div>
 		</div>
 	<% } %>
