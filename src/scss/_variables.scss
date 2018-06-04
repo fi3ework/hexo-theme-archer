@@ -28,11 +28,13 @@ $selection-color: $feature-color;
 
 // ========== iconfont ========== //
 @font-face {
-    font-family: 'iconfont-archer';
-    /* project id 327081 */
-    src: url('//at.alicdn.com/t/font_327081_1dta1rlogw17zaor.eot');
-    src: url('//at.alicdn.com/t/font_327081_1dta1rlogw17zaor.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff') format('woff'), url('//at.alicdn.com/t/font_327081_1dta1rlogw17zaor.ttf') format('truetype'), url('//at.alicdn.com/t/font_327081_1dta1rlogw17zaor.svg#iconfont-archer') format('svg');
-}
+    font-family: 'iconfont-archer';  /* project id 327081 */
+    src: url('//at.alicdn.com/t/font_327081_gk8vpane0t7hw7b9.eot');
+    src: url('//at.alicdn.com/t/font_327081_gk8vpane0t7hw7b9.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_327081_gk8vpane0t7hw7b9.woff') format('woff'),
+    url('//at.alicdn.com/t/font_327081_gk8vpane0t7hw7b9.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_327081_gk8vpane0t7hw7b9.svg#iconfont-archer') format('svg');
+  }
 
 .iconfont-archer {
     font-family: "iconfont-archer" !important;

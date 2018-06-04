@@ -5,12 +5,12 @@ import { initMobile } from './mobile'
 import InitSidebarLink from './tag'
 import toc from './toc'
 import fancybox from './fancybox'
-
+// import initSearch from './search'
 
 let logStyle = 'color: #fff; background: #f75357; padding: 1px; border-radius: 5px;'
 console.info('%c 🎯 hexo-theme-archer ⬇️ ', logStyle)
-console.info('%c 🏷 Version: 1.3.5 ', logStyle)
-console.info('%c 📅 Version date: 20180524', logStyle)
+console.info('%c 🏷 Version: 1.4.0 ', logStyle)
+console.info('%c 📅 Version date: 20180604', logStyle)
 console.info('%c 📦 https://github.com/fi3ework/hexo-theme-archer ', logStyle)
 
 // remove background placeholder
@@ -40,6 +40,7 @@ window.addEventListener('load', function (event) {
 })
 
 initMobile()
+// initSearch()
 
 // fancybox
 fancybox()
