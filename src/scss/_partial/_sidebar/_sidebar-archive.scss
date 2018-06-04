@@ -1,3 +1,4 @@
+@import '../../_variables.scss';
 // ========== sidebar archive ========== //
 .sidebar-panel-archives {
     padding: 1rem;
@@ -28,6 +29,21 @@
         .archive-post-title {
             color: $feature-color;
         }
+    }
+}
+
+.total-and-search {
+    display: flex;
+}
+
+.site-search {
+    cursor: pointer;
+    .search-icon {
+        color: $feature-color;
+        line-height: 1.9rem;
+        font-size: 1.5rem;
+        position: relative;
+        margin-left: 0.5rem;
     }
 }
 

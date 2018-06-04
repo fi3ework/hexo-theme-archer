@@ -3,7 +3,8 @@ const path = require('path')
 module.exports = {
   entry: {
     main: './src/js/main.js',
-    share: './src/js/share.js'
+    share: './src/js/share.js',
+    search: './src/js/search.js'
   },
   output: {
     path: path.join(__dirname, './source/scripts'),

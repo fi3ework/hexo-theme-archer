@@ -1,13 +1,4 @@
 <main class="main index-page">
-	<!-- search  -->
-	<% if (theme.local_search.enable) { %>
-		<script src="<%- url_for('/scripts/search.js') %>"></script>
-		<div id="site-search" style="text-align:center">
-			<input type="text" id="local-search-input" class="site-search-input-text" placeholder="<%= __('空格分割关键字可详细检索') %>"  onfocus="searchFunc('/search.xml', 'local-search-input', 'local-search-result');"/>
-			<div id="local-search-result"></div>
-		</div>
-	<% } %>
-	
     <% page.posts.each(function (_post) { %>
     <% let truncateLength = typeof theme.truncate_length === 'number' ? theme.truncate_length : 300 %>
     <% let _content = !!_post.abstract ? _post.abstract : 
