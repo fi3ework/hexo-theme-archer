@@ -18,7 +18,15 @@
     <% let currPagePosts; %>
     <% let showDate = NaN; %>
     <% currPagePosts = resortAllPosts; %>
-    <div class="total-archive"> Total : <%= currPagePosts.length %> </div>
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : <%= currPagePosts.length %>
+        <!-- search  -->
+        </div>
+            <div class="site-search popup-trigger">
+                <span class="iconfont-archer search-icon">&#xe627;</span>
+            </div>
+    </div>
     <% let toCloseUl = 0 %>
     <div class="post-archive">
     <% currPagePosts.forEach(function (post) { %>

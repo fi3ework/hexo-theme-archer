@@ -47,6 +47,16 @@ post_header_image: '/intro/post-bg.jpg'
 # 404 image
 _404_image: '/intro/404-bg.jpg'
 
+# ========== Search ========== #
+algolia_search:
+  enable: true
+  hits:
+    per_page: 10
+  labels:
+    input_placeholder: Search for Posts
+    hits_empty: "We did not find any results for the search: ${query}"
+    hits_stats: "${hits} results found in ${time} ms"
+
 # ========== Comment ========== #
 # Fill in the field to enable the corresponding comment plugin
 # If you want to add other comment plugin, edit in "custom.ejs"
