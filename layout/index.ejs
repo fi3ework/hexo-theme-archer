@@ -1,8 +1,5 @@
 <main class="main index-page">
     <% page.posts.each(function (_post) { %>
-    <% let truncateLength = typeof theme.truncate_length === 'number' ? theme.truncate_length : 300 %>
-    <% let _content = !!_post.abstract ? _post.abstract : 
-        (truncateLength === 0 ? null : truncate(strip_html(_post.content), {length: truncateLength, omission: '...'})) %>
         <article class="index-post">
             <a class="abstract-title" href = "<%- url_for(_post.path) %>" >
                 <% if(_post.top) { %>
@@ -11,7 +8,7 @@
                     <span><%= _post.title || '[Untitled Post]' %></span>
             </a>
             <div class="abstract-content">
-                <%- _content %>
+                <%- _post.excerpt %>
             </div>
             <div class="abstract-post-meta">
                 <!-- date  -->
