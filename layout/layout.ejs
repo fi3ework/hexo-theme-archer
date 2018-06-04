@@ -48,6 +48,12 @@
         }
     </script>
     <script src="<%- url_for('/scripts/main.js') %>"></script>
+    <!-- algolia -->
+    <% if (theme.algolia_search.enable) { %>
+        <%- partial('_partial/algolia') %>
+        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.8.0/dist/instantsearch.min.js" defer></script>
+        <script src="<%- url_for('/scripts/search.js') %>" defer></script>
+    <% } %>
     <!-- busuanzi  -->
     <% if (theme.busuanzi) { %>
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
@@ -61,7 +67,7 @@
     <!-- async load share.js -->
     <% if(is_post()) { %>
         <script src="<%- url_for('/scripts/share.js') %>" async></script>    
-    <% } %>
+    <% } %> 
     </body>
 </html>
 
