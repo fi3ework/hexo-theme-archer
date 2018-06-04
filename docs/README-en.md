@@ -122,6 +122,16 @@ post_header_image:
 # 404 page header image
 _404_image:
 
+# ========== Search ========== #
+algolia_search:
+  enable: false
+  hits:
+    per_page: 10 # result number per page
+  labels:
+    input_placeholder: Search for Posts # search input placeholder
+    hits_empty: "We did not find any results for the search: ${query}" # search results hint
+    hits_stats: "${hits} results found in ${time} ms" # no results found hint
+    
 # ========== Comment Plugin ========== #
 # Currently support directly adding Livere, Gitment, Changyan and Youyan, fill the field to enable corresponding plugin
 comment:

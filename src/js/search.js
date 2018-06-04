@@ -1,3 +1,5 @@
+// special thanks to https://blog.naaln.com/2016/07/hexo-with-algolia/
+
 const initAlgolia = () => {
   $(document).ready(function () {
     let algoliaSettings = algolia

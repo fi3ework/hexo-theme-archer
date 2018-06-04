@@ -37,17 +37,17 @@ hexo-theme-archer
 
 ## 说明
 
-- 本主题受[yilia](https://github.com/litten/hexo-theme-yilia)主题和[huxpro](https://github.com/Huxpro/huxpro.github.io)主题的启发，结合了前者的sidebar设计及后者的UI设计。通过sidebar能够不跳转到archive页、tag页及**categories页**进行导航。
-- 兼容性：现代浏览器及IE10+。
-- 有任何使用上的问题欢迎[**发起issue**](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Algolia-%E6%90%9C%E7%B4%A2)。
-- 本主题会持续维护及优化，欢迎star 😆。
+- 本主题受 [yilia](https://github.com/litten/hexo-theme-yilia) 主题和 [huxpro](https://github.com/Huxpro/huxpro.github.io) 主题的启发，结合了前者的 sidebar 设计及后者的 UI 设计。通过 sidebar 能够不跳转到 archive 页、tag页及 categories 页进行导航。
+- 兼容性：现代浏览器及 IE10+。
+- 有任何使用上的问题欢迎 [**发起 issue**](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Algolia-%E6%90%9C%E7%B4%A2)。
+- 本主题会持续维护及优化，欢迎 star 😆。
 
 ##  安装
 
 1. 在**Hexo目录**下执行
 
 ``` shell
-npm i hexo-generator-json-content --save && npm i --save hexo-wordcount && git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer
+npm i hexo-generator-json-content --save && npm i --save hexo-wordcount && git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1
 ```
 
 2. 修改**Hexo目录**下的 `_config.yml` 的 `theme` 字段为 `archer`
@@ -147,6 +147,16 @@ post_header_image:
 # 404页头图
 _404_image:
 
+# ========== 搜索 ========== #
+algolia_search:
+  enable: false
+  hits:
+    per_page: 10 # 每页的结果数
+  labels:
+    input_placeholder: Search for Posts # 搜索栏 placeholder
+    hits_empty: "We did not find any results for the search: ${query}" # 搜索结果提示
+    hits_stats: "${hits} results found in ${time} ms" # 搜索无结果的提示
+    
 # ========== 评论插件 ========== #
 # 目前支持直接添加Livere，Disqus，Gitment，畅言及友言，填写插件对应的字段即可启用。
 # 如果想添加其他评论插件，在custom.ejs中添加即可。
