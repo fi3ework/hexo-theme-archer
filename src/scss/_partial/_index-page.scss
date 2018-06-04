@@ -4,18 +4,21 @@
     padding: 1rem 0rem 1rem 0rem;
     border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
     z-index: 3;
-    &:first-of-type {
-        padding-top: 0;
-    }
 }
 
 // ========== abstract content ========== //
-.abstract-content {
-    color: #9c9c9c;
-    font-size: 1rem;
-    line-height: 1.6rem;
-    font-weight: lighter;
-    word-break: break-word;
+.index-post {
+    .abstract-content {
+        color: #9c9c9c;
+        font-size: 1rem;
+        line-height: 1.6rem;
+        font-weight: lighter;
+        word-break: break-word;
+        img {
+            max-width: 100%;
+            box-shadow: none;
+        }
+    }
 }
 
 // ========== abstract title ========== //
@@ -26,7 +29,7 @@
     span:last-of-type {
         transition: color 0.1s ease-in;
         font-size: 1.7rem;
-        &:hover{
+        &:hover {
             color: $feature-color;
         }
     }
