@@ -12,6 +12,8 @@ about: 提出反馈，一起来完善主题（create a report to improve the the
 
 **如何复现（To Reproduce）**
 
+**存在 bug 的已部署上线的页面地址（A deployed page link that contains bug）**
+
 **控制台截图，包含主题的版本及可能的脚本错误（Screenshots on console, include version of theme and the possible JavaScript error）**
 
 **信息 (please complete the following information):**
