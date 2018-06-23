@@ -133,7 +133,7 @@ algolia_search:
     hits_stats: "${hits} results found in ${time} ms" # no results found hint
     
 # ========== Comment Plugin ========== #
-# Currently support directly adding Livere, Gitment, Changyan and Youyan, fill the field to enable corresponding plugin
+# Currently support directly adding Livere, Gitment, Changyan, Youyan and Valine, fill the field to enable corresponding plugin
 comment:
   # Livere：https://livere.com/
   livere_uid:
@@ -149,7 +149,11 @@ comment:
   gitment_client_secret:
   # Youyan: http://www.uyan.cc/
   youyan_uid:
-
+  # Valine: site: https://valine.js.org/
+  valine_appId: 
+  valine_appKey: 
+  valine_placeHolder: 
+  
 # ========== Analytics ========== #
 # enable Busuanzi analytics
 busuanzi: true

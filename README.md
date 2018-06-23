@@ -34,6 +34,7 @@ hexo-theme-archer
 - 2018.05.01 - 『添加 license』
 - 2018.05.24 - 『可自定义访问量统计/增加字数统计及阅读时间』
 - 2018.06.04 - 『添加 Algolia 搜索，[详情](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Algolia-%E6%90%9C%E7%B4%A2)』
+- 2018.06.23 - 『添加 Valine 评论，感谢 [hulichao](https://github.com/fi3ework/hexo-theme-archer/issues/115) 同学』
 
 ## 说明
 
@@ -158,7 +159,7 @@ algolia_search:
     hits_stats: "${hits} results found in ${time} ms" # 搜索无结果的提示
     
 # ========== 评论插件 ========== #
-# 目前支持直接添加Livere，Disqus，Gitment，畅言及友言，填写插件对应的字段即可启用。
+# 目前支持直接添加Livere，Disqus，Gitment，畅言、友言及 Valine，填写插件对应的字段即可启用。(推荐使用 Livere)
 # 如果想添加其他评论插件，在custom.ejs中添加即可。
 comment:
   # Livere 官网：https://livere.com/
@@ -175,6 +176,10 @@ comment:
   gitment_client_secret:
   # 友言 官网: http://www.uyan.cc/
   youyan_uid:
+  # Valine 官网: https://valine.js.org/
+  valine_appId: 
+  valine_appKey: 
+  valine_placeHolder: 
 
 # ========== 统计 ========== #
 # 是否开启不蒜子阅读量统计
