@@ -1,0 +1,17 @@
+<% if(theme.comment && theme.comment.valine_appId && theme.comment.valine_appKey) { %>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <div id="comment"></div>
+    <script>
+    new Valine({
+        el: '#comment' ,
+        notify:false, 
+        verify:false, 
+        appId: "<%- theme.comment.valine_appId %>",
+        appKey: "<%- theme.comment.valine_appKey %>",
+        placeholder: "<%- theme.comment.valine_placeHolder %>",
+        path:window.location.pathname, 
+        avatar:'mm' 
+    });
+    </script>
+<% } %>
