@@ -75,6 +75,10 @@ comment:
   gitment_client_secret: 
   # Youyan  site: http://www.uyan.cc/
   youyan_uid: 
+  # Valine  site: https://valine.js.org/
+  valine_appId: 
+  valine_appKey: 
+  valine_placeHolder: 
 
 # ========== Analytics ========== #
 # enable Busuanzi analytics
