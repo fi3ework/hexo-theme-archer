@@ -21,11 +21,13 @@
     <div class="total-and-search">
         <div class="total-archive">
         Total : <%= currPagePosts.length %>
-        <!-- search  -->
         </div>
+        <!-- search  -->
+        <% if (theme.algolia_search.enable) { %>
             <div class="site-search popup-trigger">
                 <span class="iconfont-archer search-icon">&#xe627;</span>
             </div>
+        <% } %>
     </div>
     <% let toCloseUl = 0 %>
     <div class="post-archive">
