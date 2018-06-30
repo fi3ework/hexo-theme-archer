@@ -2,16 +2,29 @@
 @import "_variables";
 
 // ========== common ========== //
-.profile,
+.container {
+    flex-direction: column-reverse;
+    margin:0 auto;
+    width: 100%;
+    padding: 1rem 0 0 0;
+    align-items: center;
+}
+
+.profile{
+    margin: 1rem auto;
+    .profile-avatar{
+        width: 60%;
+        margin: 0 auto;
+    }
+    .profile-social{
+        display: none;
+    }
+}
+
 .toc-wrapper {
     display: none;
 }
 
-.container {
-    width: 100%;
-    margin: 0rem auto;
-    padding: 1rem 0 0 0;
-}
 
 .footer {
     padding-top: 0;
