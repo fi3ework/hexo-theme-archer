@@ -51,12 +51,12 @@
 
 .sidebar-tags-empty-active,
 .sidebar-categories-empty-active {
+    display: block;
+    font-size: 6rem !important; // TODO: why does it need !important
     margin-top: 7rem;
     user-select: none;
     text-align: center;
-    display: block;
     color: #fff;
-    font-size: 6rem;
 }
 
 
