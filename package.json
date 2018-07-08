@@ -1,7 +1,7 @@
 {
-  "name": "archer",
-  "version": "1.0.0",
-  "description": "archer develop package",
+  "name": "hexo-theme-archer",
+  "version": "1.5.0",
+  "description": "a smart and modern theme for Hexo",
   "scripts": {
     "dev": "gulp dev",
     "build": "gulp build",
