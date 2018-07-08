@@ -1,6 +1,9 @@
+// You can change the following by yourself :-)
+// ========== DIY ========== // 
+$feature-color: #f75357;
+$code-theme: 'atom-one-dark'; // atom-one-dark or atom-one-light
 // ========== global variables ========== //
 $body-background-color: #fff;
-$feature-color: #f75357;
 $base-font-family : -apple-system,
 BlinkMacSystemFont,
 "Helvetica Neue",
@@ -58,12 +61,37 @@ $post-content-color: #23394d;
 // ========== social ========== //
 $social-iconfont-color: #777;
 // ========== code ========== //
-// $code-highlight-color: ( background-color: #282c34,
-// normal: #abb2bf,
-// comment: #5c6370,
-// doctag: #859900,
-// section: #2aa198,
-// literal: #268bd2,
-// string: #b58900,
-// built_in: #cb4b16,
-// attr: #dc322f) !default;
+$code-color-map: (
+    'atom-one-light':(
+        base:    #fafafa,
+        mono-1:  #383a42,
+        mono-2:  #686b77,
+        mono-3:  #a0a1a7,
+        hue-1:   #0184bb,
+        hue-2:   #4078f2,
+        hue-3:   #a626a4,
+        hue-4:   #50a14f,
+        hue-5:   #e45649,
+        hue-5-2: #c91243,
+        hue-6:   #986801,
+        hue-6-2: #c18401
+    ),
+    'atom-one-dark':(
+        base:    #282c34,
+        mono-1:  #abb2bf,
+        mono-2:  #818896,
+        mono-3:  #5c6370,
+        hue-1:   #56b6c2,
+        hue-2:   #61aeee,
+        hue-3:   #c678dd,
+        hue-4:   #98c379,
+        hue-5:   #e06c75,
+        hue-5-2: #be5046,
+        hue-6:   #d19a66,
+        hue-6-2: #e6c07b
+    )
+);
+@if not(map-has-key($code-color-map, $code-theme)) {
+    $code-theme: 'atom-one-dark';
+}
+$theme-colors: map-get($code-color-map, $code-theme);
