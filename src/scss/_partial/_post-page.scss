@@ -270,7 +270,8 @@
             margin: 0;
         }
     }
-    table {
+    .table-container table,
+    > table {
         width: 100%;
         border: 1px solid #ddd;
         margin: 1rem 0;
