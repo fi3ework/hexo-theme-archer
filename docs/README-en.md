@@ -188,6 +188,18 @@ index_intro_height: 50
 post_intro_height: 50
 about_intro_height: 50
 ```
+## Update theme
+
+Two kind of update method are provided here: the first use git to update theme. However, it may encounter merge conflict that you need to resolve; The second is simple but efficient.  
+
+### git pull
+
+Run `git stash` under archer folder to stash the local modification and run `git pull` to fetch the lastest version of theme. Then run `git stash pop` to restore the local modification. There may be a merge conflict that you need to resolve.
+
+### simple but efficient way
+
+First backup all the files that you customed and added (include _config.yml and files in source and so on) and delete the directory of archer. Then reinstall archer. At last, restore the backup files to the original place they belong.
+
 ## License
 
 MIT
