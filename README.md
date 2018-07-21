@@ -214,6 +214,20 @@ post_intro_height: 50
 about_intro_height: 50
 ```
 
+## 更新主题
+
+提供两种方法供参考：第一种使用 git 进行更新，但是有可能需要手动解决合并冲突，你需要手动解决；第二种简单粗暴。
+
+### git pull
+
+在 archer 目录下先执行 `git stash` 将本地的修改暂存，然后执行 `git pull` 获取主题的最新版本，再执行 `git stash pop` 将本地的修改还原，如果合并冲突报错 `CONFLICT`，可以参考 [这篇文章](http://www.01happy.com/git-resolve-conflicts/) 手动解决合并冲突，手动解决。
+
+如果自定义了主题，在合并冲突时可以手动解决冲突的部分后，重新生成主题即可。
+
+### 简单粗暴
+
+首先备份 archer 下所有你自定义过的文件（包括 _config.yml 和 source 文件夹下添加的文件等），然后删除 archer，再重新安装，最后将备份的文件替换到原来的位置即可。
+
 ## License
 
 MIT
