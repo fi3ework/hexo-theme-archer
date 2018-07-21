@@ -83,7 +83,7 @@ avatar:
 author:
 # signature of blog
 signature:
-# SNS
+# SNS (you can custom the order)
 social:
   email:
   github:
@@ -97,6 +97,8 @@ social:
   twitter:
   instagram:
   stack-overflow:
+  segmentFault:
+  juejin:
   v2ex:
   linkedin:
   blog:
