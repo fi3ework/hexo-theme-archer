@@ -107,7 +107,7 @@ avatar:
 author:
 # 博客签名
 signature:
-# 社交账号
+# 社交账号 (可以自定义顺序)
 social:
   email:
   github:
@@ -121,6 +121,8 @@ social:
   twitter:
   instagram:
   stack-overflow:
+  segmentFault:
+  juejin:
   v2ex:
   linkedin:
   blog:

@@ -5,7 +5,7 @@ avatar: /avatar/Misaka.jpg
 author: fi3ework
 # signature
 signature: witness me
-# SNS
+# SNS (you can custom the order)
 social:
   email: 12345@qq.com
   github: //github.com/fi3ework
@@ -19,6 +19,8 @@ social:
   twitter: 
   instagram: 
   stack-overflow: 
+  segmentFault: 
+  juejin: 
   v2ex: 
   bilibili: 
   linkedin: 
