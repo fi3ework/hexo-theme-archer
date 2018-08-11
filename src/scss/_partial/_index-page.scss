@@ -1,72 +1,72 @@
 // ========== main ========== //
 .index-post {
-    position: relative;
-    padding: 1rem 0rem 1rem 0rem;
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
-    z-index: 3;
+  position: relative;
+  padding: 1rem 0rem 1rem 0rem;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+  z-index: 3;
 }
 
 // ========== abstract content ========== //
 .index-post {
-    .abstract-content {
-        color: #9c9c9c;
-        font-size: 1rem;
-        line-height: 1.6rem;
-        font-weight: lighter;
-        word-break: break-word;
-        img {
-            max-width: 100%;
-            box-shadow: none;
-        }
+  .abstract-content {
+    color: #9c9c9c;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    font-weight: lighter;
+    word-break: break-word;
+    img {
+      max-width: 100%;
+      box-shadow: none;
     }
+  }
 }
 
 // ========== abstract title ========== //
 .abstract-title {
-    line-height: 2.5rem;
-    color: $index-post-link-color;
-    padding-bottom: 0.5rem;
-    span:last-of-type {
-        transition: color 0.1s ease-in;
-        font-size: 1.7rem;
-        &:hover {
-            color: $feature-color;
-        }
+  line-height: 2.5rem;
+  color: $index-post-link-color;
+  padding-bottom: 0.5rem;
+  span:last-of-type {
+    transition: color 0.1s ease-in;
+    font-size: 1.7rem;
+    &:hover {
+      color: $feature-color;
     }
+  }
 }
 
 .stick-top {
-    font-size: 1.3rem;
-    margin-right: 0.2rem;
+  font-size: 1.3rem;
+  margin-right: 0.2rem;
 }
 
 // ========== abstract meta ========== //
 .abstract-post-meta {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem 0 0 0;
-    font-family: $feature-font-family;
-    color: #aaa;
-    height: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0 0 0;
+  font-family: $feature-font-family;
+  color: #aaa;
+  height: 1.5rem;
 }
 
 // tags
 .post-tag {
-    font-size: 1rem;
-    position: relative;
-    color: $index-post-tag-color;
-    margin-left: 0.4rem;
-    font-weight: lighter;
-    &::before {
-        margin-right: 2px;
-        content: '#';
-    }
-    @include hover-line($color: $index-post-tag-color);
+  font-size: 1rem;
+  position: relative;
+  color: $index-post-tag-color;
+  margin-left: 0.4rem;
+  font-weight: lighter;
+  &::before {
+    margin-right: 2px;
+    content: '#';
+  }
+  @include hover-line($color: $index-post-tag-color);
 }
 
 .abstract-calander {
-    position: relative;
-    top: -0.1rem;
-    margin-right: 0.3rem;
-    font-size: 1rem;
+  position: relative;
+  top: -0.1rem;
+  margin-right: 0.3rem;
+  font-size: 1rem;
 }

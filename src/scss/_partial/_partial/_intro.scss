@@ -1,51 +1,52 @@
 // ========== intro image ========== //
 .site-intro-img {
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    height: calc(100% + 1px);
-    width: 100%;
-    filter: brightness(.5);
-    -webkit-filter: brightness(.5);
-    -moz-filter: brightness(.5);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-color: transparent;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: calc(100% + 1px);
+  width: 100%;
+  filter: brightness(0.5);
+  -webkit-filter: brightness(0.5);
+  -moz-filter: brightness(0.5);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-color: transparent;
 }
 
 // ========== intro placeholder ========== //
 // 在layout中 //
 // ========== main intro meta ========== //
 .site-intro-meta {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.intro-title, .intro-subtitle {
-    font-family: $feature-font-family;
-    color: #fff;
-    margin: 0;
-    opacity: 0;
-    transition: all 0.5s ease-out 0s;
-    transform: translate(0, -1rem);
+.intro-title,
+.intro-subtitle {
+  font-family: $feature-font-family;
+  color: #fff;
+  margin: 0;
+  opacity: 0;
+  transition: all 0.5s ease-out 0s;
+  transform: translate(0, -1rem);
 }
 
-.intro-title{
-    font-size: 4rem;
+.intro-title {
+  font-size: 4rem;
 }
 
-.intro-subtitle{
-    font-size: 2rem;
-    transition-delay: 0.5s;
+.intro-subtitle {
+  font-size: 2rem;
+  transition-delay: 0.5s;
 }
 
 .intro-fade-in {
-    opacity: 1;
-    transform: translate(0, 0);
+  opacity: 1;
+  transform: translate(0, 0);
 }

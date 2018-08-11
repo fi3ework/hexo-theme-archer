@@ -1,39 +1,39 @@
 .four-zero-four-body {
-    .loading{
-        display: none !important;
-    }
+  .loading {
+    display: none !important;
+  }
 
-    .site-intro{
-        height: 100%;
-    }
+  .site-intro {
+    height: 100%;
+  }
 
-    .site-intro-meta{
-        height: 80%;
-    }
+  .site-intro-meta {
+    height: 80%;
+  }
 
-    .wrapper {
-        height: 100vh;
-        padding-bottom: 0;
-    }
+  .wrapper {
+    height: 100vh;
+    padding-bottom: 0;
+  }
 
-    .container{
-        padding: 0;
-    }
+  .container {
+    padding: 0;
+  }
 
-    .footer{
-        width: 100%;
-        z-index: 30;
-        background-color: transparent;
-        position: absolute;
-        bottom: 0;
-        // left: 0;
-    }
+  .footer {
+    width: 100%;
+    z-index: 30;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    // left: 0;
+  }
 
-    .iconfont-archer::before{
-        color: rgba(255, 255, 255, 0.5);
-    }
+  .iconfont-archer::before {
+    color: rgba(255, 255, 255, 0.5);
+  }
 
-    .copyright{
-        color: #fff;
-    }
+  .copyright {
+    color: #fff;
+  }
 }
