@@ -1,5 +1,5 @@
 let browser = {
-  versions: (function () {
+  versions: (function() {
     let u = window.navigator.userAgent
     return {
       trident: u.indexOf('Trident') > -1, // IE内核

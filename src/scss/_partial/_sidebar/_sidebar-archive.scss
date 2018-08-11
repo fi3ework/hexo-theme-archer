@@ -1,71 +1,71 @@
 @import '../../_variables.scss';
 // ========== sidebar archive ========== //
 .sidebar-panel-archives {
-    padding: 1rem;
-    ul {
-        padding: 0;
-        margin: 0;
-    }
+  padding: 1rem;
+  ul {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .ps__rail-x,
 .ps__rail-y {
-    display: none !important;
+  display: none !important;
 }
 
 .post-archive {
-    overflow-y: auto;
+  overflow-y: auto;
 }
 
 .archive-post-item {
-    vertical-align: middle;
-    border-left: 1px solid #bbb;
-    margin-left: 0.3rem;
-    padding: 0.1rem 0 0.1rem 0.5rem;
-    box-sizing: border-box;
-    &:hover {
-        border-left-color: $feature-color;
-        .archive-post-date,
-        .archive-post-title {
-            color: $feature-color;
-        }
+  vertical-align: middle;
+  border-left: 1px solid #bbb;
+  margin-left: 0.3rem;
+  padding: 0.1rem 0 0.1rem 0.5rem;
+  box-sizing: border-box;
+  &:hover {
+    border-left-color: $feature-color;
+    .archive-post-date,
+    .archive-post-title {
+      color: $feature-color;
     }
+  }
 }
 
 .total-and-search {
-    display: flex;
+  display: flex;
 }
 
 .site-search {
-    cursor: pointer;
-    .search-icon {
-        color: $feature-color;
-        line-height: 1.9rem;
-        font-size: 1.5rem;
-        position: relative;
-        margin-left: 0.5rem;
-    }
+  cursor: pointer;
+  .search-icon {
+    color: $feature-color;
+    line-height: 1.9rem;
+    font-size: 1.5rem;
+    position: relative;
+    margin-left: 0.5rem;
+  }
 }
 
 .archive-year,
 .total-archive {
-    font: 1.2rem $feature-font-family;
-    color: $feature-color;
+  font: 1.2rem $feature-font-family;
+  color: $feature-color;
 }
 
 .archive-year {
-    font-size: 1rem;
-    margin-bottom: 0.3rem;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
 }
 
 .archive-post-date {
-    font: 0.9rem/1rem $feature-font-family;
-    color: #999;
+  font: 0.9rem/1rem $feature-font-family;
+  color: #999;
 }
 
 .archive-post-title {
-    font-size: 1rem;
-    margin-left: 0.8rem;
-    text-align: left;
-    color: #ccc;
+  font-size: 1rem;
+  margin-left: 0.8rem;
+  text-align: left;
+  color: #ccc;
 }

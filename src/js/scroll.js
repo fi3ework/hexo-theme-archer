@@ -1,6 +1,6 @@
 import archerUtil from './util'
 
-let scroll = function () {
+let scroll = function() {
   let $banner = $('.banner:first'),
     $postBanner = $banner.find('.post-title a'),
     $bgEle = $('.site-intro:first'),
@@ -13,7 +13,7 @@ let scroll = function () {
     $progressBar = $('.read-progress')
 
   // toc的收缩
-  $tocCatalog.on('click', function () {
+  $tocCatalog.on('click', function() {
     $tocWrapper.toggleClass('toc-hide-children')
   })
 
@@ -60,8 +60,7 @@ let scroll = function () {
 
   // 判断是否为post-page
   let isPostPage = false
-  let articleHeight,
-    articleTop
+  let articleHeight, articleTop
   if ($('.post-body').length) {
     isPostPage = true
     articleTop = bgTitleHeight
@@ -79,7 +78,8 @@ let scroll = function () {
     if (scrollTop < bgTitleHeight) {
       readPercent = 0
     } else {
-      readPercent = (scrollTop - beginY) / (contentHeight - windowHeight) * 100
+      readPercent =
+        ((scrollTop - beginY) / (contentHeight - windowHeight)) * 100
     }
     // 防止文章过短，产生负百分比
     readPercent = readPercent >= 0 ? readPercent : 100
@@ -127,14 +127,12 @@ let scroll = function () {
     archerUtil.rafTick(tickingScroll, bindedUpdate)
   }
 
-  $(document).on('scroll', onScroll);
+  $(document).on('scroll', onScroll)
 
   // 返回顶部
-  [$postBanner, $backTop].forEach(function (ele) {
+  ;[$postBanner, $backTop].forEach(function(ele) {
     ele.on('click', archerUtil.backTop)
   })
 }
 
-export {
-  scroll
-}
+export { scroll }

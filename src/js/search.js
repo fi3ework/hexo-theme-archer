@@ -1,9 +1,10 @@
 // special thanks to https://blog.naaln.com/2016/07/hexo-with-algolia/
 
 const initAlgolia = () => {
-  $(document).ready(function () {
+  $(document).ready(function() {
     let algoliaSettings = algolia
-    let isAlgoliaSettingsValid = algoliaSettings.applicationID &&
+    let isAlgoliaSettingsValid =
+      algoliaSettings.applicationID &&
       algoliaSettings.apiKey &&
       algoliaSettings.indexName
 
@@ -16,17 +17,17 @@ const initAlgolia = () => {
       appId: algoliaSettings.applicationID,
       apiKey: algoliaSettings.apiKey,
       indexName: algoliaSettings.indexName,
-      searchFunction: function (helper) {
+      searchFunction: function(helper) {
         let searchInput = $('#algolia-search-input').find('input')
 
         if (searchInput.val()) {
           helper.search()
         }
       }
-    });
+    })
 
     // Registering Widgets
-    [
+    ;[
       instantsearch.widgets.searchBox({
         container: '#algolia-search-input',
         placeholder: algoliaSettings.labels.input_placeholder
@@ -36,18 +37,25 @@ const initAlgolia = () => {
         container: '#algolia-hits',
         hitsPerPage: algoliaSettings.hits.per_page || 10,
         templates: {
-          item: function (data) {
-            let link = data.permalink ? data.permalink : (siteMeta.root + data.path)
+          item: function(data) {
+            let link = data.permalink
+              ? data.permalink
+              : siteMeta.root + data.path
             return (
-              '<a href="' + link + '" class="algolia-hit-item-link">' +
+              '<a href="' +
+              link +
+              '" class="algolia-hit-item-link">' +
               data._highlightResult.title.value +
               '</a>'
             )
           },
-          empty: function (data) {
+          empty: function(data) {
             return (
               '<div id="algolia-hits-empty">' +
-              algoliaSettings.labels.hits_empty.replace(/\$\{query}/, data.query) +
+              algoliaSettings.labels.hits_empty.replace(
+                /\$\{query}/,
+                data.query
+              ) +
               '</div>'
             )
           }
@@ -60,14 +68,16 @@ const initAlgolia = () => {
       instantsearch.widgets.stats({
         container: '#algolia-stats',
         templates: {
-          body: function (data) {
+          body: function(data) {
             let stats = algoliaSettings.labels.hits_stats
               .replace(/\$\{hits}/, data.nbHits)
               .replace(/\$\{time}/, data.processingTimeMS)
             return (
               stats +
               '<span class="algolia-powered">' +
-              '  <img src="' + siteMeta.root + 'assets/algolia_logo.svg" alt="Algolia" />' +
+              '  <img src="' +
+              siteMeta.root +
+              'assets/algolia_logo.svg" alt="Algolia" />' +
               '</span>' +
               '<hr />'
             )
@@ -97,21 +107,22 @@ const initAlgolia = () => {
 
     search.start()
 
-    $('.popup-trigger').on('click', function (e) {
+    $('.popup-trigger').on('click', function(e) {
       e.stopPropagation()
       $('body')
         .append('<div class="search-popup-overlay algolia-pop-overlay"></div>')
         .css('overflow', 'hidden')
       $('.popup').toggle()
-      $('#algolia-search-input').find('input').focus()
+      $('#algolia-search-input')
+        .find('input')
+        .focus()
     })
 
-    $('.popup-btn-close').click(function () {
+    $('.popup-btn-close').click(function() {
       $('.popup').hide()
       $('.algolia-pop-overlay').remove()
       $('body').css('overflow', '')
     })
-
   })
 }
 

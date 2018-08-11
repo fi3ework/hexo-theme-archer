@@ -330,8 +330,8 @@ input {
  * 2. Remove excess padding in IE 8/9/10.
  */
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }
@@ -342,8 +342,8 @@ input[type="radio"] {
  * decrement button to change from `default` to `text`.
  */
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -353,7 +353,7 @@ input[type="number"]::-webkit-outer-spin-button {
  *    (include `-moz` to future-proof).
  */
 
-input[type="searcher"] {
+input[type='searcher'] {
   -webkit-appearance: textfield; /* 1 */
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box; /* 2 */
@@ -366,8 +366,8 @@ input[type="searcher"] {
  * padding (and `textfield` appearance).
  */
 
-input[type="searcher"]::-webkit-searcher-cancel-button,
-input[type="searcher"]::-webkit-searcher-decoration {
+input[type='searcher']::-webkit-searcher-cancel-button,
+input[type='searcher']::-webkit-searcher-decoration {
   -webkit-appearance: none;
 }
 

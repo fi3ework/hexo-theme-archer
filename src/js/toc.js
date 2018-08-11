@@ -30,7 +30,8 @@ function calcScrollIntoScreenIndex(heights, prevHeight, currHeight) {
       // if is scrolling down, select current
       if (currHeight > prevHeight) {
         return i
-      } else { // if is scrolling up, select previous
+      } else {
+        // if is scrolling up, select previous
         return i - 1
       }
     }
@@ -39,17 +40,17 @@ function calcScrollIntoScreenIndex(heights, prevHeight, currHeight) {
 
 // hide all ol
 function hideAllOl(root) {
-  [...root.querySelectorAll('ol')].forEach(li => {
+  ;[...root.querySelectorAll('ol')].forEach(li => {
     hideItem(li)
   })
 }
 
 // back to default state
 function initFold(toc) {
-  [...toc.children].forEach(child => {
+  ;[...toc.children].forEach(child => {
     hideAllOl(child)
-  });
-  [...toc.querySelectorAll('.toc-active')].forEach(child => {
+  })
+  ;[...toc.querySelectorAll('.toc-active')].forEach(child => {
     child.classList.remove('toc-active')
   })
 }
@@ -71,7 +72,7 @@ function activeTocItem(node) {
 }
 
 function showAllChildren(node) {
-  [...node.children].forEach(child => {
+  ;[...node.children].forEach(child => {
     showItem(child)
   })
 }
@@ -95,12 +96,18 @@ let main = () => {
     return
   }
   initFold(toc)
-  let headers = document.querySelectorAll('.article-entry h1, h2, h3, h4, h5, h6')
+  let headers = document.querySelectorAll(
+    '.article-entry h1, h2, h3, h4, h5, h6'
+  )
   // get links height
   let heights = initTocLinksScrollTop(headers)
   document.addEventListener('scroll', () => {
     let currHeight = $(document).scrollTop()
-    let currHeightIndex = calcScrollIntoScreenIndex(heights, prevHeight, currHeight)
+    let currHeightIndex = calcScrollIntoScreenIndex(
+      heights,
+      prevHeight,
+      currHeight
+    )
     prevHeight = currHeight
     if (typeof currHeightIndex === 'undefined') {
       return

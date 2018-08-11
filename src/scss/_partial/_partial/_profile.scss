@@ -1,99 +1,99 @@
 // ========== profile ========== //
 .profile {
-    order: 0;
-    vertical-align: top;
-    flex-shrink: 0;
-    margin: 4px 0 0 0;
-    width: $profile-width;
-    font: 1rem $feature-font-family;
-    * {
-        color: $social-iconfont-color;
-    } // 为了在没有social和friends时也显示一个分割线
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    padding-bottom: 0.5rem;
-    &>*:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
-    }
+  order: 0;
+  vertical-align: top;
+  flex-shrink: 0;
+  margin: 4px 0 0 0;
+  width: $profile-width;
+  font: 1rem $feature-font-family;
+  * {
+    color: $social-iconfont-color;
+  } // 为了在没有social和friends时也显示一个分割线
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 0.5rem;
+  & > *:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
 }
 
 .profile-avatar {
-    display: block;
-    border-radius: 1rem;
-    width: 100%;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.6);
+  display: block;
+  border-radius: 1rem;
+  width: 100%;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.6);
 }
 
 .profile-name {
-    font-size: 2rem;
-    line-height: 3rem;
-    padding: 0.5rem 0 0 0;
-    color: #333;
-    text-align: center;
+  font-size: 2rem;
+  line-height: 3rem;
+  padding: 0.5rem 0 0 0;
+  color: #333;
+  text-align: center;
 }
 
 .profile-signature {
-    font-size: 1rem;
-    text-align: center;
+  font-size: 1rem;
+  text-align: center;
 }
 
 .profile-social {
+  position: relative;
+  width: 100%;
+  text-align: left;
+  line-height: 1.7rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  .iconfont-archer {
     position: relative;
-    width: 100%;
-    text-align: left;
-    line-height: 1.7rem;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    .iconfont-archer {
-        position: relative;
-    }
-    @include social($scaleSize: 0.5, $spanMargin: 0.4rem);
+  }
+  @include social($scaleSize: 0.5, $spanMargin: 0.4rem);
 }
 
 .wechat,
 .qq {
-    cursor: pointer;
-    &:hover {
-        .profile-qr {
-            opacity: 1;
-            visibility: visible;
-        }
+  cursor: pointer;
+  &:hover {
+    .profile-qr {
+      opacity: 1;
+      visibility: visible;
     }
+  }
 }
 
 .profile-qr {
-    visibility: hidden;
-    position: absolute;
-    left: 0;
-    bottom: 2.5rem;
-    border: 3px solid #fff;
-    border-radius: 3px;
-    z-index: 99;
-    background-color: #fff;
-    width: 7rem;
-    opacity: 0;
-    transition: all 0.1s ease-in 0s;
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  bottom: 2.5rem;
+  border: 3px solid #fff;
+  border-radius: 3px;
+  z-index: 99;
+  background-color: #fff;
+  width: 7rem;
+  opacity: 0;
+  transition: all 0.1s ease-in 0s;
 }
 
 .friends {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: left;
+  div {
+    font-size: 1.2rem;
     text-align: left;
-    div {
-        font-size: 1.2rem;
-        text-align: left;
-        font-weight: bold;
-    }
-    a {
-        margin-right: 0.6rem;
-    }
+    font-weight: bold;
+  }
+  a {
+    margin-right: 0.6rem;
+  }
 }
 
 .about-me {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    a {
-        font-size: 1.2rem;
-        font-weight: bold;
-    }
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  a {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
 }

@@ -11,11 +11,14 @@ function initQR(sURL) {
   let qr = qrcode(typeNumber, errorCorrectionLevel)
   qr.addData(sURL)
   qr.make()
-  document.getElementsByClassName('share-qrcode')[0].innerHTML = qr.createImgTag()
+  document.getElementsByClassName(
+    'share-qrcode'
+  )[0].innerHTML = qr.createImgTag()
 }
 
 function generate(templateURL, param) {
-  let shareURL = templateURL.replace(/<%-sURL%>/g, encodeURIComponent(param.sURL))
+  let shareURL = templateURL
+    .replace(/<%-sURL%>/g, encodeURIComponent(param.sURL))
     .replace(/<%-sTitle%>/g, param.sTitle)
     .replace(/<%-sDesc%>/g, param.sDesc)
     .replace(/<%-sAuthor%>/g, param.sAuthor)
@@ -25,13 +28,22 @@ function generate(templateURL, param) {
 
 function handleShareClick(type, param) {
   if (type === 'weibo') {
-    generate('http://service.weibo.com/share/share.php?url=<%-sURL%>&title=<%-sTitle%>&pic=<%-sImg%>', param)
+    generate(
+      'http://service.weibo.com/share/share.php?url=<%-sURL%>&title=<%-sTitle%>&pic=<%-sImg%>',
+      param
+    )
   } else if (type === 'qzone') {
-    generate('http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<%-sURL%>&title=<%-sTitle%>&pics=<%-sImg%>&summary=<%-sDesc%>', param)
+    generate(
+      'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<%-sURL%>&title=<%-sTitle%>&pics=<%-sImg%>&summary=<%-sDesc%>',
+      param
+    )
   } else if (type === 'facebook') {
     generate('https://www.facebook.com/sharer/sharer.php?u=<%-sURL%>', param)
   } else if (type === 'twitter') {
-    generate('https://twitter.com/intent/tweet?text=<%-sTitle%>&url=<%-sURL%>&via=<%-sAuthor%>', param)
+    generate(
+      'https://twitter.com/intent/tweet?text=<%-sTitle%>&url=<%-sURL%>&via=<%-sAuthor%>',
+      param
+    )
   } else if (type === 'qr') {
     // pre init qr
   }
@@ -40,15 +52,25 @@ function handleShareClick(type, param) {
 function init() {
   let sURL = window.location.href
   let sTitle = document.querySelector('title').innerHTML
-  let sImg = document.querySelector('.article-entry img') && document.querySelector('.article-entry img').getAttribute('src')
-  sImg = window.location.protocol + '//' +
-  window.location.hostname +
+  let sImg =
+    document.querySelector('.article-entry img') &&
+    document.querySelector('.article-entry img').getAttribute('src')
+  sImg =
+    window.location.protocol +
+    '//' +
+    window.location.hostname +
     (window.location.port ? ':' + window.location.port : '') +
     sImg
-  let sDesc = document.querySelector('.article-entry') && document.querySelector('.article-entry').innerText.substring(0, 30) + '...'
+  let sDesc =
+    document.querySelector('.article-entry') &&
+    document.querySelector('.article-entry').innerText.substring(0, 30) + '...'
   let sAuthor = window.siteMeta.author
   let param = {
-    sURL, sTitle, sImg, sDesc, sAuthor
+    sURL,
+    sTitle,
+    sImg,
+    sDesc,
+    sAuthor
   }
 
   let shareWrapper = document.querySelector('.shareList')
@@ -56,7 +78,7 @@ function init() {
     return
   }
   initQR(sURL)
-  shareWrapper.addEventListener('click', function (e) {
+  shareWrapper.addEventListener('click', function(e) {
     if (!e.target.getAttribute('data-type')) {
       return
     }

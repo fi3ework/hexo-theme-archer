@@ -1,6 +1,6 @@
 import AnchorJS from 'anchor-js'
 
-let init = function () {
+let init = function() {
   let $introImg = $('.site-intro-img:first'),
     introPlaceholder = $('.site-intro-placeholder:first'),
     bgCSS = $introImg.css('background-image'),
@@ -14,7 +14,7 @@ let init = function () {
 
   let bgURL = bgRegResult[1],
     img = new Image()
-  img.onload = function () {
+  img.onload = function() {
     // window.alert()
     // setTimeout(function () {
     introPlaceholder.remove()
@@ -23,11 +23,15 @@ let init = function () {
   }
   img.src = bgURL
 
-  document.addEventListener('DOMContentLoaded', function () {
-    $('.container').removeClass('container-unloaded')
-    $('.footer').removeClass('footer-unloaded')
-    $('.loading').remove()
-  }, false)
+  document.addEventListener(
+    'DOMContentLoaded',
+    function() {
+      $('.container').removeClass('container-unloaded')
+      $('.footer').removeClass('footer-unloaded')
+      $('.loading').remove()
+    },
+    false
+  )
 
   // https://www.bryanbraun.com/anchorjs/
   let anchors = new AnchorJS()

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "gulp dev",
     "build": "gulp build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prettier": "prettier --write './src/**/*.*'"
   },
   "author": "fi3ework",
   "license": "MIT",
@@ -23,6 +23,7 @@
     "eslint-config-alloy": "^1.4.0",
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
+    "prettier": "1.14.2",
     "uglifyjs-webpack-plugin": "^1.1.8",
     "webpack": "^3.10.0",
     "webpack-merge": "^4.1.1"

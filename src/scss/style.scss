@@ -1,25 +1,25 @@
 // Helpers
-@import "_variables";
-@import "_normalize";
-@import "_common";
-@import "_mixin";
+@import '_variables';
+@import '_normalize';
+@import '_common';
+@import '_mixin';
 
 // partial
-@import "_partial/_partial/_intro";
-@import "_partial/_partial/_header";
-@import "_partial/_partial/_profile";
-@import "_partial/_partial/_footer";
-@import "_partial/_partial/_paginator";
-@import "_partial/_algolia";
-@import "_partial/_partial/_scrollbar";
-@import "_partial/_post/_code";
+@import '_partial/_partial/_intro';
+@import '_partial/_partial/_header';
+@import '_partial/_partial/_profile';
+@import '_partial/_partial/_footer';
+@import '_partial/_partial/_paginator';
+@import '_partial/_algolia';
+@import '_partial/_partial/_scrollbar';
+@import '_partial/_post/_code';
 
 // sidebar
-@import "_partial/_sidebar/_sidebar-archive";
-@import "_partial/_sidebar/_sidebar-tags";
-@import "_partial/_sidebar/_sidebar";
+@import '_partial/_sidebar/_sidebar-archive';
+@import '_partial/_sidebar/_sidebar-tags';
+@import '_partial/_sidebar/_sidebar';
 
 // pages
-@import "_partial/_index-page";
-@import "_partial/_post-page";
-@import "_partial/_404";
+@import '_partial/_index-page';
+@import '_partial/_post-page';
+@import '_partial/_404';

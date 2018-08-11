@@ -1,123 +1,123 @@
 // ========== sidebar ========== //
 .sidebar {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    left: 0;
-    top: 0;
-    z-index: 0;
-    height: 100%;
-    width: 400px;
-    transition: all 0.3s ease-in .0s;
-    overflow-x: hidden;
-    background-color: #222;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  height: 100%;
+  width: 400px;
+  transition: all 0.3s ease-in 0s;
+  overflow-x: hidden;
+  background-color: #222;
 }
 
 .sidebar-hide {
-    display: none;
+  display: none;
 }
 
 // ========== sidebar header ========== //
 .sidebar-tabs {
-    display: flex;
-    position: relative;
-    padding: 0;
-    margin: 0;
-    height: 4rem;
-    width: 100%;
-    z-index: 1001;
-    justify-content: space-around;
-    align-items: flex-start;
-    font-family: $feature-font-family;
-    flex-grow: 0;
-    color: #eee;
-    border-bottom: 2px solid #666;
-    &::after {
-        content: '';
-        position: absolute;
-        width: 33.33%;
-        height: 2px;
-        left: 0;
-        top: 100%;
-        background-color: $feature-color;
-        transform: translate3d(0, 0, 0);
-        transition: transform 0.2s ease-out .0s;
-    }
+  display: flex;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  height: 4rem;
+  width: 100%;
+  z-index: 1001;
+  justify-content: space-around;
+  align-items: flex-start;
+  font-family: $feature-font-family;
+  flex-grow: 0;
+  color: #eee;
+  border-bottom: 2px solid #666;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 33.33%;
+    height: 2px;
+    left: 0;
+    top: 100%;
+    background-color: $feature-color;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.2s ease-out 0s;
+  }
 }
 
 .sidebar-tab-archives,
 .sidebar-tab-tags,
 .sidebar-tab-categories {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    width: 33.333%;
-    height: 100%;
-    cursor: pointer;
-    .iconfont-archer {
-        pointer-events: none;
-        margin: 0 0.5rem 0 0rem;
-        font-size: 1.5rem;
-    }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  width: 33.333%;
+  height: 100%;
+  cursor: pointer;
+  .iconfont-archer {
+    pointer-events: none;
+    margin: 0 0.5rem 0 0rem;
+    font-size: 1.5rem;
+  }
 }
 
 .tab-name {
-    pointer-events: none;
-    font-size: 1.5rem;
-    margin-left: 0.2rem;
+  pointer-events: none;
+  font-size: 1.5rem;
+  margin-left: 0.2rem;
 }
 
 .sidebar-tabs-active-0 {
-    &::after {
-        transform: translate3d(0, 0, 0);
-    }
+  &::after {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .sidebar-tabs-active-1 {
-    &::after {
-        transform: translate3d(100%, 0, 0);
-    }
+  &::after {
+    transform: translate3d(100%, 0, 0);
+  }
 }
 
 .sidebar-tabs-active-2 {
-    &::after {
-        transform: translate3d(200%, 0, 0);
-    }
+  &::after {
+    transform: translate3d(200%, 0, 0);
+  }
 }
 
 // ========== sidebar content ========== //
 .sidebar-content {
-    position: relative;
-    display: flex;
-    width: 300%;
-    height: calc(100% - 4rem);
-    top: 0;
-    left: 0;
-    transition: transform 0.3s ease-out .0s;
-    overflow-x: hidden;
-    transform: translate3d(0, 0, 0);
+  position: relative;
+  display: flex;
+  width: 300%;
+  height: calc(100% - 4rem);
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-out 0s;
+  overflow-x: hidden;
+  transform: translate3d(0, 0, 0);
 }
 
 .sidebar-panel-archives,
 .sidebar-panel-tags,
 .sidebar-panel-categories {
-    overflow-x: hidden;
-    overflow-y: auto;
-    flex-shrink: 0;
-    width: calc(33.33% - 2rem);
-    -webkit-overflow-scrolling: touch;
-    overflow-scrolling: touch;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-shrink: 0;
+  width: calc(33.33% - 2rem);
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
 }
 
 .sidebar-content-active-0 {
-    transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .sidebar-content-active-1 {
-    transform: translate3d(-33.33%, 0, 0);
+  transform: translate3d(-33.33%, 0, 0);
 }
 
 .sidebar-content-active-2 {
-    transform: translate3d(-66.67%, 0, 0);
+  transform: translate3d(-66.67%, 0, 0);
 }

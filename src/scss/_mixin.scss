@@ -1,209 +1,208 @@
 // ========== hover ========== //
 @mixin hover-line($height: 2px, $width: 98%, $color: $feature-color) {
-    &::after {
-        content: '';
-        position: absolute;
-        left: calc((100% - #{$width}) / 2);
-        bottom: -15%;
-        transition: all 0.15s ease-in;
-        width: $width;
-        height: $height;
-        transform: translate(0, 0);
-        background-color: $color;
-        opacity: 0;
-    }
-    &:hover::after {
-        transform: translate(0, -2px);
-        opacity: 1;
-    }
+  &::after {
+    content: '';
+    position: absolute;
+    left: calc((100% - #{$width}) / 2);
+    bottom: -15%;
+    transition: all 0.15s ease-in;
+    width: $width;
+    height: $height;
+    transform: translate(0, 0);
+    background-color: $color;
+    opacity: 0;
+  }
+  &:hover::after {
+    transform: translate(0, -2px);
+    opacity: 1;
+  }
 }
 
-// ========== social style ========== // 
+// ========== social style ========== //
 @mixin social($scaleSize, $spanMargin) {
-    .iconfont-archer {
-        display: inline-block;
-        text-align: center;
+  .iconfont-archer {
+    display: inline-block;
+    text-align: center;
+  }
+  .iconfont-archer::before {
+    display: inline-block;
+    color: $social-iconfont-color;
+    font-size: 3rem * $scaleSize;
+    margin: 0 $spanMargin 0 0;
+  }
+  .iconfont-archer:last-of-child::before {
+    margin: 0;
+  }
+  .email {
+    top: 3px * $scaleSize;
+    &::before {
+      content: '\e642';
     }
-    .iconfont-archer::before {
-        display: inline-block;
-        color: $social-iconfont-color;
-        font-size: 3rem * $scaleSize;
-        margin: 0 $spanMargin 0 0;
+    &:hover::before {
+      color: #0cb49d;
     }
-    .iconfont-archer:last-of-child::before {
-        margin: 0;
+  }
+  .github {
+    &::before {
+      font-size: 3.2rem * $scaleSize;
+      content: '\e69f';
     }
-    .email {
-        top: 3px * $scaleSize;
-        &::before {
-            content: "\e642";
-        }
-        &:hover::before {
-            color: #0cb49d;
-        }
+    &:hover::before {
+      color: #24292e;
     }
-    .github {
-        &::before {
-            font-size: 3.2rem * $scaleSize;
-            content: "\e69f";
-        }
-        &:hover::before {
-            color: #24292e;
-        }
+  }
+  .wechat {
+    top: 4px * $scaleSize;
+    &::before {
+      font-size: 2.8rem * $scaleSize;
+      content: '\ec7d';
     }
-    .wechat {
-        top: 4px * $scaleSize;        
-        &::before {
-            font-size: 2.8rem * $scaleSize;
-            content: "\ec7d";
-        }
-        &:hover::before {
-            color: #42ae3c;
-        }
+    &:hover::before {
+      color: #42ae3c;
     }
-    .qq {
-        top: 4px * $scaleSize;
-        &::before {
-            font-size: 2.8rem * $scaleSize;
-            content: "\e61d";
-        }
-        &:hover::before {
-            color: #4f4e71;
-        }
+  }
+  .qq {
+    top: 4px * $scaleSize;
+    &::before {
+      font-size: 2.8rem * $scaleSize;
+      content: '\e61d';
     }
-    .weibo {
-        &::before {
-            font-size: 3.2rem * $scaleSize;
-            content: "\e619";
-        }
-        &:hover::before {
-            color: #d52a2a;
-        }
+    &:hover::before {
+      color: #4f4e71;
     }
-    .zhihu {
-        top: 3px * $scaleSize;
-        &::before {
-            font-size: 2.7rem * $scaleSize;
-            content: "\e61a";
-        }
-        &:hover::before {
-            color: #0f88eb;
-        }
+  }
+  .weibo {
+    &::before {
+      font-size: 3.2rem * $scaleSize;
+      content: '\e619';
     }
-    .douban {
-        top: 2px * $scaleSize;
-        &::before {
-            font-size: 2.5rem * $scaleSize;
-            content: "\e605";
-        }
-        &:hover::before {
-            color: #007711;
-
-        }
+    &:hover::before {
+      color: #d52a2a;
     }
-    .facebook {
-        top: 4px * $scaleSize;
-        &::before {
-            font-size: 3rem * $scaleSize;
-            content: "\e67a";
-        }
-        &:hover::before {
-            color: #3b5998;
-        }
+  }
+  .zhihu {
+    top: 3px * $scaleSize;
+    &::before {
+      font-size: 2.7rem * $scaleSize;
+      content: '\e61a';
     }
-    .twitter {
-        // top: px * $scaleSize;
-        &::before {
-            content: "\e634";
-        }
-        &:hover::before {
-            color: #1da1f2;
-        }
+    &:hover::before {
+      color: #0f88eb;
     }
-    .instagram {
-        top: 2px * $scaleSize;
-        &::before {
-            content: "\e79d";
-            font-size: 2.8rem * $scaleSize;
-        }
-        &:hover::before {
-            color: #8042b6;
-        }
+  }
+  .douban {
+    top: 2px * $scaleSize;
+    &::before {
+      font-size: 2.5rem * $scaleSize;
+      content: '\e605';
     }
-    .stack-overflow {
-        &::before {
-            font-size: 2.3rem * $scaleSize;
-            content: "\e80b";
-        }
-        &:hover::before {
-            color: #f37f23;
-        }
+    &:hover::before {
+      color: #007711;
     }
-    .segmentFault {
-        top: 3px * $scaleSize;
-        &::before {
-            font-size: 3rem * $scaleSize;
-            content: "\e60c";
-        }
-        &:hover::before {
-            color: #f37f23;
-        }
+  }
+  .facebook {
+    top: 4px * $scaleSize;
+    &::before {
+      font-size: 3rem * $scaleSize;
+      content: '\e67a';
     }
-    .juejin {
-        &::before {
-            font-size: 2.7rem * $scaleSize;
-            content: "\e60b";
-        }
-        &:hover::before {
-            color: #f37f23;
-        }
+    &:hover::before {
+      color: #3b5998;
     }
-    .v2ex {
-        &::before {
-            font-size: 2.2rem * $scaleSize;
-            content: "\e663";
-        }
-        &:hover::before {
-            color: #171718;
-        }
+  }
+  .twitter {
+    // top: px * $scaleSize;
+    &::before {
+      content: '\e634';
     }
-    .bilibili {
-        top: 4px * $scaleSize;
-        &::before {
-            font-size: 3.5rem * $scaleSize;
-            content: "\e64e";
-        }
-        &:hover::before {
-            color: #2cb2f9;
-        }
+    &:hover::before {
+      color: #1da1f2;
     }
-    .linkedin {
-        top: -1px * $scaleSize;
-        &::before {
-            font-size: 2.5rem * $scaleSize;
-            content: "\e695";
-        }
-        &:hover::before {
-            color: #0077b5;
-        }
+  }
+  .instagram {
+    top: 2px * $scaleSize;
+    &::before {
+      content: '\e79d';
+      font-size: 2.8rem * $scaleSize;
     }
-    .others {
-        top: -1px * $scaleSize;
-        &::before {
-            font-size: 2.2rem * $scaleSize;
-            content: "\e64a";
-        }
-        &:hover::before {
-            color: #8090b0;
-        }
+    &:hover::before {
+      color: #8042b6;
     }
-    .rss {
-        &::before {
-            font-size: 2.1rem * $scaleSize;
-            content: "\e652";
-        }
-        &:hover::before {
-            color: #e53935;
-        }
+  }
+  .stack-overflow {
+    &::before {
+      font-size: 2.3rem * $scaleSize;
+      content: '\e80b';
     }
+    &:hover::before {
+      color: #f37f23;
+    }
+  }
+  .segmentFault {
+    top: 3px * $scaleSize;
+    &::before {
+      font-size: 3rem * $scaleSize;
+      content: '\e60c';
+    }
+    &:hover::before {
+      color: #f37f23;
+    }
+  }
+  .juejin {
+    &::before {
+      font-size: 2.7rem * $scaleSize;
+      content: '\e60b';
+    }
+    &:hover::before {
+      color: #f37f23;
+    }
+  }
+  .v2ex {
+    &::before {
+      font-size: 2.2rem * $scaleSize;
+      content: '\e663';
+    }
+    &:hover::before {
+      color: #171718;
+    }
+  }
+  .bilibili {
+    top: 4px * $scaleSize;
+    &::before {
+      font-size: 3.5rem * $scaleSize;
+      content: '\e64e';
+    }
+    &:hover::before {
+      color: #2cb2f9;
+    }
+  }
+  .linkedin {
+    top: -1px * $scaleSize;
+    &::before {
+      font-size: 2.5rem * $scaleSize;
+      content: '\e695';
+    }
+    &:hover::before {
+      color: #0077b5;
+    }
+  }
+  .others {
+    top: -1px * $scaleSize;
+    &::before {
+      font-size: 2.2rem * $scaleSize;
+      content: '\e64a';
+    }
+    &:hover::before {
+      color: #8090b0;
+    }
+  }
+  .rss {
+    &::before {
+      font-size: 2.1rem * $scaleSize;
+      content: '\e652';
+    }
+    &:hover::before {
+      color: #e53935;
+    }
+  }
 }
