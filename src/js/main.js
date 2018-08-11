@@ -34,7 +34,7 @@ metas.addTab({
 })
 
 // init toc
-window.addEventListener('load', function (event) {
+window.addEventListener('load', function(event) {
   console.log('All resources finished loading!')
   toc()
 })
