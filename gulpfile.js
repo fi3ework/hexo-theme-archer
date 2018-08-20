@@ -65,4 +65,6 @@ gulp.task('webpack-prod', function (cb) {
   })
 })
 
-gulp.task('build', ['sass', 'webpack-prod'])
+gulp.task('build', ['sass', 'webpack-prod'], function () {
+  console.log(process.argv)
+})
