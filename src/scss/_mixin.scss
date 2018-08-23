@@ -186,6 +186,16 @@
       color: #0077b5;
     }
   }
+  .steam {
+    top: -1px * $scaleSize;
+    &::before {
+      font-size: 2.5rem * $scaleSize;
+      content: '\f23b';
+    }
+    &:hover::before {
+      color: #010101;
+    }
+  }
   .others {
     top: -1px * $scaleSize;
     &::before {

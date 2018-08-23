@@ -18,14 +18,12 @@ $selection-color: $feature-color;
 
 // ========== iconfont ========== //
 @font-face {
-  font-family: 'iconfont-archer'; /* project id 327081 */
-  src: url('//at.alicdn.com/t/font_327081_b6cyugdlmtq.eot');
-  src: url('//at.alicdn.com/t/font_327081_b6cyugdlmtq.eot?#iefix')
-      format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_327081_b6cyugdlmtq.woff') format('woff'),
-    url('//at.alicdn.com/t/font_327081_b6cyugdlmtq.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_327081_b6cyugdlmtq.svg#iconfont-archer')
-      format('svg');
+  font-family: 'iconfont-archer';  /* project id 327081 */
+  src: url('//at.alicdn.com/t/font_327081_9r7y5fb6gw.eot');
+  src: url('//at.alicdn.com/t/font_327081_9r7y5fb6gw.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_327081_9r7y5fb6gw.woff') format('woff'),
+  url('//at.alicdn.com/t/font_327081_9r7y5fb6gw.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_327081_9r7y5fb6gw.svg#iconfont-archer') format('svg');
 }
 
 .iconfont-archer {

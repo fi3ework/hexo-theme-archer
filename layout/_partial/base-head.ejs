@@ -17,8 +17,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title><%= title %></title>
     <%- partial('critical-css/critical-style') %>
-    <link rel="preload" href= <%- url_for("css/style.css?v=20180721") %> as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <link rel="stylesheet" href= <%- url_for("css/mobile.css?v=20180721") %> media="(max-width: 980px)">
+    <link rel="preload" href= <%- url_for("css/style.css?v=20180824") %> as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= <%- url_for("css/mobile.css?v=20180824") %> media="(max-width: 980px)">
     <% if(!is_home()) { %>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
     <% } %>
