@@ -16,7 +16,7 @@
         <li class="next">
             <% if (page.prev){ %>
                 <div class="nextSlogan">Next Post</div>
-                <a href= "<%- url_for(page.prev.path) %>" title= <%- page.prev.title %> >
+                <a href= "<%- url_for(page.prev.path) %>" title= "<%- page.prev.title %>">
                     <div class="nextTitle"><%- page.prev.title || '[Untitled Post]' %></div>
                 </a>
             <% } %>
@@ -24,7 +24,7 @@
         <li class="previous">
             <% if (page.next){ %>
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "<%- url_for(page.next.path) %>" title= <%- page.next.title %> >
+                <a href= "<%- url_for(page.next.path) %>" title= "<%- page.next.title %>">
                     <div class="prevTitle"><%- page.next.title || '[Untitled Post]' %></div>
                 </a>
             <% } %>
