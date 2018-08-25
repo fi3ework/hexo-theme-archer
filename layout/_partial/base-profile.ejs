@@ -1,5 +1,5 @@
 <div class="profile">
-    <img class="profile-avatar" src= <%- url_for(theme.avatar) %> >
+    <img class="profile-avatar" alt="avatar" src= <%- url_for(theme.avatar) %> >
     <div class="profile-name"><%- theme.author || config.author %></div>
     <% if(theme.signature && theme.signature.length !== 0) {%>
     <div class="profile-signature">
