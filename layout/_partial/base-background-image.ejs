@@ -60,7 +60,7 @@
                 <% } %>
                 <% if(theme.reading_info) { %>
                     <div class="post-intro-read">
-                        <span>Word count: <span class="post-count"><%= wordcount(page.content) %></span> / Reading time: <span class="post-count"><%= min2read(page.content) %> min</span></span>
+                        <span><%- __('word_count') %>: <span class="post-count word-count"><%= wordcount(page.content) %></span><%= __('reading_time') %>: <span class="post-count reading-time"><%= min2read(page.content) %> min</span></span>
                     </div>
                 <% } %>
                 <div class="post-intro-meta">
