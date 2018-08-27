@@ -68,9 +68,6 @@ comment:
   livere_uid: 
   # Disqus  site: https://disqus.com/
   disqus_shortname: 
-  # Changyan  site: http://changyan.kuaizhan.com/
-  changyan_appid: 
-  changyan_conf: 
   # Gitment  site: https://github.com/imsun/gitment
   gitment_owner: 
   gitment_repo: 

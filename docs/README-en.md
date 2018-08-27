@@ -143,15 +143,12 @@ algolia_search:
     hits_stats: "${hits} results found in ${time} ms" # no results found hint
     
 # ========== Comment Plugin ========== #
-# Currently support directly adding Livere, Gitment, Changyan, Youyan and Valine, fill the field to enable corresponding plugin
+# Currently support directly adding Livere, Gitment, Youyan and Valine, fill the field to enable corresponding plugin
 comment:
   # Livere：https://livere.com/
   livere_uid:
   # Disqus：https://disqus.com/
   disqus_shortname:
-  # Changeyan：http://changyan.kuaizhan.com/
-  changyan_appid:
-  changyan_conf:
   # Gitment：https://github.com/imsun/gitment
   gitment_owner:
   gitment_repo:
