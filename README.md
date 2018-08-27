@@ -19,7 +19,7 @@ hexo-theme-archer
 - 2017.08.17 - 『添加了置顶显示』
 - 2017.08.26 - 『添加了二次开发文档，文章页 header 在下滑时隐藏』
 - 2017.09.10 - 『添加了 about 页面』
-- 2017.09.25 - 『可以直接添加 disqus，gitment 及畅言了』
+- 2017.09.25 - 『可以直接添加 disqus，gitment 了』
 - 2017.09.30 - 『添加了 rss，修复了 placeholder 的 bug，更流畅』
 - 2017.10.05 - 『添加 toc，默认开启，可在配置中关闭』
 - 2017.10.16 - 『修复移动端 bug，增加渐入效果』
@@ -167,16 +167,13 @@ algolia_search:
     hits_stats: "${hits} results found in ${time} ms" # 搜索无结果的提示
     
 # ========== 评论插件 ========== #
-# 目前支持直接添加Livere，Disqus，Gitment，畅言、友言及 Valine，填写插件对应的字段即可启用。(推荐使用 Livere)
+# 目前支持直接添加Livere，Disqus，Gitment，友言及 Valine，填写插件对应的字段即可启用。(推荐使用 Livere)
 # 如果想添加其他评论插件，在custom.ejs中添加即可。
 comment:
   # Livere 官网：https://livere.com/
   livere_uid:
   # Disqus 官网：https://disqus.com/
   disqus_shortname:
-  # 畅言 官网：http://changyan.kuaizhan.com/
-  changyan_appid:
-  changyan_conf:
   # Gitment 官网：https://github.com/imsun/gitment
   gitment_owner:
   gitment_repo:
