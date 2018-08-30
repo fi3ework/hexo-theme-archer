@@ -116,6 +116,7 @@ social:
   # wechat 和 qq 需要填写二维码图片的路径
   wechat:
   qq:
+  telegram:
   weibo:
   zhihu:
   douban:
