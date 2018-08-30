@@ -92,6 +92,7 @@ social:
   # wechat and qq should be a path of an qr-code image
   wechat:
   qq:
+  telegram:
   weibo:
   zhihu:
   douban:
