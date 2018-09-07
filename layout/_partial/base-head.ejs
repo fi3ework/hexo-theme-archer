@@ -11,7 +11,13 @@
     <meta name="author" content="<%- config.author %>">
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="<%- config.author %>">
+    <% if (page.keywords){ %>
+    <meta name="keywords" content="<%- page.keywords %>,<%- config.keywords %>">
+    <% } else if (config.keywords){ %>
+    <meta name="keywords" content="<%- config.keywords %>">
+    <% } else { %>
     <meta name="keywords" content="<%- config.title %> | <%- config.author %>">
+    <% } %>
     <meta name="description" content="<%- config.description %>">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
