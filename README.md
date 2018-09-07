@@ -83,6 +83,12 @@ jsonContent:
     categories: true
     tags: true
 ```
+
+4. 启用页面keywords支持，优化引擎索引：
+
+编辑`scaffolds/post.md`，在头部加上一行`keywords: placeholder1,placehodler2`。
+
+
 ## 可选配置
 
 - [启用 about 页](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8about%E9%A1%B5)
