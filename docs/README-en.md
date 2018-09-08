@@ -122,6 +122,8 @@ about:
 # ========== Site ========== #
 # title of the site (each article will be followed by this value to help SEO)
 SEO_title:
+# keywords of the site, good for SEO, you also can add specified keyswords for each post at Front-matter
+SEO_keywords:
 # main title (title in site banner)
 main_title:
 # subtitle (subtitle in site banner)

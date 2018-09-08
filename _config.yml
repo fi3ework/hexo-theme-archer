@@ -38,9 +38,14 @@ about:
   image: '/intro/about-bg.jpg'
 
 # ========== Site ========== #
-# title of the site
+# title of the site (good for SEO)
 SEO_title: fi3ework's Studio
-# main title
+# keywords for site (good for SEO)
+SEO_keywords:
+  - hexo
+  - 'hexo-theme'
+  - 'hexo-blog'
+# main title shown in header image
 main_title: fi3ework's Studio.
 # subtitle
 subtitle: it's better to burn out than to fade away

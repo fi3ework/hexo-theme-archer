@@ -5,18 +5,21 @@
 <% } else {%>
 <% title = theme.SEO_title %>
 <% } %>
+<!-- keywords -->
+<% var keywords = "" %>
+<% var keywordsArr = [page.keywords, theme.SEO_keywords] %>
+<% var keywords = keywordsArr.filter(function(item){ return item }).join(',') %>
+<% console.log(keywords) %>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
     <meta name="author" content="<%- config.author %>">
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="<%- config.author %>">
-    <% if (page.keywords){ %>
-    <meta name="keywords" content="<%- page.keywords %>,<%- config.keywords %>">
-    <% } else if (config.keywords){ %>
-    <meta name="keywords" content="<%- config.keywords %>">
+    <% if (keywords){ %>
+    <meta name="keywords" content="<%- keywords %>">
     <% } else { %>
-    <meta name="keywords" content="<%- config.title %> | <%- config.author %>">
+    <meta name="keywords" content="<%- config.title %>,<%- config.author %>">
     <% } %>
     <meta name="description" content="<%- config.description %>">
     <meta http-equiv="Cache-control" content="no-cache">
