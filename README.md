@@ -84,10 +84,6 @@ jsonContent:
     tags: true
 ```
 
-4. 启用页面keywords支持，优化引擎索引：
-
-编辑`scaffolds/post.md`，在头部加上一行`keywords: placeholder1,placehodler2`。
-
 
 ## 可选配置
 
@@ -111,11 +107,11 @@ jsonContent:
 # ========== 资料栏 ========== #
 # 头像路径
 avatar:
-# 博主名字，不填写该字段则默认采用Hexo配置文件中的author字段
+# 博主名字，不填写该字段则默认采用 Hexo 配置文件中的 author 字段
 author:
 # 博客签名
 signature:
-# 社交账号 (可以自定义顺序)
+# 社交账号(可以自定义顺序)
 social:
   email:
   github:
@@ -142,16 +138,18 @@ friends:
   friendA:
   friendB:
   friendC:
-# about页面
+# about 页面
 about:
-  # 是否启用about页
+  # 是否启用 about 页
   enable: true
-  # about页头图
+  # about 页头图
   image:
 
 # ========== 站点 ========== #
-# 网站的title，每篇文章后面也会加上此字段利于SEO
+# 网站的 title，每篇文章后面也会加上此字段利于 SEO
 SEO_title:
+# 网站的关键字，有利于 SEO，每篇文章也可以在 Front-matter 添加特定的关键字
+SEO_keywords:
 # 显示在网站头图上的主标题
 main_title: 
 # 显示在网站头图上的副标题
@@ -160,7 +158,7 @@ subtitle:
 header_image:
 # 文章页默认头图
 post_header_image:
-# 404页头图
+# 404 页头图
 _404_image:
 
 # ========== 搜索 ========== #
@@ -174,8 +172,8 @@ algolia_search:
     hits_stats: "${hits} results found in ${time} ms" # 搜索无结果的提示
     
 # ========== 评论插件 ========== #
-# 目前支持直接添加Livere，Disqus，Gitment，友言及 Valine，填写插件对应的字段即可启用。(推荐使用 Livere)
-# 如果想添加其他评论插件，在custom.ejs中添加即可。
+# 目前支持直接添加 Livere，Disqus，Gitment，友言及 Valine，填写插件对应的字段即可启用。(推荐使用 Livere)
+# 如果想添加其他评论插件，在 custom.ejs 中添加即可。
 comment:
   # Livere 官网：https://livere.com/
   livere_uid:
@@ -200,9 +198,9 @@ busuanzi: true
 busuanzi_pv_or_uv: 'pv'
 # 自定义统计标语，'${count}' 会自动替换成统计值
 busuanzi_slug: 'PV: ${count} :)'
-# 百度统计(填写siteID)
+# 百度统计(填写 siteID)
 baidu_analytics:
-# Google统计(填写siteID)
+# Google统计(填写 siteID)
 google_analytics:
 # CNZZ统计
 CNZZ_analytics:
@@ -216,7 +214,7 @@ truncate_length:
 toc: true
 # 字数统计 & 阅读时间
 reading_info: true
-# 头图高度 (默认是屏幕高度的50%, 可以直接输入其他数字)
+# 头图高度 (默认是屏幕高度的 50%, 可以直接输入其他数字)
 index_intro_height: 50
 post_intro_height: 50
 about_intro_height: 50
