@@ -24,6 +24,9 @@
     <meta name="description" content="<%- config.description %>">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <% if (theme.feed != undefined) { %>
+    <link rel="alternate" href="<%= url_for(theme.feed.path) %>" title="<%= theme.main_title %>" type="application/atom+xml">
+    <% } %>
     <title><%= title %></title>
     <%- partial('critical-css/critical-style') %>
     <link rel="preload" href= "<%- url_for("css/style.css?v=20180824") %>" as="style" onload="this.onload=null;this.rel='stylesheet'" />
