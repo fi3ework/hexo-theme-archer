@@ -43,7 +43,7 @@ hexo-theme-archer
 - 本主题受 [yilia](https://github.com/litten/hexo-theme-yilia) 主题和 [huxpro](https://github.com/Huxpro/huxpro.github.io) 主题的启发，结合了前者的 sidebar 设计及后者的 UI 设计。通过 sidebar 能够不跳转到 archive 页、tag页及 categories 页进行导航。
 - 兼容性：现代浏览器及 IE10+。
 - 有任何使用上的问题欢迎 [**发起 issue**](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Algolia-%E6%90%9C%E7%B4%A2)。
-- 本主题会持续维护及优化，欢迎 star 😆。
+- Due to lack of time, this theme is not guaranteed to be maintained, welcome fork 👋🏻.
 
 ##  安装
 
