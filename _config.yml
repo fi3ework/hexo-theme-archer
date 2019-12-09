@@ -14,7 +14,7 @@ social:
   qq: 
   telegram: 
   weibo: 
-  zhihu: 
+  zhihu: https://www.zhihu.com/people/starmoon/activities
   douban: 
   facebook: 
   twitter: 
@@ -29,10 +29,10 @@ social:
   others: 
   rss: 
 # friends
-friends:
-  friendA: //www.baidu.com
-  friendB: //www.google.com
-  friendC: 
+#friends:
+ # friendA: //www.baidu.com
+  #friendB: //www.google.com
+  #friendC: 
 about:
   enable: true
   image: '/intro/about-bg.jpg'
@@ -108,7 +108,7 @@ truncate_length:
 # enable toc
 toc: true
 # word count & reading time
-reading_info: false
+reading_info: true
 # intro height (the default is 50 percents of the screen, you can input other number)
 index_intro_height: 50
 post_intro_height: 50
