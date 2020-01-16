@@ -50,7 +50,7 @@ main_title: horizon's Studio.
 # subtitle
 subtitle: it's better to burn out than to fade away
 # site haeder image
-site_header_image: '/source/index-bg.jpg'
+site_header_image: '/source/img/index-bg.jpg'
 # post haeder image
 post_header_image: '/intro/post-bg.jpg'
 # 404 image
