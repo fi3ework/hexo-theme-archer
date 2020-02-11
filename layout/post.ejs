@@ -4,30 +4,30 @@
     </article>
     <!-- license  -->
     <% if(theme.copyright.enable === true && page.copyright !== false) { %>
-        <div class="license-wrapper">
-            <p><%- __('author') %>：<a href="<%- config.url %>"><%- config.author %></a>
-            <p>原文链接：<a href="<%- page.permalink %>"><%- page.permalink %></a>
+    <div class="license-wrapper">
+        <p><%- __('author') %>：<a href="<%- config.url %>"><%- config.author %></a>
+            <!-- <p>原文链接：<a href="<%- page.permalink %>"><%- page.permalink %></a> -->
             <p>发表日期：<a href="<%- page.permalink %>"><%- (page.date).format('MMMM Do YYYY, h:mm:ss a') %></a>
-            <p>更新日期：<a href="<%- page.permalink %>"><%- (page.updated).format('MMMM Do YYYY, h:mm:ss a') %></a>
-            <p>版权声明：<%- theme.copyright.license %></p>
-        </div>
+                <p>更新日期：<a href="<%- page.permalink %>"><%- (page.updated).format('MMMM Do YYYY, h:mm:ss a') %></a>
+                    <p>版权声明：<%- theme.copyright.license %></p>
+    </div>
     <% } %>
     <!-- paginator  -->
     <ul class="post-paginator">
         <li class="next">
             <% if (page.prev){ %>
-                <div class="nextSlogan">Next Post</div>
-                <a href= "<%- url_for(page.prev.path) %>" title= "<%- page.prev.title %>">
-                    <div class="nextTitle"><%- page.prev.title || '[Untitled Post]' %></div>
-                </a>
+            <div class="nextSlogan">Next Post</div>
+            <a href="<%- url_for(page.prev.path) %>" title="<%- page.prev.title %>">
+                <div class="nextTitle"><%- page.prev.title || '[Untitled Post]' %></div>
+            </a>
             <% } %>
         </li>
         <li class="previous">
             <% if (page.next){ %>
-                <div class="prevSlogan">Previous Post</div>
-                <a href= "<%- url_for(page.next.path) %>" title= "<%- page.next.title %>">
-                    <div class="prevTitle"><%- page.next.title || '[Untitled Post]' %></div>
-                </a>
+            <div class="prevSlogan">Previous Post</div>
+            <a href="<%- url_for(page.next.path) %>" title="<%- page.next.title %>">
+                <div class="prevTitle"><%- page.next.title || '[Untitled Post]' %></div>
+            </a>
             <% } %>
         </li>
     </ul>
