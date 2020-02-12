@@ -44,7 +44,7 @@
               <% } %>
               <li class="archive-post-item">
                   <span class="archive-post-date"><%- date(post.date, "MM/DD") %></span><a class="archive-post-title"
-                      href="<%- post.abbrlink %>"><%- post.title || '[Untitled Post]' %></a>
+                      href="<%- page.permalink %>"><%- post.title || '[Untitled Post]' %></a>
               </li>
               <% }) %>
       </div>
