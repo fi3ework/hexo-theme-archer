@@ -1,17 +1,18 @@
 import init from './init'
-import { scroll } from './scroll'
+import {
+  scroll
+} from './scroll'
 import './initSidebar'
-import { initMobile } from './mobile'
+import {
+  initMobile
+} from './mobile'
 import InitSidebarLink from './tag'
 import toc from './toc'
 import fancybox from './fancybox'
 
 let logStyle =
   'color: #fff; background: #f75357; padding: 1px; border-radius: 5px;'
-console.info('%c 🎯 hexo-theme-archer ⬇️ ', logStyle)
-console.info('%c 🏷 Version: 1.6.1 ', logStyle)
-console.info('%c 📅 Version date: 20180830 ', logStyle)
-console.info('%c 📦 https://github.com/fi3ework/hexo-theme-archer ', logStyle)
+console.info('%c 📦 https://github.com/horizon2019?tab=repositories ', logStyle)
 
 // remove background placeholder
 init()
