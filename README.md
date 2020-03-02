@@ -37,6 +37,7 @@ hexo-theme-archer
 - 2018.06.23 - 『添加 Valine 评论，感谢 [hulichao](https://github.com/fi3ework/hexo-theme-archer/issues/115) 同学』
 - 2018.07.09 - 『可以切换深/浅色代码配色方案了，[详情](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%88%87%E6%8D%A2%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88)』
 - 2018.08.26 - 『添加 i18n 支持』
+- 2020.03.02 - 『添加 Gitalk评论 支持』
 
 ## 说明
 
@@ -172,7 +173,7 @@ algolia_search:
     hits_stats: "${hits} results found in ${time} ms" # 搜索无结果的提示
     
 # ========== 评论插件 ========== #
-# 目前支持直接添加 Livere，Disqus，Gitment，友言及 Valine，填写插件对应的字段即可启用。(推荐使用 Livere)
+# 目前支持直接添加 Livere，Disqus，Gitment，Gitalk，友言及 Valine，填写插件对应的字段即可启用。(推荐使用 Livere)
 # 如果想添加其他评论插件，在 custom.ejs 中添加即可。
 comment:
   # Livere 官网：https://livere.com/
@@ -190,6 +191,12 @@ comment:
   valine_appId: 
   valine_appKey: 
   valine_placeHolder: 
+  # gitalk site: https://github.com/gitalk/gitalk#options  
+  gitalk_client_id: 
+  gitalk_client_secret: 
+  gitalk_admin: 
+  gitalk_owner: 
+  gitalk_repo: 
 
 # ========== 统计 ========== #
 # 是否开启不蒜子阅读量统计
