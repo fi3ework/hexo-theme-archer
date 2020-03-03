@@ -100,11 +100,16 @@ class MetaInfo {
       let currPostLabels = postsArr[postIndex][this.metaName]
       // if there is any post has a tag
       if (currPostLabels && currPostLabels.length) {
-        currPostLabels.forEach(tag => {
-          if (this.indexMap.has(tag.name)) {
-            this.indexMap.get(tag.name).push(postIndex)
+        currPostLabels.forEach(tagOrCatetory => {
+
+          // if this.metaName is 'categories', tagOrCatetory['slug'] will be used as key in this.indexMap
+          // else if this.metaName is 'tag', tagOrCatetory['name'] will be used as key in this.indexMap
+          // check the array postsArr and you'll know why. (actually you can just use 'slug' in both case)
+          let key = this.metaName === 'categories' ? 'slug' : 'name';
+          if (this.indexMap.has(tagOrCatetory[key])) {
+            this.indexMap.get(tagOrCatetory[key]).push(postIndex)
           } else {
-            this.indexMap.set(tag.name, [postIndex])
+            this.indexMap.set(tagOrCatetory[key], [postIndex])
           }
         })
       }
