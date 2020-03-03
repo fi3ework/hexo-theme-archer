@@ -12,6 +12,8 @@
   flex-grow: 0;
   width: 100%;
   padding: 0 0 1rem 0;
+  max-height: 28rem;
+  overflow: auto;
 }
 
 .sidebar-tag-name,
@@ -66,7 +68,7 @@
 .sidebar-tags-list,
 .sidebar-categories-list {
   flex-grow: 1;
-  padding-right: 1rem;
+  padding: 1rem 1rem 0 0;
   overflow-y: auto;
 }
 
