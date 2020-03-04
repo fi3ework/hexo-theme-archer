@@ -91,6 +91,10 @@ comment:
   gitalk_admin: 
   gitalk_owner: 
   gitalk_repo: 
+  # utteranc site: https://utteranc.es/
+  utteranc_repo:  
+  tteranc_label: 
+  tteranc_theme: 
 
 # ========== Analytics ========== #
 # enable Busuanzi analytics

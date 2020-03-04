@@ -7,7 +7,7 @@
         var gitalk = new Gitalk({
             clientID: '<%- theme.comment.gitalk_client_id %>',
             clientSecret: '<%- theme.comment.gitalk_client_secret%>',
-            id: '<%- page.path %>',
+            id: '<%- page.date %>',
             repo: '<%- theme.comment.gitalk_repo%>',
             owner: '<%- theme.comment.gitalk_owner%>',
             admin: <%- JSON.stringify(theme.comment.gitalk_admin)%>,
