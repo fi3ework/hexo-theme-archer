@@ -200,8 +200,8 @@ comment:
   gitalk_repo: 
   # utteranc 官网: https://utteranc.es/
   utteranc_repo: 
-  tteranc_label: 
-  tteranc_theme: 
+  utteranc_label: 
+  utteranc_theme: 
 
 # ========== 统计 ========== #
 # 是否开启不蒜子阅读量统计
