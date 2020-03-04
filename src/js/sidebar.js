@@ -39,6 +39,7 @@ class Sidebar {
     $('.wrapper').addClass('wrapper-sidebar-active')
     $('.header').addClass('header-sidebar-active')
     $('.toc-wrapper').addClass('toc-slide')
+    this.$menuButton.addClass('header-sidebar-menu-active')
     this.$sidebar.removeClass('sidebar-hide')
     this.$sidebar.addClass('sidebar-active')
   }
@@ -47,6 +48,7 @@ class Sidebar {
     $('.wrapper').removeClass('wrapper-sidebar-active')
     $('.header').removeClass('header-sidebar-active')
     $('.toc-wrapper').removeClass('toc-slide')
+    this.$menuButton.removeClass('header-sidebar-menu-active')
     this.$sidebar.removeClass(`sidebar-active`)
   }
 
@@ -96,7 +98,11 @@ class Sidebar {
 
   _bindButtonClick() {
     this.$menuButton.click(e => {
-      this.activateSidebar()
+      if (this.$sidebar.hasClass('sidebar-hide')) {
+        this.activateSidebar()
+      } else {
+        this._inactivateSidebar()
+      }
     })
   }
 
