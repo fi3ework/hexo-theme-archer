@@ -95,6 +95,7 @@ comment:
   utteranc_repo:  
   utteranc_label: 
   utteranc_theme: 
+  utteranc_issue_term: 
 
 # ========== Analytics ========== #
 # enable Busuanzi analytics

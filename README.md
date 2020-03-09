@@ -202,6 +202,7 @@ comment:
   utteranc_repo: 
   utteranc_label: 
   utteranc_theme: 
+  utteranc_issue_term: 
 
 # ========== 统计 ========== #
 # 是否开启不蒜子阅读量统计
