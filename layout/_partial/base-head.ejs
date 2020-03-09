@@ -21,7 +21,7 @@
     <% } else { %>
     <meta name="keywords" content="<%- config.title %>,<%- config.author %>">
     <% } %>
-    <meta name="description" content="<%- config.description %>">
+    <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <% if (theme.feed != undefined) { %>
