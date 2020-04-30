@@ -247,6 +247,14 @@ about_intro_height: 50
 
 首先备份 archer 下所有你自定义过的文件（包括 _config.yml 和 source 文件夹下添加的文件等），然后删除 archer，再重新安装，最后将备份的文件替换到原来的位置即可。
 
+## 关于LaTeX支持
+
+已经内置mathjax.js，但是需要替换默认的渲染引擎来支持解析LaTeX语法。
+```bash
+npm uninstall hexo-renderer-marked --save
+npm install hexo-renderer-kramed --save
+```
+
 ## License
 
 MIT
