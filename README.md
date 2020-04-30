@@ -255,6 +255,8 @@ npm uninstall hexo-renderer-marked --save
 npm install hexo-renderer-kramed --save
 ```
 
+然后就可以配置每篇文章(即.md文件)的头部的`mathjax: true`字段来实现在本篇文章中启用LaTex公式支持。
+
 ## License
 
 MIT
