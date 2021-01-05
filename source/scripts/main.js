@@ -65,9 +65,15 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 var archerUtil = {
   // 回到顶部
   backTop: function backTop(event) {
@@ -136,16 +142,26 @@ var archerUtil = {
     ticking = true;
   }
 };
-/* harmony default export */ __webpack_exports__["a"] = (archerUtil);
+var _default = archerUtil;
+exports.default = _default;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__sidebar__ = __webpack_require__(6);
 
-var mySidebar = new __WEBPACK_IMPORTED_MODULE_0__sidebar__["a" /* default */]({
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _sidebar = _interopRequireDefault(__webpack_require__(6));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mySidebar = new _sidebar.default({
   sidebar: '.sidebar',
   nav: '.sidebar-tabs',
   tabs: '.sidebar-tabs li',
@@ -153,27 +169,31 @@ var mySidebar = new __WEBPACK_IMPORTED_MODULE_0__sidebar__["a" /* default */]({
   panels: '.sideabar-contents > div',
   menuButton: '.header-sidebar-menu'
 });
-/* harmony default export */ __webpack_exports__["a"] = (mySidebar);
+var _default = mySidebar;
+exports.default = _default;
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__init__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__scroll__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__initSidebar__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mobile__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tag__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__toc__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__fancybox__ = __webpack_require__(17);
 
 
+var _init = _interopRequireDefault(__webpack_require__(3));
 
+var _scroll = __webpack_require__(5);
 
+__webpack_require__(1);
 
+var _mobile = __webpack_require__(8);
 
+var _tag = _interopRequireDefault(__webpack_require__(9));
+
+var _toc = _interopRequireDefault(__webpack_require__(16));
+
+var _fancybox = _interopRequireDefault(__webpack_require__(17));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var logStyle = 'color: #fff; background: #f75357; padding: 1px; border-radius: 5px;';
 console.info('%c 🎯 hexo-theme-archer ⬇️ ', logStyle);
@@ -181,11 +201,11 @@ console.info('%c 🏷 Version: 1.6.1 ', logStyle);
 console.info('%c 📅 Version date: 20180830 ', logStyle);
 console.info('%c 📦 https://github.com/fi3ework/hexo-theme-archer ', logStyle); // remove background placeholder
 
-Object(__WEBPACK_IMPORTED_MODULE_0__init__["a" /* default */])(); // scroll event
+(0, _init.default)(); // scroll event
 
-Object(__WEBPACK_IMPORTED_MODULE_1__scroll__["a" /* scroll */])(); // init sidebar link
+(0, _scroll.scroll)(); // init sidebar link
 
-var metas = new __WEBPACK_IMPORTED_MODULE_4__tag__["a" /* default */]();
+var metas = new _tag.default();
 metas.addTab({
   metaName: 'tags',
   labelsContainer: '.sidebar-tags-name',
@@ -199,21 +219,28 @@ metas.addTab({
 
 window.addEventListener('load', function (event) {
   console.log('All resources finished loading!');
-  Object(__WEBPACK_IMPORTED_MODULE_5__toc__["a" /* default */])();
+  (0, _toc.default)();
 });
-Object(__WEBPACK_IMPORTED_MODULE_3__mobile__["a" /* initMobile */])(); // initSearch()
+(0, _mobile.initMobile)(); // initSearch()
 // fancybox
 
-Object(__WEBPACK_IMPORTED_MODULE_6__fancybox__["a" /* default */])();
+(0, _fancybox.default)();
 
 /***/ }),
 /* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_anchor_js__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_anchor_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_anchor_js__);
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _anchorJs = _interopRequireDefault(__webpack_require__(4));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var init = function init() {
   var $introImg = $('.site-intro-img:first'),
@@ -245,7 +272,7 @@ var init = function init() {
     $('.loading').remove();
   }, false); // https://www.bryanbraun.com/anchorjs/
 
-  var anchors = new __WEBPACK_IMPORTED_MODULE_0_anchor_js___default.a();
+  var anchors = new _anchorJs.default();
   anchors.options = {
     placement: 'right',
     class: 'anchorjs-archer'
@@ -253,7 +280,8 @@ var init = function init() {
   anchors.add();
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (init);
+var _default = init;
+exports.default = _default;
 
 /***/ }),
 /* 4 */
@@ -484,8 +512,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
      * @return {String}      - hyphen-delimited text for use in IDs and URLs.
      */
     this.urlify = function(text) {
-      // Regex for finding the nonsafe URL characters (many need escaping): & +$,:;=?@"#{}|^~[`%!'<>]./()*\ (newlines, tabs, backspace, & vertical tabs)
-      var nonsafeChars = /[& +$,:;=?@"#{}|^~[`%!'<>\]\.\/\(\)\*\\\n\t\b\v]/g,
+      // Regex for finding the nonsafe URL characters (many need escaping): & +$,:;=?@"#{}|^~[`%!'<>]./()*\
+      var nonsafeChars = /[& +$,:;=?@"#{}|^~[`%!'<>\]\.\/\(\)\*\\]/g,
           urlText;
 
       // The reason we include this _applyRemainingDefaultOptions is so urlify can be called independently,
@@ -601,12 +629,19 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 /* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return scroll; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(0);
 
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.scroll = void 0;
+
+var _util = _interopRequireDefault(__webpack_require__(0));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var scroll = function scroll() {
   var $banner = $('.banner:first'),
@@ -740,35 +775,42 @@ var scroll = function scroll() {
   function onScroll() {
     var scrollTop = $(document).scrollTop();
     var bindedUpdate = updateScroll.bind(null, scrollTop);
-    __WEBPACK_IMPORTED_MODULE_0__util__["a" /* default */].rafTick(tickingScroll, bindedUpdate);
+
+    _util.default.rafTick(tickingScroll, bindedUpdate);
   }
 
   $(document).on('scroll', onScroll) // 返回顶部
   ;
   [$postBanner, $backTop].forEach(function (ele) {
-    ele.on('click', __WEBPACK_IMPORTED_MODULE_0__util__["a" /* default */].backTop);
+    ele.on('click', _util.default.backTop);
   });
 };
 
-
+exports.scroll = scroll;
 
 /***/ }),
 /* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_perfect_scrollbar__ = __webpack_require__(7);
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _perfectScrollbar = _interopRequireDefault(__webpack_require__(7));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-
 
 var Selector = function Selector(classPrefix) {
   return {
@@ -782,7 +824,7 @@ function () {
   function Sidebar(options) {
     _classCallCheck(this, Sidebar);
 
-    this.options = _objectSpread({}, Sidebar.defaultOptions, options);
+    this.options = _extends({}, Sidebar.defaultOptions, options);
     this.activeIndex = this.options.activeIndex;
 
     this._initElements();
@@ -918,7 +960,7 @@ function () {
   }, {
     key: "perfectScrollbar",
     value: function perfectScrollbar() {
-      var ps = new __WEBPACK_IMPORTED_MODULE_0_perfect_scrollbar__["a" /* default */]('.sidebar', {
+      var ps = new _perfectScrollbar.default('.sidebar', {
         suppressScrollX: true
       });
     }
@@ -927,20 +969,26 @@ function () {
   return Sidebar;
 }();
 
-_defineProperty(Sidebar, "defaultOptions", {
-  activeIndex: 0
+Object.defineProperty(Sidebar, "defaultOptions", {
+  configurable: true,
+  enumerable: true,
+  writable: true,
+  value: {
+    activeIndex: 0
+  }
 });
-
-/* harmony default export */ __webpack_exports__["a"] = (Sidebar);
+var _default = Sidebar;
+exports.default = _default;
 
 /***/ }),
 /* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /*!
- * perfect-scrollbar v1.4.0
- * (c) 2018 Hyunje Jun
+ * perfect-scrollbar v1.3.0
+ * (c) 2017 Hyunje Jun
  * @license MIT
  */
 function get(element) {
@@ -968,7 +1016,6 @@ var elMatches =
   typeof Element !== 'undefined' &&
   (Element.prototype.matches ||
     Element.prototype.webkitMatchesSelector ||
-    Element.prototype.mozMatchesSelector ||
     Element.prototype.msMatchesSelector);
 
 function matches(element, query) {
@@ -1003,7 +1050,6 @@ var cls = {
   },
   state: {
     focus: 'ps--focus',
-    clicking: 'ps--clicking',
     active: function (x) { return ("ps--active-" + x); },
     scrolling: function (x) { return ("ps--scrolling-" + x); },
   },
@@ -1258,7 +1304,6 @@ var env = {
 
 var updateGeometry = function(i) {
   var element = i.element;
-  var roundedScrollTop = Math.floor(element.scrollTop);
 
   i.containerWidth = element.clientWidth;
   i.containerHeight = element.clientHeight;
@@ -1310,7 +1355,7 @@ var updateGeometry = function(i) {
       toInt(i.railYHeight * i.containerHeight / i.contentHeight)
     );
     i.scrollbarYTop = toInt(
-      roundedScrollTop *
+      element.scrollTop *
         (i.railYHeight - i.scrollbarYHeight) /
         (i.contentHeight - i.containerHeight)
     );
@@ -1357,8 +1402,6 @@ function getThumbSize(i, thumbSize) {
 
 function updateCss(element, i) {
   var xRailOffset = { width: i.railXWidth };
-  var roundedScrollTop = Math.floor(element.scrollTop);
-
   if (i.isRtl) {
     xRailOffset.left =
       i.negativeScrollAdjustment +
@@ -1369,13 +1412,13 @@ function updateCss(element, i) {
     xRailOffset.left = element.scrollLeft;
   }
   if (i.isScrollbarXUsingBottom) {
-    xRailOffset.bottom = i.scrollbarXBottom - roundedScrollTop;
+    xRailOffset.bottom = i.scrollbarXBottom - element.scrollTop;
   } else {
-    xRailOffset.top = i.scrollbarXTop + roundedScrollTop;
+    xRailOffset.top = i.scrollbarXTop + element.scrollTop;
   }
   set(i.scrollbarXRail, xRailOffset);
 
-  var yRailOffset = { top: roundedScrollTop, height: i.railYHeight };
+  var yRailOffset = { top: element.scrollTop, height: i.railYHeight };
   if (i.isScrollbarYUsingRight) {
     if (i.isRtl) {
       yRailOffset.right =
@@ -1450,8 +1493,7 @@ var dragThumb = function(i) {
     'scrollbarX',
     'scrollbarXWidth',
     'scrollLeft',
-    'x',
-    'scrollbarXRail' ]);
+    'x' ]);
   bindMouseScrollHandler(i, [
     'containerHeight',
     'contentHeight',
@@ -1460,8 +1502,7 @@ var dragThumb = function(i) {
     'scrollbarY',
     'scrollbarYHeight',
     'scrollTop',
-    'y',
-    'scrollbarYRail' ]);
+    'y' ]);
 };
 
 function bindMouseScrollHandler(
@@ -1476,7 +1517,6 @@ function bindMouseScrollHandler(
   var scrollbarYHeight = ref[5];
   var scrollTop = ref[6];
   var y = ref[7];
-  var scrollbarYRail = ref[8];
 
   var element = i.element;
 
@@ -1496,7 +1536,6 @@ function bindMouseScrollHandler(
 
   function mouseUpHandler() {
     removeScrollingClass(i, y);
-    i[scrollbarYRail].classList.remove(cls.state.clicking);
     i.event.unbind(i.ownerDocument, 'mousemove', mouseMoveHandler);
   }
 
@@ -1510,8 +1549,6 @@ function bindMouseScrollHandler(
     i.event.bind(i.ownerDocument, 'mousemove', mouseMoveHandler);
     i.event.once(i.ownerDocument, 'mouseup', mouseUpHandler);
 
-    i[scrollbarYRail].classList.add(cls.state.clicking);
-
     e.stopPropagation();
     e.preventDefault();
   });
@@ -1524,7 +1561,7 @@ var keyboard = function(i) {
   var scrollbarFocused = function () { return matches(i.scrollbarX, ':focus') || matches(i.scrollbarY, ':focus'); };
 
   function shouldPreventDefault(deltaX, deltaY) {
-    var scrollTop = Math.floor(element.scrollTop);
+    var scrollTop = element.scrollTop;
     if (deltaX === 0) {
       if (!i.scrollbarYActive) {
         return false;
@@ -1665,13 +1702,12 @@ var wheel = function(i) {
   var element = i.element;
 
   function shouldPreventDefault(deltaX, deltaY) {
-    var roundedScrollTop = Math.floor(element.scrollTop);
     var isTop = element.scrollTop === 0;
     var isBottom =
-      roundedScrollTop + element.offsetHeight === element.scrollHeight;
+      element.scrollTop + element.offsetHeight === element.scrollHeight;
     var isLeft = element.scrollLeft === 0;
     var isRight =
-      element.scrollLeft + element.offsetWidth === element.scrollWidth;
+      element.scrollLeft + element.offsetWidth === element.offsetWidth;
 
     var hitsBound;
 
@@ -1747,7 +1783,7 @@ var wheel = function(i) {
             return true;
           }
         }
-        var maxScrollLeft = cursor.scrollWidth - cursor.clientWidth;
+        var maxScrollLeft = cursor.scrollLeft - cursor.clientWidth;
         if (maxScrollLeft > 0) {
           if (
             !(cursor.scrollLeft === 0 && deltaX < 0) &&
@@ -1823,7 +1859,7 @@ var touch = function(i) {
   var element = i.element;
 
   function shouldPrevent(deltaX, deltaY) {
-    var scrollTop = Math.floor(element.scrollTop);
+    var scrollTop = element.scrollTop;
     var scrollLeft = element.scrollLeft;
     var magnitudeX = Math.abs(deltaX);
     var magnitudeY = Math.abs(deltaY);
@@ -2037,7 +2073,7 @@ var defaultSettings = function () { return ({
   suppressScrollY: false,
   swipeEasing: true,
   useBothWheelAxes: false,
-  wheelPropagation: true,
+  wheelPropagation: false,
   wheelSpeed: 1,
 }); };
 
@@ -2168,7 +2204,7 @@ var PerfectScrollbar = function PerfectScrollbar(element, userSettings) {
 
   this.settings.handlers.forEach(function (handlerName) { return handlers[handlerName](this$1); });
 
-  this.lastScrollTop = Math.floor(element.scrollTop); // for onScroll only
+  this.lastScrollTop = element.scrollTop; // for onScroll only
   this.lastScrollLeft = element.scrollLeft; // for onScroll only
   this.event.bind(this.element, 'scroll', function (e) { return this$1.onScroll(e); });
   updateGeometry(this);
@@ -2220,7 +2256,7 @@ PerfectScrollbar.prototype.onScroll = function onScroll (e) {
     this.element.scrollLeft - this.lastScrollLeft
   );
 
-  this.lastScrollTop = Math.floor(this.element.scrollTop);
+  this.lastScrollTop = this.element.scrollTop;
   this.lastScrollLeft = this.element.scrollLeft;
 };
 
@@ -2253,15 +2289,21 @@ PerfectScrollbar.prototype.removePsClasses = function removePsClasses () {
     .join(' ');
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (PerfectScrollbar);
+/* harmony default export */ __webpack_exports__["default"] = (PerfectScrollbar);
 
 
 /***/ }),
 /* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return initMobile; });
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.initMobile = void 0;
+
 var initMobile = function initMobile() {
   if (window.matchMedia) {
     var mql = window.matchMedia('(max-width: 980px)');
@@ -2291,37 +2333,37 @@ var initMobile = function initMobile() {
   function mobilePreventScrollBreakdown() {}
 };
 
-
+exports.initMobile = initMobile;
 
 /***/ }),
 /* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__initSidebar__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_eventemitter3__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_eventemitter3___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_eventemitter3__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_util__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_util__);
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
 
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+var _util = _interopRequireDefault(__webpack_require__(0));
+
+var _initSidebar = _interopRequireDefault(__webpack_require__(1));
+
+var _eventemitter = _interopRequireDefault(__webpack_require__(10));
+
+var _util2 = __webpack_require__(11);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
-
-
-
 
 var MetaInfo =
 /*#__PURE__*/
@@ -2412,7 +2454,7 @@ function () {
   }, {
     key: "_createPostDom",
     value: function _createPostDom(postInfo) {
-      var $tagItem = $('<li class="meta-post-item"><span class="meta-post-date">' + __WEBPACK_IMPORTED_MODULE_0__util__["a" /* default */].dateFormater(new Date(Date.parse(postInfo.date)), 'yyyy/MM/dd') + '</span></li>');
+      var $tagItem = $('<li class="meta-post-item"><span class="meta-post-date">' + _util.default.dateFormater(new Date(Date.parse(postInfo.date)), 'yyyy/MM/dd') + '</span></li>');
       var $aItem = $('<a class="meta-post-title" href="' + siteMeta.root + postInfo.path + '">' + postInfo.title + '</a>');
       $tagItem.append($aItem);
       return $tagItem[0];
@@ -2430,11 +2472,16 @@ function () {
         var currPostLabels = postsArr[postIndex][_this4.metaName]; // if there is any post has a tag
 
         if (currPostLabels && currPostLabels.length) {
-          currPostLabels.forEach(function (tag) {
-            if (_this4.indexMap.has(tag.name)) {
-              _this4.indexMap.get(tag.name).push(postIndex);
+          currPostLabels.forEach(function (tagOrCatetory) {
+            // if this.metaName is 'categories', tagOrCatetory['slug'] will be used as key in this.indexMap
+            // else if this.metaName is 'tag', tagOrCatetory['name'] will be used as key in this.indexMap
+            // check the array postsArr and you'll know why. (actually you can just use 'slug' in both case)
+            var key = _this4.metaName === 'categories' ? 'slug' : 'name';
+
+            if (_this4.indexMap.has(tagOrCatetory[key])) {
+              _this4.indexMap.get(tagOrCatetory[key]).push(postIndex);
             } else {
-              _this4.indexMap.set(tag.name, [postIndex]);
+              _this4.indexMap.set(tagOrCatetory[key], [postIndex]);
             }
           });
         }
@@ -2463,7 +2510,7 @@ function () {
     _classCallCheck(this, SidebarMeta);
 
     this.tabCount = 0;
-    this.emitter = new __WEBPACK_IMPORTED_MODULE_2_eventemitter3___default.a();
+    this.emitter = new _eventemitter.default();
     this.postsArr = null;
     this.metas = [];
     this._initMap = this._initMap.bind(this);
@@ -2529,7 +2576,7 @@ function () {
           var contentJSON;
           var posts;
           contentJSON = JSON.parse(this.responseText);
-          posts = Object(__WEBPACK_IMPORTED_MODULE_3_util__["isArray"])(contentJSON) ? contentJSON : contentJSON.posts;
+          posts = (0, _util2.isArray)(contentJSON) ? contentJSON : contentJSON.posts;
 
           if (posts && posts.length) {
             that.postsArr = posts;
@@ -2550,8 +2597,11 @@ function () {
       document.body.addEventListener('click', function (e) {
         if (e.target.className === 'post-tag') {
           e.stopPropagation();
-          __WEBPACK_IMPORTED_MODULE_1__initSidebar__["a" /* default */].activateSidebar();
-          __WEBPACK_IMPORTED_MODULE_1__initSidebar__["a" /* default */].switchTo(1);
+
+          _initSidebar.default.activateSidebar();
+
+          _initSidebar.default.switchTo(1);
+
           var currLabelName = e.target.getAttribute("data-tags");
           _this5.currLabelName = currLabelName;
           var tagMeta = _this5.metas[0];
@@ -2564,7 +2614,8 @@ function () {
   return SidebarMeta;
 }();
 
-/* harmony default export */ __webpack_exports__["a"] = (SidebarMeta);
+var _default = SidebarMeta;
+exports.default = _default;
 
 /***/ }),
 /* 10 */
@@ -3761,24 +3812,27 @@ if (typeof Object.create === 'function') {
 
 /***/ }),
 /* 16 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util__ = __webpack_require__(0);
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
 
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+var _util = _interopRequireDefault(__webpack_require__(0));
 
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 var prevHeight = 0;
 
 function initTocLinksScrollTop(tocLinks) {
   return _toConsumableArray(tocLinks).map(function (link) {
-    return __WEBPACK_IMPORTED_MODULE_0__util__["a" /* default */].getAbsPosition(link).y;
+    return _util.default.getAbsPosition(link).y;
   });
 }
 
@@ -3910,13 +3964,21 @@ var main = function main() {
   });
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (main);
+var _default = main;
+exports.default = _default;
 
 /***/ }),
 /* 17 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
 var fancyBoxInit = function fancyBoxInit(img) {
   var outer = img.outerHTML;
   var imgSrc = /src="(.*)"/.exec(outer) && /src="(.*)"/.exec(outer)[1];
@@ -3924,10 +3986,12 @@ var fancyBoxInit = function fancyBoxInit(img) {
   img.outerHTML = '<a class="fancy-link" href="' + imgSrc + '" data-fancybox="group" data-caption="' + imgAlt + '">' + outer + '</a>';
 };
 
-/* harmony default export */ __webpack_exports__["a"] = (function () {
+var _default = function _default() {
   document.querySelectorAll('.article-entry img').forEach(fancyBoxInit);
   document.querySelectorAll('.about-body container img').forEach(fancyBoxInit);
-});
+};
+
+exports.default = _default;
 
 /***/ })
 /******/ ]);
