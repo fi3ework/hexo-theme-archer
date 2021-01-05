@@ -10,7 +10,7 @@ module.exports = {
     path: path.join(__dirname, './source/scripts'),
     filename: '[name].js'
   },
-  devtool: 'none',
+  devtool: false,
   module: {
     rules: [{
       test: /\.js$/,
