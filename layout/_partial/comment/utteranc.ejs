@@ -1,0 +1,11 @@
+<!-- utteranc评论 -->
+<% if(theme.comment.utteranc_repo && theme.comment.utteranc_issue_term) { %>
+<script src='https://utteranc.es/client.js'
+                repo='<%- theme.comment.utteranc_repo %>'
+                issue-term='<%- theme.comment.utteranc_issue_term %>'
+                label='<%- theme.comment.utteranc_label %>'
+                theme='<%- theme.comment.utteranc_theme %>'
+                crossorigin='anonymous'
+                async>
+</script>
+<% } %>

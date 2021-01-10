@@ -22,8 +22,12 @@
     <meta name="keywords" content="<%- config.title %>,<%- config.author %>">
     <% } %>
     <meta name="description" content="<%- config.description %>">
+    <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <% if (theme.feed != undefined) { %>
+    <link rel="alternate" href="<%= url_for(theme.feed.path) %>" title="<%= theme.main_title %>" type="application/atom+xml">
+    <% } %>
     <title><%= title %></title>
     <%- partial('critical-css/critical-style') %>
     <link rel="preload" href= "<%- url_for("css/style.css?v=20180824") %>" as="style" onload="this.onload=null;this.rel='stylesheet'" />
@@ -38,7 +42,7 @@
     <link rel="preload" href="<%- url_for('scripts/main.js') %>" as="script" />
     <link rel="preload" as="font" href="<%- url_for('font/Oswald-Regular.ttf') %>" crossorigin>
     <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
-    <% if (theme.algolia_search.enable) { %>
+    <% if (theme.algolia_sarch != undefined && theme.algolia_search.enable) { %>
         <!-- algolia -->
         <script>
             <% var algoliaHits = JSON.stringify(theme.algolia_search.hits) %>

@@ -85,6 +85,17 @@ comment:
   valine_appId: 
   valine_appKey: 
   valine_placeHolder: 
+  # gitalk site: https://github.com/gitalk/gitalk#options  
+  gitalk_client_id: 
+  gitalk_client_secret: 
+  gitalk_admin: 
+  gitalk_owner: 
+  gitalk_repo: 
+  # utteranc site: https://utteranc.es/
+  utteranc_repo:  
+  utteranc_label: 
+  utteranc_theme: 
+  utteranc_issue_term: 
 
 # ========== Analytics ========== #
 # enable Busuanzi analytics
