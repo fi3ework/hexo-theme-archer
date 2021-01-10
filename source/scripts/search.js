@@ -72,7 +72,7 @@
 var initAlgolia = function initAlgolia() {
   $(document).ready(function () {
     var algoliaSettings = algolia;
-    var isAlgoliaSettingsValid = algoliaSettings.applicationID && algoliaSettings.apiKey && algoliaSettings.indexName;
+    var isAlgoliaSettingsValid = algoliaSettings.appId && algoliaSettings.apiKey && algoliaSettings.indexName;
 
     if (!isAlgoliaSettingsValid) {
       window.console.error('Algolia Settings are invalid.');
@@ -80,7 +80,7 @@ var initAlgolia = function initAlgolia() {
     }
 
     var search = instantsearch({
-      appId: algoliaSettings.applicationID,
+      appId: algoliaSettings.appId,
       apiKey: algoliaSettings.apiKey,
       indexName: algoliaSettings.indexName,
       searchFunction: function searchFunction(helper) {
