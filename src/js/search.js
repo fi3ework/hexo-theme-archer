@@ -4,7 +4,7 @@ const initAlgolia = () => {
   $(document).ready(function() {
     let algoliaSettings = algolia
     let isAlgoliaSettingsValid =
-      algoliaSettings.applicationID &&
+      algoliaSettings.appId &&
       algoliaSettings.apiKey &&
       algoliaSettings.indexName
 
@@ -14,7 +14,7 @@ const initAlgolia = () => {
     }
 
     let search = instantsearch({
-      appId: algoliaSettings.applicationID,
+      appId: algoliaSettings.appId,
       apiKey: algoliaSettings.apiKey,
       indexName: algoliaSettings.indexName,
       searchFunction: function(helper) {
