@@ -27,3 +27,9 @@ tags
 
 
 # End of https://www.gitignore.io/api/vim
+
+*.iml
+*.ipr
+*.iws
+*.iml
+
