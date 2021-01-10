@@ -11,10 +11,11 @@ hexo.extend.injector.register('body_end', `
     var now = Date.now()
     var interval = parseInt(now - pubTime)
     var days = parseInt(interval / 86400000)
-    post.innerHTML = '<div class="note note-warning" style="font-size:0.9rem"><p>' +
-      '<div class="title">文章时效性提示</div><p>这是一篇发布于 ' + days + ' 天前的文章，部分信息可能已发生改变，请注意甄别。' +
-      '</p></p></div>' + post.innerHTML;
-
+    if (interval > 3600*24*30*3*1000){
+      post.innerHTML = '<div class="note note-warning" style="font-size:0.9rem"><p>' +
+        '<div class="title">文章时效性提示</div><p>这是一篇发布于 ' + days + ' 天前的文章，部分信息可能已发生改变，请注意甄别。' +
+        '</p></p></div>' + post.innerHTML;
+    }
   })();
   </script>
 ` , 'post');
