@@ -82,3 +82,7 @@ $code-color-map: (
   $code-theme: 'atom-one-dark';
 }
 $theme-colors: map-get($code-color-map, $code-theme);
+
+// ========== algolia-search ========== //
+$algolia-search-padding-horiz: 20px;
+

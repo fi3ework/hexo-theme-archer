@@ -128,6 +128,15 @@
   font-size: inherit;
   color: #f00;
 }
+.algolia-stat-root {
+  height: 20px;
+  font-weight: lighter;
+  color: #aaa;
+  padding: {
+    left: $algolia-search-padding-horiz;
+    right: $algolia-search-padding-horiz;
+  }
+}
 
 .algolia-hits {
   margin-top: 20px;
@@ -139,7 +148,7 @@
   }
   &-item {
     margin: 0;
-    padding: 10px 20px;
+    padding: 10px $algolia-search-padding-horiz;
     --border-opacity: 1;
     border: {
       bottom: 1px dashed;
