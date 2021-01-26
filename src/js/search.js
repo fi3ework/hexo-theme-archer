@@ -75,8 +75,8 @@ const initAlgolia = () => {
         templates: {
           text: function(data) {
             let stats = algoliaSettings.labels.hits_stats
-              .replace(/\$\{hits}/, data.nbHits)
-              .replace(/\$\{time}/, data.processingTimeMS)
+              .replace(/\$\{hits\}/, data.nbHits)
+              .replace(/\$\{time\}/, data.processingTimeMS)
             return (
               stats +
               '<span class="algolia-powered">' +
