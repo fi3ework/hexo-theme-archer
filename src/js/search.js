@@ -87,6 +87,9 @@ const initAlgolia = () => {
               '<hr />'
             )
           }
+        },
+        cssClasses: {
+          root: "algolia-stat-root"
         }
       }),
 
