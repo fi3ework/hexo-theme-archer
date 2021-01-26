@@ -44,7 +44,7 @@ function reloadConfig(done) {
   done()
 }
 
-exports.dev = gulp.series(execWebpack, execSass, function () {
+exports.dev = gulp.series(execWebpack, execSass, function (cb) {
   browserSync.init({
     proxy: 'localhost:4000'
   })
@@ -52,6 +52,7 @@ exports.dev = gulp.series(execWebpack, execSass, function () {
   gulp.watch(['./src/scss/**/*.scss'], reloadCss)
   gulp.watch(['./layout/**/*.ejs'], reloadLayout)
   gulp.watch(['./_config.yml'], reloadConfig)
+  cb()
 })
 
 

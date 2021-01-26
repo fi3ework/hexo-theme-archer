@@ -1,26 +1,27 @@
 const path = require('path')
 
 module.exports = {
+  mode: "development",
   entry: {
     main: './src/js/main.js',
     share: './src/js/share.js',
     search: './src/js/search.js'
   },
   output: {
-    path: path.join(__dirname, './source/scripts'),
+    path: path.resolve(__dirname, 'source/scripts'),
     filename: '[name].js'
   },
   devtool: false,
   module: {
     rules: [{
-      test: /\.js$/,
+      test: /\.(js)$/,
       exclude: /node_modules/,
       use: {
         loader: 'babel-loader',
         options: {
           presets: ['@babel/preset-env'],
-          plugins: [require('@babel/plugin-proposal-class-properties'),
-            require('@babel/plugin-proposal-object-rest-spread')]
+          plugins: ['@babel/plugin-proposal-class-properties',
+            '@babel/plugin-proposal-object-rest-spread']
         }
       },
     }]
