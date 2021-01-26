@@ -13,10 +13,12 @@ const initAlgolia = () => {
       return
     }
 
+    const algoliasearch = require('algoliasearch')
+    const searchClient = algoliasearch(algoliaSettings.appId, algoliaSettings.apiKey)
+
     let search = instantsearch({
-      appId: algoliaSettings.appId,
-      apiKey: algoliaSettings.apiKey,
       indexName: algoliaSettings.indexName,
+      searchClient,
       searchFunction: function(helper) {
         let searchInput = $('#algolia-search-input').find('input')
 
@@ -30,7 +32,9 @@ const initAlgolia = () => {
     ;[
       instantsearch.widgets.searchBox({
         container: '#algolia-search-input',
-        placeholder: algoliaSettings.labels.input_placeholder
+        placeholder: algoliaSettings.labels.input_placeholder,
+        showSubmit: false,
+        showReset: false
       }),
 
       instantsearch.widgets.hits({
@@ -45,7 +49,7 @@ const initAlgolia = () => {
               '<a href="' +
               link +
               '" class="algolia-hit-item-link">' +
-              data._highlightResult.title.value +
+                instantsearch.highlight({attribute: 'title', hit: data, highlightedTagName: 'em'}) +
               '</a>'
             )
           },
@@ -61,14 +65,15 @@ const initAlgolia = () => {
           }
         },
         cssClasses: {
-          item: 'algolia-hit-item'
+          item: 'algolia-hit-item',
+          list: 'algolia-hit-list'
         }
       }),
 
       instantsearch.widgets.stats({
         container: '#algolia-stats',
         templates: {
-          body: function(data) {
+          text: function(data) {
             let stats = algoliaSettings.labels.hits_stats
               .replace(/\$\{hits}/, data.nbHits)
               .replace(/\$\{time}/, data.processingTimeMS)

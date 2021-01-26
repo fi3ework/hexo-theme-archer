@@ -56,7 +56,7 @@
 
 .algolia-popup .popup-btn-close {
   padding-left: 15px;
-  border-left: 1px solid #eee;
+  border-left: 1px solid #ddd;
   top: 10px;
 }
 
@@ -113,7 +113,7 @@
 .algolia-results {
   position: relative;
   overflow: auto;
-  padding: 10px 30px;
+  padding: 10px 0px;
   height: calc(100% - 50px);
 }
 
@@ -133,27 +133,37 @@
   margin-top: 20px;
 }
 
-.algolia-hit-item {
-  margin: 15px 0;
-}
-
-.algolia-hit-item-link {
-  color: #555;
-  padding: 0 0 2px 0;
-  display: block;
-  border-bottom: 1px dashed #ccc;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-  em {
-    font-style: normal;
-    color: $feature-color;
+.algolia-hit {
+  &-list {
+    padding-inline-start: 0px;
   }
-}
+  &-item {
+    margin: 0;
+    padding: 10px 20px;
+    --border-opacity: 1;
+    border: {
+      bottom: 1px dashed;
+      color: rgba(245,245,250,var(--border-opacity));
+    }
+    cursor: pointer;
+    &:hover {
+      background: #eee;
+      border-color: transparent;
+    }
 
-.ais-search-box--reset-wrapper,
-.ais-search-box--magnifier-wrapper {
-  display: none !important;
+    &-link {
+      color: #555;
+      padding: 0 0 2px 0;
+      display: block;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-in-out;
+      transition-delay: 0s;
+      em {
+        font-style: normal;
+        color: $feature-color;
+      }
+    }
+  }
 }
 
 // ===== pagination ===== //
