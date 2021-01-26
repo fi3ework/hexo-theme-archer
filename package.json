@@ -32,6 +32,7 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.2",
     "anchor-js": "^4.3.0",
     "eventemitter3": "^4.0.7",
     "graceful-fs": "^4.2.4",

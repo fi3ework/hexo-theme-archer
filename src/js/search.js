@@ -22,10 +22,11 @@ const initAlgolia = () => {
       searchFunction: function(helper) {
         let searchInput = $('#algolia-search-input').find('input')
 
-        if (searchInput.val()) {
-          helper.search()
-        }
-      }
+        const container = document.querySelector('.algolia-results');
+        container.style.display = helper.state.query === '' ? 'none' : '';
+        helper.search()
+      },
+      stalledSearchDelay: 500
     })
 
     // Registering Widgets
@@ -34,7 +35,8 @@ const initAlgolia = () => {
         container: '#algolia-search-input',
         placeholder: algoliaSettings.labels.input_placeholder,
         showSubmit: false,
-        showReset: false
+        showReset: false,
+        showLoadingIndicator: false
       }),
 
       instantsearch.widgets.hits({
@@ -55,18 +57,19 @@ const initAlgolia = () => {
           },
           empty: function(data) {
             return (
-              '<div id="algolia-hits-empty">' +
+              '<i class="fas fa-drafting-compass fa-10x"></i>' +
+              '<div class="algolia-hit-empty-label">' +
               algoliaSettings.labels.hits_empty.replace(
-                /\$\{query}/,
-                data.query
-              ) +
+                /\$\{query\}/, data.query) +
               '</div>'
             )
           }
         },
         cssClasses: {
           item: 'algolia-hit-item',
-          list: 'algolia-hit-list'
+          list: 'algolia-hit-list',
+          root: 'algolia-hit',
+          emptyRoot: 'algolia-hit-empty'
         }
       }),
 
@@ -96,19 +99,11 @@ const initAlgolia = () => {
       instantsearch.widgets.pagination({
         container: '#algolia-pagination',
         scrollTo: false,
-        showFirstLast: false,
-        labels: {
+        templates: {
           first: '<i class="fa fa-angle-double-left"></i>',
           last: '<i class="fa fa-angle-double-right"></i>',
           previous: '<i class="fa fa-angle-left"></i>',
           next: '<i class="fa fa-angle-right"></i>'
-        },
-        cssClasses: {
-          root: 'pagination',
-          item: 'pagination-item',
-          link: 'page-number',
-          active: 'current',
-          disabled: 'disabled-item'
         }
       })
     ].forEach(search.addWidget, search)
