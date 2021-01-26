@@ -129,7 +129,6 @@
   color: #f00;
 }
 .algolia-stat-root {
-  height: 20px;
   font-weight: lighter;
   color: #aaa;
   padding: {
@@ -144,12 +143,23 @@
 
 .algolia-hit {
   &-list {
-    padding-inline-start: 0px;
+    padding-left: 0;
   }
+
+  &-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4em;
+    &-label {
+      margin-top: 1em;
+    }
+  }
+
   &-item {
     margin: 0;
-    padding: 10px $algolia-search-padding-horiz;
     --border-opacity: 1;
+    padding: 10px $algolia-search-padding-horiz;
     border: {
       bottom: 1px dashed;
       color: rgba(245,245,250,var(--border-opacity));
@@ -176,7 +186,7 @@
 }
 
 // ===== pagination ===== //
-.ais-pagination {
+.ais-Pagination-list {
   display: flex;
   justify-content: center;
   padding: 0;
@@ -184,30 +194,25 @@
   border-top: none;
 }
 
-.ais-pagination--item {
+.ais-Pagination-item {
   a {
     color: $feature-color;
   }
   display: inline-block;
   margin: 0 5px;
-}
 
-.ais-pagination--item__active {
-  a {
-    pointer-events: none;
-    cursor: auto;
-    color: #222;
+  &--active {
+    a {
+      pointer-events: none;
+      cursor: auto;
+      color: #222;
+    }
+  }
+  &--page {
+    border-top: none;
+    &:hover {
+      border-bottom: 1px solid #222;
+    }
   }
 }
 
-.ais-pagination--item__page {
-  border-top: none;
-}
-
-.ais-pagination--item__page:hover {
-  border-bottom: 1px solid #222;
-}
-
-.algolia-pagination .disabled-item {
-  visibility: hidden;
-}
