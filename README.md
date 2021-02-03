@@ -39,7 +39,8 @@ hexo-theme-archer
 - 2018.08.26 - 『添加 i18n 支持』
 - 2020.03.02 - 『添加 Gitalk评论 支持』
 - 2020.03.04 - 『添加 utteranc评论 支持』
-- 2020.01.26 - 『更新使用的 nodejs，以及相关依赖包的版本』 
+- 2020.01.26 - 『更新使用的 nodejs，以及相关依赖包的版本』
+- 2020.02.03 - 『添加“文章时效性”提示』
 
 ## 说明
 
@@ -232,6 +233,8 @@ reading_info: true
 index_intro_height: 50
 post_intro_height: 50
 about_intro_height: 50
+# 超过以下天数，在对应的文章页面提示“注意文章时效性”，0 则不提示
+outdated_threshold: 0
 ```
 
 ## 更新主题
