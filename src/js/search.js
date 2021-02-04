@@ -113,7 +113,7 @@ const initAlgolia = () => {
     $('.popup-trigger').on('click', function(e) {
       e.stopPropagation()
       $('body')
-        .append('<div class="search-popup-overlay algolia-pop-overlay"></div>')
+        .prepend('<div class="search-popup-overlay algolia-pop-overlay"></div>')
         .css('overflow', 'hidden')
       $('.popup').toggle()
       $('#algolia-search-input')
@@ -125,6 +125,14 @@ const initAlgolia = () => {
       $('.popup').hide()
       $('.algolia-pop-overlay').remove()
       $('body').css('overflow', '')
+    })
+
+    $(document).on('keydown', '.ais-SearchBox-form', function(event){
+      if (event.key === "Escape"){
+        $('.popup').hide()
+        $('.algolia-pop-overlay').remove()
+        $('body').css('overflow', '')
+      }
     })
   })
 }
