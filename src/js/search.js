@@ -24,7 +24,9 @@ const initAlgolia = () => {
 
         const container = document.querySelector('.algolia-results');
         container.style.display = helper.state.query === '' ? 'none' : '';
-        helper.search()
+        if (searchInput.val()) {
+          helper.search()
+        }
       },
       stalledSearchDelay: 500
     })
@@ -121,17 +123,20 @@ const initAlgolia = () => {
         .focus()
     })
 
-    $('.popup-btn-close').click(function() {
+    const hidePopup = () => {
+      $('.ais-SearchBox-form').trigger("reset")
       $('.popup').hide()
       $('.algolia-pop-overlay').remove()
       $('body').css('overflow', '')
+    }
+
+    $('.popup-btn-close').click(function() {
+        hidePopup()
     })
 
     $(document).on('keydown', '.ais-SearchBox-form', function(event){
       if (event.key === "Escape"){
-        $('.popup').hide()
-        $('.algolia-pop-overlay').remove()
-        $('body').css('overflow', '')
+        hidePopup()
       }
     })
   })
