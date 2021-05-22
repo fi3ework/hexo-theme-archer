@@ -6,65 +6,67 @@ const gulp = require('gulp'),
 /* ========== develop ========== */
 
 // webpack
-gulp.task('webpack', function (cb) {
+function execWebpack(cb) {
   webpack(require('./webpack.config.js'), function (err) {
     if (err) return cb(err)
     cb()
   })
-})
+}
 
 // sass
-gulp.task('sass', function () {
+function execSass() {
   return gulp.src(['./src/scss/style.scss', './src/scss/mobile.scss'])
     .pipe(sass({
       outputStyle: 'compressed'
     }).on('error', sass.logError))
     .pipe(gulp.dest('./source/css/'))
-})
+}
 
 // browser-sync
 // watch js
-gulp.task('reload-js', ['webpack'], function (done) {
+const reloadJs = gulp.series(execWebpack, function (done) {
   browserSync.reload()
   done()
 })
 // watch sass
-gulp.task('reload-css', ['sass'], function (done) {
+const reloadCss = gulp.series(execSass, function (done) {
   browserSync.reload()
   done()
 })
 // watch layout
-gulp.task('reload-layout', function (done) {
+function reloadLayout(done) {
   browserSync.reload()
   done()
-})
+}
 // watch _config
-gulp.task('reload-config', function (done) {
+function reloadConfig(done) {
   browserSync.reload()
   done()
-})
+}
 
-gulp.task('dev', ['webpack', 'sass'], function () {
+exports.dev = gulp.series(execWebpack, execSass, function (cb) {
   browserSync.init({
     proxy: 'localhost:4000'
   })
-  gulp.watch(['./src/js/**/*.js'], ['reload-js'])
-  gulp.watch(['./src/scss/**/*.scss'], ['reload-css'])
-  gulp.watch(['./layout/**/*.ejs'], ['reload-layout'])
-  gulp.watch(['./_config.yml'], ['reload-config'])
+  gulp.watch(['./src/js/**/*.js'], reloadJs)
+  gulp.watch(['./src/scss/**/*.scss'], reloadCss)
+  gulp.watch(['./layout/**/*.ejs'], reloadLayout)
+  gulp.watch(['./_config.yml'], reloadConfig)
+  cb()
 })
 
 
 /* ========== bulid ========== */
 
 // webpack-prod
-gulp.task('webpack-prod', function (cb) {
+function webpackProd(cb) {
   webpack(require('./webpack.prod.js'), function (err) {
     if (err) return cb(err)
     cb()
   })
-})
+}
 
-gulp.task('build', ['sass', 'webpack-prod'], function () {
+exports.build =  gulp.series(execSass, webpackProd, function (cb) {
+  cb()
   console.log(process.argv)
 })
