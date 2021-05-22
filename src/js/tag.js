@@ -1,7 +1,6 @@
 import archerUtil from './util'
 import sidebar from './initSidebar'
 import Emitter from 'eventemitter3'
-import { isArray } from 'util'
 
 class MetaInfo {
   constructor(metaName, labelsContainer, postContainer) {
@@ -188,7 +187,7 @@ class SidebarMeta {
         let contentJSON
         let posts
         contentJSON = JSON.parse(this.responseText)
-        posts = isArray(contentJSON) ? contentJSON : contentJSON.posts
+        posts = Array.isArray(contentJSON) ? contentJSON : contentJSON.posts
         if (posts && posts.length) {
           that.postsArr = posts
           that.emitter.emit('DATA_FETCHED_SUCCESS')
