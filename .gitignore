@@ -33,3 +33,6 @@ tags
 *.iws
 *.iml
 
+# JS source map file
+*.js.map
+*.js.LICENSE.txt
