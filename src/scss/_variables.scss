@@ -41,7 +41,7 @@ $header-border-top-color: rgba(0, 0, 0, 0.75);
 // ========== profile ========== //
 $profile-width: 200px;
 // ========== index ========== //
-$index-post-link-color: #787878;
+$index-post-link-color: #1f1f1f;
 $index-post-tag-color: #aaa;
 // ========== post ========== //
 $post-content-color: #23394d;
@@ -82,3 +82,7 @@ $code-color-map: (
   $code-theme: 'atom-one-dark';
 }
 $theme-colors: map-get($code-color-map, $code-theme);
+
+// ========== algolia-search ========== //
+$algolia-search-padding-horiz: 20px;
+
