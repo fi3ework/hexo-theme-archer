@@ -67,7 +67,7 @@ jsonContent:
 
 ## 主题配置
 
-假设现在您的博客项目目录目录结构如下：
+现在您的博客项目的目录目录结构应当如下：
 
 ```bash
 . # Hexo 根目录
@@ -85,6 +85,8 @@ jsonContent:
 如果 Hexo 版本 < 2.8.2，请参考 Archer 主题目录下的 `[_config.yml](./_config.yml)` 中的配置，在 Hexo 根目录下的 `_config.yml` 添加相应字段即可进行配置。请注意不要添加重复字段。
 
 您可以在 Hexo 根目录下的 `package.json` 查看您当前使用的 Hexo 版本。
+
+这个[维基页面](https://github.com/fi3ework/hexo-theme-archer/wiki/Archer-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83)包含了主题配置属性的中文参考。
 
 **警告**：不要把自己 api-token 之类的私密信息添加到配置中，更不要推送到公共仓库。
 
