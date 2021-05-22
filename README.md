@@ -14,7 +14,7 @@
 
 ## 说明
 
-由于作者精力有限，不保证此主题能继续维护下去，欢迎您 Fork 👋🏻 本仓库或[申请成为维护者 👩‍🔧](https://github.com/fi3ework/hexo-theme-archer/issues/256)。
+由于作者精力有限，无法保证此主题继续维护，欢迎您 Fork 👋🏻 本仓库或[申请成为维护者 👩‍🔧](https://github.com/fi3ework/hexo-theme-archer/issues/256)。
 
 - 本主题受 [yilia](https://github.com/litten/hexo-theme-yilia) 主题和 [huxpro](https://github.com/Huxpro/huxpro.github.io) 主题的启发，结合了前者的 sidebar 设计及后者的 UI 设计。通过 sidebar 能够快速执行 archive, tag 以及 categories 导航。
 - 兼容性：现代浏览器及 IE10+。
@@ -78,11 +78,11 @@ jsonContent:
 └── _config.yml # Hexo 配置文件
 ```
 
-如果 Hexo 版本 >= 5.0.0，建议首先复制 Archer 主题目录下的 `[_config.yml](./_config.yml)` 到 Hexo 根目录，并命名为 `_config.archer.yml`。接下来修改 Hexo 根目录下的 `_config.archer.yml` 文件即可对主题进行配置。
+如果 Hexo 版本 >= 5.0.0，建议首先复制 Archer 主题目录下的 [`_config.yml`](./_config.yml) 到 Hexo 根目录，并命名为 `_config.archer.yml`。接下来修改 Hexo 根目录下的这个 `_config.archer.yml` 文件即可对主题进行配置。
 
-如果 Hexo 版本 >= 2.8.2，修改 Archer 主题目录下的 `[_config.yml](./_config.yml)` 文件即可对主题进行配置。
+如果 Hexo 版本 >= 2.8.2，修改 Archer 主题目录下的 [`_config.yml`](./_config.yml) 文件即可对主题进行配置。
 
-如果 Hexo 版本 < 2.8.2，请参考 Archer 主题目录下的 `[_config.yml](./_config.yml)` 中的配置，在 Hexo 根目录下的 `_config.yml` 添加相应字段即可进行配置。请注意不要添加重复字段。
+如果 Hexo 版本 < 2.8.2，请参考 Archer 主题目录下的 [`_config.yml`](./_config.yml) 中的配置，在 Hexo 根目录下的 `_config.yml` 添加相应字段即可进行配置。请注意不要添加重复字段。
 
 您可以在 Hexo 根目录下的 `package.json` 查看您当前使用的 Hexo 版本。
 
@@ -148,6 +148,8 @@ jsonContent:
 - 2018.08.26 - 『添加 i18n 支持』
 - 2020.03.02 - 『添加 Gitalk评论 支持』
 - 2020.03.04 - 『添加 utteranc评论 支持』
+- 2021.01.26 - 『更新使用的 nodejs，以及相关依赖包的版本』
+- 2021.02.03 - 『添加“文章时效性”提示』
 
 ## 许可证
 
