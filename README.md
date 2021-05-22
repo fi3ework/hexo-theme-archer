@@ -4,7 +4,7 @@
 
 ## 在线预览
 
-🎯 主题预览：[Demo](http://firework.studio/archer-demo/)。
+🎯 主题预览：[Demo](https://fi3ework.github.io/archer-demo)。
 
 ## 文档
 
