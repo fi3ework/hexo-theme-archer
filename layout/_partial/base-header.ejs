@@ -3,18 +3,21 @@
 <% } else { %>
 <header class="header">
 <% } %>
-    <div class="read-progress"></div>
-    <div class="header-sidebar-menu">&#xe775;</div>
-    <!-- post页的toggle banner  -->
+    <!-- top read progress line -->
+    <div class="read-progress header-element"></div>
+    <!-- sidebar menu button -->
+    <div class="header-sidebar-menu header-element"><i class="fas fa-bars"></i></div>
+    <!-- back to home page text -->
+    <a class="home-link header-element" href=<%- config.root %>><%- theme.main_title || config.title %></a>
+    <!-- toggle banner for post layout -->
     <% if (is_post()) { %>
     <div class="banner">
-            <div class="blog-title">
-                <a href="<%- url_for() %>" ><%= theme.main_title || config.title%></a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name"><%- page.title %></a>
-            </div>
+        <div class="blog-title header-element">
+            <a href="<%- url_for() %>" ><%= theme.main_title || config.title%></a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name"><%- page.title %></a>
+        </div>
     </div>
     <% } %>
-    <a class="home-link" href=<%- config.root %>><%- theme.main_title || config.title %></a>
 </header>

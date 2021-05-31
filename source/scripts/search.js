@@ -94,7 +94,7 @@ var initAlgolia = function initAlgolia() {
         }
       },
       cssClasses: {
-        root: "algolia-stat-root"
+        root: 'algolia-stat-root'
       }
     }), instantsearch.widgets.pagination({
       container: '#algolia-pagination',
@@ -115,7 +115,7 @@ var initAlgolia = function initAlgolia() {
     });
 
     var hidePopup = function hidePopup() {
-      $('.ais-SearchBox-form').trigger("reset");
+      $('.ais-SearchBox-form').trigger('reset');
       $('.popup').hide();
       $('.algolia-pop-overlay').remove();
       $('body').css('overflow', '');
@@ -125,7 +125,7 @@ var initAlgolia = function initAlgolia() {
       hidePopup();
     });
     $(document).on('keydown', '.ais-SearchBox-form', function (event) {
-      if (event.key === "Escape") {
+      if (event.key === 'Escape') {
         hidePopup();
       }
     });

@@ -34,6 +34,10 @@
   .iconfont-archer {
     pointer-events: none;
     transform: translateY(-1rem);
+    -webkit-transform: translateY(-1rem);
+    -moz-transform: translateY(-1rem);
+    -ms-transform: translateY(-1rem);
+    -o-transform: translateY(-1rem);
     font-size: 0.6rem;
     margin: 0 0.3rem 0 0.1rem;
   }

@@ -6,7 +6,8 @@ import InitSidebarLink from './tag'
 import toc from './toc'
 import fancybox from './fancybox'
 
-let logStyle =
+// print custom info
+const logStyle =
   'color: #fff; background: #f75357; padding: 1px; border-radius: 5px;'
 console.info('%c 🎯 hexo-theme-archer ⬇️ ', logStyle)
 console.info('%c 🏷 Version: 1.6.2 ', logStyle)

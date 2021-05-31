@@ -1,5 +1,3 @@
-@import '../_variables.scss';
-
 // ========== main ========== //
 .post-body,
 .about-body {
@@ -32,7 +30,15 @@
 .post-intros {
   opacity: 0;
   transition: all 0.5s ease-out 0.5s;
+  -webkit-transition: all 0.5s ease-out 0.5s;
+  -moz-transition: all 0.5s ease-out 0.5s;
+  -ms-transition: all 0.5s ease-out 0.5s;
+  -o-transition: all 0.5s ease-out 0.5s;
   transform: translate3d(0, -1rem, 0);
+  -webkit-transform: translate3d(0, -1rem, 0);
+  -moz-transform: translate3d(0, -1rem, 0);
+  -ms-transform: translate3d(0, -1rem, 0);
+  -o-transform: translate3d(0, -1rem, 0);
 }
 
 .post-intro-tags {
@@ -73,6 +79,10 @@
 .post-fade-in {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
 }
 
 .post-intro-calander {
@@ -124,6 +134,10 @@
   display: flex;
   opacity: 0;
   transition: all 0.1s ease-in 0s;
+  -webkit-transition: all 0.1s ease-in 0s;
+  -moz-transition: all 0.1s ease-in 0s;
+  -ms-transition: all 0.1s ease-in 0s;
+  -o-transition: all 0.1s ease-in 0s;
 }
 
 .shareList .iconfont-archer {
@@ -156,6 +170,10 @@
   visibility: hidden;
   opacity: 0;
   transition: all 0.1s ease-in 0s;
+  -webkit-transition: all 0.1s ease-in 0s;
+  -moz-transition: all 0.1s ease-in 0s;
+  -ms-transition: all 0.1s ease-in 0s;
+  -o-transition: all 0.1s ease-in 0s;
 }
 
 .share-qr:hover {
@@ -215,13 +233,19 @@
   font-weight: lighter;
   font-weight: 400;
   color: $post-content-color;
+  li {
+    word-wrap: break-all;
+    line-height: 1.625;
+  }
   ul,
   ul li {
     list-style-type: initial;
+    margin-top: 0.25em;
   }
   ol,
   ol li {
     list-style-type: decimal-leading-zero;
+    margin-top: 0.25em;
   }
   @for $i from 1 through 6 {
     h#{$i} {
@@ -308,7 +332,7 @@
   }
   a {
     color: $feature-color;
-    padding: 0 0 0 2px;
+    padding: 0 2px 0 2px;
     word-break: break-all;
     &:hover {
       border-bottom: 1px solid $feature-color;
@@ -347,7 +371,15 @@
   z-index: 9999;
   margin: calc(#{$header-height} + 1rem) 0 0 0;
   transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   transition: transform 0.3s ease-out 0s;
+  -webkit-transition: transform 0.3s ease-out 0s;
+  -moz-transition: transform 0.3s ease-out 0s;
+  -ms-transition: transform 0.3s ease-out 0s;
+  -o-transition: transform 0.3s ease-out 0s;
   .toc-active {
     color: $feature-color;
   }
@@ -378,7 +410,15 @@
 .toc-wrapper {
   & > * {
     transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    -webkit-transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    -moz-transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    -ms-transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    -o-transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     opacity: 1;
   }
   ol {
@@ -398,11 +438,19 @@
 .toc-hide-children {
   & > * {
     transform: translate(-100%, 0);
+    -webkit-transform: translate(-100%, 0);
+    -moz-transform: translate(-100%, 0);
+    -ms-transform: translate(-100%, 0);
+    -o-transform: translate(-100%, 0);
     opacity: 0;
   }
   .toc-catalog {
     display: block;
     transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
     opacity: 1;
   }
 }
@@ -414,6 +462,10 @@
 
 .toc-slide {
   transform: translate3d(400px, 0, 0);
+  -webkit-transform: translate3d(400px, 0, 0);
+  -moz-transform: translate3d(400px, 0, 0);
+  -ms-transform: translate3d(400px, 0, 0);
+  -o-transform: translate3d(400px, 0, 0);
 }
 
 .toc-hide {
