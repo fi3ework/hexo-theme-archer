@@ -1,0 +1,61 @@
+// ========== fixed footer ========== //
+.footer-fixed {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: $footer-fixed-height;
+  overflow: hidden;
+  z-index: 10;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transition: transform 0.3s ease-in 0s;
+  -webkit-transition: transform 0.3s ease-in 0s;
+  -moz-transition: transform 0.3s ease-in 0s;
+  -ms-transition: transform 0.3s ease-in 0s;
+  -o-transition: transform 0.3s ease-in 0s;
+  // Avoid blocking the click events of lower z-index elements
+  // In this case, you should set every other fixed footer element
+  // that clickable `pointer-events: auto;`
+  pointer-events: none;
+}
+
+.footer-fixed-element {
+  pointer-events: auto;
+}
+
+.footer-fixed-sidebar-active {
+  transform: translate3d($sidebar-width, 0, 0);
+  -webkit-transform: translate3d($sidebar-width, 0, 0);
+  -moz-transform: translate3d($sidebar-width, 0, 0);
+  -ms-transform: translate3d($sidebar-width, 0, 0);
+  -o-transform: translate3d($sidebar-width, 0, 0);
+}
+
+// ========== back top ========== //
+.back-top {
+  position: fixed;
+  display: block;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 10;
+  opacity: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  text-align: center;
+  line-height: 1.5rem;
+  border: 2px solid #000;
+  background-color: #fff;
+  cursor: pointer;
+  &:hover {
+    background-color: #000;
+    color: #fff;
+  }
+}
+
+.back-top-show {
+  opacity: 1;
+  pointer-events: initial;
+}

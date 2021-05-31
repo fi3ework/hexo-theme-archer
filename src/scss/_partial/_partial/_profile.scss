@@ -73,6 +73,10 @@
   width: 7rem;
   opacity: 0;
   transition: all 0.1s ease-in 0s;
+  -webkit-transition: all 0.1s ease-in 0s;
+  -moz-transition: all 0.1s ease-in 0s;
+  -ms-transition: all 0.1s ease-in 0s;
+  -o-transition: all 0.1s ease-in 0s;
 }
 
 .friends {
@@ -86,6 +90,9 @@
   }
   a {
     margin-right: 0.6rem;
+    &:hover {
+      color: $feature-color;
+    }
   }
 }
 
@@ -95,5 +102,8 @@
   a {
     font-size: 1.2rem;
     font-weight: bold;
+    &:hover {
+      color: $feature-color;
+    }
   }
 }

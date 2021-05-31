@@ -38,6 +38,7 @@ class Sidebar {
   activateSidebar() {
     $('.wrapper').addClass('wrapper-sidebar-active')
     $('.header').addClass('header-sidebar-active')
+    $('.footer-fixed').addClass('footer-fixed-sidebar-active')
     $('.toc-wrapper').addClass('toc-slide')
     this.$menuButton.addClass('header-sidebar-menu-active')
     this.$sidebar.removeClass('sidebar-hide')
@@ -47,6 +48,7 @@ class Sidebar {
   _inactivateSidebar() {
     $('.wrapper').removeClass('wrapper-sidebar-active')
     $('.header').removeClass('header-sidebar-active')
+    $('.footer-fixed').removeClass('footer-fixed-sidebar-active')
     $('.toc-wrapper').removeClass('toc-slide')
     this.$menuButton.removeClass('header-sidebar-menu-active')
     this.$sidebar.removeClass(`sidebar-active`)
