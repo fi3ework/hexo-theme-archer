@@ -40,8 +40,8 @@
   display: block;
   left: 1rem;
   bottom: 1rem;
-  z-index: 10;
-  opacity: 0;
+  z-index: 21;
+  display: none;
   width: 1.5rem;
   height: 1.5rem;
   text-align: center;
@@ -55,7 +55,33 @@
   }
 }
 
+.back-top-rounded {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translate(0, -50%);
+  color: #333333;
+  background-color: rgba(255, 255, 255, 0.6);
+  width: 2.7rem;
+  height: 2.7rem;
+  line-height: 2.7rem;
+  font-family: 'iconfont-archer';
+  text-align: center;
+  z-index: 21;
+  cursor: pointer;
+  display: none;
+  border: unset;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  &:hover {
+    color: #fff;
+  }
+}
+
 .back-top-show {
-  opacity: 1;
+  display: unset;
   pointer-events: initial;
 }

@@ -54,6 +54,10 @@
   z-index: 99999;
 }
 
+.read-progress-feature {
+  background-color: $feature-color;
+}
+
 // ========== header toggle (only take effect in post page) ========== //
 // banner
 .banner {
@@ -73,6 +77,11 @@
   -moz-transition: transform 0.3s ease-out 0s;
   -ms-transition: transform 0.3s ease-out 0s;
   -o-transition: transform 0.3s ease-out 0s;
+}
+
+.banner-clean {
+  border-bottom: unset;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .banner-show {
@@ -157,6 +166,31 @@
     -moz-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     -o-transform: translate(0, -50%);
+  }
+}
+
+.header-sidebar-menu-rounded {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 1rem;
+  color: #fff;
+  width: 2.7rem;
+  height: 2.7rem;
+  line-height: 2.7rem;
+  font-family: 'iconfont-archer';
+  text-align: center;
+  z-index: 21;
+  cursor: pointer;
+  border: unset;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  &:hover {
+    background-color: transparent;
+    color: $feature-color;
   }
 }
 
