@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "gulp dev",
     "build": "gulp build --option",
-    "prettier": "prettier --write './src/**/*.*'"
+    "prettier": "prettier --write src"
   },
   "author": "fi3ework",
   "license": "MIT",

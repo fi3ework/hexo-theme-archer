@@ -1,12 +1,12 @@
 import PerfectScrollbar from 'perfect-scrollbar'
 
-const Selector = classPrefix => ({
-  ACTIVE: `${classPrefix}-active`
+const Selector = (classPrefix) => ({
+  ACTIVE: `${classPrefix}-active`,
 })
 
 class Sidebar {
   static defaultOptions = {
-    activeIndex: 0
+    activeIndex: 0,
   }
   constructor(options) {
     this.options = { ...Sidebar.defaultOptions, ...options }
@@ -67,7 +67,7 @@ class Sidebar {
   }
 
   _bindWrapperTransitionEnd() {
-    $('.wrapper').on('transitionend', e => {
+    $('.wrapper').on('transitionend', (e) => {
       if (!this.$sidebar.hasClass('sidebar-active')) {
         this.$sidebar.addClass('sidebar-hide')
       }
@@ -90,14 +90,14 @@ class Sidebar {
   }
 
   _bindTabsClick() {
-    this.$tabs.click(e => {
+    this.$tabs.click((e) => {
       const $target = $(e.target)
       this.switchTo($target.data('tabIndex'))
     })
   }
 
   _bindButtonClick() {
-    this.$menuButton.click(e => {
+    this.$menuButton.click((e) => {
       if (this.$sidebar.hasClass('sidebar-hide')) {
         this.activateSidebar()
       } else {
@@ -107,7 +107,7 @@ class Sidebar {
   }
 
   _bindWrapperClick() {
-    $('.wrapper').click(e => {
+    $('.wrapper').click((e) => {
       this._inactivateSidebar()
     })
   }
@@ -115,7 +115,7 @@ class Sidebar {
   // 阻止sidebarContent在滚动到顶部或底部时继续滚动
   perfectScrollbar() {
     const ps = new PerfectScrollbar('.sidebar', {
-      suppressScrollX: true
+      suppressScrollX: true,
     })
   }
 }
