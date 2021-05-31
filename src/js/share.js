@@ -11,9 +11,8 @@ function initQR(sURL) {
   let qr = qrcode(typeNumber, errorCorrectionLevel)
   qr.addData(sURL)
   qr.make()
-  document.getElementsByClassName(
-    'share-qrcode'
-  )[0].innerHTML = qr.createImgTag()
+  document.getElementsByClassName('share-qrcode')[0].innerHTML =
+    qr.createImgTag()
 }
 
 function generate(templateURL, param) {
@@ -70,7 +69,7 @@ function init() {
     sTitle,
     sImg,
     sDesc,
-    sAuthor
+    sAuthor,
   }
 
   let shareWrapper = document.querySelector('.shareList')
@@ -78,7 +77,7 @@ function init() {
     return
   }
   initQR(sURL)
-  shareWrapper.addEventListener('click', function(e) {
+  shareWrapper.addEventListener('click', function (e) {
     if (!e.target.getAttribute('data-type')) {
       return
     }

@@ -1,6 +1,6 @@
 import archerUtil from './util'
 
-let scroll = function() {
+let scroll = function () {
   let $banner = $('.banner:first'),
     $postBanner = $banner.find('.post-title a'),
     $bgEle = $('.site-intro:first'),
@@ -13,7 +13,7 @@ let scroll = function() {
     $progressBar = $('.read-progress')
 
   // toc的收缩
-  $tocCatalog.on('click', function() {
+  $tocCatalog.on('click', function () {
     $tocWrapper.toggleClass('toc-hide-children')
   })
 
@@ -130,7 +130,7 @@ let scroll = function() {
   $(document).on('scroll', onScroll)
 
   // 返回顶部
-  ;[$postBanner, $backTop].forEach(function(ele) {
+  ;[$postBanner, $backTop].forEach(function (ele) {
     ele.on('click', archerUtil.backTop)
   })
 }

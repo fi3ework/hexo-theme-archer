@@ -1,4 +1,4 @@
-let initMobile = function() {
+let initMobile = function () {
   if (window.matchMedia) {
     let mql = window.matchMedia('(max-width: 980px)')
     mql.addListener(mediaChangeHandler)
@@ -6,7 +6,7 @@ let initMobile = function() {
   } else {
     window.addListener(
       'resize',
-      function() {
+      function () {
         let innerWidth =
           window.innerWidth ||
           document.documentElement.clientWidth ||
@@ -14,10 +14,10 @@ let initMobile = function() {
         mediaChangeHandler(
           innerWidth > 900
             ? {
-                matches: false
+                matches: false,
               }
             : {
-                matches: true
+                matches: true,
               }
         )
       },

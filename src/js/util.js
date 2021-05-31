@@ -1,8 +1,8 @@
 let archerUtil = {
   // 回到顶部
-  backTop: function(event) {
+  backTop: function (event) {
     event.preventDefault()
-    let topTimer = setInterval(function() {
+    let topTimer = setInterval(function () {
       let currTop = $(document).scrollTop()
       window.scrollTo(0, Math.max(Math.floor(currTop * 0.8)))
       if (currTop === 0) {
@@ -12,7 +12,7 @@ let archerUtil = {
   },
 
   // 获取元素在页面上相对左上角的位置
-  getAbsPosition: function(e) {
+  getAbsPosition: function (e) {
     let x = e.offsetLeft,
       y = e.offsetTop
     while ((e = e.offsetParent)) {
@@ -21,12 +21,12 @@ let archerUtil = {
     }
     return {
       x: x,
-      y: y
+      y: y,
     }
   },
 
   // 格式化日期
-  dateFormater: function(date, fmt) {
+  dateFormater: function (date, fmt) {
     let o = {
       'M+': date.getMonth() + 1, // 月份
       'd+': date.getDate(), // 日
@@ -34,7 +34,7 @@ let archerUtil = {
       'm+': date.getMinutes(), // 分
       's+': date.getSeconds(), // 秒
       'q+': Math.floor((date.getMonth() + 3) / 3), // 季度
-      S: date.getMilliseconds() // 毫秒
+      S: date.getMilliseconds(), // 毫秒
     }
     if (/(y+)/.test(fmt)) {
       fmt = fmt.replace(
@@ -56,12 +56,12 @@ let archerUtil = {
   },
 
   // rAF的ticking
-  rafTick: function(ticking, updateFunc) {
+  rafTick: function (ticking, updateFunc) {
     if (!ticking) {
       requestAnimationFrame(updateFunc)
     }
     ticking = true
-  }
+  },
 }
 
 export default archerUtil
