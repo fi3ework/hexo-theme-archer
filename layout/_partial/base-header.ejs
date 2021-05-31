@@ -4,14 +4,32 @@
 <header class="header">
 <% } %>
     <!-- top read progress line -->
-    <div class="read-progress header-element"></div>
+    <div class="header-element">
+        <% if(theme.read_progress_color === 'feature') { %>
+        <div class="read-progress read-progress-feature"></div>
+        <% } else { %>
+        <div class="read-progress"></div>
+        <% } %>
+    </div>
     <!-- sidebar menu button -->
-    <div class="header-sidebar-menu header-element"><i class="fas fa-bars"></i></div>
+    <div class="header-element">
+        <% if(theme.float_button_theme === 'rounded') { %>
+        <div class="header-sidebar-menu header-sidebar-menu-rounded">
+        <% } else { %>
+        <div class="header-sidebar-menu">
+        <% } %>
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
     <!-- back to home page text -->
     <a class="home-link header-element" href=<%- config.root %>><%- theme.main_title || config.title %></a>
     <!-- toggle banner for post layout -->
     <% if (is_post()) { %>
+    <% if(theme.post_banner_theme === 'clean') { %>
+    <div class="banner banner-clean">
+    <% } else { %>
     <div class="banner">
+    <% } %>
         <div class="blog-title header-element">
             <a href="<%- url_for() %>" ><%= theme.main_title || config.title%></a>
         </div>
