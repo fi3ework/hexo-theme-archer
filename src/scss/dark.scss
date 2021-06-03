@@ -9,23 +9,26 @@
     background-color: $body-background-dark-color;
   }
 
+	.profile-name {
+		color: #ddd !important;
+	}
+
   .wrapper {
     box-shadow: -3px 0 2px 0 rgba(255, 255, 255, 0.6) !important;
   }
 
   .back-top {
-    border: 2px solid #fff;
-    background-color: rgba(18, 18, 18, 0.8);
-    cursor: pointer;
-    color: #fff;
+    border: 2px solid #fff !important;
+    background-color: rgba(18, 18, 18, 0.8) !important;
+    color: #fff !important;
     &:hover {
-      background-color: #fff;
-      color: #121212;
+      background-color: #fff !important;
+      color: #121212 !important;
     }
   }
 
   .note-warning {
-    background-color: #222;
+    background-color: #222 !important;
   }
 
   .abstract-title {
