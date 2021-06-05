@@ -4,6 +4,7 @@ $feature-color: #f75357;
 $code-theme: 'atom-one-dark'; // atom-one-dark or atom-one-light
 // ========== global variables ========== //
 $body-background-color: #fff;
+$body-background-dark-color: #121212; // dark mode color
 $base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial,
   'PingFang SC', 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei',
   'Microsoft JhengHei', 'Source Han Sans SC', 'Noto Sans CJK SC',
@@ -42,9 +43,11 @@ $header-border-top-color: rgba(0, 0, 0, 0.75);
 $profile-width: 200px;
 // ========== index ========== //
 $index-post-link-color: #1f1f1f;
+$index-post-link-dark-color: #ccc;
 $index-post-tag-color: #aaa;
 // ========== post ========== //
 $post-content-color: #23394d;
+$post-content-dark-color: #dfcbb9;
 // ========== social ========== //
 $social-iconfont-color: #777;
 // ========== code ========== //
