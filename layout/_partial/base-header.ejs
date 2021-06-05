@@ -18,7 +18,11 @@
         <% } else { %>
         <div class="header-sidebar-menu">
         <% } %>
+            <% if(theme.float_button_theme === 'rounded') { %>
             <i class="fas fa-bars"></i>
+            <% } else { %>
+            <div style="padding-left: 1px;">&#xe775;</div>
+            <% } %>
         </div>
     </div>
     <!-- back to home page text -->

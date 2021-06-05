@@ -155,7 +155,7 @@
   font-family: 'iconfont-archer';
   color: #fff;
   text-align: center;
-  line-height: 1.5rem;
+  line-height: 1.7rem;
   z-index: 21;
   cursor: pointer;
   &:hover {
@@ -170,18 +170,11 @@
 }
 
 .header-sidebar-menu-rounded {
-  position: absolute;
-  top: 50%;
+  font-family: unset;
   transform: translate(0, -50%);
-  left: 1rem;
-  color: #fff;
   width: 2.7rem;
   height: 2.7rem;
-  line-height: 2.7rem;
-  font-family: 'iconfont-archer';
-  text-align: center;
-  z-index: 21;
-  cursor: pointer;
+  line-height: 2.8rem;
   border: unset;
   border-radius: 50%;
   -webkit-border-radius: 50%;

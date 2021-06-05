@@ -10,7 +10,11 @@
         <% } else { %>
         <div class="back-top">
         <% } %>
+            <% if(theme.float_button_theme === 'rounded') { %>
             <i class="fas fa-chevron-up"></i>
+            <% } else { %>
+            <div>&#xe639;</div>
+            <% } %>
         </div>
     </div>
 </footer>

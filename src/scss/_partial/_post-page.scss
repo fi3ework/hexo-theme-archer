@@ -363,10 +363,11 @@
 .toc-wrapper {
   display: block;
   position: absolute;
+  max-height: 80vh;
+  overflow: auto;
   top: 50vh;
   width: 22%;
   right: 1%;
-  overflow: hidden;
   max-width: calc((100% - 42.8125rem - 4rem) / 2);
   z-index: 9999;
   margin: calc(#{$header-height} + 1rem) 0 0 0;
@@ -383,10 +384,17 @@
   .toc-active {
     color: $feature-color;
   }
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .toc-catalog {
+  position: sticky;
+  top: 0;
   color: #bbb;
+  background-color: #fff;
+  z-index: 2;
   cursor: pointer;
   user-select: none;
   font: bolder 1.2rem $feature-font-family;
@@ -405,6 +413,8 @@
 .toc-child {
   padding-left: 0;
   margin: 0 0 0 0;
+  padding-top: 2px;
+  z-index: 1;
 }
 
 .toc-wrapper {
@@ -470,4 +480,8 @@
 
 .toc-hide {
   display: none;
+}
+
+.toc-item {
+  margin-bottom: 2px;
 }
