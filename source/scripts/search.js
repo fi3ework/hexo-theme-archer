@@ -1,4 +1,26 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
 /******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/js/search.js":
+/*!**************************!*\
+  !*** ./src/js/search.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("// special thanks to https://blog.naaln.com/2016/07/hexo-with-algolia/\nvar initAlgolia = function initAlgolia() {\n  $(document).ready(function () {\n    var algoliaSettings = algolia;\n    var isAlgoliaSettingsValid = algoliaSettings.appId && algoliaSettings.apiKey && algoliaSettings.indexName;\n\n    if (!isAlgoliaSettingsValid) {\n      window.console.error('Algolia Settings are invalid.');\n      return;\n    }\n\n    var algoliasearch = __webpack_require__(Object(function webpackMissingModule() { var e = new Error(\"Cannot find module 'algoliasearch'\"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));\n\n    var searchClient = algoliasearch(algoliaSettings.appId, algoliaSettings.apiKey);\n    var search = instantsearch({\n      indexName: algoliaSettings.indexName,\n      searchClient: searchClient,\n      searchFunction: function searchFunction(helper) {\n        var searchInput = $('#algolia-search-input').find('input');\n        var container = document.querySelector('.algolia-results');\n        container.style.display = helper.state.query === '' ? 'none' : '';\n\n        if (searchInput.val()) {\n          helper.search();\n        }\n      },\n      stalledSearchDelay: 500\n    }) // Registering Widgets\n    ;\n    [instantsearch.widgets.searchBox({\n      container: '#algolia-search-input',\n      placeholder: algoliaSettings.labels.input_placeholder,\n      showSubmit: false,\n      showReset: false,\n      showLoadingIndicator: false\n    }), instantsearch.widgets.hits({\n      container: '#algolia-hits',\n      hitsPerPage: algoliaSettings.hits.per_page || 10,\n      templates: {\n        item: function item(data) {\n          var link = data.permalink ? data.permalink : siteMeta.root + data.path;\n          return '<a href=\"' + link + '\" class=\"algolia-hit-item-link\">' + instantsearch.highlight({\n            attribute: 'title',\n            hit: data,\n            highlightedTagName: 'em'\n          }) + '</a>';\n        },\n        empty: function empty(data) {\n          return '<i class=\"fas fa-drafting-compass fa-10x\"></i>' + '<div class=\"algolia-hit-empty-label\">' + algoliaSettings.labels.hits_empty.replace(/\\$\\{query\\}/, data.query) + '</div>';\n        }\n      },\n      cssClasses: {\n        item: 'algolia-hit-item',\n        list: 'algolia-hit-list',\n        root: 'algolia-hit',\n        emptyRoot: 'algolia-hit-empty'\n      }\n    }), instantsearch.widgets.stats({\n      container: '#algolia-stats',\n      templates: {\n        text: function text(data) {\n          var stats = algoliaSettings.labels.hits_stats.replace(/\\$\\{hits\\}/, data.nbHits).replace(/\\$\\{time\\}/, data.processingTimeMS);\n          return stats + '<span class=\"algolia-powered\">' + '  <img src=\"' + siteMeta.root + 'assets/algolia_logo.svg\" alt=\"Algolia\" />' + '</span>' + '<hr />';\n        }\n      },\n      cssClasses: {\n        root: 'algolia-stat-root'\n      }\n    }), instantsearch.widgets.pagination({\n      container: '#algolia-pagination',\n      scrollTo: false,\n      templates: {\n        first: '<i class=\"fa fa-angle-double-left\"></i>',\n        last: '<i class=\"fa fa-angle-double-right\"></i>',\n        previous: '<i class=\"fa fa-angle-left\"></i>',\n        next: '<i class=\"fa fa-angle-right\"></i>'\n      }\n    })].forEach(search.addWidget, search);\n    search.start();\n    $('.popup-trigger').on('click', function (e) {\n      e.stopPropagation();\n      $('body').prepend('<div class=\"search-popup-overlay algolia-pop-overlay\"></div>').css('overflow', 'hidden');\n      $('.popup').toggle();\n      $('#algolia-search-input').find('input').focus();\n    });\n\n    var hidePopup = function hidePopup() {\n      $('.ais-SearchBox-form').trigger('reset');\n      $('.popup').hide();\n      $('.algolia-pop-overlay').remove();\n      $('body').css('overflow', '');\n    };\n\n    $('.popup-btn-close').click(function () {\n      hidePopup();\n    });\n    $(document).on('keydown', '.ais-SearchBox-form', function (event) {\n      if (event.key === 'Escape') {\n        hidePopup();\n      }\n    });\n  });\n};\n\ninitAlgolia();//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9zcmMvanMvc2VhcmNoLmpzLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vaGV4by10aGVtZS1hcmNoZXIvLi9zcmMvanMvc2VhcmNoLmpzPzgwZTQiXSwic291cmNlc0NvbnRlbnQiOlsiLy8gc3BlY2lhbCB0aGFua3MgdG8gaHR0cHM6Ly9ibG9nLm5hYWxuLmNvbS8yMDE2LzA3L2hleG8td2l0aC1hbGdvbGlhL1xuXG5jb25zdCBpbml0QWxnb2xpYSA9ICgpID0+IHtcbiAgJChkb2N1bWVudCkucmVhZHkoZnVuY3Rpb24gKCkge1xuICAgIGxldCBhbGdvbGlhU2V0dGluZ3MgPSBhbGdvbGlhXG4gICAgbGV0IGlzQWxnb2xpYVNldHRpbmdzVmFsaWQgPVxuICAgICAgYWxnb2xpYVNldHRpbmdzLmFwcElkICYmXG4gICAgICBhbGdvbGlhU2V0dGluZ3MuYXBpS2V5ICYmXG4gICAgICBhbGdvbGlhU2V0dGluZ3MuaW5kZXhOYW1lXG5cbiAgICBpZiAoIWlzQWxnb2xpYVNldHRpbmdzVmFsaWQpIHtcbiAgICAgIHdpbmRvdy5jb25zb2xlLmVycm9yKCdBbGdvbGlhIFNldHRpbmdzIGFyZSBpbnZhbGlkLicpXG4gICAgICByZXR1cm5cbiAgICB9XG5cbiAgICBjb25zdCBhbGdvbGlhc2VhcmNoID0gcmVxdWlyZSgnYWxnb2xpYXNlYXJjaCcpXG4gICAgY29uc3Qgc2VhcmNoQ2xpZW50ID0gYWxnb2xpYXNlYXJjaChcbiAgICAgIGFsZ29saWFTZXR0aW5ncy5hcHBJZCxcbiAgICAgIGFsZ29saWFTZXR0aW5ncy5hcGlLZXlcbiAgICApXG5cbiAgICBsZXQgc2VhcmNoID0gaW5zdGFudHNlYXJjaCh7XG4gICAgICBpbmRleE5hbWU6IGFsZ29saWFTZXR0aW5ncy5pbmRleE5hbWUsXG4gICAgICBzZWFyY2hDbGllbnQsXG4gICAgICBzZWFyY2hGdW5jdGlvbjogZnVuY3Rpb24gKGhlbHBlcikge1xuICAgICAgICBsZXQgc2VhcmNoSW5wdXQgPSAkKCcjYWxnb2xpYS1zZWFyY2gtaW5wdXQnKS5maW5kKCdpbnB1dCcpXG5cbiAgICAgICAgY29uc3QgY29udGFpbmVyID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcignLmFsZ29saWEtcmVzdWx0cycpXG4gICAgICAgIGNvbnRhaW5lci5zdHlsZS5kaXNwbGF5ID0gaGVscGVyLnN0YXRlLnF1ZXJ5ID09PSAnJyA/ICdub25lJyA6ICcnXG4gICAgICAgIGlmIChzZWFyY2hJbnB1dC52YWwoKSkge1xuICAgICAgICAgIGhlbHBlci5zZWFyY2goKVxuICAgICAgICB9XG4gICAgICB9LFxuICAgICAgc3RhbGxlZFNlYXJjaERlbGF5OiA1MDAsXG4gICAgfSlcblxuICAgIC8vIFJlZ2lzdGVyaW5nIFdpZGdldHNcbiAgICA7W1xuICAgICAgaW5zdGFudHNlYXJjaC53aWRnZXRzLnNlYXJjaEJveCh7XG4gICAgICAgIGNvbnRhaW5lcjogJyNhbGdvbGlhLXNlYXJjaC1pbnB1dCcsXG4gICAgICAgIHBsYWNlaG9sZGVyOiBhbGdvbGlhU2V0dGluZ3MubGFiZWxzLmlucHV0X3BsYWNlaG9sZGVyLFxuICAgICAgICBzaG93U3VibWl0OiBmYWxzZSxcbiAgICAgICAgc2hvd1Jlc2V0OiBmYWxzZSxcbiAgICAgICAgc2hvd0xvYWRpbmdJbmRpY2F0b3I6IGZhbHNlLFxuICAgICAgfSksXG5cbiAgICAgIGluc3RhbnRzZWFyY2gud2lkZ2V0cy5oaXRzKHtcbiAgICAgICAgY29udGFpbmVyOiAnI2FsZ29saWEtaGl0cycsXG4gICAgICAgIGhpdHNQZXJQYWdlOiBhbGdvbGlhU2V0dGluZ3MuaGl0cy5wZXJfcGFnZSB8fCAxMCxcbiAgICAgICAgdGVtcGxhdGVzOiB7XG4gICAgICAgICAgaXRlbTogZnVuY3Rpb24gKGRhdGEpIHtcbiAgICAgICAgICAgIGxldCBsaW5rID0gZGF0YS5wZXJtYWxpbmtcbiAgICAgICAgICAgICAgPyBkYXRhLnBlcm1hbGlua1xuICAgICAgICAgICAgICA6IHNpdGVNZXRhLnJvb3QgKyBkYXRhLnBhdGhcbiAgICAgICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICAgICc8YSBocmVmPVwiJyArXG4gICAgICAgICAgICAgIGxpbmsgK1xuICAgICAgICAgICAgICAnXCIgY2xhc3M9XCJhbGdvbGlhLWhpdC1pdGVtLWxpbmtcIj4nICtcbiAgICAgICAgICAgICAgaW5zdGFudHNlYXJjaC5oaWdobGlnaHQoe1xuICAgICAgICAgICAgICAgIGF0dHJpYnV0ZTogJ3RpdGxlJyxcbiAgICAgICAgICAgICAgICBoaXQ6IGRhdGEsXG4gICAgICAgICAgICAgICAgaGlnaGxpZ2h0ZWRUYWdOYW1lOiAnZW0nLFxuICAgICAgICAgICAgICB9KSArXG4gICAgICAgICAgICAgICc8L2E+J1xuICAgICAgICAgICAgKVxuICAgICAgICAgIH0sXG4gICAgICAgICAgZW1wdHk6IGZ1bmN0aW9uIChkYXRhKSB7XG4gICAgICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgICAnPGkgY2xhc3M9XCJmYXMgZmEtZHJhZnRpbmctY29tcGFzcyBmYS0xMHhcIj48L2k+JyArXG4gICAgICAgICAgICAgICc8ZGl2IGNsYXNzPVwiYWxnb2xpYS1oaXQtZW1wdHktbGFiZWxcIj4nICtcbiAgICAgICAgICAgICAgYWxnb2xpYVNldHRpbmdzLmxhYmVscy5oaXRzX2VtcHR5LnJlcGxhY2UoXG4gICAgICAgICAgICAgICAgL1xcJFxce3F1ZXJ5XFx9LyxcbiAgICAgICAgICAgICAgICBkYXRhLnF1ZXJ5XG4gICAgICAgICAgICAgICkgK1xuICAgICAgICAgICAgICAnPC9kaXY+J1xuICAgICAgICAgICAgKVxuICAgICAgICAgIH0sXG4gICAgICAgIH0sXG4gICAgICAgIGNzc0NsYXNzZXM6IHtcbiAgICAgICAgICBpdGVtOiAnYWxnb2xpYS1oaXQtaXRlbScsXG4gICAgICAgICAgbGlzdDogJ2FsZ29saWEtaGl0LWxpc3QnLFxuICAgICAgICAgIHJvb3Q6ICdhbGdvbGlhLWhpdCcsXG4gICAgICAgICAgZW1wdHlSb290OiAnYWxnb2xpYS1oaXQtZW1wdHknLFxuICAgICAgICB9LFxuICAgICAgfSksXG5cbiAgICAgIGluc3RhbnRzZWFyY2gud2lkZ2V0cy5zdGF0cyh7XG4gICAgICAgIGNvbnRhaW5lcjogJyNhbGdvbGlhLXN0YXRzJyxcbiAgICAgICAgdGVtcGxhdGVzOiB7XG4gICAgICAgICAgdGV4dDogZnVuY3Rpb24gKGRhdGEpIHtcbiAgICAgICAgICAgIGxldCBzdGF0cyA9IGFsZ29saWFTZXR0aW5ncy5sYWJlbHMuaGl0c19zdGF0c1xuICAgICAgICAgICAgICAucmVwbGFjZSgvXFwkXFx7aGl0c1xcfS8sIGRhdGEubmJIaXRzKVxuICAgICAgICAgICAgICAucmVwbGFjZSgvXFwkXFx7dGltZVxcfS8sIGRhdGEucHJvY2Vzc2luZ1RpbWVNUylcbiAgICAgICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICAgIHN0YXRzICtcbiAgICAgICAgICAgICAgJzxzcGFuIGNsYXNzPVwiYWxnb2xpYS1wb3dlcmVkXCI+JyArXG4gICAgICAgICAgICAgICcgIDxpbWcgc3JjPVwiJyArXG4gICAgICAgICAgICAgIHNpdGVNZXRhLnJvb3QgK1xuICAgICAgICAgICAgICAnYXNzZXRzL2FsZ29saWFfbG9nby5zdmdcIiBhbHQ9XCJBbGdvbGlhXCIgLz4nICtcbiAgICAgICAgICAgICAgJzwvc3Bhbj4nICtcbiAgICAgICAgICAgICAgJzxociAvPidcbiAgICAgICAgICAgIClcbiAgICAgICAgICB9LFxuICAgICAgICB9LFxuICAgICAgICBjc3NDbGFzc2VzOiB7XG4gICAgICAgICAgcm9vdDogJ2FsZ29saWEtc3RhdC1yb290JyxcbiAgICAgICAgfSxcbiAgICAgIH0pLFxuXG4gICAgICBpbnN0YW50c2VhcmNoLndpZGdldHMucGFnaW5hdGlvbih7XG4gICAgICAgIGNvbnRhaW5lcjogJyNhbGdvbGlhLXBhZ2luYXRpb24nLFxuICAgICAgICBzY3JvbGxUbzogZmFsc2UsXG4gICAgICAgIHRlbXBsYXRlczoge1xuICAgICAgICAgIGZpcnN0OiAnPGkgY2xhc3M9XCJmYSBmYS1hbmdsZS1kb3VibGUtbGVmdFwiPjwvaT4nLFxuICAgICAgICAgIGxhc3Q6ICc8aSBjbGFzcz1cImZhIGZhLWFuZ2xlLWRvdWJsZS1yaWdodFwiPjwvaT4nLFxuICAgICAgICAgIHByZXZpb3VzOiAnPGkgY2xhc3M9XCJmYSBmYS1hbmdsZS1sZWZ0XCI+PC9pPicsXG4gICAgICAgICAgbmV4dDogJzxpIGNsYXNzPVwiZmEgZmEtYW5nbGUtcmlnaHRcIj48L2k+JyxcbiAgICAgICAgfSxcbiAgICAgIH0pLFxuICAgIF0uZm9yRWFjaChzZWFyY2guYWRkV2lkZ2V0LCBzZWFyY2gpXG5cbiAgICBzZWFyY2guc3RhcnQoKVxuXG4gICAgJCgnLnBvcHVwLXRyaWdnZXInKS5vbignY2xpY2snLCBmdW5jdGlvbiAoZSkge1xuICAgICAgZS5zdG9wUHJvcGFnYXRpb24oKVxuICAgICAgJCgnYm9keScpXG4gICAgICAgIC5wcmVwZW5kKCc8ZGl2IGNsYXNzPVwic2VhcmNoLXBvcHVwLW92ZXJsYXkgYWxnb2xpYS1wb3Atb3ZlcmxheVwiPjwvZGl2PicpXG4gICAgICAgIC5jc3MoJ292ZXJmbG93JywgJ2hpZGRlbicpXG4gICAgICAkKCcucG9wdXAnKS50b2dnbGUoKVxuICAgICAgJCgnI2FsZ29saWEtc2VhcmNoLWlucHV0JykuZmluZCgnaW5wdXQnKS5mb2N1cygpXG4gICAgfSlcblxuICAgIGNvbnN0IGhpZGVQb3B1cCA9ICgpID0+IHtcbiAgICAgICQoJy5haXMtU2VhcmNoQm94LWZvcm0nKS50cmlnZ2VyKCdyZXNldCcpXG4gICAgICAkKCcucG9wdXAnKS5oaWRlKClcbiAgICAgICQoJy5hbGdvbGlhLXBvcC1vdmVybGF5JykucmVtb3ZlKClcbiAgICAgICQoJ2JvZHknKS5jc3MoJ292ZXJmbG93JywgJycpXG4gICAgfVxuXG4gICAgJCgnLnBvcHVwLWJ0bi1jbG9zZScpLmNsaWNrKGZ1bmN0aW9uICgpIHtcbiAgICAgIGhpZGVQb3B1cCgpXG4gICAgfSlcblxuICAgICQoZG9jdW1lbnQpLm9uKCdrZXlkb3duJywgJy5haXMtU2VhcmNoQm94LWZvcm0nLCBmdW5jdGlvbiAoZXZlbnQpIHtcbiAgICAgIGlmIChldmVudC5rZXkgPT09ICdFc2NhcGUnKSB7XG4gICAgICAgIGhpZGVQb3B1cCgpXG4gICAgICB9XG4gICAgfSlcbiAgfSlcbn1cblxuaW5pdEFsZ29saWEoKVxuIl0sIm1hcHBpbmdzIjoiQUFBQTtBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFJQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUFBO0FBS0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUVBO0FBQ0E7QUFDQTtBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFaQTtBQUFBO0FBZ0JBO0FBRUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUxBO0FBU0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUdBO0FBS0E7QUFDQTtBQUNBO0FBSEE7QUFPQTtBQUNBO0FBQ0E7QUFTQTtBQTNCQTtBQTZCQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBSkE7QUFoQ0E7QUF5Q0E7QUFDQTtBQUNBO0FBQ0E7QUFHQTtBQVNBO0FBZEE7QUFnQkE7QUFDQTtBQURBO0FBbEJBO0FBd0JBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBSkE7QUFIQTtBQVlBO0FBRUE7QUFDQTtBQUNBO0FBR0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/js/search.js\n");
+
+/***/ })
+
+/******/ 	});
+/************************************************************************/
 /******/ 	// The module cache
 /******/ 	var __webpack_module_cache__ = {};
 /******/ 	
@@ -24,114 +46,11 @@
 /******/ 	}
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-/*!**************************!*\
-  !*** ./src/js/search.js ***!
-  \**************************/
-// special thanks to https://blog.naaln.com/2016/07/hexo-with-algolia/
-var initAlgolia = function initAlgolia() {
-  $(document).ready(function () {
-    var algoliaSettings = algolia;
-    var isAlgoliaSettingsValid = algoliaSettings.appId && algoliaSettings.apiKey && algoliaSettings.indexName;
-
-    if (!isAlgoliaSettingsValid) {
-      window.console.error('Algolia Settings are invalid.');
-      return;
-    }
-
-    var algoliasearch = __webpack_require__(Object(function webpackMissingModule() { var e = new Error("Cannot find module 'algoliasearch'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-    var searchClient = algoliasearch(algoliaSettings.appId, algoliaSettings.apiKey);
-    var search = instantsearch({
-      indexName: algoliaSettings.indexName,
-      searchClient: searchClient,
-      searchFunction: function searchFunction(helper) {
-        var searchInput = $('#algolia-search-input').find('input');
-        var container = document.querySelector('.algolia-results');
-        container.style.display = helper.state.query === '' ? 'none' : '';
-
-        if (searchInput.val()) {
-          helper.search();
-        }
-      },
-      stalledSearchDelay: 500
-    }) // Registering Widgets
-    ;
-    [instantsearch.widgets.searchBox({
-      container: '#algolia-search-input',
-      placeholder: algoliaSettings.labels.input_placeholder,
-      showSubmit: false,
-      showReset: false,
-      showLoadingIndicator: false
-    }), instantsearch.widgets.hits({
-      container: '#algolia-hits',
-      hitsPerPage: algoliaSettings.hits.per_page || 10,
-      templates: {
-        item: function item(data) {
-          var link = data.permalink ? data.permalink : siteMeta.root + data.path;
-          return '<a href="' + link + '" class="algolia-hit-item-link">' + instantsearch.highlight({
-            attribute: 'title',
-            hit: data,
-            highlightedTagName: 'em'
-          }) + '</a>';
-        },
-        empty: function empty(data) {
-          return '<i class="fas fa-drafting-compass fa-10x"></i>' + '<div class="algolia-hit-empty-label">' + algoliaSettings.labels.hits_empty.replace(/\$\{query\}/, data.query) + '</div>';
-        }
-      },
-      cssClasses: {
-        item: 'algolia-hit-item',
-        list: 'algolia-hit-list',
-        root: 'algolia-hit',
-        emptyRoot: 'algolia-hit-empty'
-      }
-    }), instantsearch.widgets.stats({
-      container: '#algolia-stats',
-      templates: {
-        text: function text(data) {
-          var stats = algoliaSettings.labels.hits_stats.replace(/\$\{hits\}/, data.nbHits).replace(/\$\{time\}/, data.processingTimeMS);
-          return stats + '<span class="algolia-powered">' + '  <img src="' + siteMeta.root + 'assets/algolia_logo.svg" alt="Algolia" />' + '</span>' + '<hr />';
-        }
-      },
-      cssClasses: {
-        root: 'algolia-stat-root'
-      }
-    }), instantsearch.widgets.pagination({
-      container: '#algolia-pagination',
-      scrollTo: false,
-      templates: {
-        first: '<i class="fa fa-angle-double-left"></i>',
-        last: '<i class="fa fa-angle-double-right"></i>',
-        previous: '<i class="fa fa-angle-left"></i>',
-        next: '<i class="fa fa-angle-right"></i>'
-      }
-    })].forEach(search.addWidget, search);
-    search.start();
-    $('.popup-trigger').on('click', function (e) {
-      e.stopPropagation();
-      $('body').prepend('<div class="search-popup-overlay algolia-pop-overlay"></div>').css('overflow', 'hidden');
-      $('.popup').toggle();
-      $('#algolia-search-input').find('input').focus();
-    });
-
-    var hidePopup = function hidePopup() {
-      $('.ais-SearchBox-form').trigger('reset');
-      $('.popup').hide();
-      $('.algolia-pop-overlay').remove();
-      $('body').css('overflow', '');
-    };
-
-    $('.popup-btn-close').click(function () {
-      hidePopup();
-    });
-    $(document).on('keydown', '.ais-SearchBox-form', function (event) {
-      if (event.key === 'Escape') {
-        hidePopup();
-      }
-    });
-  });
-};
-
-initAlgolia();
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval-source-map devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/search.js");
+/******/ 	
 /******/ })()
 ;

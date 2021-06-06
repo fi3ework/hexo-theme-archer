@@ -1,4 +1,7 @@
 const gulp = require('gulp'),
+  postcss = require('gulp-postcss'),
+  sourcemaps = require('gulp-sourcemaps'),
+  autoprefixer = require('autoprefixer'),
   webpack = require('webpack'),
   sass = require('gulp-sass'),
   browserSync = require('browser-sync').create()
@@ -15,10 +18,16 @@ function execWebpack(cb) {
 
 // sass
 function execSass() {
-  return gulp.src(['./src/scss/style.scss', './src/scss/mobile.scss'])
-    .pipe(sass({
-      outputStyle: 'compressed'
-    }).on('error', sass.logError))
+  return gulp
+    .src(['src/scss/style.scss', 'src/scss/mobile.scss'])
+    .pipe(sourcemaps.init())
+    .pipe(
+      sass({
+        outputStyle: 'compressed',
+      }).on('error', sass.logError)
+    )
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./source/css/'))
 }
 
@@ -46,7 +55,7 @@ function reloadConfig(done) {
 
 exports.dev = gulp.series(execWebpack, execSass, function (cb) {
   browserSync.init({
-    proxy: 'localhost:4000'
+    proxy: 'localhost:4000',
   })
   gulp.watch(['./src/js/**/*.js'], reloadJs)
   gulp.watch(['./src/scss/**/*.scss'], reloadCss)
@@ -54,7 +63,6 @@ exports.dev = gulp.series(execWebpack, execSass, function (cb) {
   gulp.watch(['./_config.yml'], reloadConfig)
   cb()
 })
-
 
 /* ========== bulid ========== */
 
@@ -66,7 +74,7 @@ function webpackProd(cb) {
   })
 }
 
-exports.build =  gulp.series(execSass, webpackProd, function (cb) {
+exports.build = gulp.series(execSass, webpackProd, function (cb) {
   cb()
   console.log(process.argv)
 })
