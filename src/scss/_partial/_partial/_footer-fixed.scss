@@ -7,15 +7,7 @@
   overflow: hidden;
   z-index: 10;
   transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
   transition: transform 0.3s ease-in 0s;
-  -webkit-transition: transform 0.3s ease-in 0s;
-  -moz-transition: transform 0.3s ease-in 0s;
-  -ms-transition: transform 0.3s ease-in 0s;
-  -o-transition: transform 0.3s ease-in 0s;
   // Avoid blocking the click events of lower z-index elements
   // In this case, you should set every other fixed footer element
   // that clickable `pointer-events: auto;`
@@ -28,10 +20,6 @@
 
 .footer-fixed-sidebar-active {
   transform: translate3d($sidebar-width, 0, 0);
-  -webkit-transform: translate3d($sidebar-width, 0, 0);
-  -moz-transform: translate3d($sidebar-width, 0, 0);
-  -ms-transform: translate3d($sidebar-width, 0, 0);
-  -o-transform: translate3d($sidebar-width, 0, 0);
 }
 
 // ========== back top ========== //
@@ -68,10 +56,6 @@
   line-height: 2.7rem;
   border: unset;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
   &:hover {
     color: #fff;
   }

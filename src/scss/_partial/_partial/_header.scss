@@ -7,15 +7,7 @@
   overflow: hidden;
   z-index: 10;
   transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
   transition: transform 0.3s ease-in 0s;
-  -webkit-transition: transform 0.3s ease-in 0s;
-  -moz-transition: transform 0.3s ease-in 0s;
-  -ms-transition: transform 0.3s ease-in 0s;
-  -o-transition: transform 0.3s ease-in 0s;
   // Avoid blocking the click events of lower z-index elements
   // In this case, you should set every other header element
   // that clickable `pointer-events: auto;`
@@ -28,10 +20,6 @@
 
 .header-sidebar-active {
   transform: translate3d($sidebar-width, 0, 0);
-  -webkit-transform: translate3d($sidebar-width, 0, 0);
-  -moz-transform: translate3d($sidebar-width, 0, 0);
-  -ms-transform: translate3d($sidebar-width, 0, 0);
-  -o-transform: translate3d($sidebar-width, 0, 0);
 }
 
 .read-progress {
@@ -42,15 +30,7 @@
   height: $header-border-top-width;
   background-color: rgba(0, 0, 0, 0.7);
   transition: transform 0.1s ease-out 0s;
-  -webkit-transition: transform 0.1s ease-out 0s;
-  -moz-transition: transform 0.1s ease-out 0s;
-  -ms-transition: transform 0.1s ease-out 0s;
-  -o-transition: transform 0.1s ease-out 0s;
   transform: translate3d(-100%, 0, 0);
-  -webkit-transform: translate3d(-100%, 0, 0);
-  -moz-transform: translate3d(-100%, 0, 0);
-  -ms-transform: translate3d(-100%, 0, 0);
-  -o-transform: translate3d(-100%, 0, 0);
   z-index: 99999;
 }
 
@@ -68,15 +48,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.8);
   background-color: rgba(255, 255, 255, 0.8);
   transform: translate3d(0, -100%, 0);
-  -webkit-transform: translate3d(0, -100%, 0);
-  -moz-transform: translate3d(0, -100%, 0);
-  -ms-transform: translate3d(0, -100%, 0);
-  -o-transform: translate3d(0, -100%, 0);
   transition: transform 0.3s ease-out 0s;
-  -webkit-transition: transform 0.3s ease-out 0s;
-  -moz-transition: transform 0.3s ease-out 0s;
-  -ms-transition: transform 0.3s ease-out 0s;
-  -o-transition: transform 0.3s ease-out 0s;
 }
 
 .banner-clean {
@@ -86,10 +58,6 @@
 
 .banner-show {
   transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
 }
 
 .post-title {
@@ -116,10 +84,6 @@
   right: 1.5rem;
   top: 50%;
   transform: translate(0, -50%);
-  -webkit-transform: translate(0, -50%);
-  -moz-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  -o-transform: translate(0, -50%);
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -143,15 +107,7 @@
   width: 1.5rem;
   height: 1.5rem;
   transform: translate(0, -50%);
-  -webkit-transform: translate(0, -50%);
-  -moz-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  -o-transform: translate(0, -50%);
   transition: transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
-  -moz-transition: transform 0.3s ease;
-  -ms-transition: transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
   font-family: 'iconfont-archer';
   color: #fff;
   text-align: center;
@@ -162,10 +118,6 @@
     background-color: #fff;
     color: #000;
     transform: translate(0, -50%);
-    -webkit-transform: translate(0, -50%);
-    -moz-transform: translate(0, -50%);
-    -ms-transform: translate(0, -50%);
-    -o-transform: translate(0, -50%);
   }
 }
 
@@ -177,10 +129,6 @@
   line-height: 2.7rem;
   border: unset;
   border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
   &:hover {
     background-color: transparent;
     color: $feature-color;
@@ -189,15 +137,7 @@
 
 .header-sidebar-menu-active {
   transform: translate(0, -50%) rotate(180deg) !important;
-  -webkit-transform: translate(0, -50%) rotate(180deg) !important;
-  -moz-transform: translate(0, -50%) rotate(180deg) !important;
-  -ms-transform: translate(0, -50%) rotate(180deg) !important;
-  -o-transform: translate(0, -50%) rotate(180deg) !important;
   transition: transform 0.3s ease;
-  -webkit-transition: transform 0.3s ease;
-  -moz-transition: transform 0.3s ease;
-  -ms-transition: transform 0.3s ease;
-  -o-transition: transform 0.3s ease;
 }
 
 .header-sidebar-menu-black {
@@ -216,10 +156,6 @@
   right: 1.5rem;
   top: 50%;
   transform: translate(0, -50%);
-  -webkit-transform: translate(0, -50%);
-  -moz-transform: translate(0, -50%);
-  -ms-transform: translate(0, -50%);
-  -o-transform: translate(0, -50%);
   line-height: 2.7rem;
   font-family: $feature-font-family;
   color: #fff;
