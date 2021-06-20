@@ -7,8 +7,6 @@
   height: calc(100% + 1px);
   width: 100%;
   filter: brightness(0.5);
-  -webkit-filter: brightness(0.5);
-  -moz-filter: brightness(0.5);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -34,15 +32,7 @@
   margin: 0;
   opacity: 0;
   transition: all 0.5s ease-out 0s;
-  -webkit-transition: all 0.5s ease-out 0s;
-  -moz-transition: all 0.5s ease-out 0s;
-  -ms-transition: all 0.5s ease-out 0s;
-  -o-transition: all 0.5s ease-out 0s;
   transform: translate(0, -1rem);
-  -webkit-transform: translate(0, -1rem);
-  -moz-transform: translate(0, -1rem);
-  -ms-transform: translate(0, -1rem);
-  -o-transform: translate(0, -1rem);
 }
 
 .intro-title {
@@ -58,10 +48,6 @@
 .intro-fade-in {
   opacity: 1;
   transform: translate(0, 0);
-  -webkit-transform: translate(0, 0);
-  -moz-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
 }
 
 .home-body {

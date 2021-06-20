@@ -24,20 +24,12 @@ body {
   min-height: 100vh;
   transition: all 0.3s ease-in 0s;
   transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
   position: relative;
   box-shadow: -3px 0 2px 0 rgba(0, 0, 0, 0.6);
 }
 
 .wrapper-sidebar-active {
   transform: translate3d(400px, 0, 0);
-  -webkit-transform: translate3d(400px, 0, 0);
-  -moz-transform: translate3d(400px, 0, 0);
-  -ms-transform: translate3d(400px, 0, 0);
-  -o-transform: translate3d(400px, 0, 0);
 }
 
 .main {
@@ -63,19 +55,11 @@ body {
   transition: all 0.5s ease-out 0s;
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
-  -o-transform: translate3d(0, 0, 0);
 }
 
 .container-unloaded {
   opacity: 0;
   transform: translate3d(0, 1rem, 0);
-  -webkit-transform: translate3d(0, 1rem, 0);
-  -moz-transform: translate3d(0, 1rem, 0);
-  -ms-transform: translate3d(0, 1rem, 0);
-  -o-transform: translate3d(0, 1rem, 0);
 }
 
 a {
@@ -89,16 +73,6 @@ li {
 
 // selection
 ::selection {
-  background: $selection-color;
-  color: #eee;
-}
-
-::-moz-selection {
-  background: $selection-color;
-  color: #eee;
-}
-
-::-webkit-selection {
   background: $selection-color;
   color: #eee;
 }
