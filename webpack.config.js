@@ -1,7 +1,6 @@
 const path = require('path')
 
 module.exports = {
-  mode: 'development',
   entry: {
     main: './src/js/main.js',
     share: './src/js/share.js',
@@ -10,8 +9,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'source/scripts'),
     filename: '[name].js',
+    clean: true,
   },
-  devtool: false,
   module: {
     rules: [
       {
