@@ -1,23 +1,24 @@
 import archerUtil from './util'
 
-let scroll = function() {
+let scroll = function () {
   let $banner = $('.banner:first'),
     $postBanner = $banner.find('.post-title a'),
     $bgEle = $('.site-intro:first'),
     $homeLink = $('.home-link:first'),
     $backTop = $('.back-top:first'),
     $sidebarMenu = $('.header-sidebar-menu:first'),
-    bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight(),
     $tocWrapper = $('.toc-wrapper:first'),
     $tocCatalog = $tocWrapper.find('.toc-catalog'),
-    $progressBar = $('.read-progress')
+    $progressBar = $('.read-progress'),
+    bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight()
 
-  // toc的收缩
-  $tocCatalog.on('click', function() {
+  // toc 的收缩
+  $tocCatalog.on('click', function () {
     $tocWrapper.toggleClass('toc-hide-children')
   })
 
   // 滚动式切换文章标题和站点标题
+  const showBannerScrollHeight = -500
   let previousHeight = 0,
     continueScroll = 0
 
@@ -27,7 +28,7 @@ let scroll = function() {
       // 向下滑动
       continueScroll = 0
       return 1
-    } else if (continueScroll < -800) {
+    } else if (continueScroll < showBannerScrollHeight) {
       // 向上滑动
       continueScroll = 0
       return -1
@@ -40,7 +41,7 @@ let scroll = function() {
   let crossingState = -1
   let isHigherThanIntro = true
   function isCrossingIntro(currTop) {
-    // 向下滑动超过intro
+    // 向下滑动超过 intro
     if (currTop > bgTitleHeight) {
       if (crossingState !== 1) {
         crossingState = 1
@@ -48,7 +49,7 @@ let scroll = function() {
         return 1
       }
     } else {
-      // 向上滑动超过intro
+      // 向上滑动超过 intro
       if (crossingState !== -1) {
         crossingState = -1
         isHigherThanIntro = true
@@ -58,7 +59,7 @@ let scroll = function() {
     return 0
   }
 
-  // 判断是否为post-page
+  // 判断是否为 post-page
   let isPostPage = false
   let articleHeight, articleTop
   if ($('.post-body').length) {
@@ -87,11 +88,11 @@ let scroll = function() {
     $progressBar[0].style.transform = `translate3d(${restPercent}%, 0, 0)`
   }
 
-  // rAF操作
+  // rAF 操作
   let tickingScroll = false
   function updateScroll(scrollTop) {
     let crossingState = isCrossingIntro(scrollTop)
-    // intro边界切换
+    // intro 边界切换
     if (crossingState === 1) {
       $tocWrapper.addClass('toc-fixed')
       $homeLink.addClass('home-link-hide')
@@ -104,9 +105,9 @@ let scroll = function() {
       $backTop.removeClass('back-top-show')
       $sidebarMenu.removeClass('header-sidebar-menu-black')
     }
-    // 如果不是post - page 以下忽略
+    // 如果不是 post-page 以下忽略
     if (isPostPage) {
-      // 上下滑动一定距离显示/隐藏header
+      // 上下滑动一定距离显示/隐藏 header
       let upDownState = isScrollingUpOrDown(scrollTop)
       if (upDownState === 1) {
         $banner.removeClass('banner-show')
@@ -120,17 +121,18 @@ let scroll = function() {
     tickingScroll = false
   }
 
-  // scroll回调
+  // scroll 回调
   function onScroll() {
-    let scrollTop = $(document).scrollTop()
-    let bindedUpdate = updateScroll.bind(null, scrollTop)
+    const scrollTop = $(document).scrollTop()
+    const bindedUpdate = updateScroll.bind(null, scrollTop)
     archerUtil.rafTick(tickingScroll, bindedUpdate)
   }
 
-  $(document).on('scroll', onScroll)
+  const throttleOnScroll = archerUtil.throttle(onScroll, 25, true)
+  $(document).on('scroll', throttleOnScroll) // 每 25 ms 执行一次 onScroll() 方法
 
-  // 返回顶部
-  ;[$postBanner, $backTop].forEach(function(ele) {
+  // 绑定返回顶部事件
+  ;[$postBanner, $backTop].forEach(function (ele) {
     ele.on('click', archerUtil.backTop)
   })
 }

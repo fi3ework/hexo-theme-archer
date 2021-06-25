@@ -9,8 +9,9 @@ signature: witness me
 social:
   email: 12345@qq.com
   github: //github.com/fi3ework
-  # wechat and qq should be a path of qr-code image
+  # wechat should be a path of qr-code image path
   wechat: /assets/example_qr.png
+  # qq should be a path of qr-code image path
   qq: 
   telegram: 
   weibo: 
@@ -85,12 +86,15 @@ comment:
   valine_appId: 
   valine_appKey: 
   valine_placeHolder: 
-  # gitalk site: https://github.com/gitalk/gitalk#options  
+  # gitalk site: https://github.com/gitalk/gitalk/
+  # Value 'true' is recommended for gitalk_pathname_id setting
   gitalk_client_id: 
   gitalk_client_secret: 
   gitalk_admin: 
   gitalk_owner: 
   gitalk_repo: 
+  gitalk_pathname_id: false
+  gitalk_create_issue_manually: true
   # utteranc site: https://utteranc.es/
   utteranc_repo:  
   utteranc_label: 
@@ -129,5 +133,17 @@ copyright:
   enable: true
   # https://creativecommons.org/
   license: '本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可'
+# Website Approve
+website_approve:
+  enable: false
+  icp_approve: 
+  beian_approve: 
+  beian_img: /assets/beian.png
 # Blog page article timeliness days reminder, 0 for no threshold
 outdated_threshold: 0
+# Blog float button theme ('default' or 'rounded')
+float_button_theme: default
+# Blog read progress color ('default' for black or 'feature' for feature-color)
+read_progress_color: default
+# Blog post banner theme ('default' or 'clean')
+post_banner_theme: default

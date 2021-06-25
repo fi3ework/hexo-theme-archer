@@ -50,11 +50,16 @@ ignore: ['**/themes/**/node_modules/**', '**/themes/**/node_modules', '**/themes
 2. 在 Hexo 根目录下执行 `hexo s` 启动本地服务器。
 3. 在 Archer 主题目录下执行 `npm run dev` 进入本地开发模式。
 
-该模式会监视 Archer 主题目录下 `src` 和 `layout` 中文件的修改，实时进行编译，然后通过 BrowserSync 在 `localhost:3000`（默认）下自动刷新页面。其他位置的文件修改并不会自动刷新页面，需手动重启服务。
+该模式会监听 Archer 主题目录下 `src` 和 `layout` 中文件的修改，实时进行编译，然后通过 BrowserSync 在 `localhost:3000`（默认）下自动刷新页面。其他位置的文件修改并不会自动刷新页面，需手动重启服务。
 
 ### 编译发布
 
 编译压缩，发布资源。
 
-1. 在 Archer 主题目录下执行 `npm run build`，编译需要的文件到 `source` 文件夹下。
+1. 在 Archer 主题目录下执行 `npm run build`，编译并压缩博客依赖的 `.js` 与 `.css` 文件到 `source` 文件夹下。
 2. 在 Hexo 根目录下执行 `hexo generate` 重新生成 Hexo 博客静态文件。
+3. 推送代码到仓库。
+
+在推送前，请确保已使用 `npm run build` 命令编译并压缩 `.js` 与 `.css` 文件，您可以分别在 `source/scripts` 和 `source/css` 目录下找到它们。
+
+如果编译没有生成 `.js` 文件，可以使用 `npm run build-js` 命令，查看编译失败的原因。对于 `.css` 文件，执行 `npm run build` 时会自动显示出现的错误。

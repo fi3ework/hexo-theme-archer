@@ -71,6 +71,7 @@
   z-index: 99;
   background-color: #fff;
   width: 7rem;
+  padding: 0.5rem;
   opacity: 0;
   transition: all 0.1s ease-in 0s;
 }
@@ -86,6 +87,9 @@
   }
   a {
     margin-right: 0.6rem;
+    &:hover {
+      color: $feature-color;
+    }
   }
 }
 
@@ -95,5 +99,8 @@
   a {
     font-size: 1.2rem;
     font-weight: bold;
+    &:hover {
+      color: $feature-color;
+    }
   }
 }

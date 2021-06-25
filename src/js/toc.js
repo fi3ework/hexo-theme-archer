@@ -1,7 +1,7 @@
 import archerUtil from './util'
 let prevHeight = 0
 function initTocLinksScrollTop(tocLinks) {
-  return [...tocLinks].map(link => {
+  return [...tocLinks].map((link) => {
     return archerUtil.getAbsPosition(link).y
   })
 }
@@ -40,17 +40,17 @@ function calcScrollIntoScreenIndex(heights, prevHeight, currHeight) {
 
 // hide all ol
 function hideAllOl(root) {
-  ;[...root.querySelectorAll('ol')].forEach(li => {
+  ;[...root.querySelectorAll('ol')].forEach((li) => {
     hideItem(li)
   })
 }
 
 // back to default state
 function initFold(toc) {
-  ;[...toc.children].forEach(child => {
+  ;[...toc.children].forEach((child) => {
     hideAllOl(child)
   })
-  ;[...toc.querySelectorAll('.toc-active')].forEach(child => {
+  ;[...toc.querySelectorAll('.toc-active')].forEach((child) => {
     child.classList.remove('toc-active')
   })
 }
@@ -72,7 +72,7 @@ function activeTocItem(node) {
 }
 
 function showAllChildren(node) {
-  ;[...node.children].forEach(child => {
+  ;[...node.children].forEach((child) => {
     showItem(child)
   })
 }

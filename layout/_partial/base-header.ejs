@@ -3,18 +3,43 @@
 <% } else { %>
 <header class="header">
 <% } %>
-    <div class="read-progress"></div>
-    <div class="header-sidebar-menu">&#xe775;</div>
-    <!-- post页的toggle banner  -->
+    <!-- top read progress line -->
+    <div class="header-element">
+        <% if(theme.read_progress_color === 'feature') { %>
+        <div class="read-progress read-progress-feature"></div>
+        <% } else { %>
+        <div class="read-progress"></div>
+        <% } %>
+    </div>
+    <!-- sidebar menu button -->
+    <div class="header-element">
+        <% if(theme.float_button_theme === 'rounded') { %>
+        <div class="header-sidebar-menu header-sidebar-menu-rounded">
+        <% } else { %>
+        <div class="header-sidebar-menu">
+        <% } %>
+            <% if(theme.float_button_theme === 'rounded') { %>
+            <i class="fas fa-bars"></i>
+            <% } else { %>
+            <div style="padding-left: 1px;">&#xe775;</div>
+            <% } %>
+        </div>
+    </div>
+    <!-- back to home page text -->
+    <a class="home-link header-element" href=<%- config.root %>><%- theme.main_title || config.title %></a>
+    <!-- toggle banner for post layout -->
     <% if (is_post()) { %>
+    <% if(theme.post_banner_theme === 'clean') { %>
+    <div class="banner banner-clean">
+    <% } else { %>
     <div class="banner">
-            <div class="blog-title">
-                <a href="<%- url_for() %>" ><%= theme.main_title || config.title%></a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name"><%- page.title %></a>
-            </div>
+    <% } %>
+        <div class="blog-title header-element">
+            <a href="<%- url_for() %>" ><%= theme.main_title || config.title%></a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name"><%- page.title %></a>
+        </div>
     </div>
     <% } %>
-    <a class="home-link" href=<%- config.root %>><%- theme.main_title || config.title %></a>
 </header>

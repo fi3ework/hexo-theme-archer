@@ -7,8 +7,6 @@
   height: calc(100% + 1px);
   width: 100%;
   filter: brightness(0.5);
-  -webkit-filter: brightness(0.5);
-  -moz-filter: brightness(0.5);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -43,10 +41,19 @@
 
 .intro-subtitle {
   font-size: 2rem;
+  margin-top: 0.5rem;
   transition-delay: 0.5s;
 }
 
 .intro-fade-in {
   opacity: 1;
   transform: translate(0, 0);
+}
+
+.home-body {
+  .intro-title,
+  .intro-subtitle {
+    text-align: center;
+    margin-top: 0;
+  }
 }
