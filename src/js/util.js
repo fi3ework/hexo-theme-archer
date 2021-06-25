@@ -1,18 +1,15 @@
-let archerUtil = {
+const archerUtil = {
   // 回到顶部
-  backTop: function(event) {
+  backTop: function (event) {
     event.preventDefault()
-    let topTimer = setInterval(function() {
-      let currTop = $(document).scrollTop()
-      window.scrollTo(0, Math.max(Math.floor(currTop * 0.8)))
-      if (currTop === 0) {
-        clearInterval(topTimer)
-      }
-    }, 20)
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    })
   },
 
   // 获取元素在页面上相对左上角的位置
-  getAbsPosition: function(e) {
+  getAbsPosition: function (e) {
     let x = e.offsetLeft,
       y = e.offsetTop
     while ((e = e.offsetParent)) {
@@ -21,12 +18,12 @@ let archerUtil = {
     }
     return {
       x: x,
-      y: y
+      y: y,
     }
   },
 
   // 格式化日期
-  dateFormater: function(date, fmt) {
+  dateFormater: function (date, fmt) {
     let o = {
       'M+': date.getMonth() + 1, // 月份
       'd+': date.getDate(), // 日
@@ -34,7 +31,7 @@ let archerUtil = {
       'm+': date.getMinutes(), // 分
       's+': date.getSeconds(), // 秒
       'q+': Math.floor((date.getMonth() + 3) / 3), // 季度
-      S: date.getMilliseconds() // 毫秒
+      S: date.getMilliseconds(), // 毫秒
     }
     if (/(y+)/.test(fmt)) {
       fmt = fmt.replace(
@@ -55,13 +52,55 @@ let archerUtil = {
     return fmt
   },
 
-  // rAF的ticking
-  rafTick: function(ticking, updateFunc) {
+  // rAF 的 ticking
+  rafTick: function (ticking, updateFunc) {
     if (!ticking) {
       requestAnimationFrame(updateFunc)
     }
     ticking = true
-  }
+  },
+
+  // 函数节流
+  throttle: function (func, wait, immediate = false) {
+    let timer
+    return function () {
+      const args = arguments
+      if (!timer) {
+        if (immediate) {
+          timer = setTimeout(() => {
+            timer = undefined
+          }, wait)
+          func.apply(this, args)
+        } else {
+          timer = setTimeout(() => {
+            timer = undefined
+            func.apply(this, args)
+          }, wait)
+        }
+      }
+    }
+  },
+
+  // 函数防抖
+  debounce: function (func, wait, immediate = false) {
+    let timer
+    return function () {
+      const args = arguments
+
+      timer && clearTimeout(timer)
+
+      if (immediate) {
+        !timer && func.apply(this, args)
+        timer = setTimeout(() => {
+          timer = undefined
+        }, wait)
+      } else {
+        timer = setTimeout(() => {
+          func.apply(this, args)
+        }, wait)
+      }
+    }
+  },
 }
 
 export default archerUtil

@@ -11,6 +11,7 @@
         <body class="about-body">
     <% } %>
     <%- partial('_partial/base-header') %>
+    <%- partial('_partial/base-footer-fixed') %>
     <div class="wrapper">
         <%- partial('_partial/base-background-image') %>
         <%- partial('_partial/script/font-loader') %>        
@@ -35,7 +36,6 @@
         <%- toc(page.content, {class: 'toc', list_number: true}) %>
     </div>
     <% } %>
-    <div class="back-top iconfont-archer">&#xe639;</div>
     <%- partial('_partial/sidebar/base-sidebar', {}, {cache: true}) %>
     <%- partial('./site-meta.ejs') %>
     <!-- CDN failover -->
@@ -51,7 +51,7 @@
     <!-- algolia -->
     <% if (theme.algolia_search.enable) { %>
         <%- partial('_partial/algolia') %>
-        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" integrity="sha256-LAGhRRdtVoD6RLo2qDQsU2mp+XVSciKRC8XPOBWmofM=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.24.1/dist/instantsearch.production.min.js" crossorigin="anonymous"></script>
         <script src="<%- url_for('/scripts/search.js') %>" defer></script>
     <% } %>
     <!-- busuanzi  -->

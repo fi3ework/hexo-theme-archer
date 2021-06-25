@@ -23,7 +23,7 @@ class MetaInfo {
   }
 
   _bindLabelClick() {
-    this.labelsContainer.addEventListener('click', e => {
+    this.labelsContainer.addEventListener('click', (e) => {
       let currLabelName = e.target.getAttribute(`data-${this.metaName}`)
       this.changeLabel(currLabelName)
     })
@@ -33,10 +33,10 @@ class MetaInfo {
     let currFocus = this.labelsContainer.getElementsByClassName(
       'sidebar-label-focus'
     )
-    ;[...currFocus].forEach(item =>
+    ;[...currFocus].forEach((item) =>
       item.classList.remove('sidebar-label-focus')
     )
-    ;[...this.labelsContainer.children].forEach(item => {
+    ;[...this.labelsContainer.children].forEach((item) => {
       if (item.getAttribute(`data-${this.metaName}`) === this.currLabelName) {
         item.classList.add('sidebar-label-focus')
       }
@@ -46,7 +46,7 @@ class MetaInfo {
   _changeList() {
     let indexArr = this.indexMap.get(this.currLabelName)
     try {
-      let corrArr = indexArr.map(index => {
+      let corrArr = indexArr.map((index) => {
         return this.postsArr[index]
       })
       this._createPostsDom(corrArr)
@@ -99,12 +99,11 @@ class MetaInfo {
       let currPostLabels = postsArr[postIndex][this.metaName]
       // if there is any post has a tag
       if (currPostLabels && currPostLabels.length) {
-        currPostLabels.forEach(tagOrCatetory => {
-
+        currPostLabels.forEach((tagOrCatetory) => {
           // if this.metaName is 'categories', tagOrCatetory['slug'] will be used as key in this.indexMap
           // else if this.metaName is 'tag', tagOrCatetory['name'] will be used as key in this.indexMap
           // check the array postsArr and you'll know why. (actually you can just use 'slug' in both case)
-          let key = this.metaName === 'categories' ? 'slug' : 'name';
+          let key = this.metaName === 'categories' ? 'slug' : 'name'
           if (this.indexMap.has(tagOrCatetory[key])) {
             this.indexMap.get(tagOrCatetory[key]).push(postIndex)
           } else {
@@ -179,7 +178,7 @@ class SidebarMeta {
     xhr.open('get', contentURL, true)
     let $loadFailed = $('.tag-load-fail')
     let that = this
-    xhr.onload = function() {
+    xhr.onload = function () {
       if (this.status === 200 || this.status === 304) {
         $loadFailed.remove()
         // defensive programming if content.json formart is not correct
@@ -200,7 +199,7 @@ class SidebarMeta {
   }
 
   _bindOtherClick() {
-    document.body.addEventListener('click', e => {
+    document.body.addEventListener('click', (e) => {
       if (e.target.className === 'post-tag') {
         e.stopPropagation()
         sidebar.activateSidebar()

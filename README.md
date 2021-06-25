@@ -9,7 +9,6 @@
 ## 文档
 
 - [English document](./docs/README-en.md)
-
 - [二次开发文档](./docs/develop-guide-zh.md)
 
 ## 说明
@@ -26,7 +25,7 @@
 
 在 Hexo 根目录下执行以下命令：
   
-``` shell
+``` bash
 npm i hexo-generator-json-content --save && npm i --save hexo-wordcount && git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1
 ```
 
@@ -44,7 +43,7 @@ theme: archer
 
 在 Hexo 根目录下的 `_config.yml` 中添加以下字段：
 
-```yaml
+``` yaml
 jsonContent:
   meta: true
   pages: false
@@ -69,7 +68,7 @@ jsonContent:
 
 现在您的博客项目的目录目录结构应当如下：
 
-```bash
+``` bash
 . # Hexo 根目录
 ├── themes
 │   └── archer # Archer 主题目录

@@ -29,6 +29,7 @@
   span:last-of-type {
     transition: color 0.1s ease-in;
     font-size: 1.7rem;
+    color: #333333;
     &:hover {
       color: $feature-color;
     }

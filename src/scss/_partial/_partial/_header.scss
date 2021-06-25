@@ -8,10 +8,18 @@
   z-index: 10;
   transform: translate3d(0, 0, 0);
   transition: transform 0.3s ease-in 0s;
+  // Avoid blocking the click events of lower z-index elements
+  // In this case, you should set every other header element
+  // that clickable `pointer-events: auto;`
+  pointer-events: none;
+}
+
+.header-element {
+  pointer-events: auto;
 }
 
 .header-sidebar-active {
-  transform: translate3d(400px, 0, 0);
+  transform: translate3d($sidebar-width, 0, 0);
 }
 
 .read-progress {
@@ -24,6 +32,10 @@
   transition: transform 0.1s ease-out 0s;
   transform: translate3d(-100%, 0, 0);
   z-index: 99999;
+}
+
+.read-progress-feature {
+  background-color: $feature-color;
 }
 
 // ========== header toggle (only take effect in post page) ========== //
@@ -39,6 +51,11 @@
   transition: transform 0.3s ease-out 0s;
 }
 
+.banner-clean {
+  border-bottom: unset;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
 .banner-show {
   transform: translate3d(0, 0, 0);
 }
@@ -52,12 +69,10 @@
   margin-left: 15%;
   a {
     white-space: nowrap;
-    color: rgba(0, 0, 0, 0.8);
-    line-height: 100%;
+    color: $header-banner-text-color;
     max-width: 100%;
     text-overflow: ellipsis;
     overflow: hidden;
-    padding-bottom: 0.2rem;
     text-align: center;
     font-size: 1.5rem;
   }
@@ -66,7 +81,7 @@
 .blog-title {
   display: flex;
   position: absolute;
-  right: 2.5rem;
+  right: 1.5rem;
   top: 50%;
   transform: translate(0, -50%);
   justify-content: center;
@@ -75,7 +90,7 @@
   a {
     vertical-align: top;
     white-space: nowrap;
-    color: #000;
+    color: $header-banner-text-color;
     font: 1rem/1rem $feature-font-family;
     &:hover {
       color: $feature-color;
@@ -106,6 +121,20 @@
   }
 }
 
+.header-sidebar-menu-rounded {
+  font-family: unset;
+  transform: translate(0, -50%);
+  width: 2.7rem;
+  height: 2.7rem;
+  line-height: 2.7rem;
+  border: unset;
+  border-radius: 50%;
+  &:hover {
+    background-color: transparent;
+    color: $feature-color;
+  }
+}
+
 .header-sidebar-menu-active {
   transform: translate(0, -50%) rotate(180deg) !important;
   transition: transform 0.3s ease;
@@ -124,9 +153,10 @@
 // ========== home page link ========== //
 .home-link {
   position: absolute;
-  right: 2.5rem;
+  right: 1.5rem;
   top: 50%;
   transform: translate(0, -50%);
+  line-height: 2.7rem;
   font-family: $feature-font-family;
   color: #fff;
   cursor: pointer;
@@ -138,4 +168,3 @@
 .home-link-hide {
   display: none;
 }
-

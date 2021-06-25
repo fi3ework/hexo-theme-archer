@@ -71,44 +71,8 @@ li {
   list-style-type: none;
 }
 
-// ========== back top ========== //
-.back-top {
-  position: fixed;
-  display: block;
-  left: 1rem;
-  bottom: 1rem;
-  z-index: 10;
-  opacity: 0;
-  width: 1.5rem;
-  height: 1.5rem;
-  text-align: center;
-  line-height: 1.5rem;
-  border: 2px solid #000;
-  background-color: rgba(255, 255, 255, 0.8);
-  cursor: pointer;
-  &:hover {
-    background-color: #000;
-    color: #fff;
-  }
-}
-
-.back-top-show {
-  opacity: 1;
-  pointer-events: initial;
-}
-
 // selection
 ::selection {
-  background: $selection-color;
-  color: #eee;
-}
-
-::-moz-selection {
-  background: $selection-color;
-  color: #eee;
-}
-
-::-webkit-selection {
   background: $selection-color;
   color: #eee;
 }
@@ -123,7 +87,6 @@ li {
   border-left: 0.35rem solid;
   border-radius: 0.35rem;
   margin: 1.5rem 0;
-
 }
 
 .note-warning {
@@ -135,4 +98,3 @@ li {
     font-weight: 500;
   }
 }
-

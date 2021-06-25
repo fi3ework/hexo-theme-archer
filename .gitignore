@@ -32,7 +32,3 @@ tags
 *.ipr
 *.iws
 *.iml
-
-# JS source map file
-*.js.map
-*.js.LICENSE.txt

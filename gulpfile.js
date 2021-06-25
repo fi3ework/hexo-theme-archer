@@ -1,4 +1,7 @@
 const gulp = require('gulp'),
+  postcss = require('gulp-postcss'),
+  sourcemaps = require('gulp-sourcemaps'),
+  autoprefixer = require('autoprefixer'),
   webpack = require('webpack'),
   sass = require('gulp-sass'),
   browserSync = require('browser-sync').create()
@@ -7,7 +10,7 @@ const gulp = require('gulp'),
 
 // webpack
 function execWebpack(cb) {
-  webpack(require('./webpack.config.js'), function (err) {
+  webpack(require('./webpack.dev.js'), function (err) {
     if (err) return cb(err)
     cb()
   })
@@ -15,10 +18,12 @@ function execWebpack(cb) {
 
 // sass
 function execSass() {
-  return gulp.src(['./src/scss/style.scss', './src/scss/mobile.scss'])
-    .pipe(sass({
-      outputStyle: 'compressed'
-    }).on('error', sass.logError))
+  return gulp
+    .src(['src/scss/style.scss', 'src/scss/mobile.scss'])
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('./source/css/'))
 }
 
@@ -46,7 +51,7 @@ function reloadConfig(done) {
 
 exports.dev = gulp.series(execWebpack, execSass, function (cb) {
   browserSync.init({
-    proxy: 'localhost:4000'
+    proxy: 'localhost:4000',
   })
   gulp.watch(['./src/js/**/*.js'], reloadJs)
   gulp.watch(['./src/scss/**/*.scss'], reloadCss)
@@ -54,7 +59,6 @@ exports.dev = gulp.series(execWebpack, execSass, function (cb) {
   gulp.watch(['./_config.yml'], reloadConfig)
   cb()
 })
-
 
 /* ========== bulid ========== */
 
@@ -66,7 +70,22 @@ function webpackProd(cb) {
   })
 }
 
-exports.build =  gulp.series(execSass, webpackProd, function (cb) {
+// sass-prod
+function sassProd() {
+  return gulp
+    .src(['src/scss/style.scss', 'src/scss/mobile.scss'])
+    .pipe(sourcemaps.init())
+    .pipe(
+      sass({
+        outputStyle: 'compressed',
+      }).on('error', sass.logError)
+    )
+    .pipe(postcss([autoprefixer()]))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('./source/css/'))
+}
+
+exports.build = gulp.series(webpackProd, sassProd, function (cb) {
   cb()
   console.log(process.argv)
 })

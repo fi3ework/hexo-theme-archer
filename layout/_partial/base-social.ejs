@@ -5,8 +5,8 @@
                 <a href="mailto:<%- theme.social[name] %>" class="iconfont-archer <%- name %>" title=<%- name %> ></a>
             <% } else if (name === "wechat" || name === "qq") { %>
                 <span class="iconfont-archer <%- name %>" title=<%- name %>>
-                  <% var path = theme.social[name] %>
-                  <img class="profile-qr" src="<%- url_for(path) %>" />
+                    <% var path = theme.social[name] %>
+                    <img class="profile-qr" src="<%- url_for(path) %>" />
                 </span>
             <% } else { %>
                 <a href="<%- url_for(theme.social[name]) %>" class="iconfont-archer <%- name %>" target="_blank" title=<%- name %>></a>

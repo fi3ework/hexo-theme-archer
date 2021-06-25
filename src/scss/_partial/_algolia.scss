@@ -1,5 +1,3 @@
-@import '../_variables.scss';
-
 .popup {
   display: none;
   position: fixed;
@@ -162,7 +160,7 @@
     padding: 10px $algolia-search-padding-horiz;
     border: {
       bottom: 1px dashed;
-      color: rgba(245,245,250,var(--border-opacity));
+      color: rgba(245, 245, 250, var(--border-opacity));
     }
     cursor: pointer;
     &:hover {
@@ -218,7 +216,9 @@
 
 .algolia-pop-overlay {
   position: fixed;
-  top: 0;right: 0;left: 0;bottom: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
   z-index: 50;
 }
-

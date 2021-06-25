@@ -7,7 +7,7 @@
   top: 0;
   z-index: 0;
   height: 100%;
-  width: 400px;
+  width: $sidebar-width;
   transition: all 0.3s ease-in 0s;
   overflow-x: hidden;
   background-color: #222;
@@ -94,8 +94,8 @@
   height: calc(100% - 4rem);
   top: 0;
   left: 0;
-  transition: transform 0.3s ease-out 0s;
   overflow-x: hidden;
+  transition: transform 0.3s ease-out 0s;
   transform: translate3d(0, 0, 0);
 }
 
@@ -107,7 +107,6 @@
   flex-shrink: 0;
   width: calc(33.33% - 2rem);
   -webkit-overflow-scrolling: touch;
-  overflow-scrolling: touch;
 }
 
 .sidebar-content-active-0 {

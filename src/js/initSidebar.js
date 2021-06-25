@@ -6,7 +6,7 @@ let mySidebar = new Sidebar({
   tabs: '.sidebar-tabs li',
   content: '.sidebar-content',
   panels: '.sideabar-contents > div',
-  menuButton: '.header-sidebar-menu'
+  menuButton: '.header-sidebar-menu',
 })
 
 export default mySidebar
