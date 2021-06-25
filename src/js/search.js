@@ -4,7 +4,7 @@ const initAlgolia = () => {
   $(document).ready(function () {
     const algoliaSettings = algolia
     const isAlgoliaSettingsValid =
-      algoliaSettings.appId &&
+      algoliaSettings.applicationID &&
       algoliaSettings.apiKey &&
       algoliaSettings.indexName
 
@@ -15,7 +15,7 @@ const initAlgolia = () => {
 
     const algoliasearch = require('algoliasearch')
     const searchClient = algoliasearch(
-      algoliaSettings.appId,
+      algoliaSettings.applicationID,
       algoliaSettings.apiKey
     )
 
