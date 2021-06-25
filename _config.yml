@@ -9,8 +9,9 @@ signature: witness me
 social:
   email: 12345@qq.com
   github: //github.com/fi3ework
-  # wechat and qq should be a path of qr-code image
+  # wechat should be a path of qr-code image path
   wechat: /assets/example_qr.png
+  # qq should be a path of qr-code image path
   qq: 
   telegram: 
   weibo: 
@@ -85,12 +86,15 @@ comment:
   valine_appId: 
   valine_appKey: 
   valine_placeHolder: 
-  # gitalk site: https://github.com/gitalk/gitalk#options  
+  # gitalk site: https://github.com/gitalk/gitalk/
+  # Value 'true' is recommended for gitalk_pathname_id setting
   gitalk_client_id: 
   gitalk_client_secret: 
   gitalk_admin: 
   gitalk_owner: 
   gitalk_repo: 
+  gitalk_pathname_id: false
+  gitalk_create_issue_manually: true
   # utteranc site: https://utteranc.es/
   utteranc_repo:  
   utteranc_label: 

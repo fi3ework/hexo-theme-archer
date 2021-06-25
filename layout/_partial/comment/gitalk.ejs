@@ -1,19 +1,24 @@
-<!-- gitalk评论 -->
-<% if(theme.comment.gitalk_client_id && theme.comment.gitalk_client_secret && theme.comment.gitalk_admin && theme.comment.gitalk_owner && theme.comment.gitalk_repo) { %>
-    <div id="comment-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.6.0/dist/gitalk.css">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.6.0/dist/gitalk.min.js"></script>
+<% if(theme.comment && theme.comment.gitalk_client_id && theme.comment.gitalk_client_secret && theme.comment.gitalk_admin && theme.comment.gitalk_owner && theme.comment.gitalk_repo) { %>
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css"></link>
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
     <script>
-        var gitalk = new Gitalk({
+        let idOption = '<%- page.date %>'
+        <% if(theme.comment.gitalk_pathname_id) { %>
+        idOption = location.pathname
+        <% } %>
+        const gitalk = new Gitalk({
             clientID: '<%- theme.comment.gitalk_client_id %>',
-            clientSecret: '<%- theme.comment.gitalk_client_secret%>',
-            id: '<%- page.date %>',
-            repo: '<%- theme.comment.gitalk_repo%>',
-            owner: '<%- theme.comment.gitalk_owner%>',
-            admin: <%- JSON.stringify(theme.comment.gitalk_admin)%>,
-            createIssueManually: true,
-            distractionFreeMode: false
+            clientSecret: '<%- theme.comment.gitalk_client_secret %>',
+            repo: '<%- theme.comment.gitalk_repo %>',
+            owner: '<%- theme.comment.gitalk_owner %>',
+            admin: <%- JSON.stringify(theme.comment.gitalk_admin) %>,
+            id: idOption,
+            distractionFreeMode: false,
+            createIssueManually: <%- theme.comment.gitalk_create_issue_manually %>,
         })
-        gitalk.render('comment-container')
+        console.log(gitalk)
+        gitalk.render('gitalk-container')
     </script>
-    <% } %>
+    <noscript>为正常使用 Gitalk 评论功能，您需要激活 JavaScript</noscript>
+<% } %> 
