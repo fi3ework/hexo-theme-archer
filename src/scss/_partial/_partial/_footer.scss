@@ -35,6 +35,32 @@
   padding: 0 0.2rem;
 }
 
+// ========== website approve ========== //≈
+.website-approve {
+  font-size: 14px;
+  font-family: $feature-font-family;
+  margin: 0rem auto 0.5rem;
+  text-align: center;
+  color: $social-iconfont-color;
+  a {
+    color: $social-iconfont-color;
+  }
+}
+
+.icp-approve {
+  font-family: $feature-font-family;
+}
+
+.beian-img {
+  position: relative;
+  vertical-align: middle;
+  padding: 0 0.2rem 0.3rem 0.2rem;
+}
+
+.beian-approve {
+  font-family: $feature-font-family;
+}
+
 // ========== busuanzi ========== //≈
 .busuanzi-container {
   text-align: center;

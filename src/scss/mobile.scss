@@ -179,9 +179,6 @@ $sidebar-width: 70vw;
   .social {
     @include social($scaleSize: 0.5, $spanMargin: 0.2rem);
   }
-  .copyright {
-    margin: 0.5rem auto 0.5rem auto;
-  }
 }
 
 #busuanzi_container_site_pv,
