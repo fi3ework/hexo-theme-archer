@@ -147,3 +147,8 @@ float_button_theme: default
 read_progress_color: default
 # Blog post banner theme ('default' or 'clean')
 post_banner_theme: default
+# Mermaid Chart: https://github.com/knsv/mermaid
+mermaid:
+  enable: true
+  version: '7.1.2'
+  options: # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
