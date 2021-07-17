@@ -1,5 +1,4 @@
 // special thanks to https://blog.naaln.com/2016/07/hexo-with-algolia/
-
 const initAlgolia = () => {
   $(document).ready(function () {
     const algoliaSettings = algolia
@@ -13,7 +12,6 @@ const initAlgolia = () => {
       return
     }
 
-    const algoliasearch = require('algoliasearch')
     const searchClient = algoliasearch(
       algoliaSettings.applicationID,
       algoliaSettings.apiKey

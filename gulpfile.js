@@ -3,7 +3,7 @@ const gulp = require('gulp'),
   sourcemaps = require('gulp-sourcemaps'),
   autoprefixer = require('autoprefixer'),
   webpack = require('webpack'),
-  sass = require('gulp-sass'),
+  sass = require('gulp-sass')(require('node-sass')),
   browserSync = require('browser-sync').create()
 
 /* ========== develop ========== */

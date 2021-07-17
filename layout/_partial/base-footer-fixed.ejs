@@ -1,20 +1,20 @@
 <% if(is_home()) { %>
-<footer class="footer-fixed index-footer-fixed">
+    <footer class="footer-fixed index-footer-fixed">
 <% } else { %>
-<footer class="footer-fixed">
+    <footer class="footer-fixed">
 <% } %>
     <!-- back to top button -->
     <div class="footer-fixed-element">
         <% if(theme.float_button_theme === 'rounded') { %>
-        <div class="back-top back-top-rounded">
+            <div class="back-top back-top-rounded">
         <% } else { %>
-        <div class="back-top">
+            <div class="back-top">
         <% } %>
-            <% if(theme.float_button_theme === 'rounded') { %>
+        <% if(theme.float_button_theme === 'rounded') { %>
             <i class="fas fa-chevron-up"></i>
-            <% } else { %>
+        <% } else { %>
             <div>&#xe639;</div>
-            <% } %>
+        <% } %>
         </div>
     </div>
 </footer>

@@ -1,9 +1,9 @@
 <footer class="footer footer-unloaded">
     <!-- social  -->
     <% if(theme.social) { %>
-    <div class="social">
-        <%- partial('base-social') %>
-    </div>
+        <div class="social">
+            <%- partial('base-social') %>
+        </div>
     <% } %>
     <!-- powered by Hexo  -->
     <div class="copyright">
@@ -11,39 +11,30 @@
     </div>
     <!-- website approve for Chinese user -->
     <% if(theme.website_approve.enable) { %>
-    <div class="website-approve">
-        <% if(theme.website_approve.icp_approve) { %>
-        <span id="icp-approve" class="icp-approve">
-            <a href="https://beian.miit.gov.cn/" target="_blank"><%- theme.website_approve.icp_approve %></a>
-        </span>
-        <% } %>
-        <% if(theme.website_approve.beian_approve && theme.website_approve.beian_img) { %>
-        <% const beianPath = theme.website_approve.beian_img %>
-        <img class="beian-img" src="<%- url_for(beianPath) %>" />
-        <span id="beian-approve" class="beian-approve">
-            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<%- theme.website_approve.beian_approve %>" target="_blank">京公网安备 <%- theme.website_approve.beian_approve %>号</a>
-        </span>
-        <% } %>
-    </div>
+        <div class="website-approve">
+            <% if(theme.website_approve.icp_approve) { %>
+                <span id="icp-approve" class="icp-approve">
+                    <a href="https://beian.miit.gov.cn/" target="_blank"><%- theme.website_approve.icp_approve %></a>
+                </span>
+            <% } %>
+            <% if(theme.website_approve.beian_approve && theme.website_approve.beian_img) { %>
+                <% const beianPath = theme.website_approve.beian_img %>
+                <img class="beian-img" src="<%- url_for(beianPath) %>" />
+                <span id="beian-approve" class="beian-approve">
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<%- theme.website_approve.beian_approve %>" target="_blank">京公网安备 <%- theme.website_approve.beian_approve %>号</a>
+                </span>
+            <% } %>
+        </div>
     <% } %>
     <!-- 不蒜子  -->
     <% if (theme.busuanzi) { %>
-    <div class="busuanzi-container">
-    <% var sloganPieces = theme.busuanzi_slug.split('${count}') %>
-    <% if(theme.busuanzi_pv_or_uv === 'pv') { %> 
-    <span id="busuanzi_container_site_pv"><%- sloganPieces[0] %><span id="busuanzi_value_site_pv"></span><%- sloganPieces[1] %></span>
-    <% } else if (theme.busuanzi_pv_or_uv === 'uv') { %>
-    <span id="busuanzi_container_site_uv"><%- sloganPieces[0] %><span id="busuanzi_value_site_uv"></span><%- sloganPieces[1] %></span>
-    <% } %>
-    </div>
-    <% } %>
-		<!-- mermaid -->
-		<% if (theme.mermaid.enable) { %>
-			<script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
-			<script>
-				if (window.mermaid) {
-					mermaid.initialize({theme: 'forest'});
-				}
-			</script>
-		<% } %>		
+        <div class="busuanzi-container">
+            <% var sloganPieces = theme.busuanzi_slug.split('${count}') %>
+            <% if(theme.busuanzi_pv_or_uv === 'pv') { %> 
+                <span id="busuanzi_container_site_pv"><%- sloganPieces[0] %><span id="busuanzi_value_site_pv"></span><%- sloganPieces[1] %></span>
+            <% } else if (theme.busuanzi_pv_or_uv === 'uv') { %>
+                <span id="busuanzi_container_site_uv"><%- sloganPieces[0] %><span id="busuanzi_value_site_uv"></span><%- sloganPieces[1] %></span>
+            <% } %>
+        </div>
+    <% } %>	
 </footer>

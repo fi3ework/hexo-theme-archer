@@ -6,9 +6,9 @@
 <% var aboutStrStyle = attr + ':' + String(aboutHeight) + 'vh;' %>
 <% var introHeightStyle %>
 <% if (is_home()) { %>
-<%- indexStrStyle %>
+    <%- indexStrStyle %>
 <% } else if (is_post()) { %>
-<%- postStrStyle %>
+    <%- postStrStyle %>
 <% } else if (page.layout === "about") { %>
-<%- aboutStrStyle %>
+    <%- aboutStrStyle %>
 <% } %>

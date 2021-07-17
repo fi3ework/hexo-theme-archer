@@ -31,9 +31,8 @@ social:
   rss: 
 # friends
 friends:
-  friendA: //www.baidu.com
-  friendB: //www.google.com
-  friendC: 
+  # friendA: //www.baidu.com
+  # friendB: //www.google.com
 about:
   enable: true
   image: '/intro/about-bg.jpg'
@@ -56,6 +55,14 @@ site_header_image: '/intro/index-bg.jpg'
 post_header_image: '/intro/post-bg.jpg'
 # 404 image
 _404_image: '/intro/404-bg.jpg'
+
+# ========== Theme ========== #
+# Blog float button theme ('default' or 'rounded')
+float_button_theme: default
+# Blog read progress color ('default' for black or 'feature' for feature-color)
+read_progress_color: default
+# Blog post banner theme ('default' or 'clean')
+post_banner_theme: default
 
 # ========== Search ========== #
 algolia_search:
@@ -141,14 +148,9 @@ website_approve:
   beian_img: /assets/beian.png
 # Blog page article timeliness days reminder, 0 for no threshold
 outdated_threshold: 0
-# Blog float button theme ('default' or 'rounded')
-float_button_theme: default
-# Blog read progress color ('default' for black or 'feature' for feature-color)
-read_progress_color: default
-# Blog post banner theme ('default' or 'clean')
-post_banner_theme: default
 # Mermaid Chart: https://github.com/knsv/mermaid
 mermaid:
-  enable: true
-  version: '7.1.2'
+  enable: false
+  version: 8.11.0
+  theme: dark
   options: # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
