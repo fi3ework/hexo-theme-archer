@@ -1,5 +1,4 @@
 // ========== general style ========== //
-
 @media (prefers-color-scheme: dark) {
   body {
     background-color: $body-background-dark-color;
@@ -9,9 +8,9 @@
     background-color: $body-background-dark-color;
   }
 
-	.profile-name {
-		color: #ddd !important;
-	}
+  .profile-name {
+    color: #ddd !important;
+  }
 
   .wrapper {
     box-shadow: -3px 0 2px 0 rgba(255, 255, 255, 0.6) !important;
@@ -61,53 +60,53 @@
   }
 
   .toc-wrapper {
-		.toc-active {
-			color: $feature-color !important;
-		}
+    .toc-active {
+      color: $feature-color !important;
+    }
     a {
       color: #777 !important;
     }
-		a:hover {
-			color: $feature-color !important;
-		}
+    a:hover {
+      color: $feature-color !important;
+    }
   }
 
-	.footer {
-		background-color: $body-background-dark-color !important;
-	}
+  .footer {
+    background-color: $body-background-dark-color !important;
+  }
 
-	.banner {
-		border-bottom: 1px solid rgba(255, 255, 255, 0.8) !important;
-		background-color: rgba(0, 0, 0, 0.8) !important;
-	}
+  .banner {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8) !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+  }
 
-	.blog-title {
-		a {
-			color: #fff !important;
-			&:hover {
-				color: $feature-color !important;
-			}
-		}
-	}
+  .blog-title {
+    a {
+      color: #fff !important;
+      &:hover {
+        color: $feature-color !important;
+      }
+    }
+  }
 
-	.post-title {
-		a {
-			color: rgba(255, 255, 255, 0.8) !important;
-		}
-	}
+  .post-title {
+    a {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+  }
 
-	.nextSlogan,
+  .nextSlogan,
   .prevSlogan {
     color: #ddd !important;
   }
 
-	.popup {
-		background: #121212 !important;
-		color: #e1e1e1 !important;
-		box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5) !important;
-	}
-	.algolia-search {
-		border-bottom: 1px solid #222 !important;
-		background: #121212 !important;
-	}	
+  .popup {
+    background: #121212 !important;
+    color: #e1e1e1 !important;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5) !important;
+  }
+  .algolia-search {
+    border-bottom: 1px solid #222 !important;
+    background: #121212 !important;
+  }
 }

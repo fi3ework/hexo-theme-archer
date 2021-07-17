@@ -1,45 +1,46 @@
 <main class="main index-page">
     <% page.posts.each(function (_post) { %>
-    <% let truncateLength = typeof theme.truncate_length === 'number' ? theme.truncate_length : 300 %>
-    <% let _content = null %>
-    <% if(!!_post.excerpt) { %>
-    <% _content = _post.excerpt %>
-    <% } else if (!!_post.abstract) { %>
-    <% _content = _post.abstract %>
-    <% } else { %>
-    <% _content = truncateLength === 0 ? null : truncate(strip_html(_post.content), {length: truncateLength, omission: '...'})%>
-    <% } %>
-    <article class="index-post">
-        <a class="abstract-title" href = "<%- url_for(_post.path) %>" >
-            <% if(_post.top) { %>
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
+        <% let truncateLength = typeof theme.truncate_length === 'number' ? theme.truncate_length : 300 %>
+        <% let _content = null %>
+        <% if(!!_post.excerpt) { %>
+            <% _content = _post.excerpt %>
+        <% } else if (!!_post.abstract) { %>
+            <% _content = _post.abstract %>
+        <% } else { %>
+            <% _content = truncateLength === 0 ? null : truncate(strip_html(_post.content), {length: truncateLength, omission: '...'})%>
+        <% } %>
+        <article class="index-post">
+            <a class="abstract-title" href="<%- url_for(_post.path) %>">
+                <% if(_post.top) { %>
+                    <span class="stick-top iconfont-archer">&#xe63d;</span>
                 <% } %>
                 <span><%= _post.title || '[Untitled Post]' %></span>
-        </a>
-        <div class="abstract-content">
-            <%- _content %>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time"><%- date(_post.date, "YYYY/MM/DD") %></span>
+            </a>
+            <div class="abstract-content">
+                <%- _content %>
             </div>
-            <!-- tags  -->
-            <% if(_post.tags.length) { %>
-            <%- partial('./_partial/base-title-tags', {
-                currPost :_post,
-                className : 'abstract-tags'}) %>
-            <% } %>
-        </div>
-    </article>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time"><%- date(_post.date, "YYYY/MM/DD") %></span>
+                </div>
+                <!-- tags  -->
+                <% if (_post.tags.length) { %>
+                    <%- partial('./_partial/base-title-tags', {
+                        currPost :_post,
+                        className : 'abstract-tags'
+                    }) %>
+                <% } %>
+            </div>
+        </article>
     <% }) %>
     <!-- paginator  -->
-    <% if (page.total > 1){ %>
-    <nav class="page-nav">
-        <%- paginator({
-        prev_text: '< PREV',
-        next_text: 'NEXT >'
-        }) %>
-    </nav>
+    <% if (page.total > 1) { %>
+        <nav class="page-nav">
+            <%- paginator({
+                prev_text: '< PREV',
+                next_text: 'NEXT >'
+            }) %>
+        </nav>
     <% } %>
 </main>

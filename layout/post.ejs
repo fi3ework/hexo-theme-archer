@@ -2,7 +2,7 @@
     <article class="article-entry">
         <%- page.content %>
     </article>
-    <!-- license  -->
+    <!-- license -->
     <% if(theme.copyright.enable === true && page.copyright !== false) { %>
         <div class="license-wrapper">
             <p><%- __('author') %>：<a href="<%- config.url %>"><%- config.author %></a>
@@ -12,12 +12,12 @@
             <p>版权声明：<%- theme.copyright.license %></p>
         </div>
     <% } %>
-    <!-- paginator  -->
+    <!-- paginator -->
     <ul class="post-paginator">
         <li class="next">
             <% if (page.prev){ %>
                 <div class="nextSlogan">Next Post</div>
-                <a href= "<%- url_for(page.prev.path) %>" title= "<%- page.prev.title %>">
+                <a href="<%- url_for(page.prev.path) %>" title="<%- page.prev.title %>">
                     <div class="nextTitle"><%- page.prev.title || '[Untitled Post]' %></div>
                 </a>
             <% } %>
@@ -25,7 +25,7 @@
         <li class="previous">
             <% if (page.next){ %>
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "<%- url_for(page.next.path) %>" title= "<%- page.next.title %>">
+                <a href="<%- url_for(page.next.path) %>" title="<%- page.next.title %>">
                     <div class="prevTitle"><%- page.next.title || '[Untitled Post]' %></div>
                 </a>
             <% } %>
@@ -41,28 +41,28 @@
     <%- partial('_partial/comment/youyan') %>
     <%- partial('_partial/comment/custom') %>
     <%- partial('_partial/comment/valine') %>
-    <!-- 评论 -->
-
+    <!-- 文章时效性提醒 -->
     <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
     <% if (theme.outdated_threshold != 0){ %>
-    <script>
-      (function(){
-        var time = document.getElementsByClassName('post-intro-time')[0]
-        if (time === undefined) { return; }
-        var post = document.getElementsByTagName("article")[0]
-        if (post === undefined) { return; }
+        <script>
+            (function(){
+                const time = document.getElementsByClassName('post-intro-time')[0]
+                const post = document.getElementsByTagName("article")[0]
+                if (time === undefined || post === undefined) {
+                    return
+                }
 
-        var pubTime = new Date(time.innerText)
-        var now = Date.now()
-        var interval = parseInt(now - pubTime)
-        var days = parseInt(interval / 86400000)
-        var outdated_threshold = parseInt(<%- theme.outdated_threshold %>)
-        if (interval > outdated_threshold*24*3600*1000){
-          post.innerHTML = '<div class="note note-warning" style="font-size:0.9rem"><p>' +
-            '<div class="title">文章时效性提示</div><p>这是一篇发布于 ' + days + ' 天前的文章，部分信息可能已发生改变，请注意甄别。' +
-            '</p></p></div>' + post.innerHTML;
-        }
-      })();
-  </script>
-  <% } %>
+                const pubTime = new Date(time.innerText)
+                const now = Date.now()
+                const interval = parseInt(now - pubTime)
+                const days = parseInt(interval / 86400000)
+                const outdated_threshold = parseInt(<%- theme.outdated_threshold %>)
+                if (interval > outdated_threshold*24*3600*1000){
+                    post.innerHTML = '<div class="note note-warning" style="font-size:0.9rem"><p>' +
+                    '<div class="title">文章时效性提示</div><p>这是一篇发布于 ' + days + ' 天前的文章，部分信息可能已发生改变，请注意甄别。' +
+                    '</p></p></div>' + post.innerHTML;
+                }
+            })();
+        </script>
+    <% } %>
 </main>
