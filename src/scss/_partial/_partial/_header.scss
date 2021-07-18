@@ -107,7 +107,7 @@
   width: 1.5rem;
   height: 1.5rem;
   transform: translate(0, -50%);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   font-family: 'iconfont-archer';
   color: #fff;
   text-align: center;
@@ -137,7 +137,6 @@
 
 .header-sidebar-menu-active {
   transform: translate(0, -50%) rotate(180deg) !important;
-  transition: transform 0.3s ease;
 }
 
 .header-sidebar-menu-black {
