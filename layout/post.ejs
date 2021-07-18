@@ -1,4 +1,7 @@
 <main class="main post-page">
+    <% if (page.mathjax == true){ %>
+        <%- partial('mathjax') %>
+    <% } %>
     <article class="article-entry">
         <%- page.content %>
     </article>
