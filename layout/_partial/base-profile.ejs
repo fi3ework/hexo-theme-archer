@@ -1,4 +1,4 @@
-<div class="profile">
+<div class="profile <%- theme.profile_sticky ? 'profile-sticky' : '' %>">
     <img class="profile-avatar" alt="avatar" src= <%- url_for(theme.avatar) %> />
     <div class="profile-name"><%- theme.author || config.author %></div>
     <% if(theme.signature && theme.signature.length !== 0) { %>
