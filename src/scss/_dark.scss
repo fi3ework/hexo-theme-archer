@@ -1,112 +1,335 @@
 // ========== general style ========== //
 @media (prefers-color-scheme: dark) {
+  // common
   body {
-    background-color: $body-background-dark-color;
-  }
-
-  .container {
-    background-color: $body-background-dark-color;
-  }
-
-  .profile-name {
-    color: #ddd !important;
+    background-color: $body-background-color-dark;
   }
 
   .wrapper {
-    box-shadow: -3px 0 2px 0 rgba(255, 255, 255, 0.6) !important;
+    box-shadow: -3px 0 2px 0 rgba(255, 255, 255, 0.6);
   }
 
-  .back-top {
-    border: 2px solid #fff !important;
-    background-color: rgba(18, 18, 18, 0.8) !important;
-    color: #fff !important;
-    &:hover {
-      background-color: #fff !important;
-      color: #121212 !important;
-    }
+  .container {
+    background-color: $body-background-color-dark;
+  }
+
+  ::selection {
+    background: $selection-background-color-dark;
+    color: $selection-text-color-dark;
   }
 
   .note-warning {
-    background-color: #222 !important;
+    background-color: #222;
   }
 
-  .abstract-title {
-    color: $index-post-link-dark-color !important;
+  // fixed footer
+  .back-top {
+    border-color: rgba(255, 255, 255, 0.87);
+    background-color: rgba(18, 18, 18, 0.8);
+    color: rgba(255, 255, 255, 0.87);
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.87);
+      color: $body-background-color-dark;
+    }
+  }
+
+  .back-top-rounded {
+    color: #fff;
+    background-color: $body-background-color-dark;
+    &:hover {
+      color: #333;
+    }
+  }
+
+  // index page
+  .index-post {
+    background-color: #181818;
+    padding: 1.5rem 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .index-post {
+    .abstract-content {
+      color: $abstract-content-text-color-dark;
+    }
+  }
+
+  .abstract-title span:last-of-type {
+    color: $abstract-content-title-color-dark;
+    &:hover {
+      color: $feature-color-dark;
+    }
+  }
+
+  .abstract-post-meta {
+    color: $abstract-post-meta-color-dark;
+
+    .post-tag {
+      color: $abstract-post-tag-color-dark;
+      @include hover-line($color: $abstract-post-tag-color-dark);
+    }
+
+    .abstract-calander {
+      color: $abstract-calander-color-dark;
+    }
+  }
+
+  // post page
+  .anchorjs-archer {
+    color: $feature-color-dark;
+  }
+
+  .article-entry {
+    background-color: #181818;
+    padding: 1rem 2rem;
   }
 
   .abstract-content,
   .article-entry {
-    color: $post-content-dark-color !important;
-    code {
-      background: #444 !important;
-    }
+    color: $post-content-color-dark;
     blockquote {
-      background-color: #464646 !important;
+      background-color: #464646;
+      border-left-color: $feature-color-dark;
+    }
+    a {
+      color: $feature-color-dark;
+      &:hover {
+        border-bottom-color: $feature-color-dark;
+      }
     }
   }
 
   .license-wrapper {
-    color: $post-content-dark-color !important;
+    background-color: #181818;
+    padding: 1.5rem 2rem;
   }
 
-  .header-sidebar-menu-black {
-    color: #fff !important;
-    background-color: #121212 !important;
-    border-color: #fff !important;
-    &:hover {
-      background-color: #fff !important;
-      color: #121212 !important;
+  .license-wrapper {
+    color: $post-content-color-dark;
+    a {
+      color: $feature-color-dark;
     }
   }
 
   .toc-wrapper {
     .toc-active {
-      color: $feature-color !important;
+      color: $feature-color-dark;
     }
     a {
-      color: #777 !important;
+      color: #777;
     }
     a:hover {
-      color: $feature-color !important;
+      color: $feature-color-dark;
+    }
+  }
+
+  .toc-catalog {
+    &:hover {
+      color: $feature-color-dark;
     }
   }
 
   .footer {
-    background-color: $body-background-dark-color !important;
-  }
-
-  .banner {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.8) !important;
-    background-color: rgba(0, 0, 0, 0.8) !important;
-  }
-
-  .blog-title {
-    a {
-      color: #fff !important;
-      &:hover {
-        color: $feature-color !important;
-      }
-    }
+    background-color: $body-background-color-dark;
   }
 
   .post-title {
     a {
-      color: rgba(255, 255, 255, 0.8) !important;
+      color: $header-banner-text-color-dark;
     }
   }
 
-  .nextSlogan,
-  .prevSlogan {
-    color: #ddd !important;
+  .post-paginator {
+    .nextTitle,
+    .prevTitle {
+      color: rgba(255, 255, 255, 0.38);
+      &:hover {
+        color: $feature-color-dark;
+      }
+    }
+
+    .nextSlogan,
+    .prevSlogan {
+      color: rgba(255, 255, 255, 0.6);
+    }
   }
 
+  // code page
+  .abstract-content,
+  .article-entry {
+    code {
+      background: #444;
+    }
+  }
+
+  // footer
+  .copyright {
+    a {
+      color: $feature-color-dark;
+    }
+  }
+
+  // header
+  .read-progress {
+    background-color: rgba(255, 255, 255, 0.6);
+  }
+
+  .read-progress-feature {
+    background-color: $feature-color-dark;
+  }
+
+  .banner {
+    border-bottom-color: rgba(255, 255, 255, 0.87);
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  .banner-clean {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .blog-title {
+    a {
+      color: $header-banner-text-color-dark;
+      &:hover {
+        color: $feature-color-dark;
+      }
+    }
+  }
+
+  .header-sidebar-menu {
+    border-color: #fff;
+    color: #fff;
+    &:hover {
+      background-color: #fff;
+      color: #000;
+    }
+  }
+
+  .header-sidebar-menu-rounded {
+    &:hover {
+      background-color: transparent;
+      color: $feature-color-dark;
+    }
+  }
+
+  .header-sidebar-menu-black {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: $body-background-color-dark;
+    border-color: rgba(255, 255, 255, 0.87);
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.87);
+      color: $body-background-color-dark;
+    }
+  }
+
+  .home-link {
+    &:hover {
+      color: $feature-color-dark;
+    }
+  }
+
+  // profile
+  .profile-name {
+    color: #ddd;
+  }
+
+  .friends {
+    a {
+      &:hover {
+        color: $feature-color-dark;
+      }
+    }
+  }
+
+  .about-me {
+    a {
+      &:hover {
+        color: $feature-color-dark;
+      }
+    }
+  }
+
+  // sidebar archive
+  .archive-post-item {
+    &:hover {
+      border-left-color: $feature-color-dark;
+      .archive-post-date,
+      .archive-post-title {
+        color: $feature-color-dark;
+      }
+    }
+  }
+
+  .site-search {
+    .search-icon {
+      color: $feature-color-dark;
+    }
+  }
+
+  .archive-year,
+  .total-archive {
+    color: $feature-color-dark;
+  }
+
+  // sidebar tags
+  .sidebar-tag-name,
+  .sidebar-category-name {
+    &:hover {
+      border-color: $feature-color-dark;
+      color: $feature-color-dark;
+    }
+  }
+
+  .sidebar-label-focus {
+    border-color: $feature-color-dark;
+    color: $feature-color-dark;
+  }
+
+  // sidebar
+  .sidebar-tabs {
+    &::after {
+      background-color: $feature-color-dark;
+    }
+  }
+
+  // Algolia
   .popup {
-    background: #121212 !important;
-    color: #e1e1e1 !important;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5) !important;
+    background: $body-background-color-dark;
+    color: #e1e1e1;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
   }
+
   .algolia-search {
-    border-bottom: 1px solid #222 !important;
-    background: #121212 !important;
+    border-bottom-color: #222;
+    background: $body-background-color-dark;
   }
+
+  .popup-btn-close {
+    color: $feature-color-dark;
+  }
+
+  .algolia-hit {
+    &-item {
+      &-link {
+        em {
+          color: $feature-color-dark;
+        }
+      }
+    }
+  }
+
+  .ais-Pagination-item {
+    a {
+      color: $feature-color-dark;
+    }
+  }
+
+  // Busuanzi
+  #busuanzi_container_site_pv,
+  #busuanzi_container_site_uv {
+    color: rgba(255, 255, 255, 0.38) !important;
+  }
+
+  // comment
+  @import '_partial/_comment/_gitalk-dark';
 }

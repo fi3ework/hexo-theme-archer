@@ -9,7 +9,7 @@
 // ========== abstract content ========== //
 .index-post {
   .abstract-content {
-    color: #585858;
+    color: $abstract-content-text-color;
     font-size: 1rem;
     line-height: 1.6rem;
     font-weight: 300;
@@ -24,12 +24,12 @@
 // ========== abstract title ========== //
 .abstract-title {
   line-height: 2.5rem;
-  color: $index-post-link-color;
-  padding-bottom: 0.5rem;
   span:last-of-type {
+    display: block;
     transition: color 0.1s ease-in;
     font-size: 1.7rem;
-    color: #333333;
+    color: $abstract-content-title-color;
+    margin-bottom: 0.5rem;
     &:hover {
       color: $feature-color;
     }
@@ -47,27 +47,27 @@
   justify-content: space-between;
   padding: 0.5rem 0 0 0;
   font-family: $feature-font-family;
-  color: #aaa;
+  color: $abstract-post-meta-color;
   height: 1.5rem;
-}
 
-// tags
-.post-tag {
-  font-size: 1rem;
-  position: relative;
-  color: $index-post-tag-color;
-  margin-left: 0.4rem;
-  font-weight: lighter;
-  &::before {
-    margin-right: 2px;
-    content: '#';
+  .post-tag {
+    color: $abstract-post-tag-color;
+    font-size: 1rem;
+    position: relative;
+    margin-left: 0.4rem;
+    font-weight: lighter;
+    &::before {
+      margin-right: 2px;
+      content: '#';
+    }
+    @include hover-line($color: $abstract-post-tag-color);
   }
-  @include hover-line($color: $index-post-tag-color);
-}
 
-.abstract-calander {
-  position: relative;
-  top: -0.1rem;
-  margin-right: 0.3rem;
-  font-size: 1rem;
+  .abstract-calander {
+    color: $abstract-calander-color;
+    position: relative;
+    top: -0.1rem;
+    margin-right: 0.3rem;
+    font-size: 1rem;
+  }
 }

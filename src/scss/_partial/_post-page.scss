@@ -237,25 +237,25 @@
       }
     }
   }
-  @for $i from 2 through 4 {
-    h#{$i} {
-      // &::before {
-      //     content: "#";
-      //     margin-right: 2px;
-      //     color: $feature-color;
-      //     font: 1em $base-font-family;
-      //     font-weight: bold;
-      // }
-    }
-  }
-  h1 {
-  }
-  h2 {
-  }
-  h3 {
-  }
-  h4 {
-  }
+  // @for $i from 2 through 4 {
+  //   h#{$i} {
+  //     // &::before {
+  //     //     content: "#";
+  //     //     margin-right: 2px;
+  //     //     color: $feature-color;
+  //     //     font: 1em $base-font-family;
+  //     //     font-weight: bold;
+  //     // }
+  //   }
+  // }
+  // h1 {
+  // }
+  // h2 {
+  // }
+  // h3 {
+  // }
+  // h4 {
+  // }
   h5 {
     font-size: 1rem;
     margin: 1rem 0;
@@ -367,7 +367,7 @@
   position: sticky;
   top: 0;
   color: #bbb;
-  background-color: #fff;
+  background-color: transparent;
   z-index: 2;
   cursor: pointer;
   user-select: none;
@@ -404,7 +404,7 @@
     font-weight: bold;
   }
   a {
-    color: #ddd;
+    color: #ccc;
   }
   a:hover {
     color: $feature-color !important;

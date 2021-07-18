@@ -116,7 +116,7 @@
   cursor: pointer;
   &:hover {
     background-color: #fff;
-    color: #000;
+    color: #121212;
     transform: translate(0, -50%);
   }
 }
@@ -141,11 +141,11 @@
 }
 
 .header-sidebar-menu-black {
-  color: #000;
+  color: #121212;
   background-color: #fff;
-  border-color: #000;
+  border-color: #121212;
   &:hover {
-    background-color: #000;
+    background-color: #121212;
     color: #fff;
   }
 }
