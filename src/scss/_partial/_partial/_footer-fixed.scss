@@ -28,11 +28,11 @@
   display: block;
   top: 50%;
   transform: translate(0, -50%);
+  transition: all 0.3s ease;
   font-family: 'iconfont-archer';
   left: 1rem;
   bottom: 1rem;
   z-index: 21;
-  display: none;
   width: 1.5rem;
   height: 1.5rem;
   text-align: center;
@@ -61,7 +61,7 @@
   }
 }
 
-.back-top-show {
-  display: unset;
-  pointer-events: initial;
+.back-top-hidden {
+  pointer-events: none;
+  opacity: 0;
 }

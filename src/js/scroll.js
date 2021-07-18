@@ -96,14 +96,14 @@ let scroll = function () {
     if (crossingState === 1) {
       $tocWrapper.addClass('toc-fixed')
       $homeLink.addClass('home-link-hide')
-      $backTop.addClass('back-top-show')
       $sidebarMenu.addClass('header-sidebar-menu-black')
+      $backTop.removeClass('back-top-hidden')
     } else if (crossingState === -1) {
       $tocWrapper.removeClass('toc-fixed')
       $homeLink.removeClass('home-link-hide')
       $banner.removeClass('banner-show')
-      $backTop.removeClass('back-top-show')
       $sidebarMenu.removeClass('header-sidebar-menu-black')
+      $backTop.addClass('back-top-hidden')
     }
     // 如果不是 post-page 以下忽略
     if (isPostPage) {
