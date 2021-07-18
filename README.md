@@ -133,18 +133,34 @@ mermaid:
 
 > ❗️❗️❗️ 注意：如果您需要使用**类图**，请编辑您 Hexo 根目录下的 `_config.yml` 文件，设置 `external_link: false`。请确保这个设置对您原来的博客功能没有影响，这是 Hexo 本身的 bug。
 
-## 启用 LaTeX
+## 启用 LaTeX 数学公式
 
-Archer 主题已经内置了 MathJax，但是您需要替换 Hexo 默认的渲染引擎来支持解析 LaTeX 语法。
+这个[维基页面](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Latex-%E6%94%AF%E6%8C%81)包括完整的介绍。
+
+Archer 主题已经内置了 MathJax，但是您需要**替换 Hexo 默认的 Markdown 渲染引擎**来支持解析 LaTeX 数学公式语法。此示例中将替换为 [`hexo-renderer-pandoc`](https://github.com/wzpan/hexo-renderer-pandoc)。
+
+请留意：替换渲染引擎可能会带来编写上的区别，或导致一些潜在的问题。
+
+首先，确保系统中已经[安装了 `pandoc`](https://pandoc.org/installing.html)，版本不低于 2.0。
 
 在 Hexo 根目录下执行下面的命令：
 
 ``` bash
+# 卸载默认的渲染引擎
 npm uninstall hexo-renderer-marked --save
-npm install hexo-renderer-kramed --save
+# 安装 hexo-renderer-pandoc
+npm install hexo-renderer-pandoc --save
 ```
 
-对需要启用 LaTeX 的文章的 Front-matter 中添加 `mathjax: true` 字段。测试 LaTeX 是否启用成功，您可以在这篇文章中添加下面的内容：
+在 Archer 主题目录下的 `_config.yml` 设置以启用 LaTeX 数学公式：
+
+``` yml
+math:
+  mathjax:
+    enable: true
+```
+
+最后，在需要启用 LaTeX 数学公式的文章的 Front-matter 中添加 `mathjax: true` 字段即可。测试是否启用成功，您可以在这篇文章中添加下面的内容：
 
 ``` markdown
 \begin{equation}
@@ -171,7 +187,6 @@ z=\dfrac{3\pi}{2}(1+2t)\sin(\dfrac{3\pi}{2}(1+2t)), &
 - [置顶文章](https://www.jianshu.com/p/42a4efcdf8d7)
 - [设置文章版权信息](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%AE%BE%E7%BD%AE%E6%96%87%E7%AB%A0%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF)
 - [启用站内搜索](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Algolia-%E6%90%9C%E7%B4%A2)
-- [启用 Latex 支持](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Latex-%E6%94%AF%E6%8C%81)
 - [切换为英文界面](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2)
 
 ## 更新主题

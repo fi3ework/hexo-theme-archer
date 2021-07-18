@@ -1,6 +1,6 @@
 <main class="main post-page">
-    <% if (page.mathjax == true){ %>
-        <%- partial('mathjax') %>
+    <% if (page.mathjax === true) { %>
+        <%- partial('_partial/math/mathjax') %>
     <% } %>
     <article class="article-entry">
         <%- page.content %>

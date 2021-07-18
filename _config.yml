@@ -151,10 +151,11 @@ outdated_threshold: 0
 # Mermaid Chart: https://github.com/knsv/mermaid
 mermaid:
   enable: false
-  version: 8.11.0
+  version: 8.11.0 # Version number '8' is for the latest '8.x' version of Mermaid.
   theme: dark
   options: # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
-# MathJax Support
-mathjax:
-  enable: true
-  cdn: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+# LaTeX Math Equations Support
+math:
+  mathjax:
+    enable: false
+    version: 3.2.0 # specified version number no less than '3.0.0', or you need to modify the CDN link manually. Version number '3' is for the latest '3.x' version of MathJax.
