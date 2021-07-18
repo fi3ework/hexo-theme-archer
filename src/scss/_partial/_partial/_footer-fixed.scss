@@ -37,11 +37,11 @@
   height: 1.5rem;
   text-align: center;
   line-height: 1.5rem;
-  border: 2px solid #121212;
+  border: 2px solid $body-background-color-dark;
   background-color: $body-background-color;
   cursor: pointer;
   &:hover {
-    background-color: #121212;
+    background-color: $body-background-color-dark;
     color: $body-background-color;
   }
 }

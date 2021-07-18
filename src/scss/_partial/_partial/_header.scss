@@ -103,20 +103,20 @@
   position: absolute;
   left: 1rem;
   top: 50%;
-  border: 2px solid #fff;
+  border: 2px solid $body-background-color;
   width: 1.5rem;
   height: 1.5rem;
   transform: translate(0, -50%);
   transition: all 0.3s ease;
   font-family: 'iconfont-archer';
-  color: #fff;
+  color: $body-background-color;
   text-align: center;
   line-height: 1.5rem;
   z-index: 21;
   cursor: pointer;
   &:hover {
-    background-color: #fff;
-    color: #121212;
+    background-color: $body-background-color;
+    color: $body-background-color-dark;
     transform: translate(0, -50%);
   }
 }
@@ -140,12 +140,12 @@
 }
 
 .header-sidebar-menu-black {
-  color: #121212;
-  background-color: #fff;
-  border-color: #121212;
+  color: $body-background-color-dark;
+  background-color: $body-background-color;
+  border-color: $body-background-color-dark;
   &:hover {
-    background-color: #121212;
-    color: #fff;
+    background-color: $body-background-color-dark;
+    color: $body-background-color;
   }
 }
 

@@ -24,6 +24,10 @@ $selection-text-color: #eee;
 $selection-text-color-dark: lighten($selection-text-color, 5%);
 
 // ========= dark mode ========= //
+$text-color-primary-dark: rgba(255, 255, 255, 0.87);
+$text-color-secondary-dark: rgba(255, 255, 255, 0.6);
+$text-color-minor-dark: rgba(255, 255, 255, 0.38);
+$foreground-color-dark: #181818;
 
 // ========== iconfont ========== //
 @font-face {
@@ -54,7 +58,7 @@ $header-border-top-width: 3px;
 $header-border-top-color: rgba(0, 0, 0, 0.75);
 $header-border-top-color-dark: rgba(0, 0, 0, 0.75);
 $header-banner-text-color: #333;
-$header-banner-text-color-dark: rgba(255, 255, 255, 0.87);
+$header-banner-text-color-dark: $text-color-primary-dark;
 
 // ========= sidebar ========= //
 $sidebar-width: 400px;
@@ -66,15 +70,15 @@ $profile-width: 200px;
 $index-post-link-color: #1f1f1f;
 $index-post-link-color-dark: #ccc;
 $index-post-tag-color: #aaa;
-$index-post-tag-color-dark: rgba(255, 255, 255, 0.38);
+$index-post-tag-color-dark: $text-color-minor-dark;
 
 // ===== abstract content ===== //
 $abstract-content-title-color: #333;
-$abstract-content-title-color-dark: rgba(255, 255, 255, 0.87);
+$abstract-content-title-color-dark: $text-color-primary-dark;
 $abstract-content-text-color: #585858;
-$abstract-content-text-color-dark: rgba(255, 255, 255, 0.6);
+$abstract-content-text-color-dark: $text-color-secondary-dark;
 $abstract-post-meta-color: #aaa;
-$abstract-post-meta-color-dark: rgba(255, 255, 255, 0.38);
+$abstract-post-meta-color-dark: $text-color-minor-dark;
 $abstract-calander-color: $abstract-post-meta-color;
 $abstract-calander-color-dark: $abstract-post-meta-color-dark;
 $abstract-post-tag-color: $abstract-post-meta-color;
@@ -82,7 +86,7 @@ $abstract-post-tag-color-dark: $abstract-post-meta-color-dark;
 
 // ========== post ========== //
 $post-content-color: #23394d;
-$post-content-color-dark: rgba(255, 255, 255, 0.87);
+$post-content-color-dark: $text-color-primary-dark;
 
 // ========== social ========== //
 $social-iconfont-color: #777;
