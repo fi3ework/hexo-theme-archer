@@ -154,3 +154,7 @@ mermaid:
   version: 8.11.0
   theme: dark
   options: # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
+# MathJax Support
+mathjax:
+  enable: true
+  cdn: https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML

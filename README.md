@@ -52,23 +52,23 @@ theme: archer
 
 ``` yaml
 jsonContent:
-    meta: true
-    pages: false
-    posts:
-        title: true
-        date: true
-        path: true
-        text: false
-        raw: false
-        content: false
-        slug: false
-        updated: false
-        comments: false
-        link: false
-        permalink: true
-        excerpt: false
-        categories: true
-        tags: true
+  meta: true
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: true
+    excerpt: false
+    categories: true
+    tags: true
 ```
 
 ### 启动博客预览
@@ -116,7 +116,7 @@ npm install hexo-filter-mermaid-diagrams --save
 
 ``` yml
 mermaid:
-    enable: true
+  enable: true
 ```
 
 测试 Mermaid 是否启用成功，您可以在任意文章中添加下面的内容（您需要取消缩进）：
@@ -124,14 +124,39 @@ mermaid:
 ``` markdown
     ``` mermaid
     graph TD;
-        A-->B;
-        A-->C;
-        B-->D;
-        C-->D;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
     ```
 ```
 
 > ❗️❗️❗️ 注意：如果您需要使用**类图**，请编辑您 Hexo 根目录下的 `_config.yml` 文件，设置 `external_link: false`。请确保这个设置对您原来的博客功能没有影响，这是 Hexo 本身的 bug。
+
+## 启用 LaTeX
+
+Archer 主题已经内置了 MathJax，但是您需要替换 Hexo 默认的渲染引擎来支持解析 LaTeX 语法。
+
+在 Hexo 根目录下执行下面的命令：
+
+``` bash
+npm uninstall hexo-renderer-marked --save
+npm install hexo-renderer-kramed --save
+```
+
+对需要启用 LaTeX 的文章的 Front-matter 中添加 `mathjax: true` 字段。测试 LaTeX 是否启用成功，您可以在这篇文章中添加下面的内容：
+
+``` markdown
+\begin{equation}
+\left\{
+\begin{array}{lr}
+x=\dfrac{3\pi}{2}(1+2t)\cos(\dfrac{3\pi}{2}(1+2t)), & \\
+y=s, & 0 \leq s \leq L,|t| \leq1. \\
+z=\dfrac{3\pi}{2}(1+2t)\sin(\dfrac{3\pi}{2}(1+2t)), &  
+\end{array}
+\right.
+\end{equation}
+```
 
 ### 其它可选配置
 
@@ -194,6 +219,6 @@ mermaid:
 - 2021.01.26 - 『更新使用的 nodejs，以及相关依赖包的版本』
 - 2021.02.03 - 『添加“文章时效性”提示』
 
-## 许可证
+## License
 
 MIT
