@@ -44,7 +44,7 @@ body {
   display: flex;
   padding: $container-margin-top 0 0 0;
   position: relative;
-  background-color: #fff;
+  background-color: $body-background-color;
   top: 0;
   left: 0;
   align-items: flex-start;

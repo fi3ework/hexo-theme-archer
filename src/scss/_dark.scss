@@ -6,7 +6,7 @@
   }
 
   .wrapper {
-    box-shadow: -3px 0 2px 0 rgba(255, 255, 255, 0.6);
+    box-shadow: -3px 0 2px 0 $text-color-secondary-dark;
   }
 
   .container {
@@ -24,17 +24,17 @@
 
   // fixed footer
   .back-top {
-    border-color: rgba(255, 255, 255, 0.87);
+    border-color: $text-color-primary-dark;
     background-color: rgba(18, 18, 18, 0.8);
-    color: rgba(255, 255, 255, 0.87);
+    color: $text-color-primary-dark;
     &:hover {
-      background-color: rgba(255, 255, 255, 0.87);
+      background-color: $text-color-primary-dark;
       color: $body-background-color-dark;
     }
   }
 
   .back-top-rounded {
-    color: #fff;
+    color: $body-background-color;
     background-color: $body-background-color-dark;
     &:hover {
       color: #333;
@@ -43,7 +43,7 @@
 
   // index page
   .index-post {
-    background-color: #181818;
+    background-color: $foreground-color-dark;
     padding: 1.5rem 2rem;
     margin-bottom: 1rem;
   }
@@ -80,7 +80,7 @@
   }
 
   .article-entry {
-    background-color: #181818;
+    background-color: $foreground-color-dark;
     padding: 1rem 2rem;
   }
 
@@ -100,7 +100,7 @@
   }
 
   .license-wrapper {
-    background-color: #181818;
+    background-color: $foreground-color-dark;
     padding: 1.5rem 2rem;
   }
 
@@ -129,10 +129,6 @@
     }
   }
 
-  .footer {
-    background-color: $body-background-color-dark;
-  }
-
   .post-title {
     a {
       color: $header-banner-text-color-dark;
@@ -142,7 +138,7 @@
   .post-paginator {
     .nextTitle,
     .prevTitle {
-      color: rgba(255, 255, 255, 0.38);
+      color: $text-color-minor-dark;
       &:hover {
         color: $feature-color-dark;
       }
@@ -150,7 +146,7 @@
 
     .nextSlogan,
     .prevSlogan {
-      color: rgba(255, 255, 255, 0.6);
+      color: $text-color-secondary-dark;
     }
   }
 
@@ -158,7 +154,7 @@
   .abstract-content,
   .article-entry {
     code {
-      background: #444;
+      background: #282c34;
     }
   }
 
@@ -171,7 +167,7 @@
 
   // header
   .read-progress {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: $text-color-secondary-dark;
   }
 
   .read-progress-feature {
@@ -179,7 +175,7 @@
   }
 
   .banner {
-    border-bottom-color: rgba(255, 255, 255, 0.87);
+    border-bottom-color: $text-color-primary-dark;
     background-color: rgba(0, 0, 0, 0.8);
   }
 
@@ -197,10 +193,10 @@
   }
 
   .header-sidebar-menu {
-    border-color: #fff;
-    color: #fff;
+    border-color: $body-background-color;
+    color: $body-background-color;
     &:hover {
-      background-color: #fff;
+      background-color: $body-background-color;
       color: #000;
     }
   }
@@ -213,11 +209,11 @@
   }
 
   .header-sidebar-menu-black {
-    color: rgba(255, 255, 255, 0.87);
+    color: $text-color-primary-dark;
     background-color: $body-background-color-dark;
-    border-color: rgba(255, 255, 255, 0.87);
+    border-color: $text-color-primary-dark;
     &:hover {
-      background-color: rgba(255, 255, 255, 0.87);
+      background-color: $text-color-primary-dark;
       color: $body-background-color-dark;
     }
   }
@@ -229,8 +225,12 @@
   }
 
   // profile
+  .profile {
+    padding-top: 0;
+  }
+
   .profile-avatar {
-    box-shadow: 0 0 2px 0 #181818;
+    box-shadow: 0 0 2px 0 $foreground-color-dark;
   }
 
   .profile-name {
@@ -331,7 +331,7 @@
   // Busuanzi
   #busuanzi_container_site_pv,
   #busuanzi_container_site_uv {
-    color: rgba(255, 255, 255, 0.38) !important;
+    color: $text-color-minor-dark;
   }
 
   // comment
