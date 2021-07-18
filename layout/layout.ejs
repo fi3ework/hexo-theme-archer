@@ -53,12 +53,14 @@
         <script src="<%- url_for('scripts/main.js') %>"></script>
         <!-- algolia -->
         <% if (theme.algolia_search.enable) { %>
-            <%- partial('_partial/algolia') %>
-            <script src="<%- url_for('scripts/search.js') %>" defer></script>
-            <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.10.3/dist/algoliasearch-lite.umd.js" crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.24.1/dist/instantsearch.production.min.js" crossorigin="anonymous"></script>
             <!-- algolia browser support -->
             <script src="https://polyfill.io/v3/polyfill.min.js?features=default%2CArray.prototype.find%2CArray.prototype.includes%2CPromise%2CObject.assign%2CObject.entries"></script>
+            <!-- algolia layout -->
+            <%- partial('_partial/algolia') %>
+            <!-- algolia source -->
+            <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.10.3/dist/algoliasearch-lite.umd.js" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.24.1/dist/instantsearch.production.min.js" crossorigin="anonymous"></script>
+            <script src="<%- url_for('scripts/search.js') %>" defer></script>
         <% } %>
         <!-- busuanzi -->
         <% if (theme.busuanzi) { %>
