@@ -73,8 +73,8 @@ li {
 
 // selection
 ::selection {
-  background: $selection-color;
-  color: #eee;
+  background: $selection-background-color;
+  color: $selection-text-color;
 }
 
 .fancy-link {
