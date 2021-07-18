@@ -13,7 +13,6 @@ body {
   z-index: 100;
   position: relative;
   background-color: $body-background-color;
-  overflow-x: hidden;
 }
 
 .wrapper {
@@ -51,7 +50,6 @@ body {
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  overflow: hidden;
   transition: all 0.5s ease-out 0s;
   opacity: 1;
   transform: translate3d(0, 0, 0);

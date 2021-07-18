@@ -63,6 +63,8 @@ float_button_theme: default
 read_progress_color: default
 # Blog post banner theme ('default' or 'clean')
 post_banner_theme: default
+# Stick profile info
+profile_sticky: false
 
 # ========== Search ========== #
 algolia_search:
