@@ -26,19 +26,17 @@
 Archer 主题依赖于 `hexo-generator-json-content` 和 `hexo-wordcount`，因此需要在 Hexo 根目录执行以下命令：
   
 ``` bash
-npm i hexo-generator-json-content --save
-npm i hexo-wordcount --save
+npm install hexo-generator-json-content --save
+npm install hexo-wordcount --save
 ```
 
 ### 拉取主题文件
 
-还是在 Hexo 根目录执行下面的命令：
+依赖安装完成后，拉取 Archer 主题到 `themes/archer` 目录，在 Hexo 根目录执行下面的命令：
 
 ``` bash
 git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1
 ```
-
-现在，Archer 主题已经顺利拉取到 `themes/archer` 目录下。
 
 ### 设置 Hexo 博客主题为 Archer
 
@@ -54,28 +52,28 @@ theme: archer
 
 ``` yaml
 jsonContent:
-  meta: true
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: true
-    excerpt: false
-    categories: true
-    tags: true
+    meta: true
+    pages: false
+    posts:
+        title: true
+        date: true
+        path: true
+        text: false
+        raw: false
+        content: false
+        slug: false
+        updated: false
+        comments: false
+        link: false
+        permalink: true
+        excerpt: false
+        categories: true
+        tags: true
 ```
 
 ### 启动博客预览
 
-在 Hexo 根目录下执行 `hexo s`，即可启用本地博客预览。
+在 Hexo 根目录下执行 `hexo s`，即可启动本地博客预览。
 
 ## 主题配置
 
@@ -114,24 +112,26 @@ jsonContent:
 npm install hexo-filter-mermaid-diagrams --save
 ```
 
-然后在 Archer 主题目录下的 `_config.yml` 设置启用 Mermaid：
+然后在 Archer 主题目录下的 `_config.yml` 设置以启用 Mermaid：
 
 ``` yml
 mermaid:
-  enable: true
+    enable: true
 ```
 
-现在，您可以在任意文章中添加下面的内容（需要去掉第一行和最后一行多的空格），测试 Mermaid 是否启用成功：
+测试 Mermaid 是否启用成功，您可以在任意文章中添加下面的内容（您需要取消缩进）：
 
-``` plaintext
-` `` mermaid
-graph TD;
-  A-->B;
-  A-->C;
-  B-->D;
-  C-->D;
-` ``
+``` markdown
+    ``` mermaid
+    graph TD;
+        A-->B;
+        A-->C;
+        B-->D;
+        C-->D;
+    ```
 ```
+
+> ❗️❗️❗️ 注意：如果您需要使用**类图**，请编辑您 Hexo 根目录下的 `_config.yml` 文件，设置 `external_link: false`。请确保这个设置对您原来的博客功能没有影响，这是 Hexo 本身的 bug。
 
 ### 其它可选配置
 
