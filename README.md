@@ -102,7 +102,7 @@ jsonContent:
 
 **警告**：不要把自己 api-token 之类的私密信息添加到配置中，更不要推送到公共仓库。
 
-### 启用 About 页面
+### 配置 About 页面
 
 在 Hexo 根目录下执行：
 
@@ -122,7 +122,7 @@ layout: about
 
 其中 Front-matter 的 `layout: about` 字段为**必要的**且**不可修改**为其它值；Front-matter 的 `title` 和正文内容由您自定义编写。
 
-最后，在 Archer 主题目录下的 `_config.yml` 文件中添加以下字段：
+您可以修改 Archer 主题目录下的 `_config.yml` 文件的 `about` 字段：
 
 ``` yml
 about:
@@ -130,9 +130,9 @@ about:
   image: '/intro/about-page.jpg'
 ```
 
-其中，`image` 为 About 页面 Banner 图像地址，若不填写则默认使用首页的 Banner 图像。
+其中，如果设置 `enable: false`，则不显示 About 页面；`image` 为 About 页面 Banner 图像地址，若不填写则默认使用首页的 Banner 图像。
 
-### 启用 404 页面
+### 配置 404 页面
 
 在 Hexo 根目录下 `source` 中创建 `404.md` 文件，添加字段如下：
 
@@ -146,6 +146,12 @@ description: "May the Force be with you :&#41;"
 
 其中 Front-matter 的 `layout: 404` 字段为**必要的**且**不可修改**为其它值，`title` 字段为您自定义的标题，`description` 字段为 404 页面的自定义描述。
 
+您可以配置 Archer 主题目录下的 `_config.yml` 文件的 `_404_image` 字段来修改 404 页面的背景图片：
+
+``` yml
+_404_image: '/intro/404-bg.jpg'
+```
+
 ### 启用 RSS 订阅
 
 在 Hexo 根目录下执行：
@@ -154,7 +160,12 @@ description: "May the Force be with you :&#41;"
 npm install hexo-generator-feed --save
 ```
 
-配置 Archer 主题目录下的 `_config.yml`，在 `social` 字段中配置 `rss: /atom.xml`。
+修改 Archer 主题目录下的 `_config.yml` 文件中的 `social` 字段，配置内容如下：
+
+```yml
+social:
+  rss: /atom.xml
+```
 
 ### 启用 Mermaid
 
