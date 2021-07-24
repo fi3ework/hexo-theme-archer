@@ -1,5 +1,5 @@
 <% if (theme.comment.gitment_owner && theme.comment.gitment_repo && theme.comment.gitment_client_id && theme.comment.gitment_client_secret) { %>
-    <div id="container"></div>
+    <div id="gitment-container"></div>
     <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
     <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
     <script>
@@ -12,6 +12,6 @@
                 client_secret: '<%- theme.comment.gitment_client_secret %>',
             },
         })
-        gitment.render('container')
+        gitment.render('gitment-container')
     </script>
 <% } %>

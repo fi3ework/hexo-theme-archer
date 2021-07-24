@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="<%- config.language %>">
     <%- partial('_partial/base-head') %>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ == undefined) {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="<%- url_for('lib/jquery.min.js') %>" />')
+        }
+    </script>
     <% if (is_home()) { %>
         <body class="home-body">
     <% } else if(is_post()){ %>
@@ -12,6 +19,8 @@
     <% } %>
         <!-- header -->
         <%- partial('_partial/base-header') %>
+        <!-- dark mode -->
+        <script src="<%- url_for('scripts/dark.js') %>"></script>
         <!-- fixed footer -->
         <%- partial('_partial/base-footer-fixed') %>
         <!-- wrapper -->
@@ -42,15 +51,9 @@
         <!-- site-meta -->
         <%- partial('./site-meta.ejs') %>
         <!-- main func -->
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-        <script type="text/javascript">
-            if (typeof window.$ == undefined) {
-                console.warn('jquery load from jsdelivr failed, will load local script')
-                document.write('<script src="<%- url_for('lib/jquery.min.js') %>" />')
-            }
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
         <script src="<%- url_for('scripts/main.js') %>"></script>
+        <!-- fancybox -->
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
         <!-- algolia -->
         <% if (theme.algolia_search.enable) { %>
             <!-- algolia browser support -->
