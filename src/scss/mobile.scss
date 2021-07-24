@@ -79,11 +79,19 @@
     max-width: 90%;
   }
   .main {
-    width: 86%;
+    width: 95%;
   }
 }
 
 // ========== header ========== //
+.header {
+  height: $header-height-mobile;
+}
+
+.header-mobile {
+  background-color: rgba(0, 0, 0, 0.38);
+}
+
 .banner {
   .post-title {
     display: none;
@@ -106,9 +114,9 @@
 }
 
 .header-sidebar-menu-rounded {
-  width: 2.7rem;
-  height: 2.7rem;
-  line-height: 2.7rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
 }
 
 // ========== fixed footer ========== //
@@ -119,9 +127,9 @@
 }
 
 .back-top-rounded {
-  width: 2.7rem;
-  height: 2.7rem;
-  line-height: 2.7rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
 }
 
 // ========== content ========== //
@@ -135,7 +143,7 @@
 
 .article-entry {
   blockquote {
-    margin: 0.8rem 0;
+    padding: 1rem;
   }
 }
 
@@ -186,4 +194,9 @@ $sidebar-width: 70vw;
 #busuanzi_container_site_pv,
 #busuanzi_container_site_uv {
   font: 1rem $feature-font-family;
+}
+
+// ========== note ========== //
+.note {
+  padding: 0.5rem 1rem;
 }

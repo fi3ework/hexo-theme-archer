@@ -201,11 +201,17 @@
       font-size: 1.7rem;
     }
   }
+
   .prevSlogan {
     &::after {
       content: ' >';
       font-size: 1.7rem;
     }
+  }
+
+  .prevTitle,
+  .prevSlogan {
+    text-align: right;
   }
 }
 
@@ -285,11 +291,13 @@
     box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
   }
   blockquote {
-    margin: 1.5em 0 1.5rem 0;
-    padding: 10px 20px;
+    margin: 1.5em 0;
+    padding: 1rem 1.5rem;
     position: relative;
     background-color: #f6f6f6;
-    border-left: 3px solid $feature-color;
+    border-left: 0.35rem solid $feature-color;
+    border-radius: 0.35rem;
+    transition: all 0.5s ease-out;
     p {
       margin: 0;
     }

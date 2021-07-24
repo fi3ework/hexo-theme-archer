@@ -80,19 +80,21 @@ li {
   margin: 0 !important;
 }
 
+// notes
 .note {
-  padding: 0.75rem;
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
   border-left: 0.35rem solid;
   border-radius: 0.35rem;
-  margin: 1.5rem 0;
-}
-
-.note-warning {
-  background-color: #fdf8ea;
-  border-color: #f0ad4e;
+  transition: all 0.5s ease-out;
 
   .title {
-    font-size: medium;
-    font-weight: 500;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+
+  &.note-warning {
+    background-color: #fdf8ea;
+    border-color: #f0ad4e;
   }
 }
