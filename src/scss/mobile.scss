@@ -84,12 +84,14 @@
 }
 
 // ========== header ========== //
-.post-title {
-  display: none;
-}
+.banner {
+  .post-title {
+    display: none;
+  }
 
-.blog-title {
-  line-height: 2rem;
+  .blog-title {
+    line-height: 2rem;
+  }
 }
 
 .home-link {

@@ -38,8 +38,6 @@
 
 .popup-btn-close {
   position: absolute;
-  top: 6px;
-  right: 14px;
   color: $feature-color;
   cursor: pointer;
   .iconfont-archer {
@@ -53,9 +51,10 @@
 }
 
 .algolia-popup .popup-btn-close {
-  padding-left: 15px;
-  border-left: 1px solid #ddd;
-  top: 10px;
+  padding: 13px 15px;
+  // border-left: 1px solid #ddd;
+  top: 0;
+  right: 0;
 }
 
 .algolia-popup .popup-btn-close .fa {

@@ -19,7 +19,7 @@ function execWebpack(cb) {
 // sass
 function execSass() {
   return gulp
-    .src(['src/scss/style.scss', 'src/scss/mobile.scss'])
+    .src(['src/scss/style.scss', 'src/scss/mobile.scss', 'src/scss/dark.scss'])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer()]))
@@ -73,7 +73,7 @@ function webpackProd(cb) {
 // sass-prod
 function sassProd() {
   return gulp
-    .src(['src/scss/style.scss', 'src/scss/mobile.scss'])
+    .src(['src/scss/style.scss', 'src/scss/mobile.scss', 'src/scss/dark.scss'])
     .pipe(sourcemaps.init())
     .pipe(
       sass({

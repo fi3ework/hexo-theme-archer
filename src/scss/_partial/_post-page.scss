@@ -74,7 +74,7 @@
 }
 
 .post-intro-calander {
-  font-size: 0.9rem;
+  font-size: 0.9rem !important;
   margin-right: 0.3rem;
 }
 
@@ -89,30 +89,34 @@
   margin-right: 0.4rem;
 }
 
-.shareWrapper {
+.post-intro-busuanzi {
+  font-size: 0.9rem !important;
+}
+
+.share-wrapper {
   position: relative;
   font-size: 0.9rem;
   padding: 0 0.5rem 0 0;
 }
 
-.shareWrapper:hover {
-  .shareList {
+.share-wrapper:hover {
+  .share-list {
     visibility: visible;
     opacity: 1;
   }
 }
 
-.shareIcon {
-  font-size: 0.9rem;
+.share-icon {
+  font-size: 0.9rem !important;
   cursor: pointer;
 }
 
-.shareText {
+.share-text {
   font-family: $feature-font-family;
   cursor: pointer;
 }
 
-.shareList {
+.share-list {
   position: absolute;
   visibility: hidden;
   margin: 0;
@@ -124,7 +128,7 @@
   transition: all 0.1s ease-in 0s;
 }
 
-.shareList .iconfont-archer {
+.share-list .iconfont-archer {
   display: inline-block;
   margin-right: 3px;
   cursor: pointer;
@@ -133,12 +137,12 @@
   }
 }
 
-.shareList [data-type='weibo'] {
+.share-list [data-type='weibo'] {
   position: relative;
   top: -2px;
 }
 
-.shareList [data-type='facebook'] {
+.share-list [data-type='facebook'] {
   position: relative;
   top: 1px;
 }
@@ -206,10 +210,14 @@
 }
 
 // ========== content ========== //
+.article-entry {
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.5s ease-out;
+}
+
 .abstract-content,
 .article-entry {
   position: relative;
-  padding: 1px 0;
   font-weight: lighter;
   font-weight: 400;
   color: $post-content-color;
@@ -329,6 +337,7 @@
 // ========== license ========== //
 
 .license-wrapper {
+  padding: 0.5rem 1.5rem;
   font-weight: 300;
   line-height: 1.5rem;
   border-top: 1px dashed #ccc;

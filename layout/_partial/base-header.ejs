@@ -1,15 +1,7 @@
-<% if(is_home()) { %>
-    <header class="header index-header">
-<% } else { %>
-    <header class="header">
-<% } %>
+<header class="header<%- is_home() ? ' index-header' : '' %>">
     <!-- top read progress line -->
     <div class="header-element">
-        <% if(theme.read_progress_color === 'feature') { %>
-            <div class="read-progress read-progress-feature"></div>
-        <% } else { %>
-            <div class="read-progress"></div>
-        <% } %>
+        <div class="read-progress<%- theme.read_progress_color === 'feature' ? ' read-progress-feature' : '' %>"></div>
     </div>
     <!-- sidebar menu button -->
     <div class="header-element">
@@ -25,8 +17,17 @@
             <% } %>
         </div>
     </div>
-    <!-- back to home page text -->
-    <a class="home-link header-element" href=<%- config.root %>><%- theme.main_title || config.title %></a>
+    <!-- header actions -->
+    <div class="header-actions">
+        <!-- theme mode switch button -->
+        <span class="header-theme-btn header-element">
+            <i class="fas fa-adjust"></i>
+        </span>
+        <!-- back to home page text -->
+        <span class="home-link header-element">
+            <a href=<%- config.root %>><%- theme.main_title || config.title %></a>
+        </span>
+    </div>
     <!-- toggle banner for post layout -->
     <% if (is_post()) { %>
         <% if(theme.post_banner_theme === 'clean') { %>

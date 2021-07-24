@@ -1,8 +1,4 @@
-<% if(is_home()) { %>
-    <footer class="footer-fixed index-footer-fixed">
-<% } else { %>
-    <footer class="footer-fixed">
-<% } %>
+<footer class="footer-fixed<%- is_home() ? ' index-footer-fixed' : '' %>">
     <!-- back to top button -->
     <div class="footer-fixed-element">
         <% if(theme.float_button_theme === 'rounded') { %>
