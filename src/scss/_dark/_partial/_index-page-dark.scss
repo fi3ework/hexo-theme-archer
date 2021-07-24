@@ -1,0 +1,34 @@
+.index-post {
+  background-color: $foreground-color-dark;
+  margin-bottom: 1rem;
+}
+
+.index-post {
+  .abstract-content {
+    color: $abstract-content-text-color-dark;
+  }
+}
+
+.abstract-title span:last-of-type {
+  color: $abstract-content-title-color-dark;
+  &:hover {
+    color: $feature-color-dark;
+  }
+}
+
+.abstract-post-meta {
+  color: $abstract-post-meta-color-dark;
+
+  .post-tag {
+    color: $abstract-post-tag-color-dark;
+    @include hover-line($color: $abstract-post-tag-color-dark);
+  }
+
+  .abstract-calander {
+    color: $abstract-calander-color-dark;
+  }
+}
+
+.index-post-divider {
+  display: none;
+}

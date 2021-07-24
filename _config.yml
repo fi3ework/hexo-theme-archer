@@ -148,8 +148,13 @@ website_approve:
   icp_approve: 
   beian_approve: 
   beian_img: /assets/beian.png
-# Blog page article timeliness days reminder, 0 for no threshold
-outdated_threshold: 0
+# Blog page article timeliness note
+outdated_threshold:
+  enable: false
+  days: 180
+  # By default, timeliness reminder will be displayed for each article. That's not necessarily what you want.
+  # if true, you can set `timeliness: true` for specified article to enable the reminder.
+  specify_article: false
 # Mermaid Chart: https://github.com/knsv/mermaid
 mermaid:
   enable: false

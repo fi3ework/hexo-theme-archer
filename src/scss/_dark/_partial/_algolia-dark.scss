@@ -1,0 +1,30 @@
+.popup {
+  background: $body-background-color-dark;
+  color: #e1e1e1;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+.algolia-search {
+  border-bottom-color: #222;
+  background: $body-background-color-dark;
+}
+
+.popup-btn-close {
+  color: $feature-color-dark;
+}
+
+.algolia-hit {
+  &-item {
+    &-link {
+      em {
+        color: $feature-color-dark;
+      }
+    }
+  }
+}
+
+.ais-Pagination-item {
+  a {
+    color: $feature-color-dark;
+  }
+}
