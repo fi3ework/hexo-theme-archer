@@ -1,0 +1,35 @@
+.profile {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-avatar {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-name {
+  color: #ddd;
+}
+
+.profile-social {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.friends {
+  border-color: rgba(255, 255, 255, 0.1);
+
+  a {
+    &:hover {
+      color: $feature-color-dark;
+    }
+  }
+}
+
+.about-me {
+  border-color: rgba(255, 255, 255, 0.1);
+
+  a {
+    &:hover {
+      color: $feature-color-dark;
+    }
+  }
+}

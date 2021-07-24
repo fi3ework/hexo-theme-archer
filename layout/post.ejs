@@ -1,7 +1,4 @@
 <main class="main post-page">
-    <% if (page.mathjax === true) { %>
-        <%- partial('_partial/math/mathjax') %>
-    <% } %>
     <article class="article-entry">
         <%- page.content %>
     </article>
@@ -46,9 +43,9 @@
     <%- partial('_partial/comment/valine') %>
     <!-- 文章时效性提醒 -->
     <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
-    <% if (theme.outdated_threshold != 0){ %>
+    <% if (theme.outdated_threshold !== undefined && theme.outdated_threshold.enable && (!theme.outdated_threshold.specify_article || page.timeliness)) { %>
         <script>
-            (function(){
+            (function () {
                 const time = document.getElementsByClassName('post-intro-time')[0]
                 const post = document.getElementsByTagName("article")[0]
                 if (time === undefined || post === undefined) {
@@ -59,13 +56,17 @@
                 const now = Date.now()
                 const interval = parseInt(now - pubTime)
                 const days = parseInt(interval / 86400000)
-                const outdated_threshold = parseInt(<%- theme.outdated_threshold %>)
-                if (interval > outdated_threshold*24*3600*1000){
+                const outdated_threshold = parseInt(<%- theme.outdated_threshold.days %>)
+                if (interval > outdated_threshold * 24 * 3600 * 1000) {
                     post.innerHTML = '<div class="note note-warning" style="font-size:0.9rem"><p>' +
-                    '<div class="title">文章时效性提示</div><p>这是一篇发布于 ' + days + ' 天前的文章，部分信息可能已发生改变，请注意甄别。' +
+                    `<div class="title">文章时效性提示</div><p>这是一篇发布于 ${days} 天前的文章，部分信息可能已发生改变，请注意甄别。` +
                     '</p></p></div>' + post.innerHTML;
                 }
             })();
         </script>
+    <% } %>
+    <!-- Mathjax -->
+    <% if (page.mathjax === true) { %>
+        <%- partial('_partial/math/mathjax') %>
     <% } %>
 </main>

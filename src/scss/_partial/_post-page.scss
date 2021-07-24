@@ -376,11 +376,13 @@
   position: sticky;
   top: 0;
   color: #bbb;
-  background-color: transparent;
+  padding: 0.5rem 0rem;
+  background-color: $body-background-color;
   z-index: 2;
   cursor: pointer;
   user-select: none;
   font: bolder 1.2rem $feature-font-family;
+  transition: background-color 0.5s ease-out !important;
   &:hover {
     color: $feature-color;
   }

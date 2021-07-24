@@ -1,0 +1,67 @@
+.read-progress {
+  background-color: $text-color-secondary-dark;
+}
+
+.read-progress-feature {
+  background-color: $feature-color-dark;
+}
+
+.banner {
+  border-bottom-color: $text-color-primary-dark;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  .blog-title {
+    a {
+      color: $header-banner-text-color-dark;
+      &:hover {
+        color: $feature-color-dark;
+      }
+    }
+  }
+
+  .post-title {
+    a {
+      color: $header-banner-text-color-dark;
+    }
+  }
+
+  &.banner-clean {
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+}
+
+.header-sidebar-menu {
+  border-color: $body-background-color;
+  color: $body-background-color;
+  &:hover {
+    background-color: $body-background-color;
+    color: #000;
+  }
+}
+
+.header-sidebar-menu-rounded {
+  &:hover {
+    background-color: transparent;
+    color: $feature-color-dark;
+  }
+}
+
+.header-sidebar-menu-black {
+  color: $text-color-primary-dark;
+  background-color: $body-background-color-dark;
+  border-color: $text-color-primary-dark;
+  &:hover {
+    background-color: $text-color-primary-dark;
+    color: $body-background-color-dark;
+  }
+}
+
+.header-actions {
+  .home-link {
+    a {
+      &:hover {
+        color: $feature-color-dark;
+      }
+    }
+  }
+}
