@@ -21,7 +21,7 @@ $container-margin-top: 3rem;
 $selection-background-color: $feature-color;
 $selection-background-color-dark: $feature-color-dark;
 $selection-text-color: #eee;
-$selection-text-color-dark: lighten($selection-text-color, 5%);
+$selection-text-color-dark: snow;
 
 // ========= dark mode ========= //
 $text-color-primary-dark: rgba(255, 255, 255, 0.87);
@@ -54,6 +54,7 @@ $footer-fixed-height: 3.5rem;
 
 // ========== header ========== //
 $header-height: 3.5rem;
+$header-height-mobile: 3rem;
 $header-border-top-width: 3px;
 $header-border-top-color: rgba(0, 0, 0, 0.75);
 $header-border-top-color-dark: rgba(0, 0, 0, 0.75);

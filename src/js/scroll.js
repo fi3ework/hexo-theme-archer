@@ -4,6 +4,7 @@ const scroll = function () {
   const $banner = $('.banner:first'),
     $postBanner = $banner.find('.post-title a'),
     $bgEle = $('.site-intro:first'),
+    $header = $('.header'),
     $headerActions = $('.header-actions'),
     $backTop = $('.back-top:first'),
     $sidebarMenu = $('.header-sidebar-menu:first'),
@@ -96,11 +97,13 @@ const scroll = function () {
     // intro 边界切换
     if (crossingState === 1) {
       $tocWrapper.addClass('toc-fixed')
+      $header.removeClass('header-mobile')
       $headerActions.addClass('header-actions-hide')
       $sidebarMenu.addClass('header-sidebar-menu-black')
       $backTop.removeClass('back-top-hidden')
     } else if (crossingState === -1) {
       $tocWrapper.removeClass('toc-fixed')
+      $header.addClass('header-mobile')
       $headerActions.removeClass('header-actions-hide')
       $banner.removeClass('banner-show')
       $sidebarMenu.removeClass('header-sidebar-menu-black')

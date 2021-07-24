@@ -153,16 +153,20 @@ outdated_threshold:
   enable: false
   days: 180
   # By default, timeliness reminder will be displayed for each article. That's not necessarily what you want.
-  # if true, you can set `timeliness: true` for specified article to enable the reminder.
+  # If true, you can set `timeliness: true` for specified article to enable the reminder.
   specify_article: false
 # Mermaid Chart: https://github.com/knsv/mermaid
 mermaid:
   enable: false
-  version: 8.11.0 # Version number '8' is for the latest '8.x' version of Mermaid.
+  # Version number '8' is for the latest '8.x' version of Mermaid.
+  version: 8.11.0
   theme: dark
-  options: # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
+  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
+  options:
 # LaTeX Math Equations Support
 math:
   mathjax:
     enable: false
-    version: 3.2.0 # specified version number no less than '3.0.0', or you need to modify the CDN link manually. Version number '3' is for the latest '3.x' version of MathJax.
+    # Specified version number no less than '3.0.0', or you need to modify the CDN link manually.
+    # Version number '3' is for the latest '3.x' version of MathJax.
+    version: 3.2.0
