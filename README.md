@@ -38,7 +38,7 @@ npm install hexo-wordcount --save
 git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1
 ```
 
-### 设置 Hexo 博客主题为 Archer
+### 设置 Hexo 主题为 Archer
 
 修改 Hexo 根目录下的 `_config.yml` 文件中的 `theme` 字段为 `archer`：
 
@@ -71,13 +71,13 @@ jsonContent:
     tags: true
 ```
 
-### 启动博客预览
+### 启动本地预览
 
-在 Hexo 根目录下执行 `hexo s`，即可启动本地博客预览。
+在 Hexo 根目录下执行 `hexo s`，即可启动本地预览。
 
 ## 主题配置
 
-现在您的博客项目的目录目录结构应当如下：
+现在您的项目目录结构应当如下所示：
 
 ``` bash
 . # 「Hexo 根目录」
@@ -101,6 +101,22 @@ jsonContent:
 这个[维基页面](https://github.com/fi3ework/hexo-theme-archer/wiki/Archer-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83)包含了主题配置属性的中文参考。
 
 **警告**：不要把自己 api-token 之类的私密信息添加到配置中，更不要推送到公共仓库。
+
+可选的 Archer 主题配置内容如下：
+
+- [配置 About 页面](#配置-about-页面)
+- [配置 404 页面](#配置-404-页面)
+- [启用 RSS 订阅](#启用-rss-订阅)
+- [启用 Mermaid](#启用-mermaid)
+- [启用 LaTeX 数学公式](#启用-latex-数学公式)
+- [自定义单独文章页头图](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E7%AB%A0%E9%A1%B5%E5%A4%B4%E5%9B%BE)
+- [将 Unsplash 的随机图片作为头图](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%B0%86-Unsplash-%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87%E4%BD%9C%E4%B8%BA%E5%A4%B4%E5%9B%BE)
+- [自定义文章在首页的摘要](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E7%AB%A0%E5%9C%A8%E9%A6%96%E9%A1%B5%E7%9A%84%E6%91%98%E8%A6%81)
+- [自定义主题颜色](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E9%A2%9C%E8%89%B2)
+- [切换代码配色方案](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%88%87%E6%8D%A2%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88)
+- [设置文章版权信息](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%AE%BE%E7%BD%AE%E6%96%87%E7%AB%A0%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF)
+- [启用 Algolia 搜索](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Algolia-%E6%90%9C%E7%B4%A2)
+- [切换为英文界面](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2)
 
 ### 配置 About 页面
 
@@ -198,7 +214,7 @@ mermaid:
     ```
 ```
 
-> ❗️❗️❗️ 注意：如果您需要使用**类图**，请编辑您 Hexo 根目录下的 `_config.yml` 文件，设置 `external_link: false`。请确保这个设置对您原来的博客功能没有影响，这是 Hexo 本身的 bug。
+> ❗️❗️❗️ 注意：如果您需要使用**类图**，请编辑您 Hexo 根目录下的 `_config.yml` 文件，设置 `external_link: false`。请确保这个设置对您原来的页面功能没有影响，这是 Hexo 本身的 bug。
 
 ## 启用 LaTeX 数学公式
 
@@ -228,7 +244,7 @@ math:
     version: 3.2.0
 ```
 
-博客默认不启用 MathJax 渲染 LaTeX 数学公式，因此需要在文章的 Front-matter 中添加 `mathjax: true` 字段。
+Archer 默认不启用 MathJax 渲染 LaTeX 数学公式，因此需要在文章的 Front-matter 中添加 `mathjax: true` 字段。
 
 测试是否启用成功，您可以在这篇文章中添加下面的内容：
 
@@ -244,17 +260,37 @@ z=\dfrac{3\pi}{2}(1+2t)\sin(\dfrac{3\pi}{2}(1+2t)), &
 \end{equation}
 ```
 
-### 其它可选配置
+## 文章撰写增强
 
-- [自定义单独文章页头图](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E7%AB%A0%E9%A1%B5%E5%A4%B4%E5%9B%BE)
-- [将 Unsplash 的随机图片作为头图](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%B0%86-Unsplash-%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87%E4%BD%9C%E4%B8%BA%E5%A4%B4%E5%9B%BE)
-- [自定义文章在首页的摘要](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E7%AB%A0%E5%9C%A8%E9%A6%96%E9%A1%B5%E7%9A%84%E6%91%98%E8%A6%81)
-- [自定义主题颜色](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E9%A2%9C%E8%89%B2)
-- [切换代码配色方案](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%88%87%E6%8D%A2%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88)
-- [置顶文章](https://github.com/hexojs/hexo-generator-index)
-- [设置文章版权信息](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%AE%BE%E7%BD%AE%E6%96%87%E7%AB%A0%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF)
-- [启用 Algolia 搜索](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Algolia-%E6%90%9C%E7%B4%A2)
-- [切换为英文界面](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2)
+Archer 主题为您撰写的文章提供了一些增强的展示内容，这需要您手动在文章的 Front-matter 处配置。包括如下：
+
+- [置顶文章](#置顶文章)
+
+### 置顶文章
+
+Archer 主题在主页为置顶的文章显示一个小标记。
+
+在默认情况下，Hexo 使用 [`hexo-generator-index`](https://github.com/hexojs/hexo-generator-index) 生成文章索引。假如您需要置顶某篇文章，只需要在它的 Front-matter 处添加 `sticky` 属性即可：
+
+```md
+---
+title: Hello World
+date: 2013/7/13 20:46:25
+sticky: 100
+---
+```
+
+您可以在 Hexo 根目录下的 `package.json` 文件中找到您是否使用 `hexo-generator-index` 插件作为项目依赖。
+
+假如您使用其它的插件生成索引，也可以手动添加 `top` 属性以显示小标记：
+
+```md
+---
+title: Hello World
+date: 2013/7/13 20:46:25
+top: true
+---
+```
 
 ## 更新主题
 

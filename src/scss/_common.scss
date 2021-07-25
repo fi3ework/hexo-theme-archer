@@ -28,7 +28,7 @@ body {
 }
 
 .wrapper-sidebar-active {
-  transform: translate3d(400px, 0, 0);
+  transform: translate3d($sidebar-width, 0, 0);
 }
 
 .main {

@@ -35,14 +35,36 @@
 
 .post-intro-tags {
   font: 1.2rem $feature-font-family;
+  color: #fff;
+
+  a {
+    color: #fff;
+  }
+
+  .post-category {
+    cursor: pointer;
+    position: relative;
+    margin-left: 0;
+    margin-right: 0.5rem;
+    @include hover-line($color: #fff);
+  }
+
+  .post-category-icon {
+    margin-right: 2px;
+    pointer-events: none;
+  }
+
+  .post-category-text {
+    pointer-events: none;
+  }
+
   .post-tag {
     position: relative;
     margin-left: 0;
     margin-right: 0.5rem;
-    font-size: 1.2rem;
-    color: #fff;
     @include hover-line($color: #fff);
     &::before {
+      margin-right: 2px;
       content: '#';
     }
   }
@@ -448,7 +470,7 @@
 }
 
 .toc-slide {
-  transform: translate3d(400px, 0, 0);
+  transform: translate3d($sidebar-width, 0, 0);
 }
 
 .toc-hide {

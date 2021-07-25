@@ -12,7 +12,8 @@ const scroll = function () {
     $tocCatalog = $tocWrapper.find('.toc-catalog'),
     $progressBar = $('.read-progress')
 
-  const bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight()
+  const bgTitleHeight =
+    $bgEle.offset().top + $bgEle.outerHeight() - $header.height() / 2
 
   // toc 的收缩
   $tocCatalog.on('click', function () {

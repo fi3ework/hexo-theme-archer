@@ -161,22 +161,21 @@
 }
 
 // ========== sidebar ========== //
-$sidebar-width: 70vw;
-
+// $sidebar-width: 400px;
 .sidebar {
-  width: $sidebar-width;
+  width: calc(min(400px, 70vw));
 }
 
 .wrapper-sidebar-active {
-  transform: translate3d($sidebar-width, 0, 0);
+  transform: translate3d(calc(min(400px, 70vw)), 0, 0);
 }
 
 .header-sidebar-active {
-  transform: translate3d($sidebar-width, 0, 0);
+  transform: translate3d(calc(min(400px, 70vw)), 0, 0);
 }
 
 .footer-fixed-sidebar-active {
-  transform: translate3d($sidebar-width, 0, 0);
+  transform: translate3d(calc(min(400px, 70vw)), 0, 0);
 }
 
 .tab-name {
@@ -187,9 +186,13 @@ $sidebar-width: 70vw;
   -webkit-overflow-scrolling: touch;
 }
 
-.archive-year,
 .total-archive {
   font-size: 1.4rem;
+}
+
+.archive-year {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .sidebar-tags {

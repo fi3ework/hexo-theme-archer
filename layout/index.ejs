@@ -1,7 +1,7 @@
 <main class="main index-page">
     <% page.posts.each(function (_post) { %>
-        <% let truncateLength = typeof theme.truncate_length === 'number' ? theme.truncate_length : 300 %>
-        <% let _content = null %>
+        <% const truncateLength = typeof theme.truncate_length === 'number' ? theme.truncate_length : 300 %>
+        <% let _content = undefined %>
         <% if(!!_post.excerpt) { %>
             <% _content = _post.excerpt %>
         <% } else if (!!_post.abstract) { %>
@@ -11,24 +11,24 @@
         <% } %>
         <article class="index-post">
             <a class="abstract-title" href="<%- url_for(_post.path) %>">
-                <% if(_post.top) { %>
-                    <span class="stick-top iconfont-archer">&#xe63d;</span>
+                <% if(_post.top || _post.sticky) { %>
+                    <span class="iconfont-archer stick-top">&#xe63d;</span>
                 <% } %>
-                <span><%= _post.title || '[Untitled Post]' %></span>
+                <span class="abstract-title-text"><%= _post.title || '[Untitled Post]' %></span>
             </a>
             <div class="abstract-content">
                 <%- _content %>
             </div>
             <div class="abstract-post-meta">
-                <!-- date  -->
+                <!-- date -->
                 <div class="abstract-date">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time"><%- date(_post.date, "YYYY/MM/DD") %></span>
                 </div>
-                <!-- tags  -->
-                <% if (_post.tags.length) { %>
+                <!-- tags -->
+                <% if (_post.tags.length || (theme.show_categories && _post.categories.length)) { %>
                     <%- partial('./_partial/base-title-tags', {
-                        currPost :_post,
-                        className : 'abstract-tags'
+                        currPost: _post,
+                        className: 'abstract-tags'
                     }) %>
                 <% } %>
             </div>
