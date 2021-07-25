@@ -11,7 +11,8 @@
 }
 
 .profile {
-  margin: 1rem auto;
+  margin: 1rem auto 0.5rem auto;
+  padding: 0 0;
   .profile-avatar {
     width: 60%;
     margin: 0 auto;
@@ -31,6 +32,18 @@
 
 .post-page {
   padding-bottom: 0;
+}
+
+.post-paginator {
+  .nextTitle,
+  .prevTitle {
+    font-size: 1rem;
+  }
+
+  .nextSlogan,
+  .prevSlogan {
+    font-size: 1.2rem;
+  }
 }
 
 .main {
@@ -183,17 +196,17 @@ $sidebar-width: 70vw;
   -webkit-overflow-scrolling: touch;
 }
 
+// ========== comment ========== //
+.post-comment {
+  margin: 1.5rem 0 2rem 0;
+}
+
 // ========== footer ========== //
 .footer {
   margin-top: 0;
   .social {
     @include social($scaleSize: 0.5, $spanMargin: 0.2rem);
   }
-}
-
-#busuanzi_container_site_pv,
-#busuanzi_container_site_uv {
-  font: 1rem $feature-font-family;
 }
 
 // ========== note ========== //
