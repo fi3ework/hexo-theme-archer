@@ -17,11 +17,11 @@
 }
 
 .archive-post-item {
-  vertical-align: middle;
+  display: flex;
+  align-items: baseline;
   border-left: 1px solid #bbb;
   margin-left: 0.3rem;
   padding: 0.2rem 0 0.2rem 0.5rem;
-  box-sizing: border-box;
   &:hover {
     border-left-color: $feature-color;
     .archive-post-date,
@@ -54,16 +54,17 @@
 
 .archive-year {
   font-size: 1rem;
-  margin-bottom: 0.3rem;
+  margin: 0.3rem 0 0.3rem 0;
 }
 
 .archive-post-date {
+  // align-self: center;
   font: 0.9rem/1rem $feature-font-family;
   color: #999;
 }
 
 .archive-post-title {
-  font-size: 1rem;
+  font: 1rem $feature-font-family;
   margin-left: 0.8rem;
   text-align: left;
   color: #ccc;

@@ -9,8 +9,9 @@
   }
 }
 
-.abstract-title span:last-of-type {
+.abstract-title {
   color: $abstract-content-title-color-dark;
+
   &:hover {
     color: $feature-color-dark;
   }
@@ -19,13 +20,12 @@
 .abstract-post-meta {
   color: $abstract-post-meta-color-dark;
 
-  .post-tag {
-    color: $abstract-post-tag-color-dark;
-    @include hover-line($color: $abstract-post-tag-color-dark);
+  a {
+    color: $abstract-post-meta-color-dark;
   }
 
-  .abstract-calander {
-    color: $abstract-calander-color-dark;
+  .post-tag {
+    @include hover-line($color: $abstract-post-meta-color-dark);
   }
 }
 

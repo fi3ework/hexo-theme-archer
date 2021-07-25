@@ -65,6 +65,8 @@ read_progress_color: default
 post_banner_theme: default
 # Stick profile info
 profile_sticky: false
+# Show categories info in index and post page
+show_categories: false
 
 # ========== Search ========== #
 algolia_search:
