@@ -1,0 +1,16 @@
+body {
+  background-color: $body-background-color-dark;
+}
+
+.container {
+  background-color: $body-background-color-dark;
+}
+
+::selection {
+  background: $selection-background-color-dark;
+  color: $selection-text-color-dark;
+}
+
+.note {
+  background-color: #242424 !important;
+}

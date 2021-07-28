@@ -9,8 +9,8 @@
   transform: translate3d(0, 0, 0);
   transition: transform 0.3s ease-in 0s;
   // Avoid blocking the click events of lower z-index elements
-  // In this case, you should set every other header element
-  // that clickable `pointer-events: auto;`
+  // In this case, you should set every other clickable header element
+  // with css attribute `pointer-events: auto;`
   pointer-events: none;
 }
 
@@ -22,6 +22,7 @@
   transform: translate3d($sidebar-width, 0, 0);
 }
 
+// ========== post read progress ========== //
 .read-progress {
   width: 100%;
   position: absolute;
@@ -38,85 +39,25 @@
   background-color: $feature-color;
 }
 
-// ========== header toggle (only take effect in post page) ========== //
-// banner
-.banner {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  height: calc(100% - 1px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-  background-color: rgba(255, 255, 255, 0.8);
-  transform: translate3d(0, -100%, 0);
-  transition: transform 0.3s ease-out 0s;
-}
-
-.banner-clean {
-  border-bottom: unset;
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.banner-show {
-  transform: translate3d(0, 0, 0);
-}
-
-.post-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 70%;
-  margin-left: 15%;
-  a {
-    white-space: nowrap;
-    color: $header-banner-text-color;
-    max-width: 100%;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    text-align: center;
-    font-size: 1.5rem;
-  }
-}
-
-.blog-title {
-  display: flex;
-  position: absolute;
-  right: 1.5rem;
-  top: 50%;
-  transform: translate(0, -50%);
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  a {
-    vertical-align: top;
-    white-space: nowrap;
-    color: $header-banner-text-color;
-    font: 1rem/1rem $feature-font-family;
-    &:hover {
-      color: $feature-color;
-    }
-  }
-}
-
 // ========== header sidebar menu ========== //
 .header-sidebar-menu {
   position: absolute;
   left: 1rem;
   top: 50%;
-  border: 2px solid #fff;
+  border: 2px solid $body-background-color;
   width: 1.5rem;
   height: 1.5rem;
   transform: translate(0, -50%);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   font-family: 'iconfont-archer';
-  color: #fff;
+  color: $body-background-color;
   text-align: center;
   line-height: 1.5rem;
   z-index: 21;
   cursor: pointer;
   &:hover {
-    background-color: #fff;
-    color: #000;
+    background-color: $body-background-color;
+    color: $body-background-color-dark;
     transform: translate(0, -50%);
   }
 }
@@ -137,34 +78,120 @@
 
 .header-sidebar-menu-active {
   transform: translate(0, -50%) rotate(180deg) !important;
-  transition: transform 0.3s ease;
 }
 
 .header-sidebar-menu-black {
-  color: #000;
-  background-color: #fff;
-  border-color: #000;
+  color: $body-background-color-dark;
+  background-color: $body-background-color;
+  border-color: $body-background-color-dark;
   &:hover {
-    background-color: #000;
-    color: #fff;
+    background-color: $body-background-color-dark;
+    color: $body-background-color;
   }
 }
 
-// ========== home page link ========== //
-.home-link {
+// ========== header actions ========== //
+.header-actions {
   position: absolute;
-  right: 1.5rem;
+  right: 1rem;
+  line-height: 2.7rem;
   top: 50%;
   transform: translate(0, -50%);
-  line-height: 2.7rem;
-  font-family: $feature-font-family;
-  color: #fff;
-  cursor: pointer;
-  &:hover {
-    color: $feature-color;
+
+  &.header-actions-hide {
+    display: none;
+  }
+
+  > span {
+    margin-left: 1rem;
+    padding: 0.5rem;
+  }
+
+  // ========== theme mode switch button ========== //
+  .header-theme-btn {
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      color: $feature-color;
+    }
+  }
+
+  // ========== home page link ========== //
+  .home-link {
+    font-family: $feature-font-family;
+
+    a {
+      color: #fff;
+      &:hover {
+        color: $feature-color;
+      }
+    }
   }
 }
 
-.home-link-hide {
-  display: none;
+// ========== header toggle (only take effect in post page) ========== //
+// banner
+.banner {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  height: calc(100% - 1px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: translate3d(0, -100%, 0);
+  transition: transform 0.3s ease-out 0s;
+
+  .post-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 70%;
+    margin-left: 15%;
+
+    a {
+      white-space: nowrap;
+      color: $header-banner-text-color;
+      max-width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    &.post-title-hide {
+      display: none;
+    }
+  }
+
+  .blog-title {
+    display: flex;
+    position: absolute;
+    right: 1.5rem;
+    line-height: 2.7rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    a {
+      vertical-align: top;
+      white-space: nowrap;
+      color: $header-banner-text-color;
+      font: 1rem/1rem $feature-font-family;
+      &:hover {
+        color: $feature-color;
+      }
+    }
+  }
+
+  &.banner-show {
+    transform: translate3d(0, 0, 0);
+  }
+
+  &.banner-clean {
+    border-bottom: unset;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
 }

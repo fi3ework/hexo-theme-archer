@@ -1,20 +1,34 @@
-// You can change the following by yourself :-)
+// You can change the following settings by yourself :-)
+
 // ========== DIY ========== //
 $feature-color: #f75357;
+$feature-color-dark: lighten($feature-color, 5%);
 $code-theme: 'atom-one-dark'; // atom-one-dark or atom-one-light
+
 // ========== global variables ========== //
 $body-background-color: #fff;
+$foreground-color: #fdfdfd;
+$body-background-color-dark: #121212;
+$foreground-color-dark: #181818;
 $base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial,
   'PingFang SC', 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei',
   'Microsoft JhengHei', 'Source Han Sans SC', 'Noto Sans CJK SC',
   'Source Han Sans CN', 'Noto Sans SC', 'Source Han Sans TC', 'Noto Sans CJK TC',
   'WenQuanYi Micro Hei', SimSun, sans-serif;
-$feature-font-family: 'Oswald-Regular';
+$feature-font-family: 'Oswald-Regular', $base-font-family;
 $base-font-size: 16px !default;
 
 // ========== common ========== //
 $container-margin-top: 3rem;
-$selection-color: $feature-color;
+$selection-background-color: $feature-color;
+$selection-background-color-dark: $feature-color-dark;
+$selection-text-color: #eee;
+$selection-text-color-dark: snow;
+
+// ========= dark mode ========= //
+$text-color-primary-dark: rgba(255, 255, 255, 0.87);
+$text-color-secondary-dark: rgba(255, 255, 255, 0.6);
+$text-color-minor-dark: rgba(255, 255, 255, 0.38);
 
 // ========== iconfont ========== //
 @font-face {
@@ -38,22 +52,44 @@ $selection-color: $feature-color;
 
 // ======= fixed footer ======= //
 $footer-fixed-height: 3.5rem;
+
 // ========== header ========== //
 $header-height: 3.5rem;
+$header-height-mobile: 3rem;
 $header-border-top-width: 3px;
 $header-border-top-color: rgba(0, 0, 0, 0.75);
-$header-banner-text-color: #333333;
+$header-border-top-color-dark: rgba(0, 0, 0, 0.75);
+$header-banner-text-color: #333;
+$header-banner-text-color-dark: $text-color-primary-dark;
+
 // ========= sidebar ========= //
 $sidebar-width: 400px;
+
 // ========== profile ========== //
 $profile-width: 200px;
+
 // ========== index ========== //
 $index-post-link-color: #1f1f1f;
+$index-post-link-color-dark: #ccc;
 $index-post-tag-color: #aaa;
+$index-post-tag-color-dark: $text-color-minor-dark;
+
+// ===== abstract content ===== //
+$abstract-content-title-color: #333;
+$abstract-content-title-color-dark: $text-color-primary-dark;
+$abstract-content-text-color: #585858;
+$abstract-content-text-color-dark: $text-color-secondary-dark;
+$abstract-post-meta-color: #aaa;
+$abstract-post-meta-color-dark: $text-color-minor-dark;
+
 // ========== post ========== //
 $post-content-color: #23394d;
+$post-content-color-dark: $text-color-primary-dark;
+
 // ========== social ========== //
 $social-iconfont-color: #777;
+$social-iconfont-color-dark: #777;
+
 // ========== code ========== //
 $code-color-map: (
   'atom-one-light': (

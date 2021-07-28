@@ -1,0 +1,34 @@
+.index-post {
+  background-color: $foreground-color-dark;
+  margin-bottom: 1rem;
+}
+
+.index-post {
+  .abstract-content {
+    color: $abstract-content-text-color-dark;
+  }
+}
+
+.abstract-title {
+  color: $abstract-content-title-color-dark;
+
+  &:hover {
+    color: $feature-color-dark;
+  }
+}
+
+.abstract-post-meta {
+  color: $abstract-post-meta-color-dark;
+
+  a {
+    color: $abstract-post-meta-color-dark;
+  }
+
+  .post-tag {
+    @include hover-line($color: $abstract-post-meta-color-dark);
+  }
+}
+
+.index-post-divider {
+  display: none;
+}

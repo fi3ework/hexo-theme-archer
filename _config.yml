@@ -31,9 +31,8 @@ social:
   rss: 
 # friends
 friends:
-  friendA: //www.baidu.com
-  friendB: //www.google.com
-  friendC: 
+  # friendA: //www.baidu.com
+  # friendB: //www.google.com
 about:
   enable: true
   image: '/intro/about-bg.jpg'
@@ -56,6 +55,18 @@ site_header_image: '/intro/index-bg.jpg'
 post_header_image: '/intro/post-bg.jpg'
 # 404 image
 _404_image: '/intro/404-bg.jpg'
+
+# ========== Theme ========== #
+# Blog float button theme ('default' or 'rounded')
+float_button_theme: default
+# Blog read progress color ('default' for black or 'feature' for feature-color)
+read_progress_color: default
+# Blog post banner theme ('default' or 'clean')
+post_banner_theme: default
+# Stick profile info
+profile_sticky: false
+# Show categories info in index and post page
+show_categories: false
 
 # ========== Search ========== #
 algolia_search:
@@ -139,11 +150,25 @@ website_approve:
   icp_approve: 
   beian_approve: 
   beian_img: /assets/beian.png
-# Blog page article timeliness days reminder, 0 for no threshold
-outdated_threshold: 0
-# Blog float button theme ('default' or 'rounded')
-float_button_theme: default
-# Blog read progress color ('default' for black or 'feature' for feature-color)
-read_progress_color: default
-# Blog post banner theme ('default' or 'clean')
-post_banner_theme: default
+# Blog page article timeliness note
+outdated_threshold:
+  enable: false
+  days: 180
+  # By default, timeliness reminder will be displayed for each article. That's not necessarily what you want.
+  # If true, you can set `timeliness: true` for specified article to enable the reminder.
+  specify_article: false
+# Mermaid Chart: https://github.com/knsv/mermaid
+mermaid:
+  enable: false
+  # Version number '8' is for the latest '8.x' version of Mermaid.
+  version: 8.11.0
+  theme: dark
+  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
+  options:
+# LaTeX Math Equations Support
+math:
+  mathjax:
+    enable: false
+    # Specified version number no less than '3.0.0', or you need to modify the CDN link manually.
+    # Version number '3' is for the latest '3.x' version of MathJax.
+    version: 3.2.0

@@ -1,9 +1,9 @@
 // ========== profile ========== //
 .profile {
+  padding-top: 1rem;
   order: 0;
   vertical-align: top;
   flex-shrink: 0;
-  margin: 4px 0 0 0;
   width: $profile-width;
   font: 1rem $feature-font-family;
   * {
@@ -17,11 +17,16 @@
   }
 }
 
+.profile.profile-sticky {
+  position: sticky;
+  top: $header-height;
+}
+
 .profile-avatar {
   display: block;
   border-radius: 1rem;
   width: 100%;
-  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .profile-name {

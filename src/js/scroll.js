@@ -1,16 +1,19 @@
 import archerUtil from './util'
 
-let scroll = function () {
-  let $banner = $('.banner:first'),
+const scroll = function () {
+  const $banner = $('.banner:first'),
     $postBanner = $banner.find('.post-title a'),
     $bgEle = $('.site-intro:first'),
-    $homeLink = $('.home-link:first'),
+    $header = $('.header'),
+    $headerActions = $('.header-actions'),
     $backTop = $('.back-top:first'),
     $sidebarMenu = $('.header-sidebar-menu:first'),
     $tocWrapper = $('.toc-wrapper:first'),
     $tocCatalog = $tocWrapper.find('.toc-catalog'),
-    $progressBar = $('.read-progress'),
-    bgTitleHeight = $bgEle.offset().top + $bgEle.outerHeight()
+    $progressBar = $('.read-progress')
+
+  const bgTitleHeight =
+    $bgEle.offset().top + $bgEle.outerHeight() - $header.height() / 2
 
   // toc 的收缩
   $tocCatalog.on('click', function () {
@@ -74,7 +77,7 @@ let scroll = function () {
   }
 
   function updateProgress(scrollTop, beginY, contentHeight) {
-    let windowHeight = $(window).height()
+    const windowHeight = $(window).height()
     let readPercent
     if (scrollTop < bgTitleHeight) {
       readPercent = 0
@@ -84,31 +87,33 @@ let scroll = function () {
     }
     // 防止文章过短，产生负百分比
     readPercent = readPercent >= 0 ? readPercent : 100
-    let restPercent = readPercent - 100 <= 0 ? readPercent - 100 : 0
+    const restPercent = readPercent - 100 <= 0 ? readPercent - 100 : 0
     $progressBar[0].style.transform = `translate3d(${restPercent}%, 0, 0)`
   }
 
   // rAF 操作
   let tickingScroll = false
   function updateScroll(scrollTop) {
-    let crossingState = isCrossingIntro(scrollTop)
+    const crossingState = isCrossingIntro(scrollTop)
     // intro 边界切换
     if (crossingState === 1) {
       $tocWrapper.addClass('toc-fixed')
-      $homeLink.addClass('home-link-hide')
-      $backTop.addClass('back-top-show')
+      $header.removeClass('header-mobile')
+      $headerActions.addClass('header-actions-hide')
       $sidebarMenu.addClass('header-sidebar-menu-black')
+      $backTop.removeClass('back-top-hidden')
     } else if (crossingState === -1) {
       $tocWrapper.removeClass('toc-fixed')
-      $homeLink.removeClass('home-link-hide')
+      $header.addClass('header-mobile')
+      $headerActions.removeClass('header-actions-hide')
       $banner.removeClass('banner-show')
-      $backTop.removeClass('back-top-show')
       $sidebarMenu.removeClass('header-sidebar-menu-black')
+      $backTop.addClass('back-top-hidden')
     }
     // 如果不是 post-page 以下忽略
     if (isPostPage) {
       // 上下滑动一定距离显示/隐藏 header
-      let upDownState = isScrollingUpOrDown(scrollTop)
+      const upDownState = isScrollingUpOrDown(scrollTop)
       if (upDownState === 1) {
         $banner.removeClass('banner-show')
       } else if (upDownState === -1 && !isHigherThanIntro) {

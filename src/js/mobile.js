@@ -1,13 +1,13 @@
-let initMobile = function () {
+const initMobile = function () {
   if (window.matchMedia) {
-    let mql = window.matchMedia('(max-width: 980px)')
+    const mql = window.matchMedia('(max-width: 980px)')
     mql.addListener(mediaChangeHandler)
     mediaChangeHandler(mql)
   } else {
     window.addListener(
       'resize',
       function () {
-        let innerWidth =
+        const innerWidth =
           window.innerWidth ||
           document.documentElement.clientWidth ||
           document.body.clientWidth

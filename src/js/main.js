@@ -10,18 +10,28 @@ import fancybox from './fancybox'
 const logStyle =
   'color: #fff; background: #f75357; padding: 1px; border-radius: 5px;'
 console.info('%c 🎯 hexo-theme-archer ⬇️ ', logStyle)
-console.info('%c 🏷 Version: 1.6.2 ', logStyle)
-console.info('%c 📅 Version date: 20210531', logStyle)
+console.info('%c 🏷 Version: 1.6.3 ', logStyle)
+console.info('%c 📅 Version date: 202107 ', logStyle)
 console.info('%c 📦 https://github.com/fi3ework/hexo-theme-archer ', logStyle)
+
+window.addEventListener('load', function (event) {
+  console.log('All resources finished loading!')
+})
 
 // remove background placeholder
 init()
+
+// init mobile
+initMobile()
+
+// init toc
+toc()
 
 // scroll event
 scroll()
 
 // init sidebar link
-let metas = new InitSidebarLink()
+const metas = new InitSidebarLink()
 metas.addTab({
   metaName: 'tags',
   labelsContainer: '.sidebar-tags-name',
@@ -33,15 +43,6 @@ metas.addTab({
   labelsContainer: '.sidebar-categories-name',
   postsContainer: '.sidebar-categories-list',
 })
-
-// init toc
-window.addEventListener('load', function (event) {
-  console.log('All resources finished loading!')
-  toc()
-})
-
-initMobile()
-// initSearch()
 
 // fancybox
 fancybox()

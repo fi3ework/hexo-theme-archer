@@ -1,15 +1,17 @@
 // ========== main ========== //
 .index-post {
+  background-color: $foreground-color;
+  border-radius: 0.5rem;
   position: relative;
-  padding: 1rem 0rem 1rem 0rem;
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+  padding: 1rem;
   z-index: 3;
+  transition: background-color 0.5s ease-out;
 }
 
 // ========== abstract content ========== //
 .index-post {
   .abstract-content {
-    color: #585858;
+    color: $abstract-content-text-color;
     font-size: 1rem;
     line-height: 1.6rem;
     font-weight: 300;
@@ -23,51 +25,80 @@
 
 // ========== abstract title ========== //
 .abstract-title {
+  display: flex;
+  align-items: baseline;
   line-height: 2.5rem;
-  color: $index-post-link-color;
-  padding-bottom: 0.5rem;
-  span:last-of-type {
-    transition: color 0.1s ease-in;
-    font-size: 1.7rem;
-    color: #333333;
-    &:hover {
-      color: $feature-color;
-    }
+  margin-bottom: 0.5rem;
+  transition: color 0.1s ease-in;
+  color: $abstract-content-title-color;
+  &:hover {
+    color: $feature-color;
   }
-}
 
-.stick-top {
-  font-size: 1.3rem;
-  margin-right: 0.2rem;
+  .stick-top {
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+  }
+
+  .abstract-title-text {
+    font-size: 1.7rem;
+  }
 }
 
 // ========== abstract meta ========== //
 .abstract-post-meta {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 0 0 0;
+  margin-top: 1rem;
+  font-size: 1rem;
   font-family: $feature-font-family;
-  color: #aaa;
-  height: 1.5rem;
-}
+  color: $abstract-post-meta-color;
 
-// tags
-.post-tag {
-  font-size: 1rem;
-  position: relative;
-  color: $index-post-tag-color;
-  margin-left: 0.4rem;
-  font-weight: lighter;
-  &::before {
-    margin-right: 2px;
-    content: '#';
+  a {
+    color: $abstract-post-meta-color;
   }
-  @include hover-line($color: $index-post-tag-color);
+
+  .abstract-calander {
+    position: relative;
+    top: -0.1rem;
+    margin-right: 0.3rem;
+  }
+
+  .abstract-tags {
+    text-align: right;
+  }
+
+  .post-category {
+    cursor: pointer;
+    position: relative;
+    margin-left: 0.4rem;
+    font-weight: lighter;
+    @include hover-line($color: $abstract-post-meta-color);
+  }
+
+  .post-category-icon {
+    margin-right: 2px;
+    pointer-events: none;
+  }
+
+  .post-category-text {
+    pointer-events: none;
+  }
+
+  .post-tag {
+    position: relative;
+    margin-left: 0.4rem;
+    font-weight: lighter;
+    &::before {
+      margin-right: 2px;
+      content: '#';
+    }
+    @include hover-line($color: $abstract-post-meta-color);
+  }
 }
 
-.abstract-calander {
-  position: relative;
-  top: -0.1rem;
-  margin-right: 0.3rem;
-  font-size: 1rem;
+// ========== divider ========== //
+.index-post-divider {
+  margin: 0.5rem;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
 }

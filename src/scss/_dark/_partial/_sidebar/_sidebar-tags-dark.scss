@@ -1,0 +1,12 @@
+.sidebar-tag-name,
+.sidebar-category-name {
+  &:hover {
+    border-color: $feature-color-dark;
+    color: $feature-color-dark;
+  }
+}
+
+.sidebar-label-focus {
+  border-color: $feature-color-dark;
+  color: $feature-color-dark;
+}

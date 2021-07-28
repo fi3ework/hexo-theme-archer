@@ -1,0 +1,67 @@
+.anchorjs-archer {
+  color: $feature-color-dark;
+}
+
+.article-entry {
+  background-color: $foreground-color-dark;
+}
+
+.abstract-content,
+.article-entry {
+  color: $post-content-color-dark;
+  blockquote {
+    background-color: #242424;
+    border-left-color: $feature-color-dark;
+  }
+  a {
+    color: $feature-color-dark;
+    &:hover {
+      border-bottom-color: $feature-color-dark;
+    }
+  }
+}
+
+.license-wrapper {
+  background-color: $foreground-color-dark;
+}
+
+.license-wrapper {
+  color: $post-content-color-dark;
+  a {
+    color: $feature-color-dark;
+  }
+}
+
+.toc-wrapper {
+  .toc-active {
+    color: $feature-color-dark;
+  }
+  a {
+    color: #777;
+  }
+  a:hover {
+    color: $feature-color-dark;
+  }
+}
+
+.toc-catalog {
+  background-color: $body-background-color-dark;
+  &:hover {
+    color: $feature-color-dark;
+  }
+}
+
+.post-paginator {
+  .nextTitle,
+  .prevTitle {
+    color: $text-color-minor-dark;
+    &:hover {
+      color: $feature-color-dark;
+    }
+  }
+
+  .nextSlogan,
+  .prevSlogan {
+    color: $text-color-secondary-dark;
+  }
+}

@@ -1,0 +1,20 @@
+.archive-post-item {
+  &:hover {
+    border-left-color: $feature-color-dark;
+    .archive-post-date,
+    .archive-post-title {
+      color: $feature-color-dark;
+    }
+  }
+}
+
+.site-search {
+  .search-icon {
+    color: $feature-color-dark;
+  }
+}
+
+.archive-year,
+.total-archive {
+  color: $feature-color-dark;
+}
