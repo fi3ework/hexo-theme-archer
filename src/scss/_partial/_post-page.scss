@@ -397,7 +397,7 @@
   z-index: 9999;
   margin: calc(#{$header-height} + 1rem) 0 0 0;
   transform: translate3d(0, 0, 0);
-  transition: transform 0.3s ease-out 0s;
+  transition: transform 0.4s ease-out;
   .toc-active {
     color: $feature-color;
   }
