@@ -1,6 +1,6 @@
 import Sidebar from './sidebar'
 
-let mySidebar = new Sidebar({
+const mySidebar = new Sidebar({
   sidebar: '.sidebar',
   nav: '.sidebar-tabs',
   tabs: '.sidebar-tabs li',

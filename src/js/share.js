@@ -6,9 +6,9 @@
 import qrcode from 'qrcode-generator'
 
 function initQR(sURL) {
-  let typeNumber = 0
-  let errorCorrectionLevel = 'L'
-  let qr = qrcode(typeNumber, errorCorrectionLevel)
+  const typeNumber = 0
+  const errorCorrectionLevel = 'L'
+  const qr = qrcode(typeNumber, errorCorrectionLevel)
   qr.addData(sURL)
   qr.make()
   document.getElementsByClassName('share-qrcode')[0].innerHTML =
@@ -16,7 +16,7 @@ function initQR(sURL) {
 }
 
 function generate(templateURL, param) {
-  let shareURL = templateURL
+  const shareURL = templateURL
     .replace(/<%-sURL%>/g, encodeURIComponent(param.sURL))
     .replace(/<%-sTitle%>/g, param.sTitle)
     .replace(/<%-sDesc%>/g, param.sDesc)
@@ -49,8 +49,8 @@ function handleShareClick(type, param) {
 }
 
 function init() {
-  let sURL = window.location.href
-  let sTitle = document.querySelector('title').innerHTML
+  const sURL = window.location.href
+  const sTitle = document.querySelector('title').innerHTML
   let sImg =
     document.querySelector('.article-entry img') &&
     document.querySelector('.article-entry img').getAttribute('src')
@@ -60,11 +60,11 @@ function init() {
     window.location.hostname +
     (window.location.port ? ':' + window.location.port : '') +
     sImg
-  let sDesc =
+  const sDesc =
     document.querySelector('.article-entry') &&
     document.querySelector('.article-entry').innerText.substring(0, 30) + '...'
-  let sAuthor = window.siteMeta.author
-  let param = {
+  const sAuthor = window.siteMeta.author
+  const param = {
     sURL,
     sTitle,
     sImg,
@@ -72,7 +72,7 @@ function init() {
     sAuthor,
   }
 
-  let shareWrapper = document.querySelector('.shareList')
+  const shareWrapper = document.querySelector('.shareList')
   if (!shareWrapper) {
     return
   }

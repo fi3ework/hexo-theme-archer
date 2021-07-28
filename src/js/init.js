@@ -1,7 +1,7 @@
 import AnchorJS from 'anchor-js'
 
-let init = function () {
-  let $introImg = $('.site-intro-img:first'),
+const init = function () {
+  const $introImg = $('.site-intro-img:first'),
     introPlaceholder = $('.site-intro-placeholder:first'),
     bgCSS = $introImg.css('background-image'),
     bgRegResult = bgCSS.match(/url\("*([^"]*)"*\)/)
@@ -12,7 +12,7 @@ let init = function () {
     return
   }
 
-  let bgURL = bgRegResult[1],
+  const bgURL = bgRegResult[1],
     img = new Image()
   img.onload = function () {
     // window.alert()
@@ -34,7 +34,7 @@ let init = function () {
   )
 
   // https://www.bryanbraun.com/anchorjs/
-  let anchors = new AnchorJS()
+  const anchors = new AnchorJS()
   anchors.options = {
     placement: 'right',
     class: 'anchorjs-archer',

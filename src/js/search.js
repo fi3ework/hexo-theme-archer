@@ -1,4 +1,14 @@
 // special thanks to https://blog.naaln.com/2016/07/hexo-with-algolia/
+import algoliasearch from 'algoliasearch/lite'
+import instantsearch from 'instantsearch.js'
+import {
+  configure,
+  searchBox,
+  hits,
+  stats,
+  pagination,
+} from 'instantsearch.js/es/widgets'
+import archerUtil from './util'
 
 const initAlgolia = () => {
   $(document).ready(function () {
@@ -13,7 +23,6 @@ const initAlgolia = () => {
       return
     }
 
-    const algoliasearch = require('algoliasearch')
     const searchClient = algoliasearch(
       algoliaSettings.applicationID,
       algoliaSettings.apiKey
@@ -23,10 +32,11 @@ const initAlgolia = () => {
       indexName: algoliaSettings.indexName,
       searchClient,
       searchFunction: function (helper) {
-        let searchInput = $('#algolia-search-input').find('input')
+        const searchInput = $('#algolia-search-input').find('input')
 
         const container = document.querySelector('.algolia-results')
         container.style.display = helper.state.query === '' ? 'none' : ''
+
         if (searchInput.val()) {
           helper.search()
         }
@@ -35,21 +45,22 @@ const initAlgolia = () => {
     })
 
     // Registering Widgets
-    ;[
-      instantsearch.widgets.searchBox({
+    search.addWidgets([
+      configure({
+        hitsPerPage: algoliaSettings.hits.per_page || 10,
+      }),
+      searchBox({
         container: '#algolia-search-input',
         placeholder: algoliaSettings.labels.input_placeholder,
         showSubmit: false,
         showReset: false,
         showLoadingIndicator: false,
       }),
-
-      instantsearch.widgets.hits({
+      hits({
         container: '#algolia-hits',
-        hitsPerPage: algoliaSettings.hits.per_page || 10,
         templates: {
           item: function (data) {
-            let link = data.permalink
+            const link = data.permalink
               ? data.permalink
               : siteMeta.root + data.path
             return (
@@ -83,8 +94,7 @@ const initAlgolia = () => {
           emptyRoot: 'algolia-hit-empty',
         },
       }),
-
-      instantsearch.widgets.stats({
+      stats({
         container: '#algolia-stats',
         templates: {
           text: function (data) {
@@ -106,8 +116,7 @@ const initAlgolia = () => {
           root: 'algolia-stat-root',
         },
       }),
-
-      instantsearch.widgets.pagination({
+      pagination({
         container: '#algolia-pagination',
         scrollTo: false,
         templates: {
@@ -117,7 +126,7 @@ const initAlgolia = () => {
           next: '<i class="fa fa-angle-right"></i>',
         },
       }),
-    ].forEach(search.addWidget, search)
+    ])
 
     search.start()
 
@@ -128,6 +137,7 @@ const initAlgolia = () => {
         .css('overflow', 'hidden')
       $('.popup').toggle()
       $('#algolia-search-input').find('input').focus()
+      archerUtil.stopBodyScroll(true)
     })
 
     const hidePopup = () => {
@@ -135,6 +145,7 @@ const initAlgolia = () => {
       $('.popup').hide()
       $('.algolia-pop-overlay').remove()
       $('body').css('overflow', '')
+      archerUtil.stopBodyScroll(false)
     }
 
     $('.popup-btn-close').click(function () {
@@ -146,6 +157,8 @@ const initAlgolia = () => {
         hidePopup()
       }
     })
+
+    $('.site-search').removeClass('site-search-loading')
   })
 }
 

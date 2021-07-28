@@ -11,7 +11,8 @@
 }
 
 .profile {
-  margin: 1rem auto;
+  margin: 1rem auto 0.5rem auto;
+  padding: 0 0;
   .profile-avatar {
     width: 60%;
     margin: 0 auto;
@@ -31,6 +32,18 @@
 
 .post-page {
   padding-bottom: 0;
+}
+
+.post-paginator {
+  .nextTitle,
+  .prevTitle {
+    font-size: 1rem;
+  }
+
+  .nextSlogan,
+  .prevSlogan {
+    font-size: 1.2rem;
+  }
 }
 
 .main {
@@ -79,17 +92,27 @@
     max-width: 90%;
   }
   .main {
-    width: 86%;
+    width: 95%;
   }
 }
 
 // ========== header ========== //
-.post-title {
-  display: none;
+.header {
+  height: $header-height-mobile;
 }
 
-.blog-title {
-  line-height: 2rem;
+.header-mobile {
+  background-color: rgba(0, 0, 0, 0.38);
+}
+
+.banner {
+  .post-title {
+    display: none;
+  }
+
+  .blog-title {
+    line-height: 2rem;
+  }
 }
 
 .home-link {
@@ -104,9 +127,9 @@
 }
 
 .header-sidebar-menu-rounded {
-  width: 2.7rem;
-  height: 2.7rem;
-  line-height: 2.7rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
 }
 
 // ========== fixed footer ========== //
@@ -117,9 +140,9 @@
 }
 
 .back-top-rounded {
-  width: 2.7rem;
-  height: 2.7rem;
-  line-height: 2.7rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
 }
 
 // ========== content ========== //
@@ -133,27 +156,26 @@
 
 .article-entry {
   blockquote {
-    margin: 0.8rem 0;
+    padding: 1rem;
   }
 }
 
 // ========== sidebar ========== //
-$sidebar-width: 70vw;
-
+// $sidebar-width: 400px;
 .sidebar {
-  width: $sidebar-width;
+  width: calc(min(400px, 70vw));
 }
 
 .wrapper-sidebar-active {
-  transform: translate3d($sidebar-width, 0, 0);
+  transform: translate3d(calc(min(400px, 70vw)), 0, 0);
 }
 
 .header-sidebar-active {
-  transform: translate3d($sidebar-width, 0, 0);
+  transform: translate3d(calc(min(400px, 70vw)), 0, 0);
 }
 
 .footer-fixed-sidebar-active {
-  transform: translate3d($sidebar-width, 0, 0);
+  transform: translate3d(calc(min(400px, 70vw)), 0, 0);
 }
 
 .tab-name {
@@ -164,24 +186,36 @@ $sidebar-width: 70vw;
   -webkit-overflow-scrolling: touch;
 }
 
-.archive-year,
 .total-archive {
   font-size: 1.4rem;
+}
+
+.archive-year {
+  font-size: 1.2rem;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .sidebar-tags {
   -webkit-overflow-scrolling: touch;
 }
 
+// ========== comment ========== //
+.post-comment {
+  margin: 1.5rem 0 2rem 0;
+}
+
 // ========== footer ========== //
 .footer {
   margin-top: 0;
   .social {
+    width: 200px;
+    line-height: 2rem;
+    min-width: unset;
     @include social($scaleSize: 0.5, $spanMargin: 0.2rem);
   }
 }
 
-#busuanzi_container_site_pv,
-#busuanzi_container_site_uv {
-  font: 1rem $feature-font-family;
+// ========== note ========== //
+.note {
+  padding: 0.5rem 1rem;
 }

@@ -1,6 +1,8 @@
 // ========== 设置滚动条的样式 (Webkit only) ========== //
 html,
 .sidebar-panel-archives,
+.sidebar-tags-name,
+.sidebar-categories-name,
 .sidebar-tags-list,
 .sidebar-categories-list,
 .highlight {
@@ -37,6 +39,8 @@ html,
 
 // sidebar srcollbar
 .sidebar-archive,
+.sidebar-tags-name,
+.sidebar-categories-name,
 .sidebar-tags-list,
 .sidebar-categories-list {
   &::-webkit-scrollbar-thumb {

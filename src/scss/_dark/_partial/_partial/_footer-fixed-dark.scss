@@ -1,0 +1,17 @@
+.back-top {
+  border-color: $text-color-primary-dark;
+  background-color: rgba(18, 18, 18, 0.8);
+  color: $text-color-primary-dark;
+  &:hover {
+    background-color: $text-color-primary-dark;
+    color: $body-background-color-dark;
+  }
+}
+
+.back-top-rounded {
+  color: $body-background-color;
+  background-color: $body-background-color-dark;
+  &:hover {
+    color: #333;
+  }
+}

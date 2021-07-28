@@ -4,17 +4,22 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 2.5rem 0 1.5rem 0;
-  background-color: #fff;
-}
-
-.social {
-  text-align: center;
-  vertical-align: text-bottom;
-  .iconfont-archer {
-    position: relative;
+  padding: 4rem 0 1.5rem 0;
+  margin: 0 auto;
+  width: 100%;
+  background-color: $body-background-color;
+  .social {
+    width: 50%;
+    min-width: 42.8125rem;
+    line-height: 2.5rem;
+    margin: 0 auto;
+    text-align: center;
+    vertical-align: text-bottom;
+    .iconfont-archer {
+      position: relative;
+    }
+    @include social($scaleSize: 0.8, $spanMargin: 0.5rem);
   }
-  @include social($scaleSize: 0.8, $spanMargin: 0.5rem);
 }
 
 // ========== copyright ========== //≈

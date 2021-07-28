@@ -24,13 +24,13 @@ class MetaInfo {
 
   _bindLabelClick() {
     this.labelsContainer.addEventListener('click', (e) => {
-      let currLabelName = e.target.getAttribute(`data-${this.metaName}`)
+      const currLabelName = e.target.getAttribute(`data-${this.metaName}`)
       this.changeLabel(currLabelName)
     })
   }
 
   _changeFocus(label) {
-    let currFocus = this.labelsContainer.getElementsByClassName(
+    const currFocus = this.labelsContainer.getElementsByClassName(
       'sidebar-label-focus'
     )
     ;[...currFocus].forEach((item) =>
@@ -44,9 +44,9 @@ class MetaInfo {
   }
 
   _changeList() {
-    let indexArr = this.indexMap.get(this.currLabelName)
+    const indexArr = this.indexMap.get(this.currLabelName)
     try {
-      let corrArr = indexArr.map((index) => {
+      const corrArr = indexArr.map((index) => {
         return this.postsArr[index]
       })
       this._createPostsDom(corrArr)
@@ -58,8 +58,8 @@ class MetaInfo {
   }
 
   _createPostsDom(corrArr) {
-    console.log(corrArr)
-    let frag = document.createDocumentFragment()
+    // console.log(corrArr)
+    const frag = document.createDocumentFragment()
     this.postContainer.innerHTML = ''
     for (let i = 0; i < corrArr.length; i++) {
       frag.appendChild(this._createPostDom(corrArr[i]))
@@ -68,7 +68,7 @@ class MetaInfo {
   }
 
   _createPostDom(postInfo) {
-    let $tagItem = $(
+    const $tagItem = $(
       '<li class="meta-post-item"><span class="meta-post-date">' +
         archerUtil.dateFormater(
           new Date(Date.parse(postInfo.date)),
@@ -76,7 +76,7 @@ class MetaInfo {
         ) +
         '</span></li>'
     )
-    let $aItem = $(
+    const $aItem = $(
       '<a class="meta-post-title" href="' +
         siteMeta.root +
         postInfo.path +
@@ -95,15 +95,18 @@ class MetaInfo {
     ) {
       return
     }
+
     for (let postIndex = 0; postIndex < postsArr.length; postIndex++) {
-      let currPostLabels = postsArr[postIndex][this.metaName]
+      const currPostLabels = postsArr[postIndex][this.metaName]
       // if there is any post has a tag
       if (currPostLabels && currPostLabels.length) {
         currPostLabels.forEach((tagOrCatetory) => {
           // if this.metaName is 'categories', tagOrCatetory['slug'] will be used as key in this.indexMap
           // else if this.metaName is 'tag', tagOrCatetory['name'] will be used as key in this.indexMap
           // check the array postsArr and you'll know why. (actually you can just use 'slug' in both case)
-          let key = this.metaName === 'categories' ? 'slug' : 'name'
+          // const key = this.metaName === 'categories' ? 'slug' : 'name'
+          const key = 'slug'
+
           if (this.indexMap.has(tagOrCatetory[key])) {
             this.indexMap.get(tagOrCatetory[key]).push(postIndex)
           } else {
@@ -140,7 +143,7 @@ class SidebarMeta {
   // add a new tab and updata all metas
   addTab(para) {
     this.tabCount++
-    let newMeta = new MetaInfo(
+    const newMeta = new MetaInfo(
       para.metaName,
       para.labelsContainer,
       para.postsContainer
@@ -172,21 +175,21 @@ class SidebarMeta {
   // fetch content.json
   _fetchInfo() {
     // siteMeta is from js-info.ejs
-    let contentURL = siteMeta.root + 'content.json?t=' + Number(new Date())
-    let xhr = new XMLHttpRequest()
+    const contentURL = siteMeta.root + 'content.json?t=' + Number(new Date())
+    const xhr = new XMLHttpRequest()
     xhr.responseType = ''
     xhr.open('get', contentURL, true)
-    let $loadFailed = $('.tag-load-fail')
-    let that = this
+    const $loadFailed = $('.tag-load-fail')
+    const that = this
     xhr.onload = function () {
       if (this.status === 200 || this.status === 304) {
         $loadFailed.remove()
         // defensive programming if content.json formart is not correct
         // pr: https://github.com/fi3ework/hexo-theme-archer/pull/37
-        let contentJSON
-        let posts
-        contentJSON = JSON.parse(this.responseText)
-        posts = Array.isArray(contentJSON) ? contentJSON : contentJSON.posts
+        const contentJSON = JSON.parse(this.responseText)
+        const posts = Array.isArray(contentJSON)
+          ? contentJSON
+          : contentJSON.posts
         if (posts && posts.length) {
           that.postsArr = posts
           that.emitter.emit('DATA_FETCHED_SUCCESS')
@@ -199,16 +202,21 @@ class SidebarMeta {
   }
 
   _bindOtherClick() {
-    document.body.addEventListener('click', (e) => {
-      if (e.target.className === 'post-tag') {
-        e.stopPropagation()
-        sidebar.activateSidebar()
-        sidebar.switchTo(1)
-        let currLabelName = e.target.getAttribute(`data-tags`)
-        this.currLabelName = currLabelName
-        let tagMeta = this.metas[0]
-        tagMeta.changeLabel(this.currLabelName)
-      }
+    $('.post-tag').click((e) => {
+      e.stopPropagation()
+      sidebar.activateSidebar()
+      sidebar.switchTo(1)
+      this.currLabelName = e.target.getAttribute('data-tags')
+      const tagMeta = this.metas[0]
+      tagMeta.changeLabel(this.currLabelName)
+    })
+    $('.post-category').click((e) => {
+      e.stopPropagation()
+      sidebar.activateSidebar()
+      sidebar.switchTo(2)
+      this.currLabelName = e.target.getAttribute('data-categories')
+      const categoryMeta = this.metas[1]
+      categoryMeta.changeLabel(this.currLabelName)
     })
   }
 }

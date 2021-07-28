@@ -5,14 +5,18 @@
 @import '_mixin';
 
 // partial
-@import '_partial/_partial/_intro';
-@import '_partial/_partial/_header';
-@import '_partial/_partial/_profile';
-@import '_partial/_partial/footer-fixed';
+@import '_partial/_partial/_footer-fixed';
 @import '_partial/_partial/_footer';
+@import '_partial/_partial/_header';
+@import '_partial/_partial/_intro';
 @import '_partial/_partial/_paginator';
-@import '_partial/_algolia';
+@import '_partial/_partial/_profile';
 @import '_partial/_partial/_scrollbar';
+
+// algolia
+@import '_partial/_algolia';
+
+// post
 @import '_partial/_post/_code';
 
 // sidebar

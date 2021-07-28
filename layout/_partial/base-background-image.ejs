@@ -2,16 +2,16 @@
     <% var bgURL; %>
     <!-- 主页  -->
     <% if (is_home()) { %>
-    <% bgURL = theme.site_header_image; %>
+        <% bgURL = theme.site_header_image; %>
     <!-- 文章页  -->
     <% } else if (is_post()) { %>
-    <% bgURL = page.header_image || theme.post_header_image || theme.site_header_image; %>
+        <% bgURL = page.header_image || theme.post_header_image || theme.site_header_image; %>
     <!-- 404页  -->
     <% } else if (page.layout === "404") { %>
-    <% bgURL = theme._404_image || theme.site_header_image; %>
+        <% bgURL = theme._404_image || theme.site_header_image; %>
     <!-- about页 -->
     <% } else if (page.layout === "about") { %>
-    <% bgURL = theme.about.image || theme.site_header_image; %>
+        <% bgURL = theme.about.image || theme.site_header_image; %>
     <% } %>        
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(<%- url_for(bgURL) %>)"></div>
@@ -20,36 +20,36 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             <% if (is_home()) { %>
-            <%- theme.main_title || config.title%>
+                <%- theme.main_title || config.title %>
             <!-- 文章页  -->
             <% } else if(is_post()) { %>
-            <%- truncate(strip_html(page.title), {length: 80, omission: '...'}) || '[Untitled Post]' %>
+                <%- truncate(strip_html(page.title), {length: 80, omission: '...'}) || '[Untitled Post]' %>
             <!-- 404 -->
             <% } else if(page.layout === "404") { %>
-            <%- page.title || '[404]'%>
+                <%- page.title || '[404]'%>
             <!-- about -->
             <% } else if(page.layout === "about" ) { %>
-            <%- page.title || 'About' %>
+                <%- page.title || 'About' %>
             <% } %>
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             <% if (is_home()) { %>
-            <% if(typeof theme.subtitle === 'string') { %>
-                <%- theme.subtitle %>
-            <% } %>
+                <% if(typeof theme.subtitle === 'string') { %>
+                    <%- theme.subtitle %>
+                <% } %>
             <!-- 文章页  -->
             <% } else if (is_post()) { %>
-            <% if(typeof page.subtitle === 'string') { %>
-                <%- page.subtitle %>
-            <% } %>
+                <% if(typeof page.subtitle === 'string') { %>
+                    <%- page.subtitle %>
+                <% } %>
             <!-- 404 -->
             <% } else if (page.layout === "404") { %>
                 <%- page.description %>
             <% } %>
         </p>
-        <!-- 文章页meta -->
+        <!-- 文章页 meta -->
         <% if(is_post()) { %>
             <div class="post-intros">
                 <!-- 文章页标签  -->
@@ -64,18 +64,21 @@
                     </div>
                 <% } %>
                 <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <!-- 撰写日期 -->
+                    <span class="iconfont-archer post-intro-calander">&#xe676;</span>
                     <span class="post-intro-time"><%- date(page.date, "YYYY/MM/DD") %></span>
+                    <!-- busuanzi -->
                     <% if (theme.busuanzi) { %>
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
+                        <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                            <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
                     <% } %>
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
+                    <!-- 文章分享 -->
+                    <span class="share-wrapper">
+                        <span class="iconfont-archer share-icon">&#xe71d;</span>
+                        <span class="share-text">Share</span>
+                        <ul class="share-list">
                             <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
                                 <div class="share-qrcode"></div>
                             </li>
