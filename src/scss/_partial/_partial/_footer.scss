@@ -5,9 +5,9 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: 4rem 0 1.5rem 0;
-  background-color: $body-background-color;
-  max-width: calc(50% + 200px);
   margin: 0 auto;
+  width: 100%;
+  background-color: $body-background-color;
   .social {
     width: 50%;
     min-width: 42.8125rem;

@@ -38,7 +38,7 @@
             <%- partial('_partial/base-footer', {}, {cache: true}) %>
         </div>
         <!-- toc -->
-        <% if(is_post() && theme.toc) { %>
+        <% if(is_post() && theme.toc && page.toc !== false) { %>
             <div class="toc-wrapper" style=<%- partial('_partial/intro-height', {attr: 'top'}) %>>
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
