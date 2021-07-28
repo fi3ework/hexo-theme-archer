@@ -208,6 +208,9 @@
 .footer {
   margin-top: 0;
   .social {
+    width: 200px;
+    line-height: 2rem;
+    min-width: unset;
     @include social($scaleSize: 0.5, $spanMargin: 0.2rem);
   }
 }

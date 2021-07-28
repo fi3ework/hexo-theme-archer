@@ -1,3 +1,8 @@
+// stopBodyScroll 方法依赖
+let bodyEl = document.body
+let windowTop = 0
+const bodyElPosition = bodyEl.style.position
+
 const archerUtil = {
   // 回到顶部
   backTop: function (event) {
@@ -24,7 +29,7 @@ const archerUtil = {
 
   // 格式化日期
   dateFormater: function (date, fmt) {
-    let o = {
+    const o = {
       'M+': date.getMonth() + 1, // 月份
       'd+': date.getDate(), // 日
       'h+': date.getHours(), // 小时
@@ -39,7 +44,7 @@ const archerUtil = {
         String(date.getFullYear()).substr(4 - RegExp.$1.length)
       )
     }
-    for (let k in o) {
+    for (const k in o) {
       if (new RegExp('(' + k + ')').test(fmt)) {
         fmt = fmt.replace(
           RegExp.$1,
@@ -58,6 +63,22 @@ const archerUtil = {
       requestAnimationFrame(updateFunc)
     }
     ticking = true
+  },
+
+  // 固定 body
+  // see: https://segmentfault.com/a/1190000012313337
+  stopBodyScroll: function (isFixed) {
+    if (isFixed) {
+      windowTop = window.scrollY
+
+      bodyEl.style.position = 'fixed'
+      bodyEl.style.top = -windowTop + 'px'
+    } else {
+      bodyEl.style.position = bodyElPosition
+      bodyEl.style.top = ''
+
+      window.scrollTo(0, windowTop)
+    }
   },
 
   // 函数节流

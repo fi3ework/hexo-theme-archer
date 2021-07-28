@@ -1,7 +1,9 @@
 {
+    "parser": "@babel/eslint-parser",
     "extends": [
-        "eslint-config-alloy",
-        "plugin:prettier/recommended"
+        "alloy",
+        "plugin:prettier/recommended",
+        "prettier"
     ],
     "globals": {
         "siteMeta": true

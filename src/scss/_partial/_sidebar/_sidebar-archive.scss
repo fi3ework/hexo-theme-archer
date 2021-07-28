@@ -36,6 +36,10 @@
 }
 
 .site-search {
+  &.site-search-loading {
+    display: none;
+  }
+
   .search-icon {
     cursor: pointer;
     color: $feature-color;

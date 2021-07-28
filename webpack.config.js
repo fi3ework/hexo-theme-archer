@@ -15,15 +15,29 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js)$/,
+        test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  targets: '> 0.25%, not dead',
+                  bugfixes: true,
+                  useBuiltIns: 'usage',
+                  corejs: { version: '3.15.2', proposals: false },
+                },
+              ],
+            ],
             plugins: [
-              '@babel/plugin-proposal-class-properties',
-              '@babel/plugin-proposal-object-rest-spread',
+              [
+                '@babel/plugin-transform-runtime',
+                {
+                  version: '^7.14.5',
+                },
+              ],
             ],
           },
         },

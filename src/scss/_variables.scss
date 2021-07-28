@@ -7,7 +7,9 @@ $code-theme: 'atom-one-dark'; // atom-one-dark or atom-one-light
 
 // ========== global variables ========== //
 $body-background-color: #fff;
+$foreground-color: #fdfdfd;
 $body-background-color-dark: #121212;
+$foreground-color-dark: #181818;
 $base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial,
   'PingFang SC', 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei',
   'Microsoft JhengHei', 'Source Han Sans SC', 'Noto Sans CJK SC',
@@ -27,7 +29,6 @@ $selection-text-color-dark: snow;
 $text-color-primary-dark: rgba(255, 255, 255, 0.87);
 $text-color-secondary-dark: rgba(255, 255, 255, 0.6);
 $text-color-minor-dark: rgba(255, 255, 255, 0.38);
-$foreground-color-dark: #181818;
 
 // ========== iconfont ========== //
 @font-face {
