@@ -239,6 +239,8 @@
 
 // ========== content ========== //
 .article-entry {
+  background-color: $foreground-color;
+  border-radius: 0.5rem 0.5rem 0 0;
   padding: 0.5rem 1.5rem;
   transition: background-color 0.5s ease-out;
 }
@@ -367,6 +369,8 @@
 // ========== license ========== //
 
 .license-wrapper {
+  background-color: $foreground-color;
+  border-radius: 0 0 0.5rem 0.5rem;
   padding: 0.5rem 1.5rem;
   font-weight: 300;
   line-height: 1.5rem;

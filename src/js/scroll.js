@@ -77,7 +77,7 @@ const scroll = function () {
   }
 
   function updateProgress(scrollTop, beginY, contentHeight) {
-    let windowHeight = $(window).height()
+    const windowHeight = $(window).height()
     let readPercent
     if (scrollTop < bgTitleHeight) {
       readPercent = 0
@@ -87,14 +87,14 @@ const scroll = function () {
     }
     // 防止文章过短，产生负百分比
     readPercent = readPercent >= 0 ? readPercent : 100
-    let restPercent = readPercent - 100 <= 0 ? readPercent - 100 : 0
+    const restPercent = readPercent - 100 <= 0 ? readPercent - 100 : 0
     $progressBar[0].style.transform = `translate3d(${restPercent}%, 0, 0)`
   }
 
   // rAF 操作
   let tickingScroll = false
   function updateScroll(scrollTop) {
-    let crossingState = isCrossingIntro(scrollTop)
+    const crossingState = isCrossingIntro(scrollTop)
     // intro 边界切换
     if (crossingState === 1) {
       $tocWrapper.addClass('toc-fixed')
@@ -113,7 +113,7 @@ const scroll = function () {
     // 如果不是 post-page 以下忽略
     if (isPostPage) {
       // 上下滑动一定距离显示/隐藏 header
-      let upDownState = isScrollingUpOrDown(scrollTop)
+      const upDownState = isScrollingUpOrDown(scrollTop)
       if (upDownState === 1) {
         $banner.removeClass('banner-show')
       } else if (upDownState === -1 && !isHigherThanIntro) {

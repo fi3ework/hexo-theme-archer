@@ -34,7 +34,7 @@
     margin: 0;
   }
   .email {
-    top: 3px * $scaleSize;
+    top: 4px * $scaleSize;
     &::before {
       content: '\e642';
     }
@@ -72,7 +72,7 @@
     }
   }
   .telegram {
-    top: 4px * $scaleSize;
+    top: 2.5px * $scaleSize;
     &::before {
       font-size: 2.6rem * $scaleSize;
       content: '\e731';
@@ -111,7 +111,7 @@
     }
   }
   .facebook {
-    top: 4px * $scaleSize;
+    top: 5px * $scaleSize;
     &::before {
       font-size: 3rem * $scaleSize;
       content: '\e67a';
@@ -121,7 +121,7 @@
     }
   }
   .twitter {
-    // top: px * $scaleSize;
+    top: 2px * $scaleSize;
     &::before {
       content: '\e634';
     }
@@ -130,7 +130,7 @@
     }
   }
   .instagram {
-    top: 2px * $scaleSize;
+    top: 4px * $scaleSize;
     &::before {
       content: '\e79d';
       font-size: 2.8rem * $scaleSize;
@@ -140,6 +140,7 @@
     }
   }
   .stack-overflow {
+    top: 1px * $scaleSize;
     &::before {
       font-size: 2.3rem * $scaleSize;
       content: '\e80b';
@@ -149,7 +150,7 @@
     }
   }
   .segmentFault {
-    top: 3px * $scaleSize;
+    top: 4px * $scaleSize;
     &::before {
       font-size: 3rem * $scaleSize;
       content: '\e60c';
@@ -159,6 +160,7 @@
     }
   }
   .juejin {
+    top: 1px * $scaleSize;
     &::before {
       font-size: 2.7rem * $scaleSize;
       content: '\e60b';
@@ -177,7 +179,7 @@
     }
   }
   .bilibili {
-    top: 4px * $scaleSize;
+    top: 6px * $scaleSize;
     &::before {
       font-size: 3.5rem * $scaleSize;
       content: '\e64e';
@@ -197,7 +199,7 @@
     }
   }
   .steam {
-    top: -1px * $scaleSize;
+    top: 2px * $scaleSize;
     &::before {
       font-size: 2.5rem * $scaleSize;
       content: '\f23b';

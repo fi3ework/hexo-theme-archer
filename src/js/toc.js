@@ -6,7 +6,7 @@ function initTocLinksScrollTop(tocLinks) {
   })
 }
 
-let calcAnchorLink = (heights, currHeight) => {
+const calcAnchorLink = (heights, currHeight) => {
   for (let i = 0; i < heights.length; i++) {
     if (Math.abs(currHeight - heights[i]) < 1.1) {
       return i
@@ -15,12 +15,12 @@ let calcAnchorLink = (heights, currHeight) => {
   return -1
 }
 
-let isPassingThrough = (currHeight, prevHeight, linkHeight) => {
+const isPassingThrough = (currHeight, prevHeight, linkHeight) => {
   return (currHeight + 1 - linkHeight) * (prevHeight + 1 - linkHeight) <= 0
 }
 
 function calcScrollIntoScreenIndex(heights, prevHeight, currHeight) {
-  let anchorLinkIndex = calcAnchorLink(heights, currHeight)
+  const anchorLinkIndex = calcAnchorLink(heights, currHeight)
   if (anchorLinkIndex >= 0) {
     return anchorLinkIndex
   }
@@ -89,21 +89,21 @@ function spreadParentNodeOfTargetItem(tocItem) {
   }
 }
 
-let main = () => {
-  let toc = document.querySelector('.toc')
-  let tocItems = document.querySelectorAll('.toc-item')
+const main = () => {
+  const toc = document.querySelector('.toc')
+  const tocItems = document.querySelectorAll('.toc-item')
   if (!tocItems.length) {
     return
   }
   initFold(toc)
-  let headers = document.querySelectorAll(
+  const headers = document.querySelectorAll(
     '.article-entry h1, h2, h3, h4, h5, h6'
   )
   // get links height
-  let heights = initTocLinksScrollTop(headers)
+  const heights = initTocLinksScrollTop(headers)
   document.addEventListener('scroll', () => {
-    let currHeight = $(document).scrollTop()
-    let currHeightIndex = calcScrollIntoScreenIndex(
+    const currHeight = $(document).scrollTop()
+    const currHeightIndex = calcScrollIntoScreenIndex(
       heights,
       prevHeight,
       currHeight
@@ -113,7 +113,7 @@ let main = () => {
       return
     }
     // spread, fold and active
-    let currItem = tocItems[currHeightIndex]
+    const currItem = tocItems[currHeightIndex]
     // 1. fold
     resetFold(toc)
     // 2. spread

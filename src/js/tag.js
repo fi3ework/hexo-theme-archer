@@ -24,13 +24,13 @@ class MetaInfo {
 
   _bindLabelClick() {
     this.labelsContainer.addEventListener('click', (e) => {
-      let currLabelName = e.target.getAttribute(`data-${this.metaName}`)
+      const currLabelName = e.target.getAttribute(`data-${this.metaName}`)
       this.changeLabel(currLabelName)
     })
   }
 
   _changeFocus(label) {
-    let currFocus = this.labelsContainer.getElementsByClassName(
+    const currFocus = this.labelsContainer.getElementsByClassName(
       'sidebar-label-focus'
     )
     ;[...currFocus].forEach((item) =>
@@ -44,9 +44,9 @@ class MetaInfo {
   }
 
   _changeList() {
-    let indexArr = this.indexMap.get(this.currLabelName)
+    const indexArr = this.indexMap.get(this.currLabelName)
     try {
-      let corrArr = indexArr.map((index) => {
+      const corrArr = indexArr.map((index) => {
         return this.postsArr[index]
       })
       this._createPostsDom(corrArr)
@@ -59,7 +59,7 @@ class MetaInfo {
 
   _createPostsDom(corrArr) {
     // console.log(corrArr)
-    let frag = document.createDocumentFragment()
+    const frag = document.createDocumentFragment()
     this.postContainer.innerHTML = ''
     for (let i = 0; i < corrArr.length; i++) {
       frag.appendChild(this._createPostDom(corrArr[i]))
@@ -68,7 +68,7 @@ class MetaInfo {
   }
 
   _createPostDom(postInfo) {
-    let $tagItem = $(
+    const $tagItem = $(
       '<li class="meta-post-item"><span class="meta-post-date">' +
         archerUtil.dateFormater(
           new Date(Date.parse(postInfo.date)),
@@ -76,7 +76,7 @@ class MetaInfo {
         ) +
         '</span></li>'
     )
-    let $aItem = $(
+    const $aItem = $(
       '<a class="meta-post-title" href="' +
         siteMeta.root +
         postInfo.path +
