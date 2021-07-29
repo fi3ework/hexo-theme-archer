@@ -47,7 +47,7 @@
     <% } %>
     <!-- timeliness note -->
     <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
-    <% if (theme.outdated_threshold !== undefined && theme.outdated_threshold.enable && (!theme.outdated_threshold.specify_article || page.timeliness)) { %>
+    <% if (theme.outdated_threshold !== undefined && theme.outdated_threshold.enable && page.timeliness !== false && (!theme.outdated_threshold.specify_article || page.timeliness)) { %>
         <script>
             (function () {
                 const time = document.getElementsByClassName('post-intro-time')[0]
