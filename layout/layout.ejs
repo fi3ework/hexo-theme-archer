@@ -20,7 +20,7 @@
         <!-- header -->
         <%- partial('_partial/base-header') %>
         <!-- dark mode -->
-        <script src="<%- url_for('scripts/dark.js') %>"></script>
+        <script src="<%- url_for('scripts/dark.js') %>?v=<%- theme.source_version %>"></script>
         <!-- fixed footer -->
         <%- partial('_partial/base-footer-fixed') %>
         <!-- wrapper -->
@@ -38,7 +38,7 @@
             <%- partial('_partial/base-footer', {}, {cache: true}) %>
         </div>
         <!-- toc -->
-        <% if(is_post() && theme.toc && page.toc !== false) { %>
+        <% if(is_post() && (page.toc || (theme.toc && page.toc !== false))) { %>
             <div class="toc-wrapper" style=<%- partial('_partial/intro-height', {attr: 'top'}) %>>
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
@@ -51,13 +51,13 @@
         <!-- site-meta -->
         <%- partial('./site-meta.ejs') %>
         <!-- main func -->
-        <script src="<%- url_for('scripts/main.js') %>"></script>
+        <script src="<%- url_for('scripts/main.js') %>?v=<%- theme.source_version %>"></script>
         <!-- fancybox -->
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
         <!-- algolia -->
         <% if (theme.algolia_search.enable) { %>
             <%- partial('_partial/algolia') %>
-            <script src="<%- url_for('scripts/search.js') %>" defer></script>
+            <script src="<%- url_for('scripts/search.js') %>?v=<%- theme.source_version %>" defer></script>
         <% } %>
         <!-- busuanzi -->
         <% if (theme.busuanzi) { %>
@@ -79,7 +79,7 @@
         <% } %>
         <!-- async load share.js -->
         <% if(is_post()) { %>
-            <script src="<%- url_for('scripts/share.js') %>" async></script>    
+            <script src="<%- url_for('scripts/share.js') %>?v=<%- theme.source_version %>" async></script>    
         <% } %>
         <!-- mermaid -->
         <% if (is_post() && theme.mermaid.enable) { %>

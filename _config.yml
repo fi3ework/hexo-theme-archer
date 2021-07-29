@@ -172,3 +172,8 @@ math:
     # Specified version number no less than '3.0.0', or you need to modify the CDN link manually.
     # Version number '3' is for the latest '3.x' version of MathJax.
     version: 3.2.0
+
+# ========== Theme Dev ========== #
+# Ensure visitor to get the latest version of source.
+# Set a higher value before creating new release.
+source_version: 202108
