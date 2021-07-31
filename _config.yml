@@ -63,6 +63,8 @@ float_button_theme: default
 read_progress_color: default
 # Blog post banner theme ('default' or 'clean')
 post_banner_theme: default
+# Display profile avatar's border
+avatar_border: true
 # Stick profile info
 profile_sticky: false
 # Show categories info in index and post page
@@ -130,7 +132,7 @@ CNZZ_analytics:
 # favicon
 favicon: /assets/favicon.ico
 # truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
-truncate_length: 
+truncate_length: 300
 # enable toc
 toc: true
 # word count & reading time
