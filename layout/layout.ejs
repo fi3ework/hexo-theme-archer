@@ -19,12 +19,11 @@
     <% } %>
         <!-- header -->
         <%- partial('_partial/base-header') %>
-        <!-- dark mode -->
-        <script src="<%- url_for('scripts/dark.js') %>?v=<%- theme.source_version %>"></script>
         <!-- fixed footer -->
         <%- partial('_partial/base-footer-fixed') %>
         <!-- wrapper -->
         <div class="wrapper">
+            <div class="background-holder"></div>
             <%- partial('_partial/base-background-image') %>
             <%- partial('_partial/script/font-loader') %>        
             <img class="loading" src="<%- url_for('assets/loading.svg') %>" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
@@ -52,6 +51,8 @@
         <%- partial('./site-meta.ejs') %>
         <!-- main func -->
         <script src="<%- url_for('scripts/main.js') %>?v=<%- theme.source_version %>"></script>
+        <!-- dark mode -->
+        <script src="<%- url_for('scripts/dark.js') %>?v=<%- theme.source_version %>"></script>
         <!-- fancybox -->
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
         <!-- algolia -->

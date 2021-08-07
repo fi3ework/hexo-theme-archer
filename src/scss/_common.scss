@@ -19,7 +19,7 @@ body {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
   transition: all 0.3s ease-in 0s;
   transform: translate3d(0, 0, 0);
@@ -29,6 +29,14 @@ body {
 
 .wrapper-sidebar-active {
   transform: translate3d($sidebar-width, 0, 0);
+}
+
+.background-holder {
+  z-index: -10000;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: $body-background-color;
 }
 
 .main {
