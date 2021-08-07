@@ -40,7 +40,7 @@ git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer --dept
 
 如果您没有安装 Git 工具，也可以在 Hexo 根目录下手动创建 `themes/archer` 文件夹，然后将此仓库的源码放入该目录下。
 
-> 仓库的 `dev` 分支包含正在开发中的主题代码，如果您是**进阶开发者**或追新用户，并乐于关注我们开发的最新进展，欢迎使用此分支：`git clone -b dev https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1`
+> 仓库的 `dev` 分支包含正在开发中的主题代码，如果您是**进阶开发者**或追新用户，能够承受代码的不足之处和低稳定性，并乐于关注我们开发的最新进展，也可以使用此分支：`git clone -b dev https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1`
 
 ### 设置 Hexo 主题为 Archer
 
@@ -277,7 +277,7 @@ Archer 主题在主页为置顶的文章显示一个小标记。
 
 在默认情况下，Hexo 使用 [`hexo-generator-index`](https://github.com/hexojs/hexo-generator-index) 生成文章索引。假如您需要置顶某篇文章，只需要在它的 Front-matter 处添加 `sticky` 属性即可：
 
-```md
+``` md
 ---
 title: Hello World
 date: 2013/7/13 20:46:25
@@ -289,7 +289,7 @@ sticky: 100
 
 假如您使用其它的插件生成索引，也可以手动添加 `top` 属性以显示小标记：
 
-```md
+``` md
 ---
 title: Hello World
 date: 2013/7/13 20:46:25
@@ -303,13 +303,13 @@ top: true
 
 您可以通过配置 Archer 主题目录下的 `_config.yml` 以**全局**关闭文章目录：
 
-```yml
+``` yml
 toc: false
 ```
 
 或者，您也可以指定某些文章不显示目录。只需要在文章的 Front-matter 部分设置 `toc` 属性即可：
 
-```md
+``` md
 ---
 title: Hello World
 date: 2013/7/13 20:46:25
