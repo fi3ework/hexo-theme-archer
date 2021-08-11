@@ -9,8 +9,8 @@ import fancybox from './fancybox'
 const logStyle =
   'color: #fff; background: #f75357; padding: 1px; border-radius: 5px;'
 console.info('%c 🎯 hexo-theme-archer ⬇️ ', logStyle)
-console.info('%c 🏷 Version: 1.7.0 ', logStyle)
-console.info('%c 📅 Version date: 202108 ', logStyle)
+console.info('%c 🏷 Version: 1.6.4 ', logStyle)
+console.info('%c 📅 Version date: 20210811 ', logStyle)
 console.info('%c 📦 https://github.com/fi3ework/hexo-theme-archer ', logStyle)
 
 window.addEventListener('load', function (event) {

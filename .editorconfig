@@ -12,5 +12,8 @@ insert_final_newline = true
 [*.md]
 trim_trailing_whitespace = false
 
+[*.yml]
+trim_trailing_whitespace = false
+
 [*.ejs]
 indent_size = 4
