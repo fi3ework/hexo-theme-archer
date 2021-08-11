@@ -17,10 +17,14 @@ const archerUtil = {
   getAbsPosition: function (e) {
     let x = e.offsetLeft,
       y = e.offsetTop
-    while ((e = e.offsetParent)) {
-      x += e.offsetLeft
-      y += e.offsetTop
+
+    let current = e.offsetParent
+    while (current !== null) {
+      x += current.offsetLeft
+      y += current.offsetTop
+      current = current.offsetParent
     }
+
     return {
       x: x,
       y: y,
@@ -55,6 +59,21 @@ const archerUtil = {
       }
     }
     return fmt
+  },
+
+  // 获取 1rem 对应的 px 值
+  rem: () => {
+    return parseInt($('html').css('font-size'), 10)
+  },
+
+  // 设置地址栏 hash
+  setWindowHash: (hash) => {
+    window.location.hash = `#/${hash}`
+  },
+
+  // 读取地址栏 hash
+  getWindowHash: () => {
+    return window.location.hash.replace(/^#\//, '#')
   },
 
   // rAF 的 ticking
