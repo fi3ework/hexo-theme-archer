@@ -1,4 +1,5 @@
 import archerUtil from './util'
+window.preventPostPageBannerDefault = false
 
 const scroll = function () {
   const $banner = $('.banner:first'),
@@ -21,7 +22,7 @@ const scroll = function () {
   })
 
   // 滚动式切换文章标题和站点标题
-  const showBannerScrollHeight = -500
+  const showBannerScrollHeight = -200
   let previousHeight = 0,
     continueScroll = 0
 
@@ -88,6 +89,7 @@ const scroll = function () {
     // 防止文章过短，产生负百分比
     readPercent = readPercent >= 0 ? readPercent : 100
     const restPercent = readPercent - 100 <= 0 ? readPercent - 100 : 0
+    $progressBar[0].style.opacity = '1'
     $progressBar[0].style.transform = `translate3d(${restPercent}%, 0, 0)`
   }
 
@@ -110,20 +112,25 @@ const scroll = function () {
       $sidebarMenu.removeClass('header-sidebar-menu-black')
       $backTop.addClass('back-top-hidden')
     }
-    // 如果不是 post-page 以下忽略
+    // 文章页
     if (isPostPage) {
-      // 上下滑动一定距离显示/隐藏 header
-      const upDownState = isScrollingUpOrDown(scrollTop)
-      if (upDownState === 1) {
-        $banner.removeClass('banner-show')
-      } else if (upDownState === -1 && !isHigherThanIntro) {
-        $banner.addClass('banner-show')
+      // 当 window.preventPostPageBannerDefault 为真时，避免此处 Banner 显示或隐藏的行为
+      if (!window.preventPostPageBannerDefault) {
+        // 向上滑动一定距离显示 header banner
+        // 向下滑动隐藏 header banner
+        const upDownState = isScrollingUpOrDown(scrollTop)
+        if (upDownState === 1) {
+          $banner.removeClass('banner-show')
+        } else if (upDownState === -1 && !isHigherThanIntro) {
+          $banner.addClass('banner-show')
+        }
       }
       // 进度条君的长度
       updateProgress(scrollTop, articleTop, articleHeight)
     }
     previousHeight = scrollTop
     tickingScroll = false
+    window.preventPostPageBannerDefault = false
   }
 
   // scroll 回调
@@ -133,8 +140,10 @@ const scroll = function () {
     archerUtil.rafTick(tickingScroll, bindedUpdate)
   }
 
+  onScroll()
+
   const throttleOnScroll = archerUtil.throttle(onScroll, 25, true)
-  $(document).on('scroll', throttleOnScroll) // 每 25 ms 执行一次 onScroll() 方法
+  $(document).on('scroll', throttleOnScroll)
 
   // 绑定返回顶部事件
   ;[$postBanner, $backTop].forEach(function (ele) {

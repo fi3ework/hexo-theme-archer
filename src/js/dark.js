@@ -1,3 +1,5 @@
+import archerUtil from './util'
+
 // 获取当前主题颜色模式
 const getPreferredThemeMode = function () {
   const preferredThemeMode =
@@ -33,6 +35,9 @@ const switchThemeMode = function () {
   }
 }
 
+// 防抖，每 300ms 只允许触发一次切换主题颜色事件
+const debounceSwitchThemeMode = archerUtil.debounce(switchThemeMode, 300, true)
+
 // 初始化切换主题颜色模式功能
 const initThemeModeSwitchButton = function () {
   const currentThemeMode = getPreferredThemeMode()
@@ -41,7 +46,7 @@ const initThemeModeSwitchButton = function () {
 
   const $themeModeSwitchBtn = $('.header-theme-btn')
   $themeModeSwitchBtn.click(function () {
-    switchThemeMode()
+    debounceSwitchThemeMode()
   })
 }
 

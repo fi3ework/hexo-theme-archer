@@ -19,7 +19,9 @@ const initAlgolia = () => {
       algoliaSettings.indexName
 
     if (!isAlgoliaSettingsValid) {
-      window.console.error('Algolia Settings are invalid.')
+      window.console.error(
+        'Algolia Settings are invalid. Check docs: https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Algolia-%E6%90%9C%E7%B4%A2#%E8%8E%B7%E5%8F%96-keys'
+      )
       return
     }
 

@@ -3,7 +3,6 @@ import { scroll } from './scroll'
 import './initSidebar'
 import { initMobile } from './mobile'
 import InitSidebarLink from './tag'
-import toc from './toc'
 import fancybox from './fancybox'
 
 // print custom info
@@ -23,9 +22,6 @@ init()
 
 // init mobile
 initMobile()
-
-// init toc
-toc()
 
 // scroll event
 scroll()
