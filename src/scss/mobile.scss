@@ -1,6 +1,8 @@
 @import '_mixin';
 @import '_variables';
 
+@import '_mobile/_partial/_post/writing-enhance';
+
 // ========== common ========== //
 .container {
   flex-direction: column-reverse;

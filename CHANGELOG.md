@@ -1,30 +1,46 @@
 # 更新日志
 
-## v1.6.4
+## [v1.6.4](https://github.com/fi3ework/hexo-theme-archer/pull/307)
 
 - 新特性 / Feat
+
   1. 现在可以设置主页的 Avatar 头像无边框了
-  2. 地址栏 Hash 值随文章页面滚动，而自动修改为对应的 Toc 值
-  3. 当 Toc 过长时，Toc 目录随文章页面滚动而滚动
+  2. 地址栏 Hash 值随文章页面滚动自动修改为对应的 Toc 值
+  3. 当 Toc 过长时，Toc 目录随文章页面滚动而[滚动](https://github.com/fi3ework/hexo-theme-archer/projects/1#card-64443923)
+  4. 添加对浮动元素的支持
+
 - 变更 / Change
+
   1. 移动端的断点由 `980px` 修改为 `960px`
-  2. 点击文章页面 Toc 时，强制显示 Banner，并预留出 Banner 的空间
+  2. 点击文章页面 Toc 目录跳转时，强制显示 Banner，并预留出 Banner 的空间
   3. 文章页面向上滚动显示 Banner 的阈值由 `500px` 修改为 `200px`
+
 - 修复 / Fix
-  1. 修复文章页面 License 处原文链接的中文分词不自动断行的问题
+
+  1. 修复文章页面 License 处原文链接的中文分词不自动断行的[问题](https://github.com/fi3ework/hexo-theme-archer/issues/306#issuecomment-894640488)
   2. 修复在某些页面下打开 Algolia 搜索时，页面可能显示异常的问题
   3. 在尚未加载完成的情况下，不再错误显示侧边栏打开动画了
   4. 修复文章页面 Toc 随页面滚动高亮显示错误的问题
+  5. 修复文章页中，浮动元素可能错误显示的问题（[#309](https://github.com/fi3ework/hexo-theme-archer/issues/309)）
+
 - 样式 / Style
+
   1. 适配 Dark 模式下文章中表格的颜色
   2. 优化 Dark 模式颜色配置
   3. 优化 404 页面的样式
   4. 优化文章页在移动端的显示
+
 - 性能 / Perf
-  1. 提高浏览器滚动事件性能
+
+  1. 提高浏览器滚动性能
+
 - 其它 / Chore
+
   1. 快速点击切换 Dark 模式按钮不再触发主题模式切换
+  2. 将更新日志内容放到 `CHANGELOG.md` 文件下，而不是 `README.md`
+
 - 开发者 / Dev
+
   1. 提供 `source_version` 配置，一键修改源文件版本日期
   2. 添加 `.editorconfig` 文件
 
