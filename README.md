@@ -40,7 +40,8 @@ git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer --dept
 
 如果您没有安装 Git 工具，也可以在 Hexo 根目录下手动创建 `themes/archer` 文件夹，然后将此仓库的源码放入该目录下。
 
-> 仓库的 `dev` 分支包含正在开发中的主题代码，如果您是**进阶开发者**或追新用户，能够承受代码的不足之处和低稳定性，并乐于关注我们开发的最新进展，也可以使用此分支：`git clone -b dev https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1`
+> 仓库的 `dev` 分支包含正在开发中的主题代码，如果您是**进阶开发者**或追新用户，能够承受代码的不足之处和低稳定性，并乐于关注我们开发的最新进展，也可以使用此分支：
+> `git clone -b dev https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1`
 
 ### 设置 Hexo 主题为 Archer
 
@@ -266,10 +267,18 @@ z=\dfrac{3\pi}{2}(1+2t)\sin(\dfrac{3\pi}{2}(1+2t)), &
 
 ## 文章撰写增强
 
-Archer 主题为您撰写的文章提供了一些增强的展示内容，这需要您手动在文章的 Front-matter 处配置。包括如下：
+Archer 主题为您撰写的文章提供了一些增强的展示内容。
+
+请注意，这些增强的展示内容**仅保证**在 Archer 主题中能够顺利渲染显示。
+
+文章属性配置。在文章的 Front-matter 处配置：
 
 - [置顶文章](#置顶文章)
 - [隐藏文章目录](#隐藏文章目录)
+
+正文内容增强。在编写正文时根据自己的需要使用：
+
+- [浮动元素](#浮动元素)
 
 ### 置顶文章
 
@@ -318,6 +327,27 @@ toc: false
 ```
 
 当然，在全局关闭文章目录的情况下，您也可以在文章中手动设置 `toc: true`，以显示该文章的目录。
+
+### 浮动元素
+
+Archer 主题内置了对[浮动元素](https://developer.mozilla.org/zh-CN/docs/Web/CSS/float)的样式表支持。
+
+- `archer-float-left`：设置元素靠左浮动。
+- `archer-float-right`：设置元素靠右浮动。
+
+浮动元素仅在桌面端生效。在移动端中，浮动元素将恢复正常文档流。
+
+例如：
+
+``` md
+Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa vel lacinia pellentesque lorem ipsum dolor.
+
+<div class="archer-float-right">
+  <img src="https://cdn.jsdelivr.net/gh/fi3ework/hexo-theme-archer/source/avatar/Misaka.jpg" alt="this is a float image!">
+</div>
+
+Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.
+```
 
 ## 更新主题
 
