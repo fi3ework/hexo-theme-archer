@@ -1,8 +1,9 @@
 @import '_mixin';
 @import '_variables';
 
-@import '_mobile/_partial/_post/writing-enhance';
-@import '_mobile/_partial/_sidebar/sidebar-tags';
+@import '_mobile/_partial/index-page-mobile';
+@import '_mobile/_partial/_post/writing-enhance-mobile';
+@import '_mobile/_partial/_sidebar/sidebar-tags-mobile';
 
 // ========== common ========== //
 .container {
