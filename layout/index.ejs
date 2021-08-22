@@ -23,7 +23,7 @@
                 <%- _content %>
             </div>
             <!-- read more -->
-            <% if(!!showReadMoreButton) { %>
+            <% if(!!theme.read_more_button && !!showReadMoreButton) { %>
                 <div class="abstract-read-more-button">
                     <a href="<%- url_for(_post.path) %>">
                         <span style="margin-right: 0.2rem;"><%- __('read_more') %></span>

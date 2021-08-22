@@ -23,7 +23,8 @@
     @for $i from 1 through 6 {
       h#{$i} {
         font-weight: normal;
-        .headerlink, .anchorjs-link {
+        .headerlink,
+        .anchorjs-link {
           display: none;
         }
       }
