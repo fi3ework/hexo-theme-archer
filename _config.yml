@@ -36,6 +36,13 @@ friends:
 about:
   enable: true
   image: '/intro/about-bg.jpg'
+# Search for website
+search:
+  enable: false
+  # Seach URL, must be set. For example: 'fi3ework.github.io'
+  url: 
+  # Search engine: 'bing' (default), 'google' or 'baidu'
+  engine: bing
 
 # ========== Site ========== #
 # title of the site (good for SEO)

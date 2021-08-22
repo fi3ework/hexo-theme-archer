@@ -24,8 +24,24 @@
         </div>
     <% } %>
     <% if(theme.about.enable) { %>
-        <div class="about-me">
-            <a href="<%- url_for("/about") %>">ABOUT ME</a>
+        <div class="profile-link-item">
+            <a href="<%- url_for("/about") %>" class="about-me">ABOUT ME</a>
+        </div>
+    <% } %>
+    <% if(theme.search.enable) { %>
+        <% var baseSearchMeUrl %>
+        <% switch (theme.search.engine) {
+            case 'google': %>
+                <% baseSearchMeUrl = 'https://www.google.com/search?q=site%3A' %>
+                <% break
+            case 'baidu': %>
+                <% baseSearchMeUrl = 'https://www.baidu.com/s?wd=site%3A' %>
+                <% break
+            default: %>
+                <% baseSearchMeUrl = 'https://www.bing.com/search?q=site%3A' %>
+        <% } %>
+        <div class="profile-link-item">
+            <a href="<%- baseSearchMeUrl + theme.search.url %>" class="search-me">SEARCH</a>
         </div>
     <% } %>
 </div>
