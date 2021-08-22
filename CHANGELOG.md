@@ -49,8 +49,8 @@
 - 2021.07.28 - 『添加 Dark 模式支持』
 - 2021.02.03 - 『添加“文章时效性”提示』
 - 2021.01.26 - 『更新使用的 nodejs，以及相关依赖包的版本』
-- 2020.03.04 - 『添加 utteranc评论 支持』
-- 2020.03.02 - 『添加 Gitalk评论 支持』
+- 2020.03.04 - 『添加 utteranc 评论 支持』
+- 2020.03.02 - 『添加 Gitalk 评论 支持』
 - 2018.08.26 - 『添加 i18n 支持』
 - 2018.07.09 - 『可以切换深/浅色代码配色方案了，[详情](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%88%87%E6%8D%A2%E4%BB%A3%E7%A0%81%E9%85%8D%E8%89%B2%E6%96%B9%E6%A1%88)』
 - 2018.06.23 - 『添加 Valine 评论，感谢 [hulichao](https://github.com/fi3ework/hexo-theme-archer/issues/115) 同学』
