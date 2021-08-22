@@ -57,6 +57,18 @@ post_header_image: '/intro/post-bg.jpg'
 _404_image: '/intro/404-bg.jpg'
 
 # ========== Theme ========== #
+# Truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
+truncate_length: 300
+# Show read more button if using excerpt or abstract to display abstracts in index page
+read_more_button: false
+# Enable toc
+toc: true
+# Word count & Reading time
+reading_info: true
+# Intro height (the default is 50 percents of the screen, you can input other number)
+index_intro_height: 50
+post_intro_height: 50
+about_intro_height: 50
 # Blog float button theme ('default' or 'rounded')
 float_button_theme: default
 # Blog read progress color ('default' for black or 'feature' for feature-color)
@@ -129,19 +141,9 @@ google_analytics:
 CNZZ_analytics: 
 
 # ========== Others ========== #
-# favicon
+# Favicon
 favicon: /assets/favicon.ico
-# truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
-truncate_length: 300
-# enable toc
-toc: true
-# word count & reading time
-reading_info: true
-# intro height (the default is 50 percents of the screen, you can input other number)
-index_intro_height: 50
-post_intro_height: 50
-about_intro_height: 50
-# copyright
+# Post copyright
 copyright:
   enable: true
   # https://creativecommons.org/
