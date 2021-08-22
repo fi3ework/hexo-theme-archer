@@ -43,6 +43,22 @@ search:
   url: 
   # Search engine: 'bing' (default), 'google' or 'baidu'
   engine: bing
+# Display icons of friends, about and search
+# You can only use free icons started with 'fab' and 'fas' by default
+# https://fontawesome.com/v5.15/icons?d=gallery&p=2&s=brands,solid&m=free
+profile_icons:
+  enable: false
+  friends: 'fas fa-heart'
+  about: 'fas fa-id-card'
+  search: 'fas fa-search'
+# Additional profile links
+profile_links:
+  # - name: GOOGLE
+  #   url: //www.google.com
+  #   icon: 'fab fa-google'
+  # - name: GALLERY
+  #   url: //www.unsplash.com
+  #   icon: 'fas fa-images'
 
 # ========== Site ========== #
 # title of the site (good for SEO)
@@ -85,6 +101,7 @@ post_banner_theme: default
 # Display profile avatar's border
 avatar_border: true
 # Stick profile info
+# Keep false if you have too many profile links
 profile_sticky: false
 # Show categories info in index and post page
 show_categories: false
