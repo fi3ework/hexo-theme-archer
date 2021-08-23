@@ -114,6 +114,7 @@ jsonContent:
 - [启用 RSS 订阅](#启用-rss-订阅)
 - [启用 Mermaid](#启用-mermaid)
 - [启用 LaTeX 数学公式](#启用-latex-数学公式)
+- [启用自定义字体](#启用自定义字体)
 - [自定义单独文章页头图](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E7%AB%A0%E9%A1%B5%E5%A4%B4%E5%9B%BE)
 - [将 Unsplash 的随机图片作为头图](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%B0%86-Unsplash-%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87%E4%BD%9C%E4%B8%BA%E5%A4%B4%E5%9B%BE)
 - [自定义文章在首页的摘要](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E7%AB%A0%E5%9C%A8%E9%A6%96%E9%A1%B5%E7%9A%84%E6%91%98%E8%A6%81)
@@ -221,7 +222,7 @@ mermaid:
 
 > ❗️❗️❗️ 注意：如果您需要使用**类图**，请编辑您 Hexo 根目录下的 `_config.yml` 文件，设置 `external_link: false`。请确保这个设置对您原来的页面功能没有影响，这是 Hexo 本身的 bug。
 
-## 启用 LaTeX 数学公式
+### 启用 LaTeX 数学公式
 
 这个[维基页面](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Latex-%E6%94%AF%E6%8C%81)包含启用 LaTeX 数学公式支持的完整介绍。
 
@@ -264,6 +265,32 @@ z=\dfrac{3\pi}{2}(1+2t)\sin(\dfrac{3\pi}{2}(1+2t)), &
 \right.
 \end{equation}
 ```
+
+### 启用自定义字体
+
+**实验性功能**，自定义字体依赖于 CSS Variables 能力，部分浏览器存在**兼容性问题**。
+
+为了确保 `hexo generate` 构建成功，建议使用 Node.js 14.x 或更新版本。
+
+您需要首先引入自定义字体功能，在 `layout/layout.ejs` 中对应部分添加如下字段：
+
+``` ejs
+<!-- import experimental options here -->
+<%- partial('_partial/custom-font.ejs') %>
+```
+
+接下来配置 Archer 主题目录下的 `_config.yml` 文件即可：
+
+``` yml
+custom_font:
+  enable: true
+  name: 'Noto Sans SC:n3,n4,n5,n7'
+  url: 'https://fonts.googleapis.cnpmjs.org/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap'
+```
+
+其中，`name` 为引入的自定义字体名称。`:` 后跟引入字体的变体和字重，使用 `,` 间隔。例如 `name: 'Noto Sans SC:i5,n7'` 表示引入 `Noto Sans SC` 的斜体 500 字重和正常 700 字重。
+
+`url` 为引入的自定义字体的 CDN 链接或本地链接。
 
 ## 文章撰写增强
 

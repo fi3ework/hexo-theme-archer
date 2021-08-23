@@ -207,7 +207,7 @@ math:
 
 # Custom font [browser compatibility issue]
 # Based on https://github.com/typekit/webfontloader
-# See: 'src/js/customFontLoader.js'
+# Please read README.md to enable this option correctly.
 custom_font:
   enable: false
   # Font name, use ':' to select font weight and font style
