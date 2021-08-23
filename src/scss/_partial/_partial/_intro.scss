@@ -31,7 +31,7 @@
   color: #fff;
   margin: 0;
   opacity: 0;
-  transition: all 0.5s ease-out 0s;
+  transition: $transition-animation;
   transform: translate(0, -1rem);
 }
 

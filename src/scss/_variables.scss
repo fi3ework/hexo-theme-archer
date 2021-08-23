@@ -1,8 +1,16 @@
 // You can change the following settings by yourself :-)
 
+:root {
+  --base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial,
+    'PingFang SC', 'Hiragino Sans GB', STHeiti, 'Microsoft YaHei',
+    'Microsoft JhengHei', 'Source Han Sans SC', 'Noto Sans CJK SC',
+    'Source Han Sans CN', 'Noto Sans SC', 'Source Han Sans TC',
+    'Noto Sans CJK TC', 'WenQuanYi Micro Hei', SimSun, sans-serif;
+}
+
 // ========== DIY ========== //
 $feature-color: #f75357;
-$feature-color-dark: lighten($feature-color, 5%);
+$feature-color-dark: #f75357; // Feature color in dark mode
 $code-theme: 'atom-one-dark'; // atom-one-dark or atom-one-light
 
 // ========== global variables ========== //
@@ -18,6 +26,9 @@ $base-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial,
 $feature-font-family: 'Oswald-Regular', $base-font-family;
 $base-font-size: 16px !default;
 
+// ========== CSS Variables ========== //
+$base-font-family: var(--base-font-family);
+
 // ========== common ========== //
 $container-margin-top: 3rem;
 $selection-background-color: $feature-color;
@@ -29,6 +40,7 @@ $selection-text-color-dark: snow;
 $text-color-primary-dark: rgba(255, 255, 255, 0.87);
 $text-color-secondary-dark: rgba(255, 255, 255, 0.6);
 $text-color-minor-dark: rgba(255, 255, 255, 0.38);
+$transition-animation: all 0.5s ease-out;
 
 // ========== iconfont ========== //
 @font-face {

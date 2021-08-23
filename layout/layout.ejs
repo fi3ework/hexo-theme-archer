@@ -23,7 +23,6 @@
         <%- partial('_partial/base-footer-fixed') %>
         <!-- wrapper -->
         <div class="wrapper">
-            <div class="background-holder"></div>
             <%- partial('_partial/base-background-image') %>
             <%- partial('_partial/script/font-loader') %>
             <img class="loading" src="<%- url_for('assets/loading.svg') %>" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
@@ -49,6 +48,8 @@
         <%- partial('_partial/sidebar/base-sidebar', {}, {cache: true}) %>
         <!-- site-meta -->
         <%- partial('./site-meta.ejs') %>
+        <!-- experimental options -->
+        <%- partial('_partial/experimental-options.ejs') %>
         <!-- main func -->
         <script src="<%- url_for('scripts/main.js') %>?v=<%- theme.source_version %>"></script>
         <!-- dark mode -->

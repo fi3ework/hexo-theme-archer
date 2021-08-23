@@ -6,6 +6,7 @@ module.exports = {
     share: './src/js/share.js',
     search: './src/js/search.js',
     dark: './src/js/dark.js',
+    custmoFontLoader: './src/js/customFontLoader.js',
   },
   output: {
     path: path.resolve(__dirname, 'source/scripts'),
@@ -27,7 +28,7 @@ module.exports = {
                   targets: '> 0.25%, not dead',
                   bugfixes: true,
                   useBuiltIns: 'usage',
-                  corejs: { version: '3.15.2', proposals: false },
+                  corejs: { version: '3.16.2', proposals: false },
                 },
               ],
             ],
@@ -35,7 +36,7 @@ module.exports = {
               [
                 '@babel/plugin-transform-runtime',
                 {
-                  version: '^7.14.5',
+                  version: '^7.15.0',
                 },
               ],
             ],
