@@ -8,12 +8,17 @@
   2. 地址栏 Hash 值随文章页面滚动自动修改为对应的 Toc 值
   3. 当 Toc 过长时，Toc 目录随文章页面滚动而[滚动](https://github.com/fi3ework/hexo-theme-archer/projects/1#card-64443923)
   4. 添加对浮动元素的支持
+  5. 启用摘要内容的文章可以配置显示“阅读更多”按钮
+  6. 现在 Profile 栏可配置搜索功能，查看自己博客的 SEO 状态
+  7. 现在 Profile 栏可以自定义添加更多菜单或链接（[#308](https://github.com/fi3ework/hexo-theme-archer/issues/308)）
 
 - 变更 / Change
 
   1. 移动端的断点由 `980px` 修改为 `960px`
   2. 点击文章页面 Toc 目录跳转时，强制显示 Banner，并预留出 Banner 的空间
   3. 文章页面向上滚动显示 Banner 的阈值由 `500px` 修改为 `200px`
+  4. `_config.yml` 中 `Other` 的部分主题配置移动到 `Theme` 下。
+  5. 移除主页摘要中标题的 Anchor 按钮
 
 - 修复 / Fix
 
@@ -29,10 +34,19 @@
   2. 优化 Dark 模式颜色配置
   3. 优化 404 页面的样式
   4. 优化文章页在移动端的显示
+  5. 优化侧边栏在移动端的显示
+  6. 优化主页摘要的显示，限制图片的高度
+  7. 优化 Dark 模式切换页面时的显示效果
 
 - 性能 / Perf
 
   1. 提高浏览器滚动性能
+  2. 优化页面加载性能
+
+- 回滚 / Revert
+
+  1. 侧边栏文章标题不再使用 Feature 字体
+  2. 移除没有用的 Background-holder
 
 - 其它 / Chore
 
