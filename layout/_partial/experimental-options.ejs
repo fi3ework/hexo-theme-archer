@@ -1,11 +1,11 @@
 <!-- Check browser compatibility of CSS variables -->
 <script>
-    var browserSupportCSSVariables = window.CSS && window.CSS.supports && window.CSS.supports('--a', 0);
+    var browserSupportCSSVariables = window.CSS?.supports && window.CSS.supports('--a', 0)
 </script>
 <!-- Custom Font -->
-<% if (!!theme.custom_font?.enable) { %>
+<% if (theme.custom_font?.enable) { %>
     <script>
-        if (!!browserSupportCSSVariables) {
+        if (browserSupportCSSVariables) {
             var customFontName = '<%= theme.custom_font.name %>'
             var customFontUrl = '<%= theme.custom_font.url %>'
             if (!customFontName) {
