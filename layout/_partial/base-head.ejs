@@ -33,9 +33,9 @@
     <%- partial('critical-css/critical-style') %>
     <link rel="preload" href="<%- url_for("css/style.css") %>?v=<%- theme.source_version %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="<%- url_for("css/dark.css") %>?v=<%- theme.source_version %>" as="style">
+    <link rel="stylesheet" href="<%- url_for("css/dark.css") %>" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="<%- url_for("css/mobile.css") %>?v=<%- theme.source_version %>" media="(max-width: 960px)">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
     <link rel="preload" href="<%- url_for('scripts/main.js') %>?v=<%- theme.source_version %>" as="script">
     <link rel="preload" href="<%- url_for('scripts/dark.js') %>?v=<%- theme.source_version %>" as="script">

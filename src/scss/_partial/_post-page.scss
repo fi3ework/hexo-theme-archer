@@ -29,7 +29,7 @@
 
 .post-intros {
   opacity: 0;
-  transition: all 0.5s ease-out 0.5s;
+  transition: $transition-animation 0.5s;
   transform: translate3d(0, -1rem, 0);
 }
 
@@ -319,7 +319,7 @@
     background-color: #f6f6f6;
     border-left: 0.35rem solid $feature-color;
     border-radius: 0.35rem;
-    transition: all 0.5s ease-out;
+    transition: $transition-animation;
     p {
       margin: 0;
     }
@@ -365,7 +365,6 @@
 }
 
 // ========== license ========== //
-
 .license-wrapper {
   background-color: $foreground-color;
   border-radius: 0 0 0.5rem 0.5rem;
@@ -375,12 +374,19 @@
   border-top: 1px dashed #ccc;
   border-bottom: 1px dashed #ccc;
   color: $post-content-color;
+  transition: $transition-animation;
   p {
     margin: 0.2rem 0;
   }
   a {
     color: $feature-color;
     word-break: break-all;
+  }
+  :first-child {
+    margin-top: 1rem;
+  }
+  :last-child {
+    margin-bottom: 1rem;
   }
 }
 

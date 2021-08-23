@@ -18,6 +18,7 @@ const calcAnchorLink = (heights, currHeight) => {
   return -1
 }
 
+// Query toc headers absolute height
 function initTocLinksScrollTop(tocLinks) {
   return [...tocLinks].map((link) => {
     return archerUtil.getAbsPosition(link, true).y

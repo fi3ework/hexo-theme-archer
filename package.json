@@ -25,7 +25,8 @@
     "graceful-fs": "^4.2.8",
     "instantsearch.js": "^4.27.2",
     "perfect-scrollbar": "^1.5.2",
-    "qrcode-generator": "^1.4.4"
+    "qrcode-generator": "^1.4.4",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",

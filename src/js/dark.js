@@ -1,4 +1,5 @@
-import archerUtil from './util'
+let currentThemeMode
+const $themeModeSwitchBtn = $('.header-theme-btn')
 
 // 获取当前主题颜色模式
 const getPreferredThemeMode = function () {
@@ -11,43 +12,50 @@ const getPreferredThemeMode = function () {
   return preferredThemeMode === 'dark' ? 'dark' : 'light'
 }
 
-// 设置主题颜色模式
-const setThemeMode = (mode) => {
-  if (mode === 'dark') {
-    $('<link>')
-      .attr({ rel: 'stylesheet', type: 'text/css', href: '/css/dark.css' })
-      .appendTo('head')
+// 设置按钮可点击
+const setThemeModeSwitchBtnActive = (active) => {
+  if (active) {
+    $themeModeSwitchBtn.removeClass('header-theme-btn-disabled')
   } else {
-    $("LINK[href='/css/dark.css']").remove()
+    $themeModeSwitchBtn.addClass('header-theme-btn-disabled')
   }
 }
 
 // 切换主题颜色模式
 const switchThemeMode = function () {
-  if (getPreferredThemeMode() === 'dark') {
-    // 切换为 light 模式
-    setThemeMode('light')
-    localStorage.preferredThemeMode = 'light'
-  } else {
-    // 切换为 dark 模式
-    setThemeMode('dark')
+  setThemeModeSwitchBtnActive(false)
+  if ($("LINK[href='/css/dark.css']").length === 0) {
+    $('<link>')
+      .attr({ rel: 'stylesheet', type: 'text/css', href: '/css/dark.css' })
+      .appendTo('head')
     localStorage.preferredThemeMode = 'dark'
+  } else {
+    $("LINK[href='/css/dark.css']").remove()
+    localStorage.preferredThemeMode = 'light'
   }
+  setThemeModeSwitchBtnActive(true)
 }
 
-// 防抖，每 300ms 只允许触发一次切换主题颜色事件
-const debounceSwitchThemeMode = archerUtil.debounce(switchThemeMode, 300, true)
+// 获取当前的主题颜色模式
+const getCurrentThemeMode = () => {
+  return $("LINK[href='/css/dark.css']").length === 0 ? 'light' : 'dark'
+}
 
 // 初始化切换主题颜色模式功能
 const initThemeModeSwitchButton = function () {
-  const currentThemeMode = getPreferredThemeMode()
-  setThemeMode(currentThemeMode)
-  localStorage.preferredThemeMode = currentThemeMode
+  setThemeModeSwitchBtnActive(false)
 
-  const $themeModeSwitchBtn = $('.header-theme-btn')
+  // 当前主题颜色模式与用户偏好的主题颜色模式不同时，
+  // 切换主题颜色模式
+  if (getCurrentThemeMode() !== getPreferredThemeMode()) {
+    switchThemeMode()
+  }
+
   $themeModeSwitchBtn.click(function () {
-    debounceSwitchThemeMode()
+    switchThemeMode()
   })
+
+  setThemeModeSwitchBtnActive(true)
 }
 
 initThemeModeSwitchButton()
