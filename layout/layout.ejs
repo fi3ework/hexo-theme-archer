@@ -48,8 +48,7 @@
         <%- partial('_partial/sidebar/base-sidebar', {}, {cache: true}) %>
         <!-- site-meta -->
         <%- partial('./site-meta.ejs') %>
-        <!-- experimental options -->
-        <%- partial('_partial/experimental-options.ejs') %>
+        <!-- import experimental options here -->
         <!-- main func -->
         <script src="<%- url_for('scripts/main.js') %>?v=<%- theme.source_version %>"></script>
         <!-- dark mode -->
