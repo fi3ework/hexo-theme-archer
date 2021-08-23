@@ -92,9 +92,11 @@ const archerUtil = {
 
       bodyEl.style.position = 'fixed'
       bodyEl.style.top = -windowTop + 'px'
+      bodyEl.style.width = '100%'
     } else {
       bodyEl.style.position = bodyElPosition
       bodyEl.style.top = ''
+      bodyEl.style.width = ''
 
       window.scrollTo(0, windowTop)
     }
