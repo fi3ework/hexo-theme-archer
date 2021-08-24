@@ -17,11 +17,12 @@
 }
 
 .archive-post-item {
+  font-family: $base-font-family;
   display: flex;
   align-items: baseline;
   border-left: 1px solid #bbb;
   margin-left: 0.3rem;
-  padding: 0.2rem 0 0.2rem 0.5rem;
+  padding: 0.2rem 0 0.3rem 0.5rem;
   &:hover {
     border-left-color: $feature-color;
     .archive-post-date,
@@ -68,7 +69,8 @@
 }
 
 .archive-post-title {
-  font: 1rem $feature-font-family;
+  font-size: 1rem;
+  line-height: 1.4rem;
   margin-left: 0.8rem;
   text-align: left;
   color: #ccc;

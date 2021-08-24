@@ -1,6 +1,6 @@
 const initMobile = function () {
   if (window.matchMedia) {
-    const mql = window.matchMedia('(max-width: 980px)')
+    const mql = window.matchMedia('(max-width: 960px)')
     mql.addListener(mediaChangeHandler)
     mediaChangeHandler(mql)
   } else {

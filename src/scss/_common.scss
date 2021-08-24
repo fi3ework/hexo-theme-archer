@@ -13,6 +13,7 @@ body {
   z-index: 100;
   position: relative;
   background-color: $body-background-color;
+  transition: $transition-animation;
 }
 
 .wrapper {
@@ -20,8 +21,8 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 100vh;
-  transition: all 0.3s ease-in 0s;
+  min-height: 100%;
+  transition: transform 0.3s ease-in;
   transform: translate3d(0, 0, 0);
   position: relative;
   box-shadow: -3px 0 2px 0 rgba(0, 0, 0, 0.6);
@@ -50,7 +51,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-  transition: all 0.5s ease-out;
+  transition: $transition-animation;
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
@@ -86,7 +87,7 @@ li {
   padding: 1rem 1.5rem;
   border-left: 0.35rem solid;
   border-radius: 0.35rem;
-  transition: all 0.5s ease-out;
+  transition: $transition-animation;
 
   .title {
     font-weight: bold;

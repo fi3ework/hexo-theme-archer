@@ -6,14 +6,14 @@
   flex-shrink: 0;
   width: $profile-width;
   font: 1rem $feature-font-family;
-  * {
-    color: $social-iconfont-color;
-  } // 为了在没有social和friends时也显示一个分割线
+  color: $social-iconfont-color;
+  // 为了在没有social和friends时也显示一个分割线
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: 0.5rem;
+  a {
+    transition: color 0.1s ease-in;
+  }
   & > *:last-child {
     border-bottom: none;
-    padding-bottom: 0;
   }
 }
 
@@ -27,6 +27,10 @@
   border-radius: 1rem;
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
+
+  &.hide-border {
+    border: unset;
+  }
 }
 
 .profile-name {
@@ -92,20 +96,32 @@
   }
   a {
     margin-right: 0.6rem;
+    color: $social-iconfont-color;
     &:hover {
       color: $feature-color;
     }
   }
 }
 
-.about-me {
+.profile-link-item {
   padding: 0.5rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   a {
     font-size: 1.2rem;
     font-weight: bold;
+    color: $social-iconfont-color;
     &:hover {
       color: $feature-color;
     }
   }
+}
+
+.profile-item-icon {
+  margin-right: 0.3rem;
+}
+
+.about-me {
+}
+
+.search-me {
 }

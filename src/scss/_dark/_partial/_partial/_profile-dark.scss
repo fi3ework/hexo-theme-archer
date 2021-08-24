@@ -1,4 +1,5 @@
 .profile {
+  color: $social-iconfont-color-dark;
   border-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -18,16 +19,18 @@
   border-color: rgba(255, 255, 255, 0.1);
 
   a {
+    color: $social-iconfont-color-dark;
     &:hover {
       color: $feature-color-dark;
     }
   }
 }
 
-.about-me {
+.profile-link-item {
   border-color: rgba(255, 255, 255, 0.1);
 
   a {
+    color: $social-iconfont-color-dark;
     &:hover {
       color: $feature-color-dark;
     }

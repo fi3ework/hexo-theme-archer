@@ -1,12 +1,13 @@
-$gt-color-main: $feature-color; // primary color
+$gt-color-main: $feature-color;
+$gt-color-main-lighter: lighten($gt-color-main, 20%);
 $gt-color-btn: #ffffff;
 
 #gitalk-container {
   a {
     color: $gt-color-main !important;
     &:hover {
-      color: lighten($gt-color-main, 20%) !important;
-      border-color: lighten($gt-color-main, 20%) !important;
+      color: $gt-color-main-lighter !important;
+      border-color: $gt-color-main-lighter !important;
     }
   }
 
@@ -25,8 +26,8 @@ $gt-color-btn: #ffffff;
     color: $gt-color-btn !important;
     &-login {
       &:hover {
-        background-color: lighten($gt-color-main, 20%) !important;
-        border-color: lighten($gt-color-main, 20%) !important;
+        background-color: $gt-color-main-lighter !important;
+        border-color: $gt-color-main-lighter !important;
       }
     }
     &-preview {
@@ -34,13 +35,13 @@ $gt-color-btn: #ffffff;
       color: $gt-color-main !important;
       &:hover {
         background-color: darken($gt-color-btn, 5%) !important;
-        border-color: lighten($gt-color-main, 20%) !important;
+        border-color: $gt-color-main-lighter !important;
       }
     }
     &-public {
       &:hover {
-        background-color: lighten($gt-color-main, 20%) !important;
-        border-color: lighten($gt-color-main, 20%) !important;
+        background-color: $gt-color-main-lighter !important;
+        border-color: $gt-color-main-lighter !important;
       }
     }
   }
