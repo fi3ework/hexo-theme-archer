@@ -270,8 +270,6 @@ z=\dfrac{3\pi}{2}(1+2t)\sin(\dfrac{3\pi}{2}(1+2t)), &
 
 **实验性功能**，自定义字体依赖于 CSS Variables 能力，部分浏览器存在**兼容性问题**。
 
-为了确保 `hexo generate` 构建成功，建议使用 Node.js 14.x 或更新版本。
-
 您需要首先引入自定义字体功能，在 `layout/layout.ejs` 中对应部分添加如下字段：
 
 ``` ejs
