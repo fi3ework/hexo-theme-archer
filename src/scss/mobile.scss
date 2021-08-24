@@ -1,6 +1,10 @@
 @import '_mixin';
 @import '_variables';
 
+@import '_mobile/_partial/index-page-mobile';
+@import '_mobile/_partial/_post/writing-enhance-mobile';
+@import '_mobile/_partial/_sidebar/sidebar-tags-mobile';
+
 // ========== common ========== //
 .container {
   flex-direction: column-reverse;
@@ -160,6 +164,12 @@
 .article-entry {
   blockquote {
     padding: 1rem;
+  }
+}
+
+.about-page {
+  .article-entry {
+    margin-bottom: 2rem;
   }
 }
 

@@ -17,7 +17,7 @@ window.addEventListener('load', function (event) {
   console.log('All resources finished loading!')
 })
 
-// remove background placeholder
+// init site base
 init()
 
 // init mobile

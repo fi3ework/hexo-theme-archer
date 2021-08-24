@@ -2,10 +2,13 @@
     <% page.posts.each(function (_post) { %>
         <% const truncateLength = typeof theme.truncate_length === 'number' ? theme.truncate_length : 300 %>
         <% let _content = undefined %>
+        <% let showReadMoreButton = false %>
         <% if(!!_post.excerpt) { %>
             <% _content = _post.excerpt %>
+            <% showReadMoreButton = true %>
         <% } else if (!!_post.abstract) { %>
             <% _content = _post.abstract %>
+            <% showReadMoreButton = true %>
         <% } else { %>
             <% _content = truncateLength === 0 ? null : truncate(strip_html(_post.content), {length: truncateLength, omission: '...'})%>
         <% } %>
@@ -19,9 +22,18 @@
             <div class="abstract-content">
                 <%- _content %>
             </div>
+            <!-- read more -->
+            <% if(!!theme.read_more_button && !!showReadMoreButton) { %>
+                <div class="abstract-read-more-button">
+                    <a href="<%- url_for(_post.path) %>">
+                        <span style="margin-right: 0.2rem;"><%- __('read_more') %></span>
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+            <% } %>
             <div class="abstract-post-meta">
                 <!-- date -->
-                <div class="abstract-date">
+                <div class="abstract-date" title="Last updated: <%- !!_post.updated ? date(_post.updated, "YYYY/MM/DD") : date(_post.date, "YYYY/MM/DD") %>">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time"><%- date(_post.date, "YYYY/MM/DD") %></span>
                 </div>
                 <!-- tags -->

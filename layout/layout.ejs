@@ -23,9 +23,8 @@
         <%- partial('_partial/base-footer-fixed') %>
         <!-- wrapper -->
         <div class="wrapper">
-            <div class="background-holder"></div>
             <%- partial('_partial/base-background-image') %>
-            <%- partial('_partial/script/font-loader') %>        
+            <%- partial('_partial/script/font-loader') %>
             <img class="loading" src="<%- url_for('assets/loading.svg') %>" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
             <div class="container container-unloaded">
                 <%- body %>
@@ -49,6 +48,7 @@
         <%- partial('_partial/sidebar/base-sidebar', {}, {cache: true}) %>
         <!-- site-meta -->
         <%- partial('./site-meta.ejs') %>
+        <!-- import experimental options here -->
         <!-- main func -->
         <script src="<%- url_for('scripts/main.js') %>?v=<%- theme.source_version %>"></script>
         <!-- dark mode -->
@@ -80,7 +80,7 @@
         <% } %>
         <!-- async load share.js -->
         <% if(is_post()) { %>
-            <script src="<%- url_for('scripts/share.js') %>?v=<%- theme.source_version %>" async></script>    
+            <script src="<%- url_for('scripts/share.js') %>?v=<%- theme.source_version %>" async></script>
         <% } %>
         <!-- mermaid -->
         <% if (is_post() && theme.mermaid.enable) { %>

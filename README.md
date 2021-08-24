@@ -40,7 +40,8 @@ git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer --dept
 
 如果您没有安装 Git 工具，也可以在 Hexo 根目录下手动创建 `themes/archer` 文件夹，然后将此仓库的源码放入该目录下。
 
-> 仓库的 `dev` 分支包含正在开发中的主题代码，如果您是**进阶开发者**或追新用户，能够承受代码的不足之处和低稳定性，并乐于关注我们开发的最新进展，也可以使用此分支：`git clone -b dev https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1`
+> 仓库的 `dev` 分支包含正在开发中的主题代码，如果您是**进阶开发者**或追新用户，能够承受代码的不足之处和低稳定性，并乐于关注我们开发的最新进展，也可以使用此分支：
+> `git clone -b dev https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1`
 
 ### 设置 Hexo 主题为 Archer
 
@@ -113,6 +114,7 @@ jsonContent:
 - [启用 RSS 订阅](#启用-rss-订阅)
 - [启用 Mermaid](#启用-mermaid)
 - [启用 LaTeX 数学公式](#启用-latex-数学公式)
+- [启用自定义字体](#启用自定义字体)
 - [自定义单独文章页头图](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E7%AB%A0%E9%A1%B5%E5%A4%B4%E5%9B%BE)
 - [将 Unsplash 的随机图片作为头图](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%B0%86-Unsplash-%E9%9A%8F%E6%9C%BA%E5%9B%BE%E7%89%87%E4%BD%9C%E4%B8%BA%E5%A4%B4%E5%9B%BE)
 - [自定义文章在首页的摘要](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E7%AB%A0%E5%9C%A8%E9%A6%96%E9%A1%B5%E7%9A%84%E6%91%98%E8%A6%81)
@@ -220,7 +222,7 @@ mermaid:
 
 > ❗️❗️❗️ 注意：如果您需要使用**类图**，请编辑您 Hexo 根目录下的 `_config.yml` 文件，设置 `external_link: false`。请确保这个设置对您原来的页面功能没有影响，这是 Hexo 本身的 bug。
 
-## 启用 LaTeX 数学公式
+### 启用 LaTeX 数学公式
 
 这个[维基页面](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Latex-%E6%94%AF%E6%8C%81)包含启用 LaTeX 数学公式支持的完整介绍。
 
@@ -264,12 +266,46 @@ z=\dfrac{3\pi}{2}(1+2t)\sin(\dfrac{3\pi}{2}(1+2t)), &
 \end{equation}
 ```
 
+### 启用自定义字体
+
+**实验性功能**，自定义字体依赖于 CSS Variables 能力，部分浏览器存在**兼容性问题**。
+
+为了确保 `hexo generate` 构建成功，建议使用 Node.js 14.x 或更新版本。
+
+您需要首先引入自定义字体功能，在 `layout/layout.ejs` 中对应部分添加如下字段：
+
+``` ejs
+<!-- import experimental options here -->
+<%- partial('_partial/custom-font.ejs') %>
+```
+
+接下来配置 Archer 主题目录下的 `_config.yml` 文件即可：
+
+``` yml
+custom_font:
+  enable: true
+  name: 'Noto Sans SC:n3,n4,n5,n7'
+  url: 'https://fonts.googleapis.cnpmjs.org/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap'
+```
+
+其中，`name` 为引入的自定义字体名称。`:` 后跟引入字体的变体和字重，使用 `,` 间隔。例如 `name: 'Noto Sans SC:i5,n7'` 表示引入 `Noto Sans SC` 的斜体 500 字重和正常 700 字重。
+
+`url` 为引入的自定义字体的 CDN 链接或本地链接。
+
 ## 文章撰写增强
 
-Archer 主题为您撰写的文章提供了一些增强的展示内容，这需要您手动在文章的 Front-matter 处配置。包括如下：
+Archer 主题为您撰写的文章提供了一些增强的展示内容。
+
+请注意，这些增强的展示内容**仅保证**在 Archer 主题中能够顺利渲染显示。
+
+文章属性配置。在文章的 Front-matter 处配置：
 
 - [置顶文章](#置顶文章)
 - [隐藏文章目录](#隐藏文章目录)
+
+正文内容增强。在编写正文时根据自己的需要使用：
+
+- [浮动元素](#浮动元素)
 
 ### 置顶文章
 
@@ -318,6 +354,27 @@ toc: false
 ```
 
 当然，在全局关闭文章目录的情况下，您也可以在文章中手动设置 `toc: true`，以显示该文章的目录。
+
+### 浮动元素
+
+Archer 主题内置了对[浮动元素](https://developer.mozilla.org/zh-CN/docs/Web/CSS/float)的样式表支持。
+
+- `archer-float-left`：设置元素靠左浮动。
+- `archer-float-right`：设置元素靠右浮动。
+
+浮动元素仅在桌面端生效。在移动端中，浮动元素将恢复正常文档流。
+
+例如：
+
+``` md
+Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa vel lacinia pellentesque lorem ipsum dolor.
+
+<div class="archer-float-right">
+  <img src="https://cdn.jsdelivr.net/gh/fi3ework/hexo-theme-archer/source/avatar/Misaka.jpg" alt="this is a float image!">
+</div>
+
+Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.
+```
 
 ## 更新主题
 

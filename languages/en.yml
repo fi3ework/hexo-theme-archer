@@ -1,7 +1,8 @@
-word_count: "Word count"
-reading_time: "Reading time"
-author: Author
-post_link: Link
-publish_date: "Publish date"
-update_date: "Update date"
-license: "License"
+word_count: 'Word count'
+reading_time: 'Reading time'
+author: 'Author'
+post_link: 'Link'
+publish_date: 'Publish date'
+update_date: 'Update date'
+license: 'License'
+read_more: 'READ ARTICLE'
