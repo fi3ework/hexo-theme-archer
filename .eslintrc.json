@@ -1,31 +1,23 @@
 {
-    "parser": "@babel/eslint-parser",
-    "extends": [
-        "alloy",
-        "plugin:prettier/recommended",
-        "prettier"
+  "parser": "@babel/eslint-parser",
+  "extends": ["alloy", "plugin:prettier/recommended", "prettier"],
+  "globals": {
+    "siteMeta": true
+  },
+  "env": {
+    "jquery": true
+  },
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "args": "none",
+        "caughtErrors": "none"
+      }
     ],
-    "globals": {
-        "siteMeta": true
-    },
-    "env": {
-        "jquery": true
-    },
-    "plugins": [
-        "prettier"
-    ],
-    "rules": {
-        "prettier/prettier": "error",
-        "no-unused-vars": [
-            "warn",
-            {
-                "vars": "all",
-                "args": "none",
-                "caughtErrors": "none"
-            }
-        ],
-        "one-var": [
-            "off"
-        ]
-    }
+    "one-var": ["off"]
+  }
 }

@@ -29,7 +29,7 @@
 
 .post-intros {
   opacity: 0;
-  transition: all 0.5s ease-out 0.5s;
+  transition: $transition-animation 0.5s;
   transform: translate3d(0, -1rem, 0);
 }
 
@@ -243,6 +243,7 @@
   border-radius: 0.5rem 0.5rem 0 0;
   padding: 0.5rem 1.5rem;
   transition: background-color 0.5s ease-out;
+  overflow: hidden;
 }
 
 .abstract-content,
@@ -269,9 +270,6 @@
     h#{$i} {
       .headerlink {
         display: none;
-      }
-      &:first-child {
-        margin-top: 0;
       }
     }
   }
@@ -321,7 +319,7 @@
     background-color: #f6f6f6;
     border-left: 0.35rem solid $feature-color;
     border-radius: 0.35rem;
-    transition: all 0.5s ease-out;
+    transition: $transition-animation;
     p {
       margin: 0;
     }
@@ -367,7 +365,6 @@
 }
 
 // ========== license ========== //
-
 .license-wrapper {
   background-color: $foreground-color;
   border-radius: 0 0 0.5rem 0.5rem;
@@ -377,11 +374,19 @@
   border-top: 1px dashed #ccc;
   border-bottom: 1px dashed #ccc;
   color: $post-content-color;
+  transition: $transition-animation;
   p {
     margin: 0.2rem 0;
   }
   a {
     color: $feature-color;
+    word-break: break-all;
+  }
+  :first-child {
+    margin-top: 1rem;
+  }
+  :last-child {
+    margin-bottom: 1rem;
   }
 }
 
@@ -389,34 +394,29 @@
 .toc-wrapper {
   display: block;
   position: absolute;
-  max-height: 80vh;
-  overflow: auto;
   width: 22%;
   right: 1%;
+  opacity: 1;
   max-width: calc((100% - 42.8125rem - 4rem) / 2);
-  z-index: 9999;
-  margin: calc(#{$header-height} + 1rem) 0 0 0;
+  z-index: 9998;
+  margin-top: calc(#{$header-height} + 1rem);
   transform: translate3d(0, 0, 0);
-  transition: transform 0.4s ease-out;
+  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
   .toc-active {
     color: $feature-color;
   }
-  &::-webkit-scrollbar {
-    display: none;
+  &-loding {
+    opacity: 0;
   }
 }
 
 .toc-catalog {
-  position: sticky;
-  top: 0;
   color: #bbb;
   padding: 0.5rem 0rem;
-  background-color: $body-background-color;
   z-index: 2;
   cursor: pointer;
   user-select: none;
   font: bolder 1.2rem $feature-font-family;
-  transition: background-color 0.5s ease-out !important;
   &:hover {
     color: $feature-color;
   }
@@ -426,6 +426,14 @@
   position: relative;
   top: -0.1rem;
   margin-right: 0.3rem;
+}
+
+.toc {
+  max-height: calc(100vh - #{$header-height} - #{$footer-fixed-height} - 5rem);
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .toc,
@@ -439,7 +447,8 @@
 .toc-wrapper {
   & > * {
     transform: translate(0, 0);
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out,
+      color 0.5s ease-out;
     opacity: 1;
   }
   ol {
@@ -458,7 +467,7 @@
 
 .toc-hide-children {
   & > * {
-    transform: translate(-100%, 0);
+    transform: translate(20%, 0);
     opacity: 0;
   }
   .toc-catalog {

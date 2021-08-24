@@ -5,7 +5,7 @@
   flex-direction: column;
   left: 0;
   top: 0;
-  z-index: 0;
+  z-index: -9999;
   height: 100%;
   width: $sidebar-width;
   transition: all 0.3s ease-in 0s;
@@ -52,7 +52,7 @@
   align-items: center;
   justify-content: center;
   font-size: 1.3rem;
-  width: 33.333%;
+  width: 33.33%;
   height: 100%;
   cursor: pointer;
   .iconfont-archer {

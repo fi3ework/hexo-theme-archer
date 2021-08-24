@@ -8,6 +8,7 @@
   margin: 0 auto;
   width: 100%;
   background-color: $body-background-color;
+  transition: background-color 0.5s ease-out;
   .social {
     width: 50%;
     min-width: 42.8125rem;

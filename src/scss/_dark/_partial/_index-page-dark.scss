@@ -17,6 +17,17 @@
   }
 }
 
+.index-post {
+  .abstract-read-more-button {
+    a {
+      color: $abstract-post-meta-color-dark;
+      &:hover {
+        color: $feature-color-dark;
+      }
+    }
+  }
+}
+
 .abstract-post-meta {
   color: $abstract-post-meta-color-dark;
 

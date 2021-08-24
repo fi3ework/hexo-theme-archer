@@ -1,6 +1,10 @@
 @import '_mixin';
 @import '_variables';
 
+@import '_mobile/_partial/index-page-mobile';
+@import '_mobile/_partial/_post/writing-enhance-mobile';
+@import '_mobile/_partial/_sidebar/sidebar-tags-mobile';
+
 // ========== common ========== //
 .container {
   flex-direction: column-reverse;
@@ -84,12 +88,12 @@
   .intro-title {
     font-size: 2.6rem;
     line-height: 3rem;
-    max-width: 80%;
+    max-width: 100%;
   }
   .intro-subtitle {
     font-size: 1.5rem;
     white-space: normal;
-    max-width: 90%;
+    max-width: 100%;
   }
   .main {
     width: 95%;
@@ -147,16 +151,25 @@
 
 // ========== content ========== //
 .post-paginator {
+  li {
+    max-width: 45%;
+  }
+
   .previous,
   .next {
     float: none;
-    margin: 0 auto;
   }
 }
 
 .article-entry {
   blockquote {
     padding: 1rem;
+  }
+}
+
+.about-page {
+  .article-entry {
+    margin-bottom: 2rem;
   }
 }
 

@@ -10,8 +10,27 @@
 .article-entry {
   color: $post-content-color-dark;
   blockquote {
-    background-color: #242424;
+    background-color: #1e1e1e;
     border-left-color: $feature-color-dark;
+  }
+  .table-container table,
+  > table {
+    border-color: #1e1e1e;
+    box-shadow: 2px 2px 2px rgba(255, 255, 255, 0.125);
+    thead {
+      tr {
+        background: #1e1e1e;
+      }
+    }
+    tbody {
+      tr:hover {
+        background: #242424;
+      }
+    }
+    td,
+    th {
+      border-color: #2a2a2a;
+    }
   }
   a {
     color: $feature-color-dark;
@@ -45,7 +64,6 @@
 }
 
 .toc-catalog {
-  background-color: $body-background-color-dark;
   &:hover {
     color: $feature-color-dark;
   }
