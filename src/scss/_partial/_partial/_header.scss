@@ -116,6 +116,10 @@
     &:hover {
       color: $feature-color;
     }
+
+    &-disabled {
+      pointer-events: none;
+    }
   }
 
   // ========== home page link ========== //

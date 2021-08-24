@@ -17,8 +17,17 @@
     font-weight: 300;
     word-break: break-word;
     img {
-      max-width: 100%;
+      max-height: 60vh;
       box-shadow: none;
+    }
+    @for $i from 1 through 6 {
+      h#{$i} {
+        font-weight: normal;
+        .headerlink,
+        .anchorjs-link {
+          display: none;
+        }
+      }
     }
   }
 }
@@ -42,6 +51,26 @@
 
   .abstract-title-text {
     font-size: 1.7rem;
+  }
+}
+
+// ========== abstract read more button ========== //
+.index-post {
+  .abstract-read-more-button {
+    font-family: $feature-font-family;
+    font-size: 1rem;
+
+    a {
+      color: $abstract-post-meta-color;
+      padding-top: 1rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      transition: color 0.1s ease-in;
+      &:hover {
+        color: $feature-color;
+      }
+    }
   }
 }
 

@@ -27,7 +27,7 @@
     border-radius: 2px;
     margin: 0 0.2rem;
     border: none;
-    transition: all 0.5s ease-out;
+    transition: $transition-animation;
   }
   pre code {
     background: none;

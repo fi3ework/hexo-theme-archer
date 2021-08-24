@@ -13,32 +13,33 @@
     "dev": "gulp dev",
     "build": "gulp build --option",
     "build-js": "webpack --config webpack.prod.js",
-    "prettier": "prettier --write src ./*.js"
+    "prettier": "prettier **/* --write --ignore-unknown"
   },
   "dependencies": {
-    "@babel/runtime": "^7.14.8",
-    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@babel/runtime": "^7.15.3",
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "algoliasearch": "^4.10.3",
     "anchor-js": "^4.3.1",
-    "core-js": "^3.15.2",
+    "core-js": "^3.16.2",
     "eventemitter3": "^4.0.7",
-    "graceful-fs": "^4.2.6",
-    "instantsearch.js": "^4.25.2",
+    "graceful-fs": "^4.2.8",
+    "instantsearch.js": "^4.27.2",
     "perfect-scrollbar": "^1.5.2",
-    "qrcode-generator": "^1.4.4"
+    "qrcode-generator": "^1.4.4",
+    "webfontloader": "^1.6.28"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.8",
-    "@babel/eslint-parser": "^7.14.7",
-    "@babel/plugin-transform-runtime": "^7.14.5",
-    "@babel/preset-env": "^7.14.8",
-    "autoprefixer": "^10.3.1",
+    "@babel/core": "^7.15.0",
+    "@babel/eslint-parser": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "autoprefixer": "^10.3.2",
     "babel-loader": "^8.2.2",
     "browser-sync": "^2.27.5",
-    "eslint": "^7.31.0",
+    "eslint": "^7.32.0",
     "eslint-config-alloy": "^4.2.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^3.4.1",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
     "gulp-postcss": "^9.0.0",
@@ -47,8 +48,8 @@
     "node-sass": "^5.0.0",
     "postcss": "^8.3.6",
     "prettier": "2.3.2",
-    "webpack": "^5.47.0",
-    "webpack-cli": "^4.7.2",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
     "webpack-merge": "^5.8.0"
   }
 }

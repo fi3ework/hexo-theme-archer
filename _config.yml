@@ -36,6 +36,29 @@ friends:
 about:
   enable: true
   image: '/intro/about-bg.jpg'
+# Search for website
+search:
+  enable: false
+  # Seach URL, must be set. For example: 'fi3ework.github.io'
+  url: 
+  # Search engine: 'bing' (default), 'google' or 'baidu'
+  engine: bing
+# Display icons of friends, about and search
+# You can only use free icons started with 'fab' and 'fas' by default
+# https://fontawesome.com/v5.15/icons?d=gallery&p=2&s=brands,solid&m=free
+profile_icons:
+  enable: false
+  friends: 'fas fa-heart'
+  about: 'fas fa-id-card'
+  search: 'fas fa-search'
+# Additional profile links
+profile_links:
+  # - name: GOOGLE
+  #   url: //www.google.com
+  #   icon: 'fab fa-google'
+  # - name: GALLERY
+  #   url: //www.unsplash.com
+  #   icon: 'fas fa-images'
 
 # ========== Site ========== #
 # title of the site (good for SEO)
@@ -57,6 +80,18 @@ post_header_image: '/intro/post-bg.jpg'
 _404_image: '/intro/404-bg.jpg'
 
 # ========== Theme ========== #
+# Truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
+truncate_length: 300
+# Show read more button if using excerpt or abstract to display abstracts in index page
+read_more_button: false
+# Enable toc
+toc: true
+# Word count & Reading time
+reading_info: true
+# Intro height (the default is 50 percents of the screen, you can input other number)
+index_intro_height: 50
+post_intro_height: 50
+about_intro_height: 50
 # Blog float button theme ('default' or 'rounded')
 float_button_theme: default
 # Blog read progress color ('default' for black or 'feature' for feature-color)
@@ -66,6 +101,7 @@ post_banner_theme: default
 # Display profile avatar's border
 avatar_border: true
 # Stick profile info
+# Keep false if you have too many profile links
 profile_sticky: false
 # Show categories info in index and post page
 show_categories: false
@@ -129,19 +165,9 @@ google_analytics:
 CNZZ_analytics: 
 
 # ========== Others ========== #
-# favicon
+# Favicon
 favicon: /assets/favicon.ico
-# truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
-truncate_length: 300
-# enable toc
-toc: true
-# word count & reading time
-reading_info: true
-# intro height (the default is 50 percents of the screen, you can input other number)
-index_intro_height: 50
-post_intro_height: 50
-about_intro_height: 50
-# copyright
+# Post copyright
 copyright:
   enable: true
   # https://creativecommons.org/
@@ -175,7 +201,21 @@ math:
     # Version number '3' is for the latest '3.x' version of MathJax.
     version: 3.2.0
 
+# ========== Experimental Options ========== #
+# NOTE: The options below are experimental options.
+# They may have browser compatibility issues or may cause a functional breakdown of the web page.
+
+# Custom font [browser compatibility issue]
+# Based on https://github.com/typekit/webfontloader
+# Please read README.md to enable this option correctly.
+custom_font:
+  enable: false
+  # Font name, use ':' to select font weight and font style
+  name: 'Noto Sans SC:n3,n4,n5,n7'
+  # Font CDN url
+  url: 'https://fonts.googleapis.cnpmjs.org/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap'
+
 # ========== Theme Dev ========== #
 # Ensure visitor to get the latest version of source.
 # Set a higher value before creating new release.
-source_version: 20210811
+source_version: 20210823
