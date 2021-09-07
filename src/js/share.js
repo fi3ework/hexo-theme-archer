@@ -72,7 +72,7 @@ function init() {
     sAuthor,
   }
 
-  const shareWrapper = document.querySelector('.shareList')
+  const shareWrapper = document.querySelector('.share-list')
   if (!shareWrapper) {
     return
   }

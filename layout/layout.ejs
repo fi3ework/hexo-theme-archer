@@ -80,7 +80,7 @@
             </div>
         <% } %>
         <!-- async load share.js -->
-        <% if(is_post()) { %>
+        <% if (is_post()) { %>
             <script src="<%- url_for('scripts/share.js') %>?v=<%- theme.source_version %>" async></script>
         <% } %>
         <!-- mermaid -->
