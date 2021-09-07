@@ -1,9 +1,11 @@
-<!-- Check browser compatibility of CSS variables -->
-<script>
-    var browserSupportCSSVariables = window.CSS && window.CSS.supports && window.CSS.supports('--a', 0);
-</script>
 <!-- Custom Font -->
 <% if (theme.custom_font && theme.custom_font.enable) { %>
+    <!-- Check browser compatibility of CSS variables -->
+    <script>
+        if (browserSupportCSSVariables === undefined) {
+            var browserSupportCSSVariables = window.CSS && window.CSS.supports && window.CSS.supports('--a', 0);
+        }
+    </script>
     <script>
         if (browserSupportCSSVariables) {
             var customFontName = '<%= theme.custom_font.name %>'
@@ -18,5 +20,5 @@
             console.error('Current browser doesn\'t support custom font.')
         }
     </script>
-    <script src="<%- url_for('scripts/custmoFontLoader.js') %>?v=<%- theme.source_version %>" defer></script>
+    <script src="<%- url_for('scripts/customFontLoader.js') %>?v=<%- theme.source_version %>" defer></script>
 <% } %>

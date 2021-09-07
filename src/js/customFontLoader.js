@@ -3,7 +3,7 @@ const fontName = window.customFontName
 const fontUrl = window.customFontUrl
 
 if (fontName && fontUrl) {
-  // Load custom font after window is loaded.
+  // Load custom font when DOM content is loaded.
   window.addEventListener('DOMContentLoaded', () => {
     WebFont.load({
       custom: {

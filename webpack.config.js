@@ -6,7 +6,7 @@ module.exports = {
     share: './src/js/share.js',
     search: './src/js/search.js',
     dark: './src/js/dark.js',
-    custmoFontLoader: './src/js/customFontLoader.js',
+    customFontLoader: './src/js/customFontLoader.js',
   },
   output: {
     path: path.resolve(__dirname, 'source/scripts'),
