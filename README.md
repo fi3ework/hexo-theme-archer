@@ -228,7 +228,7 @@ mermaid:
 
 Archer 主题已经内置了 MathJax，但是您需要**替换 Hexo 默认的 Markdown 渲染引擎**来支持解析 LaTeX 数学公式语法。此示例中将替换为 [`hexo-renderer-pandoc`](https://github.com/wzpan/hexo-renderer-pandoc)。
 
-请留意：替换渲染引擎可能会带来编写上的区别，或导致一些潜在的问题。
+请留意：替换渲染引擎为 `hexo-renderer-pandoc` 会带来编写上的区别，可能导致一些潜在的问题。
 
 首先，确保系统中已经[安装](https://pandoc.org/installing.html)了 `pandoc`，版本不低于 2.0。
 
@@ -268,16 +268,9 @@ z=\dfrac{3\pi}{2}(1+2t)\sin(\dfrac{3\pi}{2}(1+2t)), &
 
 ### 启用自定义字体
 
-**实验性功能**，自定义字体依赖于 CSS Variables 能力，部分浏览器存在**兼容性问题**。
+**实验性功能**，自定义字体依赖于 [CSS Variables](https://caniuse.com/?search=CSS%20Variables) 能力，部分浏览器存在**兼容性问题**。
 
-您需要首先引入自定义字体功能，在 `layout/layout.ejs` 中对应部分添加如下字段：
-
-``` ejs
-<!-- import experimental options here -->
-<%- partial('_partial/custom-font.ejs') %>
-```
-
-接下来配置 Archer 主题目录下的 `_config.yml` 文件即可：
+配置 Archer 主题目录下的 `_config.yml` 文件：
 
 ``` yml
 custom_font:
