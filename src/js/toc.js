@@ -1,6 +1,6 @@
 import archerUtil from './util'
 let prevHeight = 0
-let throttleTocOnScroll = () => {}
+let throttleTocOnScroll
 const $banner = $('.banner:first')
 
 // Banner in post page will occupy a certain amount of place.
@@ -124,13 +124,14 @@ const main = () => {
     let statusTocOnclick = false
     for (let i = 0; i < tocLinks.length; i++) {
       const onclickScrollTop = headersHeights[i] - scrollOffsetHeight
-      const onclickHref = headers[i].id
+      const onclickHeaderId = headers[i].id
       const tocOnclickFunction = function () {
         // Prevent scroll default event
         statusTocOnclick = true
         // Prevent header banner default event
+        // See ./scroll.js
         window.preventPostPageBannerDefault = true
-        archerUtil.setWindowHash(onclickHref)
+        archerUtil.setWindowHash(onclickHeaderId)
         window.scrollTo({ top: onclickScrollTop })
         $banner.addClass('banner-show')
       }
@@ -183,8 +184,9 @@ const main = () => {
 
     tocOnScroll()
 
+    // Unbind existing on-scroll event
+    if (throttleTocOnScroll) $(document).off('scroll', throttleTocOnScroll)
     // Bind document on-scroll event
-    $(document).off('scroll', throttleTocOnScroll)
     throttleTocOnScroll = archerUtil.throttle(tocOnScroll, 100, true)
     $(document).on('scroll', throttleTocOnScroll)
   }
@@ -192,7 +194,7 @@ const main = () => {
   initTocOnScroll()
 
   // Header's absolute position would be changed when window is resized.
-  $(window).on('resize', archerUtil.throttle(initTocOnScroll, 100, false))
+  $(window).on('resize', archerUtil.throttle(initTocOnScroll, 100, true))
 
   // Remove toc loading status
   $('.toc-wrapper').removeClass('toc-wrapper-loding')

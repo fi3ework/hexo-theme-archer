@@ -97,14 +97,17 @@ class MetaInfo {
 
     for (let postIndex = 0; postIndex < postsArr.length; postIndex++) {
       const currPostLabels = postsArr[postIndex][this.metaName]
+      const key = 'name'
       // if there is any post has a tag
       if (currPostLabels && currPostLabels.length) {
         currPostLabels.forEach((tagOrCatetory) => {
           // if this.metaName is 'categories', tagOrCatetory['slug'] will be used as key in this.indexMap
           // else if this.metaName is 'tag', tagOrCatetory['name'] will be used as key in this.indexMap
-          // check the array postsArr and you'll know why. (actually you can just use 'slug' in both case)
+          // check the array postsArr and you'll know why.
+          // console.log(tagOrCatetory)
           // const key = this.metaName === 'categories' ? 'slug' : 'name'
-          const key = 'slug'
+
+          // Hey bro, but why? If use 'name' both, we can use special characters like blank and dot.
 
           if (this.indexMap.has(tagOrCatetory[key])) {
             this.indexMap.get(tagOrCatetory[key]).push(postIndex)
