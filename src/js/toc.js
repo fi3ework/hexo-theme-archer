@@ -2,6 +2,7 @@ import archerUtil from './util'
 let prevHeight = 0
 let throttleTocOnScroll
 const $banner = $('.banner:first')
+let statusTocOnclick = false
 
 // Banner in post page will occupy a certain amount of place.
 // Therefore, the scroll event should be subtracted from this occupancy.
@@ -32,18 +33,11 @@ const isPassingThrough = (currHeight, prevHeight, linkHeight) => {
 function calcScrollIntoScreenIndex(heights, prevHeight, currHeight) {
   const anchorLinkIndex = calcAnchorLink(heights, currHeight)
   if (anchorLinkIndex >= 0) {
-    return anchorLinkIndex
-  }
-
-  for (let i = 0; i < heights.length; i++) {
-    if (isPassingThrough(currHeight, prevHeight, heights[i])) {
-      // if is scrolling down, select current
-      if (currHeight > prevHeight) {
-        return i
-      } else {
-        // if is scrolling up, select previous
-        return i - 1
-      }
+    if (currHeight > prevHeight || statusTocOnclick) {
+      return anchorLinkIndex
+    } else {
+      // if is scrolling up, select previous
+      return anchorLinkIndex - 1 >= 0 ? anchorLinkIndex - 1 : 0
     }
   }
 }
@@ -121,7 +115,6 @@ const main = () => {
     const headersHeights = initTocLinksScrollTop(headers)
 
     // Overide toc links on-click event
-    let statusTocOnclick = false
     for (let i = 0; i < tocLinks.length; i++) {
       const onclickScrollTop = headersHeights[i] - scrollOffsetHeight
       const onclickHeaderId = headers[i].id
@@ -131,17 +124,19 @@ const main = () => {
         // Prevent header banner default event
         // See ./scroll.js
         window.preventPostPageBannerDefault = true
+        $banner.addClass('banner-show')
         archerUtil.setWindowHash(onclickHeaderId)
         window.scrollTo({ top: onclickScrollTop })
-        $banner.addClass('banner-show')
       }
       tocLinks[i].onclick = () => {
         tocOnclickFunction()
         return false
       }
-      archorjsLinks[i].onclick = () => {
-        tocOnclickFunction()
-        return false
+      if (archorjsLinks.length && archorjsLinks.length > i) {
+        archorjsLinks[i].onclick = () => {
+          tocOnclickFunction()
+          return false
+        }
       }
     }
 
