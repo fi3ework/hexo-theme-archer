@@ -68,7 +68,7 @@ const archerUtil = {
 
   // 设置地址栏 hash
   setWindowHash: (hash) => {
-    window.location.hash = `#/${hash}`
+    window.history.replaceState({}, '', `#/${hash}`)
   },
 
   // 读取地址栏 hash
