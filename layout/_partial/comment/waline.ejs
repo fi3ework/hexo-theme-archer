@@ -1,0 +1,13 @@
+<% if(theme.comment && theme.comment.waline_serverURL) { %>
+    <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+    <div id="comment"></div>
+    <script>
+    Waline({
+        el: '#comment' ,
+        serverURL: "<%- theme.comment.waline_serverURL %>",
+        placeholder: "<%- theme.comment.waline_placeHolder %>",
+        avatar: "<%- theme.comment.waline_avatar %>",
+        login: "<%- theme.comment.waline_login %>"
+    });
+    </script>
+<% } %>
