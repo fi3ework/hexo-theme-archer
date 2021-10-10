@@ -193,6 +193,9 @@ const main = () => {
 
   // Remove toc loading status
   $('.toc-wrapper').removeClass('toc-wrapper-loding')
+
+  // Reload toc scroll events after loading all resources like images
+  window.addEventListener('load', initTocOnScroll())
 }
 
 export default main
