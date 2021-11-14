@@ -1,0 +1,222 @@
+# ========== Profile ========== #
+# avatar
+avatar: /avatar/Misaka.jpg
+# author name
+author: fi3ework
+# signature
+signature: witness me
+# SNS (you can custom the order)
+social:
+  email: 12345@qq.com
+  github: //github.com/fi3ework
+  # wechat should be a path of qr-code image path
+  wechat: /assets/example_qr.png
+  # qq should be a path of qr-code image path
+  qq: 
+  telegram: 
+  weibo: 
+  zhihu: 
+  douban: 
+  facebook: 
+  twitter: 
+  instagram: 
+  stack-overflow: 
+  segmentFault: 
+  juejin: 
+  v2ex: 
+  bilibili: 
+  linkedin: 
+  steam: 
+  others: 
+  rss: /atom.xml
+# friends
+friends:
+  # friendA: //www.baidu.com
+  # friendB: //www.google.com
+about:
+  enable: true
+  image: '/intro/about-bg.jpg'
+# Search for website
+search:
+  enable: false
+  # Seach URL, must be set. For example: 'fi3ework.github.io'
+  url: 
+  # Search engine: 'bing' (default), 'google' or 'baidu'
+  engine: bing
+# Display icons of friends, about and search
+# You can only use free icons started with 'fab' and 'fas' by default
+# https://fontawesome.com/v5.15/icons?d=gallery&p=2&s=brands,solid&m=free
+profile_icons:
+  enable: false
+  friends: 'fas fa-heart'
+  about: 'fas fa-id-card'
+  search: 'fas fa-search'
+# Additional profile links
+profile_links:
+  # - name: GOOGLE
+  #   url: //www.google.com
+  #   icon: 'fab fa-google'
+  # - name: GALLERY
+  #   url: //www.unsplash.com
+  #   icon: 'fas fa-images'
+
+# ========== Site ========== #
+# title of the site (good for SEO)
+SEO_title: fi3ework's Studio
+# keywords for site (good for SEO)
+SEO_keywords:
+  - hexo
+  - 'hexo-theme'
+  - 'hexo-blog'
+# main title shown in header image
+main_title: fi3ework's Studio.
+# subtitle
+subtitle: it's better to burn out than to fade away
+# site haeder image
+site_header_image: '/intro/index-bg.jpg'
+# post haeder image
+post_header_image: '/intro/post-bg.jpg'
+# 404 image
+_404_image: '/intro/404-bg.jpg'
+
+# ========== Theme ========== #
+# Truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
+truncate_length: 300
+# Show read more button if using excerpt or abstract to display abstracts in index page
+read_more_button: false
+# Enable toc
+toc: true
+# Word count & Reading time
+reading_info: true
+# Intro height (the default is 50 percents of the screen, you can input other number)
+index_intro_height: 50
+post_intro_height: 50
+about_intro_height: 50
+# Blog float button theme ('default' or 'rounded')
+float_button_theme: default
+# Blog read progress color ('default' for black or 'feature' for feature-color)
+read_progress_color: default
+# Blog post banner theme ('default' or 'clean')
+post_banner_theme: default
+# Display profile avatar's border
+avatar_border: true
+# Stick profile info
+# Keep false if you have too many profile links
+profile_sticky: false
+# Show categories info in index and post page
+show_categories: false
+
+# ========== Search ========== #
+algolia_search:
+  enable: false
+  hits:
+    per_page: 10
+  labels:
+    input_placeholder: Search for Posts
+    hits_empty: "We did not find any results for the search: ${query}"
+    hits_stats: "${hits} results found in ${time} ms"
+
+# ========== Comment ========== #
+# Fill in the field to enable the corresponding comment plugin
+# If you want to add other comment plugin, edit in "custom.ejs"
+comment:
+  # Livere  site: https://livere.com/
+  livere_uid: 
+  # Disqus  site: https://disqus.com/
+  disqus_shortname: 
+  # Gitment  site: https://github.com/imsun/gitment
+  gitment_owner: 
+  gitment_repo: 
+  gitment_client_id: 
+  gitment_client_secret: 
+  # Youyan  site: http://www.uyan.cc/
+  youyan_uid: 
+  # Valine  site: https://valine.js.org/
+  valine_appId: 
+  valine_appKey: 
+  valine_placeHolder: 
+  # gitalk site: https://github.com/gitalk/gitalk/
+  # Value 'true' is recommended for gitalk_pathname_id setting
+  gitalk_client_id: 
+  gitalk_client_secret: 
+  gitalk_admin: 
+  gitalk_owner: 
+  gitalk_repo: 
+  gitalk_pathname_id: false
+  gitalk_create_issue_manually: true
+  # utteranc site: https://utteranc.es/
+  utteranc_repo:  
+  utteranc_label: 
+  utteranc_theme: 
+  utteranc_issue_term: 
+
+# ========== Analytics ========== #
+# enable Busuanzi analytics
+busuanzi: true
+# fill in pv or uv
+busuanzi_pv_or_uv: 'pv'
+# custom analytic slogan, '${count}' is the analytic number, DO NOT modify it.
+busuanzi_slug: 'PV: ${count} :)'
+# Baidu analytics
+baidu_analytics: 
+# Google analytics
+google_analytics: 
+# CNZZ analytics
+CNZZ_analytics: 
+
+# ========== Others ========== #
+# Favicon
+favicon: /assets/favicon.ico
+# Post copyright
+copyright:
+  enable: true
+  # https://creativecommons.org/
+  license: '本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可'
+# Website Approve
+website_approve:
+  enable: true
+  icp_approve: 123123 
+  beian_approve: 123123
+  beian_img: /assets/beian.png
+# Blog page article timeliness note
+outdated_threshold:
+  enable: false
+  days: 180
+  # By default, timeliness reminder will be displayed for each article. That's not necessarily what you want.
+  # If true, you can set `timeliness: true` for specified article to enable the reminder.
+  specify_article: false
+# Mermaid Chart: https://github.com/knsv/mermaid
+mermaid:
+  enable: true
+  # Version number '8' is for the latest '8.x' version of Mermaid.
+  version: 8.11.0
+  theme: dark
+  # find more api options from https://github.com/knsv/mermaid/blob/master/src/mermaidAPI.js
+  options:
+# LaTeX Math Equations Support
+math:
+  mathjax:
+    enable: false
+    # Specified version number no less than '3.0.0', or you need to modify the CDN link manually.
+    # Version number '3' is for the latest '3.x' version of MathJax.
+    version: 3.2.0
+
+# ========== Experimental Options ========== #
+# NOTE: The options below are experimental options.
+# They may have browser compatibility issues or may cause a functional breakdown of the web page.
+
+# Custom font [browser compatibility issue]
+# Based on https://github.com/typekit/webfontloader
+# Please read README.md to enable this option correctly.
+custom_font:
+  enable: true
+  # Font name, use ':' to select font weight and font style
+  name: 'Noto Sans SC:n3,n4,n5,n7'
+  # Font CDN url
+  url: 'https://fonts.googleapis.cnpmjs.org/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap'
+
+# ========== Theme Dev ========== #
+# Ensure visitor to get the latest version of source.
+# Set a higher value before creating new release.
+source_version: 20210823
+
