@@ -8,7 +8,7 @@ signature: witness me
 # SNS (you can custom the order)
 social:
   email: 12345@qq.com
-  github: //github.com/fi3ework
+  github: //github.com/fi3ework/hexo-theme-archer
   # wechat should be a path of qr-code image path
   wechat: /assets/example_qr.png
   # qq should be a path of qr-code image path
