@@ -209,7 +209,7 @@ math:
 # Based on https://github.com/typekit/webfontloader
 # Please read README.md to enable this option correctly.
 custom_font:
-  enable: true
+  enable: false
   # Font name, use ':' to select font weight and font style
   name: 'Noto Sans SC:n3,n4,n5,n7'
   # Font CDN url
