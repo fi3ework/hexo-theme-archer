@@ -56,8 +56,7 @@ jobs:
 
     - name: Publish
       uses: peaceiris/actions-gh-pages@v3
-      working-directory: /
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./demo
+        publish_dir: ./demo/
 
