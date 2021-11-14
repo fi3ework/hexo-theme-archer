@@ -24,13 +24,13 @@ const setThemeModeSwitchBtnActive = (active) => {
 // 切换主题颜色模式
 const switchThemeMode = function () {
   setThemeModeSwitchBtnActive(false)
-  if ($("LINK[href='css/dark.css']").length === 0) {
+  if ($("LINK[href='/css/dark.css']").length === 0) {
     $('<link>')
-      .attr({ rel: 'stylesheet', type: 'text/css', href: 'css/dark.css' })
+      .attr({ rel: 'stylesheet', type: 'text/css', href: '/css/dark.css' })
       .appendTo('head')
     localStorage.preferredThemeMode = 'dark'
   } else {
-    $("LINK[href='css/dark.css']").remove()
+    $("LINK[href='/css/dark.css']").remove()
     localStorage.preferredThemeMode = 'light'
   }
   setThemeModeSwitchBtnActive(true)
@@ -38,7 +38,7 @@ const switchThemeMode = function () {
 
 // 获取当前的主题颜色模式
 const getCurrentThemeMode = () => {
-  return $("LINK[href='css/dark.css']").length === 0 ? 'light' : 'dark'
+  return $("LINK[href='/css/dark.css']").length === 0 ? 'light' : 'dark'
 }
 
 // 初始化切换主题颜色模式功能
