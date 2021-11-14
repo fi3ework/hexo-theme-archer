@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "hexo": "^5.0.0",
+    "hexo-excerpt": "^1.2.1",
     "hexo-filter-mermaid-diagrams": "^1.0.5",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
