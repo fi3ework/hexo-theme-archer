@@ -6,7 +6,7 @@ tags:
 sticky: 100
 ---
 
-![](/assets/demo-screenshoot.png)
+![](demo-screenshoot.png)
 
 由于作者精力有限，无法保证此主题继续维护，欢迎您 Fork 👋🏻 本仓库或[申请成为维护者 👩‍🔧](https://github.com/fi3ework/hexo-theme-archer/issues/256)。
 
