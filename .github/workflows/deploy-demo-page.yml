@@ -45,14 +45,15 @@ jobs:
         npm install -g hexo-cli
         npm install
 
-    - name: Build
-      run: |
-        hexo g
-
     - name: Move theme files to hexo demo folder
       run: |
-        mkdir -p demo/themes/archer
-        find .. ! -path '..' ! -path '../demo' ! -path '../.git' -maxdepth 1 -exec mv -t demo/themes/archer/ {} +
+        mkdir -p themes/archer
+        find ..  -maxdepth 1 ! -path '..' ! -path '../demo' ! -path '../.git' -exec mv -t ./themes/archer/ {} +
+
+    - name: Generate static files
+      run: |
+        hexo g
+        ls -lh public # check move result
 
     - name: Publish
       uses: peaceiris/actions-gh-pages@v3
