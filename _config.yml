@@ -4,7 +4,7 @@
 
 # Site
 title: hexo-theme-archer
-subtitle: "It's better to burn out than to fade away"
+subtitle: 'It's better to burn out than to fade away'
 description: ''
 keywords:
 author: fi3ework
@@ -12,8 +12,9 @@ language: cn
 timezone: 'Asia/Shanghai'
 
 # URL
-## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://fi3ework.github.io/hexo-theme-archer
+root: /hexo-theme-archer/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
