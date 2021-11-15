@@ -1,55 +1,31 @@
 {
-  "name": "hexo-theme-archer",
-  "version": "1.6.4",
-  "description": "a smart and modern theme for Hexo",
-  "private": false,
-  "author": "fi3ework",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/fi3ework/hexo-theme-archer.git"
-  },
-  "license": "MIT",
+  "name": "hexo-theme-archer-demo",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "dev": "gulp dev",
-    "build": "gulp build --option",
-    "build-js": "webpack --config webpack.prod.js",
-    "prettier": "prettier **/* --write --ignore-unknown"
+    "build": "hexo generate",
+    "clean": "hexo clean",
+    "deploy": "hexo deploy",
+    "server": "hexo server"
+  },
+  "hexo": {
+    "version": "5.4.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.15.3",
-    "@fortawesome/fontawesome-free": "^5.15.4",
-    "algoliasearch": "^4.10.3",
-    "anchor-js": "^4.3.1",
-    "core-js": "^3.16.2",
-    "eventemitter3": "^4.0.7",
-    "graceful-fs": "^4.2.8",
-    "instantsearch.js": "^4.27.2",
-    "perfect-scrollbar": "^1.5.2",
-    "qrcode-generator": "^1.4.4",
-    "webfontloader": "^1.6.28"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/eslint-parser": "^7.15.0",
-    "@babel/plugin-transform-runtime": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
-    "autoprefixer": "^10.3.2",
-    "babel-loader": "^8.2.2",
-    "browser-sync": "^2.27.5",
-    "eslint": "^7.32.0",
-    "eslint-config-alloy": "^4.2.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "gulp": "^4.0.2",
-    "gulp-cli": "^2.3.0",
-    "gulp-postcss": "^9.0.0",
-    "gulp-sass": "^5.0.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "node-sass": "^5.0.0",
-    "postcss": "^8.3.6",
-    "prettier": "2.3.2",
-    "webpack": "^5.51.1",
-    "webpack-cli": "^4.8.0",
-    "webpack-merge": "^5.8.0"
+    "hexo": "^5.0.0",
+    "hexo-excerpt": "^1.2.1",
+    "hexo-filter-mermaid-diagrams": "^1.0.5",
+    "hexo-generator-archive": "^1.0.0",
+    "hexo-generator-category": "^1.0.0",
+    "hexo-generator-feed": "^3.0.0",
+    "hexo-generator-index": "^2.0.0",
+    "hexo-generator-json-content": "^4.2.3",
+    "hexo-generator-tag": "^1.0.0",
+    "hexo-renderer-ejs": "^1.0.0",
+    "hexo-renderer-marked": "^4.1.0",
+    "hexo-renderer-stylus": "^2.0.0",
+    "hexo-server": "^2.0.0",
+    "hexo-theme-landscape": "^0.0.3",
+    "hexo-wordcount": "^6.0.1"
   }
 }
