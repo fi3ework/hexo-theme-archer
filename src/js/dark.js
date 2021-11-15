@@ -22,23 +22,27 @@ const setThemeModeSwitchBtnActive = (active) => {
 }
 
 // 切换主题颜色模式
-const switchThemeMode = function () {
+const switchThemeMode = function (root) {
   setThemeModeSwitchBtnActive(false)
-  if ($("LINK[href='/css/dark.css']").length === 0) {
+  if ($(`LINK[href='${root}css/dark.css']`).length === 0) {
     $('<link>')
-      .attr({ rel: 'stylesheet', type: 'text/css', href: '/css/dark.css' })
+      .attr({
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: `${root}css/dark.css`,
+      })
       .appendTo('head')
     localStorage.preferredThemeMode = 'dark'
   } else {
-    $("LINK[href='/css/dark.css']").remove()
+    $(`LINK[href='${root}css/dark.css']`).remove()
     localStorage.preferredThemeMode = 'light'
   }
   setThemeModeSwitchBtnActive(true)
 }
 
 // 获取当前的主题颜色模式
-const getCurrentThemeMode = () => {
-  return $("LINK[href='/css/dark.css']").length === 0 ? 'light' : 'dark'
+const getCurrentThemeMode = (root) => {
+  return $(`LINK[href='${root}css/dark.css']`).length === 0 ? 'light' : 'dark'
 }
 
 // 初始化切换主题颜色模式功能
@@ -47,12 +51,14 @@ const initThemeModeSwitchButton = function () {
 
   // 当前主题颜色模式与用户偏好的主题颜色模式不同时，
   // 切换主题颜色模式
-  if (getCurrentThemeMode() !== getPreferredThemeMode()) {
+  if (
+    getCurrentThemeMode(window.siteMeta.root || '/') !== getPreferredThemeMode()
+  ) {
     switchThemeMode()
   }
 
   $themeModeSwitchBtn.click(function () {
-    switchThemeMode()
+    switchThemeMode(window.siteMeta.root || '/')
   })
 
   setThemeModeSwitchBtnActive(true)
