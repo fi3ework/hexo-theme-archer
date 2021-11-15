@@ -3,7 +3,6 @@ name: Deploy Demo Page
 defaults:
   run:
     shell: bash
-    working-directory: demo
 
 on:
   push:
@@ -40,20 +39,32 @@ jobs:
           ${{ runner.os }}-build-
           ${{ runner.os }}
 
-    - name: Prepare
+    - name: Prepare hexo demo source
       run: |
-        npm install -g hexo-cli
+        mkdir demo
+        cd demo
+        git clone -b gh-source https://github.com/fi3ework/hexo-theme-archer.git .
         npm install
 
-    - name: Move theme files to hexo demo folder
+    - name: Move latest theme source files to hexo demo folder
       run: |
+        cd demo
         mkdir -p themes/archer
-        find ..  -maxdepth 1 ! -path '..' ! -path '../demo' ! -path '../.git' -exec mv -t ./themes/archer/ {} +
+        find .. -maxdepth 1 ! -path '..' ! -path '../demo' ! -path '../.git' -exec mv -t ./themes/archer/ {} +
+    
+    - name: Build latest theme
+      run: |
+        cd demo/themes/archer
+        npm install
+        npm run prettier
+        npm run build
 
     - name: Generate static files
       run: |
+        npm install -g hexo-cli
+        cd demo
         hexo g
-        ls -lh public # check move result
+        ls -lh public
 
     - name: Publish
       uses: peaceiris/actions-gh-pages@v3
@@ -62,4 +73,3 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./demo/public
         force_orphan: true
-
