@@ -1,7 +1,11 @@
 <script>
+    var siteMetaRoot = "<%- config.root %>"
+    if (siteMetaRoot === "undefined") {
+        siteMetaRoot = '/'
+    }
     var siteMeta = {
         url: "<%- config.url %>",
-        root: "<%- config.root %>",
+        root: siteMetaRoot,
         author: "<%- config.author %>"
     }
 </script>
