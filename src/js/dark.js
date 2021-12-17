@@ -49,16 +49,15 @@ const getCurrentThemeMode = (root) => {
 const initThemeModeSwitchButton = function () {
   setThemeModeSwitchBtnActive(false)
 
-  // 当前主题颜色模式与用户偏好的主题颜色模式不同时，
+  // 默认情况下，当前主题颜色为系统偏好的颜色，
+  // 而当前主题颜色模式与用户偏好的主题颜色模式不同时，
   // 切换主题颜色模式
-  if (
-    getCurrentThemeMode(window.siteMeta.root || '/') !== getPreferredThemeMode()
-  ) {
-    switchThemeMode()
+  if (getCurrentThemeMode(window.siteMeta.root) !== getPreferredThemeMode()) {
+    switchThemeMode(window.siteMeta.root)
   }
 
   $themeModeSwitchBtn.click(function () {
-    switchThemeMode(window.siteMeta.root || '/')
+    switchThemeMode(window.siteMeta.root)
   })
 
   setThemeModeSwitchBtnActive(true)
