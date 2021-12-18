@@ -52,7 +52,7 @@ Archer 主题开发依赖于 node-sass 5.0.0，对 Node.js 版本有要求。如
 
 在修改源代码时可以实时自动编译并刷新预览。
 
-1. 如果有，请首先删除 Hexo 根目录下的 `public` 文件夹。避免已生成的静态文件对开发造成干扰。
+1. 如果有，请首先删除 Hexo 根目录下的 `public` 文件夹，或在 Hexo 根目录下执行 `hexo clean` 命令。避免已生成的静态文件对开发造成干扰。
 2. 在 Hexo 根目录下执行 `hexo s` 启动 Hexo 服务。
 3. 在 Archer 主题目录下执行 `npm run dev` 进入本地开发模式。该模式会代理 Hexo 服务，监听 Archer 主题目录下 `src` 和 `layout` 中文件的修改，实时进行编译，然后通过 BrowserSync 在 `localhost:3000`（默认）下自动刷新页面。对其他位置的文件修改并不会触发页面刷新，可能需手动重启 Hexo 服务或本地开发。
 

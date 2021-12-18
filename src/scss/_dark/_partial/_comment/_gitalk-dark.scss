@@ -41,6 +41,9 @@ $gt-color-btn: #ffffff;
         background-color: darken($gt-color-btn, 5%) !important;
         border-color: $gt-color-main-lighter !important;
       }
+      .gt-btn-text {
+        color: $gt-color-main !important;
+      }
     }
     &-public {
       &:hover {
