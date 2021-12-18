@@ -37,7 +37,16 @@ const init = function () {
       // Jump to url hash location if exit
       const currentHash = window.location.hash
       window.location.hash = archerUtil.getWindowHash()
-      window.location.hash = currentHash
+      window.history.replaceState({}, '', currentHash)
+
+      // Init anchors
+      // https://www.bryanbraun.com/anchorjs/
+      const anchors = new AnchorJS()
+      anchors.options = {
+        placement: 'right',
+        class: 'anchorjs-archer',
+      }
+      anchors.add()
 
       // As headers' absolute offset-y can be queried properly
       // after remove container's `container-unloaded` class,
@@ -46,15 +55,6 @@ const init = function () {
     },
     false
   )
-
-  // Init anchors
-  // https://www.bryanbraun.com/anchorjs/
-  const anchors = new AnchorJS()
-  anchors.options = {
-    placement: 'right',
-    class: 'anchorjs-archer',
-  }
-  anchors.add()
 }
 
 export default init

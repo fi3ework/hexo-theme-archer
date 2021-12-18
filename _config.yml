@@ -135,6 +135,11 @@ comment:
   valine_appId: 
   valine_appKey: 
   valine_placeHolder: 
+  # Waline  site: https://waline.js.org/
+  waline_serverURL: 
+  waline_placeHolder: 
+  waline_avatar: 
+  waline_login: 
   # gitalk site: https://github.com/gitalk/gitalk/
   # Value 'true' is recommended for gitalk_pathname_id setting
   gitalk_client_id: 
