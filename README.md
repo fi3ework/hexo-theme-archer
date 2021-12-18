@@ -4,7 +4,7 @@
 
 ## 在线预览
 
-🎯 主题预览：[Demo](https://fi3ework.github.io/archer-demo)。
+🎯 主题预览：[Demo](https://fi3ework.github.io/hexo-theme-archer)
 
 ## 文档
 
@@ -95,7 +95,7 @@ jsonContent:
 
 您可以通过 `hexo -v` 命令，或在 Hexo 根目录下的 `package.json` 中查看您当前使用的 Hexo 版本。
 
-如果 Hexo 版本 >= 5.0.0，建议复制 Archer 主题目录下的 [`_config.yml`](./_config.yml) 到 Hexo 根目录，并命名为 `_config.archer.yml`，接下来修改此文件即可对主题进行配置。现在，您可以删除 Archer 主题目录下的 `_config.yml` 文件，避免配置合并或冲突。
+如果 Hexo 版本 >= 5.0.0，建议复制 Archer 主题目录下的 [`_config.yml`](./_config.yml) 到 Hexo 根目录，并命名为 `_config.archer.yml`，接下来修改此文件即可对主题进行配置。现在，您可以删除 Archer 主题目录下的 `_config.yml` 文件，或将它重命名为 `_config.yml.template`，避免配置合并或冲突。
 
 如果 Hexo 版本 >= 2.8.2，修改 Archer 主题目录下的 `_config.yml` 文件即可对主题进行配置。
 
