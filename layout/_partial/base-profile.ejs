@@ -8,7 +8,9 @@
     <% } %>
     <% if(theme.social) { %>
         <div class="profile-social">
+            <center>
             <%- partial('base-social') %>
+            </center>>
         </div>
     <% } %>
     <% if(theme.friends) { %>
@@ -34,7 +36,9 @@
                 <% if(theme.profile_icons && !!theme.profile_icons.enable && theme.profile_icons.about) { %>
                     <i class="<%- theme.profile_icons.about %> profile-item-icon"></i>
                 <% } %>
+                <center>
                 ABOUT ME
+                </center>
             </a>
         </div>
     <% } %>
