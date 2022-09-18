@@ -7,6 +7,12 @@ $gt-color-btn: #ffffff;
     color: $post-content-color-dark;
   }
 
+  textarea,
+  .gt-header-preview *,
+  .gt-comment-content * {
+    color: #000;
+  }
+
   a {
     color: $gt-color-main !important;
     &:hover {
