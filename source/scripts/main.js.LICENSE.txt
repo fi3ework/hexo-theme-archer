@@ -4,7 +4,7 @@
  */
 
 /*!
- * perfect-scrollbar v1.5.2
+ * perfect-scrollbar v1.5.3
  * Copyright 2021 Hyunje Jun, MDBootstrap and Contributors
  * Licensed under MIT
  */
