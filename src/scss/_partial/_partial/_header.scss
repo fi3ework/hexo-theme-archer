@@ -15,12 +15,12 @@ header {
     pointer-events: none;
   }
 
-  .header-element {
-    pointer-events: auto;
+  &.header-sidebar-active {
+    transform: translate3d($sidebar-width, 0, 0);
   }
 
-  .header-sidebar-active {
-    transform: translate3d($sidebar-width, 0, 0);
+  .header-element {
+    pointer-events: auto;
   }
 }
 
