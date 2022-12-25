@@ -7,6 +7,7 @@ module.exports = {
     search: './src/js/search.js',
     dark: './src/js/dark.js',
     customFontLoader: './src/js/customFontLoader.js',
+    codecopy: './src/js/codecopy.js',
   },
   output: {
     path: path.resolve(__dirname, 'source/scripts'),
