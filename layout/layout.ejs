@@ -94,9 +94,7 @@
         <% } %>
         <!-- codecopy -->
         <% if (theme.codecopy.enable) { %>
-            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
-            <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-            <script> $.noConflict(); </script> 
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.js"></script>
             <script type="text/javascript" src="<%- url_for('scripts/codecopy.js') %>" async></script>
         <% } %>
     </body>

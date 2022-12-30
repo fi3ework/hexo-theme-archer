@@ -143,6 +143,17 @@ const archerUtil = {
       }
     }
   },
+
+  /**
+   * Wrap a element with wrapper element, e.g. wrap(document.querySelector('div.wrap_me'), document.createElement('div'))
+   *
+   * @param {Element} el - target element
+   * @param {Element} wrapper element
+   */
+  wrap: function (el, wrapper) {
+    el.parentNode.insertBefore(wrapper, el)
+    wrapper.appendChild(el)
+  },
 }
 
 export default archerUtil
