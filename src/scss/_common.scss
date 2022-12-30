@@ -114,24 +114,22 @@ li {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-appearance: none;
-  font-size: 11px;
   font-weight: bold;
-  line-height: 20px;
-  color: #f75357;
+  color: $feature-color;
   font-family: Menlo;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-  padding: 2px 6px;
+  padding: 6px;
+
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.3s ease-in-out;
+  -o-transition: visibility 0s, opacity 0.3s ease-in-out;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
 }
 
-.btn-copy span {
-  margin-left: 5px;
-  display: none;
-}
-
-.code-wrapper .btn-copy:hover span {
-  color: #f75357;
-  display: inline;
+.code-wrapper:hover {
+  .btn-copy {
+    color: $feature-color;
+    visibility: visible;
+    opacity: 1;
+  }
 }

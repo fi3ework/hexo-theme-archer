@@ -9,28 +9,30 @@ const copyBtnEleSetup = (el) => {
   // Insert copy button to the target element
   let copyBtn = document.createElement('button')
   copyBtn.classList.add('btn-copy')
-  copyBtn.setAttribute('data-clipboard-snippet', '')
-  copyBtn.innerHTML = "<i class='fa fa-clipboard'></i><span>复制</span>"
+  copyBtn.innerHTML = "<i class='fa fa-clipboard'></i>"
   el.parentNode.insertBefore(copyBtn, el)
 }
 
 const copyBtnEveSetup = () => {
   let clipboard = new ClipboardJS('.btn-copy', {
-    target: function target(trigger) {
-      return trigger.nextElementSibling
+    text: function (trigger) {
+      const codeLines = trigger.nextElementSibling.querySelectorAll('td.code')
+      return Array.from(codeLines)
+        .map((it) => it.innerText)
+        .join('\n')
     },
   })
   clipboard.on('success', function (e) {
-    e.trigger.innerHTML = "<i class='fa fa-clipboard'></i><span>复制成功</span>"
+    e.trigger.innerHTML = "<i class='fas fa-clipboard-check'></i>"
     setTimeout(function () {
-      e.trigger.innerHTML = "<i class='fa fa-clipboard'></i><span>复制</span>"
+      e.trigger.innerHTML = "<i class='fa fa-clipboard'></i>"
     }, 1000)
     e.clearSelection()
   })
   clipboard.on('error', function (e) {
-    e.trigger.innerHTML = "<i class='fa fa-clipboard'></i><span>复制失败</span>"
+    e.trigger.innerHTML = "<i class='fas fa-exclamation-triangle'></i>"
     setTimeout(function () {
-      e.trigger.innerHTML = "<i class='fa fa-clipboard'></i><span>复制</span>"
+      e.trigger.innerHTML = "<i class='fa fa-clipboard'></i>"
     }, 1000)
     e.clearSelection()
   })
