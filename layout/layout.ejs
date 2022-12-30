@@ -95,7 +95,7 @@
         <!-- codecopy -->
         <% if (theme.codecopy.enable) { %>
             <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.js"></script>
-            <script type="text/javascript" src="<%- url_for('scripts/codecopy.js') %>" async></script>
+            <script type="text/javascript" src="<%- url_for('scripts/codecopy.js') %>?v=<%- theme.source_version %>" async></script>
         <% } %>
     </body>
 </html>
