@@ -1,16 +1,8 @@
-import archerUtil from './util'
-
 const copyBtnEleSetup = (el) => {
-  let container = document.createElement('div')
-  container.classList.add('code-wrapper')
-  container.style.position = 'relative'
-  archerUtil.wrap(el, container)
-
-  // Insert copy button to the target element
-  let copyBtn = document.createElement('button')
-  copyBtn.classList.add('btn-copy')
-  copyBtn.innerHTML = "<i class='fa fa-clipboard'></i>"
-  el.parentNode.insertBefore(copyBtn, el)
+  $(el).wrap("<div class='code-wrapper' style='position: relative;'></div>")
+  $(el).before(
+    "<button class='btn-copy'><i class='fa fa-clipboard'></i></button>"
+  )
 }
 
 const copyBtnEveSetup = () => {
