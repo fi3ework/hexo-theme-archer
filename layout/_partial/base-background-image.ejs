@@ -53,7 +53,7 @@
         <% if(is_post()) { %>
             <div class="post-intros">
                 <!-- 文章页标签  -->
-                <% if(page.tags.length) { %>
+                <% if(page.tags.length || page.categories) { %>
                     <%- partial('base-title-tags', {
                         currPost: page,
                         className: 'post-intro-tags'}) %>

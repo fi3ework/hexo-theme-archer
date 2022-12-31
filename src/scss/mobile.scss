@@ -101,39 +101,41 @@
 }
 
 // ========== header ========== //
-.header {
-  height: $header-height-mobile;
-}
-
-.header-mobile {
-  background-color: rgba(0, 0, 0, 0.38);
-}
-
-.banner {
-  .post-title {
-    display: none;
+header {
+  &.header {
+    height: $header-height-mobile;
   }
 
-  .blog-title {
+  &.header-mobile {
+    background-color: rgba(0, 0, 0, 0.38);
+  }
+
+  .banner {
+    .post-title {
+      display: none;
+    }
+
+    .blog-title {
+      line-height: 2rem;
+    }
+  }
+
+  .home-link {
+    right: 1rem;
     line-height: 2rem;
   }
-}
 
-.home-link {
-  right: 1rem;
-  line-height: 2rem;
-}
+  .header-sidebar-menu {
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+  }
 
-.header-sidebar-menu {
-  width: 2rem;
-  height: 2rem;
-  line-height: 2rem;
-}
-
-.header-sidebar-menu-rounded {
-  width: 2.5rem;
-  height: 2.5rem;
-  line-height: 2.5rem;
+  .header-sidebar-menu-rounded {
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+  }
 }
 
 // ========== fixed footer ========== //
@@ -183,7 +185,7 @@
   transform: translate3d(calc(min(400px, 70vw)), 0, 0);
 }
 
-.header-sidebar-active {
+header.header-sidebar-active {
   transform: translate3d(calc(min(400px, 70vw)), 0, 0);
 }
 
