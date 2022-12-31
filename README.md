@@ -17,43 +17,27 @@
 
 - 本主题受 [yilia](https://github.com/litten/hexo-theme-yilia) 主题和 [huxpro](https://github.com/Huxpro/huxpro.github.io) 主题的启发，结合了前者的 sidebar 设计及后者的 UI 设计。通过 sidebar 能够快速执行 archive, tag 以及 categories 导航。
 - 兼容性：现代浏览器及 IE10+。
-- 有任何使用上的问题欢迎 **发起 issue**。
+- 有任何使用上的问题欢迎[发起 issue](https://github.com/fi3ework/hexo-theme-archer/issues/new/choose)。
 
-## 安装主题
+## 快速安装
 
-### 安装主题依赖
-
-Archer 主题依赖于 `hexo-generator-json-content` 和 `hexo-wordcount`，因此需要在 Hexo 根目录执行以下命令：
-  
-``` bash
-npm install hexo-generator-json-content --save
-npm install hexo-wordcount --save
-```
-
-### 拉取主题文件
-
-依赖安装完成后，拉取 Archer 主题到 `themes/archer` 目录，在 Hexo 根目录执行下面的命令：
+拉取 Archer 主题文件到 `themes/archer` 目录：
 
 ``` bash
 git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1
 ```
 
-如果您没有安装 Git 工具，也可以在 Hexo 根目录下手动创建 `themes/archer` 文件夹，然后将此仓库的源码放入该目录下。
+> 如果您没有安装 [Git](https://git-scm.com/) 工具，也可以在 Hexo 根目录下手动创建 `themes/archer` 文件夹，然后将此仓库的所有代码下载到该目录下。
 
-> 仓库的 `dev` 分支包含正在开发中的主题代码，如果您是**进阶开发者**或追新用户，能够承受代码的不足之处和低稳定性，并乐于关注我们开发的最新进展，也可以使用此分支：
-> `git clone -b dev https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1`
+> 仓库的 [`dev` 分支](https://github.com/fi3ework/hexo-theme-archer/tree/dev)包含正在开发中的主题代码，如果您是**进阶开发者**或追新用户，能够承受代码的不足之处和低稳定性，并乐于关注我们开发的最新进展，可以品尝此分支：`git clone -b dev https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1`
 
-### 设置 Hexo 主题为 Archer
+Archer 主题依赖于 `hexo-generator-json-content` 插件生成侧边栏索引，需要在 Hexo 根目录安装并配置此插件：
 
-修改 Hexo 根目录下的 `_config.yml` 文件中的 `theme` 字段为 `archer`：
-
-``` yaml
-theme: archer
+``` bash
+npm install hexo-generator-json-content
 ```
 
-### 启用 Archer 侧边栏
-
-在 Hexo 根目录下的 `_config.yml` 中添加以下字段：
+在 `_config.yml` 中添加如下字段：
 
 ``` yaml
 jsonContent:
@@ -76,11 +60,15 @@ jsonContent:
     tags: true
 ```
 
-### 启动本地预览
+最后配置 `_config.yml`，设置 Hexo 主题为 Archer：
 
-在 Hexo 根目录下执行 `hexo s`，即可启动本地预览。
+``` yaml
+theme: archer
+```
 
-## 主题配置
+您成功设置了博客主题 🎇！现在就执行 `hexo s` 命令，在本地预览主题效果吧。
+
+## 主题个性化配置
 
 现在您的项目目录结构应当如下所示：
 
@@ -89,26 +77,22 @@ jsonContent:
 ├── themes
 │   └── archer # 「Archer 主题目录」
 │       └── _config.yml # Archer 主题配置文件
-│
 └── _config.yml # Hexo 配置文件
 ```
 
 您可以通过 `hexo -v` 命令，或在 Hexo 根目录下的 `package.json` 中查看您当前使用的 Hexo 版本。
 
-如果 Hexo 版本 >= 5.0.0，建议复制 Archer 主题目录下的 [`_config.yml`](./_config.yml) 到 Hexo 根目录，并命名为 `_config.archer.yml`，接下来修改此文件即可对主题进行配置。现在，您可以删除 Archer 主题目录下的 `_config.yml` 文件，或将它重命名为 `_config.yml.template`，避免配置合并或冲突。
+- 如果 **Hexo 版本 >= 5.0.0**，建议复制 Archer 主题目录下的 [`_config.yml`](./_config.yml) 到 Hexo 根目录，并命名为 `_config.archer.yml`，接下来修改此文件即可对主题进行配置。现在，您可以删除 Archer 主题目录下的 `_config.yml` 文件，或将它重命名为 `_config.yml.template`，避免配置合并或冲突。
+- 如果 **Hexo 版本 >= 2.8.2**，修改 Archer 主题目录下的 `_config.yml` 文件即可对主题进行配置。
+- 如果 **Hexo 版本 < 2.8.2**，请参考 Archer 主题目录下的 `_config.yml` 中的配置，在 Hexo 根目录下的 `_config.yml` 添加相应字段即可进行配置。
 
-如果 Hexo 版本 >= 2.8.2，修改 Archer 主题目录下的 `_config.yml` 文件即可对主题进行配置。
-
-如果 Hexo 版本 < 2.8.2，请参考 Archer 主题目录下的 `_config.yml` 中的配置，在 Hexo 根目录下的 `_config.yml` 添加相应字段即可进行配置。
-
-上面三种情况的 Archer 主题配置文件 `_config.archer.yml` 或 `_config.yml`，为了与 Hexo 根目录下的全局配置文件 `_config.yml` 作区分，在后面的介绍中统称为「Archer 主题目录下的 `_config.yml`」。
-
-这个[维基页面](https://github.com/fi3ework/hexo-theme-archer/wiki/Archer-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83)包含了主题配置属性的中文参考。
-
-**警告**：不要把自己 api-token 之类的私密信息添加到配置中，更不要推送到公共仓库。
+上面三种情况的 Archer 主题配置文件 `_config.archer.yml` 或 `_config.yml`，为了与 Hexo 根目录下的全局配置文件 `_config.yml` 作区分，在后面的介绍中统称为 **Archer 主题目录下的 `_config.yml`**。
 
 可选的 Archer 主题配置内容如下：
 
+> 这个[维基页面](https://github.com/fi3ework/hexo-theme-archer/wiki/Archer-%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF%E4%B8%AD%E6%96%87%E5%8F%82%E8%80%83)包含了主题配置属性的完整中文参考。
+
+- [启用字数统计](#启用字数统计)
 - [配置 About 页面](#配置-about-页面)
 - [配置 404 页面](#配置-404-页面)
 - [启用 RSS 订阅](#启用-rss-订阅)
@@ -124,27 +108,43 @@ jsonContent:
 - [启用 Algolia 搜索](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Algolia-%E6%90%9C%E7%B4%A2)
 - [切换为英文界面](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2)
 
+### 启用字数统计
+
+在 Hexo 根目录下安装依赖插件：
+
+```bash
+npm install hexo-wordcount
+```
+
+配置 Archer 主题目录下的 `_config.yml` 启用字数统计能力：
+
+```yml
+reading_info: true
+```
+
+现在，字数统计信息将显示在博客页面的标题下方。
+
 ### 配置 About 页面
 
-在 Hexo 根目录下执行：
+在 Hexo 根目录下执行如下命令：
 
 ``` bash
 hexo new page "about"
 ```
 
-在 Hexo 根目录下 `source/about/index.md` 文件中添加下面的字段：
+在 Hexo 根目录下 `source/about/index.md` 中添加以下内容：
 
 ``` markdown
 ---
-title: 自我介绍标题
+title: 您的自我介绍标题
 layout: about
 ---
-自我介绍正文
+您的自我介绍正文
 ```
 
-其中 Front-matter 的 `layout: about` 字段为**必要的**且**不可修改**为其它值；Front-matter 的 `title` 和正文内容由您自定义编写。
+其中 `layout: about` 字段为**必要的**且**不可修改**为其它值。
 
-您可以修改 Archer 主题目录下的 `_config.yml` 文件的 `about` 字段：
+配置 Archer 主题目录下的 `_config.yml` 以开启 About 页面：
 
 ``` yml
 about:
@@ -152,11 +152,9 @@ about:
   image: '/intro/about-page.jpg'
 ```
 
-其中，如果设置 `enable: false`，则不显示 About 页面；`image` 为 About 页面 Banner 图像地址，若不填写则默认使用首页的 Banner 图像。
-
 ### 配置 404 页面
 
-在 Hexo 根目录下 `source` 中创建 `404.md` 文件，添加字段如下：
+在 Hexo 根目录下 `source` 中创建 `404.md`，添加字段如下：
 
 ``` markdown
 ---
@@ -168,7 +166,7 @@ description: "May the Force be with you :&#41;"
 
 其中 Front-matter 的 `layout: 404` 字段为**必要的**且**不可修改**为其它值，`title` 字段为您自定义的标题，`description` 字段为 404 页面的自定义描述。
 
-您可以配置 Archer 主题目录下的 `_config.yml` 文件的 `_404_image` 字段来修改 404 页面的背景图片：
+您可以通过配置 Archer 主题目录下的 `_config.yml` 来修改 404 页面的背景图片：
 
 ``` yml
 _404_image: '/intro/404-bg.jpg'
@@ -176,13 +174,13 @@ _404_image: '/intro/404-bg.jpg'
 
 ### 启用 RSS 订阅
 
-在 Hexo 根目录下执行：
+在 Hexo 根目录下安装依赖插件：
 
 ``` bash
 npm install hexo-generator-feed --save
 ```
 
-修改 Archer 主题目录下的 `_config.yml` 文件中的 `social` 字段，配置内容如下：
+配置 Archer 主题目录下的 `_config.yml`：
 
 ```yml
 social:
@@ -193,13 +191,13 @@ social:
 
 [Mermaid](https://github.com/mermaid-js/mermaid) 是一款基于 JavaScript 的流程图和图表工具，它使用 Markdown 定义并渲染各种图表，帮助构建软件工程或各类技术文档。
 
-为了启用 Mermaid，您需要首先在 Hexo 根目录下安装 [`hexo-filter-mermaid-diagrams`](https://github.com/webappdevelp/hexo-filter-mermaid-diagrams) 依赖：
+为了启用 Mermaid，您需要首先在 Hexo 根目录下安装 [`hexo-filter-mermaid-diagrams`](https://github.com/webappdevelp/hexo-filter-mermaid-diagrams) 依赖插件：
 
 ``` bash
 npm install hexo-filter-mermaid-diagrams --save
 ```
 
-然后在 Archer 主题目录下的 `_config.yml` 设置以启用 Mermaid：
+配置 Archer 主题目录下的 `_config.yml`以启用 Mermaid：
 
 ``` yml
 mermaid:
@@ -220,7 +218,7 @@ mermaid:
     ```
 ```
 
-> ❗️❗️❗️ 注意：如果您需要使用**类图**，请编辑您 Hexo 根目录下的 `_config.yml` 文件，设置 `external_link: false`。请确保这个设置对您原来的页面功能没有影响，这是 Hexo 本身的 bug。
+> ❗️❗️❗️ 注意：如果您需要使用**类图**，请编辑您 Hexo 根目录下的 `_config.yml`，设置 `external_link: false`。请确保这个设置对您原来的页面功能没有影响，这是 Hexo 本身的 bug。
 
 ### 启用 LaTeX 数学公式
 
@@ -241,7 +239,7 @@ npm uninstall hexo-renderer-marked --save
 npm install hexo-renderer-pandoc --save
 ```
 
-在 Archer 主题目录下的 `_config.yml` 设置以启用 LaTeX 数学公式：
+配置 Archer 主题目录下的 `_config.yml` 以启用 LaTeX 数学公式：
 
 ``` yml
 math:
@@ -268,9 +266,9 @@ z=\dfrac{3\pi}{2}(1+2t)\sin(\dfrac{3\pi}{2}(1+2t)), &
 
 ### 启用自定义字体
 
-**实验性功能**，自定义字体依赖于 [CSS Variables](https://caniuse.com/?search=CSS%20Variables) 能力，部分浏览器存在**兼容性问题**。
+**实验性功能**，自定义字体依赖于 [CSS Variables](https://caniuse.com/?search=CSS%20Variables) 能力，存在**浏览器兼容性问题**。
 
-配置 Archer 主题目录下的 `_config.yml` 文件：
+配置 Archer 主题目录下的 `_config.yml` 启用自定义字体能力：
 
 ``` yml
 custom_font:
@@ -312,7 +310,7 @@ sticky: 100
 ---
 ```
 
-您可以在 Hexo 根目录下的 `package.json` 文件中找到您是否使用 `hexo-generator-index` 插件作为项目依赖。
+您可以在 Hexo 根目录下的 `package.json` 中找到您是否使用 `hexo-generator-index` 插件作为项目依赖。
 
 假如您使用其它的插件生成索引，也可以手动添加 `top` 属性以显示小标记：
 

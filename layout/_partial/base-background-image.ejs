@@ -12,7 +12,7 @@
     <!-- about页 -->
     <% } else if (page.layout === "about") { %>
         <% bgURL = theme.about.image || theme.site_header_image; %>
-    <% } %>        
+    <% } %>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(<%- url_for(bgURL) %>)"></div>
     <div class="site-intro-meta">
@@ -58,6 +58,7 @@
                         currPost: page,
                         className: 'post-intro-tags'}) %>
                 <% } %>
+                <!-- 文章字数统计 -->
                 <% if(theme.reading_info) { %>
                     <div class="post-intro-read">
                         <span><%- __('word_count') %>: <span class="post-count word-count"><%= wordcount(page.content) %></span><%= __('reading_time') %>: <span class="post-count reading-time"><%= min2read(page.content) %> min</span></span>
