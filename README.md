@@ -17,7 +17,7 @@
 
 - 本主题受 [yilia](https://github.com/litten/hexo-theme-yilia) 主题和 [huxpro](https://github.com/Huxpro/huxpro.github.io) 主题的启发，结合了前者的 sidebar 设计及后者的 UI 设计。通过 sidebar 能够快速执行 archive, tag 以及 categories 导航。
 - 兼容性：现代浏览器及 IE10+。
-- 有任何使用上的问题欢迎 **发起 issue**。
+- 有任何使用上的问题欢迎[发起 issue](https://github.com/fi3ework/hexo-theme-archer/issues/new/choose)。
 
 ## 快速安装
 
@@ -29,8 +29,7 @@ git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer --dept
 
 > 如果您没有安装 [Git](https://git-scm.com/) 工具，也可以在 Hexo 根目录下手动创建 `themes/archer` 文件夹，然后将此仓库的所有代码下载到该目录下。
 
-> 仓库的 [`dev` 分支](https://github.com/fi3ework/hexo-theme-archer/tree/dev)包含正在开发中的主题代码，如果您是**进阶开发者**或追新用户，能够承受代码的不足之处和低稳定性，并乐于关注我们开发的最新进展，可以品尝此分支：
-> `git clone -b dev https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1`
+> 仓库的 [`dev` 分支](https://github.com/fi3ework/hexo-theme-archer/tree/dev)包含正在开发中的主题代码，如果您是**进阶开发者**或追新用户，能够承受代码的不足之处和低稳定性，并乐于关注我们开发的最新进展，可以品尝此分支：`git clone -b dev https://github.com/fi3ework/hexo-theme-archer.git themes/archer --depth=1`
 
 Archer 主题依赖于 `hexo-generator-json-content` 插件生成侧边栏索引，需要在 Hexo 根目录安装并配置此插件：
 
@@ -38,7 +37,7 @@ Archer 主题依赖于 `hexo-generator-json-content` 插件生成侧边栏索引
 npm install hexo-generator-json-content
 ```
 
-在 `_config.yml` 文件中添加如下字段：
+在 `_config.yml` 中添加如下字段：
 
 ``` yaml
 jsonContent:
@@ -61,13 +60,13 @@ jsonContent:
     tags: true
 ```
 
-最后配置 `_config.yml` 文件，设置 Hexo 主题为 Archer：
+最后配置 `_config.yml`，设置 Hexo 主题为 Archer：
 
 ``` yaml
 theme: archer
 ```
 
-您已成功设置了博客的主题 🎇！现在就执行 `hexo s` 命令，在本地预览主题效果吧。
+您成功设置了博客主题 🎇！现在就执行 `hexo s` 命令，在本地预览主题效果吧。
 
 ## 主题个性化配置
 
@@ -117,7 +116,7 @@ theme: archer
 npm install hexo-wordcount
 ```
 
-配置 Archer 主题目录下的 `_config.yml` 文件启用字数统计能力：
+配置 Archer 主题目录下的 `_config.yml` 启用字数统计能力：
 
 ```yml
 reading_info: true
@@ -133,7 +132,7 @@ reading_info: true
 hexo new page "about"
 ```
 
-在 Hexo 根目录下 `source/about/index.md` 文件中添加以下内容：
+在 Hexo 根目录下 `source/about/index.md` 中添加以下内容：
 
 ``` markdown
 ---
@@ -145,7 +144,7 @@ layout: about
 
 其中 `layout: about` 字段为**必要的**且**不可修改**为其它值。
 
-配置 Archer 主题目录下的 `_config.yml` 文件以开启 About 页面：
+配置 Archer 主题目录下的 `_config.yml` 以开启 About 页面：
 
 ``` yml
 about:
@@ -155,7 +154,7 @@ about:
 
 ### 配置 404 页面
 
-在 Hexo 根目录下 `source` 中创建 `404.md` 文件，添加字段如下：
+在 Hexo 根目录下 `source` 中创建 `404.md`，添加字段如下：
 
 ``` markdown
 ---
@@ -167,7 +166,7 @@ description: "May the Force be with you :&#41;"
 
 其中 Front-matter 的 `layout: 404` 字段为**必要的**且**不可修改**为其它值，`title` 字段为您自定义的标题，`description` 字段为 404 页面的自定义描述。
 
-您可以通过配置 Archer 主题目录下的 `_config.yml` 文件来修改 404 页面的背景图片：
+您可以通过配置 Archer 主题目录下的 `_config.yml` 来修改 404 页面的背景图片：
 
 ``` yml
 _404_image: '/intro/404-bg.jpg'
@@ -181,7 +180,7 @@ _404_image: '/intro/404-bg.jpg'
 npm install hexo-generator-feed --save
 ```
 
-配置 Archer 主题目录下的 `_config.yml` 文件：
+配置 Archer 主题目录下的 `_config.yml`：
 
 ```yml
 social:
@@ -198,7 +197,7 @@ social:
 npm install hexo-filter-mermaid-diagrams --save
 ```
 
-配置 Archer 主题目录下的 `_config.yml` 文件以启用 Mermaid：
+配置 Archer 主题目录下的 `_config.yml`以启用 Mermaid：
 
 ``` yml
 mermaid:
@@ -219,7 +218,7 @@ mermaid:
     ```
 ```
 
-> ❗️❗️❗️ 注意：如果您需要使用**类图**，请编辑您 Hexo 根目录下的 `_config.yml` 文件，设置 `external_link: false`。请确保这个设置对您原来的页面功能没有影响，这是 Hexo 本身的 bug。
+> ❗️❗️❗️ 注意：如果您需要使用**类图**，请编辑您 Hexo 根目录下的 `_config.yml`，设置 `external_link: false`。请确保这个设置对您原来的页面功能没有影响，这是 Hexo 本身的 bug。
 
 ### 启用 LaTeX 数学公式
 
@@ -240,7 +239,7 @@ npm uninstall hexo-renderer-marked --save
 npm install hexo-renderer-pandoc --save
 ```
 
-配置 Archer 主题目录下的 `_config.yml` 文件以启用 LaTeX 数学公式：
+配置 Archer 主题目录下的 `_config.yml` 以启用 LaTeX 数学公式：
 
 ``` yml
 math:
@@ -269,7 +268,7 @@ z=\dfrac{3\pi}{2}(1+2t)\sin(\dfrac{3\pi}{2}(1+2t)), &
 
 **实验性功能**，自定义字体依赖于 [CSS Variables](https://caniuse.com/?search=CSS%20Variables) 能力，存在**浏览器兼容性问题**。
 
-配置 Archer 主题目录下的 `_config.yml` 文件启用自定义字体能力：
+配置 Archer 主题目录下的 `_config.yml` 启用自定义字体能力：
 
 ``` yml
 custom_font:
@@ -311,7 +310,7 @@ sticky: 100
 ---
 ```
 
-您可以在 Hexo 根目录下的 `package.json` 文件中找到您是否使用 `hexo-generator-index` 插件作为项目依赖。
+您可以在 Hexo 根目录下的 `package.json` 中找到您是否使用 `hexo-generator-index` 插件作为项目依赖。
 
 假如您使用其它的插件生成索引，也可以手动添加 `top` 属性以显示小标记：
 
