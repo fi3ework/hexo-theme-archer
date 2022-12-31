@@ -1,25 +1,27 @@
 // ========== header ========== //
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: $header-height;
-  overflow: hidden;
-  z-index: 10;
-  transform: translate3d(0, 0, 0);
-  transition: transform 0.3s ease-in 0s;
-  // Avoid blocking the click events of lower z-index elements
-  // In this case, you should set every other clickable header element
-  // with css attribute `pointer-events: auto;`
-  pointer-events: none;
-}
+header {
+  &.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $header-height;
+    overflow: hidden;
+    z-index: 10;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s ease-in 0s;
+    // Avoid blocking the click events of lower z-index elements
+    // In this case, you should set every other clickable header element
+    // with css attribute `pointer-events: auto;`
+    pointer-events: none;
+  }
 
-.header-element {
-  pointer-events: auto;
-}
+  &.header-sidebar-active {
+    transform: translate3d($sidebar-width, 0, 0);
+  }
 
-.header-sidebar-active {
-  transform: translate3d($sidebar-width, 0, 0);
+  .header-element {
+    pointer-events: auto;
+  }
 }
 
 // ========== post read progress ========== //
