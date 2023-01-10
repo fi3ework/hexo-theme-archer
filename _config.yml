@@ -224,3 +224,7 @@ custom_font:
 # Ensure visitor to get the latest version of source.
 # Set a higher value before creating new release.
 source_version: 20211217
+
+# Codecopying
+codecopy:
+ enable: true

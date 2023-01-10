@@ -7,6 +7,8 @@ module.exports = {
     search: './src/js/search.js',
     dark: './src/js/dark.js',
     customFontLoader: './src/js/customFontLoader.js',
+    // FIXME: webpack had packed all dependencies
+    codecopy: './src/js/codecopy-ext.js',
   },
   output: {
     path: path.resolve(__dirname, 'source/scripts'),

@@ -99,3 +99,37 @@ li {
     border-color: #f0ad4e;
   }
 }
+
+// codecopy
+.btn-copy {
+  z-index: 1;
+  background-color: #282c34;
+  position: absolute;
+  right: 5px;
+  top: 0px;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.2rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-weight: bold;
+  color: $feature-color;
+  font-family: Menlo;
+  padding: 6px;
+
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.3s ease-in-out;
+  -o-transition: visibility 0s, opacity 0.3s ease-in-out;
+  transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+.code-wrapper:hover {
+  .btn-copy {
+    color: $feature-color;
+    visibility: visible;
+    opacity: 1;
+  }
+}
