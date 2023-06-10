@@ -13,7 +13,7 @@
     "dev": "gulp dev",
     "build": "gulp build --option",
     "build-js": "webpack --config webpack.prod.js",
-    "prettier": "prettier **/* --write --ignore-unknown"
+    "prettier": "prettier src/**/* --write --ignore-unknown && node ./replace-ejs-tag.js"
   },
   "dependencies": {
     "@babel/runtime": "^7.20.7",
