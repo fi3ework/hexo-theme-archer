@@ -1,4 +1,4 @@
-<% if (theme.comment.gitment_owner && theme.comment.gitment_repo && theme.comment.gitment_client_id && theme.comment.gitment_client_secret) { %>
+<%_ if (theme.comment.gitment_owner && theme.comment.gitment_repo && theme.comment.gitment_client_id && theme.comment.gitment_client_secret) { _%>
     <div id="gitment-container"></div>
     <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
     <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
@@ -14,4 +14,4 @@
         })
         gitment.render('gitment-container')
     </script>
-<% } %>
+<%_ } _%>

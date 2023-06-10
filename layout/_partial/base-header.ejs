@@ -5,16 +5,16 @@
     </div>
     <!-- sidebar menu button -->
     <div class="header-element">
-        <% if(theme.float_button_theme === 'rounded') { %>
+        <%_ if(theme.float_button_theme === 'rounded') { _%>
             <div class="header-sidebar-menu header-sidebar-menu-rounded">
-        <% } else { %>
+        <%_ } else { _%>
             <div class="header-sidebar-menu">
-        <% } %>
-            <% if(theme.float_button_theme === 'rounded') { %>
+        <%_ } _%>
+            <%_ if(theme.float_button_theme === 'rounded') { _%>
                 <i class="fas fa-bars"></i>
-            <% } else { %>
+            <%_ } else { _%>
                 <div style="padding-left: 1px;">&#xe775;</div>
-            <% } %>
+            <%_ } _%>
         </div>
     </div>
     <!-- header actions -->
@@ -29,12 +29,12 @@
         </span>
     </div>
     <!-- toggle banner for post layout -->
-    <% if (is_post()) { %>
-        <% if(theme.post_banner_theme === 'clean') { %>
+    <%_ if (is_post()) { _%>
+        <%_ if(theme.post_banner_theme === 'clean') { _%>
             <div class="banner banner-clean">
-        <% } else { %>
+        <%_ } else { _%>
             <div class="banner">
-        <% } %>
+        <%_ } _%>
             <div class="blog-title header-element">
                 <a href="<%- url_for() %>"><%= theme.main_title || config.title%></a>
             </div>
@@ -42,5 +42,5 @@
                 <a href="#" class="post-name"><%- page.title %></a>
             </div>
         </div>
-    <% } %>
+    <%_ } _%>
 </header>

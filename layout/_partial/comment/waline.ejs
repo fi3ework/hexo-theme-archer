@@ -1,4 +1,4 @@
-<% if(theme.comment && theme.comment.waline_serverURL) { %>
+<%_ if(theme.comment && theme.comment.waline_serverURL) { _%>
     <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
     <div id="comment"></div>
     <script>
@@ -10,4 +10,4 @@
         login: "<%- theme.comment.waline_login %>"
     });
     </script>
-<% } %>
+<%_ } _%>
