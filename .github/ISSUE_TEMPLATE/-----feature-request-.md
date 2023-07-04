@@ -1,7 +1,6 @@
 ---
 name: 提出建议（Feature request）
 about: 提出你对主题的建议（Suggest an idea for this project）
-
 ---
 
 **提出你对主题的建议（Suggest your idea）**

@@ -35,7 +35,13 @@
 在 Hexo 根目录下的配置文件 `_config.yml` 中加入以下字段忽略 `node_modules` 和 `.git` 目录。
 
 ```yaml
-ignore: ['**/themes/**/node_modules/**', '**/themes/**/node_modules', '**/themes/**/.git', '**/themes/**/.git/**']
+ignore:
+  [
+    '**/themes/**/node_modules/**',
+    '**/themes/**/node_modules',
+    '**/themes/**/.git',
+    '**/themes/**/.git/**',
+  ]
 ```
 
 ### 安装依赖
