@@ -1,23 +1,9 @@
 import archerUtil from './util'
-let prevHeight = 0
-let throttleTocOnScroll
-const $banner = $('.banner:first')
-let statusTocOnclick = false
 
 // Banner in post page will occupy a certain amount of place.
 // Therefore, the scroll event should be subtracted from this occupancy.
+const $banner = $('.banner:first')
 const scrollOffsetHeight = $banner.height() + archerUtil.rem()
-const calcAnchorLink = (heights, currHeight) => {
-  for (let i = 0; i < heights.length; i++) {
-    if (
-      Math.abs(currHeight - heights[i]) <=
-      scrollOffsetHeight + archerUtil.rem()
-    ) {
-      return i
-    }
-  }
-  return -1
-}
 
 // Query toc headers absolute height
 function initTocLinksScrollTop(tocLinks) {
@@ -26,20 +12,13 @@ function initTocLinksScrollTop(tocLinks) {
   })
 }
 
-const isPassingThrough = (currHeight, prevHeight, linkHeight) => {
-  return (currHeight + 1 - linkHeight) * (prevHeight + 1 - linkHeight) <= 0
-}
-
-function calcScrollIntoScreenIndex(heights, prevHeight, currHeight) {
-  const anchorLinkIndex = calcAnchorLink(heights, currHeight)
-  if (anchorLinkIndex >= 0) {
-    if (currHeight > prevHeight || statusTocOnclick) {
-      return anchorLinkIndex
-    } else {
-      // if is scrolling up, select previous
-      return anchorLinkIndex - 1 >= 0 ? anchorLinkIndex - 1 : 0
+function calcScrollIntoScreenIndex(heights, currHeight) {
+  for (let i = heights.length - 1; i >= 0; i--) {
+    if (Math.ceil(currHeight + scrollOffsetHeight) >= heights[i]) {
+      return i
     }
   }
+  return -1
 }
 
 // hide all ol
@@ -96,6 +75,8 @@ function spreadParentNodeOfTargetItem(tocItem) {
 const main = () => {
   const toc = document.querySelector('.toc')
   const $toc = $('.toc')
+
+  // Skip initialization if no toc exists
   const tocItems = document.querySelectorAll('.toc-item')
   if (!tocItems.length) {
     return
@@ -108,7 +89,7 @@ const main = () => {
     '.article-entry h1, h2, h3, h4, h5, h6'
   )
 
-  initFold(toc)
+  let throttleTocOnScroll = null
 
   const initTocOnScroll = () => {
     // Get header links absolute height
@@ -118,9 +99,7 @@ const main = () => {
     for (let i = 0; i < tocLinks.length; i++) {
       const onclickScrollTop = headersHeights[i] - scrollOffsetHeight
       const onclickHeaderId = headers[i].id
-      const tocOnclickFunction = function () {
-        // Prevent scroll default event
-        statusTocOnclick = true
+      const tocOnclickFunction = () => {
         // Prevent header banner default event
         // See ./scroll.js
         window.preventPostPageBannerDefault = true
@@ -145,36 +124,27 @@ const main = () => {
       const currHeight = $(document).scrollTop()
       const currHeightIndex = calcScrollIntoScreenIndex(
         headersHeights,
-        prevHeight,
         currHeight
       )
-      prevHeight = currHeight
-      if (typeof currHeightIndex === 'undefined') {
-        return
+      if (currHeightIndex >= 0) {
+        // spread, fold and active
+        const currItem = tocItems[currHeightIndex]
+        // 1. fold
+        resetFold(toc)
+        // 2. spread
+        spreadParentNodeOfTargetItem(currItem)
+        // 3. active
+        if (currItem) {
+          activeTocItem(currItem.querySelector('a'))
+        }
+        // 4. scroll toc
+        const currItemOffsetTop = currItem?.offsetTop || undefined
+        if (currItemOffsetTop) {
+          $toc.scrollTop(currItemOffsetTop)
+        }
+      } else {
+        resetFold(toc)
       }
-      // spread, fold and active
-      const currItem = tocItems[currHeightIndex]
-      // 1. fold
-      resetFold(toc)
-      // 2. spread
-      spreadParentNodeOfTargetItem(currItem)
-      // 3. active
-      if (currItem) {
-        activeTocItem(currItem.querySelector('a'))
-      }
-      // 4. scroll toc
-      const currItemOffsetTop = currItem?.offsetTop || undefined
-      if (currItemOffsetTop) {
-        $toc.scrollTop(currItemOffsetTop)
-      }
-      // 5. set url hash
-      // Skip refresh hash when jump by clicking toc.
-      // Prevent unexpected behavior.
-      const headerHashId = headers[currHeightIndex]?.id || undefined
-      if (!statusTocOnclick && headerHashId !== undefined) {
-        archerUtil.setWindowHash(headerHashId)
-      }
-      statusTocOnclick = false
     }
 
     tocOnScroll()
@@ -182,20 +152,22 @@ const main = () => {
     // Unbind existing on-scroll event
     if (throttleTocOnScroll) $(document).off('scroll', throttleTocOnScroll)
     // Bind document on-scroll event
-    throttleTocOnScroll = archerUtil.throttle(tocOnScroll, 100, true)
+    throttleTocOnScroll = archerUtil.throttle(tocOnScroll, 100)
     $(document).on('scroll', throttleTocOnScroll)
   }
 
-  initTocOnScroll()
+  // Collapse all toc on initialization
+  initFold(toc)
 
-  // Header's absolute position would be changed when window is resized.
-  $(window).on('resize', archerUtil.throttle(initTocOnScroll, 100, true))
+  // Initialize page scroll listener of toc
+  initTocOnScroll()
+  // Reload toc scroll events after loading all resources like images
+  $(window).on('load', initTocOnScroll)
+  // Reload toc scroll events if page size is changed
+  $(window).on('resize', archerUtil.debounce(initTocOnScroll, 500))
 
   // Remove toc loading status
   $('.toc-wrapper').removeClass('toc-wrapper-loding')
-
-  // Reload toc scroll events after loading all resources like images
-  window.addEventListener('load', initTocOnScroll())
 }
 
 export default main
