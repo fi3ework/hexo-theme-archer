@@ -1,12 +1,13 @@
 {
   "name": "hexo-theme-archer",
-  "version": "1.6.4",
+  "version": "1.6.6",
+  "versionDate": "20230704",
   "description": "a smart and modern theme for Hexo",
   "private": false,
   "author": "fi3ework",
   "repository": {
     "type": "git",
-    "url": "git://github.com/fi3ework/hexo-theme-archer.git"
+    "url": "https://github.com/fi3ework/hexo-theme-archer"
   },
   "license": "MIT",
   "scripts": {
