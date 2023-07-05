@@ -1,5 +1,5 @@
-node_modules
-.DS_Store
-source
+node_modules/
+.DS_Store/
+source/
 _config.yml
-*.md
+README.md

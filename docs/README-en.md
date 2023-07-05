@@ -1,11 +1,10 @@
-hexo-theme-archer
-================
+# hexo-theme-archer
 
 ![preview](./snap.png)
 
 ## Online demo
 
-🎯  Preview theme：[Demo](http://firework.studio/archer-demo/)
+🎯 Preview theme：[Demo](http://firework.studio/archer-demo/)
 
 ## Document
 
@@ -16,20 +15,20 @@ hexo-theme-archer
 
 - This theme is inspired by theme [yilia](https://github.com/litten/hexo-theme-yilia) and theme [huxpro](https://github.com/Huxpro/huxpro.github.io), it combines the sidebar of the former and the UI design of latter. You can switch to archive, tag and categories via the navigation sidebar without jumpping to a new page.
 - Compatibility：modern browsers and IE 10 +.
-- You are welcomed to create a new [issue]((https://github.com/fi3ework/hexo-theme-archer/issues)。) if there is any problem when installling and using this theme.
+- You are welcomed to create a new [issue](<(https://github.com/fi3ework/hexo-theme-archer/issues)。>) if there is any problem when installling and using this theme.
 - This theme will continue to be maintained and optimized, star it if you like it 😆.
 
-##  Install
+## Install
 
 1. Execute the following commands in **Hexo directory**.
 
-``` shell
+```shell
 npm i hexo-generator-json-content --save && npm i --save hexo-wordcount && git clone https://github.com/fi3ework/hexo-theme-archer.git themes/archer
 ```
 
 2. Change the `theme` property to `archer` of `_config.yml` in **Hexo directory**.
 
-``` yaml
+```yaml
 theme: archer
 ```
 
@@ -118,7 +117,7 @@ about:
   enable: true
   # about heade image
   image:
-  
+
 # ========== Site ========== #
 # title of the site (each article will be followed by this value to help SEO)
 SEO_title:
@@ -142,9 +141,9 @@ algolia_search:
     per_page: 10 # result number per page
   labels:
     input_placeholder: Search for Posts # search input placeholder
-    hits_empty: "We did not find any results for the search: ${query}" # search results hint
-    hits_stats: "${hits} results found in ${time} ms" # no results found hint
-    
+    hits_empty: 'We did not find any results for the search: ${query}' # search results hint
+    hits_stats: '${hits} results found in ${time} ms' # no results found hint
+
 # ========== Comment Plugin ========== #
 # Currently support directly adding Livere, Gitment, Youyan and Valine, fill the field to enable corresponding plugin
 comment:
@@ -160,10 +159,10 @@ comment:
   # Youyan: http://www.uyan.cc/
   youyan_uid:
   # Valine: site: https://valine.js.org/
-  valine_appId: 
-  valine_appKey: 
-  valine_placeHolder: 
-  
+  valine_appId:
+  valine_appKey:
+  valine_placeHolder:
+
 # ========== Analytics ========== #
 # enable Busuanzi analytics
 busuanzi: true
@@ -192,9 +191,10 @@ index_intro_height: 50
 post_intro_height: 50
 about_intro_height: 50
 ```
+
 ## Update theme
 
-Two kind of update method are provided here: the first use git to update theme. However, it may encounter merge conflict that you need to resolve; The second is simple but efficient.  
+Two kind of update method are provided here: the first use git to update theme. However, it may encounter merge conflict that you need to resolve; The second is simple but efficient.
 
 ### git pull
 
@@ -202,7 +202,7 @@ Run `git stash` under archer folder to stash the local modification and run `git
 
 ### simple but efficient way
 
-First backup all the files that you customed and added (include _config.yml and files in source and so on) and delete the directory of archer. Then reinstall archer. At last, restore the backup files to the original place they belong.
+First backup all the files that you customed and added (include \_config.yml and files in source and so on) and delete the directory of archer. Then reinstall archer. At last, restore the backup files to the original place they belong.
 
 ## License
 
