@@ -56,7 +56,7 @@
             }
         </script>
     <% } %>
-    <!-- 百度统计  -->
+    <!-- 百度统计 -->
     <% if(theme.baidu_analytics) { %>
         <script>
             var _hmt = _hmt || [];
@@ -72,12 +72,11 @@
     <% if (theme.google_analytics) { %>
         <script async src="https://www.googletagmanager.com/gtag/js?id=<%- theme.google_analytics %>"></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        gtag('config', '<%- theme.google_analytics %>');
+            gtag('config', '<%- theme.google_analytics %>');
         </script>
     <% } %>
-
 </head>
