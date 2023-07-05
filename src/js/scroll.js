@@ -1,5 +1,4 @@
 import archerUtil from './util'
-window.preventPostPageBannerDefault = false
 
 const scroll = function () {
   const $banner = $('.banner:first'),
@@ -114,23 +113,19 @@ const scroll = function () {
     }
     // 文章页
     if (isPostPage) {
-      // 当 window.preventPostPageBannerDefault 为真时，避免此处 Banner 显示或隐藏的行为
-      if (!window.preventPostPageBannerDefault) {
-        // 向上滑动一定距离显示 header banner
-        // 向下滑动隐藏 header banner
-        const upDownState = isScrollingUpOrDown(scrollTop)
-        if (upDownState === 1) {
-          $banner.removeClass('banner-show')
-        } else if (upDownState === -1 && !isHigherThanIntro) {
-          $banner.addClass('banner-show')
-        }
+      // 向上滑动一定距离显示 header banner
+      // 向下滑动隐藏 header banner
+      const upDownState = isScrollingUpOrDown(scrollTop)
+      if (upDownState === 1) {
+        $banner.removeClass('banner-show')
+      } else if (upDownState === -1 && !isHigherThanIntro) {
+        $banner.addClass('banner-show')
       }
       // 进度条君的长度
       updateProgress(scrollTop, articleTop, articleHeight)
     }
     previousHeight = scrollTop
     tickingScroll = false
-    window.preventPostPageBannerDefault = false
   }
 
   // scroll 回调

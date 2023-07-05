@@ -100,12 +100,11 @@ const main = () => {
       const onclickScrollTop = headersHeights[i] - scrollOffsetHeight
       const onclickHeaderId = headers[i].id
       const tocOnclickFunction = () => {
-        // Prevent header banner default event
-        // See ./scroll.js
-        window.preventPostPageBannerDefault = true
-        $banner.addClass('banner-show')
         archerUtil.setWindowHash(onclickHeaderId)
         window.scrollTo({ top: onclickScrollTop })
+        setTimeout(() => {
+          $banner.addClass('banner-show')
+        })
       }
       tocLinks[i].onclick = () => {
         tocOnclickFunction()
