@@ -1,5 +1,4 @@
 import archerUtil from './util'
-import sidebar from './initSidebar'
 import Emitter from 'eventemitter3'
 
 class MetaInfo {
@@ -130,7 +129,8 @@ class MetaInfo {
 }
 
 class SidebarMeta {
-  constructor(tabCount) {
+  constructor(sidebar) {
+    this.sidebar = sidebar
     this.tabCount = 0
     this.emitter = new Emitter()
     this.postsArr = null
@@ -206,16 +206,16 @@ class SidebarMeta {
   _bindOtherClick() {
     $('.post-tag').click((e) => {
       e.stopPropagation()
-      sidebar.activateSidebar()
-      sidebar.switchTo(1)
+      this.sidebar.activateSidebar()
+      this.sidebar.switchTo(1)
       this.currLabelName = e.target.getAttribute('data-tags')
       const tagMeta = this.metas[0]
       tagMeta.changeLabel(this.currLabelName)
     })
     $('.post-category').click((e) => {
       e.stopPropagation()
-      sidebar.activateSidebar()
-      sidebar.switchTo(2)
+      this.sidebar.activateSidebar()
+      this.sidebar.switchTo(2)
       this.currLabelName = e.target.getAttribute('data-categories')
       const categoryMeta = this.metas[1]
       categoryMeta.changeLabel(this.currLabelName)

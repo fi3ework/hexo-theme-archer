@@ -52,32 +52,16 @@
         <%- partial('_partial/custom-font', {}, {cache: true}) %>
         <!-- main func -->
         <script src="<%- url_for('scripts/main.js') %>?v=<%- theme.source_version %>"></script>
-        <!-- dark mode -->
-        <script src="<%- url_for('scripts/dark.js') %>?v=<%- theme.source_version %>"></script>
         <!-- fancybox -->
-        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
         <!-- algolia -->
         <% if (theme.algolia_search.enable) { %>
             <%- partial('_partial/algolia') %>
-            <script src="<%- url_for('scripts/search.js') %>?v=<%- theme.source_version %>" defer></script>
+            <script src="<%- url_for('scripts/search.js') %>?v=<%- theme.source_version %>" async></script>
         <% } %>
         <!-- busuanzi -->
         <% if (theme.busuanzi) { %>
             <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-        <% } %>
-        <!-- CNZZ -->
-        <% if (theme.CNZZ_analytics) { %>
-            <div style="display: none">
-                <script>
-                    var cnzz_s_tag = document.createElement('script');
-                    cnzz_s_tag.type = 'text/javascript';
-                    cnzz_s_tag.async = true;
-                    cnzz_s_tag.charset = 'utf-8';
-                    cnzz_s_tag.src = 'https://w.cnzz.com/c.php?id=<%- theme.CNZZ_analytics %>&async=1';
-                    var root_s = document.getElementsByTagName('script')[0];
-                    root_s.parentNode.insertBefore(cnzz_s_tag, root_s);
-                </script>
-            </div>
         <% } %>
         <!-- async load share.js -->
         <% if (is_post()) { %>
@@ -85,12 +69,7 @@
         <% } %>
         <!-- mermaid -->
         <% if (is_post() && theme.mermaid.enable) { %>
-            <script src='https://cdn.jsdelivr.net/npm/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
-            <script>
-                if (window.mermaid) {
-                    mermaid.initialize({theme: '<%= theme.mermaid.theme %>'});
-                }
-            </script>
+            <script src='https://cdn.jsdelivr.net/npm/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js' onload="window.mermaid.initialize({theme: '<%= theme.mermaid.theme %>'})" async></script>
         <% } %>
     </body>
 </html>

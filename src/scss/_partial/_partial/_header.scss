@@ -114,6 +114,7 @@ header {
   .header-theme-btn {
     color: #fff;
     cursor: pointer;
+    user-select: none;
 
     &:hover {
       color: $feature-color;
