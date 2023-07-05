@@ -223,4 +223,4 @@ custom_font:
 # ========== Theme Dev ========== #
 # Ensure visitor to get the latest version of source.
 # Set a higher value before creating new release.
-source_version: 20211217
+source_version: 20230704

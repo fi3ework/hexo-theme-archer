@@ -13,7 +13,7 @@ const logStyle =
 console.info(`%c 🎯 ${Package.name} ⬇️ `, logStyle)
 console.info(`%c 🏷 Version: ${Package.version} `, logStyle)
 console.info(`%c 📅 Version date: ${Package.versionDate} `, logStyle)
-console.info(`%c 📦 ${Package.repository?.url} `, logStyle)
+console.info(`%c 📦 ${Package.homepage} `, logStyle)
 
 // print loaded info
 window.addEventListener('load', function (event) {

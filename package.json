@@ -5,9 +5,10 @@
   "description": "a smart and modern theme for Hexo",
   "private": false,
   "author": "fi3ework",
+  "homepage": "https://github.com/fi3ework/hexo-theme-archer",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fi3ework/hexo-theme-archer"
+    "url": "git+https://github.com/fi3ework/hexo-theme-archer.git"
   },
   "license": "MIT",
   "scripts": {
