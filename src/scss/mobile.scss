@@ -84,7 +84,7 @@
 .post-body {
   .site-intro-meta {
     min-width: 0;
-    width: 80%;
+    width: calc(95% - 2rem);
   }
   .intro-title {
     font-size: 2.6rem;
