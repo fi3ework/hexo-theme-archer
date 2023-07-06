@@ -2,6 +2,7 @@
 @import '_variables';
 
 @import '_mobile/_partial/index-page-mobile';
+@import '_mobile/_partial/post-page-mobile';
 @import '_mobile/_partial/_post/writing-enhance-mobile';
 @import '_mobile/_partial/_sidebar/sidebar-tags-mobile';
 
@@ -140,15 +141,7 @@ header {
 
 // ========== fixed footer ========== //
 .back-top {
-  width: 2rem;
-  height: 2rem;
-  line-height: 2rem;
-}
-
-.back-top-rounded {
-  width: 2.5rem;
-  height: 2.5rem;
-  line-height: 2.5rem;
+  display: none;
 }
 
 // ========== content ========== //

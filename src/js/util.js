@@ -140,6 +140,25 @@ const archerUtil = {
     }
     return false
   },
+
+  isMobile: () => {
+    const MOBILE_MAX_WIDTH = 960
+    if (window.matchMedia) {
+      const mql = window.matchMedia(
+        `screen and (max-width: ${MOBILE_MAX_WIDTH}px)`
+      )
+      return mql.matches
+    } else {
+      const innerWidth =
+        window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth
+      if (innerWidth <= MOBILE_MAX_WIDTH) {
+        return true
+      }
+      return false
+    }
+  },
 }
 
 export default archerUtil

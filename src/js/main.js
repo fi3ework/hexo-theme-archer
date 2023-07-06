@@ -1,11 +1,10 @@
 import Package from '../../package.json'
 
 import init from './init'
-import { initMobile } from './mobile'
-import './initSidebar'
 import initTheme from './theme'
-import { scroll } from './scroll'
+import initScroll from './scroll'
 import fancybox from './fancybox'
+import './initSidebar'
 
 // print console info
 const logStyle =
@@ -18,14 +17,11 @@ console.info(`%c 📦 ${Package.homepage} `, logStyle)
 // site base
 init()
 
-// mobile
-initMobile()
-
 // theme
 initTheme()
 
 // scroll event
-scroll()
+initScroll()
 
 // fancybox
 fancybox()

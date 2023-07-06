@@ -1,6 +1,6 @@
 import archerUtil from './util'
 
-const scroll = function () {
+const initScroll = () => {
   const $banner = $('.banner:first'),
     $postBanner = $banner.find('.post-title a'),
     $bgEle = $('.site-intro:first'),
@@ -16,7 +16,7 @@ const scroll = function () {
     $bgEle.offset().top + $bgEle.outerHeight() - $header.height() / 2
 
   // toc 的收缩
-  $tocCatalog.on('click', function () {
+  $tocCatalog.on('click', () => {
     $tocWrapper.toggleClass('toc-hide-children')
   })
 
@@ -25,7 +25,7 @@ const scroll = function () {
   let previousHeight = 0,
     continueScroll = 0
 
-  function isScrollingUpOrDown(currTop) {
+  const isScrollingUpOrDown = (currTop) => {
     continueScroll += currTop - previousHeight
     if (continueScroll > 30) {
       // 向下滑动
@@ -43,7 +43,7 @@ const scroll = function () {
   // 是否在向上或向下滚动
   let crossingState = -1
   let isHigherThanIntro = true
-  function isCrossingIntro(currTop) {
+  const isCrossingIntro = (currTop) => {
     // 向下滑动超过 intro
     if (currTop > bgTitleHeight) {
       if (crossingState !== 1) {
@@ -75,7 +75,7 @@ const scroll = function () {
     })
   }
 
-  function updateProgress(scrollTop, beginY, contentHeight) {
+  const updateProgress = (scrollTop, beginY, contentHeight) => {
     const windowHeight = $(window).height()
     let readPercent
     if (scrollTop < bgTitleHeight) {
@@ -93,7 +93,7 @@ const scroll = function () {
 
   // rAF 操作
   let tickingScroll = false
-  function updateScroll(scrollTop) {
+  const updateScroll = (scrollTop) => {
     const crossingState = isCrossingIntro(scrollTop)
     // intro 边界切换
     if (crossingState === 1) {
@@ -110,15 +110,22 @@ const scroll = function () {
       $sidebarMenu.removeClass('header-sidebar-menu-black')
       $backTop.addClass('back-top-hidden')
     }
-    // 文章页
     if (isPostPage) {
-      // 向上滑动一定距离显示 header banner
-      // 向下滑动隐藏 header banner
-      const upDownState = isScrollingUpOrDown(scrollTop)
-      if (upDownState === 1) {
-        $banner.removeClass('banner-show')
-      } else if (upDownState === -1 && !isHigherThanIntro) {
-        $banner.addClass('banner-show')
+      // 顶部 Banner 的显示与隐藏
+      const isMobile = archerUtil.isMobile()
+      if (isMobile) {
+        if (isHigherThanIntro) {
+          $banner.removeClass('banner-show')
+        } else {
+          $banner.addClass('banner-show')
+        }
+      } else {
+        const upDownState = isScrollingUpOrDown(scrollTop)
+        if (upDownState === 1) {
+          $banner.removeClass('banner-show')
+        } else if (upDownState === -1 && !isHigherThanIntro) {
+          $banner.addClass('banner-show')
+        }
       }
       // 进度条君的长度
       updateProgress(scrollTop, articleTop, articleHeight)
@@ -133,7 +140,7 @@ const scroll = function () {
     const bindedUpdate = updateScroll.bind(null, scrollTop)
     archerUtil.rafTick(tickingScroll, bindedUpdate)
   }
-  const throttleOnScroll = archerUtil.throttle(onScroll, 50)
+  const throttleOnScroll = archerUtil.throttle(onScroll, 100)
 
   onScroll()
   $(document).on('scroll', throttleOnScroll)
@@ -144,4 +151,4 @@ const scroll = function () {
   })
 }
 
-export { scroll }
+export default initScroll
