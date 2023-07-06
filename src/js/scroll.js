@@ -63,10 +63,9 @@ const scroll = function () {
   }
 
   // 判断是否为 post-page
-  let isPostPage = false
+  const isPostPage = archerUtil.isPostPage()
   let articleHeight, articleTop
-  if ($('.post-body').length) {
-    isPostPage = true
+  if (isPostPage) {
     articleTop = bgTitleHeight
     // 如果执行时动画已执行完毕
     articleHeight = $('.article-entry').outerHeight()
@@ -129,19 +128,18 @@ const scroll = function () {
   }
 
   // scroll 回调
-  function onScroll() {
+  const onScroll = () => {
     const scrollTop = $(document).scrollTop()
     const bindedUpdate = updateScroll.bind(null, scrollTop)
     archerUtil.rafTick(tickingScroll, bindedUpdate)
   }
+  const throttleOnScroll = archerUtil.throttle(onScroll, 50)
 
   onScroll()
-
-  const throttleOnScroll = archerUtil.throttle(onScroll, 25, true)
   $(document).on('scroll', throttleOnScroll)
 
   // 绑定返回顶部事件
-  ;[$postBanner, $backTop].forEach(function (ele) {
+  ;[$postBanner, $backTop].forEach((ele) => {
     ele.on('click', archerUtil.backTop)
   })
 }

@@ -66,16 +66,6 @@ const archerUtil = {
     return parseInt($('html').css('font-size'), 10)
   },
 
-  // 设置地址栏 hash
-  setWindowHash: (hash) => {
-    window.history.replaceState({}, '', `#/${hash}`)
-  },
-
-  // 读取地址栏 hash
-  getWindowHash: () => {
-    return window.location.hash.replace(/^#\//, '#')
-  },
-
   // rAF 的 ticking
   rafTick: function (ticking, updateFunc) {
     if (!ticking) {
@@ -142,6 +132,13 @@ const archerUtil = {
         }, wait)
       }
     }
+  },
+
+  isPostPage: () => {
+    if ($('.post-body').length) {
+      return true
+    }
+    return false
   },
 }
 

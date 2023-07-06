@@ -34,11 +34,6 @@ const init = function () {
       $('.footer').removeClass('footer-unloaded')
       $('.loading').remove()
 
-      // Jump to url hash location if exit
-      const currentHash = window.location.hash
-      window.location.hash = archerUtil.getWindowHash()
-      window.history.replaceState({}, '', currentHash)
-
       // Init anchors
       // https://www.bryanbraun.com/anchorjs/
       const anchors = new AnchorJS()
