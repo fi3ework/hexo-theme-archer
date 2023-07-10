@@ -131,6 +131,7 @@ const main = () => {
     }
   }
   const initTocOnScroll = getInitTocOnScrollFun()
+  const throttleInitTocOnScroll = archerUtil.debounce(initTocOnScroll, 300)
   // #endregion
 
   // Collapse all toc on initialization
@@ -139,12 +140,9 @@ const main = () => {
   // Initialize scroll events listener of toc
   initTocOnScroll()
   // Reload toc scroll events listener if article size is changes (usually because new image is loaded)
-  archerUtil.observeResize(
-    $article[0],
-    archerUtil.debounce(initTocOnScroll, 300)
-  )
+  archerUtil.observeResize($article[0], throttleInitTocOnScroll)
   // Reload toc scroll events listener if window size is changed
-  $(window).on('resize', archerUtil.debounce(initTocOnScroll, 300))
+  $(window).on('resize', throttleInitTocOnScroll)
 
   // Remove toc loading status
   $('.toc-wrapper').removeClass('toc-wrapper-loding')
