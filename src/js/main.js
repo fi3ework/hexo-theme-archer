@@ -3,7 +3,7 @@ import Package from '../../package.json'
 import init from './init'
 import initTheme from './theme'
 import initScroll from './scroll'
-import fancybox from './fancybox'
+import initImage from './image'
 import './initSidebar'
 
 // print console info
@@ -20,8 +20,8 @@ init()
 // theme
 initTheme()
 
+// init image lazy-loading & fancybox
+initImage()
+
 // scroll event
 initScroll()
-
-// fancybox
-fancybox()

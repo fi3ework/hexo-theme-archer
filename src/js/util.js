@@ -31,6 +31,21 @@ const archerUtil = {
     }
   },
 
+  /** 基于 iframe 的父容器大小变化监听器 */
+  observeResize: (element, handler) => {
+    const frame = document.createElement('iframe')
+    const CSS =
+      'position:absolute;left:0;top:-100%;width:100%;height:100%;margin:1px 0 0;border:none;opacity:0;visibility:hidden;pointer-events:none;'
+    frame.style.cssText = CSS
+    frame.onload = () => {
+      frame.contentWindow.onresize = () => {
+        handler(element)
+      }
+    }
+    element.appendChild(frame)
+    return frame
+  },
+
   // 格式化日期
   dateFormater: function (date, fmt) {
     const o = {

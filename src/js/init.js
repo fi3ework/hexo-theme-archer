@@ -1,6 +1,5 @@
 import AnchorJS from 'anchor-js'
 import toc from './toc'
-import archerUtil from './util'
 import './fontawsome'
 
 const init = function () {

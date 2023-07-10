@@ -3,9 +3,9 @@ import archerUtil from './util'
 const isPostPage = archerUtil.isPostPage()
 
 // Query toc headers absolute height
-function initTocLinksScrollTop(tocLinks) {
-  return [...tocLinks].map((link) => {
-    return archerUtil.getAbsPosition(link, true).y
+function initTocLinksScrollTop(headers) {
+  return headers.map((index, header) => {
+    return archerUtil.getAbsPosition(header).y
   })
 }
 
@@ -71,43 +71,42 @@ const main = () => {
     return
   }
 
-  const toc = document.querySelector('.toc')
+  const $toc = $('.toc')
+  const $article = $('article.article-entry')
 
   // #region Toc onscroll listener
-  const getTocOnScrollFun = () => {
-    const tocItems = document.querySelectorAll('.toc-item')
-    const headers = document
-      .querySelector('.article-entry')
-      .querySelectorAll('h1, h2, h3, h4, h5, h6')
-    const $toc = $('.toc')
+  const getInitTocOnScrollFun = () => {
     const $banner = $('.banner:first')
+    const $tocItems = $('.toc-item')
+    const $headers = $article.find('h1, h2, h3, h4, h5, h6')
 
     let throttleTocOnScroll = null
     return () => {
       // Banner in post page will occupy a certain amount of place.
       // Therefore, anchor point positioning needs to reserve this space.
       const scrollOffsetHeight = $banner.height() + archerUtil.rem()
-      headers.forEach((headerElement) => {
-        headerElement.style.marginTop = `-${scrollOffsetHeight}px`
-        headerElement.style.paddingTop = `${scrollOffsetHeight}px`
+      $headers.each((index, element) => {
+        $(element).css({
+          'margin-top': `-${scrollOffsetHeight}px`,
+          'padding-top': `${scrollOffsetHeight}px`,
+        })
       })
 
       // Get header links absolute height
-      const headersHeights = initTocLinksScrollTop(headers)
+      const headersHeights = initTocLinksScrollTop($headers)
 
       // Document on-scroll event
       const tocOnScroll = () => {
         const currHeight = $(document).scrollTop()
         const currHeightIndex = calcScrollIntoScreenIndex(
           headersHeights,
-          currHeight,
-          scrollOffsetHeight
+          currHeight
         )
         if (currHeightIndex >= 0) {
           // spread, fold and active
-          const currItem = tocItems[currHeightIndex]
+          const currItem = $tocItems[currHeightIndex]
           // 1. fold
-          initFold(toc)
+          initFold($toc[0])
           // 2. spread
           spreadParentNodeOfTargetItem(currItem)
           // 3. active
@@ -120,7 +119,7 @@ const main = () => {
             $toc.scrollTop(currItemOffsetTop)
           }
         } else {
-          initFold(toc)
+          initFold($toc[0])
         }
       }
 
@@ -131,18 +130,21 @@ const main = () => {
       $(document).on('scroll', throttleTocOnScroll)
     }
   }
-  const tocOnScroll = getTocOnScrollFun()
+  const initTocOnScroll = getInitTocOnScrollFun()
   // #endregion
 
   // Collapse all toc on initialization
-  initFold(toc)
+  initFold($toc[0])
 
-  // Initialize page scroll listener of toc
-  tocOnScroll()
-  // Reload toc scroll events after loading all resources like images
-  $(window).on('load', tocOnScroll)
-  // Reload toc scroll events if page size is changed
-  $(window).on('resize', archerUtil.debounce(tocOnScroll, 500))
+  // Initialize scroll events listener of toc
+  initTocOnScroll()
+  // Reload toc scroll events listener if article size is changes (usually because new image is loaded)
+  archerUtil.observeResize(
+    $article[0],
+    archerUtil.debounce(initTocOnScroll, 300)
+  )
+  // Reload toc scroll events listener if window size is changed
+  $(window).on('resize', archerUtil.debounce(initTocOnScroll, 300))
 
   // Remove toc loading status
   $('.toc-wrapper').removeClass('toc-wrapper-loding')

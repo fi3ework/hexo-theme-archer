@@ -1,5 +1,5 @@
 import archerUtil from './util'
-import Emitter from 'eventemitter3'
+import EventEmitter from 'eventemitter3'
 
 class MetaInfo {
   constructor(metaName, labelsContainer, postContainer) {
@@ -132,7 +132,7 @@ class SidebarMeta {
   constructor(sidebar) {
     this.sidebar = sidebar
     this.tabCount = 0
-    this.emitter = new Emitter()
+    this.emitter = new EventEmitter()
     this.postsArr = null
     this.metas = []
     this._initMap = this._initMap.bind(this)
