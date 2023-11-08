@@ -62,14 +62,14 @@
         <!-- busuanzi -->
         <%_ if (theme.busuanzi) { _%>
             <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-        <% } %>
+        <%_ } _%>
         <!-- async load share.js -->
         <%_ if (is_post()) { _%>
             <script src="<%- url_for('scripts/share.js') %>?v=<%- theme.source_version %>" async></script>
         <%_ } _%>
         <!-- mermaid -->
-        <% if (is_post() && theme.mermaid.enable) { %>
+        <%_ if (is_post() && theme.mermaid.enable) { _%>
             <script src='https://cdn.jsdelivr.net/npm/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js' onload="window.mermaid.initialize({theme: '<%= theme.mermaid.theme %>'})" async></script>
-        <% } %>
+        <%_ } _%>
     </body>
 </html>

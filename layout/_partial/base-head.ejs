@@ -77,9 +77,9 @@
             var root_s = document.getElementsByTagName('script')[0];
             root_s.parentNode.insertBefore(cnzz_s_tag, root_s);
         </script>
-    <% } %>
+    <%_ } _%>
     <!-- Google tag (gtag.js) -->
-    <% if (theme.google_analytics) { %>
+    <%_ if (theme.google_analytics) { _%>
         <script async src="https://www.googletagmanager.com/gtag/js?id=<%- theme.google_analytics %>"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
