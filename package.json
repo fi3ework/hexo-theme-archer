@@ -47,9 +47,9 @@
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
-    "node-sass": "^8.0.0",
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
+    "sass": "^1.69.5",
     "webpack": "^5.88.1",
     "webpack-cli": "^5.1.4",
     "webpack-merge": "^5.9.0"
