@@ -1,7 +1,6 @@
 import archerUtil from './util'
-window.preventPostPageBannerDefault = false
 
-const scroll = function () {
+const initScroll = () => {
   const $banner = $('.banner:first'),
     $postBanner = $banner.find('.post-title a'),
     $bgEle = $('.site-intro:first'),
@@ -17,7 +16,7 @@ const scroll = function () {
     $bgEle.offset().top + $bgEle.outerHeight() - $header.height() / 2
 
   // toc 的收缩
-  $tocCatalog.on('click', function () {
+  $tocCatalog.on('click', () => {
     $tocWrapper.toggleClass('toc-hide-children')
   })
 
@@ -26,7 +25,7 @@ const scroll = function () {
   let previousHeight = 0,
     continueScroll = 0
 
-  function isScrollingUpOrDown(currTop) {
+  const isScrollingUpOrDown = (currTop) => {
     continueScroll += currTop - previousHeight
     if (continueScroll > 30) {
       // 向下滑动
@@ -44,7 +43,7 @@ const scroll = function () {
   // 是否在向上或向下滚动
   let crossingState = -1
   let isHigherThanIntro = true
-  function isCrossingIntro(currTop) {
+  const isCrossingIntro = (currTop) => {
     // 向下滑动超过 intro
     if (currTop > bgTitleHeight) {
       if (crossingState !== 1) {
@@ -64,10 +63,9 @@ const scroll = function () {
   }
 
   // 判断是否为 post-page
-  let isPostPage = false
+  const isPostPage = archerUtil.isPostPage()
   let articleHeight, articleTop
-  if ($('.post-body').length) {
-    isPostPage = true
+  if (isPostPage) {
     articleTop = bgTitleHeight
     // 如果执行时动画已执行完毕
     articleHeight = $('.article-entry').outerHeight()
@@ -77,7 +75,7 @@ const scroll = function () {
     })
   }
 
-  function updateProgress(scrollTop, beginY, contentHeight) {
+  const updateProgress = (scrollTop, beginY, contentHeight) => {
     const windowHeight = $(window).height()
     let readPercent
     if (scrollTop < bgTitleHeight) {
@@ -95,7 +93,7 @@ const scroll = function () {
 
   // rAF 操作
   let tickingScroll = false
-  function updateScroll(scrollTop) {
+  const updateScroll = (scrollTop) => {
     const crossingState = isCrossingIntro(scrollTop)
     // intro 边界切换
     if (crossingState === 1) {
@@ -112,12 +110,16 @@ const scroll = function () {
       $sidebarMenu.removeClass('header-sidebar-menu-black')
       $backTop.addClass('back-top-hidden')
     }
-    // 文章页
     if (isPostPage) {
-      // 当 window.preventPostPageBannerDefault 为真时，避免此处 Banner 显示或隐藏的行为
-      if (!window.preventPostPageBannerDefault) {
-        // 向上滑动一定距离显示 header banner
-        // 向下滑动隐藏 header banner
+      // 顶部 Banner 的显示与隐藏
+      const isMobile = archerUtil.isMobile()
+      if (isMobile) {
+        if (isHigherThanIntro) {
+          $banner.removeClass('banner-show')
+        } else {
+          $banner.addClass('banner-show')
+        }
+      } else {
         const upDownState = isScrollingUpOrDown(scrollTop)
         if (upDownState === 1) {
           $banner.removeClass('banner-show')
@@ -130,25 +132,23 @@ const scroll = function () {
     }
     previousHeight = scrollTop
     tickingScroll = false
-    window.preventPostPageBannerDefault = false
   }
 
   // scroll 回调
-  function onScroll() {
+  const onScroll = () => {
     const scrollTop = $(document).scrollTop()
     const bindedUpdate = updateScroll.bind(null, scrollTop)
     archerUtil.rafTick(tickingScroll, bindedUpdate)
   }
+  const throttleOnScroll = archerUtil.throttle(onScroll, 100)
 
   onScroll()
-
-  const throttleOnScroll = archerUtil.throttle(onScroll, 25, true)
   $(document).on('scroll', throttleOnScroll)
 
   // 绑定返回顶部事件
-  ;[$postBanner, $backTop].forEach(function (ele) {
+  ;[$postBanner, $backTop].forEach((ele) => {
     ele.on('click', archerUtil.backTop)
   })
 }
 
-export { scroll }
+export default initScroll

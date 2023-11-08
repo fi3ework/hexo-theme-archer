@@ -1,6 +1,5 @@
 import AnchorJS from 'anchor-js'
 import toc from './toc'
-import archerUtil from './util'
 import './fontawsome'
 
 const init = function () {
@@ -33,11 +32,6 @@ const init = function () {
       $('.container').removeClass('container-unloaded')
       $('.footer').removeClass('footer-unloaded')
       $('.loading').remove()
-
-      // Jump to url hash location if exit
-      const currentHash = window.location.hash
-      window.location.hash = archerUtil.getWindowHash()
-      window.history.replaceState({}, '', currentHash)
 
       // Init anchors
       // https://www.bryanbraun.com/anchorjs/

@@ -31,14 +31,12 @@
     <title><%= title %></title>
     <%- partial('base-preload-polyfill') %>
     <%- partial('critical-css/critical-style') %>
-    <link rel="preload" href="<%- url_for("css/style.css") %>?v=<%- theme.source_version %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="<%- url_for("css/dark.css") %>?v=<%- theme.source_version %>" as="style">
-    <link rel="stylesheet" href="<%- url_for("css/dark.css") %>">
-    <link rel="stylesheet" href="<%- url_for("css/mobile.css") %>?v=<%- theme.source_version %>" media="(max-width: 960px)">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="<%- url_for("css/style.css") %>?v=<%- theme.source_version %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="<%- url_for("css/mobile.css") %>?v=<%- theme.source_version %>" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="<%- url_for("css/dark.css") %>?v=<%- theme.source_version %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
     <link rel="preload" href="<%- url_for('scripts/main.js') %>?v=<%- theme.source_version %>" as="script">
-    <link rel="preload" href="<%- url_for('scripts/dark.js') %>?v=<%- theme.source_version %>" as="script">
     <link rel="preload" href="<%- url_for('font/Oswald-Regular.ttf') %>" as="font" crossorigin>
     <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
     <!-- algolia -->
@@ -71,14 +69,24 @@
     <!-- 谷歌统计  -->
     <%_ if (theme.google_analytics) { _%>
         <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-            ga('create', '<%- theme.google_analytics %>', 'auto');
-            ga('send', 'pageview');
+            var cnzz_s_tag = document.createElement('script');
+            cnzz_s_tag.type = 'text/javascript';
+            cnzz_s_tag.async = true;
+            cnzz_s_tag.charset = 'utf-8';
+            cnzz_s_tag.src = 'https://w.cnzz.com/c.php?id=<%- theme.CNZZ_analytics %>&async=1';
+            var root_s = document.getElementsByTagName('script')[0];
+            root_s.parentNode.insertBefore(cnzz_s_tag, root_s);
+        </script>
+    <% } %>
+    <!-- Google tag (gtag.js) -->
+    <% if (theme.google_analytics) { %>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<%- theme.google_analytics %>"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', '<%- theme.google_analytics %>');
         </script>
     <%_ } _%>
 </head>

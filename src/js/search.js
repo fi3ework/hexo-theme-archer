@@ -12,7 +12,7 @@ import archerUtil from './util'
 
 const initAlgolia = () => {
   $(document).ready(function () {
-    const algoliaSettings = algolia
+    const algoliaSettings = window.algolia
     const isAlgoliaSettingsValid =
       algoliaSettings.applicationID &&
       algoliaSettings.apiKey &&

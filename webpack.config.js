@@ -5,7 +5,6 @@ module.exports = {
     main: './src/js/main.js',
     share: './src/js/share.js',
     search: './src/js/search.js',
-    dark: './src/js/dark.js',
     customFontLoader: './src/js/customFontLoader.js',
   },
   output: {

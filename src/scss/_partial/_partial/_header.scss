@@ -114,6 +114,7 @@ header {
   .header-theme-btn {
     color: #fff;
     cursor: pointer;
+    user-select: none;
 
     &:hover {
       color: $feature-color;
@@ -138,67 +139,68 @@ header {
 }
 
 // ========== header toggle (only take effect in post page) ========== //
-// banner
-.banner {
-  position: relative;
-  width: 100%;
-  margin: 0 auto;
-  height: calc(100% - 1px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
-  background-color: rgba(255, 255, 255, 0.8);
-  transform: translate3d(0, -100%, 0);
-  transition: transform 0.3s ease 0s;
+header {
+  .banner {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: calc(100% - 1px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(4px);
+    transform: translate3d(0, -100%, 0);
+    transition: transform 0.3s ease 0s;
 
-  .post-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 70%;
-    margin-left: 15%;
+    .post-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 70%;
+      margin-left: 15%;
 
-    a {
-      white-space: nowrap;
-      color: $header-banner-text-color;
-      max-width: 100%;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      text-align: center;
-      font-size: 1.5rem;
-    }
+      a {
+        white-space: nowrap;
+        color: $header-banner-text-color;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-align: center;
+        font-size: 1.5rem;
+      }
 
-    &.post-title-hide {
-      display: none;
-    }
-  }
-
-  .blog-title {
-    display: flex;
-    position: absolute;
-    right: 1.5rem;
-    line-height: 2.7rem;
-    top: 50%;
-    transform: translate(0, -50%);
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    a {
-      vertical-align: top;
-      white-space: nowrap;
-      color: $header-banner-text-color;
-      font: 1rem/1rem $feature-font-family;
-      &:hover {
-        color: $feature-color;
+      &.post-title-hide {
+        display: none;
       }
     }
-  }
 
-  &.banner-show {
-    transform: translate3d(0, 0, 0);
-  }
+    .blog-title {
+      display: flex;
+      position: absolute;
+      right: 1.5rem;
+      line-height: 2.7rem;
+      top: 50%;
+      transform: translate(0, -50%);
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      a {
+        vertical-align: top;
+        white-space: nowrap;
+        color: $header-banner-text-color;
+        font: 1rem/1rem $feature-font-family;
+        &:hover {
+          color: $feature-color;
+        }
+      }
+    }
 
-  &.banner-clean {
-    border-bottom: unset;
-    background-color: rgba(255, 255, 255, 0.9);
+    &.banner-show {
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.banner-clean {
+      border-bottom: unset;
+    }
   }
 }
