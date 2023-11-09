@@ -8,15 +8,15 @@
             document.write('<script src="<%- url_for('lib/jquery.min.js') %>" />')
         }
     </script>
-    <% if (is_home()) { %>
+    <%_ if (is_home()) { _%>
         <body class="home-body">
-    <% } else if(is_post()){ %>
+    <%_ } else if(is_post()){ _%>
         <body class="post-body">
-    <% } else if(page.layout === "404") { %>
+    <%_ } else if(page.layout === "404") { _%>
         <body class="four-zero-four-body">
-    <% } else if(page.layout === "about") { %>
+    <%_ } else if(page.layout === "about") { _%>
         <body class="about-body">
-    <% } %>
+    <%_ } _%>
         <!-- header -->
         <%- partial('_partial/base-header') %>
         <!-- fixed footer -->
@@ -29,21 +29,21 @@
             <div class="container container-unloaded">
                 <%- body %>
                 <!-- profile -->
-                <% if (is_home()) { %>
+                <%_ if (is_home()) { _%>
                     <%- partial('_partial/base-profile') %>
-                <% } %>
+                <%_ } _%>
             </div>
             <%- partial('_partial/base-footer', {}, {cache: true}) %>
         </div>
         <!-- toc -->
-        <% if(is_post() && (page.toc || (theme.toc && page.toc !== false))) { %>
+        <%_ if(is_post() && (page.toc || (theme.toc && page.toc !== false))) { _%>
             <div class="toc-wrapper toc-wrapper-loding" style=<%- partial('_partial/intro-height', {attr: 'top'}) %>>
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
                 <%- toc(page.content, {class: 'toc', list_number: true}) %>
             </div>
-        <% } %>
+        <%_ } _%>
         <!-- sidebar -->
         <%- partial('_partial/sidebar/base-sidebar', {}, {cache: true}) %>
         <!-- site-meta -->
@@ -55,21 +55,21 @@
         <!-- fancybox -->
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
         <!-- algolia -->
-        <% if (theme.algolia_search.enable) { %>
+        <%_ if (theme.algolia_search.enable) { _%>
             <%- partial('_partial/algolia') %>
             <script src="<%- url_for('scripts/search.js') %>?v=<%- theme.source_version %>" async></script>
-        <% } %>
+        <%_ } _%>
         <!-- busuanzi -->
-        <% if (theme.busuanzi) { %>
+        <%_ if (theme.busuanzi) { _%>
             <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-        <% } %>
+        <%_ } _%>
         <!-- async load share.js -->
-        <% if (is_post()) { %>
+        <%_ if (is_post()) { _%>
             <script src="<%- url_for('scripts/share.js') %>?v=<%- theme.source_version %>" async></script>
-        <% } %>
+        <%_ } _%>
         <!-- mermaid -->
-        <% if (is_post() && theme.mermaid.enable) { %>
+        <%_ if (is_post() && theme.mermaid.enable) { _%>
             <script src='https://cdn.jsdelivr.net/npm/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js' onload="window.mermaid.initialize({theme: '<%= theme.mermaid.theme %>'})" async></script>
-        <% } %>
+        <%_ } _%>
     </body>
 </html>
