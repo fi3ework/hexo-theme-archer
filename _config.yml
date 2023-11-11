@@ -136,9 +136,11 @@ comment:
   valine_appKey: 
   valine_placeHolder: 
   # Waline  site: https://waline.js.org/
+  # https://waline.js.org/reference/client/props.html#serverurl
   waline_serverURL: 
+  # https://waline.js.org/cookbook/customize/locale.html locale.placeholder
   waline_placeHolder: 
-  waline_avatar: 
+  # https://waline.js.org/reference/client/props.html#login
   waline_login: 
   # gitalk site: https://github.com/gitalk/gitalk/
   # Value 'true' is recommended for gitalk_pathname_id setting

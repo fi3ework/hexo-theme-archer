@@ -6,8 +6,9 @@
     Waline.init({
         el: '#comment' ,
         serverURL: "<%- theme.comment.waline_serverURL %>",
-        placeholder: "<%- theme.comment.waline_placeHolder %>",
-        avatar: "<%- theme.comment.waline_avatar %>",
+        locale: {
+            placeholder: "<%- theme.comment.waline_placeHolder %>"
+        },
         login: "<%- theme.comment.waline_login %>"
     });
     </script>
