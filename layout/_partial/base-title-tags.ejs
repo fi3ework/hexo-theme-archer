@@ -1,11 +1,11 @@
-<div class= <%- className %> >
+<div class="<%- className %>" >
     <%_ if (theme.show_categories && currPost.categories.length) { _%>
         <%_ let postCategory = '' _%>
         <%_ currPost.categories.forEach((c) => { _%>
             <%_ postCategory += `${c.name}/` _%>
         <%_ }) _%>
         <%_ postCategory = postCategory.slice(0, -1) _%>
-        <span class="post-category" data-categories="<%- postCategory %>"">
+        <span class="post-category" data-categories="<%- postCategory %>">
             <i class="fas fa-folder post-category-icon"></i>
             <span class="post-category-text">
                 <%- postCategory %>
