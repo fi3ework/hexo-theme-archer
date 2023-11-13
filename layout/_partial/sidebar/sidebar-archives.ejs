@@ -47,5 +47,8 @@
             <a class="archive-post-title" href="<%- post.link %>"><%- post.title || '[Untitled Post]' %></a>
         </li>
     <%_ }) _%>
+    <%_ if (toCloseUl === 1) { _%>
+            </ul>
+    <%_ } _%>
     </div>
 </div>
