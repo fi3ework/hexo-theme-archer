@@ -107,6 +107,7 @@ theme: archer
 - [设置文章版权信息](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%AE%BE%E7%BD%AE%E6%96%87%E7%AB%A0%E7%89%88%E6%9D%83%E4%BF%A1%E6%81%AF)
 - [启用 Algolia 搜索](https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Algolia-%E6%90%9C%E7%B4%A2)
 - [切换为英文界面](https://github.com/fi3ework/hexo-theme-archer/wiki/%E8%8B%B1%E6%96%87%E7%95%8C%E9%9D%A2)
+- [翻译的文章](#翻译的文章)
 
 ### 启用字数统计
 
@@ -280,6 +281,20 @@ custom_font:
 其中，`name` 为引入的自定义字体名称。`:` 后跟引入字体的变体和字重，使用 `,` 间隔。例如 `name: 'Noto Sans SC:i5,n7'` 表示引入 `Noto Sans SC` 的斜体 500 字重和正常 700 字重。
 
 `url` 为引入的自定义字体的 CDN 链接或本地链接。
+
+### 翻译的文章
+
+在文章的 Front-matter 中添加 `translated` 字段，以显示翻译信息。
+
+``` markdown
+---
+translated:
+    author: 'Stark-X'
+    title: '你好，世界'
+    link: 'https://github.com'
+---
+```
+
 
 ## 文章撰写增强
 
