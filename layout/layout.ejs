@@ -51,13 +51,13 @@
         <!-- import experimental options here -->
         <%- partial('_partial/custom-font', {}, {cache: true}) %>
         <!-- main func -->
-        <script src="<%- url_for('scripts/main.js') %>?v=<%- theme.source_version %>"></script>
+        <script src="<%- url_for('scripts/main.js') %>"></script>
         <!-- fancybox -->
         <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
         <!-- algolia -->
         <%_ if (theme.algolia_search.enable) { _%>
             <%- partial('_partial/algolia') %>
-            <script src="<%- url_for('scripts/search.js') %>?v=<%- theme.source_version %>" async></script>
+            <script src="<%- url_for('scripts/search.js') %>" async></script>
         <%_ } _%>
         <!-- busuanzi -->
         <%_ if (theme.busuanzi) { _%>
@@ -65,7 +65,7 @@
         <%_ } _%>
         <!-- async load share.js -->
         <%_ if (is_post()) { _%>
-            <script src="<%- url_for('scripts/share.js') %>?v=<%- theme.source_version %>" async></script>
+            <script src="<%- url_for('scripts/share.js') %>" async></script>
         <%_ } _%>
         <!-- mermaid -->
         <%_ if (is_post() && theme.mermaid.enable) { _%>

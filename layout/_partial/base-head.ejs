@@ -32,11 +32,11 @@
     <%- partial('base-preload-polyfill') %>
     <%- partial('critical-css/critical-style') %>
     <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link id="stylesheet-base" rel="preload" href="<%- url_for("css/style.css") %>?v=<%- theme.source_version %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link id="stylesheet-mobile" rel="preload" href="<%- url_for("css/mobile.css") %>?v=<%- theme.source_version %>" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
-    <link id="stylesheet-theme-dark" rel="preload" href="<%- url_for("css/dark.css") %>?v=<%- theme.source_version %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="<%- url_for("css/style.css") %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="<%- url_for("css/mobile.css") %>" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="<%- url_for("css/dark.css") %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
-    <link rel="preload" href="<%- url_for('scripts/main.js') %>?v=<%- theme.source_version %>" as="script">
+    <link rel="preload" href="<%- url_for('scripts/main.js') %>" as="script">
     <link rel="preload" href="<%- url_for('font/Oswald-Regular.ttf') %>" as="font" crossorigin>
     <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
     <!-- algolia -->

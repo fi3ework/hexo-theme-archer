@@ -221,8 +221,3 @@ custom_font:
   name: 'Noto Sans SC:n3,n4,n5,n7'
   # Font CDN url
   url: 'https://fonts.googleapis.cnpmjs.org/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap'
-
-# ========== Theme Dev ========== #
-# Ensure visitor to get the latest version of source.
-# Set a higher value before creating new release.
-source_version: 20230704
