@@ -30,10 +30,10 @@ class MetaInfo {
 
   _changeFocus(label) {
     const currFocus = this.labelsContainer.getElementsByClassName(
-      'sidebar-label-focus'
+      'sidebar-label-focus',
     )
     ;[...currFocus].forEach((item) =>
-      item.classList.remove('sidebar-label-focus')
+      item.classList.remove('sidebar-label-focus'),
     )
     ;[...this.labelsContainer.children].forEach((item) => {
       if (item.getAttribute(`data-${this.metaName}`) === this.currLabelName) {
@@ -51,7 +51,7 @@ class MetaInfo {
       this._createPostsDom(corrArr)
     } catch (error) {
       console.error(
-        'Please ensure set `tags: true` and `categories: true` of the hexo-content-json config'
+        'Please ensure set `tags: true` and `categories: true` of the hexo-content-json config',
       )
     }
   }
@@ -70,9 +70,9 @@ class MetaInfo {
       '<li class="meta-post-item"><span class="meta-post-date">' +
         archerUtil.dateFormater(
           new Date(Date.parse(postInfo.date)),
-          'yyyy/MM/dd'
+          'yyyy/MM/dd',
         ) +
-        '</span></li>'
+        '</span></li>',
     )
     const $aItem = $(
       '<a class="meta-post-title" href="' +
@@ -80,7 +80,7 @@ class MetaInfo {
         postInfo.path +
         '">' +
         postInfo.title +
-        '</a>'
+        '</a>',
     )
     $tagItem.append($aItem)
     return $tagItem[0]
@@ -148,7 +148,7 @@ class SidebarMeta {
     const newMeta = new MetaInfo(
       para.metaName,
       para.labelsContainer,
-      para.postsContainer
+      para.postsContainer,
     )
     newMeta.tryInit(this.postsArr)
     this.metas.push(newMeta)

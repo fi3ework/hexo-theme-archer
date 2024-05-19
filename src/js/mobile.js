@@ -18,10 +18,10 @@ const initMobile = function () {
               }
             : {
                 matches: true,
-              }
+              },
         )
       },
-      false
+      false,
     )
   }
 

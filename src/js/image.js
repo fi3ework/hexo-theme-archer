@@ -18,7 +18,7 @@ const fancyBoxInit = (img) => {
 export default () => {
   /** images in home page (article abstract) */
   const abstractContentImages = document.querySelectorAll(
-    '.abstract-content img'
+    '.abstract-content img',
   )
   /** images in article page */
   const articleContentImages = document.querySelectorAll('.article-entry img')

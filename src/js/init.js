@@ -11,7 +11,7 @@ const init = function () {
 
   if (bgRegResult.length < 2) {
     console.error(
-      "Error while loading site intro image. Please check image's url."
+      "Error while loading site intro image. Please check image's url.",
     )
     console.log(bgRegResult)
   } else {
@@ -47,7 +47,7 @@ const init = function () {
       // so we should init toc here for better performance.
       toc()
     },
-    false
+    false,
   )
 }
 

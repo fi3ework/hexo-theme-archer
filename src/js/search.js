@@ -20,14 +20,14 @@ const initAlgolia = () => {
 
     if (!isAlgoliaSettingsValid) {
       window.console.error(
-        'Algolia Settings are invalid. Check docs: https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Algolia-%E6%90%9C%E7%B4%A2#%E8%8E%B7%E5%8F%96-keys'
+        'Algolia Settings are invalid. Check docs: https://github.com/fi3ework/hexo-theme-archer/wiki/%E5%90%AF%E7%94%A8-Algolia-%E6%90%9C%E7%B4%A2#%E8%8E%B7%E5%8F%96-keys',
       )
       return
     }
 
     const searchClient = algoliasearch(
       algoliaSettings.applicationID,
-      algoliaSettings.apiKey
+      algoliaSettings.apiKey,
     )
 
     const search = instantsearch({
@@ -83,7 +83,7 @@ const initAlgolia = () => {
               '<div class="algolia-hit-empty-label">' +
               algoliaSettings.labels.hits_empty.replace(
                 /\$\{query\}/,
-                data.query
+                data.query,
               ) +
               '</div>'
             )

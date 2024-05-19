@@ -100,7 +100,7 @@ const main = () => {
         const currHeight = $(document).scrollTop()
         const currHeightIndex = calcScrollIntoScreenIndex(
           headersHeights,
-          currHeight
+          currHeight,
         )
         if (currHeightIndex >= 0) {
           // spread, fold and active

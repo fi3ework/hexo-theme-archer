@@ -60,7 +60,7 @@ const archerUtil = {
     if (/(y+)/.test(fmt)) {
       fmt = fmt.replace(
         RegExp.$1,
-        String(date.getFullYear()).substr(4 - RegExp.$1.length)
+        String(date.getFullYear()).substr(4 - RegExp.$1.length),
       )
     }
     for (const k in o) {
@@ -69,7 +69,7 @@ const archerUtil = {
           RegExp.$1,
           RegExp.$1.length === 1
             ? o[k]
-            : ('00' + o[k]).substr(String(o[k]).length)
+            : ('00' + o[k]).substr(String(o[k]).length),
         )
       }
     }
@@ -160,7 +160,7 @@ const archerUtil = {
     const MOBILE_MAX_WIDTH = 960
     if (window.matchMedia) {
       const mql = window.matchMedia(
-        `screen and (max-width: ${MOBILE_MAX_WIDTH}px)`
+        `screen and (max-width: ${MOBILE_MAX_WIDTH}px)`,
       )
       return mql.matches
     } else {

@@ -78,7 +78,7 @@ function sassProd() {
     .pipe(
       sass({
         outputStyle: 'compressed',
-      }).on('error', sass.logError)
+      }).on('error', sass.logError),
     )
     .pipe(postcss([autoprefixer()]))
     .pipe(sourcemaps.write('.'))

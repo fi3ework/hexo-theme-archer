@@ -5,13 +5,13 @@
     <!-- license -->
     <%_ if(theme.copyright.enable === true && page.copyright !== false) { _%>
         <div class="license-wrapper">
-            <% if(page.translated) { %>
+            <%_ if(page.translated) { _%>
             <p><%- __('translater') %>：<a href="<%- config.url %>"><%- config.author %></a>
                 <p><%- __('original_post_author') %>：<%- page.translated.author %>
                 <p><%- __('original_post_link') %>：<a href="<%- page.translated.link %>" target="_blank"><%- page.translated.title || page.translated.link %></a>
-            <% } else { %>
+            <%_ } else { _%>
             <p><%- __('author') %>：<a href="<%- config.url %>"><%- config.author %></a>
-            <% } %>
+            <%_ } _%>
             <p><%- __('post_link') %>：<a href="<%- page.permalink %>"><%- page.permalink %></a>
             <p><%- __('publish_date') %>：<a href="<%- page.permalink %>"><%- (page.date).format('MMMM Do YYYY, h:mm:ss a') %></a>
             <p><%- __('update_date') %>：<a href="<%- page.permalink %>"><%- (page.updated).format('MMMM Do YYYY, h:mm:ss a') %></a>
