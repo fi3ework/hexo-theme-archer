@@ -60,11 +60,16 @@ header {
   line-height: 1.5rem;
   z-index: 21;
   cursor: pointer;
-  &:hover {
+
+  &:hover,
+  &.header-sidebar-menu-active {
     background-color: $body-background-color;
     color: $body-background-color-dark;
-    transform: translate(0, -50%);
   }
+}
+
+.header-sidebar-menu-active {
+  transform: translate(0, -50%) rotate(180deg) !important;
 }
 
 .header-sidebar-menu-rounded {
@@ -75,21 +80,21 @@ header {
   line-height: 2.7rem;
   border: unset;
   border-radius: 50%;
-  &:hover {
+
+  &:hover,
+  &.header-sidebar-menu-active {
     background-color: transparent;
     color: $feature-color;
   }
-}
-
-.header-sidebar-menu-active {
-  transform: translate(0, -50%) rotate(180deg) !important;
 }
 
 .header-sidebar-menu-black {
   color: $body-background-color-dark;
   background-color: $body-background-color;
   border-color: $body-background-color-dark;
-  &:hover {
+
+  &:hover,
+  &.header-sidebar-menu-active {
     background-color: $body-background-color-dark;
     color: $body-background-color;
   }

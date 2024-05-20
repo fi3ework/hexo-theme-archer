@@ -1,27 +1,33 @@
 import Sidebar from './sidebar'
 import InitSidebarLink from './tag'
 
-// init sidebar
-const sidebar = new Sidebar({
-  sidebar: '.sidebar',
-  nav: '.sidebar-tabs',
-  tabs: '.sidebar-tabs li',
-  content: '.sidebar-content',
-  panels: '.sideabar-contents > div',
-  menuButton: '.header-sidebar-menu',
-})
+const initSidebar = () => {
+  // create sidebar object
+  const sidebar = new Sidebar({
+    sidebar: '.sidebar',
+    nav: '.sidebar-tabs',
+    tabs: '.sidebar-tabs li',
+    content: '.sidebar-content',
+    panels: '.sideabar-contents > div',
+    menuButton: '.header-sidebar-menu',
+  })
 
-// init sidebar link
-const metas = new InitSidebarLink(sidebar)
-metas.addTab({
-  metaName: 'tags',
-  labelsContainer: '.sidebar-tags-name',
-  postsContainer: '.sidebar-tags-list',
-})
-metas.addTab({
-  metaName: 'categories',
-  labelsContainer: '.sidebar-categories-name',
-  postsContainer: '.sidebar-categories-list',
-})
+  // create sidebar metas object
+  const metas = new InitSidebarLink(sidebar)
 
-export default { sidebar, metas }
+  // add tabs to sidebar metas
+  metas.addTab({
+    metaName: 'tags',
+    labelsContainer: '.sidebar-tags-name',
+    postsContainer: '.sidebar-tags-list',
+  })
+  metas.addTab({
+    metaName: 'categories',
+    labelsContainer: '.sidebar-categories-name',
+    postsContainer: '.sidebar-categories-list',
+  })
+
+  return { sidebar, metas }
+}
+
+export default initSidebar

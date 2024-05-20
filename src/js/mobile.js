@@ -26,17 +26,18 @@ const initMobile = function () {
   }
 
   function mediaChangeHandler(mql) {
+    window.removeEventListener('touchstart', onTouchStart)
+
     if (mql.matches) {
-      console.log('mobile')
-      // TODO: why
-      mobilePreventScrollBreakdown()
-      // document.body.addEventListener('touchstart', function () {})
-    } else {
-      console.log('desktop')
+      console.log('Initialize optimizations for mobile device')
+      // Notes: don't remove the `touchstart` listener below
+      window.addEventListener('touchstart', onTouchStart)
     }
   }
 
-  function mobilePreventScrollBreakdown() {}
+  function onTouchStart() {
+    // Simply do nothing to avoid unexpected behaviors of css pseudo class :hover
+  }
 }
 
-export { initMobile }
+export default initMobile

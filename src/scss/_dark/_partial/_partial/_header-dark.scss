@@ -31,14 +31,16 @@ header {
 .header-sidebar-menu {
   border-color: $body-background-color;
   color: $body-background-color;
-  &:hover {
+  &:hover,
+  &.header-sidebar-menu-active {
     background-color: $body-background-color;
     color: #000;
   }
 }
 
 .header-sidebar-menu-rounded {
-  &:hover {
+  &:hover,
+  &.header-sidebar-menu-active {
     background-color: transparent;
     color: $feature-color-dark;
   }
@@ -48,7 +50,9 @@ header {
   color: $text-color-primary-dark;
   background-color: $body-background-color-dark;
   border-color: $text-color-primary-dark;
-  &:hover {
+
+  &:hover,
+  &.header-sidebar-menu-active {
     background-color: $text-color-primary-dark;
     color: $body-background-color-dark;
   }

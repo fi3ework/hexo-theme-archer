@@ -1,10 +1,11 @@
 import Package from '../../package.json'
 
 import init from './init'
+import initMobile from './mobile'
 import initTheme from './theme'
-import initScroll from './scroll'
 import initImage from './image'
-import './initSidebar'
+import initScroll from './scroll'
+import initSidebar from './initSidebar'
 
 // print console info
 const logStyle =
@@ -16,6 +17,12 @@ console.info(`%c 📦 ${Package.homepage} `, logStyle)
 
 // site base
 init()
+
+// optimizations for mobile device
+initMobile()
+
+// sidebar
+initSidebar()
 
 // theme
 initTheme()
