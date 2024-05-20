@@ -28,19 +28,17 @@
             <a href="<%- config.root %>"><%- theme.main_title || config.title %></a>
         </span>
     </div>
-    <!-- toggle banner for post layout -->
-    <%_ if (is_post()) { _%>
-        <%_ if(theme.post_banner_theme === 'clean') { _%>
-            <div class="banner banner-clean">
-        <%_ } else { _%>
-            <div class="banner">
-        <%_ } _%>
-            <div class="blog-title header-element">
-                <a href="<%- url_for() %>"><%= theme.main_title || config.title%></a>
-            </div>
-            <div class="post-title header-element">
-                <a href="#" class="post-name"><%- page.title %></a>
-            </div>
-        </div>
+    <!-- toggle banner -->
+    <%_ if(theme.post_banner_theme === 'clean') { _%>
+    <div class="banner banner-clean">
+    <%_ } else { _%>
+    <div class="banner">
     <%_ } _%>
+        <div class="blog-title header-element">
+            <a href="<%- url_for() %>"><%= theme.main_title || config.title%></a>
+        </div>
+        <div class="post-title header-element">
+            <a href="#" class="post-name"><%- page.title %></a>
+        </div>
+    </div>
 </header>

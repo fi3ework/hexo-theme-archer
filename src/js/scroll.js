@@ -95,6 +95,8 @@ const initScroll = () => {
   let tickingScroll = false
   const updateScroll = (scrollTop) => {
     const crossingState = isCrossingIntro(scrollTop)
+    const isMobile = archerUtil.isMobile()
+
     // intro 边界切换
     if (crossingState === 1) {
       $tocWrapper.addClass('toc-fixed')
@@ -110,26 +112,31 @@ const initScroll = () => {
       $sidebarMenu.removeClass('header-sidebar-menu-black')
       $backTop.addClass('back-top-hidden')
     }
-    if (isPostPage) {
-      // 顶部 Banner 的显示与隐藏
-      const isMobile = archerUtil.isMobile()
-      if (isMobile) {
-        if (isHigherThanIntro) {
-          $banner.removeClass('banner-show')
-        } else {
-          $banner.addClass('banner-show')
-        }
+
+    if (isMobile) {
+      // 移动端在所有页面的主内容区域时，显示 toggle banner
+      if (isHigherThanIntro) {
+        $banner.removeClass('banner-show')
       } else {
-        const upDownState = isScrollingUpOrDown(scrollTop)
-        if (upDownState === 1) {
-          $banner.removeClass('banner-show')
-        } else if (upDownState === -1 && !isHigherThanIntro) {
-          $banner.addClass('banner-show')
-        }
+        $banner.addClass('banner-show')
       }
-      // 进度条君的长度
+    }
+
+    if (!isMobile && isPostPage) {
+      // 桌面端仅在 Post 页面，当从主内容区域向上滚动时，显示 toggle banner
+      const upDownState = isScrollingUpOrDown(scrollTop)
+      if (upDownState === 1) {
+        $banner.removeClass('banner-show')
+      } else if (upDownState === -1 && !isHigherThanIntro) {
+        $banner.addClass('banner-show')
+      }
+    }
+
+    if (isPostPage) {
+      // 更新进度条君的长度
       updateProgress(scrollTop, articleTop, articleHeight)
     }
+
     previousHeight = scrollTop
     tickingScroll = false
   }
