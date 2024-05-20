@@ -133,16 +133,6 @@ const initAlgolia = () => {
 
     search.start()
 
-    $('.popup-trigger').on('click', function (e) {
-      e.stopPropagation()
-      $('body')
-        .prepend('<div class="search-popup-overlay algolia-pop-overlay"></div>')
-        .css('overflow', 'hidden')
-      $('.popup').toggle()
-      $('#algolia-search-input').find('input').focus()
-      archerUtil.stopBodyScroll(true)
-    })
-
     const hidePopup = () => {
       $('.ais-SearchBox-form').trigger('reset')
       $('.popup').hide()
@@ -151,11 +141,25 @@ const initAlgolia = () => {
       archerUtil.stopBodyScroll(false)
     }
 
+    $('.popup-trigger').on('click', function (e) {
+      e.stopPropagation()
+      $('body')
+        .prepend('<div class="search-popup-overlay algolia-pop-overlay"></div>')
+        .css('overflow', 'hidden')
+      $('.popup').toggle()
+      $('#algolia-search-input').find('input').focus()
+      archerUtil.stopBodyScroll(true)
+
+      $('.algolia-pop-overlay').click(function () {
+        hidePopup()
+      })
+    })
+
     $('.popup-btn-close').click(function () {
       hidePopup()
     })
 
-    $(document).on('keydown', '.ais-SearchBox-form', function (event) {
+    $(document).on('keydown', function (event) {
       if (event.key === 'Escape') {
         hidePopup()
       }
