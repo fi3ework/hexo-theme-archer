@@ -1,7 +1,7 @@
 import Package from '../../package.json'
 
 import init from './init'
-import initMobile from './mobile'
+// import initMobile from './mobile'
 import initTheme from './theme'
 import initImage from './image'
 import initScroll from './scroll'
@@ -19,7 +19,7 @@ console.info(`%c 📦 ${Package.homepage} `, logStyle)
 init()
 
 // optimizations for mobile device
-initMobile()
+// initMobile()
 
 // sidebar
 initSidebar()

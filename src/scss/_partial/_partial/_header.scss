@@ -61,7 +61,6 @@ header {
   z-index: 21;
   cursor: pointer;
 
-  &:hover,
   &.header-sidebar-menu-active {
     background-color: $body-background-color;
     color: $body-background-color-dark;
@@ -81,7 +80,6 @@ header {
   border: unset;
   border-radius: 50%;
 
-  &:hover,
   &.header-sidebar-menu-active {
     background-color: transparent;
     color: $feature-color;
@@ -93,8 +91,24 @@ header {
   background-color: $body-background-color;
   border-color: $body-background-color-dark;
 
-  &:hover,
   &.header-sidebar-menu-active {
+    background-color: $body-background-color-dark;
+    color: $body-background-color;
+  }
+}
+
+@media not all and (hover: none) {
+  .header-sidebar-menu:hover {
+    background-color: $body-background-color;
+    color: $body-background-color-dark;
+  }
+
+  .header-sidebar-menu-rounded:hover {
+    background-color: transparent;
+    color: $feature-color;
+  }
+
+  .header-sidebar-menu-black:hover {
     background-color: $body-background-color-dark;
     color: $body-background-color;
   }
@@ -122,10 +136,7 @@ header {
     color: #fff;
     cursor: pointer;
     user-select: none;
-
-    &:hover {
-      color: $feature-color;
-    }
+    transition: all 0.3s ease;
 
     &-disabled {
       pointer-events: none;
@@ -138,7 +149,17 @@ header {
 
     a {
       color: #fff;
-      &:hover {
+      transition: all 0.3s ease;
+    }
+  }
+
+  @media not all and (hover: none) {
+    .header-theme-btn:hover {
+      color: $feature-color;
+    }
+
+    .home-link {
+      a:hover {
         color: $feature-color;
       }
     }

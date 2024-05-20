@@ -31,7 +31,7 @@ header {
 .header-sidebar-menu {
   border-color: $body-background-color;
   color: $body-background-color;
-  &:hover,
+
   &.header-sidebar-menu-active {
     background-color: $body-background-color;
     color: #000;
@@ -39,7 +39,6 @@ header {
 }
 
 .header-sidebar-menu-rounded {
-  &:hover,
   &.header-sidebar-menu-active {
     background-color: transparent;
     color: $feature-color-dark;
@@ -51,19 +50,25 @@ header {
   background-color: $body-background-color-dark;
   border-color: $text-color-primary-dark;
 
-  &:hover,
   &.header-sidebar-menu-active {
     background-color: $text-color-primary-dark;
     color: $body-background-color-dark;
   }
 }
 
-.header-actions {
-  .home-link {
-    a {
-      &:hover {
-        color: $feature-color-dark;
-      }
-    }
+@media not all and (hover: none) {
+  .header-sidebar-menu:hover {
+    background-color: $body-background-color;
+    color: #000;
+  }
+
+  .header-sidebar-menu-rounded:hover {
+    background-color: transparent;
+    color: $feature-color-dark;
+  }
+
+  .header-sidebar-menu-black:hover {
+    background-color: $text-color-primary-dark;
+    color: $body-background-color-dark;
   }
 }

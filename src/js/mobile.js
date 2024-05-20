@@ -26,17 +26,9 @@ const initMobile = function () {
   }
 
   function mediaChangeHandler(mql) {
-    window.removeEventListener('touchstart', onTouchStart)
-
     if (mql.matches) {
       console.log('Initialize optimizations for mobile device')
-      // Notes: don't remove the `touchstart` listener below
-      window.addEventListener('touchstart', onTouchStart)
     }
-  }
-
-  function onTouchStart() {
-    // Simply do nothing to avoid unexpected behaviors of css pseudo class :hover
   }
 }
 
