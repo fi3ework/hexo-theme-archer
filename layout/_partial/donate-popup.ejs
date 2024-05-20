@@ -1,0 +1,14 @@
+<div class="donate-popup donate-popup--hidden">
+    <div class="donate-popup__title"><%- theme.donate.title %></div>
+    <div class="donate-popup__content">
+        <div class="donate-popup__content-description"><%- theme.donate.description %></div>
+        <%_ theme.donate.qr_code.forEach((qrCode) => { _%>
+        <img
+            class="donate-popup__content-qrCode"
+            title="<%- qrCode.alt %>"
+            alt="<%- qrCode.alt %>"
+            src="<%- url_for(qrCode.url) %>"
+        ></img>
+        <%_ }) _%>
+    </div>
+</div>

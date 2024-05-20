@@ -6,6 +6,7 @@ import initTheme from './theme'
 import initImage from './image'
 import initScroll from './scroll'
 import initSidebar from './initSidebar'
+import initDonate from './donate'
 
 // print console info
 const logStyle =
@@ -32,3 +33,6 @@ initImage()
 
 // scroll event
 initScroll()
+
+// donate
+initDonate()

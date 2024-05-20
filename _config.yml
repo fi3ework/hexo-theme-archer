@@ -116,6 +116,17 @@ algolia_search:
     hits_empty: "We did not find any results for the search: ${query}"
     hits_stats: "${hits} results found in ${time} ms"
 
+# ========== Donate ========== #
+donate:
+  enable: false
+  title: Buy Me A Coffee
+  description: If this post helped you, please consider buying the author a cup of sugar-free coffee ☕️.
+  qr_code:
+    - url: '/assets/donate-wechat.png'
+      alt: 'Wechat'
+    - url: '/assets/donate-alipay.png'
+      alt: 'Alipay'
+
 # ========== Comment ========== #
 # Fill in the field to enable the corresponding comment plugin
 # If you want to add other comment plugin, edit in "custom.ejs"

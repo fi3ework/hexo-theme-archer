@@ -431,7 +431,7 @@
 }
 
 .toc {
-  max-height: calc(100vh - #{$header-height} - #{$footer-fixed-height} - 5rem);
+  max-height: calc(100vh - #{$header-height} - 5rem);
   overflow: auto;
   &::-webkit-scrollbar {
     display: none;

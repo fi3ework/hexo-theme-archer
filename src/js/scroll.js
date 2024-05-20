@@ -6,6 +6,7 @@ const initScroll = () => {
     $bgEle = $('.site-intro:first'),
     $header = $('header.header'),
     $headerActions = $('.header-actions'),
+    $donateBtn = $('.donate-btn'),
     $backTop = $('.back-top:first'),
     $sidebarMenu = $('.header-sidebar-menu:first'),
     $tocWrapper = $('.toc-wrapper:first'),
@@ -75,7 +76,7 @@ const initScroll = () => {
     })
   }
 
-  const updateProgress = (scrollTop, beginY, contentHeight) => {
+  const calcReadPercent = (scrollTop, beginY, contentHeight) => {
     const windowHeight = $(window).height()
     let readPercent
     if (scrollTop < bgTitleHeight) {
@@ -86,6 +87,10 @@ const initScroll = () => {
     }
     // 防止文章过短，产生负百分比
     readPercent = readPercent >= 0 ? readPercent : 100
+    return readPercent
+  }
+
+  const updateReadProgress = (readPercent) => {
     const restPercent = readPercent - 100 <= 0 ? readPercent - 100 : 0
     $progressBar[0].style.opacity = '1'
     $progressBar[0].style.transform = `translate3d(${restPercent}%, 0, 0)`
@@ -94,8 +99,9 @@ const initScroll = () => {
   // rAF 操作
   let tickingScroll = false
   const updateScroll = (scrollTop) => {
-    const crossingState = isCrossingIntro(scrollTop)
     const isMobile = archerUtil.isMobile()
+    const crossingState = isCrossingIntro(scrollTop)
+    const readPercent = calcReadPercent(scrollTop, articleTop, articleHeight)
 
     // intro 边界切换
     if (crossingState === 1) {
@@ -103,14 +109,14 @@ const initScroll = () => {
       $header.removeClass('header-mobile')
       $headerActions.addClass('header-actions-hide')
       $sidebarMenu.addClass('header-sidebar-menu-black')
-      $backTop.removeClass('back-top-hidden')
+      $backTop.removeClass('footer-fixed-btn--hidden')
     } else if (crossingState === -1) {
       $tocWrapper.removeClass('toc-fixed')
       $header.addClass('header-mobile')
       $headerActions.removeClass('header-actions-hide')
       $banner.removeClass('banner-show')
       $sidebarMenu.removeClass('header-sidebar-menu-black')
-      $backTop.addClass('back-top-hidden')
+      $backTop.addClass('footer-fixed-btn--hidden')
     }
 
     if (isMobile) {
@@ -123,18 +129,26 @@ const initScroll = () => {
     }
 
     if (!isMobile && isPostPage) {
-      // 桌面端仅在 Post 页面，当从主内容区域向上滚动时，显示 toggle banner
       const upDownState = isScrollingUpOrDown(scrollTop)
+
+      // 仅在桌面端的 Post 页面，当从主内容区域向上滚动时，显示 toggle banner
       if (upDownState === 1) {
         $banner.removeClass('banner-show')
       } else if (upDownState === -1 && !isHigherThanIntro) {
         $banner.addClass('banner-show')
       }
+
+      // 仅在桌面端的 Post 页面，阅读进度大于等于 50% 时，显示 Donate 按钮
+      if (readPercent >= 50) {
+        $donateBtn.removeClass('footer-fixed-btn--hidden')
+      } else if (crossingState === -1) {
+        $donateBtn.addClass('footer-fixed-btn--hidden')
+      }
     }
 
     if (isPostPage) {
       // 更新进度条君的长度
-      updateProgress(scrollTop, articleTop, articleHeight)
+      updateReadProgress(readPercent)
     }
 
     previousHeight = scrollTop
