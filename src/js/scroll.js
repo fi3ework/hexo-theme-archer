@@ -141,7 +141,10 @@ const initScroll = () => {
       // 仅在桌面端的 Post 页面，阅读进度大于等于 50% 时，显示 Donate 按钮
       if (readPercent >= 50) {
         $donateBtn.removeClass('footer-fixed-btn--hidden')
-      } else if (crossingState === -1) {
+      } else if (
+        crossingState === -1 &&
+        !$donateBtn.hasClass('footer-fixed-btn--active')
+      ) {
         $donateBtn.addClass('footer-fixed-btn--hidden')
       }
     }

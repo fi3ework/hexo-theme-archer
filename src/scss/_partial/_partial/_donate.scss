@@ -25,12 +25,13 @@
   &__content {
     &-description {
       color: $post-content-color;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
     }
 
     &-qrCode {
       cursor: help;
-      width: 50%;
+      width: 48%;
+      margin-right: 2%;
     }
   }
 }

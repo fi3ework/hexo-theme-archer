@@ -1,0 +1,10 @@
+.donate-popup {
+  background: $foreground-color-dark;
+  box-shadow: 0 0 3px 1px rgba(15, 15, 15);
+
+  &__content {
+    &-description {
+      color: $post-content-color-dark;
+    }
+  }
+}
