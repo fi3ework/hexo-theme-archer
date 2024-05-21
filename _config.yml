@@ -35,7 +35,7 @@ friends:
   # friendB: //www.google.com
 about:
   enable: true
-  image: '/intro/about-bg.jpg'
+  image: /intro/about-bg.jpg
 # Search for website
 search:
   enable: false
@@ -73,11 +73,11 @@ main_title: fi3ework's Studio.
 # subtitle
 subtitle: it's better to burn out than to fade away
 # site haeder image
-site_header_image: '/intro/index-bg.jpg'
+site_header_image: /intro/index-bg.jpg
 # post haeder image
-post_header_image: '/intro/post-bg.jpg'
+post_header_image: /intro/post-bg.jpg
 # 404 image
-_404_image: '/intro/404-bg.jpg'
+_404_image: /intro/404-bg.jpg
 
 # ========== Theme ========== #
 # Truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
@@ -122,10 +122,10 @@ donate:
   title: Buy Me A Coffee
   description: If this post helped you, please consider buying the author a cup of sugar-free coffee ☕️.
   qr_code:
-    - url: '/assets/donate-wechat.png'
-      alt: 'Wechat'
-    - url: '/assets/donate-alipay.png'
-      alt: 'Alipay'
+    - url: /assets/donate-wechat.png
+      alt: Wechat
+    - url: /assets/donate-alipay.png
+      alt: Alipay
 
 # ========== Comment ========== #
 # Fill in the field to enable the corresponding comment plugin
