@@ -1,12 +1,3 @@
-const lazyLoadingInit = (img) => {
-  const isSupportLazyLoading = 'loading' in HTMLImageElement.prototype
-  if (isSupportLazyLoading) {
-    img.setAttribute('loading', 'lazy')
-  } else {
-    // TODO: add intersection observer support: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
-  }
-}
-
 const fancyBoxInit = (img) => {
   const outer = img.outerHTML
   const imgSrc = /src="(.*)"/.exec(outer)?.[1] || ''
@@ -22,11 +13,6 @@ export default () => {
   )
   /** images in article page */
   const articleContentImages = document.querySelectorAll('.article-entry img')
-
-  // #region add lazy-loading support for images
-  abstractContentImages.forEach(lazyLoadingInit)
-  articleContentImages.forEach(lazyLoadingInit)
-  // #endregion
 
   // #region add fancybox support for images
   abstractContentImages.forEach(fancyBoxInit)

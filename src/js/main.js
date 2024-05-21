@@ -28,7 +28,7 @@ initSidebar()
 // theme
 initTheme()
 
-// init image lazy-loading & fancybox
+// init image with fancybox
 initImage()
 
 // scroll event
