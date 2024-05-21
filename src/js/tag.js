@@ -51,7 +51,7 @@ class MetaInfo {
       this._createPostsDom(corrArr)
     } catch (error) {
       console.error(
-        'Please ensure set `tags: true` and `categories: true` of the hexo-content-json config',
+        'Please make sure you have installed `hexo-generator-json-content`, and set `tags: true` and `categories: true`. More info: https://github.com/fi3ework/hexo-theme-archer/blob/master/README.md#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85',
       )
     }
   }
