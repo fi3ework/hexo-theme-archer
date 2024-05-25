@@ -1,16 +1,21 @@
 <footer class="footer-fixed<%- is_home() ? ' index-footer-fixed' : '' %>">
+    <!-- donate button -->
+    <%_ if(is_post() && ((theme.donate && theme.donate.enable && page.donate !== false) || page.donate === true)) { _%>
+    <%- partial('donate-popup') %>
+    <div
+        title="Donate to the author"
+        class="footer-fixed-btn footer-fixed-btn--hidden<%- theme.float_button_theme === 'rounded' ? ' footer-fixed-btn--rounded' : '' %> donate-btn"
+    >
+        <i class="fas fa-donate"></i>
+    </div>
+    <%_ } _%>
+
     <!-- back to top button -->
-    <div class="footer-fixed-element">
-        <% if(theme.float_button_theme === 'rounded') { %>
-            <div class="back-top back-top-hidden back-top-rounded">
-        <% } else { %>
-            <div class="back-top back-top-hidden">
-        <% } %>
-        <% if(theme.float_button_theme === 'rounded') { %>
-            <i class="fas fa-chevron-up"></i>
-        <% } else { %>
-            <div>&#xe639;</div>
-        <% } %>
-        </div>
+    <div class="footer-fixed-btn footer-fixed-btn--hidden<%- theme.float_button_theme === 'rounded' ? ' footer-fixed-btn--rounded' : '' %> back-top">
+        <%_ if(theme.float_button_theme === 'rounded') { _%>
+        <i class="fas fa-chevron-up"></i>
+        <%_ } else { _%>
+        <div>&#xe639;</div>
+        <%_ } _%>
     </div>
 </footer>

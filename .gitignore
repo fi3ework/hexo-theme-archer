@@ -3,6 +3,7 @@ node_modules
 _config_.yml
 _config__.yml
 .jsbeautifyrc
+package-lock.json
 yarn.lock
 
 # Created by https://www.gitignore.io/api/vim

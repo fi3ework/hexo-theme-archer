@@ -1,80 +1,80 @@
 <div class="site-intro" style="<%- partial('intro-height', {attr: 'height'}) %>">
-    <% var bgURL; %>
+    <%_ var bgURL; _%>
     <!-- 主页  -->
-    <% if (is_home()) { %>
-        <% bgURL = theme.site_header_image; %>
+    <%_ if (is_home()) { _%>
+        <%_ bgURL = theme.site_header_image; _%>
     <!-- 文章页  -->
-    <% } else if (is_post()) { %>
-        <% bgURL = page.header_image || theme.post_header_image || theme.site_header_image; %>
+    <%_ } else if (is_post()) { _%>
+        <%_ bgURL = page.header_image || theme.post_header_image || theme.site_header_image; _%>
     <!-- 404页  -->
-    <% } else if (page.layout === "404") { %>
-        <% bgURL = theme._404_image || theme.site_header_image; %>
+    <%_ } else if (page.layout === "404") { _%>
+        <%_ bgURL = theme._404_image || theme.site_header_image; _%>
     <!-- about页 -->
-    <% } else if (page.layout === "about") { %>
-        <% bgURL = theme.about.image || theme.site_header_image; %>
-    <% } %>
+    <%_ } else if (page.layout === "about") { _%>
+        <%_ bgURL = theme.about.image || theme.site_header_image; _%>
+    <%_ } _%>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-img" style="background-image: url(<%- url_for(bgURL) %>)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            <% if (is_home()) { %>
+            <%_ if (is_home()) { _%>
                 <%- theme.main_title || config.title %>
             <!-- 文章页  -->
-            <% } else if(is_post()) { %>
+            <%_ } else if(is_post()) { _%>
                 <%- truncate(strip_html(page.title), {length: 80, omission: '...'}) || '[Untitled Post]' %>
             <!-- 404 -->
-            <% } else if(page.layout === "404") { %>
+            <%_ } else if(page.layout === "404") { _%>
                 <%- page.title || '[404]'%>
             <!-- about -->
-            <% } else if(page.layout === "about" ) { %>
+            <%_ } else if(page.layout === "about" ) { _%>
                 <%- page.title || 'About' %>
-            <% } %>
+            <%_ } _%>
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
-            <% if (is_home()) { %>
-                <% if(typeof theme.subtitle === 'string') { %>
+            <%_ if (is_home()) { _%>
+                <%_ if(typeof theme.subtitle === 'string') { _%>
                     <%- theme.subtitle %>
-                <% } %>
+                <%_ } _%>
             <!-- 文章页  -->
-            <% } else if (is_post()) { %>
-                <% if(typeof page.subtitle === 'string') { %>
+            <%_ } else if (is_post()) { _%>
+                <%_ if(typeof page.subtitle === 'string') { _%>
                     <%- page.subtitle %>
-                <% } %>
+                <%_ } _%>
             <!-- 404 -->
-            <% } else if (page.layout === "404") { %>
+            <%_ } else if (page.layout === "404") { _%>
                 <%- page.description %>
-            <% } %>
+            <%_ } _%>
         </p>
         <!-- 文章页 meta -->
-        <% if(is_post()) { %>
+        <%_ if(is_post()) { _%>
             <div class="post-intros">
                 <!-- 文章页标签  -->
-                <% if(page.tags.length || page.categories) { %>
+                <%_ if(page.tags.length || page.categories) { _%>
                     <%- partial('base-title-tags', {
                         currPost: page,
                         className: 'post-intro-tags'}) %>
-                <% } %>
+                <%_ } _%>
                 <!-- 文章字数统计 -->
-                <% if(theme.reading_info) { %>
+                <%_ if(theme.reading_info) { _%>
                     <div class="post-intro-read">
                         <span><%- __('word_count') %>: <span class="post-count word-count"><%= wordcount(page.content) %></span><%= __('reading_time') %>: <span class="post-count reading-time"><%= min2read(page.content) %> min</span></span>
                     </div>
-                <% } %>
+                <%_ } _%>
                 <div class="post-intro-meta">
                     <!-- 撰写日期 -->
                     <span class="iconfont-archer post-intro-calander">&#xe676;</span>
                     <span class="post-intro-time"><%- date(page.date, "YYYY/MM/DD") %></span>
                     <!-- busuanzi -->
-                    <% if (theme.busuanzi) { %>
+                    <%_ if (theme.busuanzi) { _%>
                         <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                             <span class="iconfont-archer post-intro-busuanzi">&#xe602;</span>
                             <span id="busuanzi_value_page_pv"></span>
                         </span>
-                    <% } %>
+                    <%_ } _%>
                     <!-- 文章分享 -->
                     <span class="share-wrapper">
                         <span class="iconfont-archer share-icon">&#xe71d;</span>
@@ -91,6 +91,6 @@
                     </span>
                 </div>
             </div>
-        <% } %>
+        <%_ } _%>
     </div>
 </div>

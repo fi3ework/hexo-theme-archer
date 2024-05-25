@@ -8,15 +8,15 @@
             document.write('<script src="<%- url_for('lib/jquery.min.js') %>" />')
         }
     </script>
-    <% if (is_home()) { %>
+    <%_ if (is_home()) { _%>
         <body class="home-body">
-    <% } else if(is_post()){ %>
+    <%_ } else if(is_post()){ _%>
         <body class="post-body">
-    <% } else if(page.layout === "404") { %>
+    <%_ } else if(page.layout === "404") { _%>
         <body class="four-zero-four-body">
-    <% } else if(page.layout === "about") { %>
+    <%_ } else if(page.layout === "about") { _%>
         <body class="about-body">
-    <% } %>
+    <%_ } _%>
         <!-- header -->
         <%- partial('_partial/base-header') %>
         <!-- fixed footer -->
@@ -25,25 +25,25 @@
         <div class="wrapper">
             <%- partial('_partial/base-background-image') %>
             <%- partial('_partial/script/font-loader') %>
-            <img class="loading" src="<%- url_for('assets/loading.svg') %>" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+            <img class="loading" src="<%- url_for('assets/loading.svg') %>" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" alt="loading">
             <div class="container container-unloaded">
                 <%- body %>
                 <!-- profile -->
-                <% if (is_home()) { %>
+                <%_ if (is_home()) { _%>
                     <%- partial('_partial/base-profile') %>
-                <% } %>
+                <%_ } _%>
             </div>
             <%- partial('_partial/base-footer', {}, {cache: true}) %>
         </div>
         <!-- toc -->
-        <% if(is_post() && (page.toc || (theme.toc && page.toc !== false))) { %>
+        <%_ if(is_post() && (page.toc || (theme.toc && page.toc !== false))) { _%>
             <div class="toc-wrapper toc-wrapper-loding" style=<%- partial('_partial/intro-height', {attr: 'top'}) %>>
                 <div class="toc-catalog">
                     <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
                 </div>
                 <%- toc(page.content, {class: 'toc', list_number: true}) %>
             </div>
-        <% } %>
+        <%_ } _%>
         <!-- sidebar -->
         <%- partial('_partial/sidebar/base-sidebar', {}, {cache: true}) %>
         <!-- site-meta -->
@@ -51,46 +51,25 @@
         <!-- import experimental options here -->
         <%- partial('_partial/custom-font', {}, {cache: true}) %>
         <!-- main func -->
-        <script src="<%- url_for('scripts/main.js') %>?v=<%- theme.source_version %>"></script>
-        <!-- dark mode -->
-        <script src="<%- url_for('scripts/dark.js') %>?v=<%- theme.source_version %>"></script>
+        <script src="<%- url_for('scripts/main.js') %>"></script>
         <!-- fancybox -->
-        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.js" onload="window.Fancybox.bind('[data-fancybox]')" defer></script>
         <!-- algolia -->
-        <% if (theme.algolia_search.enable) { %>
+        <%_ if (theme.algolia_search.enable) { _%>
             <%- partial('_partial/algolia') %>
-            <script src="<%- url_for('scripts/search.js') %>?v=<%- theme.source_version %>" defer></script>
-        <% } %>
+            <script src="<%- url_for('scripts/search.js') %>" async></script>
+        <%_ } _%>
         <!-- busuanzi -->
-        <% if (theme.busuanzi) { %>
+        <%_ if (theme.busuanzi) { _%>
             <script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
-        <% } %>
-        <!-- CNZZ -->
-        <% if (theme.CNZZ_analytics) { %>
-            <div style="display: none">
-                <script>
-                    var cnzz_s_tag = document.createElement('script');
-                    cnzz_s_tag.type = 'text/javascript';
-                    cnzz_s_tag.async = true;
-                    cnzz_s_tag.charset = 'utf-8';
-                    cnzz_s_tag.src = 'https://w.cnzz.com/c.php?id=<%- theme.CNZZ_analytics %>&async=1';
-                    var root_s = document.getElementsByTagName('script')[0];
-                    root_s.parentNode.insertBefore(cnzz_s_tag, root_s);
-                </script>
-            </div>
-        <% } %>
+        <%_ } _%>
         <!-- async load share.js -->
-        <% if (is_post()) { %>
-            <script src="<%- url_for('scripts/share.js') %>?v=<%- theme.source_version %>" async></script>
-        <% } %>
+        <%_ if (is_post()) { _%>
+            <script src="<%- url_for('scripts/share.js') %>" async></script>
+        <%_ } _%>
         <!-- mermaid -->
-        <% if (is_post() && theme.mermaid.enable) { %>
-            <script src='https://cdn.jsdelivr.net/npm/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
-            <script>
-                if (window.mermaid) {
-                    mermaid.initialize({theme: '<%= theme.mermaid.theme %>'});
-                }
-            </script>
-        <% } %>
+        <%_ if (is_post() && theme.mermaid.enable) { _%>
+            <script src='https://cdn.jsdelivr.net/npm/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js' onload="window.mermaid.initialize({theme: '<%= theme.mermaid.theme %>'})" async></script>
+        <%_ } _%>
     </body>
 </html>

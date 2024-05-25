@@ -401,7 +401,9 @@
   z-index: 9998;
   margin-top: calc(#{$header-height} + 1rem);
   transform: translate3d(0, 0, 0);
-  transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+  transition:
+    transform 0.4s ease-out,
+    opacity 0.4s ease-out;
   .toc-active {
     color: $feature-color;
   }
@@ -429,7 +431,7 @@
 }
 
 .toc {
-  max-height: calc(100vh - #{$header-height} - #{$footer-fixed-height} - 5rem);
+  max-height: calc(100vh - #{$header-height} - 5rem);
   overflow: auto;
   &::-webkit-scrollbar {
     display: none;
@@ -447,7 +449,9 @@
 .toc-wrapper {
   & > * {
     transform: translate(0, 0);
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out,
+    transition:
+      transform 0.3s ease-out,
+      opacity 0.3s ease-out,
       color 0.2s ease-out;
     opacity: 1;
   }

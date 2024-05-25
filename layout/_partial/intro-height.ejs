@@ -1,14 +1,14 @@
-<% var indexHeight = typeof theme.index_intro_height === 'number' ? theme.index_intro_height : 50 %>
-<% var postHeight = typeof theme.post_intro_height === 'number' ? theme.post_intro_height : 50 %>
-<% var aboutHeight = typeof theme.about_intro_height === 'number' ? theme.about_intro_height : 50 %>
-<% var indexStrStyle = attr + ':' + String(indexHeight) + 'vh;' %>
-<% var postStrStyle = attr + ':' + String(postHeight) + 'vh;' %>
-<% var aboutStrStyle = attr + ':' + String(aboutHeight) + 'vh;' %>
-<% var introHeightStyle %>
-<% if (is_home()) { %>
+<%_ var indexHeight = typeof theme.index_intro_height === 'number' ? theme.index_intro_height : 50 _%>
+<%_ var postHeight = typeof theme.post_intro_height === 'number' ? theme.post_intro_height : 50 _%>
+<%_ var aboutHeight = typeof theme.about_intro_height === 'number' ? theme.about_intro_height : 50 _%>
+<%_ var indexStrStyle = attr + ':' + String(indexHeight) + 'vh;' _%>
+<%_ var postStrStyle = attr + ':' + String(postHeight) + 'vh;' _%>
+<%_ var aboutStrStyle = attr + ':' + String(aboutHeight) + 'vh;' _%>
+<%_ var introHeightStyle _%>
+<%_ if (is_home()) { _%>
     <%- indexStrStyle %>
-<% } else if (is_post()) { %>
+<%_ } else if (is_post()) { _%>
     <%- postStrStyle %>
-<% } else if (page.layout === "about") { %>
+<%_ } else if (page.layout === "about") { _%>
     <%- aboutStrStyle %>
-<% } %>
+<%_ } _%>

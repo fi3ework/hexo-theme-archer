@@ -1,40 +1,40 @@
 <footer class="footer footer-unloaded">
     <!-- social  -->
-    <% if(theme.social) { %>
+    <%_ if(theme.social) { _%>
         <div class="social">
             <%- partial('base-social') %>
         </div>
-    <% } %>
+    <%_ } _%>
     <!-- powered by Hexo  -->
     <div class="copyright">
         <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
     </div>
     <!-- website approve for Chinese user -->
-    <% if(theme.website_approve.enable) { %>
+    <%_ if(theme.website_approve.enable) { _%>
         <div class="website-approve">
-            <% if(theme.website_approve.icp_approve) { %>
+            <%_ if(theme.website_approve.icp_approve) { _%>
                 <span id="icp-approve" class="icp-approve">
                     <a href="https://beian.miit.gov.cn/" target="_blank"><%- theme.website_approve.icp_approve %></a>
                 </span>
-            <% } %>
-            <% if(theme.website_approve.beian_approve && theme.website_approve.beian_img) { %>
-                <% const beianPath = theme.website_approve.beian_img %>
+            <%_ } _%>
+            <%_ if(theme.website_approve.beian_approve && theme.website_approve.beian_img) { _%>
+                <%_ const beianPath = theme.website_approve.beian_img _%>
                 <img class="beian-img" src="<%- url_for(beianPath) %>" />
                 <span id="beian-approve" class="beian-approve">
                     <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=<%- theme.website_approve.beian_approve %>" target="_blank">京公网安备 <%- theme.website_approve.beian_approve %>号</a>
                 </span>
-            <% } %>
+            <%_ } _%>
         </div>
-    <% } %>
+    <%_ } _%>
     <!-- 不蒜子  -->
-    <% if (theme.busuanzi) { %>
+    <%_ if (theme.busuanzi) { _%>
         <div class="busuanzi-container">
-            <% var sloganPieces = theme.busuanzi_slug.split('${count}') %>
-            <% if(theme.busuanzi_pv_or_uv === 'pv') { %> 
+            <%_ var sloganPieces = theme.busuanzi_slug.split('${count}') _%>
+            <%_ if(theme.busuanzi_pv_or_uv === 'pv') { _%> 
                 <span id="busuanzi_container_site_pv"><%- sloganPieces[0] %><span id="busuanzi_value_site_pv"></span><%- sloganPieces[1] %></span>
-            <% } else if (theme.busuanzi_pv_or_uv === 'uv') { %>
+            <%_ } else if (theme.busuanzi_pv_or_uv === 'uv') { _%>
                 <span id="busuanzi_container_site_uv"><%- sloganPieces[0] %><span id="busuanzi_value_site_uv"></span><%- sloganPieces[1] %></span>
-            <% } %>
+            <%_ } _%>
         </div>
-    <% } %>	
+    <%_ } _%>	
 </footer>

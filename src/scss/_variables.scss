@@ -46,7 +46,8 @@ $transition-animation: all 0.5s ease-out;
 @font-face {
   font-family: 'iconfont-archer'; /* project id 327081 */
   src: url('//at.alicdn.com/t/font_327081_s1wbjxwfu9c.eot');
-  src: url('//at.alicdn.com/t/font_327081_s1wbjxwfu9c.eot?#iefix')
+  src:
+    url('//at.alicdn.com/t/font_327081_s1wbjxwfu9c.eot?#iefix')
       format('embedded-opentype'),
     url('//at.alicdn.com/t/font_327081_s1wbjxwfu9c.woff') format('woff'),
     url('//at.alicdn.com/t/font_327081_s1wbjxwfu9c.ttf') format('truetype'),
@@ -61,9 +62,6 @@ $transition-animation: all 0.5s ease-out;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-// ======= fixed footer ======= //
-$footer-fixed-height: 3.5rem;
 
 // ========== header ========== //
 $header-height: 3.5rem;

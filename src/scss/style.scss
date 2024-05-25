@@ -5,6 +5,8 @@
 @import '_mixin';
 
 // partial
+@import '_partial/_partial/_donate';
+@import '_partial/_partial/_fancybox';
 @import '_partial/_partial/_footer-fixed';
 @import '_partial/_partial/_footer';
 @import '_partial/_partial/_header';
@@ -18,7 +20,7 @@
 
 // post
 @import '_partial/_post/_code';
-@import '_partial/_post/writing-enhance';
+@import '_partial/_post/_writing-enhance';
 
 // sidebar
 @import '_partial/_sidebar/_sidebar-archive';

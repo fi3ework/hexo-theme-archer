@@ -1,59 +1,59 @@
 <main class="main index-page">
-    <% page.posts.each(function (_post) { %>
-        <% const truncateLength = typeof theme.truncate_length === 'number' ? theme.truncate_length : 300 %>
-        <% let _content = undefined %>
-        <% let showReadMoreButton = false %>
-        <% if(!!_post.excerpt) { %>
-            <% _content = _post.excerpt %>
-            <% showReadMoreButton = true %>
-        <% } else if (!!_post.abstract) { %>
-            <% _content = _post.abstract %>
-            <% showReadMoreButton = true %>
-        <% } else { %>
+    <%_ page.posts.each(function (_post) { _%>
+        <%_ const truncateLength = typeof theme.truncate_length === 'number' ? theme.truncate_length : 300 _%>
+        <%_ let _content = undefined _%>
+        <%_ let showReadMoreButton = false _%>
+        <%_ if(!!_post.excerpt) { _%>
+            <%_ _content = _post.excerpt _%>
+            <%_ showReadMoreButton = true _%>
+        <%_ } else if (!!_post.abstract) { _%>
+            <%_ _content = _post.abstract _%>
+            <%_ showReadMoreButton = true _%>
+        <%_ } else { _%>
             <% _content = truncateLength === 0 ? null : truncate(strip_html(_post.content), {length: truncateLength, omission: '...'})%>
-        <% } %>
+        <%_ } _%>
         <article class="index-post">
             <a class="abstract-title" href="<%- url_for(_post.path) %>">
-                <% if(_post.top || _post.sticky) { %>
+                <%_ if(_post.top || _post.sticky) { _%>
                     <span class="iconfont-archer stick-top">&#xe63d;</span>
-                <% } %>
+                <%_ } _%>
                 <span class="abstract-title-text"><%= _post.title || '[Untitled Post]' %></span>
             </a>
             <div class="abstract-content">
                 <%- _content %>
             </div>
             <!-- read more -->
-            <% if(!!theme.read_more_button && !!showReadMoreButton) { %>
+            <%_ if(!!theme.read_more_button && !!showReadMoreButton) { _%>
                 <div class="abstract-read-more-button">
                     <a href="<%- url_for(_post.path) %>">
                         <span style="margin-right: 0.2rem;"><%- __('read_more') %></span>
                         <i class="fas fa-angle-right"></i>
                     </a>
                 </div>
-            <% } %>
+            <%_ } _%>
             <div class="abstract-post-meta">
                 <!-- date -->
                 <div class="abstract-date" title="Last updated: <%- !!_post.updated ? date(_post.updated, "YYYY/MM/DD") : date(_post.date, "YYYY/MM/DD") %>">
                     <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time"><%- date(_post.date, "YYYY/MM/DD") %></span>
                 </div>
                 <!-- tags -->
-                <% if (_post.tags.length || (theme.show_categories && _post.categories.length)) { %>
+                <%_ if (_post.tags.length || (theme.show_categories && _post.categories.length)) { _%>
                     <%- partial('./_partial/base-title-tags', {
                         currPost: _post,
                         className: 'abstract-tags'
                     }) %>
-                <% } %>
+                <%_ } _%>
             </div>
         </article>
         <div class="index-post-divider"></div>
-    <% }) %>
+    <%_ }) _%>
     <!-- paginator  -->
-    <% if (page.total > 1) { %>
+    <%_ if (page.total > 1) { _%>
         <nav class="page-nav">
             <%- paginator({
                 prev_text: '< PREV',
                 next_text: 'NEXT >'
             }) %>
         </nav>
-    <% } %>
+    <%_ } _%>
 </main>

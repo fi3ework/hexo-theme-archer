@@ -1,48 +1,46 @@
 <!-- title -->
-<% var title = "" %>
-<% if (page.title) { %>
-    <% title = page.title + ' · ' + theme.SEO_title || config.title %>
-<% } else { %>
-    <% title = theme.SEO_title %>
-<% } %>
+<%_ var title = "" _%>
+<%_ if (page.title) { _%>
+    <%_ title = page.title + ' · ' + theme.SEO_title || config.title _%>
+<%_ } else { _%>
+    <%_ title = theme.SEO_title _%>
+<%_ } _%>
 <!-- keywords -->
-<% var keywords = "" %>
-<% var keywordsArr = [page.keywords, theme.SEO_keywords] %>
-<% var keywords = keywordsArr.filter(function(item){ return item }).join(',') %>
+<%_ var keywords = "" _%>
+<%_ var keywordsArr = [page.keywords, theme.SEO_keywords] _%>
+<%_ var keywords = keywordsArr.filter(function(item){ return item }).join(',') _%>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="author" content="<%- config.author %>">
     <meta name="renderer" content="webkit">
     <meta name="copyright" content="<%- config.author %>">
-    <% if (keywords) { %>
+    <%_ if (keywords) { _%>
         <meta name="keywords" content="<%- keywords %>">
-    <% } else { %>
+    <%_ } else { _%>
         <meta name="keywords" content="<%- config.title %>,<%- config.author %>">
-    <% } %>
+    <%_ } _%>
     <meta name="description" content="<%- config.description %>">
     <%- open_graph({twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="<%- url_for(theme.favicon) %>">
-    <% if (theme.feed != undefined) { %>
+    <%_ if (theme.feed != undefined) { _%>
         <link rel="alternate" href="<%= url_for(theme.feed.path) %>" title="<%= theme.main_title %>" type="application/atom+xml">
-    <% } %>
+    <%_ } _%>
     <title><%= title %></title>
     <%- partial('base-preload-polyfill') %>
     <%- partial('critical-css/critical-style') %>
-    <link rel="preload" href="<%- url_for("css/style.css") %>?v=<%- theme.source_version %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="<%- url_for("css/dark.css") %>?v=<%- theme.source_version %>" as="style">
-    <link rel="stylesheet" href="<%- url_for("css/dark.css") %>">
-    <link rel="stylesheet" href="<%- url_for("css/mobile.css") %>?v=<%- theme.source_version %>" media="(max-width: 960px)">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-base" rel="preload" href="<%- url_for("css/style.css") %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link id="stylesheet-mobile" rel="preload" href="<%- url_for("css/mobile.css") %>" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
+    <link id="stylesheet-theme-dark" rel="preload" href="<%- url_for("css/dark.css") %>" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
-    <link rel="preload" href="<%- url_for('scripts/main.js') %>?v=<%- theme.source_version %>" as="script">
-    <link rel="preload" href="<%- url_for('scripts/dark.js') %>?v=<%- theme.source_version %>" as="script">
+    <link rel="preload" href="<%- url_for('scripts/main.js') %>" as="script">
     <link rel="preload" href="<%- url_for('font/Oswald-Regular.ttf') %>" as="font" crossorigin>
     <link rel="preload" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" as="font" crossorigin>
     <!-- algolia -->
-    <% if (theme.algolia_search != undefined && theme.algolia_search.enable) { %>
+    <%_ if (theme.algolia_search != undefined && theme.algolia_search.enable) { _%>
         <script>
             var hits = JSON.parse('<%- JSON.stringify(theme.algolia_search.hits) %>')
             var labels = JSON.parse('<%- JSON.stringify(theme.algolia_search.labels) %>')
@@ -55,9 +53,9 @@
                 labels: labels
             }
         </script>
-    <% } %>
+    <%_ } _%>
     <!-- 百度统计  -->
-    <% if(theme.baidu_analytics) { %>
+    <%_ if(theme.baidu_analytics) { _%>
         <script>
             var _hmt = _hmt || [];
             (function () {
@@ -67,17 +65,28 @@
                 s.parentNode.insertBefore(hm, s);
             })();
         </script>
-    <% } %>
+    <%_ } _%>
+    <!-- 谷歌统计  -->
+    <%_ if (theme.google_analytics) { _%>
+        <script>
+            var cnzz_s_tag = document.createElement('script');
+            cnzz_s_tag.type = 'text/javascript';
+            cnzz_s_tag.async = true;
+            cnzz_s_tag.charset = 'utf-8';
+            cnzz_s_tag.src = 'https://w.cnzz.com/c.php?id=<%- theme.CNZZ_analytics %>&async=1';
+            var root_s = document.getElementsByTagName('script')[0];
+            root_s.parentNode.insertBefore(cnzz_s_tag, root_s);
+        </script>
+    <%_ } _%>
     <!-- Google tag (gtag.js) -->
-    <% if (theme.google_analytics) { %>
+    <%_ if (theme.google_analytics) { _%>
         <script async src="https://www.googletagmanager.com/gtag/js?id=<%- theme.google_analytics %>"></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        gtag('config', '<%- theme.google_analytics %>');
+            gtag('config', '<%- theme.google_analytics %>');
         </script>
-    <% } %>
-
+    <%_ } _%>
 </head>

@@ -3,36 +3,42 @@
         <%- page.content %>
     </article>
     <!-- license -->
-    <% if(theme.copyright.enable === true && page.copyright !== false) { %>
+    <%_ if(theme.copyright.enable === true && page.copyright !== false) { _%>
         <div class="license-wrapper">
+            <%_ if(page.translated) { _%>
+            <p><%- __('translater') %>：<a href="<%- config.url %>"><%- config.author %></a>
+                <p><%- __('original_post_author') %>：<%- page.translated.author %>
+                <p><%- __('original_post_link') %>：<a href="<%- page.translated.link %>" target="_blank"><%- page.translated.title || page.translated.link %></a>
+            <%_ } else { _%>
             <p><%- __('author') %>：<a href="<%- config.url %>"><%- config.author %></a>
+            <%_ } _%>
             <p><%- __('post_link') %>：<a href="<%- page.permalink %>"><%- page.permalink %></a>
             <p><%- __('publish_date') %>：<a href="<%- page.permalink %>"><%- (page.date).format('MMMM Do YYYY, h:mm:ss a') %></a>
             <p><%- __('update_date') %>：<a href="<%- page.permalink %>"><%- (page.updated).format('MMMM Do YYYY, h:mm:ss a') %></a>
             <p><%- __('license') %>：<%- theme.copyright.license %></p>
         </div>
-    <% } %>
+    <%_ } _%>
     <!-- paginator -->
     <ul class="post-paginator">
         <li class="next">
-            <% if (page.prev){ %>
+            <%_ if (page.prev){ _%>
                 <div class="nextSlogan">Next Post</div>
                 <a href="<%- url_for(page.prev.path) %>" title="<%- page.prev.title %>">
                     <div class="nextTitle"><%- page.prev.title || '[Untitled Post]' %></div>
                 </a>
-            <% } %>
+            <%_ } _%>
         </li>
         <li class="previous">
-            <% if (page.next){ %>
+            <%_ if (page.next){ _%>
                 <div class="prevSlogan">Previous Post</div>
                 <a href="<%- url_for(page.next.path) %>" title="<%- page.next.title %>">
                     <div class="prevTitle"><%- page.next.title || '[Untitled Post]' %></div>
                 </a>
-            <% } %>
+            <%_ } _%>
         </li>
     </ul>
     <!-- comment -->
-    <% if (page.comments !== false) { %>
+    <%_ if (page.comments !== false) { _%>
         <div class="post-comment">
             <%- partial('_partial/comment/livere') %>
             <%- partial('_partial/comment/disqus') %>
@@ -45,10 +51,10 @@
             <%- partial('_partial/comment/valine') %>
             <%- partial('_partial/comment/waline') %>
         </div>
-    <% } %>
+    <%_ } _%>
     <!-- timeliness note -->
     <!-- idea from: https://hexo.fluid-dev.com/posts/hexo-injector/#%E6%96%87%E7%AB%A0%E6%97%B6%E6%95%88%E6%80%A7%E6%8F%90%E7%A4%BA -->
-    <% if (theme.outdated_threshold !== undefined && theme.outdated_threshold.enable && page.timeliness !== false && (!theme.outdated_threshold.specify_article || page.timeliness)) { %>
+    <%_ if (theme.outdated_threshold !== undefined && theme.outdated_threshold.enable && page.timeliness !== false && (!theme.outdated_threshold.specify_article || page.timeliness)) { _%>
         <script>
             (function () {
                 const time = document.getElementsByClassName('post-intro-time')[0]
@@ -69,9 +75,9 @@
                 }
             })();
         </script>
-    <% } %>
+    <%_ } _%>
     <!-- Mathjax -->
-    <% if (page.mathjax === true) { %>
+    <%_ if (page.mathjax === true) { _%>
         <%- partial('_partial/math/mathjax') %>
-    <% } %>
+    <%_ } _%>
 </main>

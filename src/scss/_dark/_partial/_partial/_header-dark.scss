@@ -6,41 +6,40 @@
   background-color: $feature-color-dark;
 }
 
-.banner {
-  border-bottom-color: $text-color-primary-dark;
-  background-color: rgba(0, 0, 0, 0.8);
+header {
+  .banner {
+    border-bottom-color: $text-color-primary-dark;
+    background-color: rgba(0, 0, 0, 0.8);
 
-  .blog-title {
-    a {
-      color: $header-banner-text-color-dark;
-      &:hover {
-        color: $feature-color-dark;
+    .blog-title {
+      a {
+        color: $header-banner-text-color-dark;
+        &:hover {
+          color: $feature-color-dark;
+        }
       }
     }
-  }
 
-  .post-title {
-    a {
-      color: $header-banner-text-color-dark;
+    .post-title {
+      a {
+        color: $header-banner-text-color-dark;
+      }
     }
-  }
-
-  &.banner-clean {
-    background-color: rgba(0, 0, 0, 0.9);
   }
 }
 
 .header-sidebar-menu {
   border-color: $body-background-color;
   color: $body-background-color;
-  &:hover {
+
+  &.header-sidebar-menu-active {
     background-color: $body-background-color;
     color: #000;
   }
 }
 
 .header-sidebar-menu-rounded {
-  &:hover {
+  &.header-sidebar-menu-active {
     background-color: transparent;
     color: $feature-color-dark;
   }
@@ -50,18 +49,26 @@
   color: $text-color-primary-dark;
   background-color: $body-background-color-dark;
   border-color: $text-color-primary-dark;
-  &:hover {
+
+  &.header-sidebar-menu-active {
     background-color: $text-color-primary-dark;
     color: $body-background-color-dark;
   }
 }
 
-.header-actions {
-  .home-link {
-    a {
-      &:hover {
-        color: $feature-color-dark;
-      }
-    }
+@media not all and (hover: none) {
+  .header-sidebar-menu:hover {
+    background-color: $body-background-color;
+    color: #000;
+  }
+
+  .header-sidebar-menu-rounded:hover {
+    background-color: transparent;
+    color: $feature-color-dark;
+  }
+
+  .header-sidebar-menu-black:hover {
+    background-color: $text-color-primary-dark;
+    color: $body-background-color-dark;
   }
 }

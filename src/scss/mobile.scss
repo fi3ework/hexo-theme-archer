@@ -2,6 +2,7 @@
 @import '_variables';
 
 @import '_mobile/_partial/index-page-mobile';
+@import '_mobile/_partial/post-page-mobile';
 @import '_mobile/_partial/_post/writing-enhance-mobile';
 @import '_mobile/_partial/_sidebar/sidebar-tags-mobile';
 
@@ -15,7 +16,7 @@
 }
 
 .profile {
-  margin: 1rem auto 0.5rem auto;
+  margin: 3rem auto 0.5rem auto;
   padding: 0 0;
   .profile-avatar {
     width: 60%;
@@ -23,6 +24,15 @@
   }
   .profile-social {
     display: none;
+  }
+  .friends {
+    text-align: center;
+    div {
+      text-align: center;
+    }
+  }
+  .profile-link-item {
+    text-align: center;
   }
 }
 
@@ -83,7 +93,7 @@
 .post-body {
   .site-intro-meta {
     min-width: 0;
-    width: 80%;
+    width: calc(95% - 2rem);
   }
   .intro-title {
     font-size: 2.6rem;
@@ -107,7 +117,8 @@ header {
   }
 
   &.header-mobile {
-    background-color: rgba(0, 0, 0, 0.38);
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
   }
 
   .banner {
@@ -138,17 +149,9 @@ header {
   }
 }
 
-// ========== fixed footer ========== //
-.back-top {
-  width: 2rem;
-  height: 2rem;
-  line-height: 2rem;
-}
-
-.back-top-rounded {
-  width: 2.5rem;
-  height: 2.5rem;
-  line-height: 2.5rem;
+// ========== fixed buttons ========== //
+.footer-fixed-btn {
+  display: none;
 }
 
 // ========== content ========== //

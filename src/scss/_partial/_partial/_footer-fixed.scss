@@ -2,8 +2,7 @@
 .footer-fixed {
   position: fixed;
   bottom: 0;
-  width: 100%;
-  height: $footer-fixed-height;
+  padding: 1rem;
   overflow: hidden;
   z-index: 10;
   transform: translate3d(0, 0, 0);
@@ -14,24 +13,16 @@
   pointer-events: none;
 }
 
-.footer-fixed-element {
-  pointer-events: auto;
-}
-
 .footer-fixed-sidebar-active {
   transform: translate3d($sidebar-width, 0, 0);
 }
 
-// ========== back top ========== //
-.back-top {
-  position: fixed;
+// ========== fixed buttons ========== //
+.footer-fixed-btn {
+  pointer-events: auto;
   display: block;
-  top: 50%;
-  transform: translate(0, -50%);
   transition: all 0.3s ease;
   font-family: 'iconfont-archer';
-  left: 1rem;
-  bottom: 1rem;
   z-index: 21;
   width: 1.5rem;
   height: 1.5rem;
@@ -40,28 +31,34 @@
   border: 2px solid $body-background-color-dark;
   background-color: $body-background-color;
   cursor: pointer;
-  &:hover {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--rounded {
+    color: #333333;
+    background-color: $body-background-color;
+    width: 2.7rem;
+    height: 2.7rem;
+    line-height: 2.7rem;
+    border: unset;
+    border-radius: 50%;
+
+    &:hover {
+      color: $body-background-color;
+    }
+  }
+
+  &--hidden {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &:hover,
+  &--active {
     background-color: $body-background-color-dark;
     color: $body-background-color;
   }
-}
-
-.back-top-rounded {
-  position: absolute;
-  font-family: 'iconfont-archer';
-  color: #333333;
-  background-color: $body-background-color;
-  width: 2.7rem;
-  height: 2.7rem;
-  line-height: 2.7rem;
-  border: unset;
-  border-radius: 50%;
-  &:hover {
-    color: $body-background-color;
-  }
-}
-
-.back-top-hidden {
-  pointer-events: none;
-  opacity: 0;
 }

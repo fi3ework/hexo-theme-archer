@@ -35,7 +35,7 @@ friends:
   # friendB: //www.google.com
 about:
   enable: true
-  image: '/intro/about-bg.jpg'
+  image: /intro/about-bg.jpg
 # Search for website
 search:
   enable: false
@@ -73,11 +73,11 @@ main_title: fi3ework's Studio.
 # subtitle
 subtitle: it's better to burn out than to fade away
 # site haeder image
-site_header_image: '/intro/index-bg.jpg'
+site_header_image: /intro/index-bg.jpg
 # post haeder image
-post_header_image: '/intro/post-bg.jpg'
+post_header_image: /intro/post-bg.jpg
 # 404 image
-_404_image: '/intro/404-bg.jpg'
+_404_image: /intro/404-bg.jpg
 
 # ========== Theme ========== #
 # Truncate length of abstracts in index page (the default is 300, there will be no abstruct if you input 0)
@@ -116,6 +116,17 @@ algolia_search:
     hits_empty: "We did not find any results for the search: ${query}"
     hits_stats: "${hits} results found in ${time} ms"
 
+# ========== Donate ========== #
+donate:
+  enable: false
+  title: Buy Me A Coffee
+  description: If this post helped you, please consider buying the author a cup of sugar-free coffee ☕️.
+  qr_code:
+    - url: /assets/donate-wechat.png
+      alt: Wechat
+    - url: /assets/donate-alipay.png
+      alt: Alipay
+
 # ========== Comment ========== #
 # Fill in the field to enable the corresponding comment plugin
 # If you want to add other comment plugin, edit in "custom.ejs"
@@ -136,9 +147,11 @@ comment:
   valine_appKey: 
   valine_placeHolder: 
   # Waline  site: https://waline.js.org/
+  # https://waline.js.org/reference/client/props.html#serverurl
   waline_serverURL: 
+  # https://waline.js.org/cookbook/customize/locale.html locale.placeholder
   waline_placeHolder: 
-  waline_avatar: 
+  # https://waline.js.org/reference/client/props.html#login
   waline_login: 
   # gitalk site: https://github.com/gitalk/gitalk/
   # Value 'true' is recommended for gitalk_pathname_id setting
@@ -219,8 +232,3 @@ custom_font:
   name: 'Noto Sans SC:n3,n4,n5,n7'
   # Font CDN url
   url: 'https://fonts.googleapis.cnpmjs.org/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap'
-
-# ========== Theme Dev ========== #
-# Ensure visitor to get the latest version of source.
-# Set a higher value before creating new release.
-source_version: 20211217

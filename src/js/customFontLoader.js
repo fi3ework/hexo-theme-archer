@@ -18,7 +18,7 @@ if (fontName && fontUrl) {
       },
       inactive: () => {
         console.error(
-          'Custom font inactive. Please check network, font name and load urls.'
+          'Custom font inactive. Please check network, font name and load urls.',
         )
       },
     })
