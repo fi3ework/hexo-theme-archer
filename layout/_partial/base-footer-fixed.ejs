@@ -1,6 +1,6 @@
 <footer class="footer-fixed<%- is_home() ? ' index-footer-fixed' : '' %>">
     <!-- donate button -->
-    <%_ if(is_post() && ((theme.donate.enable && page.donate !== false) || page.donate === true)) { _%>
+    <%_ if(is_post() && ((theme.donate && theme.donate.enable && page.donate !== false) || page.donate === true)) { _%>
     <%- partial('donate-popup') %>
     <div
         title="Donate to the author"
