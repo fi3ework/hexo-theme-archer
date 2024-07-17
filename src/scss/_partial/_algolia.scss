@@ -222,11 +222,12 @@
 }
 
 .ais-Pagination-item {
+  display: inline-block;
+  margin: 0 5px;
+
   a {
     color: $feature-color;
   }
-  display: inline-block;
-  margin: 0 5px;
 
   &--selected {
     a {
