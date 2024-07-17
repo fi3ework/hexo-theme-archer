@@ -26,10 +26,19 @@ function replacePatternInFile(filePath) {
   })
 }
 
-console.log('>>> Replacing <% xxx %> to <%_ xxx %> in layout/**/*.ejs')
 // 脚本入口
-walkDir(path.resolve(__dirname, '../layout'), (filePath) => {
-  if (path.extname(filePath) !== '.ejs') return
-  console.log('>>> Processing file', filePath)
-  replacePatternInFile(filePath)
-})
+try {
+  console.info('>>> Replacing <% xxx %> to <%_ xxx %> in layout/**/*.ejs...')
+  walkDir(path.resolve(__dirname, '../layout'), (filePath) => {
+    if (path.extname(filePath) !== '.ejs') return
+    console.log(`>>> Processing file: ${filePath}`)
+    replacePatternInFile(filePath)
+  })
+  console.info(
+    '>>> Replace <% xxx %> to <%_ xxx %> in layout/**/*.ejs successfully.',
+  )
+} catch (error) {
+  console.error(
+    `>>> Replace <% xxx %> to <%_ xxx %> in layout/**/*.ejs failed.\n${error}`,
+  )
+}
