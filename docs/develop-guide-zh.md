@@ -48,12 +48,6 @@ ignore:
 
 如果尚未安装 Node.js，请下载并安装 [14.x 版本](https://nodejs.org/dist/latest-v14.x/)。推荐使用 nvm（[Windows](https://github.com/coreybutler/nvm-windows), [Linux](https://github.com/nvm-sh/nvm)）来管理当前使用的 Node.js 版本。
 
-Archer 主题开发依赖于 `node-sass^8.0.0`，对于国内开发者，可以设置安装源，避免在本地编译：
-
-```bash
-npm set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass
-```
-
 分别在 Hexo 根目录和 Archer 主题目录下执行 `npm install` 命令，安装依赖文件。
 
 ### 本地开发
