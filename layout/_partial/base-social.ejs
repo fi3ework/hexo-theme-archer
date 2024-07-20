@@ -1,16 +1,16 @@
-<% if(theme.social) { %>
-    <% for (name in theme.social) { %>
-        <% if (theme.social[name] !== null) { %>
-            <% if (name === "email") { %>
-                <a href="mailto:<%- theme.social[name] %>" class="iconfont-archer <%- name %>" title=<%- name %> ></a>
-            <% } else if (name === "wechat" || name === "qq") { %>
-                <span class="iconfont-archer <%- name %>" title=<%- name %>>
-                    <% var path = theme.social[name] %>
+<%_ if(theme.social) { _%>
+    <%_ for (name in theme.social) { _%>
+        <%_ if (theme.social[name] !== null) { _%>
+            <%_ if (name === "email") { _%>
+                <a href="mailto:<%- theme.social[name] %>" class="iconfont-archer <%- name %>" title="<%- name %>" ></a>
+            <%_ } else if (name === "wechat" || name === "qq") { _%>
+                <span class="iconfont-archer <%- name %>" title="<%- name %>">
+                    <%_ var path = theme.social[name] _%>
                     <img class="profile-qr" src="<%- url_for(path) %>" />
                 </span>
-            <% } else { %>
-                <a href="<%- url_for(theme.social[name]) %>" class="iconfont-archer <%- name %>" target="_blank" title=<%- name %>></a>
-            <% } %>
-        <% } %>
-    <% } %>
-<% } %>
+            <%_ } else { _%>
+                <a href="<%- url_for(theme.social[name]) %>" class="iconfont-archer <%- name %>" target="_blank" title="<%- name %>"></a>
+            <%_ } _%>
+        <%_ } _%>
+    <%_ } _%>
+<%_ } _%>

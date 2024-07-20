@@ -1,5 +1,5 @@
 <!-- Custom Font -->
-<% if (theme.custom_font && theme.custom_font.enable) { %>
+<%_ if (theme.custom_font && theme.custom_font.enable) { _%>
     <!-- Check browser compatibility of CSS variables -->
     <script>
         if (browserSupportCSSVariables === undefined) {
@@ -20,5 +20,5 @@
             console.error('Current browser doesn\'t support custom font.')
         }
     </script>
-    <script src="<%- url_for('scripts/customFontLoader.js') %>?v=<%- theme.source_version %>" defer></script>
-<% } %>
+    <script src="<%- url_for('scripts/customFontLoader.js') %>" defer></script>
+<%_ } _%>

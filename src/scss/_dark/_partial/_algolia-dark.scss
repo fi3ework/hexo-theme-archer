@@ -1,5 +1,5 @@
 .popup {
-  background: $body-background-color-dark;
+  background: rgba(0, 0, 0, 0.8);
   color: #e1e1e1;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
 }
@@ -39,7 +39,9 @@
 }
 
 .ais-Pagination-item {
-  a {
-    color: $feature-color-dark;
+  &--selected {
+    a {
+      color: $text-color-primary-dark;
+    }
   }
 }

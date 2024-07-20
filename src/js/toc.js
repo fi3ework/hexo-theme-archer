@@ -1,20 +1,17 @@
 import archerUtil from './util'
 
-// Banner in post page will occupy a certain amount of place.
-// Therefore, the scroll event should be subtracted from this occupancy.
-const $banner = $('.banner:first')
-const scrollOffsetHeight = $banner.height() + archerUtil.rem()
+const isPostPage = archerUtil.isPostPage()
 
 // Query toc headers absolute height
-function initTocLinksScrollTop(tocLinks) {
-  return [...tocLinks].map((link) => {
-    return archerUtil.getAbsPosition(link, true).y
+function initTocLinksScrollTop(headers) {
+  return headers.map((index, header) => {
+    return archerUtil.getAbsPosition(header).y
   })
 }
 
-function calcScrollIntoScreenIndex(heights, currHeight) {
+function calcScrollIntoScreenIndex(heights, currHeight, offset = 0) {
   for (let i = heights.length - 1; i >= 0; i--) {
-    if (Math.ceil(currHeight + scrollOffsetHeight) >= heights[i]) {
+    if (Math.ceil(currHeight + offset) >= heights[i]) {
       return i
     }
   }
@@ -36,10 +33,6 @@ function initFold(toc) {
   ;[...toc.querySelectorAll('.toc-active')].forEach((child) => {
     child.classList.remove('toc-active')
   })
-}
-
-function resetFold(toc) {
-  initFold(toc)
 }
 
 function hideItem(node) {
@@ -73,98 +66,83 @@ function spreadParentNodeOfTargetItem(tocItem) {
 }
 
 const main = () => {
-  const toc = document.querySelector('.toc')
-  const $toc = $('.toc')
-
-  // Skip initialization if no toc exists
-  const tocItems = document.querySelectorAll('.toc-item')
-  if (!tocItems.length) {
+  // Skip initialization if not in post page
+  if (!isPostPage) {
     return
   }
 
-  // tocItems, tocLinks, archorjsLinks and headers are in one-to-one correspondence
-  const tocLinks = document.querySelectorAll('.toc-link')
-  const archorjsLinks = document.querySelectorAll('.anchorjs-link')
-  const headers = document.querySelectorAll(
-    '.article-entry h1, h2, h3, h4, h5, h6'
-  )
+  const $toc = $('.toc')
+  const $article = $('article.article-entry')
 
-  let throttleTocOnScroll = null
+  // #region Toc onscroll listener
+  const getInitTocOnScrollFun = () => {
+    const $banner = $('.banner:first')
+    const $tocItems = $('.toc-item')
+    const $headers = $article.find('h1, h2, h3, h4, h5, h6')
 
-  const initTocOnScroll = () => {
-    // Get header links absolute height
-    const headersHeights = initTocLinksScrollTop(headers)
+    let throttleTocOnScroll = null
+    return () => {
+      // Banner in post page will occupy a certain amount of place.
+      // Therefore, anchor point positioning needs to reserve this space.
+      const scrollOffsetHeight = $banner.height() + archerUtil.rem()
+      $headers.each((index, element) => {
+        $(element).css({
+          'margin-top': `-${scrollOffsetHeight}px`,
+          'padding-top': `${scrollOffsetHeight}px`,
+        })
+      })
 
-    // Overide toc links on-click event
-    for (let i = 0; i < tocLinks.length; i++) {
-      const onclickScrollTop = headersHeights[i] - scrollOffsetHeight
-      const onclickHeaderId = headers[i].id
-      const tocOnclickFunction = () => {
-        // Prevent header banner default event
-        // See ./scroll.js
-        window.preventPostPageBannerDefault = true
-        $banner.addClass('banner-show')
-        archerUtil.setWindowHash(onclickHeaderId)
-        window.scrollTo({ top: onclickScrollTop })
-      }
-      tocLinks[i].onclick = () => {
-        tocOnclickFunction()
-        return false
-      }
-      if (archorjsLinks.length && archorjsLinks.length > i) {
-        archorjsLinks[i].onclick = () => {
-          tocOnclickFunction()
-          return false
+      // Get header links absolute height
+      const headersHeights = initTocLinksScrollTop($headers)
+
+      // Document on-scroll event
+      const tocOnScroll = () => {
+        const currHeight = $(document).scrollTop()
+        const currHeightIndex = calcScrollIntoScreenIndex(
+          headersHeights,
+          currHeight,
+        )
+        if (currHeightIndex >= 0) {
+          // spread, fold and active
+          const currItem = $tocItems[currHeightIndex]
+          // 1. fold
+          initFold($toc[0])
+          // 2. spread
+          spreadParentNodeOfTargetItem(currItem)
+          // 3. active
+          if (currItem) {
+            activeTocItem(currItem.querySelector('a'))
+          }
+          // 4. scroll toc
+          const currItemOffsetTop = currItem?.offsetTop || undefined
+          if (currItemOffsetTop) {
+            $toc.scrollTop(currItemOffsetTop)
+          }
+        } else {
+          initFold($toc[0])
         }
       }
+
+      // Unbind existing on-scroll event
+      if (throttleTocOnScroll) $(document).off('scroll', throttleTocOnScroll)
+      // Bind document on-scroll event
+      throttleTocOnScroll = archerUtil.throttle(tocOnScroll, 100)
+      $(document).on('scroll', throttleTocOnScroll)
     }
-
-    // Document on-scroll event
-    const tocOnScroll = () => {
-      const currHeight = $(document).scrollTop()
-      const currHeightIndex = calcScrollIntoScreenIndex(
-        headersHeights,
-        currHeight
-      )
-      if (currHeightIndex >= 0) {
-        // spread, fold and active
-        const currItem = tocItems[currHeightIndex]
-        // 1. fold
-        resetFold(toc)
-        // 2. spread
-        spreadParentNodeOfTargetItem(currItem)
-        // 3. active
-        if (currItem) {
-          activeTocItem(currItem.querySelector('a'))
-        }
-        // 4. scroll toc
-        const currItemOffsetTop = currItem?.offsetTop || undefined
-        if (currItemOffsetTop) {
-          $toc.scrollTop(currItemOffsetTop)
-        }
-      } else {
-        resetFold(toc)
-      }
-    }
-
-    tocOnScroll()
-
-    // Unbind existing on-scroll event
-    if (throttleTocOnScroll) $(document).off('scroll', throttleTocOnScroll)
-    // Bind document on-scroll event
-    throttleTocOnScroll = archerUtil.throttle(tocOnScroll, 100)
-    $(document).on('scroll', throttleTocOnScroll)
   }
+  const initTocOnScroll = getInitTocOnScrollFun()
+  const throttleInitTocOnScroll = archerUtil.debounce(initTocOnScroll, 300)
+  // #endregion
 
   // Collapse all toc on initialization
-  initFold(toc)
+  initFold($toc[0])
 
-  // Initialize page scroll listener of toc
+  // Initialize scroll events listener of toc
   initTocOnScroll()
-  // Reload toc scroll events after loading all resources like images
-  $(window).on('load', initTocOnScroll)
-  // Reload toc scroll events if page size is changed
-  $(window).on('resize', archerUtil.debounce(initTocOnScroll, 500))
+  // Reload toc scroll events listener if article size is changes (usually because new image is loaded)
+  archerUtil.observeResize($article[0], throttleInitTocOnScroll)
+  // Reload toc scroll events listener if window size is changed
+  $(window).on('resize', throttleInitTocOnScroll)
 
   // Remove toc loading status
   $('.toc-wrapper').removeClass('toc-wrapper-loding')

@@ -5,16 +5,12 @@
     </div>
     <!-- sidebar menu button -->
     <div class="header-element">
-        <% if(theme.float_button_theme === 'rounded') { %>
-            <div class="header-sidebar-menu header-sidebar-menu-rounded">
-        <% } else { %>
-            <div class="header-sidebar-menu">
-        <% } %>
-            <% if(theme.float_button_theme === 'rounded') { %>
-                <i class="fas fa-bars"></i>
-            <% } else { %>
-                <div style="padding-left: 1px;">&#xe775;</div>
-            <% } %>
+        <div class="header-sidebar-menu<%- theme.float_button_theme === 'rounded' ? ' header-sidebar-menu-rounded' : '' %>">
+        <%_ if(theme.float_button_theme === 'rounded') { _%>
+            <i class="fas fa-bars"></i>
+        <%_ } else { _%>
+            <div style="padding-left: 1px;">&#xe775;</div>
+        <%_ } _%>
         </div>
     </div>
     <!-- header actions -->
@@ -25,22 +21,20 @@
         </span>
         <!-- back to home page text -->
         <span class="home-link header-element">
-            <a href=<%- config.root %>><%- theme.main_title || config.title %></a>
+            <a href="<%- config.root %>"><%- theme.main_title || config.title %></a>
         </span>
     </div>
-    <!-- toggle banner for post layout -->
-    <% if (is_post()) { %>
-        <% if(theme.post_banner_theme === 'clean') { %>
-            <div class="banner banner-clean">
-        <% } else { %>
-            <div class="banner">
-        <% } %>
-            <div class="blog-title header-element">
-                <a href="<%- url_for() %>"><%= theme.main_title || config.title%></a>
-            </div>
-            <div class="post-title header-element">
-                <a href="#" class="post-name"><%- page.title %></a>
-            </div>
+    <!-- toggle banner -->
+    <%_ if(theme.post_banner_theme === 'clean') { _%>
+    <div class="banner banner-clean">
+    <%_ } else { _%>
+    <div class="banner">
+    <%_ } _%>
+        <div class="blog-title header-element">
+            <a href="<%- url_for() %>"><%= theme.main_title || config.title%></a>
         </div>
-    <% } %>
+        <div class="post-title header-element">
+            <a href="#" class="post-name"><%- page.title %></a>
+        </div>
+    </div>
 </header>

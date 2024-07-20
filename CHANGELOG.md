@@ -1,6 +1,41 @@
 # 更新日志
 
-## [v1.6.4](https://github.com/fi3ework/hexo-theme-archer/pull/307)
+## [v1.6.6](https://github.com/fi3ework/hexo-theme-archer/releases/tag/1.6.6)
+
+- 重构 / Refactor
+
+  1. 重构文章页**目录**功能，提高目录高亮状态响应速度及精度（[#357](https://github.com/fi3ework/hexo-theme-archer/issues/357)）。
+
+- 问题修复 / Fix
+
+  1. 修复当文章不包含标签（Tag）时，也不会展示归档（Category）的问题（[#352](https://github.com/fi3ework/hexo-theme-archer/issues/352)）。
+  2. 修复友链未打开新标签页的问题（[#359](https://github.com/fi3ework/hexo-theme-archer/issues/359)）。
+
+- 样式 / Style
+
+  1. 优化 Gitalk 评论组件在暗黑模式下的样式（[#344](https://github.com/fi3ework/hexo-theme-archer/issues/344), [#347](https://github.com/fi3ework/hexo-theme-archer/issues/347)）。
+  2. 修复 `.header` 样式类冲突的问题（[#351](https://github.com/fi3ework/hexo-theme-archer/issues/351)）。
+  3. 优化首页文章预览多行标题的显示效果（[#353](https://github.com/fi3ework/hexo-theme-archer/issues/353)）。
+
+- 变更 / Change
+
+  1. **默认关闭**字数统计功能，避免用户在未安装插件时启动主题出错（[#367](https://github.com/fi3ework/hexo-theme-archer/issues/367)）。
+  2. 随着文章页滚动，**不再**自动设置地址栏的查询 Hash（[#369](https://github.com/fi3ework/hexo-theme-archer/issues/369)）。
+
+## [v1.6.5](https://github.com/fi3ework/hexo-theme-archer/releases/tag/1.6.5)
+
+- 新特性 / Feature
+
+  1. 添加了对评论组件 Waline 的支持（[#319](https://github.com/fi3ework/hexo-theme-archer/issues/319)）
+
+- 问题修复 / Fix
+
+  1. 修复了分享文章按钮失效的问题（[#313](https://github.com/fi3ework/hexo-theme-archer/issues/313)）
+  2. 修复了 Tag 或 Cate 中无法使用特殊字符的问题（[#316](https://github.com/fi3ework/hexo-theme-archer/issues/316)）
+  3. 修复了 Toc 和 Anchor 中可能出现的问题（[#317](https://github.com/fi3ework/hexo-theme-archer/issues/317)）
+  4. 修复了暗色模式偏好的问题（[#325](https://github.com/fi3ework/hexo-theme-archer/issues/325)）
+
+## [v1.6.4](https://github.com/fi3ework/hexo-theme-archer/releases/tag/1.6.4)
 
 - 新特性 / Feat
 
@@ -58,7 +93,7 @@
   1. 提供 `source_version` 配置，一键修改源文件版本日期
   2. 添加 `.editorconfig` 文件
 
-## v1.6.3 及更早版本
+## 历史更新记录
 
 - 2021.07.28 - 『添加 Dark 模式支持』
 - 2021.02.03 - 『添加“文章时效性”提示』

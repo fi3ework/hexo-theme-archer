@@ -1,11 +1,11 @@
 <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
-        <% site.tags.each(function (tag) { %>
+        <%_ site.tags.each(function (tag) { _%>
             <span class="sidebar-tag-name" data-tags="<%- tag.name %>">
                 <span class="iconfont-archer">&#xe606;</span>
                 <%- tag.name %>
             </span>
-        <% }) %>
+        <%_ }) _%>
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">

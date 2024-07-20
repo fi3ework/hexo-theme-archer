@@ -35,8 +35,8 @@
 .abstract-title {
   display: flex;
   align-items: baseline;
-  line-height: 2.5rem;
-  margin-bottom: 0.5rem;
+  line-height: 1.625;
+  padding-top: 0.5rem;
   transition: color 0.1s ease-in;
   color: $abstract-content-title-color;
   &:hover {

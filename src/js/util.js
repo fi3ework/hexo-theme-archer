@@ -31,6 +31,21 @@ const archerUtil = {
     }
   },
 
+  /** 基于 iframe 的父容器大小变化监听器 */
+  observeResize: (element, handler) => {
+    const frame = document.createElement('iframe')
+    const CSS =
+      'position:absolute;left:0;top:-100%;width:100%;height:100%;margin:1px 0 0;border:none;opacity:0;visibility:hidden;pointer-events:none;'
+    frame.style.cssText = CSS
+    frame.onload = () => {
+      frame.contentWindow.onresize = () => {
+        handler(element)
+      }
+    }
+    element.appendChild(frame)
+    return frame
+  },
+
   // 格式化日期
   dateFormater: function (date, fmt) {
     const o = {
@@ -45,7 +60,7 @@ const archerUtil = {
     if (/(y+)/.test(fmt)) {
       fmt = fmt.replace(
         RegExp.$1,
-        String(date.getFullYear()).substr(4 - RegExp.$1.length)
+        String(date.getFullYear()).substr(4 - RegExp.$1.length),
       )
     }
     for (const k in o) {
@@ -54,7 +69,7 @@ const archerUtil = {
           RegExp.$1,
           RegExp.$1.length === 1
             ? o[k]
-            : ('00' + o[k]).substr(String(o[k]).length)
+            : ('00' + o[k]).substr(String(o[k]).length),
         )
       }
     }
@@ -64,16 +79,6 @@ const archerUtil = {
   // 获取 1rem 对应的 px 值
   rem: () => {
     return parseInt($('html').css('font-size'), 10)
-  },
-
-  // 设置地址栏 hash
-  setWindowHash: (hash) => {
-    window.history.replaceState({}, '', `#/${hash}`)
-  },
-
-  // 读取地址栏 hash
-  getWindowHash: () => {
-    return window.location.hash.replace(/^#\//, '#')
   },
 
   // rAF 的 ticking
@@ -141,6 +146,32 @@ const archerUtil = {
           func.apply(this, args)
         }, wait)
       }
+    }
+  },
+
+  isPostPage: () => {
+    if ($('.post-body').length) {
+      return true
+    }
+    return false
+  },
+
+  isMobile: () => {
+    const MOBILE_MAX_WIDTH = 960
+    if (window.matchMedia) {
+      const mql = window.matchMedia(
+        `screen and (max-width: ${MOBILE_MAX_WIDTH}px)`,
+      )
+      return mql.matches
+    } else {
+      const innerWidth =
+        window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth
+      if (innerWidth <= MOBILE_MAX_WIDTH) {
+        return true
+      }
+      return false
     }
   },
 }

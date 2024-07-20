@@ -1,13 +1,15 @@
-<% if(theme.comment && theme.comment.waline_serverURL) { %>
-    <script src="//cdn.jsdelivr.net/npm/@waline/client"></script>
+<%_ if(theme.comment && theme.comment.waline_serverURL) { _%>
+    <script src='//unpkg.com/@waline/client@v2/dist/waline.js'></script>
+    <link href='//unpkg.com/@waline/client@v2/dist/waline.css' rel='stylesheet' />
     <div id="comment"></div>
     <script>
-    Waline({
+    Waline.init({
         el: '#comment' ,
         serverURL: "<%- theme.comment.waline_serverURL %>",
-        placeholder: "<%- theme.comment.waline_placeHolder %>",
-        avatar: "<%- theme.comment.waline_avatar %>",
+        locale: {
+            placeholder: "<%- theme.comment.waline_placeHolder %>"
+        },
         login: "<%- theme.comment.waline_login %>"
     });
     </script>
-<% } %>
+<%_ } _%>

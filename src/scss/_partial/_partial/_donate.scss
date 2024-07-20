@@ -1,0 +1,37 @@
+.donate-popup {
+  background: $foreground-color;
+  padding: 1.5rem 1rem;
+  margin-left: -1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  max-width: 22rem;
+  box-shadow: 0 0 3px 1px rgba(240, 240, 240);
+  pointer-events: all;
+  line-height: 1.4;
+
+  &--hidden {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  &__title {
+    font-family: $feature-font-family;
+    color: $feature-color;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  &__content {
+    &-description {
+      color: $post-content-color;
+      margin-bottom: 0.8rem;
+    }
+
+    &-qrCode {
+      cursor: help;
+      width: 48%;
+      margin-right: 2%;
+    }
+  }
+}

@@ -1,51 +1,54 @@
 <div class="sidebar-panel-archives">
     <!-- 在 ejs 中将 archive 按照时间排序 -->
-    <% var resortAllPosts = site.posts.map(function (item) { %>
-        <% let title = item.title; %>
-        <% let link = url_for(item.path) ; %>
-        <% let _date = date(item.date, "YYYY-MM-DD HH:MM:SS"); %>
+    <%_ var resortAllPosts = site.posts.map(function (item) { _%>
+        <%_ let title = item.title; _%>
+        <%_ let link = url_for(item.path) ; _%>
+        <%_ let _date = date(item.date, "YYYY-MM-DD HH:MM:SS"); _%>
         <% let returnDate = {
             title : title, 
             link : link,
             date : _date }; %>
-        <% return returnDate; %>
-    <% }) %>
-    <% resortAllPosts.sort(function compare(v1, v2){ %>
-        <% let result = (new Date(v1.date)) > (new Date(v2.date)); %>
-        <%  return result == true ? -1 : 1; %>
-    <% }) %>
-    <% let showYear = NaN; %>
-    <% let currPagePosts; %>
-    <% let showDate = NaN; %>
-    <% currPagePosts = resortAllPosts; %>
+        <%_ return returnDate; _%>
+    <%_ }) _%>
+    <%_ resortAllPosts.sort(function compare(v1, v2){ _%>
+        <%_ let result = (new Date(v1.date)) > (new Date(v2.date)); _%>
+        <%_  return result == true ? -1 : 1; _%>
+    <%_ }) _%>
+    <%_ let showYear = NaN; _%>
+    <%_ let currPagePosts; _%>
+    <%_ let showDate = NaN; _%>
+    <%_ currPagePosts = resortAllPosts; _%>
     <div class="total-and-search">
         <div class="total-archive">
         Total : <%= currPagePosts.length %>
         </div>
         <!-- search  -->
-        <% if (theme.algolia_search.enable) { %>
+        <%_ if (theme.algolia_search.enable) { _%>
             <div class="site-search site-search-loading popup-trigger">
                 <span class="iconfont-archer search-icon">&#xe627;</span>
             </div>
-        <% } %>
+        <%_ } _%>
     </div>
-    <% let toCloseUl = 0 %>
+    <%_ let toCloseUl = 0 _%>
     <div class="post-archive">
-    <% currPagePosts.forEach(function (post) { %>
-        <% if (showYear != Number(date(post.date, "YYYY"))) { %>
-            <% showYear = date(post.date, "YYYY"); %>
-            <% if (toCloseUl === 1) { %>
-                <% toCloseUl = 0; %>
+    <%_ currPagePosts.forEach(function (post) { _%>
+        <%_ if (showYear != Number(date(post.date, "YYYY"))) { _%>
+            <%_ showYear = date(post.date, "YYYY"); _%>
+            <%_ if (toCloseUl === 1) { _%>
+                <%_ toCloseUl = 0; _%>
                 </ul>
-            <% } %>
+            <%_ } _%>
             <div class="archive-year"> <%= showYear %> </div>
             <ul class="year-list">
-            <% toCloseUl = 1; %>
-        <% } %>
+            <%_ toCloseUl = 1; _%>
+        <%_ } _%>
         <li class="archive-post-item">
             <span class="archive-post-date"><%- date(post.date, "MM/DD") %></span>
             <a class="archive-post-title" href="<%- post.link %>"><%- post.title || '[Untitled Post]' %></a>
         </li>
-    <% }) %>
+    <%_ }) _%>
+    <%_ if (toCloseUl === 1) { _%>
+            </ul>
+    <%_ } _%>
     </div>
 </div>

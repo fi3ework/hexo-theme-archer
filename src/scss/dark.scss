@@ -1,28 +1,29 @@
 // helpers
 @import '_variables';
 @import '_mixin';
-@import '_dark/common-dark';
+@import '_dark/_common-dark';
 
 // partial
-@import '_dark/_partial/_partial/footer-fixed-dark';
-@import '_dark/_partial/_partial/footer-dark';
-@import '_dark/_partial/_partial/header-dark';
-@import '_dark/_partial/_partial/profile-dark';
+@import '_dark/_partial/_partial/_donate';
+@import '_dark/_partial/_partial/_footer-dark';
+@import '_dark/_partial/_partial/_footer-fixed-dark';
+@import '_dark/_partial/_partial/_header-dark';
+@import '_dark/_partial/_partial/_profile-dark';
 
 // algolia
-@import '_dark/_partial/algolia-dark';
+@import '_dark/_partial/_algolia-dark';
 
 // post
-@import '_dark/_partial/_post/code-dark';
+@import '_dark/_partial/_post/_code-dark';
 
 // sidebar
-@import '_dark/_partial/_sidebar/sidebar-archive-dark';
-@import '_dark/_partial/_sidebar/sidebar-tags-dark';
-@import '_dark/_partial/_sidebar/sidebar-dark';
+@import '_dark/_partial/_sidebar/_sidebar-archive-dark';
+@import '_dark/_partial/_sidebar/_sidebar-tags-dark';
+@import '_dark/_partial/_sidebar/_sidebar-dark';
 
 // pages
-@import '_dark/_partial/index-page-dark';
-@import '_dark/_partial/post-page-dark';
+@import '_dark/_partial/_index-page-dark';
+@import '_dark/_partial/_post-page-dark';
 
 // comment
 @import '_dark/_partial/_comment/_gitalk-dark';

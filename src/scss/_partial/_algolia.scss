@@ -7,11 +7,12 @@
   height: 80%;
   margin-left: -350px;
   padding: 3px 0 0 10px;
-  background: #fff;
   color: #333;
   z-index: 9999;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
 }
 
 @media (max-width: 767px) {
@@ -52,6 +53,7 @@
 
 .algolia-popup .popup-btn-close {
   padding: 10px;
+  margin-left: 10px;
   border-left: 1px solid #ddd;
 }
 
@@ -68,7 +70,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px;
+  padding: 5px 0 5px 10px;
   border-bottom: 1px solid #ccc;
   background: #f5f5f5;
   border-top-left-radius: 5px;
@@ -78,7 +80,7 @@
 .algolia-search-input-icon {
   display: inline-block;
   width: 20px;
-  padding: 0px 10px;
+  padding: 10px;
 }
 
 .algolia-search-input-icon .fa {
@@ -96,6 +98,10 @@
   outline: none;
   border: none;
   background: transparent;
+
+  &::-webkit-search-cancel-button {
+    display: none;
+  }
 }
 
 .algolia-powered {
@@ -110,12 +116,27 @@
 
 .algolia-stats {
   margin-top: 20px;
+  border: {
+    bottom: 1px solid;
+    color: rgba(245, 245, 250);
+  }
 }
 
 .algolia-results {
   position: relative;
   overflow: auto;
   height: calc(100% - 50px);
+
+  .algolia-hit-empty {
+    &-inner-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-label {
+    }
+  }
 }
 
 .algolia-results hr {
@@ -136,6 +157,7 @@
   padding: {
     left: $algolia-search-padding-horiz;
     right: $algolia-search-padding-horiz;
+    bottom: calc($algolia-search-padding-horiz / 2);
   }
 }
 
@@ -161,15 +183,18 @@
   &-item {
     margin: 0;
     --border-opacity: 1;
-    padding: 10px $algolia-search-padding-horiz;
+    padding: calc($algolia-search-padding-horiz * 0.75)
+      $algolia-search-padding-horiz;
     border: {
       bottom: 1px dashed;
       color: rgba(245, 245, 250, var(--border-opacity));
     }
     cursor: pointer;
+
     &:hover {
       background: #eee;
       border-color: transparent;
+      transition: background 0.15s ease-in-out;
     }
 
     &-link {
@@ -197,19 +222,21 @@
 }
 
 .ais-Pagination-item {
-  a {
-    color: $feature-color;
-  }
   display: inline-block;
   margin: 0 5px;
 
-  &--active {
+  a {
+    color: $feature-color;
+  }
+
+  &--selected {
     a {
       pointer-events: none;
       cursor: auto;
       color: #222;
     }
   }
+
   &--page {
     border-top: none;
     &:hover {
@@ -225,4 +252,5 @@
   left: 0;
   bottom: 0;
   z-index: 50;
+  backdrop-filter: blur(2px);
 }

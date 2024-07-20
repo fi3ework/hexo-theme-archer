@@ -1,5 +1,6 @@
 {
   "parser": "@babel/eslint-parser",
+  "plugins": ["prettier"],
   "extends": ["alloy", "plugin:prettier/recommended", "prettier"],
   "globals": {
     "siteMeta": true
@@ -7,7 +8,6 @@
   "env": {
     "jquery": true
   },
-  "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error",
     "no-unused-vars": [

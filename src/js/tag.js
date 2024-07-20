@@ -1,6 +1,5 @@
 import archerUtil from './util'
-import sidebar from './initSidebar'
-import Emitter from 'eventemitter3'
+import EventEmitter from 'eventemitter3'
 
 class MetaInfo {
   constructor(metaName, labelsContainer, postContainer) {
@@ -31,10 +30,10 @@ class MetaInfo {
 
   _changeFocus(label) {
     const currFocus = this.labelsContainer.getElementsByClassName(
-      'sidebar-label-focus'
+      'sidebar-label-focus',
     )
     ;[...currFocus].forEach((item) =>
-      item.classList.remove('sidebar-label-focus')
+      item.classList.remove('sidebar-label-focus'),
     )
     ;[...this.labelsContainer.children].forEach((item) => {
       if (item.getAttribute(`data-${this.metaName}`) === this.currLabelName) {
@@ -52,7 +51,7 @@ class MetaInfo {
       this._createPostsDom(corrArr)
     } catch (error) {
       console.error(
-        'Please ensure set `tags: true` and `categories: true` of the hexo-content-json config'
+        'Please make sure you have installed `hexo-generator-json-content`, and set `tags: true` and `categories: true`. More info: https://github.com/fi3ework/hexo-theme-archer/blob/master/README.md#%E5%BF%AB%E9%80%9F%E5%AE%89%E8%A3%85',
       )
     }
   }
@@ -71,9 +70,9 @@ class MetaInfo {
       '<li class="meta-post-item"><span class="meta-post-date">' +
         archerUtil.dateFormater(
           new Date(Date.parse(postInfo.date)),
-          'yyyy/MM/dd'
+          'yyyy/MM/dd',
         ) +
-        '</span></li>'
+        '</span></li>',
     )
     const $aItem = $(
       '<a class="meta-post-title" href="' +
@@ -81,7 +80,7 @@ class MetaInfo {
         postInfo.path +
         '">' +
         postInfo.title +
-        '</a>'
+        '</a>',
     )
     $tagItem.append($aItem)
     return $tagItem[0]
@@ -130,9 +129,10 @@ class MetaInfo {
 }
 
 class SidebarMeta {
-  constructor(tabCount) {
+  constructor(sidebar) {
+    this.sidebar = sidebar
     this.tabCount = 0
-    this.emitter = new Emitter()
+    this.emitter = new EventEmitter()
     this.postsArr = null
     this.metas = []
     this._initMap = this._initMap.bind(this)
@@ -148,7 +148,7 @@ class SidebarMeta {
     const newMeta = new MetaInfo(
       para.metaName,
       para.labelsContainer,
-      para.postsContainer
+      para.postsContainer,
     )
     newMeta.tryInit(this.postsArr)
     this.metas.push(newMeta)
@@ -206,16 +206,16 @@ class SidebarMeta {
   _bindOtherClick() {
     $('.post-tag').click((e) => {
       e.stopPropagation()
-      sidebar.activateSidebar()
-      sidebar.switchTo(1)
+      this.sidebar.activateSidebar()
+      this.sidebar.switchTo(1)
       this.currLabelName = e.target.getAttribute('data-tags')
       const tagMeta = this.metas[0]
       tagMeta.changeLabel(this.currLabelName)
     })
     $('.post-category').click((e) => {
       e.stopPropagation()
-      sidebar.activateSidebar()
-      sidebar.switchTo(2)
+      this.sidebar.activateSidebar()
+      this.sidebar.switchTo(2)
       this.currLabelName = e.target.getAttribute('data-categories')
       const categoryMeta = this.metas[1]
       categoryMeta.changeLabel(this.currLabelName)

@@ -1,17 +1,21 @@
-.back-top {
+.footer-fixed-btn {
   border-color: $text-color-primary-dark;
   background-color: rgba(18, 18, 18, 0.8);
   color: $text-color-primary-dark;
-  &:hover {
+
+  &--rounded {
+    color: $body-background-color;
+    background-color: $body-background-color-dark;
+
+    &:hover,
+    &--active {
+      color: #333;
+    }
+  }
+
+  &:hover,
+  &--active {
     background-color: $text-color-primary-dark;
     color: $body-background-color-dark;
-  }
-}
-
-.back-top-rounded {
-  color: $body-background-color;
-  background-color: $body-background-color-dark;
-  &:hover {
-    color: #333;
   }
 }

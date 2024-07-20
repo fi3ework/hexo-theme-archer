@@ -29,19 +29,19 @@ function handleShareClick(type, param) {
   if (type === 'weibo') {
     generate(
       'http://service.weibo.com/share/share.php?url=<%-sURL%>&title=<%-sTitle%>&pic=<%-sImg%>',
-      param
+      param,
     )
   } else if (type === 'qzone') {
     generate(
       'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<%-sURL%>&title=<%-sTitle%>&pics=<%-sImg%>&summary=<%-sDesc%>',
-      param
+      param,
     )
   } else if (type === 'facebook') {
     generate('https://www.facebook.com/sharer/sharer.php?u=<%-sURL%>', param)
   } else if (type === 'twitter') {
     generate(
       'https://twitter.com/intent/tweet?text=<%-sTitle%>&url=<%-sURL%>&via=<%-sAuthor%>',
-      param
+      param,
     )
   } else if (type === 'qr') {
     // pre init qr
