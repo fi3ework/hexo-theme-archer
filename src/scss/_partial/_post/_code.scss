@@ -28,6 +28,7 @@
     margin: 0 0.2rem;
     border: none;
     transition: $transition-animation;
+    word-break: break-all;
   }
   pre code {
     background: none;

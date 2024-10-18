@@ -241,9 +241,18 @@
 .article-entry {
   background-color: $foreground-color;
   border-radius: 0.5rem 0.5rem 0 0;
-  padding: 0.5rem 1.5rem;
+  padding: 2rem 1.5rem;
   transition: background-color 0.5s ease-out;
   overflow: hidden;
+
+  :first-child {
+    margin-top: 0;
+  }
+  // a <iframe> element is appended to the article in order to monitor the changes of article's size
+  // we should set the second to last element with zero margin-bottom
+  :nth-last-child(2) {
+    margin-bottom: 0;
+  }
 }
 
 .abstract-content,
@@ -255,6 +264,9 @@
   li {
     word-wrap: break-all;
     line-height: 1.625;
+    p {
+      margin: 0;
+    }
   }
   ul,
   ul li {
@@ -320,8 +332,11 @@
     border-left: 0.35rem solid $feature-color;
     border-radius: 0.35rem;
     transition: $transition-animation;
-    p {
-      margin: 0;
+    :first-child {
+      margin-top: 0;
+    }
+    :last-child {
+      margin-bottom: 0;
     }
   }
   .table-container table,
@@ -353,10 +368,16 @@
   }
   a {
     color: $feature-color;
-    padding: 0 2px 0 2px;
+    padding: 0 2px;
     word-break: break-all;
+    &:has(code) {
+      padding: 0;
+    }
     &:hover {
-      border-bottom: 1px solid $feature-color;
+      text-decoration-line: underline;
+      text-decoration-color: $feature-color;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
     }
     &.fancybox {
       border: 0;
@@ -368,7 +389,7 @@
 .license-wrapper {
   background-color: $foreground-color;
   border-radius: 0 0 0.5rem 0.5rem;
-  padding: 0.5rem 1.5rem;
+  padding: 1.5rem;
   font-weight: 300;
   line-height: 1.5rem;
   border-top: 1px dashed #ccc;
@@ -383,10 +404,10 @@
     word-break: break-all;
   }
   :first-child {
-    margin-top: 1rem;
+    margin-top: 0;
   }
   :last-child {
-    margin-bottom: 1rem;
+    margin-bottom: 0;
   }
 }
 
