@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>hexo-theme-archer</title>
+  
+  <subtitle>It&#39;s better to burn out than to fade away</subtitle>
+  <link href="https://fi3ework.github.io/hexo-theme-archer/atom.xml" rel="self"/>
+  
+  <link href="https://fi3ework.github.io/hexo-theme-archer/"/>
+  <updated>2024-12-25T17:03:23.161Z</updated>
+  <id>https://fi3ework.github.io/hexo-theme-archer/</id>
+  
+  <author>
+    <name>fi3ework</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>www.google.com</title>
+    <link href="https://fi3ework.github.io/hexo-theme-archer/2021/11/14/www-google-com/"/>
+    <id>https://fi3ework.github.io/hexo-theme-archer/2021/11/14/www-google-com/</id>
+    <published>2021-11-14T09:24:59.000Z</published>
+    <updated>2024-12-25T17:03:23.161Z</updated>
+    
+    <content type="html"><![CDATA[<p>This is a link post without a title. The title should be the link with or without protocol. Clicking on the link should open Google in a new tab or window.</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;This is a link post without a title. The title should be the link with or without protocol. Clicking on the link should open Google in a new tab or window.&lt;/p&gt;
+</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://fi3ework.github.io/hexo-theme-archer/2021/11/14/hello-world/"/>
+    <id>https://fi3ework.github.io/hexo-theme-archer/2021/11/14/hello-world/</id>
+    <published>2021-11-14T09:23:48.000Z</published>
+    <updated>2024-12-25T17:03:23.157Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>日本語テスト</title>
+    <link href="https://fi3ework.github.io/hexo-theme-archer/2021/11/14/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%86%E3%82%B9%E3%83%88/"/>
+    <id>https://fi3ework.github.io/hexo-theme-archer/2021/11/14/%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%83%86%E3%82%B9%E3%83%88/</id>
+    <published>2021-11-14T09:23:48.000Z</published>
+    <updated>2024-12-25T17:03:23.161Z</updated>
+    
+    <content type="html"><![CDATA[<p>This is a Japanese test post.</p><p>私は昨日ついにその助力家というのの上よりするたなけれ。</p><p>最も今をお話団はちょうどこの前後なかろでくらいに困りがいるたをは帰着考えたなかって、そうにもするでうたらない。</p><p>がたを知っないはずも同時に九月をいよいよたありた。</p><p>もっと槙さんにぼんやり金少し説明にえた自分大した人私か影響にというお関係たうませないが、この次第も私か兄具合に使うて、槙さんののに当人のあなたにさぞご意味と行くて私個人が小尊敬を聴いように同時に同反抗に集っだうて、いよいよまず相当へあっうからいだ事をしでなけれ。</p><blockquote><p>それでそれでもご時日をしはずはたったいやと突き抜けるますて、その元がは行ったてという獄を尽すていけですた。</p></blockquote><p>この中道具の日その学校はあなたごろがすまなりかとネルソンさんの考えるですん、辺の事実ないというご盲従ありたですと、爺さんのためが薬缶が結果までの箸の当時してならて、多少の十月にためからそういう上からとにかくしましないと触れべきものたで、ないうですと多少お人達したのでたた。</p><p>From <a href="http://lipsum.sugutsukaeru.jp/index.cgi">すぐ使えるダミーテキスト - 日本語 Lorem ipsum</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;This is a Japanese test post.&lt;/p&gt;
+&lt;p&gt;私は昨日ついにその助力家というのの上よりするたなけれ。&lt;/p&gt;
+&lt;p&gt;最も今をお話団はちょうどこの前後なかろでくらいに困りがいるたをは帰着考えたなかって、そうにもするでうたらない。&lt;/p&gt;
+&lt;p&gt;がたを知っないはずも同時に九月をいよいよたありた。&lt;/p&gt;
+&lt;p&gt;もっと槙さんにぼんやり金少し説明にえた自分大した人私か影響にというお関係たうませないが、この次第も私か兄具合に使うて、槙さんののに当人のあなたにさぞご意味と行くて私個人が小尊敬を聴いように同時に同反抗に集っだうて、いよいよまず相当へあっうからいだ事をしでなけれ。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;それでそれでもご時日をしはずはたったいやと突き抜けるますて、その元がは行ったてという獄を尽すていけですた。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;この中道具の日その学校はあなたごろがすまなりかとネルソンさんの考えるですん、辺の事実ないというご盲従ありたですと、爺さんのためが薬缶が結果までの箸の当時してならて、多少の十月にためからそういう上からとにかくしましないと触れべきものたで、ないうですと多少お人達したのでたた。&lt;/p&gt;
+&lt;p&gt;From &lt;a href=&quot;http://lipsum.sugutsukaeru.jp/index.cgi&quot;&gt;すぐ使えるダミーテキスト - 日本語 Lorem ipsum&lt;/a&gt;&lt;/p&gt;
+</summary>
+    
+    
+    
+    <category term="test" scheme="https://fi3ework.github.io/hexo-theme-archer/categories/test/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>中文測試</title>
+    <link href="https://fi3ework.github.io/hexo-theme-archer/2021/11/14/%E4%B8%AD%E6%96%87%E6%B8%AC%E8%A9%A6/"/>
+    <id>https://fi3ework.github.io/hexo-theme-archer/2021/11/14/%E4%B8%AD%E6%96%87%E6%B8%AC%E8%A9%A6/</id>
+    <published>2021-11-14T09:22:32.000Z</published>
+    <updated>2024-12-25T17:03:23.161Z</updated>
+    
+    <content type="html"><![CDATA[<p>This is a Chinese test post.</p><p>善我王上魚、產生資西員合兒臉趣論。畫衣生這著爸毛親可時，安程幾？合學作。觀經而作建。都非子作這！法如言子你關！手師也。</p><p>以也座論頭室業放。要車時地變此親不老高小是統習直麼調未，行年香一？</p><p>就竟在，是我童示讓利分和異種百路關母信過明驗有個歷洋中前合著區亮風值新底車有正結，進快保的行戰從：弟除文辦條國備當來際年每小腳識世可的的外的廣下歌洲保輪市果底天影；全氣具些回童但倒影發狀在示，數上學大法很，如要我……月品大供這起服滿老？應學傳者國：山式排只不之然清同關；細車是！停屋常間又，資畫領生，相們制在？公別的人寫教資夠。資再我我！只臉夫藝量不路政吃息緊回力之；兒足灣電空時局我怎初安。意今一子區首者微陸現際安除發連由子由而走學體區園我車當會，經時取頭，嚴了新科同？很夫營動通打，出和導一樂，查旅他。坐是收外子發物北看蘭戰坐車身做可來。道就學務。</p><p>國新故。</p><blockquote><p>工步他始能詩的，裝進分星海演意學值例道……於財型目古香亮自和這乎？化經溫詩。只賽嚴大一主價世哥受的沒有中年即病行金拉麼河。主小路了種就小為廣不？</p></blockquote><p>From <a href="http://www.richyli.com/tool/loremipsum/">亂數假文產生器 - Chinese Lorem Ipsum</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;This is a Chinese test post.&lt;/p&gt;
+&lt;p&gt;善我王上魚、產生資西員合兒臉趣論。畫衣生這著爸毛親可時，安程幾？合學作。觀經而作建。都非子作這！法如言子你關！手師也。&lt;/p&gt;
+&lt;p&gt;以也座論頭室業放。要車時地變此親不老高小是統習直麼調未，行年香一？&lt;/p&gt;
+&lt;p&gt;就竟在，是我童示讓利分和異種百路關母信過明驗有個歷洋中前合著區亮風值新底車有正結，進快保的行戰從：弟除文辦條國備當來際年每小腳識世可的的外的廣下歌洲保輪市果底天影；全氣具些回童但倒影發狀在示，數上學大法很，如要我……月品大供這起服滿老？應學傳者國：山式排只不之然清同關；細車是！停屋常間又，資畫領生，相們制在？公別的人寫教資夠。資再我我！只臉夫藝量不路政吃息緊回力之；兒足灣電空時局我怎初安。意今一子區首者微陸現際安除發連由子由而走學體區園我車當會，經時取頭，嚴了新科同？很夫營動通打，出和導一樂，查旅他。坐是收外子發物北看蘭戰坐車身做可來。道就學務。&lt;/p&gt;
+&lt;p&gt;國新故。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;工步他始能詩的，裝進分星海演意學值例道……於財型目古香亮自和這乎？化經溫詩。只賽嚴大一主價世哥受的沒有中年即病行金拉麼河。主小路了種就小為廣不？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;From &lt;a href=&quot;http://www.richyli.com/tool/loremipsum/&quot;&gt;亂數假文產生器 - Chinese Lorem Ipsum&lt;/a&gt;&lt;/p&gt;
+</summary>
+    
+    
+    
+    <category term="test" scheme="https://fi3ework.github.io/hexo-theme-archer/categories/test/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>文章置顶</title>
+    <link href="https://fi3ework.github.io/hexo-theme-archer/2021/11/14/stick-to-top/"/>
+    <id>https://fi3ework.github.io/hexo-theme-archer/2021/11/14/stick-to-top/</id>
+    <published>2021-11-14T09:03:09.000Z</published>
+    <updated>2024-12-25T17:03:23.157Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/hexo-theme-archer/2021/11/14/stick-to-top/demo-screenshoot.png"></p><p>由于作者精力有限，无法保证此主题继续维护，欢迎您 Fork 👋🏻 本仓库或<a href="https://github.com/fi3ework/hexo-theme-archer/issues/256">申请成为维护者 👩‍🔧</a>。</p><ul><li>本主题受 <a href="https://github.com/litten/hexo-theme-yilia">yilia</a> 主题和 <a href="https://github.com/Huxpro/huxpro.github.io">huxpro</a> 主题的启发，结合了前者的 sidebar 设计及后者的 UI 设计。通过 sidebar 能够快速执行 archive, tag 以及 categories 导航。</li><li>兼容性：现代浏览器及 IE10+。</li><li>有任何使用上的问题欢迎 <strong>发起 issue</strong>。</li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/hexo-theme-archer/2021/11/14/stick-to-top/demo-screenshoot.png&quot;&gt;&lt;/p&gt;
+&lt;p&gt;由于作者精力有限，无法保证此主题继续维护，欢迎您 Fork 👋🏻 本仓库或&lt;a href=&quot;https://github.com/fi3ework/hexo-theme-archer/issues/256&quot;&gt;申请成为维护者 👩‍🔧&lt;/a&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;本主题受 &lt;a href=&quot;https://github.com/litten/hexo-theme-yilia&quot;&gt;yilia&lt;/a&gt; 主题和 &lt;a href=&quot;https://github.com/Huxpro/huxpro.github.io&quot;&gt;huxpro&lt;/a&gt; 主题的启发，结合了前者的 sidebar 设计及后者的 UI 设计。通过 sidebar 能够快速执行 archive, tag 以及 categories 导航。&lt;/li&gt;
+&lt;li&gt;兼容性：现代浏览器及 IE10+。&lt;/li&gt;
+&lt;li&gt;有任何使用上的问题欢迎 &lt;strong&gt;发起 issue&lt;/strong&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+</summary>
+    
+    
+    
+    
+    <category term="top" scheme="https://fi3ework.github.io/hexo-theme-archer/tags/top/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mermaid-demo</title>
+    <link href="https://fi3ework.github.io/hexo-theme-archer/2021/11/14/mermaid-demo/"/>
+    <id>https://fi3ework.github.io/hexo-theme-archer/2021/11/14/mermaid-demo/</id>
+    <published>2021-11-14T08:58:05.000Z</published>
+    <updated>2024-12-25T17:03:23.157Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="展示-mermaid-的效果"><a href="#展示-mermaid-的效果" class="headerlink" title="展示 mermaid 的效果"></a>展示 <code>mermaid</code> 的效果</h1><p>启用方式参考代码仓库的 <a href="https://github.com/fi3ework/hexo-theme-archer/blob/master/README.md">readme.md</a></p><pre class="mermaid">graph TD;  A-->B;  A-->C;  B-->D;  C-->D;</pre>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;展示-mermaid-的效果&quot;&gt;&lt;a href=&quot;#展示-mermaid-的效果&quot; class=&quot;headerlink&quot; title=&quot;展示 mermaid 的效果&quot;&gt;&lt;/a&gt;展示 &lt;code&gt;mermaid&lt;/code&gt; 的效果&lt;/h1&gt;&lt;p&gt;启用方式参考代码仓库的 &lt;a href=&quot;https://github.com/fi3ework/hexo-theme-archer/blob/master/README.md&quot;&gt;readme.md&lt;/a&gt;&lt;/p&gt;
+&lt;pre class=&quot;mermaid&quot;&gt;graph TD;
+  A--&gt;B;
+  A--&gt;C;
+  B--&gt;D;
+  C--&gt;D;&lt;/pre&gt;
+</summary>
+    
+    
+    
+    
+  </entry>
+  
+</feed>
