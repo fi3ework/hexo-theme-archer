@@ -278,7 +278,7 @@ z=\dfrac{3\pi}{2}(1+2t)\sin(\dfrac{3\pi}{2}(1+2t)), &
 custom_font:
   enable: true
   name: 'Noto Sans SC:n3,n4,n5,n7'
-  url: 'https://fonts.googleapis.cnpmjs.org/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap'
+  url: 'https://cdn.jsdelivr.net/npm/fontsource-noto-sans-sc@4.0.0/chinese-simplified.css'
 ```
 
 其中，`name` 为引入的自定义字体名称，`:` 后跟字体变体和字重，不同的变体和字重使用 `,` 间隔。例如 `name: 'Noto Sans SC:i5,n7'` 表示引入 `Noto Sans SC` 的斜体 500 字重和正常 700 字重。
